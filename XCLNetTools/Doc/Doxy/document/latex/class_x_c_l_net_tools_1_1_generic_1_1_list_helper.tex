@@ -1,0 +1,124 @@
+\hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper}{\section{X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper类 参考}
+\label{class_x_c_l_net_tools_1_1_generic_1_1_list_helper}\index{X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper@{X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper}}
+}
+
+
+List操作类  
+
+
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ List$<$ T $>$ $>$ \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a38adb871b8752fb797795645625b7b4f}{Split\-List\-By\-Step$<$ T $>$} (int step, List$<$ T $>$ lst)
+\begin{DoxyCompactList}\small\item\em 根据步长，将一个总\-List拆分为多个子\-List \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a02b07a0f7a7d4506c358650ba010f7d9}{Get\-String\-By\-List$<$ T $>$} (List$<$ T $>$ lst, string split\-Char)
+\begin{DoxyCompactList}\small\item\em 将list中的项拼接字符串 \end{DoxyCompactList}\item 
+static Data\-Table \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aabb9427ae92df2eb55b7ea300be149a9}{To\-Data\-Table$<$ T $>$} (I\-List$<$ T $>$ data)
+\begin{DoxyCompactList}\small\item\em 将\-List转换成\-Data\-Table \end{DoxyCompactList}\item 
+static I\-List$<$ T $>$ \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aa1d5d2843b5a105edf4eb8c160fcd016}{Data\-Table\-To\-List$<$ T $>$} (Data\-Table dt)
+\begin{DoxyCompactList}\small\item\em 将data\-Table转为list \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+List操作类 
+
+
+
+在文件 List\-Helper.\-cs 第 11 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aa1d5d2843b5a105edf4eb8c160fcd016}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!Data\-Table\-To\-List$<$ T $>$@{Data\-Table\-To\-List$<$ T $>$}}
+\index{Data\-Table\-To\-List$<$ T $>$@{Data\-Table\-To\-List$<$ T $>$}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
+\subsubsection[{Data\-Table\-To\-List$<$ T $>$}]{\setlength{\rightskip}{0pt plus 5cm}static I\-List$<$T$>$ X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper.\-Data\-Table\-To\-List$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{Data\-Table}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aa1d5d2843b5a105edf4eb8c160fcd016}
+
+
+将data\-Table转为list 
+
+
+\begin{DoxyParams}{参数}
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+\begin{Desc}
+\item[类型限制]\begin{description}
+\item[{\em T} : {\em new()}]\end{description}
+\end{Desc}
+
+
+在文件 List\-Helper.\-cs 第 83 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a02b07a0f7a7d4506c358650ba010f7d9}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!Get\-String\-By\-List$<$ T $>$@{Get\-String\-By\-List$<$ T $>$}}
+\index{Get\-String\-By\-List$<$ T $>$@{Get\-String\-By\-List$<$ T $>$}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
+\subsubsection[{Get\-String\-By\-List$<$ T $>$}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper.\-Get\-String\-By\-List$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{List$<$ T $>$}]{lst, }
+\item[{string}]{split\-Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a02b07a0f7a7d4506c358650ba010f7d9}
+
+
+将list中的项拼接字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em lst} & 要操作的list\\
+\hline
+{\em split\-Char} & 分隔符\\
+\hline
+\end{DoxyParams}
+
+
+在文件 List\-Helper.\-cs 第 44 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a38adb871b8752fb797795645625b7b4f}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!Split\-List\-By\-Step$<$ T $>$@{Split\-List\-By\-Step$<$ T $>$}}
+\index{Split\-List\-By\-Step$<$ T $>$@{Split\-List\-By\-Step$<$ T $>$}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
+\subsubsection[{Split\-List\-By\-Step$<$ T $>$}]{\setlength{\rightskip}{0pt plus 5cm}static List$<$List$<$T$>$ $>$ X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper.\-Split\-List\-By\-Step$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{int}]{step, }
+\item[{List$<$ T $>$}]{lst}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a38adb871b8752fb797795645625b7b4f}
+
+
+根据步长，将一个总\-List拆分为多个子\-List 
+
+
+\begin{DoxyParams}{参数}
+{\em step} & 每个子list最多的项数\\
+\hline
+{\em lst} & 主list\\
+\hline
+\end{DoxyParams}
+
+
+在文件 List\-Helper.\-cs 第 18 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aabb9427ae92df2eb55b7ea300be149a9}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!To\-Data\-Table$<$ T $>$@{To\-Data\-Table$<$ T $>$}}
+\index{To\-Data\-Table$<$ T $>$@{To\-Data\-Table$<$ T $>$}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
+\subsubsection[{To\-Data\-Table$<$ T $>$}]{\setlength{\rightskip}{0pt plus 5cm}static Data\-Table X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper.\-To\-Data\-Table$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{I\-List$<$ T $>$}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aabb9427ae92df2eb55b7ea300be149a9}
+
+
+将\-List转换成\-Data\-Table 
+
+
+
+在文件 List\-Helper.\-cs 第 57 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Generic/\hyperlink{_list_helper_8cs}{List\-Helper.\-cs}\end{DoxyCompactItemize}

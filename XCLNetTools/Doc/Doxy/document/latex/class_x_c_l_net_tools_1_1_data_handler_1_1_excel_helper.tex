@@ -1,0 +1,1626 @@
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper}{\section{X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper类 参考}
+\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper}\index{X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper@{X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper}}
+}
+
+
+旧版的excel操作（基于excel.\-dll），建议不要使用此类（用aspose.\-cells）  
+
+
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_acebffd827fa8842be172440be3e1a134}{Excel\-Helper} (string templet\-File\-Path, string output\-File\-Path)
+\begin{DoxyCompactList}\small\item\em 构造函数，将一个已有\-Excel工作簿作为模板，并指定输出路径 \end{DoxyCompactList}\item 
+\hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7b0a4d5a5f8509b97ed054db15ef23d2}{Excel\-Helper} (string file\-Name)
+\begin{DoxyCompactList}\small\item\em 构造函数，打开一个已有的工作簿 \end{DoxyCompactList}\item 
+\hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2a3ce10ddfb59e2560a8faa05abc9976}{Excel\-Helper} ()
+\begin{DoxyCompactList}\small\item\em 构造函数，新建一个工作簿 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aee0dd3e95ba5e89b2043cb7d1c969a1c}{Data\-Table\-To\-Excel} (Data\-Table dt, int rows, int top, int left)
+\begin{DoxyCompactList}\small\item\em 将\-Data\-Table数据写入\-Excel文件（自动分页） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5a62b1a5ff7569e2236ad5eb7a4efcb8}{Data\-Table\-To\-Excel} (Data\-Table dt, int top, int left)
+\begin{DoxyCompactList}\small\item\em 将\-Data\-Table数据写入\-Excel文件（不分页） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a28b1238b8e1008cb4a39ed189df0b73f}{Data\-Table\-To\-Excel} (Data\-Table dt, int rows, int top, int left, int merge\-Column\-Index)
+\begin{DoxyCompactList}\small\item\em 将\-Data\-Table数据写入\-Excel文件（自动分页，并指定要合并的列索引） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a9f6650dba490907278b2ec278f0ecf5d}{Array\-To\-Excel} (string\mbox{[},\mbox{]} arr, int rows, int top, int left)
+\begin{DoxyCompactList}\small\item\em 将二维数组数据写入\-Excel文件（自动分页） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5be4d665a31a9347e2fe8b3b58b137af}{Array\-To\-Excel} (string\mbox{[},\mbox{]} arr, int top, int left)
+\begin{DoxyCompactList}\small\item\em 将二维数组数据写入\-Excel文件（不分页） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad2526a27bf44d46c44d8adb56c868c60}{Array\-To\-Excel} (string\mbox{[},\mbox{]} arr, int top, int left, bool is\-Formula)
+\begin{DoxyCompactList}\small\item\em 将二维数组数据写入\-Excel文件（不分页） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a153dfbee4fd21b4ae6eaa1b75955e849}{Array\-To\-Excel} (string\mbox{[},\mbox{]} arr, int top, int left, bool is\-Formula, int merge\-Column\-Index)
+\begin{DoxyCompactList}\small\item\em 将二维数组数据写入\-Excel文件（不分页），合并指定列的相同行 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7f91871b4a54529f34b3b95fd0c9f0e9}{Array\-To\-Excel} (int sheet\-Index, string\mbox{[},\mbox{]} arr, int top, int left)
+\begin{DoxyCompactList}\small\item\em 将二维数组数据写入\-Excel文件（不分页） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a24dc63cd234dd2bc58a5833b4dcdcc6e}{Array\-To\-Excel} (string\mbox{[},\mbox{]} arr, int rows, int top, int left, int merge\-Column\-Index)
+\begin{DoxyCompactList}\small\item\em 将二维数组数据写入\-Excel文件（自动分页，并指定要合并的列索引） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5685e97d3cfd67203faeee2bcdd6c788}{Change\-Current\-Work\-Sheet} (int sheet\-Index)
+\begin{DoxyCompactList}\small\item\em 改变当前工作表 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a417d5331a647da31429ff028821e4012}{Hidden\-Work\-Sheet} (string sheet\-Name)
+\begin{DoxyCompactList}\small\item\em 隐藏指定名称的工作表 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2b65f3492d6d7eeadd2366db1d1cc992}{Hidden\-Work\-Sheet} (int sheet\-Index)
+\begin{DoxyCompactList}\small\item\em 隐藏指定索引的工作表 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a3aa2c1a6e359f9fe7bba76d803ecbb81}{Copy\-Work\-Sheets} (string sheet\-Name, int sheet\-Count)
+\begin{DoxyCompactList}\small\item\em 在指定名称的工作表后面拷贝指定个数的该工作表的副本，并重命名 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a8947f0bbcbbd82566e9083fd30965862}{Copy\-Work\-Sheet} (int src\-Sheet\-Index, int aim\-Sheet\-Index, string new\-Sheet\-Name)
+\begin{DoxyCompactList}\small\item\em 将一个工作表拷贝到另一个工作表后面，并重命名 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab6b232c0411cec6a15affbe3664a8cd0}{Delete\-Work\-Sheet} (string sheet\-Name)
+\begin{DoxyCompactList}\small\item\em 根据名称删除工作表 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a21db1bb567b78dce9d069f33b22f4b25}{Delete\-Work\-Sheet} (int sheet\-Index)
+\begin{DoxyCompactList}\small\item\em 根据索引删除工作表 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab8f108b5bd5c60144bc5666884c5191b}{Set\-Text\-Box} (string textbox\-Name, string text)
+\begin{DoxyCompactList}\small\item\em 向指定文本框写入数据，对每个\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a86d566cea97a41b04cad4c896051b6d9}{Set\-Text\-Box} (int sheet\-Index, string textbox\-Name, string text)
+\begin{DoxyCompactList}\small\item\em 向指定文本框写入数据，对指定\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab9019cd73148e6176ed400ba305d15e5}{Set\-Text\-Boxes} (Hashtable ht)
+\begin{DoxyCompactList}\small\item\em 向文本框写入数据，对每个\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2b06a36aeacbea3f7158bb45db1f59a2}{Set\-Text\-Boxes} (int sheet\-Index, Hashtable ht)
+\begin{DoxyCompactList}\small\item\em 向文本框写入数据，对指定\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a1210a9f840d18b18bec230c71eb00564}{Set\-Cells} (int row\-Index, int column\-Index, string text)
+\begin{DoxyCompactList}\small\item\em 向单元格写入数据，对当前\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a851825a1eac4c7b8f6644be7ae994bc8}{Set\-Cells} (int sheet\-Index, int row\-Index, int column\-Index, string text)
+\begin{DoxyCompactList}\small\item\em 向单元格写入数据，对指定\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aea03ad91a4cf8544451b8688811a9b26}{Set\-Cells} (Hashtable ht)
+\begin{DoxyCompactList}\small\item\em 向单元格写入数据，对每个\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aa6e6c74debacaac3b04226ca46001829}{Set\-Cells} (int sheet\-Index, Hashtable ht)
+\begin{DoxyCompactList}\small\item\em 向单元格写入数据，对指定\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a66b9b212bd2aec9dc7baf82f7199c362}{Set\-Cells} (int sheet\-Index, string\mbox{[}$\,$\mbox{]} arr)
+\begin{DoxyCompactList}\small\item\em 设置单元格为可计算的 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a95225de93f22b335ddde6d68a3a424e7}{Set\-Cells} (string sheet\-Name, Hashtable ht)
+\begin{DoxyCompactList}\small\item\em 向单元格写入数据，对指定\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac153094d1d3d435a3f56a673ce95efc1}{Merge\-Cells} (int begin\-Row\-Index, int begin\-Column\-Index, int end\-Row\-Index, int end\-Column\-Index, string text)
+\begin{DoxyCompactList}\small\item\em 合并单元格，并赋值，对每个\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a59d4bebbd2294f88c1d75488330f2d02}{Merge\-Cells} (int sheet\-Index, int begin\-Row\-Index, int begin\-Column\-Index, int end\-Row\-Index, int end\-Column\-Index, string text)
+\begin{DoxyCompactList}\small\item\em 合并单元格，并赋值，对指定\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a6c59b5b2b3b6b38952049c089bdfdf60}{Merge\-Rows} (int column\-Index, int begin\-Row\-Index, int end\-Row\-Index)
+\begin{DoxyCompactList}\small\item\em 将指定索引列的数据相同的行合并，对每个\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2e506b7e3f336e106a752cbfa3e5329c}{Merge\-Rows} (int sheet\-Index, int column\-Index, int begin\-Row\-Index, int end\-Row\-Index)
+\begin{DoxyCompactList}\small\item\em 将指定索引列的数据相同的行合并，对指定\-Work\-Sheet操作 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a11c7c3f26140bc6f8bfd3f2fee54be60}{Insert\-Rows} (int row\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 插行（在指定行上面插入指定数量行） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2dda31df749974f5441d442ea21b5183}{Insert\-Rows} (int sheet\-Index, int row\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 插行（在指定\-Work\-Sheet指定行上面插入指定数量行） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a0124826488de4af30d2eaba3fa911500}{Copy\-Rows} (int row\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 复制行（在指定行下面复制指定数量行） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a40281cf4653e2a362aa4e897001ff001}{Copy\-Rows} (int sheet\-Index, int row\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 复制行（在指定\-Work\-Sheet指定行下面复制指定数量行） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a998f8178efe9f0602f1e3d30e9096eb8}{Delete\-Rows} (int row\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 删除行 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aaac48849297e93e10a6ccd8dd30cdd64}{Delete\-Rows} (int sheet\-Index, int row\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 删除行 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a950e53c43178294b31ad227251f5dfcb}{Insert\-Columns} (int column\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 插列（在指定列右边插入指定数量列） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad5b4582fcf63403a838d9c0b9acd9ee4}{Insert\-Columns} (int sheet\-Index, int column\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 插列（在指定\-Work\-Sheet指定列右边插入指定数量列） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a477309c8e46fd02109a7ee4a8164221d}{Copy\-Columns} (int column\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 复制列（在指定列右边复制指定数量列） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a4747b28517aaa00ebd20abfceb7a8161}{Copy\-Columns} (int sheet\-Index, int column\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 复制列（在指定\-Work\-Sheet指定列右边复制指定数量列） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a07bf346a96fdd9723478313b7bca25e0}{Delete\-Columns} (int column\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 删除列 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a905fec84987bc88a0b28e70f954ca0ea}{Delete\-Columns} (int sheet\-Index, int column\-Index, int count)
+\begin{DoxyCompactList}\small\item\em 删除列 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a383ca6f7c7ad61c7c042ce533153ec87}{Range\-Copy} (int sheet\-Index, string start\-Cell, string end\-Cell, string target\-Cell)
+\begin{DoxyCompactList}\small\item\em 将指定范围区域拷贝到目标区域 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac81856c1c2e61c5674448c5588d6f88b}{Range\-Copy} (string sheet\-Name, string start\-Cell, string end\-Cell, string target\-Cell)
+\begin{DoxyCompactList}\small\item\em 将指定范围区域拷贝到目标区域 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab1974e3579c233eb2a8c1b1bcbbc0aea}{Rang\-Auto\-Fill} ()
+\begin{DoxyCompactList}\small\item\em 自动填充 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_abc029180bf2199f182a4c60d3a0f585b}{Apply\-Style} ()
+\begin{DoxyCompactList}\small\item\em 应用样式 \end{DoxyCompactList}\item 
+int \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a32cace260b279a4fd6861e2925a2bbce}{Letter\-To\-Int} (string letter)
+\begin{DoxyCompactList}\small\item\em 将\-Excel列的字母索引值转换成整数索引值 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a69fec6dfa4e2714e3faeaa88ad92edce}{Int\-To\-Letter} (int n)
+\begin{DoxyCompactList}\small\item\em 将\-Excel列的整数索引值转换为字符索引值 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad33804b2e7c24ec683fb5db86db433a3}{Output\-Excel\-File} ()
+\begin{DoxyCompactList}\small\item\em 输出\-Excel文件并退出 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a016cbd751ac63913cb80fe03c1870a4b}{Output\-File} (string format)
+\begin{DoxyCompactList}\small\item\em 输出指定格式的文件（支持格式：\-H\-T\-M\-L，\-C\-S\-V，\-T\-E\-X\-T，\-E\-X\-C\-E\-L） \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aa009952e56f61cb90529bf2e68b4098b}{Save\-File} ()
+\begin{DoxyCompactList}\small\item\em 保存文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac15d18695f8bcfb21ee446edbd173eb2}{Save\-As\-File} ()
+\begin{DoxyCompactList}\small\item\em 另存文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a70b84e514fca4175d6e78e8845b34753}{Save\-As\-File} (string format)
+\begin{DoxyCompactList}\small\item\em 将\-Excel文件另存为指定格式 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7c3372f5c5fc327080f3b35d85ee4c39}{Save\-File} (string file\-Name)
+\begin{DoxyCompactList}\small\item\em 另存文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a401a9ce1828e68dd716bfa13f2e4d9f1}{Save\-As\-File} (string file\-Name, string format)
+\begin{DoxyCompactList}\small\item\em 将\-Excel文件另存为指定格式 \end{DoxyCompactList}\item 
+int \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_af0a259184ab65d03bd80395f273d1016}{Get\-Sheet\-Count} (int row\-Count, int rows)
+\begin{DoxyCompactList}\small\item\em 计算\-Work\-Sheet数量 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aed272e9ef2e170dadd73a8e7d761b8cd}{Kill\-Excel\-Process} ()
+\begin{DoxyCompactList}\small\item\em 结束\-Excel进程 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{属性}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a19d5234b9309942b87041f70bef91647}{Sheet\-Prefix\-Name}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Work\-Sheet前缀名，比如：前缀名为“页”，那么\-Work\-Sheet名称依次为“页-\/1，页-\/2...” \end{DoxyCompactList}\item 
+int \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab8d2677869ff64e25bbe54623ef9fa86}{Work\-Sheet\-Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Work\-Sheet数量 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a0e4501c60ef6446d0fe8151a6e58fca4}{Templet\-File\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Excel模板文件路径 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ada3dfa77cf3ac278ee83281f04707aa3}{Output\-File\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 输出\-Excel文件路径 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+旧版的excel操作（基于excel.\-dll），建议不要使用此类（用aspose.\-cells） 
+
+
+
+在文件 Excel\-Helper.\-cs 第 13 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_acebffd827fa8842be172440be3e1a134}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Excel\-Helper@{Excel\-Helper}}
+\index{Excel\-Helper@{Excel\-Helper}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Excel\-Helper}]{\setlength{\rightskip}{0pt plus 5cm}X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Excel\-Helper (
+\begin{DoxyParamCaption}
+\item[{string}]{templet\-File\-Path, }
+\item[{string}]{output\-File\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_acebffd827fa8842be172440be3e1a134}
+
+
+构造函数，将一个已有\-Excel工作簿作为模板，并指定输出路径 
+
+
+\begin{DoxyParams}{参数}
+{\em templet\-File\-Path} & Excel模板文件路径\\
+\hline
+{\em output\-File\-Path} & 输出\-Excel文件路径\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 79 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7b0a4d5a5f8509b97ed054db15ef23d2}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Excel\-Helper@{Excel\-Helper}}
+\index{Excel\-Helper@{Excel\-Helper}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Excel\-Helper}]{\setlength{\rightskip}{0pt plus 5cm}X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Excel\-Helper (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7b0a4d5a5f8509b97ed054db15ef23d2}
+
+
+构造函数，打开一个已有的工作簿 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Name} & Excel文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 111 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2a3ce10ddfb59e2560a8faa05abc9976}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Excel\-Helper@{Excel\-Helper}}
+\index{Excel\-Helper@{Excel\-Helper}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Excel\-Helper}]{\setlength{\rightskip}{0pt plus 5cm}X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Excel\-Helper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2a3ce10ddfb59e2560a8faa05abc9976}
+
+
+构造函数，新建一个工作簿 
+
+
+
+在文件 Excel\-Helper.\-cs 第 135 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_abc029180bf2199f182a4c60d3a0f585b}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Apply\-Style@{Apply\-Style}}
+\index{Apply\-Style@{Apply\-Style}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Apply\-Style}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Apply\-Style (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_abc029180bf2199f182a4c60d3a0f585b}
+
+
+应用样式 
+
+
+
+在文件 Excel\-Helper.\-cs 第 1722 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a9f6650dba490907278b2ec278f0ecf5d}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Array\-To\-Excel@{Array\-To\-Excel}}
+\index{Array\-To\-Excel@{Array\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Array\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Array\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{string}]{arr\mbox{[},\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{top, }
+\item[{int}]{left}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a9f6650dba490907278b2ec278f0ecf5d}
+
+
+将二维数组数据写入\-Excel文件（自动分页） 
+
+
+\begin{DoxyParams}{参数}
+{\em arr} & 二维数组\\
+\hline
+{\em rows} & 每个\-Work\-Sheet写入多少行数据\\
+\hline
+{\em top} & 行索引\\
+\hline
+{\em left} & 列索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 340 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5be4d665a31a9347e2fe8b3b58b137af}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Array\-To\-Excel@{Array\-To\-Excel}}
+\index{Array\-To\-Excel@{Array\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Array\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Array\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{string}]{arr\mbox{[},\mbox{]}, }
+\item[{int}]{top, }
+\item[{int}]{left}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5be4d665a31a9347e2fe8b3b58b137af}
+
+
+将二维数组数据写入\-Excel文件（不分页） 
+
+
+\begin{DoxyParams}{参数}
+{\em arr} & 二维数组\\
+\hline
+{\em top} & 行索引\\
+\hline
+{\em left} & 列索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 400 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad2526a27bf44d46c44d8adb56c868c60}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Array\-To\-Excel@{Array\-To\-Excel}}
+\index{Array\-To\-Excel@{Array\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Array\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Array\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{string}]{arr\mbox{[},\mbox{]}, }
+\item[{int}]{top, }
+\item[{int}]{left, }
+\item[{bool}]{is\-Formula}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad2526a27bf44d46c44d8adb56c868c60}
+
+
+将二维数组数据写入\-Excel文件（不分页） 
+
+
+\begin{DoxyParams}{参数}
+{\em arr} & 二维数组\\
+\hline
+{\em top} & 行索引\\
+\hline
+{\em left} & 列索引\\
+\hline
+{\em is\-Formula} & 填充的数据是否需要计算\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 417 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a153dfbee4fd21b4ae6eaa1b75955e849}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Array\-To\-Excel@{Array\-To\-Excel}}
+\index{Array\-To\-Excel@{Array\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Array\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Array\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{string}]{arr\mbox{[},\mbox{]}, }
+\item[{int}]{top, }
+\item[{int}]{left, }
+\item[{bool}]{is\-Formula, }
+\item[{int}]{merge\-Column\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a153dfbee4fd21b4ae6eaa1b75955e849}
+
+
+将二维数组数据写入\-Excel文件（不分页），合并指定列的相同行 
+
+
+\begin{DoxyParams}{参数}
+{\em arr} & 二维数组\\
+\hline
+{\em top} & 行索引\\
+\hline
+{\em left} & 列索引\\
+\hline
+{\em is\-Formula} & 填充的数据是否需要计算\\
+\hline
+{\em merge\-Column\-Index} & 需要合并行的列索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 440 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7f91871b4a54529f34b3b95fd0c9f0e9}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Array\-To\-Excel@{Array\-To\-Excel}}
+\index{Array\-To\-Excel@{Array\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Array\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Array\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{string}]{arr\mbox{[},\mbox{]}, }
+\item[{int}]{top, }
+\item[{int}]{left}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7f91871b4a54529f34b3b95fd0c9f0e9}
+
+
+将二维数组数据写入\-Excel文件（不分页） 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & 工作表索引\\
+\hline
+{\em arr} & 二维数组\\
+\hline
+{\em top} & 行索引\\
+\hline
+{\em left} & 列索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 464 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a24dc63cd234dd2bc58a5833b4dcdcc6e}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Array\-To\-Excel@{Array\-To\-Excel}}
+\index{Array\-To\-Excel@{Array\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Array\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Array\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{string}]{arr\mbox{[},\mbox{]}, }
+\item[{int}]{rows, }
+\item[{int}]{top, }
+\item[{int}]{left, }
+\item[{int}]{merge\-Column\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a24dc63cd234dd2bc58a5833b4dcdcc6e}
+
+
+将二维数组数据写入\-Excel文件（自动分页，并指定要合并的列索引） 
+
+
+\begin{DoxyParams}{参数}
+{\em arr} & 二维数组\\
+\hline
+{\em rows} & 每个\-Work\-Sheet写入多少行数据\\
+\hline
+{\em top} & 行索引\\
+\hline
+{\em left} & 列索引\\
+\hline
+{\em merge\-Column\-Index} & 数组的二维索引，相当于\-Data\-Table的列索引，索引从0开始\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 492 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5685e97d3cfd67203faeee2bcdd6c788}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Change\-Current\-Work\-Sheet@{Change\-Current\-Work\-Sheet}}
+\index{Change\-Current\-Work\-Sheet@{Change\-Current\-Work\-Sheet}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Change\-Current\-Work\-Sheet}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Change\-Current\-Work\-Sheet (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5685e97d3cfd67203faeee2bcdd6c788}
+
+
+改变当前工作表 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & 工作表索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 557 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a477309c8e46fd02109a7ee4a8164221d}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Copy\-Columns@{Copy\-Columns}}
+\index{Copy\-Columns@{Copy\-Columns}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Copy\-Columns}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Copy\-Columns (
+\begin{DoxyParamCaption}
+\item[{int}]{column\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a477309c8e46fd02109a7ee4a8164221d}
+
+
+复制列（在指定列右边复制指定数量列） 
+
+
+\begin{DoxyParams}{参数}
+{\em column\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1493 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a4747b28517aaa00ebd20abfceb7a8161}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Copy\-Columns@{Copy\-Columns}}
+\index{Copy\-Columns@{Copy\-Columns}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Copy\-Columns}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Copy\-Columns (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{column\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a4747b28517aaa00ebd20abfceb7a8161}
+
+
+复制列（在指定\-Work\-Sheet指定列右边复制指定数量列） 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+{\em column\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1524 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a0124826488de4af30d2eaba3fa911500}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Copy\-Rows@{Copy\-Rows}}
+\index{Copy\-Rows@{Copy\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Copy\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Copy\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{row\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a0124826488de4af30d2eaba3fa911500}
+
+
+复制行（在指定行下面复制指定数量行） 
+
+
+\begin{DoxyParams}{参数}
+{\em row\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1313 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a40281cf4653e2a362aa4e897001ff001}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Copy\-Rows@{Copy\-Rows}}
+\index{Copy\-Rows@{Copy\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Copy\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Copy\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{row\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a40281cf4653e2a362aa4e897001ff001}
+
+
+复制行（在指定\-Work\-Sheet指定行下面复制指定数量行） 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+{\em row\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1342 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a8947f0bbcbbd82566e9083fd30965862}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Copy\-Work\-Sheet@{Copy\-Work\-Sheet}}
+\index{Copy\-Work\-Sheet@{Copy\-Work\-Sheet}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Copy\-Work\-Sheet}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Copy\-Work\-Sheet (
+\begin{DoxyParamCaption}
+\item[{int}]{src\-Sheet\-Index, }
+\item[{int}]{aim\-Sheet\-Index, }
+\item[{string}]{new\-Sheet\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a8947f0bbcbbd82566e9083fd30965862}
+
+
+将一个工作表拷贝到另一个工作表后面，并重命名 
+
+
+\begin{DoxyParams}{参数}
+{\em src\-Sheet\-Index} & 拷贝源工作表索引\\
+\hline
+{\em aim\-Sheet\-Index} & 参照位置工作表索引，新工作表拷贝在该工作表后面\\
+\hline
+{\em new\-Sheet\-Name} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 684 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a3aa2c1a6e359f9fe7bba76d803ecbb81}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Copy\-Work\-Sheets@{Copy\-Work\-Sheets}}
+\index{Copy\-Work\-Sheets@{Copy\-Work\-Sheets}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Copy\-Work\-Sheets}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Copy\-Work\-Sheets (
+\begin{DoxyParamCaption}
+\item[{string}]{sheet\-Name, }
+\item[{int}]{sheet\-Count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a3aa2c1a6e359f9fe7bba76d803ecbb81}
+
+
+在指定名称的工作表后面拷贝指定个数的该工作表的副本，并重命名 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Name} & 工作表名称\\
+\hline
+{\em sheet\-Count} & 工作表个数\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 633 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aee0dd3e95ba5e89b2043cb7d1c969a1c}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Data\-Table\-To\-Excel@{Data\-Table\-To\-Excel}}
+\index{Data\-Table\-To\-Excel@{Data\-Table\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Data\-Table\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Data\-Table\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{Data\-Table}]{dt, }
+\item[{int}]{rows, }
+\item[{int}]{top, }
+\item[{int}]{left}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aee0dd3e95ba5e89b2043cb7d1c969a1c}
+
+
+将\-Data\-Table数据写入\-Excel文件（自动分页） 
+
+
+\begin{DoxyParams}{参数}
+{\em dt} & Data\-Table\\
+\hline
+{\em rows} & 每个\-Work\-Sheet写入多少行数据\\
+\hline
+{\em top} & 表格数据起始行索引\\
+\hline
+{\em left} & 表格数据起始列索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 161 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5a62b1a5ff7569e2236ad5eb7a4efcb8}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Data\-Table\-To\-Excel@{Data\-Table\-To\-Excel}}
+\index{Data\-Table\-To\-Excel@{Data\-Table\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Data\-Table\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Data\-Table\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{Data\-Table}]{dt, }
+\item[{int}]{top, }
+\item[{int}]{left}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a5a62b1a5ff7569e2236ad5eb7a4efcb8}
+
+
+将\-Data\-Table数据写入\-Excel文件（不分页） 
+
+
+\begin{DoxyParams}{参数}
+{\em dt} & Data\-Table\\
+\hline
+{\em top} & 表格数据起始行索引\\
+\hline
+{\em left} & 表格数据起始列索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 243 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a28b1238b8e1008cb4a39ed189df0b73f}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Data\-Table\-To\-Excel@{Data\-Table\-To\-Excel}}
+\index{Data\-Table\-To\-Excel@{Data\-Table\-To\-Excel}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Data\-Table\-To\-Excel}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Data\-Table\-To\-Excel (
+\begin{DoxyParamCaption}
+\item[{Data\-Table}]{dt, }
+\item[{int}]{rows, }
+\item[{int}]{top, }
+\item[{int}]{left, }
+\item[{int}]{merge\-Column\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a28b1238b8e1008cb4a39ed189df0b73f}
+
+
+将\-Data\-Table数据写入\-Excel文件（自动分页，并指定要合并的列索引） 
+
+
+\begin{DoxyParams}{参数}
+{\em dt} & Data\-Table\\
+\hline
+{\em rows} & 每个\-Work\-Sheet写入多少行数据\\
+\hline
+{\em top} & 表格数据起始行索引\\
+\hline
+{\em left} & 表格数据起始列索引\\
+\hline
+{\em merge\-Column\-Index} & Data\-Table中要合并相同行的列索引，从0开始\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 276 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a07bf346a96fdd9723478313b7bca25e0}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Delete\-Columns@{Delete\-Columns}}
+\index{Delete\-Columns@{Delete\-Columns}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Delete\-Columns}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Delete\-Columns (
+\begin{DoxyParamCaption}
+\item[{int}]{column\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a07bf346a96fdd9723478313b7bca25e0}
+
+
+删除列 
+
+
+\begin{DoxyParams}{参数}
+{\em column\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1557 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a905fec84987bc88a0b28e70f954ca0ea}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Delete\-Columns@{Delete\-Columns}}
+\index{Delete\-Columns@{Delete\-Columns}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Delete\-Columns}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Delete\-Columns (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{column\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a905fec84987bc88a0b28e70f954ca0ea}
+
+
+删除列 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+{\em column\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1585 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a998f8178efe9f0602f1e3d30e9096eb8}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Delete\-Rows@{Delete\-Rows}}
+\index{Delete\-Rows@{Delete\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Delete\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Delete\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{row\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a998f8178efe9f0602f1e3d30e9096eb8}
+
+
+删除行 
+
+
+\begin{DoxyParams}{参数}
+{\em row\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1373 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aaac48849297e93e10a6ccd8dd30cdd64}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Delete\-Rows@{Delete\-Rows}}
+\index{Delete\-Rows@{Delete\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Delete\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Delete\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{row\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aaac48849297e93e10a6ccd8dd30cdd64}
+
+
+删除行 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+{\em row\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1401 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab6b232c0411cec6a15affbe3664a8cd0}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Delete\-Work\-Sheet@{Delete\-Work\-Sheet}}
+\index{Delete\-Work\-Sheet@{Delete\-Work\-Sheet}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Delete\-Work\-Sheet}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Delete\-Work\-Sheet (
+\begin{DoxyParamCaption}
+\item[{string}]{sheet\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab6b232c0411cec6a15affbe3664a8cd0}
+
+
+根据名称删除工作表 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Name} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 714 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a21db1bb567b78dce9d069f33b22f4b25}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Delete\-Work\-Sheet@{Delete\-Work\-Sheet}}
+\index{Delete\-Work\-Sheet@{Delete\-Work\-Sheet}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Delete\-Work\-Sheet}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Delete\-Work\-Sheet (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a21db1bb567b78dce9d069f33b22f4b25}
+
+
+根据索引删除工作表 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 752 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_af0a259184ab65d03bd80395f273d1016}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Get\-Sheet\-Count@{Get\-Sheet\-Count}}
+\index{Get\-Sheet\-Count@{Get\-Sheet\-Count}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Get\-Sheet\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Get\-Sheet\-Count (
+\begin{DoxyParamCaption}
+\item[{int}]{row\-Count, }
+\item[{int}]{rows}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_af0a259184ab65d03bd80395f273d1016}
+
+
+计算\-Work\-Sheet数量 
+
+
+\begin{DoxyParams}{参数}
+{\em row\-Count} & 记录总行数\\
+\hline
+{\em rows} & 每\-Work\-Sheet行数\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 2142 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a417d5331a647da31429ff028821e4012}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Hidden\-Work\-Sheet@{Hidden\-Work\-Sheet}}
+\index{Hidden\-Work\-Sheet@{Hidden\-Work\-Sheet}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Hidden\-Work\-Sheet}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Hidden\-Work\-Sheet (
+\begin{DoxyParamCaption}
+\item[{string}]{sheet\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a417d5331a647da31429ff028821e4012}
+
+
+隐藏指定名称的工作表 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Name} & 工作表名称\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 573 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2b65f3492d6d7eeadd2366db1d1cc992}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Hidden\-Work\-Sheet@{Hidden\-Work\-Sheet}}
+\index{Hidden\-Work\-Sheet@{Hidden\-Work\-Sheet}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Hidden\-Work\-Sheet}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Hidden\-Work\-Sheet (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2b65f3492d6d7eeadd2366db1d1cc992}
+
+
+隐藏指定索引的工作表 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 606 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a950e53c43178294b31ad227251f5dfcb}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Insert\-Columns@{Insert\-Columns}}
+\index{Insert\-Columns@{Insert\-Columns}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Insert\-Columns}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Insert\-Columns (
+\begin{DoxyParamCaption}
+\item[{int}]{column\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a950e53c43178294b31ad227251f5dfcb}
+
+
+插列（在指定列右边插入指定数量列） 
+
+
+\begin{DoxyParams}{参数}
+{\em column\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1435 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad5b4582fcf63403a838d9c0b9acd9ee4}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Insert\-Columns@{Insert\-Columns}}
+\index{Insert\-Columns@{Insert\-Columns}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Insert\-Columns}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Insert\-Columns (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{column\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad5b4582fcf63403a838d9c0b9acd9ee4}
+
+
+插列（在指定\-Work\-Sheet指定列右边插入指定数量列） 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+{\em column\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1463 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a11c7c3f26140bc6f8bfd3f2fee54be60}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Insert\-Rows@{Insert\-Rows}}
+\index{Insert\-Rows@{Insert\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Insert\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Insert\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{row\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a11c7c3f26140bc6f8bfd3f2fee54be60}
+
+
+插行（在指定行上面插入指定数量行） 
+
+
+\begin{DoxyParams}{参数}
+{\em row\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1255 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2dda31df749974f5441d442ea21b5183}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Insert\-Rows@{Insert\-Rows}}
+\index{Insert\-Rows@{Insert\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Insert\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Insert\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{row\-Index, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2dda31df749974f5441d442ea21b5183}
+
+
+插行（在指定\-Work\-Sheet指定行上面插入指定数量行） 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & \\
+\hline
+{\em row\-Index} & \\
+\hline
+{\em count} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1283 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a69fec6dfa4e2714e3faeaa88ad92edce}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Int\-To\-Letter@{Int\-To\-Letter}}
+\index{Int\-To\-Letter@{Int\-To\-Letter}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Int\-To\-Letter}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Int\-To\-Letter (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a69fec6dfa4e2714e3faeaa88ad92edce}
+
+
+将\-Excel列的整数索引值转换为字符索引值 
+
+
+\begin{DoxyParams}{参数}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 Excel\-Helper.\-cs 第 1809 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aed272e9ef2e170dadd73a8e7d761b8cd}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Kill\-Excel\-Process@{Kill\-Excel\-Process}}
+\index{Kill\-Excel\-Process@{Kill\-Excel\-Process}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Kill\-Excel\-Process}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Kill\-Excel\-Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aed272e9ef2e170dadd73a8e7d761b8cd}
+
+
+结束\-Excel进程 
+
+
+
+在文件 Excel\-Helper.\-cs 第 2155 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a32cace260b279a4fd6861e2925a2bbce}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Letter\-To\-Int@{Letter\-To\-Int}}
+\index{Letter\-To\-Int@{Letter\-To\-Int}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Letter\-To\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Letter\-To\-Int (
+\begin{DoxyParamCaption}
+\item[{string}]{letter}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a32cace260b279a4fd6861e2925a2bbce}
+
+
+将\-Excel列的字母索引值转换成整数索引值 
+
+
+\begin{DoxyParams}{参数}
+{\em letter} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 Excel\-Helper.\-cs 第 1758 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac153094d1d3d435a3f56a673ce95efc1}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Merge\-Cells@{Merge\-Cells}}
+\index{Merge\-Cells@{Merge\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Merge\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Merge\-Cells (
+\begin{DoxyParamCaption}
+\item[{int}]{begin\-Row\-Index, }
+\item[{int}]{begin\-Column\-Index, }
+\item[{int}]{end\-Row\-Index, }
+\item[{int}]{end\-Column\-Index, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac153094d1d3d435a3f56a673ce95efc1}
+
+
+合并单元格，并赋值，对每个\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em begin\-Row\-Index} & 开始行索引\\
+\hline
+{\em begin\-Column\-Index} & 开始列索引\\
+\hline
+{\em end\-Row\-Index} & 结束行索引\\
+\hline
+{\em end\-Column\-Index} & 结束列索引\\
+\hline
+{\em text} & 合并后\-Range的值\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1110 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a59d4bebbd2294f88c1d75488330f2d02}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Merge\-Cells@{Merge\-Cells}}
+\index{Merge\-Cells@{Merge\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Merge\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Merge\-Cells (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{begin\-Row\-Index, }
+\item[{int}]{begin\-Column\-Index, }
+\item[{int}]{end\-Row\-Index, }
+\item[{int}]{end\-Column\-Index, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a59d4bebbd2294f88c1d75488330f2d02}
+
+
+合并单元格，并赋值，对指定\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & Work\-Sheet索引\\
+\hline
+{\em begin\-Row\-Index} & 开始行索引\\
+\hline
+{\em begin\-Column\-Index} & 开始列索引\\
+\hline
+{\em end\-Row\-Index} & 结束行索引\\
+\hline
+{\em end\-Column\-Index} & 结束列索引\\
+\hline
+{\em text} & 合并后\-Range的值\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1134 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a6c59b5b2b3b6b38952049c089bdfdf60}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Merge\-Rows@{Merge\-Rows}}
+\index{Merge\-Rows@{Merge\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Merge\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Merge\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{column\-Index, }
+\item[{int}]{begin\-Row\-Index, }
+\item[{int}]{end\-Row\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a6c59b5b2b3b6b38952049c089bdfdf60}
+
+
+将指定索引列的数据相同的行合并，对每个\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em column\-Index} & 列索引\\
+\hline
+{\em begin\-Row\-Index} & 开始行索引\\
+\hline
+{\em end\-Row\-Index} & 结束行索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1162 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2e506b7e3f336e106a752cbfa3e5329c}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Merge\-Rows@{Merge\-Rows}}
+\index{Merge\-Rows@{Merge\-Rows}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Merge\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Merge\-Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{column\-Index, }
+\item[{int}]{begin\-Row\-Index, }
+\item[{int}]{end\-Row\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2e506b7e3f336e106a752cbfa3e5329c}
+
+
+将指定索引列的数据相同的行合并，对指定\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & Work\-Sheet索引\\
+\hline
+{\em column\-Index} & 列索引\\
+\hline
+{\em begin\-Row\-Index} & 开始行索引\\
+\hline
+{\em end\-Row\-Index} & 结束行索引\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1208 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad33804b2e7c24ec683fb5db86db433a3}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Output\-Excel\-File@{Output\-Excel\-File}}
+\index{Output\-Excel\-File@{Output\-Excel\-File}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Output\-Excel\-File}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Output\-Excel\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ad33804b2e7c24ec683fb5db86db433a3}
+
+
+输出\-Excel文件并退出 
+
+
+
+在文件 Excel\-Helper.\-cs 第 1835 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a016cbd751ac63913cb80fe03c1870a4b}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Output\-File@{Output\-File}}
+\index{Output\-File@{Output\-File}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Output\-File}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Output\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{format}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a016cbd751ac63913cb80fe03c1870a4b}
+
+
+输出指定格式的文件（支持格式：\-H\-T\-M\-L，\-C\-S\-V，\-T\-E\-X\-T，\-E\-X\-C\-E\-L） 
+
+
+\begin{DoxyParams}{参数}
+{\em format} & H\-T\-M\-L，\-C\-S\-V，\-T\-E\-X\-T，\-E\-X\-C\-E\-L，\-X\-M\-L\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1858 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab1974e3579c233eb2a8c1b1bcbbc0aea}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Rang\-Auto\-Fill@{Rang\-Auto\-Fill}}
+\index{Rang\-Auto\-Fill@{Rang\-Auto\-Fill}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Rang\-Auto\-Fill}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Rang\-Auto\-Fill (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab1974e3579c233eb2a8c1b1bcbbc0aea}
+
+
+自动填充 
+
+
+
+在文件 Excel\-Helper.\-cs 第 1693 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a383ca6f7c7ad61c7c042ce533153ec87}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Range\-Copy@{Range\-Copy}}
+\index{Range\-Copy@{Range\-Copy}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Range\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Range\-Copy (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{string}]{start\-Cell, }
+\item[{string}]{end\-Cell, }
+\item[{string}]{target\-Cell}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a383ca6f7c7ad61c7c042ce533153ec87}
+
+
+将指定范围区域拷贝到目标区域 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & Work\-Sheet索引\\
+\hline
+{\em start\-Cell} & 要拷贝区域的开始\-Cell位置（比如：\-A10）\\
+\hline
+{\em end\-Cell} & 要拷贝区域的结束\-Cell位置（比如：\-F20）\\
+\hline
+{\em target\-Cell} & 目标区域的开始\-Cell位置（比如：\-H10）\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1621 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac81856c1c2e61c5674448c5588d6f88b}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Range\-Copy@{Range\-Copy}}
+\index{Range\-Copy@{Range\-Copy}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Range\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Range\-Copy (
+\begin{DoxyParamCaption}
+\item[{string}]{sheet\-Name, }
+\item[{string}]{start\-Cell, }
+\item[{string}]{end\-Cell, }
+\item[{string}]{target\-Cell}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac81856c1c2e61c5674448c5588d6f88b}
+
+
+将指定范围区域拷贝到目标区域 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Name} & Work\-Sheet名称\\
+\hline
+{\em start\-Cell} & 要拷贝区域的开始\-Cell位置（比如：\-A10）\\
+\hline
+{\em end\-Cell} & 要拷贝区域的结束\-Cell位置（比如：\-F20）\\
+\hline
+{\em target\-Cell} & 目标区域的开始\-Cell位置（比如：\-H10）\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1651 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac15d18695f8bcfb21ee446edbd173eb2}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Save\-As\-File@{Save\-As\-File}}
+\index{Save\-As\-File@{Save\-As\-File}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Save\-As\-File}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Save\-As\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ac15d18695f8bcfb21ee446edbd173eb2}
+
+
+另存文件 
+
+
+
+在文件 Excel\-Helper.\-cs 第 1929 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a70b84e514fca4175d6e78e8845b34753}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Save\-As\-File@{Save\-As\-File}}
+\index{Save\-As\-File@{Save\-As\-File}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Save\-As\-File}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Save\-As\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{format}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a70b84e514fca4175d6e78e8845b34753}
+
+
+将\-Excel文件另存为指定格式 
+
+
+\begin{DoxyParams}{参数}
+{\em format} & H\-T\-M\-L，\-C\-S\-V，\-T\-E\-X\-T，\-E\-X\-C\-E\-L，\-X\-M\-L\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1951 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a401a9ce1828e68dd716bfa13f2e4d9f1}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Save\-As\-File@{Save\-As\-File}}
+\index{Save\-As\-File@{Save\-As\-File}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Save\-As\-File}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Save\-As\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Name, }
+\item[{string}]{format}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a401a9ce1828e68dd716bfa13f2e4d9f1}
+
+
+将\-Excel文件另存为指定格式 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Name} & 文件名\\
+\hline
+{\em format} & H\-T\-M\-L，\-C\-S\-V，\-T\-E\-X\-T，\-E\-X\-C\-E\-L，\-X\-M\-L\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 2024 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aa009952e56f61cb90529bf2e68b4098b}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Save\-File@{Save\-File}}
+\index{Save\-File@{Save\-File}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Save\-File}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Save\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aa009952e56f61cb90529bf2e68b4098b}
+
+
+保存文件 
+
+
+
+在文件 Excel\-Helper.\-cs 第 1910 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7c3372f5c5fc327080f3b35d85ee4c39}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Save\-File@{Save\-File}}
+\index{Save\-File@{Save\-File}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Save\-File}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Save\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a7c3372f5c5fc327080f3b35d85ee4c39}
+
+
+另存文件 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Name} & 文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 2003 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a1210a9f840d18b18bec230c71eb00564}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Cells@{Set\-Cells}}
+\index{Set\-Cells@{Set\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Cells (
+\begin{DoxyParamCaption}
+\item[{int}]{row\-Index, }
+\item[{int}]{column\-Index, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a1210a9f840d18b18bec230c71eb00564}
+
+
+向单元格写入数据，对当前\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em row\-Index} & 行索引\\
+\hline
+{\em column\-Index} & 列索引\\
+\hline
+{\em text} & 要写入的文本值\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 893 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a851825a1eac4c7b8f6644be7ae994bc8}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Cells@{Set\-Cells}}
+\index{Set\-Cells@{Set\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Cells (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{int}]{row\-Index, }
+\item[{int}]{column\-Index, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a851825a1eac4c7b8f6644be7ae994bc8}
+
+
+向单元格写入数据，对指定\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & 工作表索引\\
+\hline
+{\em row\-Index} & 行索引\\
+\hline
+{\em column\-Index} & 列索引\\
+\hline
+{\em text} & 要写入的文本值\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 913 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aea03ad91a4cf8544451b8688811a9b26}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Cells@{Set\-Cells}}
+\index{Set\-Cells@{Set\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Cells (
+\begin{DoxyParamCaption}
+\item[{Hashtable}]{ht}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aea03ad91a4cf8544451b8688811a9b26}
+
+
+向单元格写入数据，对每个\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em ht} & Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 931 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aa6e6c74debacaac3b04226ca46001829}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Cells@{Set\-Cells}}
+\index{Set\-Cells@{Set\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Cells (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{Hashtable}]{ht}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_aa6e6c74debacaac3b04226ca46001829}
+
+
+向单元格写入数据，对指定\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em ht} & Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 966 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a66b9b212bd2aec9dc7baf82f7199c362}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Cells@{Set\-Cells}}
+\index{Set\-Cells@{Set\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Cells (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{string\mbox{[}$\,$\mbox{]}}]{arr}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a66b9b212bd2aec9dc7baf82f7199c362}
+
+
+设置单元格为可计算的 
+
+如果\-Excel的单元格格式设置为数字，日期或者其他类型时，需要设置这些单元格的\-Formula\-R1\-C1属性， 否则写到这些单元格的数据将不会按照预先设定的格式显示 
+
+
+\begin{DoxyParams}{参数}
+{\em arr} & 保存单元格的位置索引（行索引和列索引用“,”隔开）和数据\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1008 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a95225de93f22b335ddde6d68a3a424e7}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Cells@{Set\-Cells}}
+\index{Set\-Cells@{Set\-Cells}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Cells}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Cells (
+\begin{DoxyParamCaption}
+\item[{string}]{sheet\-Name, }
+\item[{Hashtable}]{ht}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a95225de93f22b335ddde6d68a3a424e7}
+
+
+向单元格写入数据，对指定\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em ht} & Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 1047 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab8f108b5bd5c60144bc5666884c5191b}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Text\-Box@{Set\-Text\-Box}}
+\index{Set\-Text\-Box@{Set\-Text\-Box}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Text\-Box}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Text\-Box (
+\begin{DoxyParamCaption}
+\item[{string}]{textbox\-Name, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab8f108b5bd5c60144bc5666884c5191b}
+
+
+向指定文本框写入数据，对每个\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em textbox\-Name} & 文本框名称\\
+\hline
+{\em text} & 要写入的文本\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 783 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a86d566cea97a41b04cad4c896051b6d9}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Text\-Box@{Set\-Text\-Box}}
+\index{Set\-Text\-Box@{Set\-Text\-Box}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Text\-Box}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Text\-Box (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{string}]{textbox\-Name, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a86d566cea97a41b04cad4c896051b6d9}
+
+
+向指定文本框写入数据，对指定\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em sheet\-Index} & 工作表索引\\
+\hline
+{\em textbox\-Name} & 文本框名称\\
+\hline
+{\em text} & 要写入的文本\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 808 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab9019cd73148e6176ed400ba305d15e5}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Text\-Boxes@{Set\-Text\-Boxes}}
+\index{Set\-Text\-Boxes@{Set\-Text\-Boxes}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Text\-Boxes}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Text\-Boxes (
+\begin{DoxyParamCaption}
+\item[{Hashtable}]{ht}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab9019cd73148e6176ed400ba305d15e5}
+
+
+向文本框写入数据，对每个\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em ht} & Hashtable的键值对保存文本框的\-I\-D和数据\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 828 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2b06a36aeacbea3f7158bb45db1f59a2}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Set\-Text\-Boxes@{Set\-Text\-Boxes}}
+\index{Set\-Text\-Boxes@{Set\-Text\-Boxes}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Set\-Text\-Boxes}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Set\-Text\-Boxes (
+\begin{DoxyParamCaption}
+\item[{int}]{sheet\-Index, }
+\item[{Hashtable}]{ht}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a2b06a36aeacbea3f7158bb45db1f59a2}
+
+
+向文本框写入数据，对指定\-Work\-Sheet操作 
+
+
+\begin{DoxyParams}{参数}
+{\em ht} & Hashtable的键值对保存文本框的\-I\-D和数据\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Excel\-Helper.\-cs 第 856 行定义.
+
+
+
+\subsection{属性说明}
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ada3dfa77cf3ac278ee83281f04707aa3}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Output\-File\-Path@{Output\-File\-Path}}
+\index{Output\-File\-Path@{Output\-File\-Path}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Output\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Output\-File\-Path\hspace{0.3cm}{\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ada3dfa77cf3ac278ee83281f04707aa3}
+
+
+输出\-Excel文件路径 
+
+
+
+在文件 Excel\-Helper.\-cs 第 64 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a19d5234b9309942b87041f70bef91647}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Sheet\-Prefix\-Name@{Sheet\-Prefix\-Name}}
+\index{Sheet\-Prefix\-Name@{Sheet\-Prefix\-Name}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Sheet\-Prefix\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Sheet\-Prefix\-Name\hspace{0.3cm}{\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a19d5234b9309942b87041f70bef91647}
+
+
+Work\-Sheet前缀名，比如：前缀名为“页”，那么\-Work\-Sheet名称依次为“页-\/1，页-\/2...” 
+
+
+
+在文件 Excel\-Helper.\-cs 第 40 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a0e4501c60ef6446d0fe8151a6e58fca4}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Templet\-File\-Path@{Templet\-File\-Path}}
+\index{Templet\-File\-Path@{Templet\-File\-Path}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Templet\-File\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Templet\-File\-Path\hspace{0.3cm}{\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_a0e4501c60ef6446d0fe8151a6e58fca4}
+
+
+Excel模板文件路径 
+
+
+
+在文件 Excel\-Helper.\-cs 第 56 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab8d2677869ff64e25bbe54623ef9fa86}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}!Work\-Sheet\-Count@{Work\-Sheet\-Count}}
+\index{Work\-Sheet\-Count@{Work\-Sheet\-Count}!XCLNetTools::DataHandler::ExcelHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Handler\-::\-Excel\-Helper}}
+\subsubsection[{Work\-Sheet\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int X\-C\-L\-Net\-Tools.\-Data\-Handler.\-Excel\-Helper.\-Work\-Sheet\-Count\hspace{0.3cm}{\ttfamily [get]}}}\label{class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper_ab8d2677869ff64e25bbe54623ef9fa86}
+
+
+Work\-Sheet数量 
+
+
+
+在文件 Excel\-Helper.\-cs 第 48 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Data\-Handler/\hyperlink{_excel_helper_8cs}{Excel\-Helper.\-cs}\end{DoxyCompactItemize}

@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>XCLNetTools: XCLNetTools.DataBase.SQLite.SQLiteHelper类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">XCLNetTools
+   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   </div>
+   <div id="projectbrief">.Net公共类库dll</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>包</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>事件</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_x_c_l_net_tools.html">XCLNetTools</a></li><li class="navelem"><a class="el" href="namespace_x_c_l_net_tools_1_1_data_base.html">DataBase</a></li><li class="navelem"><a class="el" href="namespace_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite.html">SQLite</a></li><li class="navelem"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html">SQLiteHelper</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">XCLNetTools.DataBase.SQLite.SQLiteHelper类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="namespace_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite.html">SQLite</a> 公共库  
+ <a href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a20c508df465baf613204fc20b7f42d4c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a20c508df465baf613204fc20b7f42d4c">ExecuteNonQuery</a> (string connectionString, SQLiteCommand cmd)</td></tr>
+<tr class="memdesc:a20c508df465baf613204fc20b7f42d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库操作(新增、更新或删除)  <a href="#a20c508df465baf613204fc20b7f42d4c">更多...</a><br/></td></tr>
+<tr class="separator:a20c508df465baf613204fc20b7f42d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934ecf6111b8ec537b6ea97b54b4d409"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a934ecf6111b8ec537b6ea97b54b4d409">ExecuteNonQuery</a> (string connectionString, string commandText, CommandType commandType)</td></tr>
+<tr class="memdesc:a934ecf6111b8ec537b6ea97b54b4d409"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库操作(新增、更新或删除)  <a href="#a934ecf6111b8ec537b6ea97b54b4d409">更多...</a><br/></td></tr>
+<tr class="separator:a934ecf6111b8ec537b6ea97b54b4d409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb12a188027b7197116cea2dc2cf3086"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#abb12a188027b7197116cea2dc2cf3086">ExecuteNonQuery</a> (string connectionString, string commandText, CommandType commandType, params SQLiteParameter[] cmdParms)</td></tr>
+<tr class="memdesc:abb12a188027b7197116cea2dc2cf3086"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库操作(新增、更新或删除)  <a href="#abb12a188027b7197116cea2dc2cf3086">更多...</a><br/></td></tr>
+<tr class="separator:abb12a188027b7197116cea2dc2cf3086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5294ae0c127272d14b81ce861fbc418c"><td class="memItemLeft" align="right" valign="top">static object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a5294ae0c127272d14b81ce861fbc418c">ExecuteScalar</a> (string connectionString, SQLiteCommand cmd)</td></tr>
+<tr class="memdesc:a5294ae0c127272d14b81ce861fbc418c"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库操作(新增、更新或删除)同时返回执行后查询所得的第1行第1列数据  <a href="#a5294ae0c127272d14b81ce861fbc418c">更多...</a><br/></td></tr>
+<tr class="separator:a5294ae0c127272d14b81ce861fbc418c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ee6d56d5b8b92809288bcecd9e63fc"><td class="memItemLeft" align="right" valign="top">static object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a65ee6d56d5b8b92809288bcecd9e63fc">ExecuteScalar</a> (string connectionString, string commandText, CommandType commandType)</td></tr>
+<tr class="memdesc:a65ee6d56d5b8b92809288bcecd9e63fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库操作(新增、更新或删除)同时返回执行后查询所得的第1行第1列数据  <a href="#a65ee6d56d5b8b92809288bcecd9e63fc">更多...</a><br/></td></tr>
+<tr class="separator:a65ee6d56d5b8b92809288bcecd9e63fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac62255ae8784135b3280db03b6254669"><td class="memItemLeft" align="right" valign="top">static object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#ac62255ae8784135b3280db03b6254669">ExecuteScalar</a> (string connectionString, string commandText, CommandType commandType, params SQLiteParameter[] cmdParms)</td></tr>
+<tr class="memdesc:ac62255ae8784135b3280db03b6254669"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库操作(新增、更新或删除)同时返回执行后查询所得的第1行第1列数据  <a href="#ac62255ae8784135b3280db03b6254669">更多...</a><br/></td></tr>
+<tr class="separator:ac62255ae8784135b3280db03b6254669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a737c4bac358afea529c32ad69697b0d0"><td class="memItemLeft" align="right" valign="top">static DbDataReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a737c4bac358afea529c32ad69697b0d0">ExecuteReader</a> (string connectionString, SQLiteCommand cmd)</td></tr>
+<tr class="memdesc:a737c4bac358afea529c32ad69697b0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库查询，返回SqlDataReader对象  <a href="#a737c4bac358afea529c32ad69697b0d0">更多...</a><br/></td></tr>
+<tr class="separator:a737c4bac358afea529c32ad69697b0d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0efc58fc87c16e945c497c256ef237"><td class="memItemLeft" align="right" valign="top">static DbDataReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#acf0efc58fc87c16e945c497c256ef237">ExecuteReader</a> (string connectionString, string commandText, CommandType commandType)</td></tr>
+<tr class="memdesc:acf0efc58fc87c16e945c497c256ef237"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库查询，返回SqlDataReader对象  <a href="#acf0efc58fc87c16e945c497c256ef237">更多...</a><br/></td></tr>
+<tr class="separator:acf0efc58fc87c16e945c497c256ef237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addf7b420cffcec8709d9dde39268f743"><td class="memItemLeft" align="right" valign="top">static DbDataReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#addf7b420cffcec8709d9dde39268f743">ExecuteReader</a> (string connectionString, string commandText, CommandType commandType, params SQLiteParameter[] cmdParms)</td></tr>
+<tr class="memdesc:addf7b420cffcec8709d9dde39268f743"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库查询，返回SqlDataReader对象  <a href="#addf7b420cffcec8709d9dde39268f743">更多...</a><br/></td></tr>
+<tr class="separator:addf7b420cffcec8709d9dde39268f743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a75d29bd830b9d4b6a3ff672a02f62"><td class="memItemLeft" align="right" valign="top">static DataSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a41a75d29bd830b9d4b6a3ff672a02f62">ExecuteDataSet</a> (string connectionString, SQLiteCommand cmd)</td></tr>
+<tr class="memdesc:a41a75d29bd830b9d4b6a3ff672a02f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库查询，返回DataSet对象  <a href="#a41a75d29bd830b9d4b6a3ff672a02f62">更多...</a><br/></td></tr>
+<tr class="separator:a41a75d29bd830b9d4b6a3ff672a02f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4806433651289941b9507696bb3a64d0"><td class="memItemLeft" align="right" valign="top">static DataSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a4806433651289941b9507696bb3a64d0">ExecuteDataSet</a> (string connectionString, string commandText, CommandType commandType)</td></tr>
+<tr class="memdesc:a4806433651289941b9507696bb3a64d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库查询，返回DataSet对象  <a href="#a4806433651289941b9507696bb3a64d0">更多...</a><br/></td></tr>
+<tr class="separator:a4806433651289941b9507696bb3a64d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58876af7deacc80974cddb8b1feddee5"><td class="memItemLeft" align="right" valign="top">static DataSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#a58876af7deacc80974cddb8b1feddee5">ExecuteDataSet</a> (string connectionString, string commandText, CommandType commandType, params SQLiteParameter[] cmdParms)</td></tr>
+<tr class="memdesc:a58876af7deacc80974cddb8b1feddee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行数据库查询，返回DataSet对象  <a href="#a58876af7deacc80974cddb8b1feddee5">更多...</a><br/></td></tr>
+<tr class="separator:a58876af7deacc80974cddb8b1feddee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6c40082dce532c8ea61efc23c00a825"><td class="memItemLeft" align="right" valign="top">static DataTable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html#ac6c40082dce532c8ea61efc23c00a825">SelectPaging</a> (string connString, string tableName, string strColumns, string strWhere, string strOrder, int pageSize, int currentIndex, out int recordOut)</td></tr>
+<tr class="memdesc:ac6c40082dce532c8ea61efc23c00a825"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用分页查询方法  <a href="#ac6c40082dce532c8ea61efc23c00a825">更多...</a><br/></td></tr>
+<tr class="separator:ac6c40082dce532c8ea61efc23c00a825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="namespace_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite.html">SQLite</a> 公共库 </p>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00011">11</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a41a75d29bd830b9d4b6a3ff672a02f62"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DataSet XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteDataSet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SQLiteCommand&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库查询，返回DataSet对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">cmd</td><td>SqlCommand对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>DataSet对象</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00314">314</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4806433651289941b9507696bb3a64d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DataSet XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteDataSet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库查询，返回DataSet对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>DataSet对象</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00349">349</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58876af7deacc80974cddb8b1feddee5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DataSet XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteDataSet </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params SQLiteParameter[]&#160;</td>
+          <td class="paramname"><em>cmdParms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库查询，返回DataSet对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+    <tr><td class="paramname">cmdParms</td><td>SQL参数对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>DataSet对象</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00390">390</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a20c508df465baf613204fc20b7f42d4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteNonQuery </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SQLiteCommand&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库操作(新增、更新或删除) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">cmd</td><td>SqlCommand对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>所受影响的行数</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a934ecf6111b8ec537b6ea97b54b4d409"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteNonQuery </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库操作(新增、更新或删除) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>所受影响的行数</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb12a188027b7197116cea2dc2cf3086"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteNonQuery </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params SQLiteParameter[]&#160;</td>
+          <td class="paramname"><em>cmdParms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库操作(新增、更新或删除) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+    <tr><td class="paramname">cmdParms</td><td>SQL参数对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>所受影响的行数</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00085">85</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a737c4bac358afea529c32ad69697b0d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DbDataReader XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteReader </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SQLiteCommand&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库查询，返回SqlDataReader对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">cmd</td><td>SqlCommand对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>SqlDataReader对象</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00223">223</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf0efc58fc87c16e945c497c256ef237"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DbDataReader XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteReader </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库查询，返回SqlDataReader对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>SqlDataReader对象</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00250">250</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="addf7b420cffcec8709d9dde39268f743"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DbDataReader XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteReader </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params SQLiteParameter[]&#160;</td>
+          <td class="paramname"><em>cmdParms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库查询，返回SqlDataReader对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+    <tr><td class="paramname">cmdParms</td><td>SQL参数对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>SqlDataReader对象</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00281">281</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5294ae0c127272d14b81ce861fbc418c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static object XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteScalar </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SQLiteCommand&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库操作(新增、更新或删除)同时返回执行后查询所得的第1行第1列数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">cmd</td><td>SqlCommand对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>查询所得的第1行第1列数据</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00122">122</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65ee6d56d5b8b92809288bcecd9e63fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static object XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteScalar </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库操作(新增、更新或删除)同时返回执行后查询所得的第1行第1列数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>查询所得的第1行第1列数据</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00152">152</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac62255ae8784135b3280db03b6254669"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static object XCLNetTools.DataBase.SQLite.SQLiteHelper.ExecuteScalar </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connectionString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>commandText</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">CommandType&#160;</td>
+          <td class="paramname"><em>commandType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params SQLiteParameter[]&#160;</td>
+          <td class="paramname"><em>cmdParms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行数据库操作(新增、更新或删除)同时返回执行后查询所得的第1行第1列数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">commandText</td><td>执行语句或存储过程名</td></tr>
+    <tr><td class="paramname">commandType</td><td>执行类型</td></tr>
+    <tr><td class="paramname">cmdParms</td><td>SQL参数对象</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>查询所得的第1行第1列数据</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00186">186</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6c40082dce532c8ea61efc23c00a825"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static DataTable XCLNetTools.DataBase.SQLite.SQLiteHelper.SelectPaging </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>connString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>tableName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>strColumns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>strWhere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>strOrder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pageSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>currentIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out int&#160;</td>
+          <td class="paramname"><em>recordOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>通用分页查询方法 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connString</td><td>连接字符串</td></tr>
+    <tr><td class="paramname">tableName</td><td>表名</td></tr>
+    <tr><td class="paramname">strColumns</td><td>查询字段名</td></tr>
+    <tr><td class="paramname">strWhere</td><td>where条件</td></tr>
+    <tr><td class="paramname">strOrder</td><td>排序条件</td></tr>
+    <tr><td class="paramname">pageSize</td><td>每页数据数量</td></tr>
+    <tr><td class="paramname">currentIndex</td><td>当前页数</td></tr>
+    <tr><td class="paramname">recordOut</td><td>数据总量</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>DataTable数据表</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a> 第 <a class="el" href="_s_q_lite_helper_8cs_source.html#l00437">437</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>DataBase/SQLite/<a class="el" href="_s_q_lite_helper_8cs_source.html">SQLiteHelper.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2016年 一月 1日 星期五 15:55:44 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.5
+</small></address>
+</body>
+</html>

@@ -1,0 +1,172 @@
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper}{\section{X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper类 参考}
+\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper}\index{X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper@{X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper}}
+}
+
+
+随机数操作类  
+
+
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a6b5009f83de1931fe3fd19142aa53586}{Get\-Random\-Value} (int min\-Value, int max\-Value)
+\begin{DoxyCompactList}\small\item\em 生成指定范围内的随机数（不重复） \end{DoxyCompactList}\item 
+static int \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a73f5f5edf29e9226b6b00cd7ad471ea7}{Generate\-Id\-With\-Guid} ()
+\begin{DoxyCompactList}\small\item\em 将\-G\-U\-I\-D的哈希数作为\-Random的种子，然后生成一个非负随机数 例如：1024588704 \end{DoxyCompactList}\item 
+static int \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_adfcadc291d76f970c4d422210794f8ac}{Generate\-Id} ()
+\begin{DoxyCompactList}\small\item\em 根据\-G\-U\-I\-D生成\-Int（有符号） 例如：2069396417 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a51813c8b3782151227ae2db0881fcd7c}{Generate\-String\-Id} ()
+\begin{DoxyCompactList}\small\item\em 根据guid生成字符串(16位) 例如：aded0a2611f8aa4a \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_ad4223ba92ff7c1a1dc484d0c16b72c74}{Generate\-Random} (int Length)
+\begin{DoxyCompactList}\small\item\em 随机器生成数字和字母组合,区分大小写 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a944158d51875e926155b24852b68ba4d}{Generate\-Random\-To\-Chars} (int Length)
+\begin{DoxyCompactList}\small\item\em 随机生成只有字符的组合，区分大小写 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a8b61a024dbb6877c0b485a90fc95e797}{Get\-Rand} (int len)
+\begin{DoxyCompactList}\small\item\em 随机生成只有字符的组合，不区分大小写 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a0cfdcb45e5ab319ad34c3dc07f568dd9}{Get\-Guid\-String} (int len)
+\begin{DoxyCompactList}\small\item\em 根据\-G\-U\-I\-D生成唯一字符标示 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+随机数操作类 
+
+
+
+在文件 Random\-Helper.\-cs 第 8 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_adfcadc291d76f970c4d422210794f8ac}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Generate\-Id@{Generate\-Id}}
+\index{Generate\-Id@{Generate\-Id}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Generate\-Id}]{\setlength{\rightskip}{0pt plus 5cm}static int X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Generate\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_adfcadc291d76f970c4d422210794f8ac}
+
+
+根据\-G\-U\-I\-D生成\-Int（有符号） 例如：2069396417 
+
+
+
+在文件 Random\-Helper.\-cs 第 63 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a73f5f5edf29e9226b6b00cd7ad471ea7}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Generate\-Id\-With\-Guid@{Generate\-Id\-With\-Guid}}
+\index{Generate\-Id\-With\-Guid@{Generate\-Id\-With\-Guid}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Generate\-Id\-With\-Guid}]{\setlength{\rightskip}{0pt plus 5cm}static int X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Generate\-Id\-With\-Guid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a73f5f5edf29e9226b6b00cd7ad471ea7}
+
+
+将\-G\-U\-I\-D的哈希数作为\-Random的种子，然后生成一个非负随机数 例如：1024588704 
+
+
+
+在文件 Random\-Helper.\-cs 第 53 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_ad4223ba92ff7c1a1dc484d0c16b72c74}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Generate\-Random@{Generate\-Random}}
+\index{Generate\-Random@{Generate\-Random}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Generate\-Random}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Generate\-Random (
+\begin{DoxyParamCaption}
+\item[{int}]{Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_ad4223ba92ff7c1a1dc484d0c16b72c74}
+
+
+随机器生成数字和字母组合,区分大小写 
+
+
+
+在文件 Random\-Helper.\-cs 第 86 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a944158d51875e926155b24852b68ba4d}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Generate\-Random\-To\-Chars@{Generate\-Random\-To\-Chars}}
+\index{Generate\-Random\-To\-Chars@{Generate\-Random\-To\-Chars}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Generate\-Random\-To\-Chars}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Generate\-Random\-To\-Chars (
+\begin{DoxyParamCaption}
+\item[{int}]{Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a944158d51875e926155b24852b68ba4d}
+
+
+随机生成只有字符的组合，区分大小写 
+
+
+
+在文件 Random\-Helper.\-cs 第 100 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a51813c8b3782151227ae2db0881fcd7c}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Generate\-String\-Id@{Generate\-String\-Id}}
+\index{Generate\-String\-Id@{Generate\-String\-Id}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Generate\-String\-Id}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Generate\-String\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a51813c8b3782151227ae2db0881fcd7c}
+
+
+根据guid生成字符串(16位) 例如：aded0a2611f8aa4a 
+
+
+
+在文件 Random\-Helper.\-cs 第 73 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a0cfdcb45e5ab319ad34c3dc07f568dd9}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Get\-Guid\-String@{Get\-Guid\-String}}
+\index{Get\-Guid\-String@{Get\-Guid\-String}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Get\-Guid\-String}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Get\-Guid\-String (
+\begin{DoxyParamCaption}
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a0cfdcb45e5ab319ad34c3dc07f568dd9}
+
+
+根据\-G\-U\-I\-D生成唯一字符标示 
+
+
+
+在文件 Random\-Helper.\-cs 第 131 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a8b61a024dbb6877c0b485a90fc95e797}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Get\-Rand@{Get\-Rand}}
+\index{Get\-Rand@{Get\-Rand}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Get\-Rand}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Get\-Rand (
+\begin{DoxyParamCaption}
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a8b61a024dbb6877c0b485a90fc95e797}
+
+
+随机生成只有字符的组合，不区分大小写 
+
+
+
+在文件 Random\-Helper.\-cs 第 114 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a6b5009f83de1931fe3fd19142aa53586}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}!Get\-Random\-Value@{Get\-Random\-Value}}
+\index{Get\-Random\-Value@{Get\-Random\-Value}!XCLNetTools::StringHander::RandomHelper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Random\-Helper}}
+\subsubsection[{Get\-Random\-Value}]{\setlength{\rightskip}{0pt plus 5cm}static int X\-C\-L\-Net\-Tools.\-String\-Hander.\-Random\-Helper.\-Get\-Random\-Value (
+\begin{DoxyParamCaption}
+\item[{int}]{min\-Value, }
+\item[{int}]{max\-Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_string_hander_1_1_random_helper_a6b5009f83de1931fe3fd19142aa53586}
+
+
+生成指定范围内的随机数（不重复） 
+
+
+\begin{DoxyParams}{参数}
+{\em min\-Value} & 最小值（包含）\\
+\hline
+{\em max\-Value} & 最大值（不包含）\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Random\-Helper.\-cs 第 43 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+String\-Hander/\hyperlink{_random_helper_8cs}{Random\-Helper.\-cs}\end{DoxyCompactItemize}

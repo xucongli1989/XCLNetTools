@@ -1,0 +1,422 @@
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file}{\section{X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File类 参考}
+\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file}\index{X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File@{X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File}}
+}
+
+
+文件操作公共类  
+
+
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a7cc80f663aa1e69cf43af4a902243cc3}{Delete\-File} (string file\-Path)
+\begin{DoxyCompactList}\small\item\em 删除文件 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ae8479a1330655aa229ed6222410b7823}{Copy\-File} (string src\-Path, string dst\-Path)
+\begin{DoxyCompactList}\small\item\em 复制文件(若已存在目标文件则覆盖)，若目标目录不存在，则自动创建 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a1e917318b8b594c94d0fb50223f34648}{Copy\-File} (string src\-Path, string dst\-Path, bool overwrite)
+\begin{DoxyCompactList}\small\item\em 复制文件，若目标目录不存在，则自动创建 \end{DoxyCompactList}\item 
+static string\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ae82ff285ff8d522f3d6096c26e70ce40}{Get\-Folder\-Files} (string path)
+\begin{DoxyCompactList}\small\item\em 取得文件夹中的文件列表 \end{DoxyCompactList}\item 
+static string\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a674fdbb6dfba9453918df90642428caf}{Get\-Folder\-Files\-By\-Recursion} (string root\-Path)
+\begin{DoxyCompactList}\small\item\em 递归获取指定文件夹下的所有文件路径 \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a88a411e0efbbb5117f62ae15734b5a4b}{Down\-Load\-File} (string path, string real\-Name)
+\begin{DoxyCompactList}\small\item\em 文件下载 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a7fd47f5dd58f607c4fad3bb596f2d7b6}{Get\-Save\-Directory} (string directory\-Path)
+\begin{DoxyCompactList}\small\item\em 返回目录路径，若该目录不存在，则创建该目录 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a54bcd222d9060ea6ee9d64264caf9939}{Get\-File\-Folder\-Path} (string file\-Path)
+\begin{DoxyCompactList}\small\item\em 获取文件所在的文件夹【不带'\textbackslash{}'】 \end{DoxyCompactList}\item 
+static long \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a14816af3acf91a20ded5325a889f8341}{Get\-File\-Size} (string file\-Path)
+\begin{DoxyCompactList}\small\item\em 返回文件大小(字节) \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a9e413978309f59720a38228ad9c1aaa2}{Is\-Binary\-File} (string file\-Path)
+\begin{DoxyCompactList}\small\item\em 判断文件是否是二进制文件 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_afddfff3c4a196399bc033df2b017b16c}{Is\-Text\-File} (string file\-Path)
+\begin{DoxyCompactList}\small\item\em 判断文件是否是文本文件 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a98d090828121f63039a22838b065dfaa}{Map\-Path} (string path)
+\begin{DoxyCompactList}\small\item\em 取得文件物理路径 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a87d1f27fa942e4682abc91f13ca79672}{Get\-Url\-Relative\-Path} (string root\-Path, string path)
+\begin{DoxyCompactList}\small\item\em 根据指定文件的物理路径\-Path，将它转换为相对于\-Root\-Path的\-Url相对路径 例如： Get\-Url\-Relative\-Path(\char`\"{}\-C\-:\textbackslash{}\-Program Files\textbackslash{}\-Information\textbackslash{}\char`\"{},\char`\"{}\-C\-:\textbackslash{}\-Program Files\textbackslash{}\-Information\textbackslash{}\-A\textbackslash{}\-B\textbackslash{}\-C.\-txt\char`\"{})=$>$\char`\"{}\-A/\-B/\-C.\-txt\char`\"{} Get\-Url\-Relative\-Path(\char`\"{}\-C\-:\textbackslash{}\-Program Files\textbackslash{}\-Information\textbackslash{}\char`\"{},\char`\"{}\-C\-:\textbackslash{}\-A\textbackslash{}\-B\textbackslash{}\-C.\-txt\char`\"{})=$>$\char`\"{}../../\-A/\-B/\-C.\-txt\char`\"{} \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ad13584770f8b195682bbaccf49d9f10d}{Get\-File\-Name} (string file\-Name, bool is\-With\-Ext=true)
+\begin{DoxyCompactList}\small\item\em 获取文件名 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_acc1c32c42fbd8c6e76f3a609af5e407f}{Get\-Random\-File\-Name} (string filename)
+\begin{DoxyCompactList}\small\item\em \begin{DoxyVerb}<summary>
+\end{DoxyVerb}
+ 给上传的文件随机命名 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ab93269a3eef81ae3afe9e502e202f209}{Get\-Ext\-Name} (string file\-Name)
+\begin{DoxyCompactList}\small\item\em 取得文件扩展名(不包含小圆点)【小写】 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+文件操作公共类 
+
+
+
+在文件 Com\-File.\-cs 第 11 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ae8479a1330655aa229ed6222410b7823}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Copy\-File@{Copy\-File}}
+\index{Copy\-File@{Copy\-File}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Copy\-File}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Copy\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{src\-Path, }
+\item[{string}]{dst\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ae8479a1330655aa229ed6222410b7823}
+
+
+复制文件(若已存在目标文件则覆盖)，若目标目录不存在，则自动创建 
+
+
+\begin{DoxyParams}{参数}
+{\em src\-Path} & 源文件\\
+\hline
+{\em dst\-Path} & 目标文件\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+复制成功返回\-T\-R\-U\-E,复制失败返回\-F\-A\-L\-S\-E.
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 52 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a1e917318b8b594c94d0fb50223f34648}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Copy\-File@{Copy\-File}}
+\index{Copy\-File@{Copy\-File}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Copy\-File}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Copy\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{src\-Path, }
+\item[{string}]{dst\-Path, }
+\item[{bool}]{overwrite}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a1e917318b8b594c94d0fb50223f34648}
+
+
+复制文件，若目标目录不存在，则自动创建 
+
+
+\begin{DoxyParams}{参数}
+{\em src\-Path} & 源文件\\
+\hline
+{\em dst\-Path} & 目标文件\\
+\hline
+{\em overwrite} & 是否覆盖目标文件\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+复制成功返回\-T\-R\-U\-E,复制失败返回\-F\-A\-L\-S\-E
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 65 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a7cc80f663aa1e69cf43af4a902243cc3}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Delete\-File@{Delete\-File}}
+\index{Delete\-File@{Delete\-File}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Delete\-File}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Delete\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a7cc80f663aa1e69cf43af4a902243cc3}
+
+
+删除文件 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Path} & 文件路径\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+若为true，则删除成功
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 20 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a88a411e0efbbb5117f62ae15734b5a4b}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Down\-Load\-File@{Down\-Load\-File}}
+\index{Down\-Load\-File@{Down\-Load\-File}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Down\-Load\-File}]{\setlength{\rightskip}{0pt plus 5cm}static void X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Down\-Load\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{path, }
+\item[{string}]{real\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a88a411e0efbbb5117f62ae15734b5a4b}
+
+
+文件下载 
+
+
+\begin{DoxyParams}{参数}
+{\em path} & 文件链接（物理路径）\\
+\hline
+{\em real\-Name} & 要显示下载时的文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Com\-File.\-cs 第 125 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ab93269a3eef81ae3afe9e502e202f209}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-Ext\-Name@{Get\-Ext\-Name}}
+\index{Get\-Ext\-Name@{Get\-Ext\-Name}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-Ext\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-Ext\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ab93269a3eef81ae3afe9e502e202f209}
+
+
+取得文件扩展名(不包含小圆点)【小写】 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Name} & 文件完整路径或文件名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+文件扩展名(不包含小圆点)
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 340 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a54bcd222d9060ea6ee9d64264caf9939}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-File\-Folder\-Path@{Get\-File\-Folder\-Path}}
+\index{Get\-File\-Folder\-Path@{Get\-File\-Folder\-Path}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-File\-Folder\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-File\-Folder\-Path (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a54bcd222d9060ea6ee9d64264caf9939}
+
+
+获取文件所在的文件夹【不带'\textbackslash{}'】 
+
+
+
+在文件 Com\-File.\-cs 第 170 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ad13584770f8b195682bbaccf49d9f10d}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-File\-Name@{Get\-File\-Name}}
+\index{Get\-File\-Name@{Get\-File\-Name}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Name, }
+\item[{bool}]{is\-With\-Ext = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ad13584770f8b195682bbaccf49d9f10d}
+
+
+获取文件名 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Name} & 路径（相对或绝对均可）\\
+\hline
+{\em is\-With\-Ext} & 是否包含扩展名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Com\-File.\-cs 第 301 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a14816af3acf91a20ded5325a889f8341}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-File\-Size@{Get\-File\-Size}}
+\index{Get\-File\-Size@{Get\-File\-Size}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-File\-Size}]{\setlength{\rightskip}{0pt plus 5cm}static long X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-File\-Size (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a14816af3acf91a20ded5325a889f8341}
+
+
+返回文件大小(字节) 
+
+
+
+在文件 Com\-File.\-cs 第 182 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ae82ff285ff8d522f3d6096c26e70ce40}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-Folder\-Files@{Get\-Folder\-Files}}
+\index{Get\-Folder\-Files@{Get\-Folder\-Files}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-Folder\-Files}]{\setlength{\rightskip}{0pt plus 5cm}static string \mbox{[}$\,$\mbox{]} X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-Folder\-Files (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_ae82ff285ff8d522f3d6096c26e70ce40}
+
+
+取得文件夹中的文件列表 
+
+
+\begin{DoxyParams}{参数}
+{\em path} & 文件夹路径\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+字符串数组(存储了一个或多个文件名)
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 81 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a674fdbb6dfba9453918df90642428caf}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-Folder\-Files\-By\-Recursion@{Get\-Folder\-Files\-By\-Recursion}}
+\index{Get\-Folder\-Files\-By\-Recursion@{Get\-Folder\-Files\-By\-Recursion}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-Folder\-Files\-By\-Recursion}]{\setlength{\rightskip}{0pt plus 5cm}static string \mbox{[}$\,$\mbox{]} X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-Folder\-Files\-By\-Recursion (
+\begin{DoxyParamCaption}
+\item[{string}]{root\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a674fdbb6dfba9453918df90642428caf}
+
+
+递归获取指定文件夹下的所有文件路径 
+
+
+\begin{DoxyParams}{参数}
+{\em root\-Path} & 起始文件夹路径\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Com\-File.\-cs 第 90 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_acc1c32c42fbd8c6e76f3a609af5e407f}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-Random\-File\-Name@{Get\-Random\-File\-Name}}
+\index{Get\-Random\-File\-Name@{Get\-Random\-File\-Name}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-Random\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-Random\-File\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_acc1c32c42fbd8c6e76f3a609af5e407f}
+
+
+\begin{DoxyVerb}<summary>
+\end{DoxyVerb}
+ 给上传的文件随机命名 
+
+
+\begin{DoxyParams}{参数}
+{\em filename} & 文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Com\-File.\-cs 第 318 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a7fd47f5dd58f607c4fad3bb596f2d7b6}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-Save\-Directory@{Get\-Save\-Directory}}
+\index{Get\-Save\-Directory@{Get\-Save\-Directory}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-Save\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-Save\-Directory (
+\begin{DoxyParamCaption}
+\item[{string}]{directory\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a7fd47f5dd58f607c4fad3bb596f2d7b6}
+
+
+返回目录路径，若该目录不存在，则创建该目录 
+
+
+\begin{DoxyParams}{参数}
+{\em directory\-Path} & 存放文件的物理路径。\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回存放文件的目录。
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 158 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a87d1f27fa942e4682abc91f13ca79672}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Get\-Url\-Relative\-Path@{Get\-Url\-Relative\-Path}}
+\index{Get\-Url\-Relative\-Path@{Get\-Url\-Relative\-Path}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Get\-Url\-Relative\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Get\-Url\-Relative\-Path (
+\begin{DoxyParamCaption}
+\item[{string}]{root\-Path, }
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a87d1f27fa942e4682abc91f13ca79672}
+
+
+根据指定文件的物理路径\-Path，将它转换为相对于\-Root\-Path的\-Url相对路径 例如： Get\-Url\-Relative\-Path(\char`\"{}\-C\-:\textbackslash{}\-Program Files\textbackslash{}\-Information\textbackslash{}\char`\"{},\char`\"{}\-C\-:\textbackslash{}\-Program Files\textbackslash{}\-Information\textbackslash{}\-A\textbackslash{}\-B\textbackslash{}\-C.\-txt\char`\"{})=$>$\char`\"{}\-A/\-B/\-C.\-txt\char`\"{} Get\-Url\-Relative\-Path(\char`\"{}\-C\-:\textbackslash{}\-Program Files\textbackslash{}\-Information\textbackslash{}\char`\"{},\char`\"{}\-C\-:\textbackslash{}\-A\textbackslash{}\-B\textbackslash{}\-C.\-txt\char`\"{})=$>$\char`\"{}../../\-A/\-B/\-C.\-txt\char`\"{} 
+
+
+\begin{DoxyParams}{参数}
+{\em root\-Path} & 根物理路径\\
+\hline
+{\em path} & 指定要转换的物理路径\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+path相对于root\-Path的url路径
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 285 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a9e413978309f59720a38228ad9c1aaa2}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Is\-Binary\-File@{Is\-Binary\-File}}
+\index{Is\-Binary\-File@{Is\-Binary\-File}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Is\-Binary\-File}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Is\-Binary\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a9e413978309f59720a38228ad9c1aaa2}
+
+
+判断文件是否是二进制文件 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Path} & 文件路径\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回\-True为二进制文件，否则是文本文件
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 202 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_afddfff3c4a196399bc033df2b017b16c}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Is\-Text\-File@{Is\-Text\-File}}
+\index{Is\-Text\-File@{Is\-Text\-File}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Is\-Text\-File}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Is\-Text\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{file\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_afddfff3c4a196399bc033df2b017b16c}
+
+
+判断文件是否是文本文件 
+
+
+\begin{DoxyParams}{参数}
+{\em file\-Path} & 文件路径\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回\-True为文本文件，否则是二进制文件
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 235 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a98d090828121f63039a22838b065dfaa}{\index{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}!Map\-Path@{Map\-Path}}
+\index{Map\-Path@{Map\-Path}!XCLNetTools::FileHandler::ComFile@{X\-C\-L\-Net\-Tools\-::\-File\-Handler\-::\-Com\-File}}
+\subsubsection[{Map\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-File\-Handler.\-Com\-File.\-Map\-Path (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_file_handler_1_1_com_file_a98d090828121f63039a22838b065dfaa}
+
+
+取得文件物理路径 
+
+
+\begin{DoxyParams}{参数}
+{\em path} & 文件路径(如果为绝对路径，则直接返回，否则，转为绝对路径)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+文件物理路径
+\end{DoxyReturn}
+
+
+在文件 Com\-File.\-cs 第 258 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+File\-Handler/\hyperlink{_com_file_8cs}{Com\-File.\-cs}\end{DoxyCompactItemize}

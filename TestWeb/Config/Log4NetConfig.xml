@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <appender name="RollingLogFileAppender" type="log4net.Appender.RollingFileAppender">
+    <param name="RollingStyle" value="Date" />
+    <param name="AppendToFile" value ="true" />
+    <param name="File" value="Log\log4Net\" />
+    <param name="MaximumFileSize" value="3000" />
+    <param name="CountDirection" value="0" />
+    <param name="MaxSizeRollBackups" value="3" />
+    <param name="StaticLogFileName" value="false" />
+    <param name="Threshold" value="Debug"></param>
+    <param name="DatePattern" value="yyyyMM&quot;\\&quot;yyyyMMdd&quot;.log&quot;" />
+    <layout type="log4net.Layout.PatternLayout">
+      <param name="ConversionPattern" value="◆◇◆◇◆◇◆◇◆◇◆◇◆◆◇◆◇◆◇◆◇◆◇◆◇◆◆◇◆◇◆◇◆%nDate:〖%d〗Thread:[%t] %-5p %c %n%m%n" />
+    </layout>
+  </appender>
+  <logger name="LoggerConfig">
+    <level value="debug" />
+    <appender-ref ref="RollingLogFileAppender" />
+  </logger>
+</log4net>

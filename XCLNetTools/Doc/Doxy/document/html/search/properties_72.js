@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['readwritetimeout',['ReadWriteTimeout',['../class_x_c_l_net_tools_1_1_http_1_1_http_item.html#a5a3c4b7bd1d06a2965e29bae818e358b',1,'XCLNetTools::Http::HttpItem']]],
+  ['receiveddata',['ReceivedData',['../class_x_c_l_net_tools_1_1_file_handler_1_1_download_event_args.html#ae080073b3629650c3befb398e9d7c2e8',1,'XCLNetTools::FileHandler::DownloadEventArgs']]],
+  ['recordcount',['RecordCount',['../class_x_c_l_net_tools_1_1_entity_1_1_pager_info.html#a5617d4aaafa80fa664f13cfe7fbc1a6c',1,'XCLNetTools::Entity::PagerInfo']]],
+  ['redirecttarget',['RedirectTarget',['../class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a80664c824fe9da1cda8acc70e14ab619',1,'XCLNetTools::Message::MessageModel']]],
+  ['redirecturl',['RedirectURL',['../class_json_msg_head.html#ab6ddde17d5cbb264e0641b09f19e9c22',1,'JsonMsgHead.RedirectURL()'],['../class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a7e4817a1c4bdb50744e091c0d70d30f3',1,'XCLNetTools.Message.MessageModel.RedirectURL()']]],
+  ['referer',['Referer',['../class_x_c_l_net_tools_1_1_http_1_1_http_item.html#acff06911fc5e2dd65812dc14c3960272',1,'XCLNetTools::Http::HttpItem']]],
+  ['relativepath',['RelativePath',['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html#a795982d186fa2d1ef0e3fb51705f36b2',1,'XCLNetTools::Entity::FileInfoEntity']]],
+  ['remark',['Remark',['../class_json_msg_head.html#ad1b553e80f96e9a7bb417db79179b2b1',1,'JsonMsgHead.Remark()'],['../class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a9cbdcd7db26f62ea746c835e82e3dcf0',1,'XCLNetTools.Message.MessageModel.Remark()']]],
+  ['requestheaders',['RequestHeaders',['../class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a89d4bf2af70a2a0991904b1b61c8dd1d',1,'XCLNetTools::FileHandler::WebClient']]],
+  ['resphtml',['RespHtml',['../class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a67e90e96bd067171c16cb84d75f66c3a',1,'XCLNetTools::FileHandler::WebClient']]],
+  ['responseheaders',['ResponseHeaders',['../class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a3d00d3457c23ce30274af963f4cab6bb',1,'XCLNetTools::FileHandler::WebClient']]],
+  ['resultbyte',['ResultByte',['../class_x_c_l_net_tools_1_1_http_1_1_http_result.html#aca3f63e730af7bb4c40a345fc5d02423',1,'XCLNetTools::Http::HttpResult']]],
+  ['resulttype',['ResultType',['../class_x_c_l_net_tools_1_1_http_1_1_http_item.html#aacea6cef89d9f46a31ee98b4e6559860',1,'XCLNetTools::Http::HttpItem']]],
+  ['rootpath',['RootPath',['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html#a6ef4c659747c605379a43168ae1d64f6',1,'XCLNetTools::Entity::FileInfoEntity']]],
+  ['rooturi',['RootUri',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#ae924e6a3e073efd4a75d53ea7095f976',1,'XCLNetTools::StringHander::Common']]],
+  ['rooturl',['RootURL',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a87e9775b7bdaaf9bc205a148b1335ee2',1,'XCLNetTools::StringHander::Common']]]
+];

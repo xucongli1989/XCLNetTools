@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>XCLNetTools: XCLNetTools.FileHandler.WebClient类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">XCLNetTools
+   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   </div>
+   <div id="projectbrief">.Net公共类库dll</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>包</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>事件</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_x_c_l_net_tools.html">XCLNetTools</a></li><li class="navelem"><a class="el" href="namespace_x_c_l_net_tools_1_1_file_handler.html">FileHandler</a></li><li class="navelem"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html">WebClient</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#properties">属性</a> &#124;
+<a href="#events">事件</a> &#124;
+<a href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">XCLNetTools.FileHandler.WebClient类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html" title="WebClient ">WebClient</a>  
+ <a href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8f3cbaf1baf5d142caab2f6c9cc04a7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a8f3cbaf1baf5d142caab2f6c9cc04a7f">WebClient</a> ()</td></tr>
+<tr class="memdesc:a8f3cbaf1baf5d142caab2f6c9cc04a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建WebClient的实例  <a href="#a8f3cbaf1baf5d142caab2f6c9cc04a7f">更多...</a><br/></td></tr>
+<tr class="separator:a8f3cbaf1baf5d142caab2f6c9cc04a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a504910f5e28a6fa620853f069d3c756b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a504910f5e28a6fa620853f069d3c756b">GetHtml</a> (string url)</td></tr>
+<tr class="memdesc:a504910f5e28a6fa620853f069d3c756b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取网页源代码  <a href="#a504910f5e28a6fa620853f069d3c756b">更多...</a><br/></td></tr>
+<tr class="separator:a504910f5e28a6fa620853f069d3c756b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace80aaf94d3e0c6eceb3ad182b8de947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#ace80aaf94d3e0c6eceb3ad182b8de947">DownloadFile</a> (string url, string filename)</td></tr>
+<tr class="memdesc:ace80aaf94d3e0c6eceb3ad182b8de947"><td class="mdescLeft">&#160;</td><td class="mdescRight">下载文件  <a href="#ace80aaf94d3e0c6eceb3ad182b8de947">更多...</a><br/></td></tr>
+<tr class="separator:ace80aaf94d3e0c6eceb3ad182b8de947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7208770077f210c3dd7bee2b34f0a4eb"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a7208770077f210c3dd7bee2b34f0a4eb">GetData</a> (string url)</td></tr>
+<tr class="memdesc:a7208770077f210c3dd7bee2b34f0a4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">从指定URL下载数据  <a href="#a7208770077f210c3dd7bee2b34f0a4eb">更多...</a><br/></td></tr>
+<tr class="separator:a7208770077f210c3dd7bee2b34f0a4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2497ff9ed5a5b867362b7bc0b38edb1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#ab2497ff9ed5a5b867362b7bc0b38edb1">Post</a> (string url, string postData)</td></tr>
+<tr class="memdesc:ab2497ff9ed5a5b867362b7bc0b38edb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">向指定URL发送文本数据  <a href="#ab2497ff9ed5a5b867362b7bc0b38edb1">更多...</a><br/></td></tr>
+<tr class="separator:ab2497ff9ed5a5b867362b7bc0b38edb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad799cba2f787fba4c0ca4fc6e86ee831"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#ad799cba2f787fba4c0ca4fc6e86ee831">Post</a> (string url, byte[] postData)</td></tr>
+<tr class="memdesc:ad799cba2f787fba4c0ca4fc6e86ee831"><td class="mdescLeft">&#160;</td><td class="mdescRight">向指定URL发送字节数据  <a href="#ad799cba2f787fba4c0ca4fc6e86ee831">更多...</a><br/></td></tr>
+<tr class="separator:ad799cba2f787fba4c0ca4fc6e86ee831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1556a7a601a8425c7d6bcecb09d6cf2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#ab1556a7a601a8425c7d6bcecb09d6cf2">Post</a> (string url, <a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html">MultipartForm</a> mulitpartForm)</td></tr>
+<tr class="memdesc:ab1556a7a601a8425c7d6bcecb09d6cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">向指定网址发送mulitpart编码的数据  <a href="#ab1556a7a601a8425c7d6bcecb09d6cf2">更多...</a><br/></td></tr>
+<tr class="separator:ab1556a7a601a8425c7d6bcecb09d6cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+属性</h2></td></tr>
+<tr class="memitem:a192f27c95b8274758ca9d68c620de7c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a192f27c95b8274758ca9d68c620de7c3">BufferSize</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a192f27c95b8274758ca9d68c620de7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置发送和接收的数据缓冲大小  <a href="#a192f27c95b8274758ca9d68c620de7c3">更多...</a><br/></td></tr>
+<tr class="separator:a192f27c95b8274758ca9d68c620de7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d00d3457c23ce30274af963f4cab6bb"><td class="memItemLeft" align="right" valign="top">WebHeaderCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a3d00d3457c23ce30274af963f4cab6bb">ResponseHeaders</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3d00d3457c23ce30274af963f4cab6bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取响应头集合  <a href="#a3d00d3457c23ce30274af963f4cab6bb">更多...</a><br/></td></tr>
+<tr class="separator:a3d00d3457c23ce30274af963f4cab6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d4bf2af70a2a0991904b1b61c8dd1d"><td class="memItemLeft" align="right" valign="top">WebHeaderCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a89d4bf2af70a2a0991904b1b61c8dd1d">RequestHeaders</a><code> [get]</code></td></tr>
+<tr class="memdesc:a89d4bf2af70a2a0991904b1b61c8dd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取请求头集合  <a href="#a89d4bf2af70a2a0991904b1b61c8dd1d">更多...</a><br/></td></tr>
+<tr class="separator:a89d4bf2af70a2a0991904b1b61c8dd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f17eefdc2372eb01a6be915d19c0ba"><td class="memItemLeft" align="right" valign="top">WebProxy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#ac2f17eefdc2372eb01a6be915d19c0ba">Proxy</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac2f17eefdc2372eb01a6be915d19c0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取或设置代理  <a href="#ac2f17eefdc2372eb01a6be915d19c0ba">更多...</a><br/></td></tr>
+<tr class="separator:ac2f17eefdc2372eb01a6be915d19c0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd02ab7f0198d34a44487c5d8c02f19"><td class="memItemLeft" align="right" valign="top">Encoding&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a9bd02ab7f0198d34a44487c5d8c02f19">Encoding</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9bd02ab7f0198d34a44487c5d8c02f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取或设置请求与响应的文本编码方式  <a href="#a9bd02ab7f0198d34a44487c5d8c02f19">更多...</a><br/></td></tr>
+<tr class="separator:a9bd02ab7f0198d34a44487c5d8c02f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67e90e96bd067171c16cb84d75f66c3a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#a67e90e96bd067171c16cb84d75f66c3a">RespHtml</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a67e90e96bd067171c16cb84d75f66c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取或设置响应的html代码  <a href="#a67e90e96bd067171c16cb84d75f66c3a">更多...</a><br/></td></tr>
+<tr class="separator:a67e90e96bd067171c16cb84d75f66c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeaa1201074e43df3743d76ea77cf06e"><td class="memItemLeft" align="right" valign="top">CookieContainer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#adeaa1201074e43df3743d76ea77cf06e">CookieContainer</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:adeaa1201074e43df3743d76ea77cf06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取或设置与请求关联的Cookie容器  <a href="#adeaa1201074e43df3743d76ea77cf06e">更多...</a><br/></td></tr>
+<tr class="separator:adeaa1201074e43df3743d76ea77cf06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+事件</h2></td></tr>
+<tr class="memitem:abe950fa329508b4c52e3181aeb97585f"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_upload_event_args.html">UploadEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#abe950fa329508b4c52e3181aeb97585f">UploadProgressChanged</a></td></tr>
+<tr class="separator:abe950fa329508b4c52e3181aeb97585f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e50d608381b728356547eff9f80213"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_download_event_args.html">DownloadEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html#aa1e50d608381b728356547eff9f80213">DownloadProgressChanged</a></td></tr>
+<tr class="separator:aa1e50d608381b728356547eff9f80213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_web_client.html" title="WebClient ">WebClient</a> </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00079">79</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="a8f3cbaf1baf5d142caab2f6c9cc04a7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XCLNetTools.FileHandler.WebClient.WebClient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>创建WebClient的实例 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="ace80aaf94d3e0c6eceb3ad182b8de947"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void XCLNetTools.FileHandler.WebClient.DownloadFile </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>下载文件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>文件URL地址</td></tr>
+    <tr><td class="paramname">filename</td><td>文件保存完整路径</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00185">185</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7208770077f210c3dd7bee2b34f0a4eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] XCLNetTools.FileHandler.WebClient.GetData </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从指定URL下载数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>网址</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00206">206</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a504910f5e28a6fa620853f069d3c756b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string XCLNetTools.FileHandler.WebClient.GetHtml </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取网页源代码 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>网址</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00173">173</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2497ff9ed5a5b867362b7bc0b38edb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string XCLNetTools.FileHandler.WebClient.Post </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>postData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向指定URL发送文本数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>网址</td></tr>
+    <tr><td class="paramname">postData</td><td>urlencode编码的文本数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00218">218</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad799cba2f787fba4c0ca4fc6e86ee831"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string XCLNetTools.FileHandler.WebClient.Post </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte[]&#160;</td>
+          <td class="paramname"><em>postData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向指定URL发送字节数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>网址</td></tr>
+    <tr><td class="paramname">postData</td><td>发送的字节数组</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00230">230</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1556a7a601a8425c7d6bcecb09d6cf2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string XCLNetTools.FileHandler.WebClient.Post </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html">MultipartForm</a>&#160;</td>
+          <td class="paramname"><em>mulitpartForm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向指定网址发送mulitpart编码的数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>网址</td></tr>
+    <tr><td class="paramname">mulitpartForm</td><td>mulitpart form data</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00247">247</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">属性说明</h2>
+<a class="anchor" id="a192f27c95b8274758ca9d68c620de7c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int XCLNetTools.FileHandler.WebClient.BufferSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置发送和接收的数据缓冲大小 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00111">111</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="adeaa1201074e43df3743d76ea77cf06e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CookieContainer XCLNetTools.FileHandler.WebClient.CookieContainer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取或设置与请求关联的Cookie容器 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00163">163</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9bd02ab7f0198d34a44487c5d8c02f19"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Encoding XCLNetTools.FileHandler.WebClient.Encoding</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取或设置请求与响应的文本编码方式 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00145">145</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2f17eefdc2372eb01a6be915d19c0ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WebProxy XCLNetTools.FileHandler.WebClient.Proxy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取或设置代理 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00136">136</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89d4bf2af70a2a0991904b1b61c8dd1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WebHeaderCollection XCLNetTools.FileHandler.WebClient.RequestHeaders</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取请求头集合 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00128">128</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a67e90e96bd067171c16cb84d75f66c3a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string XCLNetTools.FileHandler.WebClient.RespHtml</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取或设置响应的html代码 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00154">154</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d00d3457c23ce30274af963f4cab6bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WebHeaderCollection XCLNetTools.FileHandler.WebClient.ResponseHeaders</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取响应头集合 </p>
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00120">120</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">事件说明</h2>
+<a class="anchor" id="aa1e50d608381b728356547eff9f80213"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;<a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_download_event_args.html">DownloadEventArgs</a>&gt; XCLNetTools.FileHandler.WebClient.DownloadProgressChanged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00091">91</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe950fa329508b4c52e3181aeb97585f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;<a class="el" href="class_x_c_l_net_tools_1_1_file_handler_1_1_upload_event_args.html">UploadEventArgs</a>&gt; XCLNetTools.FileHandler.WebClient.UploadProgressChanged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a> 第 <a class="el" href="_http_proc_8cs_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>FileHandler/<a class="el" href="_http_proc_8cs_source.html">HttpProc.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2016年 一月 1日 星期五 15:55:45 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.5
+</small></address>
+</body>
+</html>

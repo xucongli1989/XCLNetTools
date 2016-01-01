@@ -1,0 +1,272 @@
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper}{\section{X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper类 参考}
+\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper}\index{X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper@{X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper}}
+}
+
+
+Access数据库操作类  
+
+
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_ab5ab0cd6ee3cd8c950c3289e62a22238}{Access\-Helper} ()
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_acb4489fbc85621f6b27e51328e60ba40}{Excute\-Sql} (string sqlstr)
+\begin{DoxyCompactList}\small\item\em 执行sql语句 \end{DoxyCompactList}\item 
+static Ole\-Db\-Data\-Reader \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_ac0a538c45b918a7f8d2f3e2f5a7eab30}{Data\-Reader} (string sqlstr)
+\begin{DoxyCompactList}\small\item\em 返回指定sql语句的\-Ole\-Db\-Data\-Reader对象，使用时请注意关闭这个对象。 \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a1eb9b1ca36a5bd3ea1a3b28d3196f826}{Data\-Reader} (string sqlstr, ref Ole\-Db\-Data\-Reader dr)
+\begin{DoxyCompactList}\small\item\em 返回指定sql语句的\-Ole\-Db\-Data\-Reader对象,使用时请注意关闭 \end{DoxyCompactList}\item 
+static Data\-Set \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a0dbb31f7f093f7bffa5e3ea1e599941e}{Data\-Set} (string sqlstr)
+\begin{DoxyCompactList}\small\item\em 返回指定sql语句的dataset \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_aa66ad22b5bfc24c630e34a62a085995f}{Data\-Set} (string sqlstr, ref Data\-Set ds)
+\begin{DoxyCompactList}\small\item\em 返回指定sql语句的dataset \end{DoxyCompactList}\item 
+static Data\-Table \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_aec0d16c3a29668e1298500b0f87d0f6e}{Data\-Table} (string sqlstr)
+\begin{DoxyCompactList}\small\item\em 返回指定sql语句的datatable \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a4ee3cbd4a9212d6df954c2228c2ff2f4}{Data\-Table} (string sqlstr, ref Data\-Table dt)
+\begin{DoxyCompactList}\small\item\em 返回指定sql语句的datatable \end{DoxyCompactList}\item 
+static Data\-View \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a3979a6d17790d9ecc1cc9c4bcf56de84}{Data\-View} (string sqlstr)
+\begin{DoxyCompactList}\small\item\em 返回指定sql语句的dataview \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{静态 Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+static Ole\-Db\-Connection \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a6eacbf7cab97849252853ed926ffeb7e}{conn} = new Ole\-Db\-Connection()
+\item 
+static Ole\-Db\-Command \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a11c37781255094b6abb069cf0b5c65df}{comm} = new Ole\-Db\-Command()
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+Access数据库操作类 
+
+
+
+在文件 Access\-Helper.\-cs 第 12 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_ab5ab0cd6ee3cd8c950c3289e62a22238}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Access\-Helper@{Access\-Helper}}
+\index{Access\-Helper@{Access\-Helper}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Access\-Helper}]{\setlength{\rightskip}{0pt plus 5cm}X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Access\-Helper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_ab5ab0cd6ee3cd8c950c3289e62a22238}
+
+
+构造函数 
+
+
+
+在文件 Access\-Helper.\-cs 第 20 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_ac0a538c45b918a7f8d2f3e2f5a7eab30}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Data\-Reader@{Data\-Reader}}
+\index{Data\-Reader@{Data\-Reader}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Data\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}static Ole\-Db\-Data\-Reader X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Data\-Reader (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_ac0a538c45b918a7f8d2f3e2f5a7eab30}
+
+
+返回指定sql语句的\-Ole\-Db\-Data\-Reader对象，使用时请注意关闭这个对象。 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 Access\-Helper.\-cs 第 81 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a1eb9b1ca36a5bd3ea1a3b28d3196f826}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Data\-Reader@{Data\-Reader}}
+\index{Data\-Reader@{Data\-Reader}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Data\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}static void X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Data\-Reader (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr, }
+\item[{ref Ole\-Db\-Data\-Reader}]{dr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a1eb9b1ca36a5bd3ea1a3b28d3196f826}
+
+
+返回指定sql语句的\-Ole\-Db\-Data\-Reader对象,使用时请注意关闭 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+{\em dr} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Access\-Helper.\-cs 第 109 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a0dbb31f7f093f7bffa5e3ea1e599941e}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Data\-Set@{Data\-Set}}
+\index{Data\-Set@{Data\-Set}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Data\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static Data\-Set X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Data\-Set (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a0dbb31f7f093f7bffa5e3ea1e599941e}
+
+
+返回指定sql语句的dataset 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 Access\-Helper.\-cs 第 140 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_aa66ad22b5bfc24c630e34a62a085995f}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Data\-Set@{Data\-Set}}
+\index{Data\-Set@{Data\-Set}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Data\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static void X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Data\-Set (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr, }
+\item[{ref Data\-Set}]{ds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_aa66ad22b5bfc24c630e34a62a085995f}
+
+
+返回指定sql语句的dataset 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+{\em ds} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Access\-Helper.\-cs 第 168 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_aec0d16c3a29668e1298500b0f87d0f6e}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Data\-Table@{Data\-Table}}
+\index{Data\-Table@{Data\-Table}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Data\-Table}]{\setlength{\rightskip}{0pt plus 5cm}static Data\-Table X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Data\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_aec0d16c3a29668e1298500b0f87d0f6e}
+
+
+返回指定sql语句的datatable 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 Access\-Helper.\-cs 第 194 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a4ee3cbd4a9212d6df954c2228c2ff2f4}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Data\-Table@{Data\-Table}}
+\index{Data\-Table@{Data\-Table}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Data\-Table}]{\setlength{\rightskip}{0pt plus 5cm}static void X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Data\-Table (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr, }
+\item[{ref Data\-Table}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a4ee3cbd4a9212d6df954c2228c2ff2f4}
+
+
+返回指定sql语句的datatable 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Access\-Helper.\-cs 第 222 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a3979a6d17790d9ecc1cc9c4bcf56de84}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Data\-View@{Data\-View}}
+\index{Data\-View@{Data\-View}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Data\-View}]{\setlength{\rightskip}{0pt plus 5cm}static Data\-View X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Data\-View (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a3979a6d17790d9ecc1cc9c4bcf56de84}
+
+
+返回指定sql语句的dataview 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 Access\-Helper.\-cs 第 248 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_acb4489fbc85621f6b27e51328e60ba40}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!Excute\-Sql@{Excute\-Sql}}
+\index{Excute\-Sql@{Excute\-Sql}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{Excute\-Sql}]{\setlength{\rightskip}{0pt plus 5cm}static void X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-Excute\-Sql (
+\begin{DoxyParamCaption}
+\item[{string}]{sqlstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_acb4489fbc85621f6b27e51328e60ba40}
+
+
+执行sql语句 
+
+
+\begin{DoxyParams}{参数}
+{\em sqlstr} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Access\-Helper.\-cs 第 59 行定义.
+
+
+
+\subsection{类成员变量说明}
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a11c37781255094b6abb069cf0b5c65df}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!comm@{comm}}
+\index{comm@{comm}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{comm}]{\setlength{\rightskip}{0pt plus 5cm}Ole\-Db\-Command X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-comm = new Ole\-Db\-Command()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a11c37781255094b6abb069cf0b5c65df}
+
+
+在文件 Access\-Helper.\-cs 第 15 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a6eacbf7cab97849252853ed926ffeb7e}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}!conn@{conn}}
+\index{conn@{conn}!XCLNetTools::DataBase::Access::AccessHelper@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-Access\-::\-Access\-Helper}}
+\subsubsection[{conn}]{\setlength{\rightskip}{0pt plus 5cm}Ole\-Db\-Connection X\-C\-L\-Net\-Tools.\-Data\-Base.\-Access.\-Access\-Helper.\-conn = new Ole\-Db\-Connection()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper_a6eacbf7cab97849252853ed926ffeb7e}
+
+
+在文件 Access\-Helper.\-cs 第 14 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Data\-Base/\-Access/\hyperlink{_access_helper_8cs}{Access\-Helper.\-cs}\end{DoxyCompactItemize}

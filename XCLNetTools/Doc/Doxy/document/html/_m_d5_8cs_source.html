@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>XCLNetTools: Encrypt/MD5.cs 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">XCLNetTools
+   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   </div>
+   <div id="projectbrief">.Net公共类库dll</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>包</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>事件</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d7a57c26d8d31e32f6490529a6593e6a.html">Encrypt</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MD5.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_m_d5_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Web.Security;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>XCLNetTools.Encrypt</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html">    8</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html">MD5</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#a146cf118c47e0693f82119d39f4b7ef1">   16</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#a146cf118c47e0693f82119d39f4b7ef1">EncodeMD5</a>(<span class="keywordtype">string</span> str, <span class="keywordtype">string</span> key = <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> FormsAuthentication.HashPasswordForStoringInConfigFile(string.Format(<span class="stringliteral">&quot;{0}{1}&quot;</span>, str, key), <span class="stringliteral">&quot;md5&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#a47f3bda0226d74bd2c9823a023ed8ed5">   28</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#a47f3bda0226d74bd2c9823a023ed8ed5">IsEqualMD5</a>(<span class="keywordtype">string</span> str, <span class="keywordtype">string</span> md5Str, <span class="keywordtype">string</span> key = <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> string.Equals(md5Str, MD5.EncodeMD5(str, key));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5_html_a47f3bda0226d74bd2c9823a023ed8ed5"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#a47f3bda0226d74bd2c9823a023ed8ed5">XCLNetTools.Encrypt.MD5.IsEqualMD5</a></div><div class="ttdeci">static bool IsEqualMD5(string str, string md5Str, string key=&quot;&quot;)</div><div class="ttdoc">判断明文与密文是否匹配 如果指定了key，则将明文与key组成的字符串的md5与md5Str进行比较 </div><div class="ttdef"><b>Definition:</b> <a href="_m_d5_8cs_source.html#l00028">MD5.cs:28</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html">XCLNetTools.Encrypt.MD5</a></div><div class="ttdoc">md5相关 </div><div class="ttdef"><b>Definition:</b> <a href="_m_d5_8cs_source.html#l00008">MD5.cs:8</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5_html_a146cf118c47e0693f82119d39f4b7ef1"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#a146cf118c47e0693f82119d39f4b7ef1">XCLNetTools.Encrypt.MD5.EncodeMD5</a></div><div class="ttdeci">static string EncodeMD5(string str, string key=&quot;&quot;)</div><div class="ttdoc">MD5加密（大写） 待加密字符串是否在待加密的字符串中末尾追加该key，从而生成md5加密后的字符串（大写）</div><div class="ttdef"><b>Definition:</b> <a href="_m_d5_8cs_source.html#l00016">MD5.cs:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2016年 一月 1日 星期五 15:55:43 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.5
+</small></address>
+</body>
+</html>

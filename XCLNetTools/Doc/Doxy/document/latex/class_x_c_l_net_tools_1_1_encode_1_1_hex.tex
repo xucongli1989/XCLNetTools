@@ -1,0 +1,135 @@
+\hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex}{\section{X\-C\-L\-Net\-Tools.\-Encode.\-Hex类 参考}
+\label{class_x_c_l_net_tools_1_1_encode_1_1_hex}\index{X\-C\-L\-Net\-Tools.\-Encode.\-Hex@{X\-C\-L\-Net\-Tools.\-Encode.\-Hex}}
+}
+
+
+十六进制处理  
+
+
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static byte\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_a0fb06fdeea06d52883d1f1a93bfcf4e8}{String\-To\-Byte\-Array} (string hex)
+\begin{DoxyCompactList}\small\item\em 16进制字符串转为byte\mbox{[}\mbox{]} \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_a60f888006a88a296a97f8212abd0ddba}{To\-Hex\-String} (string s)
+\begin{DoxyCompactList}\small\item\em 为字符串中的非英文字符编码 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_aac3a2883c1182b43cdc0ebd7a5554895}{Need\-To\-Encode} (char chr)
+\begin{DoxyCompactList}\small\item\em 指定 一个字符是否应该被编码 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_a58fb0c39fe4db08762c074d9d774729d}{To\-Hex\-String} (char chr)
+\begin{DoxyCompactList}\small\item\em 为非英文字符串编码 \end{DoxyCompactList}\item 
+static int \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_abe9191a3f762b84c077bba6ef4f6dc30}{Get\-Or\-Set\-Block\-From\-Hex} (int block\-Index, int source, int?new\-Block\-Value=null)
+\begin{DoxyCompactList}\small\item\em 获取或更新16进制中的第几块区域中的值。比如：0x\-A\-B\-C中，第一块为\-C，第二块为\-B，... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+十六进制处理 
+
+
+
+在文件 Hex.\-cs 第 10 行定义.
+
+
+
+\subsection{成员函数说明}
+\hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_abe9191a3f762b84c077bba6ef4f6dc30}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!Get\-Or\-Set\-Block\-From\-Hex@{Get\-Or\-Set\-Block\-From\-Hex}}
+\index{Get\-Or\-Set\-Block\-From\-Hex@{Get\-Or\-Set\-Block\-From\-Hex}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
+\subsubsection[{Get\-Or\-Set\-Block\-From\-Hex}]{\setlength{\rightskip}{0pt plus 5cm}static int X\-C\-L\-Net\-Tools.\-Encode.\-Hex.\-Get\-Or\-Set\-Block\-From\-Hex (
+\begin{DoxyParamCaption}
+\item[{int}]{block\-Index, }
+\item[{int}]{source, }
+\item[{int?}]{new\-Block\-Value = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_encode_1_1_hex_abe9191a3f762b84c077bba6ef4f6dc30}
+
+
+获取或更新16进制中的第几块区域中的值。比如：0x\-A\-B\-C中，第一块为\-C，第二块为\-B，... 
+
+
+\begin{DoxyParams}{参数}
+{\em block\-Index} & 序号\\
+\hline
+{\em source} & 被操作的数据\\
+\hline
+{\em new\-Block\-Value} & 新值\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+如果是获取，则返回获取到的值；如果是更新，则返回新的source值
+\end{DoxyReturn}
+
+
+在文件 Hex.\-cs 第 86 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_aac3a2883c1182b43cdc0ebd7a5554895}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!Need\-To\-Encode@{Need\-To\-Encode}}
+\index{Need\-To\-Encode@{Need\-To\-Encode}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
+\subsubsection[{Need\-To\-Encode}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-Encode.\-Hex.\-Need\-To\-Encode (
+\begin{DoxyParamCaption}
+\item[{char}]{chr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_encode_1_1_hex_aac3a2883c1182b43cdc0ebd7a5554895}
+
+
+指定 一个字符是否应该被编码 
+
+
+
+在文件 Hex.\-cs 第 52 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_a0fb06fdeea06d52883d1f1a93bfcf4e8}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!String\-To\-Byte\-Array@{String\-To\-Byte\-Array}}
+\index{String\-To\-Byte\-Array@{String\-To\-Byte\-Array}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
+\subsubsection[{String\-To\-Byte\-Array}]{\setlength{\rightskip}{0pt plus 5cm}static byte \mbox{[}$\,$\mbox{]} X\-C\-L\-Net\-Tools.\-Encode.\-Hex.\-String\-To\-Byte\-Array (
+\begin{DoxyParamCaption}
+\item[{string}]{hex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_encode_1_1_hex_a0fb06fdeea06d52883d1f1a93bfcf4e8}
+
+
+16进制字符串转为byte\mbox{[}\mbox{]} 
+
+
+\begin{DoxyParams}{参数}
+{\em hex} & 16进制字符串\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+byte\mbox{[}\mbox{]}
+\end{DoxyReturn}
+
+
+在文件 Hex.\-cs 第 17 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_a60f888006a88a296a97f8212abd0ddba}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!To\-Hex\-String@{To\-Hex\-String}}
+\index{To\-Hex\-String@{To\-Hex\-String}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
+\subsubsection[{To\-Hex\-String}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-Encode.\-Hex.\-To\-Hex\-String (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_encode_1_1_hex_a60f888006a88a296a97f8212abd0ddba}
+
+
+为字符串中的非英文字符编码 
+
+
+
+在文件 Hex.\-cs 第 28 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_a58fb0c39fe4db08762c074d9d774729d}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!To\-Hex\-String@{To\-Hex\-String}}
+\index{To\-Hex\-String@{To\-Hex\-String}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
+\subsubsection[{To\-Hex\-String}]{\setlength{\rightskip}{0pt plus 5cm}static string X\-C\-L\-Net\-Tools.\-Encode.\-Hex.\-To\-Hex\-String (
+\begin{DoxyParamCaption}
+\item[{char}]{chr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_encode_1_1_hex_a58fb0c39fe4db08762c074d9d774729d}
+
+
+为非英文字符串编码 
+
+
+
+在文件 Hex.\-cs 第 67 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+Encode/\hyperlink{_hex_8cs}{Hex.\-cs}\end{DoxyCompactItemize}

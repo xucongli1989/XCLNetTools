@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>XCLNetTools: StringHander/FormHelper.cs 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">XCLNetTools
+   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   </div>
+   <div id="projectbrief">.Net公共类库dll</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>包</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>事件</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d35252678edfb047769827ca31c80311.html">StringHander</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FormHelper.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_form_helper_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Specialized;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> System.Linq;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> System.Text;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> System.Web;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> System.Web.UI.WebControls;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>XCLNetTools.StringHander</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html">   13</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html">FormHelper</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">        #region 主方法</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> GetQueryOrFormString(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">string</span> str = null;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            HttpRequest request = HttpContext.Current.Request;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            str = request.QueryString[name];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (null != str)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">return</span> str;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            str = request.Form[name];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (null != str)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span> str;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> string.Empty;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span>[] GetQueryOrFormStringArray(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">string</span>[] str = null;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            HttpRequest request = HttpContext.Current.Request;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            str = request.QueryString.GetValues(name);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (null != str)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">return</span> str;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            str = request.Form.GetValues(name);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (null != str)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> str;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> null;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">        #endregion 主方法</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">        #region get string</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a8c34c5210ad29ea122ee8320b4f14f9f">   64</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a8c34c5210ad29ea122ee8320b4f14f9f">GetString</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> FormHelper.GetQueryOrFormString(name);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a9b7680e6e7975889a62f273eaacdf37c">   72</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span>[] <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a9b7680e6e7975889a62f273eaacdf37c">GetStringArray</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> FormHelper.GetQueryOrFormStringArray(name);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">        #endregion get string</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">        #region get int</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a5f6d473bbc50e60cbd6c5015c1d4b010">   84</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span>? <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a5f6d473bbc50e60cbd6c5015c1d4b010">GetIntNull</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToIntNull(FormHelper.GetString(name));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a91af563c9654d78b004215b0d8cc5338">   92</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span>? <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a91af563c9654d78b004215b0d8cc5338">GetIntNull</a>(<span class="keywordtype">string</span> name, <span class="keywordtype">int</span>? defaultValue)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToIntNull(FormHelper.GetString(name), defaultValue);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ad3bcc9178dfa1bdc2d0e459b95d56fb4">  100</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ad3bcc9178dfa1bdc2d0e459b95d56fb4">GetInt</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToInt(FormHelper.GetString(name));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab1cbc4a5f6643c60beaf928081457b6f">  108</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab1cbc4a5f6643c60beaf928081457b6f">GetInt</a>(<span class="keywordtype">string</span> name, <span class="keywordtype">int</span> defaultValue)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToInt(FormHelper.GetString(name), defaultValue);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">        #endregion get int</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">        #region get long</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#abffef0560d4655c00c5bdd3e4ff087cc">  120</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">long</span>? <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#abffef0560d4655c00c5bdd3e4ff087cc">GetLongNull</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToLongNull(FormHelper.GetString(name));</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a7e009fc6b804b15f2015d78ed3581677">  128</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">long</span>? <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a7e009fc6b804b15f2015d78ed3581677">GetLongNull</a>(<span class="keywordtype">string</span> name, <span class="keywordtype">long</span>? defaultValue)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToLongNull(FormHelper.GetString(name), defaultValue);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a55353bd867fa827c8eb55a710df02cb1">  136</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">long</span> <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a55353bd867fa827c8eb55a710df02cb1">GetLong</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToLong(FormHelper.GetString(name));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a51392713a245c7460bb5c823eb664ef8">  144</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">long</span> <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a51392713a245c7460bb5c823eb664ef8">GetLong</a>(<span class="keywordtype">string</span> name, <span class="keywordtype">long</span> defaultValue)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToLong(FormHelper.GetString(name), defaultValue);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ac00bef1db952ab0901c1813bbe193fa0">  152</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;long&gt; <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ac00bef1db952ab0901c1813bbe193fa0">GetLongList</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            List&lt;long&gt; lst = null;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordtype">string</span>[] strArr = FormHelper.GetQueryOrFormStringArray(name);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">if</span> (null != strArr &amp;&amp; strArr.Length &gt; 0)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                lst = strArr.ToList().ConvertAll(k =&gt; XCLNetTools.Common.DataTypeConvert.ToLong(k));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> lst;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">        #endregion get long</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">        #region get decimal</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a67ca5ec273b5b94c20a6fd79b0e3c3f7">  170</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> decimal? <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a67ca5ec273b5b94c20a6fd79b0e3c3f7">GetDecimalNull</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToDecimalNull(FormHelper.GetString(name));</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ac94db6da5663acdc23ce3bc79ec99c12">  178</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> decimal? <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ac94db6da5663acdc23ce3bc79ec99c12">GetDecimalNull</a>(<span class="keywordtype">string</span> name, decimal? defaultValue)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToDecimalNull(FormHelper.GetString(name), defaultValue);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a61ef0cfc5b32dadd67700c5f307850d3">  186</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> decimal <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a61ef0cfc5b32dadd67700c5f307850d3">GetDecimal</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToDecimal(FormHelper.GetString(name));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab147eaeb86996c9c03099a5bd6d6ac6d">  194</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> decimal <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab147eaeb86996c9c03099a5bd6d6ac6d">GetDecimal</a>(<span class="keywordtype">string</span> name, decimal defaultValue)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Common.DataTypeConvert.ToDecimal(FormHelper.GetString(name), defaultValue);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab3f5108e85eb8bf10ab5317e77bc1f2c">  202</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;decimal&gt; <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab3f5108e85eb8bf10ab5317e77bc1f2c">GetDecimalList</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            List&lt;decimal&gt; lst = null;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordtype">string</span>[] strArr = FormHelper.GetQueryOrFormStringArray(name);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordflow">if</span> (null != strArr &amp;&amp; strArr.Length &gt; 0)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                lst = strArr.ToList().ConvertAll(k =&gt; XCLNetTools.Common.DataTypeConvert.ToDecimal(k));</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">return</span> lst;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">        #endregion get decimal</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">        #region 其它</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a5b0bd096fa3caa418a65570579394201">  222</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span>[] <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a5b0bd096fa3caa418a65570579394201">GetFromParamsValudByPre</a>(<span class="keywordtype">string</span> preName)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            HttpContext context = HttpContext.Current;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            IList&lt;string&gt; str = <span class="keyword">new</span> List&lt;string&gt;();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(preName))</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                NameValueCollection ps = context.Request.Params;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keywordflow">foreach</span> (var m <span class="keywordflow">in</span> ps.AllKeys)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    <span class="keywordflow">if</span> (m.IndexOf(preName) == 0)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                        str.Add(ps[m]);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordflow">return</span> str.ToArray();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ae6425dda60cd7288371433985e8edb00">  245</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ae6425dda60cd7288371433985e8edb00">CreateHiddenHtml</a>(List&lt;XCLNetTools.Entity.TextValue&gt; lst)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            StringBuilder str = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">if</span> (null != lst &amp;&amp; lst.Count &gt; 0)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="keywordflow">foreach</span> (var m <span class="keywordflow">in</span> lst)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    str.AppendFormat(CreateHiddenHtml(m.Text, m.Value));</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">return</span> str.ToString();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a3df398dd109cfe76da34602149d16410">  261</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a3df398dd109cfe76da34602149d16410">CreateHiddenHtml</a>(<span class="keywordtype">string</span> name, <span class="keywordtype">string</span> value)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">return</span> string.Format(<span class="stringliteral">&quot;&lt;input type=&#39;hidden&#39; name=&#39;{0}&#39; value=&#39;{1}&#39;/&gt;&quot;</span>, name, value);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">        #endregion 其它</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor"></span>    }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a8c34c5210ad29ea122ee8320b4f14f9f"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a8c34c5210ad29ea122ee8320b4f14f9f">XCLNetTools.StringHander.FormHelper.GetString</a></div><div class="ttdeci">static string GetString(string name)</div><div class="ttdoc">获取string参数 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00064">FormHelper.cs:64</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a91af563c9654d78b004215b0d8cc5338"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a91af563c9654d78b004215b0d8cc5338">XCLNetTools.StringHander.FormHelper.GetIntNull</a></div><div class="ttdeci">static int GetIntNull(string name, int?defaultValue)</div><div class="ttdoc">获取int?参数，默认defaultValue </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00092">FormHelper.cs:92</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_ac94db6da5663acdc23ce3bc79ec99c12"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ac94db6da5663acdc23ce3bc79ec99c12">XCLNetTools.StringHander.FormHelper.GetDecimalNull</a></div><div class="ttdeci">static decimal GetDecimalNull(string name, decimal?defaultValue)</div><div class="ttdoc">获取decimal?参数，默认defaultValue </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00178">FormHelper.cs:178</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a51392713a245c7460bb5c823eb664ef8"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a51392713a245c7460bb5c823eb664ef8">XCLNetTools.StringHander.FormHelper.GetLong</a></div><div class="ttdeci">static long GetLong(string name, long defaultValue)</div><div class="ttdoc">获取long参数，默认defaultValue </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00144">FormHelper.cs:144</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a7e009fc6b804b15f2015d78ed3581677"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a7e009fc6b804b15f2015d78ed3581677">XCLNetTools.StringHander.FormHelper.GetLongNull</a></div><div class="ttdeci">static long GetLongNull(string name, long?defaultValue)</div><div class="ttdoc">获取Long?参数，默认defaultValue </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00128">FormHelper.cs:128</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a5f6d473bbc50e60cbd6c5015c1d4b010"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a5f6d473bbc50e60cbd6c5015c1d4b010">XCLNetTools.StringHander.FormHelper.GetIntNull</a></div><div class="ttdeci">static int GetIntNull(string name)</div><div class="ttdoc">获取int?参数 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00084">FormHelper.cs:84</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a67ca5ec273b5b94c20a6fd79b0e3c3f7"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a67ca5ec273b5b94c20a6fd79b0e3c3f7">XCLNetTools.StringHander.FormHelper.GetDecimalNull</a></div><div class="ttdeci">static decimal GetDecimalNull(string name)</div><div class="ttdoc">获取decimal?参数 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00170">FormHelper.cs:170</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_ab1cbc4a5f6643c60beaf928081457b6f"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab1cbc4a5f6643c60beaf928081457b6f">XCLNetTools.StringHander.FormHelper.GetInt</a></div><div class="ttdeci">static int GetInt(string name, int defaultValue)</div><div class="ttdoc">获取int参数，默认defaultValue </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00108">FormHelper.cs:108</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_ab3f5108e85eb8bf10ab5317e77bc1f2c"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab3f5108e85eb8bf10ab5317e77bc1f2c">XCLNetTools.StringHander.FormHelper.GetDecimalList</a></div><div class="ttdeci">static List&lt; decimal &gt; GetDecimalList(string name)</div><div class="ttdoc">获取decimal参数数组 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00202">FormHelper.cs:202</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a61ef0cfc5b32dadd67700c5f307850d3"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a61ef0cfc5b32dadd67700c5f307850d3">XCLNetTools.StringHander.FormHelper.GetDecimal</a></div><div class="ttdeci">static decimal GetDecimal(string name)</div><div class="ttdoc">获取decimal参数，默认0 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00186">FormHelper.cs:186</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_ae6425dda60cd7288371433985e8edb00"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ae6425dda60cd7288371433985e8edb00">XCLNetTools.StringHander.FormHelper.CreateHiddenHtml</a></div><div class="ttdeci">static string CreateHiddenHtml(List&lt; XCLNetTools.Entity.TextValue &gt; lst)</div><div class="ttdoc">把lst中的项生成input hidden标签 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00245">FormHelper.cs:245</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a9b7680e6e7975889a62f273eaacdf37c"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a9b7680e6e7975889a62f273eaacdf37c">XCLNetTools.StringHander.FormHelper.GetStringArray</a></div><div class="ttdeci">static string[] GetStringArray(string name)</div><div class="ttdoc">获取数组参数 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00072">FormHelper.cs:72</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a3df398dd109cfe76da34602149d16410"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a3df398dd109cfe76da34602149d16410">XCLNetTools.StringHander.FormHelper.CreateHiddenHtml</a></div><div class="ttdeci">static string CreateHiddenHtml(string name, string value)</div><div class="ttdoc">返回hidden </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00261">FormHelper.cs:261</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a55353bd867fa827c8eb55a710df02cb1"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a55353bd867fa827c8eb55a710df02cb1">XCLNetTools.StringHander.FormHelper.GetLong</a></div><div class="ttdeci">static long GetLong(string name)</div><div class="ttdoc">获取long参数，默认0 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00136">FormHelper.cs:136</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_ad3bcc9178dfa1bdc2d0e459b95d56fb4"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ad3bcc9178dfa1bdc2d0e459b95d56fb4">XCLNetTools.StringHander.FormHelper.GetInt</a></div><div class="ttdeci">static int GetInt(string name)</div><div class="ttdoc">获取int参数，默认0 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00100">FormHelper.cs:100</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_ab147eaeb86996c9c03099a5bd6d6ac6d"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ab147eaeb86996c9c03099a5bd6d6ac6d">XCLNetTools.StringHander.FormHelper.GetDecimal</a></div><div class="ttdeci">static decimal GetDecimal(string name, decimal defaultValue)</div><div class="ttdoc">获取decimal参数，默认defaultValue </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00194">FormHelper.cs:194</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_abffef0560d4655c00c5bdd3e4ff087cc"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#abffef0560d4655c00c5bdd3e4ff087cc">XCLNetTools.StringHander.FormHelper.GetLongNull</a></div><div class="ttdeci">static long GetLongNull(string name)</div><div class="ttdoc">获取Long?参数 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00120">FormHelper.cs:120</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_a5b0bd096fa3caa418a65570579394201"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a5b0bd096fa3caa418a65570579394201">XCLNetTools.StringHander.FormHelper.GetFromParamsValudByPre</a></div><div class="ttdeci">static string[] GetFromParamsValudByPre(string preName)</div><div class="ttdoc">根据表单控件的name前缀，获取它的value数组 注意：请保证已存在的name值之间没有包含关系（如：txtName和txtNameFirst），否则数据会紊乱！ ...</div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00222">FormHelper.cs:222</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html_ac00bef1db952ab0901c1813bbe193fa0"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ac00bef1db952ab0901c1813bbe193fa0">XCLNetTools.StringHander.FormHelper.GetLongList</a></div><div class="ttdeci">static List&lt; long &gt; GetLongList(string name)</div><div class="ttdoc">获取long参数数组 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00152">FormHelper.cs:152</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html">XCLNetTools.StringHander.FormHelper</a></div><div class="ttdoc">form表单相关 </div><div class="ttdef"><b>Definition:</b> <a href="_form_helper_8cs_source.html#l00013">FormHelper.cs:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2016年 一月 1日 星期五 15:55:44 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.5
+</small></address>
+</body>
+</html>
