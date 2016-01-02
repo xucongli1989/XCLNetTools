@@ -17,8 +17,7 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -97,6 +96,56 @@ namespace XCLNetTools.StringHander
 
         #endregion get string
 
+        #region get byte
+
+        /// <summary>
+        /// 获取byte?参数
+        /// </summary>
+        public static byte? GetByteNull(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToByteNull(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取byte?参数，默认defaultValue
+        /// </summary>
+        public static byte? GetByteNull(string name, byte? defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToByteNull(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取byte参数，默认0
+        /// </summary>
+        public static byte GetByte(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToByte(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取byte参数，默认defaultValue
+        /// </summary>
+        public static byte GetByte(string name, byte defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToByte(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取byte参数数组
+        /// </summary>
+        public static List<byte> GetByteList(string name)
+        {
+            List<byte> lst = null;
+            string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
+            if (null != strArr && strArr.Length > 0)
+            {
+                lst = strArr.ToList().ConvertAll(k => XCLNetTools.Common.DataTypeConvert.ToByte(k));
+            }
+            return lst;
+        }
+
+        #endregion get byte
+
         #region get int
 
         /// <summary>
@@ -131,7 +180,71 @@ namespace XCLNetTools.StringHander
             return XCLNetTools.Common.DataTypeConvert.ToInt(FormHelper.GetString(name), defaultValue);
         }
 
+        /// <summary>
+        /// 获取int参数数组
+        /// </summary>
+        public static List<int> GetIntList(string name)
+        {
+            List<int> lst = null;
+            string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
+            if (null != strArr && strArr.Length > 0)
+            {
+                lst = strArr.ToList().ConvertAll(k => XCLNetTools.Common.DataTypeConvert.ToInt(k));
+            }
+            return lst;
+        }
+
         #endregion get int
+
+        #region get short
+
+        /// <summary>
+        /// 获取short?参数
+        /// </summary>
+        public static short? GetShortNull(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToShortNull(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取short?参数，默认defaultValue
+        /// </summary>
+        public static short? GetShortNull(string name, short? defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToShortNull(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取short参数，默认0
+        /// </summary>
+        public static short GetShort(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToShort(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取short参数，默认defaultValue
+        /// </summary>
+        public static short GetShort(string name, short defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToShort(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取short参数数组
+        /// </summary>
+        public static List<short> GetShortList(string name)
+        {
+            List<short> lst = null;
+            string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
+            if (null != strArr && strArr.Length > 0)
+            {
+                lst = strArr.ToList().ConvertAll(k => XCLNetTools.Common.DataTypeConvert.ToShort(k));
+            }
+            return lst;
+        }
+
+        #endregion get short
 
         #region get long
 
@@ -183,6 +296,156 @@ namespace XCLNetTools.StringHander
 
         #endregion get long
 
+        #region get float
+
+        /// <summary>
+        /// 获取float?参数
+        /// </summary>
+        public static float? GetFloatNull(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToFloatNull(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取float?参数，默认defaultValue
+        /// </summary>
+        public static float? GetFloatNull(string name, float? defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToFloatNull(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取float参数，默认0
+        /// </summary>
+        public static float GetFloat(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToFloat(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取float参数，默认defaultValue
+        /// </summary>
+        public static float GetFloat(string name, float defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToFloat(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取float参数数组
+        /// </summary>
+        public static List<float> GetFloatList(string name)
+        {
+            List<float> lst = null;
+            string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
+            if (null != strArr && strArr.Length > 0)
+            {
+                lst = strArr.ToList().ConvertAll(k => XCLNetTools.Common.DataTypeConvert.ToFloat(k));
+            }
+            return lst;
+        }
+
+        #endregion get float
+
+        #region get double
+
+        /// <summary>
+        /// 获取double?参数
+        /// </summary>
+        public static double? GetDoubleNull(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDoubleNull(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取double?参数，默认defaultValue
+        /// </summary>
+        public static double? GetDoubleNull(string name, double? defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDoubleNull(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取double参数，默认0
+        /// </summary>
+        public static double GetDouble(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDouble(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取double参数，默认defaultValue
+        /// </summary>
+        public static double GetDouble(string name, double defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDouble(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取double参数数组
+        /// </summary>
+        public static List<double> GetDoubleList(string name)
+        {
+            List<double> lst = null;
+            string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
+            if (null != strArr && strArr.Length > 0)
+            {
+                lst = strArr.ToList().ConvertAll(k => XCLNetTools.Common.DataTypeConvert.ToDouble(k));
+            }
+            return lst;
+        }
+
+        #endregion get double
+
+        #region get bool
+
+        /// <summary>
+        /// 获取bool?参数
+        /// </summary>
+        public static bool? GetBoolNull(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToBoolNull(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取bool?参数，默认defaultValue
+        /// </summary>
+        public static bool? GetBoolNull(string name, bool? defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToBoolNull(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取bool参数，默认false
+        /// </summary>
+        public static bool GetBool(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToBool(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取bool参数，默认defaultValue
+        /// </summary>
+        public static bool GetBool(string name, bool defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToBool(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取bool参数数组
+        /// </summary>
+        public static List<bool> GetBoolList(string name)
+        {
+            List<bool> lst = null;
+            string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
+            if (null != strArr && strArr.Length > 0)
+            {
+                lst = strArr.ToList().ConvertAll(k => XCLNetTools.Common.DataTypeConvert.ToBool(k));
+            }
+            return lst;
+        }
+
+        #endregion get bool
+
         #region get decimal
 
         /// <summary>
@@ -232,6 +495,56 @@ namespace XCLNetTools.StringHander
         }
 
         #endregion get decimal
+
+        #region get datetime
+
+        /// <summary>
+        /// 获取DateTime?参数
+        /// </summary>
+        public static DateTime? GetDateTimeNull(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDateTimeNull(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取DateTime?参数，默认defaultValue
+        /// </summary>
+        public static DateTime? GetDateTimeNull(string name, DateTime? defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDateTimeNull(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取DateTime参数，默认'0001/1/1 0:00:00'
+        /// </summary>
+        public static DateTime GetDateTime(string name)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDateTime(FormHelper.GetString(name));
+        }
+
+        /// <summary>
+        /// 获取DateTime参数，默认defaultValue
+        /// </summary>
+        public static DateTime GetDateTime(string name, DateTime defaultValue)
+        {
+            return XCLNetTools.Common.DataTypeConvert.ToDateTime(FormHelper.GetString(name), defaultValue);
+        }
+
+        /// <summary>
+        /// 获取DateTime参数数组
+        /// </summary>
+        public static List<DateTime> GetDateTimeList(string name)
+        {
+            List<DateTime> lst = null;
+            string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
+            if (null != strArr && strArr.Length > 0)
+            {
+                lst = strArr.ToList().ConvertAll(k => XCLNetTools.Common.DataTypeConvert.ToDateTime(k));
+            }
+            return lst;
+        }
+
+        #endregion get datetime
 
         #region 其它
 

@@ -4966,6 +4966,31 @@
             获取数组参数
             </summary>
         </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetByteNull(System.String)">
+            <summary>
+            获取byte?参数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetByteNull(System.String,System.Nullable{System.Byte})">
+            <summary>
+            获取byte?参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetByte(System.String)">
+            <summary>
+            获取byte参数，默认0
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetByte(System.String,System.Byte)">
+            <summary>
+            获取byte参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetByteList(System.String)">
+            <summary>
+            获取byte参数数组
+            </summary>
+        </member>
         <member name="M:XCLNetTools.StringHander.FormHelper.GetIntNull(System.String)">
             <summary>
             获取int?参数
@@ -4984,6 +5009,36 @@
         <member name="M:XCLNetTools.StringHander.FormHelper.GetInt(System.String,System.Int32)">
             <summary>
             获取int参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetIntList(System.String)">
+            <summary>
+            获取int参数数组
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetShortNull(System.String)">
+            <summary>
+            获取short?参数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetShortNull(System.String,System.Nullable{System.Int16})">
+            <summary>
+            获取short?参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetShort(System.String)">
+            <summary>
+            获取short参数，默认0
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetShort(System.String,System.Int16)">
+            <summary>
+            获取short参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetShortList(System.String)">
+            <summary>
+            获取short参数数组
             </summary>
         </member>
         <member name="M:XCLNetTools.StringHander.FormHelper.GetLongNull(System.String)">
@@ -5011,6 +5066,81 @@
             获取long参数数组
             </summary>
         </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetFloatNull(System.String)">
+            <summary>
+            获取float?参数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetFloatNull(System.String,System.Nullable{System.Single})">
+            <summary>
+            获取float?参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetFloat(System.String)">
+            <summary>
+            获取float参数，默认0
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetFloat(System.String,System.Single)">
+            <summary>
+            获取float参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetFloatList(System.String)">
+            <summary>
+            获取float参数数组
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDoubleNull(System.String)">
+            <summary>
+            获取double?参数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDoubleNull(System.String,System.Nullable{System.Double})">
+            <summary>
+            获取double?参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDouble(System.String)">
+            <summary>
+            获取double参数，默认0
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDouble(System.String,System.Double)">
+            <summary>
+            获取double参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDoubleList(System.String)">
+            <summary>
+            获取double参数数组
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetBoolNull(System.String)">
+            <summary>
+            获取bool?参数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetBoolNull(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            获取bool?参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetBool(System.String)">
+            <summary>
+            获取bool参数，默认false
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetBool(System.String,System.Boolean)">
+            <summary>
+            获取bool参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetBoolList(System.String)">
+            <summary>
+            获取bool参数数组
+            </summary>
+        </member>
         <member name="M:XCLNetTools.StringHander.FormHelper.GetDecimalNull(System.String)">
             <summary>
             获取decimal?参数
@@ -5034,6 +5164,31 @@
         <member name="M:XCLNetTools.StringHander.FormHelper.GetDecimalList(System.String)">
             <summary>
             获取decimal参数数组
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDateTimeNull(System.String)">
+            <summary>
+            获取DateTime?参数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDateTimeNull(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            获取DateTime?参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDateTime(System.String)">
+            <summary>
+            获取DateTime参数，默认'0001/1/1 0:00:00'
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDateTime(System.String,System.DateTime)">
+            <summary>
+            获取DateTime参数，默认defaultValue
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetDateTimeList(System.String)">
+            <summary>
+            获取DateTime参数数组
             </summary>
         </member>
         <member name="M:XCLNetTools.StringHander.FormHelper.GetFromParamsValudByPre(System.String)">
