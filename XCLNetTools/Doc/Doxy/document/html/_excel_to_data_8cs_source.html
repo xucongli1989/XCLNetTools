@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>XCLNetTools: DataHandler/ExcelToData.cs 源文件</title>
+<title>XCLNetTools: D:/MyData/MyGit/GitHub/XCLNetTools/XCLNetTools/DataHandler/ExcelToData.cs 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_0b9d16321a6e4963a3ee4e34c3d57d54.html">DataHandler</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_ffdd1f30b2c5cd1f35d5327a9d30234f.html">DataHandler</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -89,60 +89,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <div class="title">ExcelToData.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_excel_to_data_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> Aspose.Cells;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Data;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>XCLNetTools.DataHandler</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html">    9</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html">ExcelToData</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#adbc7d208ff0dbc770c7cf52d6a6f3673">   15</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> DataTable <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#adbc7d208ff0dbc770c7cf52d6a6f3673">ReadExcelToTable</a>(<span class="keywordtype">string</span> excelfilePath)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Workbook workbook = <span class="keyword">new</span> Workbook(excelfilePath);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Worksheet worksheet = null;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; workbook.Worksheets.Count; i++)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                worksheet = workbook.Worksheets[i];</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="keywordflow">if</span> (worksheet.IsVisible)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            DataTable dataTable = <span class="keyword">new</span> DataTable();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">if</span> (worksheet.Cells.MaxRow &gt; -1 &amp;&amp; worksheet.Cells.MaxColumn &gt; -1)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> dataTable;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#ae7cfc36013815d61fbad11460386541f">   39</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> DataSet <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#ae7cfc36013815d61fbad11460386541f">ReadExcelToDataSet</a>(<span class="keywordtype">string</span> excelfilePath)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            DataSet ds = <span class="keyword">new</span> DataSet();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            Workbook workbook = <span class="keyword">new</span> Workbook(excelfilePath);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            Worksheet worksheet = null;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; workbook.Worksheets.Count; i++)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                worksheet = workbook.Worksheets[i];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">if</span> (worksheet.IsVisible &amp;&amp; worksheet.Cells.MaxRow &gt; -1 &amp;&amp; worksheet.Cells.MaxColumn &gt; -1)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    DataTable dataTable = <span class="keyword">new</span> DataTable();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    dataTable.TableName = string.Format(<span class="stringliteral">&quot;dt{0}&quot;</span>, i);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    ds.Tables.Add(dataTable);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> ds;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data_html_ae7cfc36013815d61fbad11460386541f"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#ae7cfc36013815d61fbad11460386541f">XCLNetTools.DataHandler.ExcelToData.ReadExcelToDataSet</a></div><div class="ttdeci">static DataSet ReadExcelToDataSet(string excelfilePath)</div><div class="ttdoc">将多个工作薄导入到DS中（所有可见的sheet） 文件路径</div><div class="ttdef"><b>Definition:</b> <a href="_excel_to_data_8cs_source.html#l00039">ExcelToData.cs:39</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data_html_adbc7d208ff0dbc770c7cf52d6a6f3673"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#adbc7d208ff0dbc770c7cf52d6a6f3673">XCLNetTools.DataHandler.ExcelToData.ReadExcelToTable</a></div><div class="ttdeci">static DataTable ReadExcelToTable(string excelfilePath)</div><div class="ttdoc">单个工作薄读入（第一个可见的sheet） 文件路径</div><div class="ttdef"><b>Definition:</b> <a href="_excel_to_data_8cs_source.html#l00015">ExcelToData.cs:15</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html">XCLNetTools.DataHandler.ExcelToData</a></div><div class="ttdoc">excel读取类 </div><div class="ttdef"><b>Definition:</b> <a href="_excel_to_data_8cs_source.html#l00009">ExcelToData.cs:9</a></div></div>
+<a href="_excel_to_data_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">一：基本信息：</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">开源协议：https://github.com/xucongli1989/XCLNetTools/blob/master/LICENSE</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">项目地址：https://github.com/xucongli1989/XCLNetTools</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">Create By: XCL @ 2012</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">二：贡献者：</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1：xucongli1989（https://github.com/xucongli1989）电子邮件：80213876@qq.com</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">三：更新：</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-01-01</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">四：更新内容：</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：将原先基础数据转换方法转移到Common/DataTypeConvert下面</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：其它逻辑优化，如表单参数获取等</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：首次开放所有源代码</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> Aspose.Cells;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> System.Data;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>XCLNetTools.DataHandler</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html">   30</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html">ExcelToData</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#adbc7d208ff0dbc770c7cf52d6a6f3673">   36</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> DataTable <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#adbc7d208ff0dbc770c7cf52d6a6f3673">ReadExcelToTable</a>(<span class="keywordtype">string</span> excelfilePath)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            Workbook workbook = <span class="keyword">new</span> Workbook(excelfilePath);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Worksheet worksheet = null;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; workbook.Worksheets.Count; i++)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                worksheet = workbook.Worksheets[i];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">if</span> (worksheet.IsVisible)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            DataTable dataTable = <span class="keyword">new</span> DataTable();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (worksheet.Cells.MaxRow &gt; -1 &amp;&amp; worksheet.Cells.MaxColumn &gt; -1)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> dataTable;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#ae7cfc36013815d61fbad11460386541f">   60</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> DataSet <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#ae7cfc36013815d61fbad11460386541f">ReadExcelToDataSet</a>(<span class="keywordtype">string</span> excelfilePath)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            DataSet ds = <span class="keyword">new</span> DataSet();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            Workbook workbook = <span class="keyword">new</span> Workbook(excelfilePath);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            Worksheet worksheet = null;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; workbook.Worksheets.Count; i++)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                worksheet = workbook.Worksheets[i];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">if</span> (worksheet.IsVisible &amp;&amp; worksheet.Cells.MaxRow &gt; -1 &amp;&amp; worksheet.Cells.MaxColumn &gt; -1)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    DataTable dataTable = <span class="keyword">new</span> DataTable();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    dataTable.TableName = string.Format(<span class="stringliteral">&quot;dt{0}&quot;</span>, i);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    ds.Tables.Add(dataTable);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> ds;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data_html_ae7cfc36013815d61fbad11460386541f"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#ae7cfc36013815d61fbad11460386541f">XCLNetTools.DataHandler.ExcelToData.ReadExcelToDataSet</a></div><div class="ttdeci">static DataSet ReadExcelToDataSet(string excelfilePath)</div><div class="ttdoc">将多个工作薄导入到DS中（所有可见的sheet） 文件路径</div><div class="ttdef"><b>Definition:</b> <a href="_excel_to_data_8cs_source.html#l00060">ExcelToData.cs:60</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data_html_adbc7d208ff0dbc770c7cf52d6a6f3673"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html#adbc7d208ff0dbc770c7cf52d6a6f3673">XCLNetTools.DataHandler.ExcelToData.ReadExcelToTable</a></div><div class="ttdeci">static DataTable ReadExcelToTable(string excelfilePath)</div><div class="ttdoc">单个工作薄读入（第一个可见的sheet） 文件路径</div><div class="ttdef"><b>Definition:</b> <a href="_excel_to_data_8cs_source.html#l00036">ExcelToData.cs:36</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_excel_to_data.html">XCLNetTools.DataHandler.ExcelToData</a></div><div class="ttdoc">excel读取类 </div><div class="ttdef"><b>Definition:</b> <a href="_excel_to_data_8cs_source.html#l00030">ExcelToData.cs:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 一月 1日 星期五 15:55:43 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 一月 2日 星期六 12:11:22 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

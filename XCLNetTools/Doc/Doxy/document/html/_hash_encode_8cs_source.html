@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>XCLNetTools: Encrypt/HashEncode.cs 源文件</title>
+<title>XCLNetTools: D:/MyData/MyGit/GitHub/XCLNetTools/XCLNetTools/Encrypt/HashEncode.cs 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d7a57c26d8d31e32f6490529a6593e6a.html">Encrypt</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3d80fb463e140de54e48f199e6800f3b.html">Encrypt</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -89,48 +89,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <div class="title">HashEncode.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_hash_encode_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Security.Cryptography;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> System.Text;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>XCLNetTools.Encrypt</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html">   10</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html">HashEncode</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#aa9bb322a56c4ccb43846364c342286ab">   16</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#aa9bb322a56c4ccb43846364c342286ab">GetSecurity</a>()</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> HashEncoding(GetRandomValue());</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
+<a href="_hash_encode_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">一：基本信息：</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">开源协议：https://github.com/xucongli1989/XCLNetTools/blob/master/LICENSE</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">项目地址：https://github.com/xucongli1989/XCLNetTools</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">Create By: XCL @ 2012</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">二：贡献者：</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1：xucongli1989（https://github.com/xucongli1989）电子邮件：80213876@qq.com</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">三：更新：</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-01-01</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">四：更新内容：</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：将原先基础数据转换方法转移到Common/DataTypeConvert下面</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：其它逻辑优化，如表单参数获取等</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：首次开放所有源代码</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a2b9a5aeb95feb8b89aa9251945948599">   24</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a2b9a5aeb95feb8b89aa9251945948599">GetRandomValue</a>()</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> Random().Next(1, int.MaxValue).ToString();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a274d0413fc6c3ce6ba24300fab20fee8">   32</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a274d0413fc6c3ce6ba24300fab20fee8">HashEncoding</a>(<span class="keywordtype">string</span> security)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            byte[] value;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            UnicodeEncoding code = <span class="keyword">new</span> UnicodeEncoding();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            byte[] message = code.GetBytes(security);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            SHA512Managed Arithmetic = <span class="keyword">new</span> SHA512Managed();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            value = Arithmetic.ComputeHash(message);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            security = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">foreach</span> (byte o <span class="keywordflow">in</span> value)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                security += (int)o + <span class="stringliteral">&quot;O&quot;</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> security;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html_a274d0413fc6c3ce6ba24300fab20fee8"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a274d0413fc6c3ce6ba24300fab20fee8">XCLNetTools.Encrypt.HashEncode.HashEncoding</a></div><div class="ttdeci">static string HashEncoding(string security)</div><div class="ttdoc">哈希加密一个字符串 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00032">HashEncode.cs:32</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html_aa9bb322a56c4ccb43846364c342286ab"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#aa9bb322a56c4ccb43846364c342286ab">XCLNetTools.Encrypt.HashEncode.GetSecurity</a></div><div class="ttdeci">static string GetSecurity()</div><div class="ttdoc">得到随机哈希加密字符串 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00016">HashEncode.cs:16</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html">XCLNetTools.Encrypt.HashEncode</a></div><div class="ttdoc">得到随机安全码（哈希加密）。 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00010">HashEncode.cs:10</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html_a2b9a5aeb95feb8b89aa9251945948599"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a2b9a5aeb95feb8b89aa9251945948599">XCLNetTools.Encrypt.HashEncode.GetRandomValue</a></div><div class="ttdeci">static string GetRandomValue()</div><div class="ttdoc">得到一个随机数值 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00024">HashEncode.cs:24</a></div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> System.Security.Cryptography;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using</span> System.Text;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>XCLNetTools.Encrypt</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html">   31</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html">HashEncode</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#aa9bb322a56c4ccb43846364c342286ab">   37</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#aa9bb322a56c4ccb43846364c342286ab">GetSecurity</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> HashEncoding(GetRandomValue());</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a2b9a5aeb95feb8b89aa9251945948599">   45</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a2b9a5aeb95feb8b89aa9251945948599">GetRandomValue</a>()</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> Random().Next(1, int.MaxValue).ToString();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a274d0413fc6c3ce6ba24300fab20fee8">   53</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a274d0413fc6c3ce6ba24300fab20fee8">HashEncoding</a>(<span class="keywordtype">string</span> security)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            byte[] value;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            UnicodeEncoding code = <span class="keyword">new</span> UnicodeEncoding();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            byte[] message = code.GetBytes(security);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            SHA512Managed Arithmetic = <span class="keyword">new</span> SHA512Managed();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            value = Arithmetic.ComputeHash(message);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            security = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">foreach</span> (byte o <span class="keywordflow">in</span> value)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                security += (int)o + <span class="stringliteral">&quot;O&quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">return</span> security;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html_a274d0413fc6c3ce6ba24300fab20fee8"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a274d0413fc6c3ce6ba24300fab20fee8">XCLNetTools.Encrypt.HashEncode.HashEncoding</a></div><div class="ttdeci">static string HashEncoding(string security)</div><div class="ttdoc">哈希加密一个字符串 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00053">HashEncode.cs:53</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html_aa9bb322a56c4ccb43846364c342286ab"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#aa9bb322a56c4ccb43846364c342286ab">XCLNetTools.Encrypt.HashEncode.GetSecurity</a></div><div class="ttdeci">static string GetSecurity()</div><div class="ttdoc">得到随机哈希加密字符串 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00037">HashEncode.cs:37</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html">XCLNetTools.Encrypt.HashEncode</a></div><div class="ttdoc">得到随机安全码（哈希加密）。 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00031">HashEncode.cs:31</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode_html_a2b9a5aeb95feb8b89aa9251945948599"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encrypt_1_1_hash_encode.html#a2b9a5aeb95feb8b89aa9251945948599">XCLNetTools.Encrypt.HashEncode.GetRandomValue</a></div><div class="ttdeci">static string GetRandomValue()</div><div class="ttdoc">得到一个随机数值 </div><div class="ttdef"><b>Definition:</b> <a href="_hash_encode_8cs_source.html#l00045">HashEncode.cs:45</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 一月 1日 星期五 15:55:43 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 一月 2日 星期六 12:11:23 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

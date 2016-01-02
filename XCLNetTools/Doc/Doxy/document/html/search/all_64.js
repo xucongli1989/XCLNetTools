@@ -7,7 +7,6 @@ var searchData=
   ['datatabletoexcel',['DataTableToExcel',['../class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper.html#aee0dd3e95ba5e89b2043cb7d1c969a1c',1,'XCLNetTools.DataHandler.ExcelHelper.DataTableToExcel(DataTable dt, int rows, int top, int left)'],['../class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper.html#a5a62b1a5ff7569e2236ad5eb7a4efcb8',1,'XCLNetTools.DataHandler.ExcelHelper.DataTableToExcel(DataTable dt, int top, int left)'],['../class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper.html#a28b1238b8e1008cb4a39ed189df0b73f',1,'XCLNetTools.DataHandler.ExcelHelper.DataTableToExcel(DataTable dt, int rows, int top, int left, int mergeColumnIndex)']]],
   ['datatabletolist_3c_20t_20_3e',['DataTableToList&lt; T &gt;',['../class_x_c_l_net_tools_1_1_generic_1_1_list_helper.html#aa1d5d2843b5a105edf4eb8c160fcd016',1,'XCLNetTools::Generic::ListHelper']]],
   ['datatoexcel',['DataToExcel',['../class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html',1,'XCLNetTools::DataHandler']]],
-  ['datatoexcel',['DataToExcel',['../class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#af9078e9ec28e23aac0054ab3c16cc0a7',1,'XCLNetTools::DataHandler::DataToExcel']]],
   ['datatoexcel_2ecs',['DataToExcel.cs',['../_data_to_excel_8cs.html',1,'']]],
   ['datatypeconvert',['DataTypeConvert',['../class_x_c_l_net_tools_1_1_common_1_1_data_type_convert.html',1,'XCLNetTools::Common']]],
   ['datatypeconvert_2ecs',['DataTypeConvert.cs',['../_data_type_convert_8cs.html',1,'']]],
