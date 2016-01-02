@@ -2029,11 +2029,6 @@
             操作EXCEL导出数据报表的类
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.DataToExcel.#ctor">
-            <summary>
-            数据导出至excel类
-            </summary>
-        </member>
         <member name="M:XCLNetTools.DataHandler.DataToExcel.OutPutExcel(System.String[],System.Collections.Generic.List{XCLNetTools.DataHandler.OutPutClass},System.Data.DataSet,System.String,System.String[])">
             <summary>
             数据导出excel
