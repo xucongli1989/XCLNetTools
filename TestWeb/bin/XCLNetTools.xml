@@ -4676,14 +4676,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:XCLNetTools.StringHander.DateHelper.GetTimeInterval(System.String,System.String)">
-            <summary>
-            计算日期间隔
-            </summary>
-            <param name="d1">要参与计算的其中一个日期字符串</param>
-            <param name="d2">要参与计算的另一个日期字符串</param>
-            <returns>一个表示日期间隔的TimeSpan类型</returns>
-        </member>
         <member name="M:XCLNetTools.StringHander.DateHelper.GetTimeInterval(System.DateTime,System.DateTime)">
             <summary>
             计算日期间隔
