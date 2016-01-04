@@ -2810,15 +2810,15 @@
             <summary>
             Base64加密
             </summary>
-            <param name="Message"></param>
-            <returns></returns>
+            <param name="msg">要加密的内容</param>
+            <returns>加密后的值</returns>
         </member>
         <member name="M:XCLNetTools.Encode.Base64.Base64Decode(System.String)">
             <summary>
             Base64解密
             </summary>
-            <param name="Message"></param>
-            <returns></returns>
+            <param name="msg">要解密的内容</param>
+            <returns>解密后的值</returns>
         </member>
         <member name="T:XCLNetTools.Encode.Lib">
             <summary>
