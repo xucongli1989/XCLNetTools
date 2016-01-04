@@ -205,7 +205,7 @@
     <Compile Include="DataHandler\OutPutClass.cs" />
     <Compile Include="DataHandler\OutPutField.cs" />
     <Compile Include="DataHandler\OutPutParamClass.cs" />
-    <Compile Include="EasyUI\Model\TreeItem.cs" />
+    <Compile Include="Entity\EasyUI\TreeItem.cs" />
     <Compile Include="Encode\Base64.cs" />
     <Compile Include="Encode\Lib.cs" />
     <Compile Include="Encode\Hex.cs" />

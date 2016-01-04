@@ -17,11 +17,8 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -131,32 +128,11 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 计算日期间隔
         /// </summary>
-        /// <param name="d1">要参与计算的其中一个日期字符串</param>
-        /// <param name="d2">要参与计算的另一个日期字符串</param>
-        /// <param name="drf">决定返回值形式的枚举</param>
-        /// <returns>一个代表年月日的int数组，具体数组长度与枚举参数drf有关</returns>
-        public static int[] GetTimeInterval(string d1, string d2, diffResultFormat drf)
-        {
-            try
-            {
-                DateTime date1 = DateTime.Parse(d1);
-                DateTime date2 = DateTime.Parse(d2);
-                return GetTimeInterval(date1, date2, drf);
-            }
-            catch
-            {
-                throw new Exception("字符串参数不正确!");
-            }
-        }
-
-        /// <summary>
-        /// 计算日期间隔
-        /// </summary>
         /// <param name="d1">要参与计算的其中一个日期</param>
         /// <param name="d2">要参与计算的另一个日期</param>
         /// <param name="drf">决定返回值形式的枚举</param>
         /// <returns>一个代表年月日的int数组，具体数组长度与枚举参数drf有关</returns>
-        public static int[] GetTimeInterval(DateTime d1, DateTime d2, diffResultFormat drf)
+        public static int[] GetTimeInterval(DateTime d1, DateTime d2, Enum.CommonEnum.DiffResultFormat drf)
         {
             #region 数据初始化
 
@@ -189,48 +165,22 @@ namespace XCLNetTools.StringHander
 
             #region 按条件计算
 
-            if (drf == diffResultFormat.dd)
+            if (drf == Enum.CommonEnum.DiffResultFormat.dd)
             {
                 TimeSpan ts = max - min;
                 return new int[] { ts.Days };
             }
-            if (drf == diffResultFormat.mm)
+            if (drf == Enum.CommonEnum.DiffResultFormat.mm)
             {
                 return new int[] { month + year * 12 };
             }
-            if (drf == diffResultFormat.yy)
+            if (drf == Enum.CommonEnum.DiffResultFormat.yy)
             {
                 return new int[] { year };
             }
             return new int[] { year, month };
 
             #endregion 按条件计算
-        }
-
-        /// <summary>
-        /// 关于返回值形式的枚举
-        /// </summary>
-        public enum diffResultFormat
-        {
-            /// <summary>
-            /// 年数和月数
-            /// </summary>
-            yymm,
-
-            /// <summary>
-            /// 年数
-            /// </summary>
-            yy,
-
-            /// <summary>
-            /// 月数
-            /// </summary>
-            mm,
-
-            /// <summary>
-            /// 天数
-            /// </summary>
-            dd,
         }
 
         #endregion 时间间隔相关
@@ -387,9 +337,9 @@ namespace XCLNetTools.StringHander
         /// 返回汉字表示的时间（如1年3个月5天3小时）
         /// </summary>
         /// <param name="hour">小时</param>
-        /// <param name="oneDayHour">一天几小时（灵活，如上班时间为一天7小时）</param>
+        /// <param name="oneDayHour">一天几小时（灵活，自行指定，默认为24小时）</param>
         /// <returns></returns>
-        public static string GetTimeStr(decimal hour, int oneDayHour)
+        public static string GetTimeStr(decimal hour, int oneDayHour = 24)
         {
             int year = (int)hour / (365 * oneDayHour);
             hour = hour - year * 365 * oneDayHour;
@@ -426,38 +376,7 @@ namespace XCLNetTools.StringHander
         /// </summary>
         public static string GetWeek(DateTime date)
         {
-            string str = string.Empty;
-            switch (date.DayOfWeek)
-            {
-                case DayOfWeek.Monday:
-                    str = "一";
-                    break;
-
-                case DayOfWeek.Tuesday:
-                    str = "二";
-                    break;
-
-                case DayOfWeek.Wednesday:
-                    str = "三";
-                    break;
-
-                case DayOfWeek.Thursday:
-                    str = "四";
-                    break;
-
-                case DayOfWeek.Friday:
-                    str = "五";
-                    break;
-
-                case DayOfWeek.Saturday:
-                    str = "六";
-                    break;
-
-                default:
-                    str = "日";
-                    break;
-            }
-            return str;
+            return string.Format("星期{0}", XCLNetTools.Common.Consts.WeekName[date.DayOfWeek]);
         }
 
         /// <summary>
@@ -502,7 +421,7 @@ namespace XCLNetTools.StringHander
 
         private static string Rep_date(Match mc)
         {
-            const string cnd = "〇一二三四五六七八九";
+            string cnd = XCLNetTools.Common.Consts.CNDigit;
             string val = mc.Value;
             string digit = val.Substring(0, val.Length - 1);
             char c = val[val.Length - 1];
@@ -536,121 +455,38 @@ namespace XCLNetTools.StringHander
         #region 枚举项
 
         /// <summary>
-        /// 周枚举
-        /// </summary>
-        public enum Weeks
-        {
-            /// <summary>
-            /// 周一
-            /// </summary>
-            周一 = 1,
-
-            /// <summary>
-            /// 周二
-            /// </summary>
-            周二 = 2,
-
-            /// <summary>
-            /// 周三
-            /// </summary>
-            周三 = 3,
-
-            /// <summary>
-            /// 周四
-            /// </summary>
-            周四 = 4,
-
-            /// <summary>
-            /// 周五
-            /// </summary>
-            周五 = 5,
-
-            /// <summary>
-            /// 周六
-            /// </summary>
-            周六 = 6,
-
-            /// <summary>
-            /// 周日
-            /// </summary>
-            周日 = 0
-        }
-
-        /// <summary>
-        /// 以前的时间类别
-        /// </summary>
-        public enum BeforeDateTypeEnum
-        {
-            /// <summary>
-            /// 七天前
-            /// </summary>
-            [Description("七天前")]
-            SevenDay,
-
-            /// <summary>
-            /// 一个月前
-            /// </summary>
-            [Description("一个月前")]
-            OneMonth,
-
-            /// <summary>
-            /// 三个月前
-            /// </summary>
-            [Description("三个月前")]
-            ThreeMonth,
-
-            /// <summary>
-            /// 半年前
-            /// </summary>
-            [Description("半年前")]
-            HalfYear,
-
-            /// <summary>
-            /// 一年前
-            /// </summary>
-            [Description("一年前")]
-            OneYear,
-
-            /// <summary>
-            /// 全部
-            /// </summary>
-            [Description("全部")]
-            All
-        }
-
-        /// <summary>
         /// 获取BeforeDateTypeEnum所对应的时间
         /// （如果枚举为All,则返回DateTime.MaxValue）
         /// </summary>
         /// <param name="em">BeforeDateTypeEnum枚举</param>
         /// <returns>枚举对应的时间</returns>
-        public static DateTime GetBeforeDateTypeDateTime(BeforeDateTypeEnum em)
+        public static DateTime GetBeforeDateTypeDateTime(Enum.CommonEnum.BeforeDateTypeEnum em)
         {
             DateTime dtNow = DateTime.Now;
             DateTime dt = DateTime.MinValue;
             switch (em)
             {
-                case BeforeDateTypeEnum.All:
+                case Enum.CommonEnum.BeforeDateTypeEnum.All:
                     dt = DateTime.MaxValue;
                     break;
 
-                case BeforeDateTypeEnum.HalfYear:
+                case Enum.CommonEnum.BeforeDateTypeEnum.HalfYear:
                     dt = dtNow.AddMonths(-6).Date;
                     break;
 
-                case BeforeDateTypeEnum.OneMonth:
+                case Enum.CommonEnum.BeforeDateTypeEnum.OneMonth:
                     dt = dtNow.AddMonths(-1).Date;
                     break;
 
-                case BeforeDateTypeEnum.OneYear:
+                case Enum.CommonEnum.BeforeDateTypeEnum.OneYear:
                     dt = dtNow.AddYears(-1).Date;
                     break;
 
-                case BeforeDateTypeEnum.SevenDay:
+                case Enum.CommonEnum.BeforeDateTypeEnum.SevenDay:
                     dt = dtNow.AddDays(-7).Date;
                     break;
 
-                case BeforeDateTypeEnum.ThreeMonth:
+                case Enum.CommonEnum.BeforeDateTypeEnum.ThreeMonth:
                     dt = dtNow.AddMonths(-3).Date;
                     break;
             }
