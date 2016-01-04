@@ -17,8 +17,8 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
+using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace XCLNetTools.Common
@@ -36,5 +36,31 @@ namespace XCLNetTools.Common
         public static Regex HttpSchemeMatch = new Regex("^http[s]?://");
 
         #endregion 正则
+
+        #region 日期时间
+
+        /// <summary>
+        /// 星期名
+        /// </summary>
+        public static Dictionary<DayOfWeek, string> WeekName = new Dictionary<DayOfWeek, string>() {
+            {DayOfWeek.Monday,"一"},
+            {DayOfWeek.Tuesday,"二"},
+            {DayOfWeek.Wednesday,"三"},
+            {DayOfWeek.Thursday,"四"},
+            {DayOfWeek.Friday,"五"},
+            {DayOfWeek.Saturday,"六"},
+            {DayOfWeek.Sunday,"日"}
+        };
+
+        #endregion 日期时间
+
+        #region 数值
+
+        /// <summary>
+        /// 中文数字
+        /// </summary>
+        public const string CNDigit = "〇一二三四五六七八九";
+
+        #endregion 数值
     }
 }
