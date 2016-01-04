@@ -111,26 +111,6 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 计算日期间隔
         /// </summary>
-        /// <param name="d1">要参与计算的其中一个日期字符串</param>
-        /// <param name="d2">要参与计算的另一个日期字符串</param>
-        /// <returns>一个表示日期间隔的TimeSpan类型</returns>
-        public static TimeSpan GetTimeInterval(string d1, string d2)
-        {
-            try
-            {
-                DateTime date1 = DateTime.Parse(d1);
-                DateTime date2 = DateTime.Parse(d2);
-                return GetTimeInterval(date1, date2);
-            }
-            catch
-            {
-                throw new Exception("字符串参数不正确!");
-            }
-        }
-
-        /// <summary>
-        /// 计算日期间隔
-        /// </summary>
         /// <param name="d1">要参与计算的其中一个日期</param>
         /// <param name="d2">要参与计算的另一个日期</param>
         /// <returns>一个表示日期间隔的TimeSpan类型</returns>
