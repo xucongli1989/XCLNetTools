@@ -187,6 +187,9 @@
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
     <Compile Include="Entity\FileInfoEntity.cs" />
+    <Compile Include="Entity\Message\JsonMsg.cs" />
+    <Compile Include="Entity\Message\JsonMsgBody.cs" />
+    <Compile Include="Entity\Message\JsonMsgHead.cs" />
     <Compile Include="Entity\SetOptionEntity.cs" />
     <Compile Include="Control\HtmlControl\Lib.cs" />
     <Compile Include="Control\MxGraph\Lib.cs" />
@@ -219,7 +222,6 @@
     <Compile Include="Generic\ListHelper.cs" />
     <Compile Include="Http\CookieHelper.cs" />
     <Compile Include="Http\HttpHelper.cs" />
-    <Compile Include="Message\JsonMsg.cs" />
     <Compile Include="MVC\JsonResultFormat.cs" />
     <Compile Include="Serialize\LitJson.cs" />
     <Compile Include="Language\CN.cs" />
