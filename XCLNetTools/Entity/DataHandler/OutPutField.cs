@@ -19,7 +19,7 @@ Create By: XCL @ 2012
 
 
 
-namespace XCLNetTools.DataHandler
+namespace XCLNetTools.Entity.DataHandler
 {
     /// <summary>
     /// 要导出的字段类

@@ -32,6 +32,7 @@ namespace XCLNetTools.FileHandler
     {
         /// <summary>
         /// 根据浏览器书签文件地址，返回list
+        /// <param name="path">书签文件地址</param>
         /// </summary>
         public static List<XCLNetTools.Entity.BookmarkEntity> GetBookmark(string path)
         {

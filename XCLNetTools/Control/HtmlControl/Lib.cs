@@ -35,6 +35,7 @@ namespace XCLNetTools.Control.HtmlControl
         /// 将枚举转为select的options
         /// <param name="t">枚举type</param>
         /// <param name="options">选项</param>
+        /// <returns>option字符串</returns>
         /// </summary>
         public static string GetOptions(Type t, SetOptionEntity options = null)
         {
@@ -66,6 +67,7 @@ namespace XCLNetTools.Control.HtmlControl
         /// </summary>
         /// <param name="dataSource">数据源</param>
         /// <param name="options">选项</param>
+        /// <returns>option字符串</returns>
         public static string GetOptions(Dictionary<string, string> dataSource, SetOptionEntity options = null)
         {
             StringBuilder str = new StringBuilder();

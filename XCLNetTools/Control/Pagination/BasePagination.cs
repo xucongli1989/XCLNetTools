@@ -22,7 +22,7 @@ Create By: XCL @ 2012
 namespace XCLNetTools.Control.Pagination
 {
     /// <summary>
-    /// 分页接口
+    /// 分页抽象类
     /// </summary>
     public abstract class BasePagination<T>
     {

@@ -84,7 +84,7 @@ namespace XCLNetTools.StringHander
             XCLNetTools.Http.HttpHelper http = new Http.HttpHelper();
             try
             {
-                XCLNetTools.Http.HttpResult result = http.GetHtml(new Http.HttpItem()
+                var result = http.GetHtml(new XCLNetTools.Entity.Http.HttpItem()
                 {
                     URL = url,
                     Method = "get"

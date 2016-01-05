@@ -21,7 +21,7 @@ Create By: XCL @ 2012
 
 using System.Collections.Generic;
 
-namespace XCLNetTools.DataHandler
+namespace XCLNetTools.Entity.DataHandler
 {
     /// <summary>
     /// 导出字段实体类

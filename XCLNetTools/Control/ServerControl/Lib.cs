@@ -181,6 +181,12 @@ namespace XCLNetTools.Control.ServerControl
 
         /// <summary>
         /// 将list绑定到控件上
+        /// <param name="c">控件</param>
+        /// <param name="lst">数据源</param>
+        /// <param name="textField">文本字段</param>
+        /// <param name="valueField">值字段</param>
+        /// <param name="value">选中值</param>
+        /// <param name="flag">第一项是否为"请选择"</param>
         /// </summary>
         public static void BindLst<T>(System.Web.UI.WebControls.WebControl c, List<T> lst, string textField, string valueField, string value, bool flag)
         {
