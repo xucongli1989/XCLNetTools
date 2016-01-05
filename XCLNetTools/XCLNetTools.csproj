@@ -187,6 +187,8 @@
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
     <Compile Include="Entity\FileInfoEntity.cs" />
+    <Compile Include="Entity\Http\HttpItem.cs" />
+    <Compile Include="Entity\Http\HttpResult.cs" />
     <Compile Include="Entity\Message\JsonMsg.cs" />
     <Compile Include="Entity\Message\JsonMsgBody.cs" />
     <Compile Include="Entity\Message\JsonMsgHead.cs" />
@@ -202,9 +204,9 @@
     <Compile Include="DataHandler\DataToExcel.cs" />
     <Compile Include="DataHandler\ExcelHelper.cs" />
     <Compile Include="DataHandler\ExcelToData.cs" />
-    <Compile Include="DataHandler\OutPutClass.cs" />
-    <Compile Include="DataHandler\OutPutField.cs" />
-    <Compile Include="DataHandler\OutPutParamClass.cs" />
+    <Compile Include="Entity\DataHandler\OutPutClass.cs" />
+    <Compile Include="Entity\DataHandler\OutPutField.cs" />
+    <Compile Include="Entity\DataHandler\OutPutParamClass.cs" />
     <Compile Include="Entity\EasyUI\TreeItem.cs" />
     <Compile Include="Encode\Base64.cs" />
     <Compile Include="Encode\Lib.cs" />

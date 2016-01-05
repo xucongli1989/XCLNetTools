@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.ComponentModel;
 
@@ -30,6 +28,8 @@ namespace XCLNetTools.Enum
     [Serializable]
     public class CommonEnum
     {
+        #region 逻辑
+
         /// <summary>
         /// 是否
         /// </summary>
@@ -46,29 +46,10 @@ namespace XCLNetTools.Enum
             否 = 0
         }
 
-        /// <summary>
-        /// 静态资源类型
-        /// </summary>
-        public enum StaticResourceTypeEnum
-        {
-            /// <summary>
-            /// js文件
-            /// </summary>
-            JS,
-
-            /// <summary>
-            /// css文件
-            /// </summary>
-            CSS,
-
-            /// <summary>
-            /// icon
-            /// </summary>
-            ICON
-        }
-
+        #endregion 逻辑
 
         #region 日期时间相关
+
         /// <summary>
         /// 周枚举
         /// </summary>
@@ -177,6 +158,32 @@ namespace XCLNetTools.Enum
             /// </summary>
             dd
         }
-        #endregion
+
+        #endregion 日期时间相关
+
+        #region 其它
+
+        /// <summary>
+        /// 静态资源类型
+        /// </summary>
+        public enum StaticResourceTypeEnum
+        {
+            /// <summary>
+            /// js文件
+            /// </summary>
+            JS,
+
+            /// <summary>
+            /// css文件
+            /// </summary>
+            CSS,
+
+            /// <summary>
+            /// icon
+            /// </summary>
+            ICON
+        }
+
+        #endregion 其它
     }
 }

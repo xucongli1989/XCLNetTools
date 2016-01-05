@@ -26,6 +26,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
+using XCLNetTools.Entity.DataHandler;
 
 namespace XCLNetTools.DataHandler
 {

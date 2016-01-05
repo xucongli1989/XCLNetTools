@@ -32,6 +32,7 @@ namespace XCLNetTools.DataHandler
         /// <summary>
         /// 单个工作薄读入（第一个可见的sheet）
         /// <param name="excelfilePath">文件路径</param>
+        /// <returns>DataTable</returns>
         /// </summary>
         public static DataTable ReadExcelToTable(string excelfilePath)
         {
@@ -56,6 +57,7 @@ namespace XCLNetTools.DataHandler
         /// <summary>
         /// 将多个工作薄导入到DS中（所有可见的sheet）
         /// <param name="excelfilePath">文件路径</param>
+        /// <returns>DataSet</returns>
         /// </summary>
         public static DataSet ReadExcelToDataSet(string excelfilePath)
         {

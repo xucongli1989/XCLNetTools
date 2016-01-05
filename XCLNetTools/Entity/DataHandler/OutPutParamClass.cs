@@ -23,7 +23,7 @@ using Aspose.Cells;
 using System.Collections.Generic;
 using System.Data;
 
-namespace XCLNetTools.DataHandler
+namespace XCLNetTools.Entity.DataHandler
 {
     /// <summary>
     /// 导出参数类
