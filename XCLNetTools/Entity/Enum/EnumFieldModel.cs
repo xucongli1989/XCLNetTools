@@ -21,7 +21,7 @@ Create By: XCL @ 2012
 
 using System;
 
-namespace XCLNetTools.Enum
+namespace XCLNetTools.Entity.Enum
 {
     /// <summary>
     /// Enum项model

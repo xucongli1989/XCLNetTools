@@ -31,7 +31,7 @@ namespace XCLNetTools.DataHandler
     /// <summary>
     /// 旧版的excel操作（基于excel.dll），建议不要使用此类（用aspose.cells）
     /// </summary>
-    [Obsolete]
+    [Obsolete("旧版的excel操作（基于excel.dll），建议不要使用此类（用aspose.cells）")]
     public class ExcelHelper
     {
         #region 成员变量

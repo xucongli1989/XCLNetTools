@@ -46,6 +46,7 @@ namespace XCLNetTools.Encrypt
         /// <param name="str">明文</param>
         /// <param name="md5Str">md5密文</param>
         /// <param name="key">key</param>
+        /// <returns>是否匹配</returns>
         public static bool IsEqualMD5(string str, string md5Str, string key = "")
         {
             return string.Equals(md5Str, MD5.EncodeMD5(str, key));

@@ -35,19 +35,19 @@ namespace XCLNetTools.Enum
         /// <summary>
         /// 将枚举转为List(包含自定义属性description)
         /// </summary>
-        public static List<XCLNetTools.Enum.EnumFieldModel> GetEnumFieldModelList(Type emType)
+        public static List<XCLNetTools.Entity.Enum.EnumFieldModel> GetEnumFieldModelList(Type emType)
         {
             if (!emType.IsEnum)
             {
                 throw new InvalidOperationException();
             }
-            List<XCLNetTools.Enum.EnumFieldModel> list = new List<XCLNetTools.Enum.EnumFieldModel>();
+            List<XCLNetTools.Entity.Enum.EnumFieldModel> list = new List<XCLNetTools.Entity.Enum.EnumFieldModel>();
             System.Reflection.FieldInfo[] fields = emType.GetFields();
             foreach (FieldInfo field in fields)
             {
                 if (field.FieldType.IsEnum)
                 {
-                    XCLNetTools.Enum.EnumFieldModel model = new XCLNetTools.Enum.EnumFieldModel();
+                    XCLNetTools.Entity.Enum.EnumFieldModel model = new XCLNetTools.Entity.Enum.EnumFieldModel();
                     model.Value = ((int)emType.InvokeMember(field.Name, BindingFlags.GetField, null, null, null)).ToString();
                     model.Text = field.Name;
                     Object[] customObjs = field.GetCustomAttributes(typeof(DescriptionAttribute), false);

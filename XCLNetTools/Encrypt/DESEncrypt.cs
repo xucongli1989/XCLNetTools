@@ -33,6 +33,9 @@ namespace XCLNetTools.Encrypt
         /// <summary>
         /// 加密数据
         /// </summary>
+        /// <param name="text">待加密的数据</param>
+        /// <param name="sKey">key</param>
+        /// <returns>密文</returns>
         public static string Encrypt(string text, string sKey = "")
         {
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
@@ -55,6 +58,9 @@ namespace XCLNetTools.Encrypt
         /// <summary>
         /// 解密数据
         /// </summary>
+        /// <param name="text">待解密的数据</param>
+        /// <param name="sKey">key</param>
+        /// <returns>明文</returns>
         public static string Decrypt(string text, string sKey = "")
         {
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();

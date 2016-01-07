@@ -89,15 +89,15 @@ namespace XCLNetTools.Entity
             string fmt = string.Empty;
             switch (this.Type)
             {
-                case Enum.CommonEnum.StaticResourceTypeEnum.JS:
+                case XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum.JS:
                     fmt = @"<script src=""{0}"" type=""text/javascript""  {1}></script>";
                     break;
 
-                case Enum.CommonEnum.StaticResourceTypeEnum.CSS:
+                case XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum.CSS:
                     fmt = @"<link href=""{0}"" rel=""stylesheet"" type=""text/css""  {1}/>";
                     break;
 
-                case Enum.CommonEnum.StaticResourceTypeEnum.ICON:
+                case XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum.ICON:
                     fmt = @"<link rel=""icon"" href=""{0}"" {1} /> ";
                     break;
             }
