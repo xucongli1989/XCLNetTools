@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -48,18 +46,118 @@ namespace XCLNetTools.Encrypt
             set { m_containKey = value; }
         }
 
+        /// <summary>
+        /// 构造方法
+        /// </summary>
         public AESEncrypt()
         {
             m_aesCryptoServiceProvider = new AesCryptoServiceProvider();
             m_containKey = true;
         }
 
+        /// <summary>
+        /// 构造方法
+        /// </summary>
+        /// <param name="containKey">密文中是否包含密钥</param>
         public AESEncrypt(bool containKey)
             : this()
         {
             m_containKey = containKey;
         }
 
+        /// <summary>
+        /// 指定密钥对明文进行AES加密
+        /// </summary>
+        /// <param name="s_crypto">明文</param>
+        /// <param name="s_key">加密密钥</param>
+        /// <returns>密文</returns>
+        public string Encrypt(string s_crypto, string s_key)
+        {
+            try
+            {
+                byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
+                byte[] temp = string2Byte(s_key);
+                if (temp.Length > key.Length)
+                {
+                    throw new Exception("Key不能超过32字节！");
+                }
+                key = string2Byte(s_key.PadRight(key.Length));
+                iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
+                return Encrypt(s_crypto, key, iv);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 动态生成密钥，并对明文进行AES加密
+        /// </summary>
+        /// <param name="s_crypto">明文</param>
+        /// <returns>密文</returns>
+        public string Encrypt(string s_crypto)
+        {
+            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
+            m_aesCryptoServiceProvider.GenerateKey();
+            key = m_aesCryptoServiceProvider.Key;
+            iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
+            return Encrypt(s_crypto, key, iv);
+        }
+
+        /// <summary>
+        /// 从密文中解析出密钥，并对密文进行解密
+        /// </summary>
+        /// <param name="s_encrypted">密文</param>
+        /// <returns>明文</returns>
+        public string Decrypt(string s_encrypted)
+        {
+            string s_key = string.Empty;
+            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
+
+            if (s_encrypted.Length <= CRYPTO_KEY_LENGTH * 2)
+            {
+                throw new Exception("无效的密文！");
+            }
+            if (m_containKey)
+            {
+                s_key = s_encrypted.Substring(0, CRYPTO_KEY_LENGTH * 2);
+                s_encrypted = s_encrypted.Substring(CRYPTO_KEY_LENGTH * 2);
+            }
+            key = hexString2Byte(s_key);
+            iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
+            return Decrypt(s_encrypted, key, iv);
+        }
+
+        /// <summary>
+        /// 指定密钥，并对密文进行解密
+        /// </summary>
+        /// <param name="s_encrypted">密文</param>
+        /// <param name="s_key">密钥</param>
+        /// <returns>明文</returns>
+        public string Decrypt(string s_encrypted, string s_key)
+        {
+            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
+
+            byte[] temp = string2Byte(s_key);
+            if (temp.Length > key.Length)
+            {
+                throw new Exception("Key不能超过32字节！");
+            }
+            key = string2Byte(s_key.PadRight(key.Length));
+            iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
+            if (m_containKey)
+            {
+                s_encrypted = s_encrypted.Substring(CRYPTO_KEY_LENGTH * 2);
+            }
+            return Decrypt(s_encrypted, key, iv);
+        }
+
+        #region 私有方法
+
+        /// <summary>
+        /// 加密
+        /// </summary>
         private string Encrypt(string s_crypto, byte[] key, byte[] iv)
         {
             string s_encryped = string.Empty;
@@ -86,45 +184,8 @@ namespace XCLNetTools.Encrypt
         }
 
         /// <summary>
-        /// 指定密钥对明文进行AES加密
+        /// 解密
         /// </summary>
-        /// <param name="s_crypto">明文</param>
-        /// <param name="s_key">加密密钥</param>
-        /// <returns></returns>
-        public string Encrypt(string s_crypto, string s_key)
-        {
-            try
-            {
-                byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
-                byte[] temp = string2Byte(s_key);
-                if (temp.Length > key.Length)
-                {
-                    throw new Exception("Key不能超过32字节！");
-                }
-                key = string2Byte(s_key.PadRight(key.Length));
-                iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
-                return Encrypt(s_crypto, key, iv);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        /// <summary>
-        /// 动态生成密钥，并对明文进行AES加密
-        /// </summary>
-        /// <param name="s_crypto">明文</param>
-        /// <returns></returns>
-        public string Encrypt(string s_crypto)
-        {
-            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
-            m_aesCryptoServiceProvider.GenerateKey();
-            key = m_aesCryptoServiceProvider.Key;
-            iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
-            return Encrypt(s_crypto, key, iv);
-        }
-
         private string Decrypt(string s_encrypted, byte[] key, byte[] iv)
         {
             string s_decrypted = string.Empty;
@@ -148,53 +209,10 @@ namespace XCLNetTools.Encrypt
         }
 
         /// <summary>
-        /// 从密文中解析出密钥，并对密文进行解密
+        /// byte转16进制
         /// </summary>
-        /// <param name="s_encrypted">密文</param>
-        /// <returns></returns>
-        public string Decrypt(string s_encrypted)
-        {
-            string s_key = string.Empty;
-            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
-
-            if (s_encrypted.Length <= CRYPTO_KEY_LENGTH * 2)
-            {
-                throw new Exception("无效的密文！");
-            }
-            if (m_containKey)
-            {
-                s_key = s_encrypted.Substring(0, CRYPTO_KEY_LENGTH * 2);
-                s_encrypted = s_encrypted.Substring(CRYPTO_KEY_LENGTH * 2);
-            }
-            key = hexString2Byte(s_key);
-            iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
-            return Decrypt(s_encrypted, key, iv);
-        }
-
-        /// <summary>
-        /// 指定密钥，并对密文进行解密
-        /// </summary>
-        /// <param name="s_encrypted">密文</param>
-        /// <param name="s_key">密钥</param>
-        /// <returns></returns>
-        public string Decrypt(string s_encrypted, string s_key)
-        {
-            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
-
-            byte[] temp = string2Byte(s_key);
-            if (temp.Length > key.Length)
-            {
-                throw new Exception("Key不能超过32字节！");
-            }
-            key = string2Byte(s_key.PadRight(key.Length));
-            iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
-            if (m_containKey)
-            {
-                s_encrypted = s_encrypted.Substring(CRYPTO_KEY_LENGTH * 2);
-            }
-            return Decrypt(s_encrypted, key, iv);
-        }
-
+        /// <param name="bytes">byte数组</param>
+        /// <returns>16进制</returns>
         private string byte2HexString(byte[] bytes)
         {
             StringBuilder sb = new StringBuilder();
@@ -205,6 +223,11 @@ namespace XCLNetTools.Encrypt
             return sb.ToString();
         }
 
+        /// <summary>
+        /// 16进制转byte
+        /// </summary>
+        /// <param name="hex">16进制</param>
+        /// <returns>byte数组</returns>
         private byte[] hexString2Byte(string hex)
         {
             int len = hex.Length / 2;
@@ -216,14 +239,26 @@ namespace XCLNetTools.Encrypt
             return bytes;
         }
 
+        /// <summary>
+        /// 字符串转byte
+        /// </summary>
+        /// <param name="str">字符串</param>
+        /// <returns>byte数组</returns>
         private byte[] string2Byte(string str)
         {
             return Encoding.UTF8.GetBytes(str);
         }
 
+        /// <summary>
+        /// byte转字符串
+        /// </summary>
+        /// <param name="bytes">byte数组</param>
+        /// <returns>字符串</returns>
         private string byte2String(byte[] bytes)
         {
             return Encoding.UTF8.GetString(bytes);
         }
+
+        #endregion 私有方法
     }
 }

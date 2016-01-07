@@ -33,23 +33,17 @@ namespace XCLNetTools.Encrypt
         /// <summary>
         /// 得到随机哈希加密字符串
         /// </summary>
-        /// <returns></returns>
+        /// <returns>密文</returns>
         public static string GetSecurity()
         {
-            return HashEncoding(GetRandomValue());
-        }
-
-        /// <summary>
-        /// 得到一个随机数值
-        /// </summary>
-        public static string GetRandomValue()
-        {
-            return new Random().Next(1, int.MaxValue).ToString();
+            return HashEncoding(new Random().Next(1, int.MaxValue).ToString());
         }
 
         /// <summary>
         /// 哈希加密一个字符串
         /// </summary>
+        /// <param name="security">待加密的数据</param>
+        /// <returns>密文</returns>
         public static string HashEncoding(string security)
         {
             byte[] value;

@@ -107,8 +107,14 @@ namespace XCLNetTools.FileHandler
         private WebHeaderCollection responseHeaders;
         private int bufferSize = 15240;
 
+        /// <summary>
+        /// 上传事件
+        /// </summary>
         public event EventHandler<UploadEventArgs> UploadProgressChanged;
 
+        /// <summary>
+        /// 下载事件
+        /// </summary>
         public event EventHandler<DownloadEventArgs> DownloadProgressChanged;
 
         static WebClient()
@@ -369,7 +375,8 @@ namespace XCLNetTools.FileHandler
         /// 创建HTTP请求
         /// </summary>
         /// <param name="url">URL地址</param>
-        /// <returns></returns>
+        /// <param name="method">method方法</param>
+        /// <returns>httpwebrequest实例</returns>
         private HttpWebRequest CreateRequest(string url, string method)
         {
             Uri uri = new Uri(url);

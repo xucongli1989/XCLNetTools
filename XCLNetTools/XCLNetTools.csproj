@@ -215,7 +215,7 @@
     <Compile Include="Encrypt\MD5.cs" />
     <Compile Include="Entity\PagerInfo.cs" />
     <Compile Include="Enum\CommonEnum.cs" />
-    <Compile Include="Enum\EnumFieldModel.cs" />
+    <Compile Include="Entity\Enum\EnumFieldModel.cs" />
     <Compile Include="Enum\EnumHelper.cs" />
     <Compile Include="FileHandler\Bookmark.cs" />
     <Compile Include="FileHandler\ImgLib.cs" />
