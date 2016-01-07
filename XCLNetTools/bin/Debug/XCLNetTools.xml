@@ -4140,6 +4140,250 @@
             <param name="zipedFile">创建的zip文件路径</param>
             <param name="fileNames">自定义待压缩的文件名</param>
         </member>
+        <member name="T:XCLNetTools.FTP.FTPClient">
+            <summary>
+            FTP操作客户端类
+            <seealso cref="!:http://www.cnblogs.com/sufei/archive/2012/12/09/2810197.html"/>
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.#ctor">
+            <summary>
+            缺省构造函数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.#ctor(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.strMsg">
+            <summary>
+            服务器返回的应答信息(包含应答码)
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.strReply">
+            <summary>
+            服务器返回的应答信息(包含应答码)
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.iReplyCode">
+            <summary>
+            服务器返回的应答码
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.socketControl">
+            <summary>
+            进行控制连接的socket
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.trType">
+            <summary>
+            传输模式
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.BLOCK_SIZE">
+            <summary>
+            接收和发送数据的缓冲区
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.ASCII">
+            <summary>
+            编码方式
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.buffer">
+            <summary>
+            字节数组
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.FTP.FTPClient.RemoteHost">
+            <summary>
+            FTP服务器IP地址
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.FTP.FTPClient.RemotePort">
+            <summary>
+            FTP服务器端口
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.FTP.FTPClient.RemotePath">
+            <summary>
+            当前服务器目录
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.FTP.FTPClient.RemoteUser">
+            <summary>
+            登录用户账号
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.FTP.FTPClient.RemotePass">
+            <summary>
+            用户登录密码
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.FTP.FTPClient.Connected">
+            <summary>
+            是否登录
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Connect">
+            <summary>
+            建立连接
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.DisConnect">
+            <summary>
+            关闭连接
+            </summary>
+        </member>
+        <member name="T:XCLNetTools.FTP.FTPClient.TransferType">
+            <summary>
+            传输模式:二进制类型、ASCII类型
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.TransferType.Binary">
+            <summary>
+            二进制类型
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.FTP.FTPClient.TransferType.ASCII">
+            <summary>
+            ASCII类型
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.SetTransferType(XCLNetTools.FTP.FTPClient.TransferType)">
+            <summary>
+            设置传输模式
+            </summary>
+            <param name="ttType">传输模式</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.GetTransferType">
+            <summary>
+            获得传输模式
+            </summary>
+            <returns>传输模式</returns>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Dir(System.String)">
+            <summary>
+            获得文件列表
+            </summary>
+            <param name="strMask">文件名的匹配字符串</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.GetFileSize(System.String)">
+            <summary>
+            获取文件大小
+            </summary>
+            <param name="strFileName">文件名</param>
+            <returns>文件大小</returns>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.GetFileInfo(System.String)">
+            <summary>
+            获取文件信息
+            </summary>
+            <param name="strFileName">文件名</param>
+            <returns>文件大小</returns>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="strFileName">待删除文件名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Rename(System.String,System.String)">
+            <summary>
+            重命名(如果新文件名与已有文件重名,将覆盖已有文件)
+            </summary>
+            <param name="strOldFileName">旧文件名</param>
+            <param name="strNewFileName">新文件名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Get(System.String,System.String)">
+            <summary>
+            下载一批文件
+            </summary>
+            <param name="strFileNameMask">文件名的匹配字符串</param>
+            <param name="strFolder">本地目录(不得以\结束)</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Get(System.String,System.String,System.String)">
+            <summary>
+            下载一个文件
+            </summary>
+            <param name="strRemoteFileName">要下载的文件名</param>
+            <param name="strFolder">本地目录(不得以\结束)</param>
+            <param name="strLocalFileName">保存在本地时的文件名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.GetNoBinary(System.String,System.String,System.String)">
+            <summary>
+            下载一个文件
+            </summary>
+            <param name="strRemoteFileName">要下载的文件名</param>
+            <param name="strFolder">本地目录(不得以\结束)</param>
+            <param name="strLocalFileName">保存在本地时的文件名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Put(System.String,System.String)">
+            <summary>
+            上传一批文件
+            </summary>
+            <param name="strFolder">本地目录(不得以\结束)</param>
+            <param name="strFileNameMask">文件名匹配字符(可以包含*和?)</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.Put(System.String)">
+            <summary>
+            上传一个文件
+            </summary>
+            <param name="strFileName">本地文件名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.PutByGuid(System.String,System.String)">
+            <summary>
+            上传一个文件
+            </summary>
+            <param name="strFileName">本地文件名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.MkDir(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="strDirName">目录名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.RmDir(System.String)">
+            <summary>
+            删除目录
+            </summary>
+            <param name="strDirName">目录名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.ChDir(System.String)">
+            <summary>
+            改变目录
+            </summary>
+            <param name="strDirName">新的工作目录名</param>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.ReadReply">
+            <summary>
+            将一行应答字符串记录在strReply和strMsg,应答码记录在iReplyCode
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.CreateDataSocket">
+            <summary>
+            建立进行数据连接的socket
+            </summary>
+            <returns>数据连接socket</returns>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.CloseSocketConnect">
+            <summary>
+            关闭socket连接(用于登录以前)
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.ReadLine">
+            <summary>
+            读取Socket返回的所有字符串
+            </summary>
+            <returns>包含应答码的字符串行</returns>
+        </member>
+        <member name="M:XCLNetTools.FTP.FTPClient.SendCommand(System.String)">
+            <summary>
+            发送命令并获取应答码和最后一行应答字符串
+            </summary>
+            <param name="strCommand">命令</param>
+        </member>
         <member name="T:XCLNetTools.Generic.Extension">
             <summary>
             泛型扩展方法
