@@ -221,6 +221,7 @@
     <Compile Include="FileHandler\Bookmark.cs" />
     <Compile Include="FileHandler\ImgLib.cs" />
     <Compile Include="FileHandler\VerificationCode.cs" />
+    <Compile Include="FTP\FTPClient.cs" />
     <Compile Include="Generic\Extension.cs" />
     <Compile Include="Generic\ListHelper.cs" />
     <Compile Include="Http\CookieHelper.cs" />
