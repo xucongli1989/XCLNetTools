@@ -5851,6 +5851,11 @@
             取得置文件路径和名称
             </summary>
         </member>
+        <member name="F:XCLNetTools.XML.ConfigClass.appSettingsName">
+            <summary>
+            config中的appsetting的节点名
+            </summary>
+        </member>
         <member name="P:XCLNetTools.XML.ConfigClass.LoadConfigDocument">
             <summary>
             读入配置文件

@@ -40,17 +40,8 @@ namespace XCLNetTools.XML
         public static XmlNode GetXmlNodeByXpath(string xmlFileName, string xpath)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            try
-            {
-                xmlDoc.Load(xmlFileName); //加载XML文档
-                XmlNode xmlNode = xmlDoc.SelectSingleNode(xpath);
-                return xmlNode;
-            }
-            catch (Exception ex)
-            {
-                //return null;
-                throw ex; //这里可以定义你自己的异常处理
-            }
+            xmlDoc.Load(xmlFileName);
+            return xmlDoc.SelectSingleNode(xpath);
         }
 
         /// <summary>
@@ -62,18 +53,8 @@ namespace XCLNetTools.XML
         public static XmlNodeList GetXmlNodeListByXpath(string xmlFileName, string xpath)
         {
             XmlDocument xmlDoc = new XmlDocument();
-
-            try
-            {
-                xmlDoc.Load(xmlFileName); //加载XML文档
-                XmlNodeList xmlNodeList = xmlDoc.SelectNodes(xpath);
-                return xmlNodeList;
-            }
-            catch (Exception ex)
-            {
-                //return null;
-                throw ex; //这里可以定义你自己的异常处理
-            }
+            xmlDoc.Load(xmlFileName);
+            return xmlDoc.SelectNodes(xpath);
         }
 
         /// <summary>
@@ -88,21 +69,14 @@ namespace XCLNetTools.XML
             string content = string.Empty;
             XmlDocument xmlDoc = new XmlDocument();
             XmlAttribute xmlAttribute = null;
-            try
+            xmlDoc.Load(xmlFileName);
+            XmlNode xmlNode = xmlDoc.SelectSingleNode(xpath);
+            if (xmlNode != null)
             {
-                xmlDoc.Load(xmlFileName); //加载XML文档
-                XmlNode xmlNode = xmlDoc.SelectSingleNode(xpath);
-                if (xmlNode != null)
+                if (xmlNode.Attributes.Count > 0)
                 {
-                    if (xmlNode.Attributes.Count > 0)
-                    {
-                        xmlAttribute = xmlNode.Attributes[xmlAttributeName];
-                    }
+                    xmlAttribute = xmlNode.Attributes[xmlAttributeName];
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex; //这里可以定义你自己的异常处理
             }
             return xmlAttribute;
         }

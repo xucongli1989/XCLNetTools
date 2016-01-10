@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 
 namespace XCLNetTools.XML
@@ -34,23 +32,20 @@ namespace XCLNetTools.XML
         private static string getConfigFilePath = AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
 
         /// <summary>
+        /// config中的appsetting的节点名
+        /// </summary>
+        private const string appSettingsName = "appSettings";
+
+        /// <summary>
         /// 读入配置文件
         /// </summary>
         private static System.Xml.XmlDocument LoadConfigDocument
         {
             get
             {
-                System.Xml.XmlDocument doc = null;
-                try
-                {
-                    doc = new System.Xml.XmlDocument();
-                    doc.Load(getConfigFilePath);
-                    return doc;
-                }
-                catch (System.IO.FileNotFoundException e)
-                {
-                    throw new System.Exception("No configuration file found.", e);
-                }
+                System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
+                doc.Load(getConfigFilePath);
+                return doc;
             }
         }
 
@@ -72,7 +67,7 @@ namespace XCLNetTools.XML
         /// <returns>返回KEY值</returns>
         public static string GetConfigString(string sectionName, string key)
         {
-            sectionName = string.IsNullOrEmpty(sectionName) ? "appSettings" : sectionName;
+            sectionName = string.IsNullOrEmpty(sectionName) ? appSettingsName : sectionName;
             System.Collections.Specialized.NameValueCollection cfgName = (System.Collections.Specialized.NameValueCollection)System.Configuration.ConfigurationManager.GetSection(sectionName);
             return cfgName[key];
         }
@@ -137,38 +132,25 @@ namespace XCLNetTools.XML
         /// <param name="keyvalue">键值</param>
         public static void SetConfigKeyValue(string sectionName, string key, string keyvalue)
         {
-            //导入配置文件
             System.Xml.XmlDocument doc = LoadConfigDocument;
-            //重新取得 节点名
             System.Xml.XmlNode node = doc.SelectSingleNode("//" + sectionName);
             if (node == null)
             {
-                throw new InvalidOperationException(sectionName + " section not found in config file.");
+                return;
             }
-            try
+            System.Xml.XmlElement elem = (System.Xml.XmlElement)node.SelectSingleNode(string.Format("//add[@key='{0}']", key));
+            if (elem != null)
             {
-                // 用 'add'元件 格式化是否包含键名
-                // select the 'add' element that contains the key
-                System.Xml.XmlElement elem = (System.Xml.XmlElement)node.SelectSingleNode(string.Format("//add[@key='{0}']", key));
-                if (elem != null)
-                {
-                    //修改或添加键值
-                    elem.SetAttribute("value", keyvalue);
-                }
-                else
-                {
-                    //如果没有发现键名则进行添加设置键名和键值
-                    elem = doc.CreateElement("add");
-                    elem.SetAttribute("key", key);
-                    elem.SetAttribute("value", keyvalue);
-                    node.AppendChild(elem);
-                }
-                doc.Save(getConfigFilePath);
+                elem.SetAttribute("value", keyvalue);
             }
-            catch
+            else
             {
-                throw;
+                elem = doc.CreateElement("add");
+                elem.SetAttribute("key", key);
+                elem.SetAttribute("value", keyvalue);
+                node.AppendChild(elem);
             }
+            doc.Save(getConfigFilePath);
         }
 
         /// <summary>
@@ -178,40 +160,25 @@ namespace XCLNetTools.XML
         /// <parma name="keyvalue">键值</parma>
         public static void SetConfigKeyValue(string key, string keyvalue)
         {
-            //导入配置文件
-            string SectionName = "appSettings";
             System.Xml.XmlDocument doc = LoadConfigDocument;
-            //重新取得 节点名
-            System.Xml.XmlNode node = doc.SelectSingleNode("//" + SectionName);
+            System.Xml.XmlNode node = doc.SelectSingleNode("//" + appSettingsName);
             if (node == null)
             {
-                throw new InvalidOperationException(SectionName + " section not found in config file.");
+                return;
             }
-            try
+            System.Xml.XmlElement elem = (System.Xml.XmlElement)node.SelectSingleNode(string.Format("//add[@key='{0}']", key));
+            if (elem != null)
             {
-                // 用 'add'元件 格式化是否包含键名
-                // select the 'add' element that contains the key
-                System.Xml.XmlElement elem = (System.Xml.XmlElement)node.SelectSingleNode(string.Format("//add[@key='{0}']", key));
-
-                if (elem != null)
-                {
-                    //修改或添加键值
-                    elem.SetAttribute("value", keyvalue);
-                }
-                else
-                {
-                    //如果没有发现键名则进行添加设置键名和键值
-                    elem = doc.CreateElement("add");
-                    elem.SetAttribute("key", key);
-                    elem.SetAttribute("value", keyvalue);
-                    node.AppendChild(elem);
-                }
-                doc.Save(getConfigFilePath);
+                elem.SetAttribute("value", keyvalue);
             }
-            catch
+            else
             {
-                throw;
+                elem = doc.CreateElement("add");
+                elem.SetAttribute("key", key);
+                elem.SetAttribute("value", keyvalue);
+                node.AppendChild(elem);
             }
+            doc.Save(getConfigFilePath);
         }
 
         /// <summary>
@@ -221,27 +188,14 @@ namespace XCLNetTools.XML
         /// <param name="key">要删除的键</param>
         public static void RemoveSectionKey(string SectionName, string key)
         {
-            //导入配置文件
             System.Xml.XmlDocument doc = LoadConfigDocument;
-            //重新取得 节点名
             System.Xml.XmlNode node = doc.SelectSingleNode("//" + SectionName);
-            try
+            if (node == null)
             {
-                if (node == null)
-                {
-                    throw new InvalidOperationException(SectionName + " section not found in config file.");
-                }
-                else
-                {
-                    // 用 'add' 方法格式 key和value
-                    node.RemoveChild(node.SelectSingleNode(string.Format("//add[@key='{0}']", key)));
-                    doc.Save(getConfigFilePath);
-                }
+                return;
             }
-            catch (NullReferenceException e)
-            {
-                throw new System.Exception(string.Format("The key {0} does not exist.", key), e);
-            }
+            node.RemoveChild(node.SelectSingleNode(string.Format("//add[@key='{0}']", key)));
+            doc.Save(getConfigFilePath);
         }
 
         /// <summary>
@@ -250,26 +204,14 @@ namespace XCLNetTools.XML
         /// <param name="key"></param>
         public static void RemoveSectionKey(string key)
         {
-            string SectionName = "appSettings";
-            //导入配置文件
             System.Xml.XmlDocument doc = LoadConfigDocument;
-            //重新取得 节点名
-            System.Xml.XmlNode node = doc.SelectSingleNode("//" + SectionName);
-            try
+            System.Xml.XmlNode node = doc.SelectSingleNode("//" + appSettingsName);
+            if (node == null)
             {
-                if (node == null)
-                    throw new InvalidOperationException(SectionName + " section not found in config file.");
-                else
-                {
-                    // 用 'add' 方法格式 key和value
-                    node.RemoveChild(node.SelectSingleNode(string.Format("//add[@key='{0}']", key)));
-                    doc.Save(getConfigFilePath);
-                }
+                return;
             }
-            catch (NullReferenceException e)
-            {
-                throw new System.Exception(string.Format("The key {0} does not exist.", key), e);
-            }
+            node.RemoveChild(node.SelectSingleNode(string.Format("//add[@key='{0}']", key)));
+            doc.Save(getConfigFilePath);
         }
     }
 }
