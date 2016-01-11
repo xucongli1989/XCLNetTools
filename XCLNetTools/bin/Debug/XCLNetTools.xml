@@ -669,6 +669,16 @@
             Access数据库操作类
             </summary>
         </member>
+        <member name="F:XCLNetTools.DataBase.Access.AccessHelper.conn">
+            <summary>
+            oledb连接
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.DataBase.Access.AccessHelper.comm">
+            <summary>
+            command
+            </summary>
+        </member>
         <member name="M:XCLNetTools.DataBase.Access.AccessHelper.#ctor">
             <summary>
             构造函数

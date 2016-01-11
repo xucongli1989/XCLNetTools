@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Collections;
 using System.Web;
@@ -37,8 +35,7 @@ namespace XCLNetTools.Cache
         /// <returns>该缓存的值</returns>
         public static object GetCache(string CacheKey)
         {
-            System.Web.Caching.Cache objCache = HttpRuntime.Cache;
-            return objCache[CacheKey];
+            return HttpRuntime.Cache[CacheKey];
         }
 
         /// <summary>
@@ -48,8 +45,7 @@ namespace XCLNetTools.Cache
         /// <param name="objObject">缓存key值</param>
         public static void SetCache(string CacheKey, object objObject)
         {
-            System.Web.Caching.Cache objCache = HttpRuntime.Cache;
-            objCache.Insert(CacheKey, objObject);
+            HttpRuntime.Cache.Insert(CacheKey, objObject);
         }
 
         /// <summary>
@@ -61,8 +57,7 @@ namespace XCLNetTools.Cache
         /// <param name="slidingExpiration">最后一次访问所插入对象时与该对象到期时之间的时间间隔</param>
         public static void SetCache(string CacheKey, object objObject, DateTime absoluteExpiration, TimeSpan slidingExpiration)
         {
-            System.Web.Caching.Cache objCache = HttpRuntime.Cache;
-            objCache.Insert(CacheKey, objObject, null, absoluteExpiration, slidingExpiration);
+            HttpRuntime.Cache.Insert(CacheKey, objObject, null, absoluteExpiration, slidingExpiration);
         }
 
         /// <summary>
@@ -71,8 +66,7 @@ namespace XCLNetTools.Cache
         /// <param name="key">缓存key名</param>
         public static void Clear(string key)
         {
-            System.Web.Caching.Cache objCache = HttpRuntime.Cache;
-            objCache.Remove(key);
+            HttpRuntime.Cache.Remove(key);
         }
 
         /// <summary>
@@ -82,8 +76,7 @@ namespace XCLNetTools.Cache
         /// <returns>true:存在</returns>
         public static bool Exists(string key)
         {
-            System.Web.Caching.Cache objCache = HttpRuntime.Cache;
-            return objCache[key] != null;
+            return HttpRuntime.Cache[key] != null;
         }
 
         /// <summary>
