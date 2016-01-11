@@ -32,13 +32,19 @@ namespace XCLNetTools.DataBase.Access
     /// </summary>
     public class AccessHelper
     {
-        protected static OleDbConnection conn = new OleDbConnection();
-        protected static OleDbCommand comm = new OleDbCommand();
+        /// <summary>
+        /// oledb连接
+        /// </summary>
+        private static OleDbConnection conn = new OleDbConnection();
+        /// <summary>
+        /// command
+        /// </summary>
+        private static OleDbCommand comm = new OleDbCommand();
 
         /// <summary>
         /// 构造函数
         /// </summary>
-        public AccessHelper()
+        private AccessHelper()
         {
         }
 
