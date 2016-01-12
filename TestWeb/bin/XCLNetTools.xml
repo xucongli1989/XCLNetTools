@@ -5220,39 +5220,38 @@
             <summary>
             返回指定日期到该日期所在月结束的剩余天数
             </summary>
+            <param name="date">要计算的时间</param>
         </member>
         <member name="M:XCLNetTools.StringHander.DateHelper.DaysLeftInYear(System.DateTime)">
             <summary>
             返回指定日期到该日期所在年结束的剩余天数
             </summary>
+            <param name="date">要计算的时间</param>
         </member>
         <member name="M:XCLNetTools.StringHander.DateHelper.DaysLeftInWeek(System.DateTime)">
             <summary>
             返回指定日期到所在周结束的剩余天数
             </summary>
-        </member>
-        <member name="M:XCLNetTools.StringHander.DateHelper.FromUnixTime(System.Int32)">
-            <summary>
-            将Unix（int）转为DateTime
-            </summary>
-            <param name="Date">Unix</param>
-            <returns>DateTime</returns>
+            <param name="date">要计算的时间</param>
         </member>
         <member name="M:XCLNetTools.StringHander.DateHelper.FromUnixTime(System.Int64)">
             <summary>
-             将Unix（long）转为DateTime
+            将Unix（long）转为DateTime
             </summary>
+            <param name="date">Unix(也就是1970-1-1为起点的时间)</param>
+            <returns>DateTime</returns>
         </member>
         <member name="M:XCLNetTools.StringHander.DateHelper.ToUnix(System.DateTime)">
             <summary>
-            将DateTime转为Unix
+            将DateTime转为Unix(也就是1970-1-1为起点的时间)
             </summary>
+            <param name="date">要转换的时间</param>
         </member>
         <member name="M:XCLNetTools.StringHander.DateHelper.GetTimeString(System.DateTime,System.DateTime)">
             <summary>
             获取两个时间的时间间隔，如：“小时:分钟:秒”
             </summary>
-            <returns></returns>
+            <returns>时间字符串，如："23：59：59"</returns>
         </member>
         <member name="M:XCLNetTools.StringHander.DateHelper.GetTimeInterval(System.DateTime,System.DateTime)">
             <summary>
@@ -5387,6 +5386,14 @@
             <summary>
             转换为DateTime,若为null或转换失败，则取DateTime.MinValue
             </summary>
+        </member>
+        <member name="M:XCLNetTools.StringHander.DateHelper.GetSecondByTicks(System.Int64)">
+            <summary>
+            把ticks转为秒
+            注：1ticks=100毫微秒=100*10^(-3)*10^(-6)秒=10^(-7)秒
+            </summary>
+            <param name="ticks">时间刻度ticks值</param>
+            <returns>秒</returns>
         </member>
         <member name="T:XCLNetTools.StringHander.FormHelper">
             <summary>

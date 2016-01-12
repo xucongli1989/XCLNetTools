@@ -36,25 +36,28 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 返回指定日期到该日期所在月结束的剩余天数
         /// </summary>
-        public static int DaysLeftInMonth(this DateTime Date)
+        /// <param name="date">要计算的时间</param>
+        public static int DaysLeftInMonth(this DateTime date)
         {
-            return Thread.CurrentThread.CurrentCulture.Calendar.GetDaysInMonth(Date.Year, Date.Month) - Date.Day;
+            return Thread.CurrentThread.CurrentCulture.Calendar.GetDaysInMonth(date.Year, date.Month) - date.Day;
         }
 
         /// <summary>
         /// 返回指定日期到该日期所在年结束的剩余天数
         /// </summary>
-        public static int DaysLeftInYear(this DateTime Date)
+        /// <param name="date">要计算的时间</param>
+        public static int DaysLeftInYear(this DateTime date)
         {
-            return Thread.CurrentThread.CurrentCulture.Calendar.GetDaysInYear(Date.Year) - Date.DayOfYear;
+            return Thread.CurrentThread.CurrentCulture.Calendar.GetDaysInYear(date.Year) - date.DayOfYear;
         }
 
         /// <summary>
         /// 返回指定日期到所在周结束的剩余天数
         /// </summary>
-        public static int DaysLeftInWeek(this DateTime Date)
+        /// <param name="date">要计算的时间</param>
+        public static int DaysLeftInWeek(this DateTime date)
         {
-            return 7 - ((int)Date.DayOfWeek + 1);
+            return 7 - ((int)date.DayOfWeek + 1);
         }
 
         #endregion 剩余天数相关
@@ -62,29 +65,22 @@ namespace XCLNetTools.StringHander
         #region Unix与DateTime转换
 
         /// <summary>
-        /// 将Unix（int）转为DateTime
+        /// 将Unix（long）转为DateTime
         /// </summary>
-        /// <param name="Date">Unix</param>
+        /// <param name="date">Unix(也就是1970-1-1为起点的时间)</param>
         /// <returns>DateTime</returns>
-        public static DateTime FromUnixTime(int Date)
+        public static DateTime FromUnixTime(long date)
         {
-            return new DateTime((Date * TimeSpan.TicksPerSecond) + new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).Ticks, DateTimeKind.Utc);
+            return new DateTime((date * TimeSpan.TicksPerSecond) + new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>
-        ///  将Unix（long）转为DateTime
+        /// 将DateTime转为Unix(也就是1970-1-1为起点的时间)
         /// </summary>
-        public static DateTime FromUnixTime(long Date)
+        /// <param name="date">要转换的时间</param>
+        public static int ToUnix(DateTime date)
         {
-            return new DateTime((Date * TimeSpan.TicksPerSecond) + new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).Ticks, DateTimeKind.Utc);
-        }
-
-        /// <summary>
-        /// 将DateTime转为Unix
-        /// </summary>
-        public static int ToUnix(DateTime Date)
-        {
-            return (int)((Date.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks / TimeSpan.TicksPerSecond);
+            return (int)((date.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks / TimeSpan.TicksPerSecond);
         }
 
         #endregion Unix与DateTime转换
@@ -94,7 +90,7 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取两个时间的时间间隔，如：“小时:分钟:秒”
         /// </summary>
-        /// <returns></returns>
+        /// <returns>时间字符串，如："23：59：59"</returns>
         public static string GetTimeString(DateTime dtStart, DateTime dtEnd)
         {
             int h, m, s;
@@ -500,9 +496,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 返回指定日期所在月的第一天
         /// </summary>
-        public static DateTime FirstDayOfMonth(this DateTime Date)
+        public static DateTime FirstDayOfMonth(this DateTime date)
         {
-            return new DateTime(Date.Year, Date.Month, 1);
+            return new DateTime(date.Year, date.Month, 1);
         }
 
         /// <summary>
@@ -653,6 +649,17 @@ namespace XCLNetTools.StringHander
         public static DateTime GetDateTimeWithMinValue(string key)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDateTime(key, DateTime.MinValue);
+        }
+
+        /// <summary>
+        /// 把ticks转为秒
+        /// 注：1ticks=100毫微秒=100*10^(-3)*10^(-6)秒=10^(-7)秒
+        /// </summary>
+        /// <param name="ticks">时间刻度ticks值</param>
+        /// <returns>秒</returns>
+        public static long GetSecondByTicks(long ticks)
+        {
+            return ticks / 10000000;
         }
 
         #endregion 其它
