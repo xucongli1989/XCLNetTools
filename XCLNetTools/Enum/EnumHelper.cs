@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,22 +31,53 @@ namespace XCLNetTools.Enum
     public class EnumHelper
     {
         /// <summary>
-        /// 将枚举转为List(包含自定义属性description)
+        /// 将枚举转为List(包含自定义属性description)（value为int型的string）
+        /// 已按枚举的value升序排列
+        /// <param name="emType">枚举type</param>
         /// </summary>
         public static List<XCLNetTools.Entity.Enum.EnumFieldModel> GetEnumFieldModelList(Type emType)
         {
+            var lst = GetEnumFieldTModelList<int>(emType);
+            if (null == lst || lst.Count == 0)
+            {
+                return null;
+            }
+            List<XCLNetTools.Entity.Enum.EnumFieldModel> result = new List<Entity.Enum.EnumFieldModel>();
+            lst.ForEach(k =>
+            {
+                result.Add(new Entity.Enum.EnumFieldModel()
+                {
+                    Description = k.Description,
+                    Text = k.Text,
+                    Value = k.Value.ToString()
+                });
+            });
+            return result;
+        }
+
+        /// <summary>
+        /// 将枚举转为List(包含自定义属性description)
+        /// 已按枚举的value升序排列
+        /// <param name="emType">枚举type</param>
+        /// <typeparam name="T">枚举value的类型（（可为byte、sbyte、short、ushort、int、uint、long 或 ulong。））</typeparam>
+        /// </summary>
+        public static List<XCLNetTools.Entity.Enum.EnumFieldTModel<T>> GetEnumFieldTModelList<T>(Type emType)
+        {
             if (!emType.IsEnum)
             {
-                throw new InvalidOperationException();
+                throw new Exception("emType必须为枚举类型！");
             }
-            List<XCLNetTools.Entity.Enum.EnumFieldModel> list = new List<XCLNetTools.Entity.Enum.EnumFieldModel>();
+            var tp = typeof(T);
+            object objVal = null;
+            var list = new List<XCLNetTools.Entity.Enum.EnumFieldTModel<T>>();
             System.Reflection.FieldInfo[] fields = emType.GetFields();
             foreach (FieldInfo field in fields)
             {
                 if (field.FieldType.IsEnum)
                 {
-                    XCLNetTools.Entity.Enum.EnumFieldModel model = new XCLNetTools.Entity.Enum.EnumFieldModel();
-                    model.Value = ((int)emType.InvokeMember(field.Name, BindingFlags.GetField, null, null, null)).ToString();
+                    var model = new XCLNetTools.Entity.Enum.EnumFieldTModel<T>();
+                    objVal = emType.InvokeMember(field.Name, BindingFlags.GetField, null, null, null);
+                    model.Value = (T)Convert.ChangeType(objVal, typeof(T));
                     model.Text = field.Name;
                     Object[] customObjs = field.GetCustomAttributes(typeof(DescriptionAttribute), false);
                     if (null != customObjs && customObjs.Length > 0)
@@ -58,6 +87,12 @@ namespace XCLNetTools.Enum
                     list.Add(model);
                 }
             }
+
+            if (null != list && list.Count > 0)
+            {
+                list = list.OrderBy(k => k.Value).ToList();
+            }
+
             return list;
         }
 
@@ -109,22 +144,16 @@ namespace XCLNetTools.Enum
         public static List<XCLNetTools.Entity.TextValue> GetList(Type type)
         {
             if (!type.IsEnum)
-            {    //不是枚举的要报错
+            {
                 throw new InvalidOperationException();
             }
-            //建立列表
             List<XCLNetTools.Entity.TextValue> list = new List<XCLNetTools.Entity.TextValue>();
-            //获得枚举的字段信息（因为枚举的值实际上是一个static的字段的值）
             System.Reflection.FieldInfo[] fields = type.GetFields();
-            //检索所有字段
             foreach (FieldInfo field in fields)
             {
-                //过滤掉一个不是枚举值的，记录的是枚举的源类型
                 if (field.FieldType.IsEnum)
                 {
                     XCLNetTools.Entity.TextValue obj = new XCLNetTools.Entity.TextValue();
-                    // 通过字段的名字得到枚举的值
-                    // 枚举的值如果是long的话，ToChar会有问题，但这个不在本文的讨论范围之内
                     obj.Value = ((int)type.InvokeMember(field.Name, BindingFlags.GetField, null, null, null)).ToString();
                     obj.Text = field.Name;
                     list.Add(obj);

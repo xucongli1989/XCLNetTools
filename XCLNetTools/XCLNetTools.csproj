@@ -186,6 +186,7 @@
     <Compile Include="Control\ServerControl\Lib.cs" />
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
+    <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
     <Compile Include="Entity\FileInfoEntity.cs" />
     <Compile Include="Entity\Http\HttpItem.cs" />
     <Compile Include="Entity\Http\HttpResult.cs" />
