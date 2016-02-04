@@ -17,6 +17,11 @@
 
             <%=XCLNetTools.StringHander.Common.RootURL%>
         </div>
+
+        <a href="Default.aspx?a=1212&b=333&d=55&a=99">qqqqqqqqqqqq</a>
+
+
+        <%=XCLNetTools.StringHander.FormHelper.GetQueryFromSerializeString()%>
     </form>
 </body>
 </html>

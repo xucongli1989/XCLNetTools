@@ -23,7 +23,6 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Web;
-using System.Web.UI.WebControls;
 
 namespace XCLNetTools.StringHander
 {
@@ -595,6 +594,73 @@ namespace XCLNetTools.StringHander
         public static string CreateHiddenHtml(string name, string value)
         {
             return string.Format("<input type='hidden' name='{0}' value='{1}'/>", name, value);
+        }
+
+        /// <summary>
+        /// 获取QueryString的参数序列化字符串（也就是a=b&amp;c=d的形式）
+        /// </summary>
+        /// <returns>参数序列化的结值</returns>
+        public static string GetQuerySerializeString()
+        {
+            var req = HttpContext.Current.Request;
+            if (null == req.QueryString || req.QueryString.Count == 0)
+            {
+                return string.Empty;
+            }
+            List<string> lst = new List<string>();
+            string[] vals = new string[] { };
+            for (int i = 0; i < req.QueryString.Count; i++)
+            {
+                vals = req.QueryString.GetValues(i);
+                for (int j = 0; j < vals.Length; j++)
+                {
+                    lst.Add(string.Format("{0}={1}", req.QueryString.GetKey(i), vals[j]));
+                }
+            }
+            return string.Join("&", lst.ToArray());
+        }
+
+        /// <summary>
+        /// 获取Form的参数序列化字符串（也就是a=b&amp;c=d的形式）
+        /// </summary>
+        /// <returns>参数序列化的结值</returns>
+        public static string GetFromSerializeString()
+        {
+            var req = HttpContext.Current.Request;
+            if (null == req.Form || req.Form.Count == 0)
+            {
+                return string.Empty;
+            }
+            List<string> lst = new List<string>();
+            string[] vals = new string[] { };
+            for (int i = 0; i < req.Form.Count; i++)
+            {
+                vals = req.Form.GetValues(i);
+                for (int j = 0; j < vals.Length; j++)
+                {
+                    lst.Add(string.Format("{0}={1}", req.Form.GetKey(i), vals[j]));
+                }
+            }
+            return string.Join("&", lst.ToArray());
+        }
+
+        /// <summary>
+        /// 获取QueryString和Form的参数序列化字符串（也就是a=b&amp;c=d的形式）
+        /// </summary>
+        /// <returns>参数序列化的结值</returns>
+        public static string GetQueryFromSerializeString()
+        {
+            string q = FormHelper.GetQuerySerializeString();
+            string f = FormHelper.GetFromSerializeString();
+            if (string.IsNullOrEmpty(q))
+            {
+                return f;
+            }
+            if (string.IsNullOrEmpty(f))
+            {
+                return q;
+            }
+            return string.Join("&", new string[] { f, q });
         }
 
         #endregion 其它
