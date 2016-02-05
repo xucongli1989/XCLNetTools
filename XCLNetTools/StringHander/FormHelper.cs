@@ -36,6 +36,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取request参数，先取querystring,若没有，再取formstring，若没有，则为string.Empty
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         private static string GetQueryOrFormString(string name)
         {
             string str = null;
@@ -56,6 +58,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取request参数数组，先取querystring,若没有，再取formstring，若没有，则为null
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值数组</returns>
         private static string[] GetQueryOrFormStringArray(string name)
         {
             string[] str = null;
@@ -80,6 +84,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取string参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static string GetString(string name)
         {
             return FormHelper.GetQueryOrFormString(name);
@@ -88,6 +94,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取数组参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static string[] GetStringArray(string name)
         {
             return FormHelper.GetQueryOrFormStringArray(name);
@@ -100,6 +108,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取byte?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static byte? GetByteNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToByteNull(FormHelper.GetString(name));
@@ -108,6 +118,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取byte?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static byte? GetByteNull(string name, byte? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToByteNull(FormHelper.GetString(name), defaultValue);
@@ -116,6 +129,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取byte参数，默认0
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static byte GetByte(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToByte(FormHelper.GetString(name));
@@ -124,6 +139,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取byte参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static byte GetByte(string name, byte defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToByte(FormHelper.GetString(name), defaultValue);
@@ -132,6 +150,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取byte参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<byte> GetByteList(string name)
         {
             List<byte> lst = null;
@@ -150,6 +170,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取int?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static int? GetIntNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToIntNull(FormHelper.GetString(name));
@@ -158,6 +180,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取int?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static int? GetIntNull(string name, int? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToIntNull(FormHelper.GetString(name), defaultValue);
@@ -166,6 +191,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取int参数，默认0
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static int GetInt(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToInt(FormHelper.GetString(name));
@@ -174,6 +201,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取int参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static int GetInt(string name, int defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToInt(FormHelper.GetString(name), defaultValue);
@@ -182,6 +212,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取int参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<int> GetIntList(string name)
         {
             List<int> lst = null;
@@ -200,6 +232,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取short?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static short? GetShortNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToShortNull(FormHelper.GetString(name));
@@ -208,6 +242,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取short?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static short? GetShortNull(string name, short? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToShortNull(FormHelper.GetString(name), defaultValue);
@@ -216,6 +253,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取short参数，默认0
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static short GetShort(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToShort(FormHelper.GetString(name));
@@ -224,6 +263,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取short参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static short GetShort(string name, short defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToShort(FormHelper.GetString(name), defaultValue);
@@ -232,6 +274,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取short参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<short> GetShortList(string name)
         {
             List<short> lst = null;
@@ -250,6 +294,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取Long?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static long? GetLongNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToLongNull(FormHelper.GetString(name));
@@ -258,6 +304,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取Long?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static long? GetLongNull(string name, long? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToLongNull(FormHelper.GetString(name), defaultValue);
@@ -266,6 +315,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取long参数，默认0
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static long GetLong(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToLong(FormHelper.GetString(name));
@@ -274,6 +325,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取long参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static long GetLong(string name, long defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToLong(FormHelper.GetString(name), defaultValue);
@@ -282,6 +336,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取long参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<long> GetLongList(string name)
         {
             List<long> lst = null;
@@ -300,6 +356,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取float?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static float? GetFloatNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToFloatNull(FormHelper.GetString(name));
@@ -308,6 +366,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取float?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static float? GetFloatNull(string name, float? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToFloatNull(FormHelper.GetString(name), defaultValue);
@@ -316,6 +377,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取float参数，默认0
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static float GetFloat(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToFloat(FormHelper.GetString(name));
@@ -324,6 +387,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取float参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static float GetFloat(string name, float defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToFloat(FormHelper.GetString(name), defaultValue);
@@ -332,6 +398,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取float参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<float> GetFloatList(string name)
         {
             List<float> lst = null;
@@ -350,6 +418,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取double?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static double? GetDoubleNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDoubleNull(FormHelper.GetString(name));
@@ -358,6 +428,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取double?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static double? GetDoubleNull(string name, double? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDoubleNull(FormHelper.GetString(name), defaultValue);
@@ -366,6 +439,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取double参数，默认0
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static double GetDouble(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDouble(FormHelper.GetString(name));
@@ -374,6 +449,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取double参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static double GetDouble(string name, double defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDouble(FormHelper.GetString(name), defaultValue);
@@ -382,6 +460,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取double参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<double> GetDoubleList(string name)
         {
             List<double> lst = null;
@@ -400,6 +480,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取bool?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static bool? GetBoolNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToBoolNull(FormHelper.GetString(name));
@@ -408,6 +490,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取bool?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static bool? GetBoolNull(string name, bool? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToBoolNull(FormHelper.GetString(name), defaultValue);
@@ -416,6 +501,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取bool参数，默认false
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static bool GetBool(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToBool(FormHelper.GetString(name));
@@ -424,6 +511,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取bool参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static bool GetBool(string name, bool defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToBool(FormHelper.GetString(name), defaultValue);
@@ -432,6 +522,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取bool参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<bool> GetBoolList(string name)
         {
             List<bool> lst = null;
@@ -450,6 +542,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取decimal?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static decimal? GetDecimalNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDecimalNull(FormHelper.GetString(name));
@@ -458,6 +552,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取decimal?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static decimal? GetDecimalNull(string name, decimal? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDecimalNull(FormHelper.GetString(name), defaultValue);
@@ -466,6 +563,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取decimal参数，默认0
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static decimal GetDecimal(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDecimal(FormHelper.GetString(name));
@@ -474,6 +573,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取decimal参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static decimal GetDecimal(string name, decimal defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDecimal(FormHelper.GetString(name), defaultValue);
@@ -482,6 +584,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取decimal参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<decimal> GetDecimalList(string name)
         {
             List<decimal> lst = null;
@@ -500,6 +604,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取DateTime?参数
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static DateTime? GetDateTimeNull(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDateTimeNull(FormHelper.GetString(name));
@@ -508,6 +614,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取DateTime?参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static DateTime? GetDateTimeNull(string name, DateTime? defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDateTimeNull(FormHelper.GetString(name), defaultValue);
@@ -516,6 +625,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取DateTime参数，默认'0001/1/1 0:00:00'
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static DateTime GetDateTime(string name)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDateTime(FormHelper.GetString(name));
@@ -524,6 +635,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取DateTime参数，默认defaultValue
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
         public static DateTime GetDateTime(string name, DateTime defaultValue)
         {
             return XCLNetTools.Common.DataTypeConvert.ToDateTime(FormHelper.GetString(name), defaultValue);
@@ -532,6 +646,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取DateTime参数数组
         /// </summary>
+        /// <param name="name">参数名</param>
+        /// <returns>参数值</returns>
         public static List<DateTime> GetDateTimeList(string name)
         {
             List<DateTime> lst = null;
@@ -548,10 +664,10 @@ namespace XCLNetTools.StringHander
         #region 其它
 
         /// <summary>
-        /// 根据表单控件的name前缀，获取它的value数组
-        /// 注意：请保证已存在的name值之间没有包含关系（如：txtName和txtNameFirst），否则数据会紊乱！
+        /// 根据参数的name前缀，获取它的value数组
         /// </summary>
-        /// <param name="preName">name值的前缀</param>
+        /// <param name="preName">参数name值的前缀</param>
+        /// <returns>参数值</returns>
         public static string[] GetFromParamsValudByPre(string preName)
         {
             HttpContext context = HttpContext.Current;
@@ -574,7 +690,7 @@ namespace XCLNetTools.StringHander
         /// 把lst中的项生成input hidden标签
         /// </summary>
         /// <param name="lst">Key:hidden的name名字；Value:hidden的value</param>
-        /// <returns></returns>
+        /// <returns>hidden字符串</returns>
         public static string CreateHiddenHtml(List<XCLNetTools.Entity.TextValue> lst)
         {
             StringBuilder str = new StringBuilder();
@@ -591,6 +707,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 返回hidden
         /// </summary>
+        /// <param name="name">hidden名</param>
+        /// <param name="value">hidden值</param>
+        /// <returns>hidden字符串</returns>
         public static string CreateHiddenHtml(string name, string value)
         {
             return string.Format("<input type='hidden' name='{0}' value='{1}'/>", name, value);

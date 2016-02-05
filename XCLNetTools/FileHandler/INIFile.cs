@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -68,6 +66,9 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 读取INI文件
         /// </summary>
+        /// <param name="section">section</param>
+        /// <param name="key">key</param>
+        /// <returns>value值</returns>
         public string IniReadValue(string section, string key)
         {
             StringBuilder temp = new StringBuilder(255);
@@ -78,6 +79,9 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 读ini
         /// </summary>
+        /// <param name="section">section</param>
+        /// <param name="key">key</param>
+        /// <returns>结果byte[]</returns>
         public byte[] IniReadValues(string section, string key)
         {
             byte[] temp = new byte[255];

@@ -39,6 +39,7 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 取得用户客户端IP(穿过代理服务器取远程用户真实IP地址)
         /// </summary>
+        /// <returns>ip地址</returns>
         public static string GetClientIP()
         {
             var context = HttpContext.Current;
@@ -77,6 +78,7 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 根据ip138网站反馈结果获取服务端外网ip地址
         /// </summary>
+        /// <returns>ip地址</returns>
         public static string GetIpByIP138()
         {
             string url = "http://1212.ip138.com/ic.asp";
@@ -111,6 +113,8 @@ namespace XCLNetTools.StringHander
         /// 防止HTML代码注入
         /// 替换尖括号为html实体
         /// </summary>
+        /// <param name="str">待处理的数据</param>
+        /// <returns>处理后的数据</returns>
         public static string ExchangeNote(string str)
         {
             return (str ?? "").Replace("<", "&lt").Replace(">", "&gt");
@@ -158,6 +162,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 过滤HTML 和SQL
         /// </summary>
+        /// <param name="str">待处理的数据</param>
+        /// <returns>处理后的数据</returns>
         public static string NoSqlAndHtml(string str)
         {
             string s = string.Empty;
@@ -171,6 +177,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 删除所有HTML标记
         /// </summary>
+        /// <param name="html">待处理的数据</param>
+        /// <returns>处理后的数据</returns>
         public static string NoHTML(string html)
         {
             if (string.IsNullOrEmpty(html))
@@ -301,6 +309,7 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 输出
         /// </summary>
+        /// <param name="str">待输出的内容</param>
         public static void ResponseClearWrite(string str)
         {
             if (!string.IsNullOrEmpty(str))
@@ -318,6 +327,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 从xml中加载静态资源配置信息
         /// </summary>
+        /// <param name="xmlPath">xml路径</param>
+        /// <returns>配置对象</returns>
         public static XCLNetTools.Entity.StaticResourceConfig GetStaticResourceConfig(string xmlPath)
         {
             XCLNetTools.Entity.StaticResourceConfig model = null;
@@ -333,6 +344,7 @@ namespace XCLNetTools.StringHander
         /// </summary>
         /// <param name="config">配置</param>
         /// <param name="nameList">指定输出项，若为null，则输出所有</param>
+        /// <returns>引用的地址</returns>
         public static string GetStaticResourceUrl(XCLNetTools.Entity.StaticResourceConfig config, List<string> nameList = null)
         {
             StringBuilder str = new StringBuilder();
@@ -376,6 +388,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// gzip压缩字符串
         /// </summary>
+        /// <param name="text">待压缩的字符串</param>
+        /// <returns>压缩后的值</returns>
         public static string GZipCompressString(string text)
         {
             if (string.IsNullOrEmpty(text))
@@ -404,6 +418,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 解压缩字符串
         /// </summary>
+        /// <param name="compressedText">待解压的字符串</param>
+        /// <returns>解压后的值</returns>
         public static string GZipDecompressString(string compressedText)
         {
             if (string.IsNullOrEmpty(compressedText))
@@ -435,7 +451,7 @@ namespace XCLNetTools.StringHander
         /// <param name="str">源字符串</param>
         /// <param name="length">长度</param>
         /// <param name="s">需要替代的字符串</param>
-        /// <returns></returns>
+        /// <returns>字符串</returns>
         public static string GetSubString(string str, int length, string s)
         {
             string temp = NoHTML(str);
@@ -475,6 +491,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 半角转全角
         /// </summary>
+        /// <param name="BJstr">半角</param>
+        /// <returns>全角</returns>
         public static string GetQuanJiao(string BJstr)
         {
             #region
@@ -502,6 +520,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 全角转半角
         /// </summary>
+        /// <param name="QJstr">全角</param>
+        /// <returns>半角</returns>
         public static string GetBanJiao(string QJstr)
         {
             #region
@@ -531,6 +551,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 将指定字符串中的英文引号替换为中文引号（中文引号没有考虑正反）
         /// </summary>
+        /// <param name="str">待处理字符串</param>
+        /// <returns>处理后的值</returns>
         public static string ReplaceQuoteENToCN(string str)
         {
             if (!string.IsNullOrEmpty(str))
@@ -543,6 +565,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 将指定字符串中的英文引号替换为html引号实体
         /// </summary>
+        /// <param name="str">待处理字符串</param>
+        /// <returns>处理后的值</returns>
         public static string ReplaceQuoteToHTML(string str)
         {
             if (!string.IsNullOrEmpty(str))
@@ -555,6 +579,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 移除指定字符串中的英文引号
         /// </summary>
+        /// <param name="str">待处理字符串</param>
+        /// <returns>处理后的值</returns>
         public static string RemoveQuote(string str)
         {
             if (!string.IsNullOrEmpty(str))
@@ -569,38 +595,11 @@ namespace XCLNetTools.StringHander
         #region 其它字符串处理
 
         /// <summary>
-        /// 将指定字符串用指定分隔符分开存到list中
-        /// </summary>
-        /// <param name="str">源字符串</param>
-        /// <param name="speater">分隔字符</param>
-        public static List<string> GetStrSplitList(string str, char speater)
-        {
-            List<string> result = null;
-            if (!string.IsNullOrEmpty(str))
-            {
-                result = str.Split(speater).ToList();
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// 将list转为用指定分隔符拼接的字符串
-        /// </summary>
-        public static string GetStrFromList(List<string> list, string speater)
-        {
-            string str = string.Empty;
-            if (null != list && list.Count > 0)
-            {
-                str = string.Join(speater, list.ToArray());
-            }
-            return str;
-        }
-
-        /// <summary>
         /// 删除结尾的字符串
         /// </summary>
         /// <param name="str">待处理字符串</param>
         /// <param name="cutStr">要删除的字符串</param>
+        /// <returns>处理后的值</returns>
         public static string TrimEnd(string str, string cutStr)
         {
             return string.IsNullOrEmpty(str) ? string.Empty : str.TrimEnd(cutStr.ToCharArray());
@@ -611,6 +610,7 @@ namespace XCLNetTools.StringHander
         /// </summary>
         /// <param name="str">待处理字符串</param>
         /// <param name="cutStr">要删除的字符串</param>
+        /// <returns>处理后的值</returns>
         public static string TrimStart(string str, string cutStr)
         {
             return string.IsNullOrEmpty(str) ? string.Empty : str.TrimStart(cutStr.ToCharArray());
@@ -681,6 +681,10 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 根据dt和指定行号和列名，返回该列的列号.若找不到该列，则返回-1
         /// </summary>
+        /// <param name="dt">dataTable</param>
+        /// <param name="rowIndex">行号</param>
+        /// <param name="colName">列名</param>
+        /// <returns>列号</returns>
         public static int GetColIndex(System.Data.DataTable dt, int rowIndex, string colName)
         {
             int s = -1;
@@ -735,6 +739,7 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 判断当前请求是否为ajax请求
         /// </summary>
+        /// <returns>是否为ajax请求</returns>
         public static bool IsAjax()
         {
             var flag = false;

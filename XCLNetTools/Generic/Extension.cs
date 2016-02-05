@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,6 +32,8 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 判断IEnumerable是否为空
         /// </summary>
+        /// <param name="source">要判断的值</param>
+        /// <returns>是否为null或empty</returns>
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
         {
             return null == source || source.Count() == 0;
@@ -42,6 +42,8 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 判断IEnumerable是否有值
         /// </summary>
+        /// <param name="source">要判断的值</param>
+        /// <returns>是否不为（null或empty）</returns>
         public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> source)
         {
             return null != source && source.Count() > 0;
@@ -54,6 +56,8 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 将T转为json字符串
         /// </summary>
+        /// <param name="source">要转换的值</param>
+        /// <returns>json字符串</returns>
         public static string ToJson<T>(this T source)
         {
             if (null == source)
@@ -66,6 +70,8 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 判断T是否为null
         /// </summary>
+        /// <param name="source">要判断的值</param>
+        /// <returns>是否为null</returns>
         public static bool IsNull<T>(this T source)
         {
             return null == source;
@@ -74,6 +80,8 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 判断T不为null
         /// </summary>
+        /// <param name="source">要判断的值</param>
+        /// <returns>是否不为null</returns>
         public static bool IsNotNull<T>(this T source)
         {
             return null != source;

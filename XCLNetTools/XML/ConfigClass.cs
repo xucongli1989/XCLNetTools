@@ -201,7 +201,7 @@ namespace XCLNetTools.XML
         /// <summary>
         /// 删除默认节点
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="key">key名</param>
         public static void RemoveSectionKey(string key)
         {
             System.Xml.XmlDocument doc = LoadConfigDocument;

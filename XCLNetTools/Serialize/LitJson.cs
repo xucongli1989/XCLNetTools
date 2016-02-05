@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using LitJson;
 using System;
 using System.Collections.Generic;
@@ -35,6 +33,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 对象转为json
         /// </summary>
+        /// <param name="obj">要序列化的对象</param>
+        /// <returns>json</returns>
         public static string ConvertObjectToJson(object obj)
         {
             return JsonMapper.ToJson(obj);
@@ -45,6 +45,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// DataTable转为js的数组形式，若为空，则返回[]
         /// </summary>
+        /// <param name="dt">要处理的数据</param>
+        /// <returns>json数组</returns>
         public static string ConvertDataTableToArray(System.Data.DataTable dt)
         {
             string str = string.Empty;
@@ -77,6 +79,9 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// DataTable转为json
         /// </summary>
+        /// <param name="dt">数据源</param>
+        /// <param name="jsonName">指定的json key名</param>
+        /// <returns>json</returns>
         public static string ConvertDataTableToJson(DataTable dt, string jsonName)
         {
             return string.Format(@"{{""{0}"":{1}}}", jsonName, LitJson.ConvertDataTableToArray(dt));
@@ -89,6 +94,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// DataSet转为js的数组形式，若为空，则返回[]
         /// </summary>
+        /// <param name="ds">数据源</param>
+        /// <returns>json数组</returns>
         public static string ConvertDataSetToArray(System.Data.DataSet ds)
         {
             string str = string.Empty;
@@ -107,6 +114,9 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// DataSet转为json
         /// </summary>
+        /// <param name="ds">数据源</param>
+        /// <param name="jsonName">指定json key名</param>
+        /// <returns>json</returns>
         public static string ConvertDataSetToJson(DataSet ds, string jsonName)
         {
             return string.Format(@"{{""{0}"":{1}}}", jsonName, LitJson.ConvertDataSetToArray(ds));
@@ -119,6 +129,9 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// List转为json
         /// </summary>
+        /// <param name="lst">数据源</param>
+        /// <param name="jsonName">指定json key名</param>
+        /// <returns>json</returns>
         public static string ConvertListToJson<T>(IList<T> lst, string jsonName)
         {
             return string.Format(@"{{""{0}"":{1}}}", jsonName, LitJson.ConvertListToArray<T>(lst));
@@ -127,6 +140,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// List转为数组，若为空，则直接返回[]
         /// </summary>
+        /// <param name="lst">数据源</param>
+        /// <returns>json数组</returns>
         public static string ConvertListToArray<T>(IList<T> lst)
         {
             string str = string.Empty;
@@ -146,10 +161,10 @@ namespace XCLNetTools.Serialize
 
         /// <summary>
         /// 输出指定格式的数据
+        /// </summary>
         /// <param name="dataType">数据类型</param>
         /// <param name="jw">JsonWriter对象</param>
         /// <param name="value">要转换的值</param>
-        /// </summary>
         private static void WriteFormat(JsonWriter jw, string value, string dataType)
         {
             switch (dataType)

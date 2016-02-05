@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Text;
 using System.Web;
@@ -35,6 +33,7 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 输出JS代码
         /// </summary>
+        /// <param name="code">js代码</param>
         public static void WriteJS(string code)
         {
             string js = @"<script type='text/javascript'>" + code + "</script>";
@@ -48,6 +47,7 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 弹出Javascript小窗口
         /// </summary>
+        /// <param name="message">alter中的消息</param>
         public static void Alert(string message)
         {
             string js = @"<script type='text/javascript'>alert('" + message.Replace("'", "\"") + "');</script>";
@@ -62,7 +62,7 @@ namespace XCLNetTools.Javascript
         /// 弹出消息框并且转向到新的URL
         /// </summary>
         /// <param name="message">消息内容</param>
-        /// <param name="toURL">连接地址</param>
+        /// <param name="toURL">要跳转的地址</param>
         public static void AlertAndRedirect(string message, string toURL)
         {
             string js = "<script language=javascript>alert('{0}');window.location.replace('{1}')</script>";
@@ -76,6 +76,7 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 回到历史页面
         /// </summary>
+        /// <param name="value">回到历史第几个页面</param>
         public static void GoHistory(int value)
         {
             string js = @"<script type='text/javascript'>history.go({0});</script>";
@@ -103,6 +104,7 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 刷新父窗口
         /// </summary>
+        /// <param name="url">指定的url</param>
         public static void RefreshParent(string url)
         {
             string js = @"<script type='text/javascript'>window.opener.location.href='" + url + "';window.close();</script>";
@@ -147,6 +149,7 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 打开指定url
         /// </summary>
+        /// <param name="url">url地址</param>
         public static void OpenWebFormSize(string url)
         {
             string js = @"<script type='text/javascript'>window.open('" + url + @"');</script>";
@@ -155,26 +158,12 @@ namespace XCLNetTools.Javascript
 
         #endregion 打开指定大小的新窗体
 
-        #region 转向Url制定的页面
-
-        /// <summary>
-        /// 转向Url制定的页面
-        /// </summary>
-        public static void JavascriptLocationHref(string url)
-        {
-            string js = @"<script type='text/javascript'>window.location.replace('{0}');</script>";
-            js = string.Format(js, url);
-            HttpContext.Current.Response.Write(js);
-        }
-
-        #endregion 转向Url制定的页面
-
         #region 打开指定大小位置的模式对话框
 
         /// <summary>
         /// 打开指定大小位置的模式对话框
         /// </summary>
-        /// <param name="webFormUrl">连接地址</param>
+        /// <param name="webFormUrl">url地址</param>
         /// <param name="width">宽</param>
         /// <param name="height">高</param>
         /// <param name="top">距离上位置</param>
@@ -196,8 +185,8 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 打开指定大小位置的模式对话框
         /// </summary>
-        /// <param name="webFormUrl"></param>
-        /// <param name="features"></param>
+        /// <param name="webFormUrl">url地址</param>
+        /// <param name="features">参数</param>
         public static void ShowModalDialogWindow(string webFormUrl, string features)
         {
             string js = ShowModalDialogJavascript(webFormUrl, features);
@@ -211,7 +200,7 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 打开指定大小位置的模式对话框
         /// </summary>
-        /// <param name="webFormUrl">连接地址</param>
+        /// <param name="webFormUrl">url地址</param>
         /// <param name="features">用来描述对话框的外观等信息，可以使用以下的一个或几个，用分号“;”隔开
         /// 1.   dialogHeight:   对话框高度，不小于100px
         /// 2.   dialogWidth:   对话框宽度。
@@ -227,7 +216,7 @@ namespace XCLNetTools.Javascript
         /// 11.   edge:{ sunken | raised }：指明对话框的边框样式。默认为raised。
         /// 12.   unadorned:{ yes | no | 1 | 0 | on | off }：默认为no。
         /// </param>
-        /// <returns></returns>
+        /// <returns>js代码</returns>
         public static string ShowModalDialogJavascript(string webFormUrl, string features)
         {
             string js = @"<script type='text/javascript'>showModalDialog('" + webFormUrl + "','','" + features + "');</script>";
@@ -241,6 +230,8 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 在body结尾输出js(嵌入到ASP.NET页面的底部,恰好位于关闭元素 /form的前面)
         /// </summary>
+        /// <param name="page">page对象</param>
+        /// <param name="js">js代码</param>
         public static void AddBodyEnd(System.Web.UI.Page page, String js)
         {
             page.ClientScript.RegisterStartupScript(page.GetType(), Guid.NewGuid().ToString(), @"<script type='text/javascript' >" + js + "</script>");
@@ -253,6 +244,8 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 在body开始处输出js(将 JavaScript 嵌入到页面中开始元素 form 的紧后面)
         /// </summary>
+        /// <param name="page">page对象</param>
+        /// <param name="js">js代码</param>
         public static void AddBodyStart(System.Web.UI.Page page, String js)
         {
             page.ClientScript.RegisterClientScriptBlock(page.GetType(), Guid.NewGuid().ToString(), @"<script type='text/javascript' >" + js + "</script>");
@@ -265,6 +258,8 @@ namespace XCLNetTools.Javascript
         /// <summary>
         /// 控件点击 消息确认提示框
         /// </summary>
+        /// <param name="control">webform服务器控件</param>
+        /// <param name="msg">js confirm 提示语</param>
         public static void ShowConfirm(System.Web.UI.WebControls.WebControl control, string msg)
         {
             control.Attributes.Add("onclick", "return confirm('" + msg + "');");

@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using Aspose.Cells;
 using System.Collections.Generic;
 using System.Data;
@@ -33,27 +31,27 @@ namespace XCLNetTools.Entity.DataHandler
         /// <summary>
         /// 表名（主要是便于在xml字段名list中找到该节点信息）,对应dataSet中的table
         /// </summary>
-        public string[] tableName { get; set; }
+        public string[] TableName { get; set; }
 
         /// <summary>
         /// 导出类，包含新旧字段名（为null时，则保持ds中的相应的列名）
         /// </summary>
-        public List<OutPutClass> outPutClass { get; set; }
+        public List<OutPutClass> OutPutClass { get; set; }
 
         /// <summary>
         /// 要导出的DataSet
         /// </summary>
-        public DataSet ds { get; set; }
+        public DataSet Ds { get; set; }
 
         /// <summary>
         /// 导出的EXCEL文件的名字
         /// </summary>
-        public string fileTitle { get; set; }
+        public string FileTitle { get; set; }
 
         /// <summary>
         /// excel中第一行的标题
         /// </summary>
-        public string[] conTitle { get; set; }
+        public string[] ConTitle { get; set; }
 
         private bool _autoDownLoad = true;
 

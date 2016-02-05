@@ -34,12 +34,12 @@ namespace TestWeb.XCLNetTools_Exp.DataHandler
 
             XCLNetTools.DataHandler.DataToExcel.OutPutExcel(new XCLNetTools.Entity.DataHandler.OutPutParamClass()
             {
-                tableName = null,
-                outPutClass = null,
-                conTitle = new string[] { "用户信息表", "所有用户" },
+                TableName = null,
+                OutPutClass = null,
+                ConTitle = new string[] { "用户信息表", "所有用户" },
                 CustomFileName = "导出的文件.xlsx",
-                ds = ds,
-                fileTitle = "文件导出",
+                Ds = ds,
+                FileTitle = "文件导出",
             });
         }
     }

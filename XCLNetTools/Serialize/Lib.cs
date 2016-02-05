@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.IO;
 using System.Runtime.Serialization;
@@ -61,6 +59,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 对象深度clone（被clone对象必须可以序列化）
         /// </summary>
+        /// <param name="source">要克隆的对象</param>
+        /// <returns>克隆后的新对象</returns>
         public static T DeepClone<T>(T source) where T : class
         {
             if (!typeof(T).IsSerializable)

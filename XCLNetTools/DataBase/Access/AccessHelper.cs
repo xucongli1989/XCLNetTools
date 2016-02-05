@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Configuration;
 using System.Data;
@@ -36,6 +34,7 @@ namespace XCLNetTools.DataBase.Access
         /// oledb连接
         /// </summary>
         private static OleDbConnection conn = new OleDbConnection();
+
         /// <summary>
         /// command
         /// </summary>

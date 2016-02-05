@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Web;
 
@@ -40,8 +38,9 @@ namespace XCLNetTools.Message
         public static Action<MessageModel> LogApplicationErrorAction = new Action<MessageModel>((msgModel) => { XCLNetTools.Message.Log.WriteMessage(msgModel); });
 
         /// <summary>
-        /// 直接输出obj的json形式（输出的json已由unicode编码过了）
+        /// 直接输出obj的json形式
         /// </summary>
+        /// <param name="obj">要输出的对象</param>
         public static void WriteMessage(object obj)
         {
             HttpContext context = HttpContext.Current;
@@ -53,6 +52,7 @@ namespace XCLNetTools.Message
         /// <summary>
         /// 直接输出MessageModel的JSON形式（此JSON作为Log.JsonMessageName的一个属性）
         /// </summary>
+        /// <param name="model">消息对象</param>
         public static void WriteMessage(MessageModel model)
         {
             HttpContext context = HttpContext.Current;
@@ -66,6 +66,7 @@ namespace XCLNetTools.Message
         /// 输出消息（json）
         /// MessageModel
         /// </summary>
+        /// <param name="message">消息</param>
         public static void WriteMessage(string message)
         {
             WriteMessage(new MessageModel()

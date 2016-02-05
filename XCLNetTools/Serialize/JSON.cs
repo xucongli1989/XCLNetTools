@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System.Web.Script.Serialization;
 
 namespace XCLNetTools.Serialize
@@ -47,6 +45,9 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 将对象序列化为json
         /// </summary>
+        /// <param name="obj">要序列化的对象</param>
+        /// <param name="provider">序列化提供者</param>
+        /// <returns>json</returns>
         public static string Serialize(object obj, JsonProviderEnum provider = JsonProviderEnum.SystemWeb)
         {
             string result = string.Empty;
@@ -66,6 +67,9 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 将json反序列化为一个对象
         /// </summary>
+        /// <param name="str">要反序列化的json</param>
+        /// <param name="provider">提供者</param>
+        /// <returns>对象</returns>
         public static T DeSerialize<T>(string str, JsonProviderEnum provider = JsonProviderEnum.SystemWeb) where T : class
         {
             T result = default(T);

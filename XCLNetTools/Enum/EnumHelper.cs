@@ -33,8 +33,9 @@ namespace XCLNetTools.Enum
         /// <summary>
         /// 将枚举转为List(包含自定义属性description)（value为int型的string）
         /// 已按枚举的value升序排列
-        /// <param name="emType">枚举type</param>
         /// </summary>
+        /// <param name="emType">枚举type</param>
+        /// <returns>枚举的List</returns>
         public static List<XCLNetTools.Entity.Enum.EnumFieldModel> GetEnumFieldModelList(Type emType)
         {
             var lst = GetEnumFieldTModelList<int>(emType);
@@ -58,9 +59,10 @@ namespace XCLNetTools.Enum
         /// <summary>
         /// 将枚举转为List(包含自定义属性description)
         /// 已按枚举的value升序排列
+        /// </summary>
         /// <param name="emType">枚举type</param>
         /// <typeparam name="T">枚举value的类型（（可为byte、sbyte、short、ushort、int、uint、long 或 ulong。））</typeparam>
-        /// </summary>
+        /// <returns>枚举的List</returns>
         public static List<XCLNetTools.Entity.Enum.EnumFieldTModel<T>> GetEnumFieldTModelList<T>(Type emType)
         {
             if (!emType.IsEnum)
@@ -99,6 +101,7 @@ namespace XCLNetTools.Enum
         /// <summary>
         /// 获取枚举的description注解
         /// </summary>
+        /// <returns>枚举的描述</returns>
         public static string GetEnumDesc<T>(T enumtype)
         {
             string str = string.Empty;
@@ -125,6 +128,7 @@ namespace XCLNetTools.Enum
         /// <summary>
         /// 根据枚举text,获取枚举description
         /// </summary>
+        /// <returns>枚举的描述</returns>
         public static string GetEnumDescriptionByText(Type T, string text)
         {
             string str = string.Empty;
@@ -164,10 +168,10 @@ namespace XCLNetTools.Enum
 
         /// <summary>
         /// 判断数字是否属于该枚举
+        /// </summary>
         /// <param name="v">枚举的value，就是数字</param>
         /// <param name="type">枚举的typeof</param>
         /// <returns>true:v属于该枚举，反之则不属于</returns>
-        /// </summary>
         public static bool IsExistEnumValue(int v, Type type)
         {
             bool flag = false;
@@ -206,6 +210,7 @@ namespace XCLNetTools.Enum
         /// <summary>
         /// 将多个枚举项进行（按位或）操作，返回int型，若失败，则返回null
         /// </summary>
+        /// <returns>结果值</returns>
         public static int? GetBitORValue<T>(List<T> em)
         {
             int? val = null;
@@ -227,6 +232,7 @@ namespace XCLNetTools.Enum
         /// <summary>
         /// 根据多个枚举项（按位或）之后的int值，返回枚举list
         /// </summary>
+        /// <returns>枚举list</returns>
         public static List<T> GetEnumListByBitValue<T>(int val)
         {
             var tp = typeof(T);

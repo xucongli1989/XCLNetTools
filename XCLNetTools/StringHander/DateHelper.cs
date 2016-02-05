@@ -37,6 +37,7 @@ namespace XCLNetTools.StringHander
         /// 返回指定日期到该日期所在月结束的剩余天数
         /// </summary>
         /// <param name="date">要计算的时间</param>
+        /// <returns>剩余天数</returns>
         public static int DaysLeftInMonth(this DateTime date)
         {
             return Thread.CurrentThread.CurrentCulture.Calendar.GetDaysInMonth(date.Year, date.Month) - date.Day;
@@ -46,6 +47,7 @@ namespace XCLNetTools.StringHander
         /// 返回指定日期到该日期所在年结束的剩余天数
         /// </summary>
         /// <param name="date">要计算的时间</param>
+        /// <returns>剩余天数</returns>
         public static int DaysLeftInYear(this DateTime date)
         {
             return Thread.CurrentThread.CurrentCulture.Calendar.GetDaysInYear(date.Year) - date.DayOfYear;
@@ -55,6 +57,7 @@ namespace XCLNetTools.StringHander
         /// 返回指定日期到所在周结束的剩余天数
         /// </summary>
         /// <param name="date">要计算的时间</param>
+        /// <returns>剩余天数</returns>
         public static int DaysLeftInWeek(this DateTime date)
         {
             return 7 - ((int)date.DayOfWeek + 1);
@@ -78,6 +81,7 @@ namespace XCLNetTools.StringHander
         /// 将DateTime转为Unix(也就是1970-1-1为起点的时间)
         /// </summary>
         /// <param name="date">要转换的时间</param>
+        /// <returns>Unix时间</returns>
         public static int ToUnix(DateTime date)
         {
             return (int)((date.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks / TimeSpan.TicksPerSecond);
@@ -90,6 +94,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取两个时间的时间间隔，如：“小时:分钟:秒”
         /// </summary>
+        /// <param name="dtStart">开始时间</param>
+        /// <param name="dtEnd">结束时间</param>
         /// <returns>时间字符串，如："23：59：59"</returns>
         public static string GetTimeString(DateTime dtStart, DateTime dtEnd)
         {
@@ -334,7 +340,7 @@ namespace XCLNetTools.StringHander
         /// </summary>
         /// <param name="hour">小时</param>
         /// <param name="oneDayHour">一天几小时（灵活，自行指定，默认为24小时）</param>
-        /// <returns></returns>
+        /// <returns>汉字表示的时间</returns>
         public static string GetTimeStr(decimal hour, int oneDayHour = 24)
         {
             int year = (int)hour / (365 * oneDayHour);
@@ -370,6 +376,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 返回星期几，如："星期一"
         /// </summary>
+        /// <param name="date">时间</param>
+        /// <returns>星期几的字符串</returns>
         public static string GetWeek(DateTime date)
         {
             return string.Format("星期{0}", XCLNetTools.Common.Consts.WeekName[date.DayOfWeek]);
@@ -406,8 +414,8 @@ namespace XCLNetTools.StringHander
         /// 将数字日期格式转为中文日期格式
         /// 如：2013-01-01=》二〇一三年一月一日
         /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
+        /// <param name="dt">日期</param>
+        /// <returns>中文汉字的日期</returns>
         public static string ToCNString(this DateTime dt)
         {
             string CNdate = dt.ToLongDateString();//转成年月日格式
@@ -496,6 +504,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 返回指定日期所在月的第一天
         /// </summary>
+        /// <param name="date">日期</param>
+        /// <returns>结果日期</returns>
         public static DateTime FirstDayOfMonth(this DateTime date)
         {
             return new DateTime(date.Year, date.Month, 1);
@@ -504,8 +514,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 返回指定日期所在月的最后一天(包含时间部分)（如：2012-01-02 23:59:59）
         /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
+        /// <param name="dt">日期</param>
+        /// <returns>结果日期</returns>
         public static DateTime LastDayOfMonth(this DateTime dt)
         {
             return dt.AddMonths(1).FirstDayOfMonth().AddMilliseconds(-1);
@@ -537,7 +547,7 @@ namespace XCLNetTools.StringHander
         /// <param name="fieldName">条件名</param>
         /// <param name="start">开始时间</param>
         /// <param name="end">结束时间</param>
-        /// <returns></returns>
+        /// <returns>条件字符串</returns>
         public static string GetDateTimeWhereByStartEndTime(string fieldName, DateTime? start, DateTime? end)
         {
             string str = string.Empty;
@@ -560,8 +570,10 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
-        /// 获取日期区间
+        /// 获取指定日期与当前日期比较区间汉字，如：“2天前”
         /// </summary>
+        /// <param name="date">日期</param>
+        /// <returns>区间汉字</returns>
         public static String GetDateSpan(DateTime date)
         {
             DateTime dt = (DateTime)date;
@@ -607,6 +619,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 将Json序列化的时间由/Date(1294499956278)/转为DateTime? .
         /// </summary>
+        /// <param name="str">json时间</param>
+        /// <returns>结果值</returns>
         public static DateTime? ConvertJsonDateToDateTime(string str)
         {
             if (string.IsNullOrEmpty(str))
@@ -626,7 +640,7 @@ namespace XCLNetTools.StringHander
         /// </summary>
         /// <param name="s">进行转换的字符串</param>
         /// <param name="type">"start"：将此时间设置为yyyy-MM-dd 00:00:00；"end"：yyyy-MM-dd 23:59:59</param>
-        /// <returns></returns>
+        /// <returns>结果值</returns>
         public static DateTime? GetStartEndDateTimeNullable(string s, string type)
         {
             DateTime? dt = XCLNetTools.Common.DataTypeConvert.ToDateTimeNull(s, null);
@@ -646,9 +660,11 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 转换为DateTime,若为null或转换失败，则取DateTime.MinValue
         /// </summary>
-        public static DateTime GetDateTimeWithMinValue(string key)
+        /// <param name="str">待转换的字符串</param>
+        /// <returns>转换后的结果</returns>
+        public static DateTime GetDateTimeWithMinValue(string str)
         {
-            return XCLNetTools.Common.DataTypeConvert.ToDateTime(key, DateTime.MinValue);
+            return XCLNetTools.Common.DataTypeConvert.ToDateTime(str, DateTime.MinValue);
         }
 
         /// <summary>

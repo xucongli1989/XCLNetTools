@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Drawing;
 using System.Web;
@@ -33,6 +31,7 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 生成验证码的随机数
         /// </summary>
+        /// <returns>随机数</returns>
         public static string GenerateCheckCode()
         {
             int number;
@@ -54,6 +53,7 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 生成验证码图片
         /// </summary>
+        /// <param name="checkCode">字符代码</param>
         public static void CreateCheckCodeImage(string checkCode)
         {
             if (string.IsNullOrEmpty(checkCode))
