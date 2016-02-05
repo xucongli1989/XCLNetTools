@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -38,6 +36,10 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 添加URL参数
         /// </summary>
+        /// <param name="url">url</param>
+        /// <param name="name">参数名</param>
+        /// <param name="value">参数值</param>
+        /// <returns>新的url</returns>
         public static string AddParam(string url, string name, string value)
         {
             NameValueCollection nv = new NameValueCollection();
@@ -48,6 +50,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 添加URL参数
         /// </summary>
+        /// <param name="url">url</param>
+        /// <param name="param">参数集合</param>
+        /// <returns>新的url</returns>
         public static string AddParam(string url, NameValueCollection param)
         {
             if (string.IsNullOrEmpty(url) || (null == param || param.Count == 0))
@@ -87,6 +92,10 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 更新URL参数
         /// </summary>
+        /// <param name="url">url</param>
+        /// <param name="paramName">参数名</param>
+        /// <param name="value">参数值</param>
+        /// <returns>新的url</returns>
         public static string UpdateParam(string url, string paramName, string value)
         {
             string keyWord = paramName + "=";
@@ -106,6 +115,9 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 删除url参数
         /// </summary>
+        /// <param name="url">url</param>
+        /// <param name="paramName">参数名</param>
+        /// <returns>新的url</returns>
         public static string RemoveParam(string url, string paramName)
         {
             string[] s = url.Split('?');
@@ -217,6 +229,7 @@ namespace XCLNetTools.StringHander
         ///505 - HTTP 版本不受支持。
         ///</summary>
         ///<param name="curl">要请求的URL</param>
+        ///<returns>状态码</returns>
         public static int GetUrlError(string curl)
         {
             int num = 200;

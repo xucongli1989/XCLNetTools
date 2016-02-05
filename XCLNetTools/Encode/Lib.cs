@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 namespace XCLNetTools.Encode
 {
     /// <summary>
@@ -27,12 +25,31 @@ namespace XCLNetTools.Encode
     public class Lib
     {
         /// <summary>
-        /// 对js的escape进行解码
+        /// 对字符串进行js的unescape解码
         /// </summary>
-        /// <param name="str">解码字符串</param>
+        /// <param name="str">待解码的字符串</param>
+        /// <returns>解码后的值</returns>
         public static string Unescape(string str)
         {
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
             return Microsoft.JScript.GlobalObject.unescape(str);
+        }
+
+        /// <summary>
+        /// 对字符串进行js的escape编码
+        /// </summary>
+        /// <param name="str">待编码的字符串</param>
+        /// <returns>编码后的值</returns>
+        public static string Escape(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
+            return Microsoft.JScript.GlobalObject.escape(str);
         }
     }
 }

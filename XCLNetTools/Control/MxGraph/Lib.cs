@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using com.mxgraph;
 using System;
 using System.Drawing;
@@ -66,9 +64,11 @@ namespace XCLNetTools.Control.MxGraph
                 HttpContext context = HttpContext.Current;
                 context.Response.ContentType = "image/jpeg";
                 context.Response.AddHeader("Content-Disposition", string.Format("attachment; filename={0}", filename));
-                MemoryStream memStream = new MemoryStream();
-                image.Save(memStream, ImageFormat.Jpeg);
-                memStream.WriteTo(context.Response.OutputStream);
+                using (MemoryStream memStream = new MemoryStream())
+                {
+                    image.Save(memStream, ImageFormat.Jpeg);
+                    memStream.WriteTo(context.Response.OutputStream);
+                }
             }
         }
     }

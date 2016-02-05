@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 
 namespace XCLNetTools.StringHander
@@ -61,6 +59,7 @@ namespace XCLNetTools.StringHander
         /// </summary>
         /// <param name="minValue">最小值（包含）</param>
         /// <param name="maxValue">最大值（不包含）</param>
+        /// <returns>结果值</returns>
         public static int GetRandomValue(int minValue, int maxValue)
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
@@ -71,6 +70,7 @@ namespace XCLNetTools.StringHander
         /// 将GUID的哈希数作为Random的种子，然后生成一个非负随机数
         /// 例如：1024588704
         /// </summary>
+        /// <returns>结果值</returns>
         public static int GenerateIdWithGuid()
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
@@ -81,6 +81,7 @@ namespace XCLNetTools.StringHander
         /// 根据GUID生成Int（有符号）
         /// 例如：2069396417
         /// </summary>
+        /// <returns>结果值</returns>
         public static int GenerateId()
         {
             byte[] buffer = Guid.NewGuid().ToByteArray();
@@ -91,6 +92,7 @@ namespace XCLNetTools.StringHander
         /// 根据guid生成字符串(16位)
         /// 例如：aded0a2611f8aa4a
         /// </summary>
+        /// <returns>结果值</returns>
         public static string GenerateStringId()
         {
             long i = 1;
@@ -104,11 +106,13 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 随机器生成数字和字母组合,区分大小写
         /// </summary>
-        public static string GenerateRandom(int Length)
+        /// <param name="len">长度</param>
+        /// <returns>结果值</returns>
+        public static string GenerateRandom(int len)
         {
             System.Text.StringBuilder newRandom = new System.Text.StringBuilder(62);
             Random rd = new Random();
-            for (int i = 0; i < Length; i++)
+            for (int i = 0; i < len; i++)
             {
                 newRandom.Append(constant[rd.Next(62)]);
             }
@@ -118,11 +122,13 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 随机生成只有字符的组合，区分大小写
         /// </summary>
-        public static string GenerateRandomToChars(int Length)
+        /// <param name="len">长度</param>
+        /// <returns>结果值</returns>
+        public static string GenerateRandomToChars(int len)
         {
             System.Text.StringBuilder newRandom = new System.Text.StringBuilder(52);
             Random rd = new Random();
-            for (int i = 0; i < Length; i++)
+            for (int i = 0; i < len; i++)
             {
                 newRandom.Append(constantChar[rd.Next(52)]);
             }
@@ -132,6 +138,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 随机生成只有字符的组合，不区分大小写
         /// </summary>
+        /// <param name="len">长度</param>
+        /// <returns>结果值</returns>
         public static string GetRand(int len)
         {
             Random rnd = new Random();
@@ -149,6 +157,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 根据GUID生成唯一字符标示
         /// </summary>
+        /// <param name="len">长度</param>
+        /// <returns>结果值</returns>
         public static string GetGuidString(int len)
         {
             return System.Guid.NewGuid().ToString().Substring(0, len);

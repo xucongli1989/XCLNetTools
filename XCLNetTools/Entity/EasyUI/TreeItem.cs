@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

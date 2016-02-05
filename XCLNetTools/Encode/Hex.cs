@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Linq;
 using System.Text;
@@ -46,6 +44,7 @@ namespace XCLNetTools.Encode
         /// <summary>
         /// 为字符串中的非英文字符编码
         /// </summary>
+        /// <returns>处理后的值</returns>
         public static string ToHexString(string s)
         {
             char[] chars = s.ToCharArray();
@@ -70,6 +69,7 @@ namespace XCLNetTools.Encode
         /// <summary>
         ///指定 一个字符是否应该被编码
         /// </summary>
+        /// <returns>true:可以被编码，false:无需编码</returns>
         public static bool NeedToEncode(char chr)
         {
             string reservedChars = "$-_.+!*'(),@=&";
@@ -83,8 +83,9 @@ namespace XCLNetTools.Encode
         }
 
         /// <summary>
-        /// 为非英文字符串编码
+        /// 为非英文字符编码
         /// </summary>
+        /// <returns>编码后的值</returns>
         public static string ToHexString(char chr)
         {
             UTF8Encoding utf8 = new UTF8Encoding();

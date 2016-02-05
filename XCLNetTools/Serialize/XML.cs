@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
@@ -35,6 +33,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 反序列化
         /// </summary>
+        /// <param name="xml">xml</param>
+        /// <returns>对象</returns>
         public static T Deserialize<T>(string xml) where T : class
         {
             T result = default(T);
@@ -49,6 +49,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 从xml文件中反序列化
         /// </summary>
+        /// <param name="xmlFilePath">xml路径</param>
+        /// <returns>对象</returns>
         public static T DeserializeFromXMLFile<T>(string xmlFilePath) where T : class
         {
             T result = default(T);
@@ -67,6 +69,8 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 序列化
         /// </summary>
+        /// <param name="obj">对象</param>
+        /// <returns>xml</returns>
         public static string Serializer<T>(T obj) where T : new()
         {
             string str = string.Empty;

@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using Aspose.Cells;
 using System;
 using System.Collections.Generic;
@@ -35,7 +33,6 @@ namespace XCLNetTools.DataHandler
     /// </summary>
     public class DataToExcel
     {
-
         /// <summary>
         /// 数据导出excel
         /// </summary>
@@ -47,42 +44,42 @@ namespace XCLNetTools.DataHandler
         public static void OutPutExcel(string[] tableName, List<OutPutClass> outPutClass, DataSet ds, string fileTitle, string[] conTitle)
         {
             OutPutParamClass paramClass = new OutPutParamClass();
-            paramClass.tableName = tableName;
-            paramClass.outPutClass = outPutClass;
-            paramClass.ds = ds;
-            paramClass.fileTitle = fileTitle;
-            paramClass.conTitle = conTitle;
+            paramClass.TableName = tableName;
+            paramClass.OutPutClass = outPutClass;
+            paramClass.Ds = ds;
+            paramClass.FileTitle = fileTitle;
+            paramClass.ConTitle = conTitle;
             OutPutExcel(paramClass);
         }
 
         /// <summary>
         /// 数据导出excel
-        /// <param name="paramClass">导出参数</param>
         /// </summary>
+        /// <param name="paramClass">导出参数</param>
         public static void OutPutExcel(OutPutParamClass paramClass)
         {
             StringBuilder str = new StringBuilder();
 
             #region 合法性检测
 
-            if (null == paramClass.ds || paramClass.ds.Tables.Count == 0)
+            if (null == paramClass.Ds || paramClass.Ds.Tables.Count == 0)
             {
                 str.Append("要导出的数据不能为空，导出失败！；");
             }
-            if (null != paramClass.conTitle && null != paramClass.ds)
+            if (null != paramClass.ConTitle && null != paramClass.Ds)
             {
-                if (paramClass.conTitle.Length != paramClass.ds.Tables.Count)
+                if (paramClass.ConTitle.Length != paramClass.Ds.Tables.Count)
                 {
                     str.Append("自定义的标题与要导出的数据源的数量不匹配，导出失败！；");
                 }
-                if (paramClass.conTitle.ToList().Distinct().Count() != paramClass.conTitle.Length)
+                if (paramClass.ConTitle.ToList().Distinct().Count() != paramClass.ConTitle.Length)
                 {
                     str.Append("自定义的标题项不能重复，因为此项要作为Sheet的名称，导出失败！；");
                 }
             }
-            if (null != paramClass.outPutClass && paramClass.outPutClass.Count > 0)
+            if (null != paramClass.OutPutClass && paramClass.OutPutClass.Count > 0)
             {
-                if (paramClass.tableName.Length != paramClass.ds.Tables.Count)
+                if (paramClass.TableName.Length != paramClass.Ds.Tables.Count)
                 {
                     str.Append("表名与dataSet的table数量不一致，导出失败！；");
                 }
@@ -108,21 +105,21 @@ namespace XCLNetTools.DataHandler
 
             #endregion 是否指定被操作的工作薄
 
-            for (int i = 0; i < paramClass.ds.Tables.Count; i++)
+            for (int i = 0; i < paramClass.Ds.Tables.Count; i++)
             {
                 Worksheet sheet = workbook.Worksheets[i];
 
-                if (null != paramClass.conTitle && paramClass.conTitle.Length > 0)
+                if (null != paramClass.ConTitle && paramClass.ConTitle.Length > 0)
                 {
-                    sheet.Name = paramClass.conTitle[i];
+                    sheet.Name = paramClass.ConTitle[i];
                 }
 
-                if (i != paramClass.ds.Tables.Count - 1)
+                if (i != paramClass.Ds.Tables.Count - 1)
                 {
                     workbook.Worksheets.Add();
                 }
 
-                DataTable dt = paramClass.ds.Tables[i];
+                DataTable dt = paramClass.Ds.Tables[i];
                 List<string> dtColNameLst = new List<string>();
                 for (int k = 0; k < dt.Columns.Count; k++)
                 {
@@ -132,10 +129,10 @@ namespace XCLNetTools.DataHandler
                 #region 写入列名
 
                 List<string> newNamesLst = new List<string>();
-                if (null != paramClass.outPutClass && paramClass.outPutClass.Count > 0)
+                if (null != paramClass.OutPutClass && paramClass.OutPutClass.Count > 0)
                 {
-                    OutPutClass outPutModel = paramClass.outPutClass.First(k => k.tableName == paramClass.tableName[i].Trim());
-                    foreach (var m in outPutModel.fields)
+                    OutPutClass outPutModel = paramClass.OutPutClass.First(k => k.TableName == paramClass.TableName[i].Trim());
+                    foreach (var m in outPutModel.Fields)
                     {
                         newNamesLst.Add(m.newName);
                         if (dtColNameLst.Contains(m.oldName))
@@ -164,7 +161,7 @@ namespace XCLNetTools.DataHandler
                 Cells cells = sheet.Cells;
                 if (paramClass.IsShowCustomLine)
                 {
-                    cells[0, 0].Value = string.Format("数据导出：{0}；导出时间：{1}；记录总数：{2}", paramClass.conTitle[i], DateTime.Now, dt.Rows.Count);
+                    cells[0, 0].Value = string.Format("数据导出：{0}；导出时间：{1}；记录总数：{2}", paramClass.ConTitle[i], DateTime.Now, dt.Rows.Count);
                     Aspose.Cells.Style styleCell0 = cells[0, 0].GetStyle();
                     styleCell0.Font.Color = System.Drawing.Color.Red;
                     cells[0, 0].SetStyle(styleCell0);
@@ -194,7 +191,7 @@ namespace XCLNetTools.DataHandler
             }
             if (paramClass.AutoDownLoad)
             {
-                string fileName = string.Format("{0}_数据导出.xlsx", paramClass.fileTitle);
+                string fileName = string.Format("{0}_数据导出.xlsx", paramClass.FileTitle);
                 bool isFirefox = HttpContext.Current.Request.Browser.Type.ToLower().Contains("firefox");
                 fileName = isFirefox ? fileName : HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8);
                 workbook.Save(HttpContext.Current.Response, fileName, ContentDisposition.Attachment, new OoxmlSaveOptions(SaveFormat.Xlsx));

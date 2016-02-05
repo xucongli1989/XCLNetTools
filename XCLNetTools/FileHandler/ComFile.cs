@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -108,6 +106,7 @@ namespace XCLNetTools.FileHandler
         /// 递归获取指定文件夹下的所有文件路径
         /// </summary>
         /// <param name="rootPath">起始文件夹路径</param>
+        /// <returns>文件路径数组</returns>
         public static string[] GetFolderFilesByRecursion(string rootPath)
         {
             List<string> lst = new List<string>();
@@ -200,6 +199,7 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 返回文件大小(字节)
         /// </summary>
+        /// <returns>文件大小 byte</returns>
         public static long GetFileSize(string filePath)
         {
             long s = 0;
@@ -319,6 +319,7 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         /// <param name="fileName">路径（相对或绝对均可）</param>
         /// <param name="isWithExt">是否包含扩展名</param>
+        /// <returns>文件名</returns>
         public static string GetFileName(string fileName, bool isWithExt = true)
         {
             var info = new System.IO.FileInfo(fileName);
@@ -336,6 +337,7 @@ namespace XCLNetTools.FileHandler
         ///给上传的文件随机命名
         /// </summary>
         /// <param name="filename">文件名</param>
+        /// <returns>新的文件名</returns>
         public static string GetRandomFileName(string filename)
         {
             int i;

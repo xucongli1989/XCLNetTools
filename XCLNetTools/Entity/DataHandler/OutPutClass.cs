@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System.Collections.Generic;
 
 namespace XCLNetTools.Entity.DataHandler
@@ -32,11 +30,11 @@ namespace XCLNetTools.Entity.DataHandler
         /// <summary>
         /// 表名
         /// </summary>
-        public string tableName { get; set; }
+        public string TableName { get; set; }
 
         /// <summary>
         /// 字段列表
         /// </summary>
-        public List<OutPutField> fields { get; set; }
+        public List<OutPutField> Fields { get; set; }
     }
 }

@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;

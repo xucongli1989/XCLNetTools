@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,6 +34,7 @@ namespace XCLNetTools.FileHandler
         /// 检测目录是否为空目录（既没有文件夹，也没有文件）
         /// </summary>
         /// <param name="path">目录路径</param>
+        /// <returns>true:空目录，false:非空目录</returns>
         public static bool IsEmpty(string path)
         {
             if (string.IsNullOrEmpty(path))
@@ -122,6 +121,8 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 清空指定目录
         /// </summary>
+        /// <param name="rootPath">要清空的目录</param>
+        /// <returns>是否操作成功</returns>
         public static bool ClearDirectory(string rootPath)
         {
             //删除子目录
@@ -147,6 +148,7 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         /// <param name="dirPath">要获取信息的目录路径</param>
         /// <param name="rootPath">根路径（设置该值后，返回的信息实体中将包含相对于该根路径的相对路径信息）</param>
+        /// <returns>文件信息list</returns>
         public static List<XCLNetTools.Entity.FileInfoEntity> GetFileList(string dirPath, string rootPath = "")
         {
             if (!string.IsNullOrEmpty(dirPath))

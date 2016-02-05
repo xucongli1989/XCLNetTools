@@ -18,7 +18,6 @@ Create By: XCL @ 2012
  */
 
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace XCLNetTools.Language
 {
@@ -30,6 +29,8 @@ namespace XCLNetTools.Language
         /// <summary>
         /// 将汉字转化为全拼
         /// </summary>
+        /// <param name="strChinese">汉字</param>
+        /// <returns>全拼</returns>
         public static string ConvertToAllSpell(string strChinese)
         {
             byte[] array = new byte[2];
@@ -73,6 +74,8 @@ namespace XCLNetTools.Language
         /// <summary>
         /// 将汉字转化为拼音首字母（大写）
         /// </summary>
+        /// <param name="strChinese">汉字</param>
+        /// <returns>拼音首字母</returns>
         public static string ConvertToFirstSpell(string strChinese)
         {
             int len = strChinese.Length;
@@ -87,6 +90,8 @@ namespace XCLNetTools.Language
         /// <summary>
         /// 获取第一个汉字的首字母（大写）；
         /// </summary>
+        /// <param name="charChinese">汉字</param>
+        /// <returns>首字母</returns>
         public static string GetFirstSpell(string charChinese)
         {
             byte[] arrCN = Encoding.Default.GetBytes(charChinese);
@@ -114,6 +119,8 @@ namespace XCLNetTools.Language
         /// <summary>
         /// 获取第一个汉字的拼音
         /// </summary>
+        /// <param name="charChinese">汉字</param>
+        /// <returns>拼音</returns>
         public static string ConvertFirstSpell(string charChinese)
         {
             byte[] array = new byte[2];

@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -77,7 +75,7 @@ namespace XCLNetTools.Http
         /// </summary>
         /// <param name="key">Key值</param>
         /// <param name="value">Value值</param>
-        /// <returns></returns>
+        /// <returns>格式化的值，如：a=b;</returns>
         public static string CookieFormat(string key, string value)
         {
             return string.Format("{0}={1};", key, value);
@@ -116,6 +114,8 @@ namespace XCLNetTools.Http
         /// <summary>
         /// 获取cookies
         /// </summary>
+        /// <param name="name">cookie名</param>
+        /// <returns>cookie的值</returns>
         public static string GetCookies(string name)
         {
             HttpCookieCollection collection = System.Web.HttpContext.Current.Request.Cookies;
@@ -129,6 +129,8 @@ namespace XCLNetTools.Http
         /// <summary>
         /// 获取cookies集合
         /// </summary>
+        /// <param name="name">cookie名</param>
+        /// <returns>值的集合</returns>
         public static NameValueCollection GetCookiesCollection(string name)
         {
             HttpCookieCollection collection = System.Web.HttpContext.Current.Request.Cookies;
@@ -142,6 +144,7 @@ namespace XCLNetTools.Http
         /// <summary>
         /// 删除Cookies
         /// </summary>
+        /// <param name="name">cookie名</param>
         /// <returns>是否删除成功</returns>
         public static bool DelCookies(string name)
         {

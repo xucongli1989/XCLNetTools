@@ -17,8 +17,6 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System.Text.RegularExpressions;
 
 namespace XCLNetTools.StringHander
@@ -49,6 +47,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 是否为手机号
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsPhone(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))
@@ -62,6 +62,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 是否为纯数字（不带正负号）
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsNumber(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))
@@ -75,6 +77,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 是否数字（可带正负号）
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsNumberSign(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))
@@ -88,6 +92,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 是否是浮点数（不带正负）
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsDecimal(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))
@@ -101,6 +107,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 是否是浮点数（可带正负号）
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsDecimalSign(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))
@@ -118,6 +126,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 检测是否有中文字符
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsHasCHZN(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))
@@ -133,8 +143,10 @@ namespace XCLNetTools.StringHander
         #region 邮件地址
 
         /// <summary>
-        /// 是否是浮点数 可带正负号
+        /// 是否是email
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsEmail(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))
@@ -152,6 +164,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 日期格式字符串判断
         /// </summary>
+        /// <param name="str">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsDateTime(string str)
         {
             return null != XCLNetTools.Common.DataTypeConvert.ToDateTimeNull(str);
@@ -164,6 +178,8 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 是否为URL地址
         /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
         public static bool IsURL(string inputData)
         {
             if (string.IsNullOrEmpty(inputData))

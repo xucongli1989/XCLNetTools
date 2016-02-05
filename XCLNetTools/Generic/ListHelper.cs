@@ -17,11 +17,10 @@ Create By: XCL @ 2012
 3：首次开放所有源代码
  */
 
-
-
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 
 namespace XCLNetTools.Generic
@@ -36,6 +35,7 @@ namespace XCLNetTools.Generic
         /// </summary>
         /// <param name="step">每个子list最多的项数</param>
         /// <param name="lst">主list</param>
+        /// <returns>分拆后的结果list</returns>
         public static List<List<T>> SplitListByStep<T>(int step, List<T> lst)
         {
             List<List<T>> newList = null;
@@ -58,10 +58,27 @@ namespace XCLNetTools.Generic
         }
 
         /// <summary>
+        /// 将指定字符串用指定分隔符分开存到list中
+        /// </summary>
+        /// <param name="str">源字符串</param>
+        /// <param name="speater">分隔字符</param>
+        /// <returns>list</returns>
+        public static List<string> GetStrSplitList(string str, char speater)
+        {
+            List<string> result = null;
+            if (!string.IsNullOrEmpty(str))
+            {
+                result = str.Split(speater).ToList();
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 将list中的项拼接字符串
         /// </summary>
         /// <param name="lst">要操作的list</param>
         /// <param name="splitChar">分隔符</param>
+        /// <returns>字符串结果值</returns>
         public static string GetStringByList<T>(List<T> lst, string splitChar)
         {
             string str = string.Empty;
@@ -75,6 +92,8 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 将List转换成DataTable
         /// </summary>
+        /// <param name="data">要转换的数据</param>
+        /// <returns>datatable</returns>
         public static DataTable ToDataTable<T>(IList<T> data)
         {
             System.ComponentModel.PropertyDescriptorCollection properties = System.ComponentModel.TypeDescriptor.GetProperties(typeof(T));
@@ -99,8 +118,8 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 将dataTable转为list
         /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
+        /// <param name="dt">要转换的数据</param>
+        /// <returns>list</returns>
         public static IList<T> DataTableToList<T>(DataTable dt) where T : new()
         {
             if (null == dt || dt.Rows.Count == 0)
