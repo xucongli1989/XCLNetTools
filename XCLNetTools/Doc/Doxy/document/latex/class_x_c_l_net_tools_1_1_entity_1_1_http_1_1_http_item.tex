@@ -1,0 +1,392 @@
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item}{\section{X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item类 参考}
+\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item}\index{X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item@{X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item}}
+}
+
+
+Http请求参考类  
+
+
+\subsection*{属性}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_aaaa3a229c51a9c1dab14f61c0104b380}{U\-R\-L}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 请求\-U\-R\-L必须填写 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a4c675d85e9d3864e5c5ad04c4a4ae3cd}{Method}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 请求方式默认为\-G\-E\-T方式,当为\-P\-O\-S\-T方式时必须设置\-Postdata的值 \end{DoxyCompactList}\item 
+int \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a186cca2bc3a89d6385862bdf9cdcc70d}{Timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 默认请求超时时间 \end{DoxyCompactList}\item 
+int \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_adfed36da49bce477ba004f8cf224633c}{Read\-Write\-Timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 默认写入\-Post数据超时间 \end{DoxyCompactList}\item 
+Boolean \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ab28dbd38f5c220a2a59193f6a69c34e2}{Keep\-Alive}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 获取或设置一个值，该值指示是否与 Internet 资源建立持久性连接默认为true。 \end{DoxyCompactList}\item 
+$\ast$$\ast$$<$/summary $>$ $\ast$string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a1e43938a270466cf6955b4e161cf25fc}{Accept}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 请求标头值 默认为text/html, application/xhtml+xml, \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af97df28ba0445d64b38abd7c3bb1a6be}{Content\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 请求返回类型默认 text/html \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af781edd22001f482ae8090b6cbee1cdb}{User\-Agent}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 客户端访问信息默认\-Mozilla/5.0 (compatible; M\-S\-I\-E 9.\-0; Windows N\-T 6.\-1; Trident/5.\-0) \end{DoxyCompactList}\item 
+Encoding \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_aefaad52c96c7c2b692f3470b61cd75eb}{Encoding}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 返回数据编码默认为\-N\-Ull,可以自动识别,一般为utf-\/8,gbk,gb2312 \end{DoxyCompactList}\item 
+\hyperlink{namespace_x_c_l_net_tools_1_1_http_ad73fffd49af2087d4f5c0a954d15d08c}{Post\-Data\-Type} \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a4b06cbf69ce5d07151aa768f00bccdf2}{Post\-Data\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Post的数据类型 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a9151cc1e4067ca0b035052ee0a8b3de9}{Postdata}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Post请求时要发送的字符串\-Post数据 \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a49b2ba8771878dab0de105397ebc69de}{Postdata\-Byte}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Post请求时要发送的\-Byte类型的\-Post数据 \end{DoxyCompactList}\item 
+Cookie\-Collection \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a6130bb5eec4b2b63c195ee5ae2c9bbfd}{Cookie\-Collection}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Cookie对象集合 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ad77662f721b534aa063629e91e98cdbc}{Cookie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 请求时的\-Cookie \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a8fa227e3f6f7f0a925eb6cf2f1011ec3}{Referer}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 来源地址，上次访问地址 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a21142bbbdda03289d1ee38410dbe6fda}{Cer\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 证书绝对路径 \end{DoxyCompactList}\item 
+Boolean \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a8b9e3149b03e7ca279e247817a2ef205}{Is\-To\-Lower}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 是否设置为全文小写，默认为不转化 \end{DoxyCompactList}\item 
+Boolean \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a798a94a9ff612d44e67b8d62b2b15758}{Allowautoredirect}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 支持跳转页面，查询结果将是跳转后的页面，默认是不跳转 \end{DoxyCompactList}\item 
+int \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af0502f773d88639113d1f71698039b0a}{Connectionlimit}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 最大连接数 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a3805473e3ffc34dc8d52a8d577d987a9}{Proxy\-User\-Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 代理\-Proxy 服务器用户名 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a5510717d2cace964bdc2a7450da2c4a3}{Proxy\-Pwd}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 代理 服务器密码 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a596fad85d4a97f4b60e16ec7b1f90eaf}{Proxy\-Ip}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 代理 服务\-I\-P \end{DoxyCompactList}\item 
+\hyperlink{namespace_x_c_l_net_tools_1_1_http_a3216524397972f7d0c5733b123216e9e}{Result\-Type} \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a92ebe05dc80b03bfdee04ec390dc4c8e}{Result\-Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 设置返回类型\-String和\-Byte \end{DoxyCompactList}\item 
+Web\-Header\-Collection \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a803ddfa9179e1ad325783327db8273ac}{Header}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em header对象 \end{DoxyCompactList}\item 
+Version \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_abc953d2639ee034855449932ebc6c7bb}{Protocol\-Version}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 获取或设置用于请求的 H\-T\-T\-P 版本。返回结果\-:用于请求的 H\-T\-T\-P 版本。默认为 System.\-Net.\-Http\-Version.\-Version11。 \end{DoxyCompactList}\item 
+Boolean \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a378c7e8a43937807df263b1985c3b945}{Expect100\-Continue}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 获取或设置一个 System.\-Boolean 值，该值确定是否使用 100-\/\-Continue 行为。如果 P\-O\-S\-T 请求需要 100-\/\-Continue 响应，则为 true；否则为 false。默认值为 true。 \end{DoxyCompactList}\item 
+X509\-Certificate\-Collection \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a7f2e0b57b041174af1325324fe7e0f0d}{Clent\-Certificates}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 设置509证书集合 \end{DoxyCompactList}\item 
+\hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_aefaad52c96c7c2b692f3470b61cd75eb}{Encoding} \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ab4d3010b05811df9360aa8651d02302a}{Post\-Encoding}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 设置或获取\-Post参数编码,默认的为\-Default编码 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+Http请求参考类 
+
+
+
+在文件 Http\-Item.\-cs 第 36 行定义.
+
+
+
+\subsection{属性说明}
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a1e43938a270466cf6955b4e161cf25fc}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Accept@{Accept}}
+\index{Accept@{Accept}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}$\ast$ $\ast$$<$/summary$>$ $\ast$ string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Accept\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a1e43938a270466cf6955b4e161cf25fc}
+
+
+请求标头值 默认为text/html, application/xhtml+xml, 
+
+
+
+在文件 Http\-Item.\-cs 第 99 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a798a94a9ff612d44e67b8d62b2b15758}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Allowautoredirect@{Allowautoredirect}}
+\index{Allowautoredirect@{Allowautoredirect}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Allowautoredirect}]{\setlength{\rightskip}{0pt plus 5cm}Boolean X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Allowautoredirect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a798a94a9ff612d44e67b8d62b2b15758}
+
+
+支持跳转页面，查询结果将是跳转后的页面，默认是不跳转 
+
+
+
+在文件 Http\-Item.\-cs 第 231 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a21142bbbdda03289d1ee38410dbe6fda}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Cer\-Path@{Cer\-Path}}
+\index{Cer\-Path@{Cer\-Path}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Cer\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Cer\-Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a21142bbbdda03289d1ee38410dbe6fda}
+
+
+证书绝对路径 
+
+
+
+在文件 Http\-Item.\-cs 第 209 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a7f2e0b57b041174af1325324fe7e0f0d}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Clent\-Certificates@{Clent\-Certificates}}
+\index{Clent\-Certificates@{Clent\-Certificates}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Clent\-Certificates}]{\setlength{\rightskip}{0pt plus 5cm}X509\-Certificate\-Collection X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Clent\-Certificates\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a7f2e0b57b041174af1325324fe7e0f0d}
+
+
+设置509证书集合 
+
+
+
+在文件 Http\-Item.\-cs 第 330 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af0502f773d88639113d1f71698039b0a}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Connectionlimit@{Connectionlimit}}
+\index{Connectionlimit@{Connectionlimit}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Connectionlimit}]{\setlength{\rightskip}{0pt plus 5cm}int X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Connectionlimit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af0502f773d88639113d1f71698039b0a}
+
+
+最大连接数 
+
+
+
+在文件 Http\-Item.\-cs 第 242 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af97df28ba0445d64b38abd7c3bb1a6be}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Content\-Type@{Content\-Type}}
+\index{Content\-Type@{Content\-Type}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Content\-Type}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Content\-Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af97df28ba0445d64b38abd7c3bb1a6be}
+
+
+请求返回类型默认 text/html 
+
+
+
+在文件 Http\-Item.\-cs 第 110 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ad77662f721b534aa063629e91e98cdbc}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Cookie@{Cookie}}
+\index{Cookie@{Cookie}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Cookie}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Cookie\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ad77662f721b534aa063629e91e98cdbc}
+
+
+请求时的\-Cookie 
+
+
+
+在文件 Http\-Item.\-cs 第 187 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a6130bb5eec4b2b63c195ee5ae2c9bbfd}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Cookie\-Collection@{Cookie\-Collection}}
+\index{Cookie\-Collection@{Cookie\-Collection}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Cookie\-Collection}]{\setlength{\rightskip}{0pt plus 5cm}Cookie\-Collection X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Cookie\-Collection\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a6130bb5eec4b2b63c195ee5ae2c9bbfd}
+
+
+Cookie对象集合 
+
+
+
+在文件 Http\-Item.\-cs 第 176 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_aefaad52c96c7c2b692f3470b61cd75eb}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Encoding@{Encoding}}
+\index{Encoding@{Encoding}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Encoding}]{\setlength{\rightskip}{0pt plus 5cm}Encoding X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Encoding\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_aefaad52c96c7c2b692f3470b61cd75eb}
+
+
+返回数据编码默认为\-N\-Ull,可以自动识别,一般为utf-\/8,gbk,gb2312 
+
+
+
+在文件 Http\-Item.\-cs 第 132 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a378c7e8a43937807df263b1985c3b945}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Expect100\-Continue@{Expect100\-Continue}}
+\index{Expect100\-Continue@{Expect100\-Continue}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Expect100\-Continue}]{\setlength{\rightskip}{0pt plus 5cm}Boolean X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Expect100\-Continue\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a378c7e8a43937807df263b1985c3b945}
+
+
+获取或设置一个 System.\-Boolean 值，该值确定是否使用 100-\/\-Continue 行为。如果 P\-O\-S\-T 请求需要 100-\/\-Continue 响应，则为 true；否则为 false。默认值为 true。 
+
+
+
+在文件 Http\-Item.\-cs 第 319 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a803ddfa9179e1ad325783327db8273ac}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Header@{Header}}
+\index{Header@{Header}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Header}]{\setlength{\rightskip}{0pt plus 5cm}Web\-Header\-Collection X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Header\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a803ddfa9179e1ad325783327db8273ac}
+
+
+header对象 
+
+
+
+在文件 Http\-Item.\-cs 第 297 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a8b9e3149b03e7ca279e247817a2ef205}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Is\-To\-Lower@{Is\-To\-Lower}}
+\index{Is\-To\-Lower@{Is\-To\-Lower}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Is\-To\-Lower}]{\setlength{\rightskip}{0pt plus 5cm}Boolean X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Is\-To\-Lower\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a8b9e3149b03e7ca279e247817a2ef205}
+
+
+是否设置为全文小写，默认为不转化 
+
+
+
+在文件 Http\-Item.\-cs 第 220 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ab28dbd38f5c220a2a59193f6a69c34e2}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Keep\-Alive@{Keep\-Alive}}
+\index{Keep\-Alive@{Keep\-Alive}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Keep\-Alive}]{\setlength{\rightskip}{0pt plus 5cm}Boolean X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Keep\-Alive\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ab28dbd38f5c220a2a59193f6a69c34e2}
+
+
+获取或设置一个值，该值指示是否与 Internet 资源建立持久性连接默认为true。 
+
+
+
+在文件 Http\-Item.\-cs 第 88 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a4c675d85e9d3864e5c5ad04c4a4ae3cd}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Method@{Method}}
+\index{Method@{Method}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Method}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Method\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a4c675d85e9d3864e5c5ad04c4a4ae3cd}
+
+
+请求方式默认为\-G\-E\-T方式,当为\-P\-O\-S\-T方式时必须设置\-Postdata的值 
+
+
+
+在文件 Http\-Item.\-cs 第 55 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a9151cc1e4067ca0b035052ee0a8b3de9}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Postdata@{Postdata}}
+\index{Postdata@{Postdata}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Postdata}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Postdata\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a9151cc1e4067ca0b035052ee0a8b3de9}
+
+
+Post请求时要发送的字符串\-Post数据 
+
+
+
+在文件 Http\-Item.\-cs 第 154 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a49b2ba8771878dab0de105397ebc69de}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Postdata\-Byte@{Postdata\-Byte}}
+\index{Postdata\-Byte@{Postdata\-Byte}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Postdata\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}byte \mbox{[}$\,$\mbox{]} X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Postdata\-Byte\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a49b2ba8771878dab0de105397ebc69de}
+
+
+Post请求时要发送的\-Byte类型的\-Post数据 
+
+
+
+在文件 Http\-Item.\-cs 第 165 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a4b06cbf69ce5d07151aa768f00bccdf2}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Post\-Data\-Type@{Post\-Data\-Type}}
+\index{Post\-Data\-Type@{Post\-Data\-Type}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Post\-Data\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Post\-Data\-Type} X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Post\-Data\-Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a4b06cbf69ce5d07151aa768f00bccdf2}
+
+
+Post的数据类型 
+
+
+
+在文件 Http\-Item.\-cs 第 143 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ab4d3010b05811df9360aa8651d02302a}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Post\-Encoding@{Post\-Encoding}}
+\index{Post\-Encoding@{Post\-Encoding}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Post\-Encoding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoding} X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Post\-Encoding\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_ab4d3010b05811df9360aa8651d02302a}
+
+
+设置或获取\-Post参数编码,默认的为\-Default编码 
+
+
+
+在文件 Http\-Item.\-cs 第 341 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_abc953d2639ee034855449932ebc6c7bb}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Protocol\-Version@{Protocol\-Version}}
+\index{Protocol\-Version@{Protocol\-Version}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Protocol\-Version}]{\setlength{\rightskip}{0pt plus 5cm}Version X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Protocol\-Version\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_abc953d2639ee034855449932ebc6c7bb}
+
+
+获取或设置用于请求的 H\-T\-T\-P 版本。返回结果\-:用于请求的 H\-T\-T\-P 版本。默认为 System.\-Net.\-Http\-Version.\-Version11。 
+
+
+
+在文件 Http\-Item.\-cs 第 308 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a596fad85d4a97f4b60e16ec7b1f90eaf}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Proxy\-Ip@{Proxy\-Ip}}
+\index{Proxy\-Ip@{Proxy\-Ip}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Proxy\-Ip}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Proxy\-Ip\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a596fad85d4a97f4b60e16ec7b1f90eaf}
+
+
+代理 服务\-I\-P 
+
+
+
+在文件 Http\-Item.\-cs 第 275 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a5510717d2cace964bdc2a7450da2c4a3}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Proxy\-Pwd@{Proxy\-Pwd}}
+\index{Proxy\-Pwd@{Proxy\-Pwd}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Proxy\-Pwd}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Proxy\-Pwd\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a5510717d2cace964bdc2a7450da2c4a3}
+
+
+代理 服务器密码 
+
+
+
+在文件 Http\-Item.\-cs 第 264 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a3805473e3ffc34dc8d52a8d577d987a9}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Proxy\-User\-Name@{Proxy\-User\-Name}}
+\index{Proxy\-User\-Name@{Proxy\-User\-Name}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Proxy\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Proxy\-User\-Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a3805473e3ffc34dc8d52a8d577d987a9}
+
+
+代理\-Proxy 服务器用户名 
+
+
+
+在文件 Http\-Item.\-cs 第 253 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_adfed36da49bce477ba004f8cf224633c}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Read\-Write\-Timeout@{Read\-Write\-Timeout}}
+\index{Read\-Write\-Timeout@{Read\-Write\-Timeout}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Read\-Write\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}int X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Read\-Write\-Timeout\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_adfed36da49bce477ba004f8cf224633c}
+
+
+默认写入\-Post数据超时间 
+
+
+
+在文件 Http\-Item.\-cs 第 77 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a8fa227e3f6f7f0a925eb6cf2f1011ec3}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Referer@{Referer}}
+\index{Referer@{Referer}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Referer}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Referer\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a8fa227e3f6f7f0a925eb6cf2f1011ec3}
+
+
+来源地址，上次访问地址 
+
+
+
+在文件 Http\-Item.\-cs 第 198 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a92ebe05dc80b03bfdee04ec390dc4c8e}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Result\-Type@{Result\-Type}}
+\index{Result\-Type@{Result\-Type}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Result\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Result\-Type} X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Result\-Type\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a92ebe05dc80b03bfdee04ec390dc4c8e}
+
+
+设置返回类型\-String和\-Byte 
+
+
+
+在文件 Http\-Item.\-cs 第 286 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a186cca2bc3a89d6385862bdf9cdcc70d}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!Timeout@{Timeout}}
+\index{Timeout@{Timeout}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{Timeout}]{\setlength{\rightskip}{0pt plus 5cm}int X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-Timeout\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_a186cca2bc3a89d6385862bdf9cdcc70d}
+
+
+默认请求超时时间 
+
+
+
+在文件 Http\-Item.\-cs 第 66 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_aaaa3a229c51a9c1dab14f61c0104b380}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!U\-R\-L@{U\-R\-L}}
+\index{U\-R\-L@{U\-R\-L}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{U\-R\-L}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-U\-R\-L\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_aaaa3a229c51a9c1dab14f61c0104b380}
+
+
+请求\-U\-R\-L必须填写 
+
+
+
+在文件 Http\-Item.\-cs 第 44 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af781edd22001f482ae8090b6cbee1cdb}{\index{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}!User\-Agent@{User\-Agent}}
+\index{User\-Agent@{User\-Agent}!XCLNetTools::Entity::Http::HttpItem@{X\-C\-L\-Net\-Tools\-::\-Entity\-::\-Http\-::\-Http\-Item}}
+\subsubsection[{User\-Agent}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Entity.\-Http.\-Http\-Item.\-User\-Agent\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}}\label{class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item_af781edd22001f482ae8090b6cbee1cdb}
+
+
+客户端访问信息默认\-Mozilla/5.0 (compatible; M\-S\-I\-E 9.\-0; Windows N\-T 6.\-1; Trident/5.\-0) 
+
+
+
+在文件 Http\-Item.\-cs 第 121 行定义.
+
+
+
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+\item 
+D\-:/\-My\-Data/\-My\-Git/\-Git\-Hub/\-X\-C\-L\-Net\-Tools/\-X\-C\-L\-Net\-Tools/\-Entity/\-Http/\hyperlink{_http_item_8cs}{Http\-Item.\-cs}\end{DoxyCompactItemize}

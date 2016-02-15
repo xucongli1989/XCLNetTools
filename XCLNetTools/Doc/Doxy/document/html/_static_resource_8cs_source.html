@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.2</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -99,84 +99,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1：xucongli1989（https://github.com/xucongli1989）电子邮件：80213876@qq.com</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">三：更新：</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.1</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-01-01</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.2</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-02</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">四：更新内容：</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：将原先基础数据转换方法转移到Common/DataTypeConvert下面</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：其它逻辑优化，如表单参数获取等</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：首次开放所有源代码</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> System;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using</span> System.Xml.Serialization;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>XCLNetTools.Entity</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    [Serializable]</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">   32</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">StaticResourceConfig</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a4525e28db253a1da329b5ebd1982f04d">   37</a></span>&#160;        <span class="keyword">public</span> List&lt;StaticResource&gt; StaticResourceList { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a488ef1a24b5a4be8cdfc93610cc8bb31">   42</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">StaticResourceConfig</a> <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a488ef1a24b5a4be8cdfc93610cc8bb31">DeepClone</a>()</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Serialize.Lib.DeepClone&lt;<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">StaticResourceConfig</a>&gt;(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    [Serializable]</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html">   52</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html">StaticResource</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        [XmlAttribute]</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a182146de67a26e9ab0efdd2e8e3460dc">   58</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#abe6c6928080288df4a77ec8a59c537d1">XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum</a> Type { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        [XmlAttribute]</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a8e114996e0fb52d9543e5b018e0d09e5">   64</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Name { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        [XmlAttribute]</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a956fb610dd51730bbe8aac6a04d72da3">   70</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Src { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        [XmlAttribute]</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a4b85a7d2f6dc6169a10ebfe2987f2404">   76</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Version { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        [XmlAttribute]</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a7541eec0c18e1aac9a8d0c980f1c7b35">   82</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Attr { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a25e28841491afc79dc1f60fb6b42b60c">   87</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a25e28841491afc79dc1f60fb6b42b60c">ToString</a>()</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">string</span> fmt = string.Empty;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">switch</span> (this.Type)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">case</span> Enum.CommonEnum.StaticResourceTypeEnum.JS:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    fmt = <span class="stringliteral">@&quot;&lt;script src=&quot;&quot;{0}&quot;&quot; type=&quot;&quot;text/javascript&quot;&quot;  {1}&gt;&lt;/script&gt;&quot;</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">case</span> Enum.CommonEnum.StaticResourceTypeEnum.CSS:</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    fmt = <span class="stringliteral">@&quot;&lt;link href=&quot;&quot;{0}&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot; type=&quot;&quot;text/css&quot;&quot;  {1}/&gt;&quot;</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">case</span> Enum.CommonEnum.StaticResourceTypeEnum.ICON:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    fmt = <span class="stringliteral">@&quot;&lt;link rel=&quot;&quot;icon&quot;&quot; href=&quot;&quot;{0}&quot;&quot; {1} /&gt; &quot;</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            fmt += Environment.NewLine;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordtype">string</span> ver = string.Format(<span class="stringliteral">&quot;{0}v={1}&quot;</span>, this.Src.Trim().TrimEnd(<span class="charliteral">&#39;?&#39;</span>).Contains(<span class="stringliteral">&quot;?&quot;</span>) ? <span class="stringliteral">&quot;&amp;&quot;</span> : <span class="stringliteral">&quot;?&quot;</span>, this.Version);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">return</span> string.Format(fmt, this.Src + ver, this.Attr);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">XCLNetTools.Entity.StaticResourceConfig</a></div><div class="ttdoc">静态文件配置 </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00032">StaticResource.cs:32</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_html_a25e28841491afc79dc1f60fb6b42b60c"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a25e28841491afc79dc1f60fb6b42b60c">XCLNetTools.Entity.StaticResource.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">转字符串 </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00087">StaticResource.cs:87</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config_html_a488ef1a24b5a4be8cdfc93610cc8bb31"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a488ef1a24b5a4be8cdfc93610cc8bb31">XCLNetTools.Entity.StaticResourceConfig.DeepClone</a></div><div class="ttdeci">StaticResourceConfig DeepClone()</div><div class="ttdoc">深度克隆 </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00042">StaticResource.cs:42</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_enum_1_1_common_enum_html_abe6c6928080288df4a77ec8a59c537d1"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#abe6c6928080288df4a77ec8a59c537d1">XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum</a></div><div class="ttdeci">StaticResourceTypeEnum</div><div class="ttdoc">静态资源类型 </div><div class="ttdef"><b>Definition:</b> <a href="_common_enum_8cs_source.html#l00051">CommonEnum.cs:51</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html">XCLNetTools.Entity.StaticResource</a></div><div class="ttdoc">静态资源model </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00052">StaticResource.cs:52</a></div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：更新表单获取的参数类型</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：更改Message/JsonMsg类的目录</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：删除多余的方法</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">4：修复一处未dispose问题</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">5：整理部分代码</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">6：添加 MethodResult.cs</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">7：获取枚举list时可以使用byte/short等</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> System.Xml.Serialization;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>XCLNetTools.Entity</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    [Serializable]</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">   35</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">StaticResourceConfig</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a4525e28db253a1da329b5ebd1982f04d">   40</a></span>&#160;        <span class="keyword">public</span> List&lt;StaticResource&gt; StaticResourceList { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a488ef1a24b5a4be8cdfc93610cc8bb31">   45</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">StaticResourceConfig</a> <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a488ef1a24b5a4be8cdfc93610cc8bb31">DeepClone</a>()</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> XCLNetTools.Serialize.Lib.DeepClone&lt;<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">StaticResourceConfig</a>&gt;(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    [Serializable]</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html">   55</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html">StaticResource</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        [XmlAttribute]</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a182146de67a26e9ab0efdd2e8e3460dc">   61</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#abe6c6928080288df4a77ec8a59c537d1">XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum</a> Type { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        [XmlAttribute]</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a8e114996e0fb52d9543e5b018e0d09e5">   67</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Name { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        [XmlAttribute]</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a956fb610dd51730bbe8aac6a04d72da3">   73</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Src { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        [XmlAttribute]</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a4b85a7d2f6dc6169a10ebfe2987f2404">   79</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Version { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        [XmlAttribute]</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a7541eec0c18e1aac9a8d0c980f1c7b35">   85</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Attr { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a25e28841491afc79dc1f60fb6b42b60c">   90</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a25e28841491afc79dc1f60fb6b42b60c">ToString</a>()</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">string</span> fmt = string.Empty;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">switch</span> (this.Type)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">case</span> XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum.JS:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    fmt = <span class="stringliteral">@&quot;&lt;script src=&quot;&quot;{0}&quot;&quot; type=&quot;&quot;text/javascript&quot;&quot;  {1}&gt;&lt;/script&gt;&quot;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">case</span> XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum.CSS:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    fmt = <span class="stringliteral">@&quot;&lt;link href=&quot;&quot;{0}&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot; type=&quot;&quot;text/css&quot;&quot;  {1}/&gt;&quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">case</span> XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum.ICON:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    fmt = <span class="stringliteral">@&quot;&lt;link rel=&quot;&quot;icon&quot;&quot; href=&quot;&quot;{0}&quot;&quot; {1} /&gt; &quot;</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            fmt += Environment.NewLine;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">string</span> ver = string.Format(<span class="stringliteral">&quot;{0}v={1}&quot;</span>, this.Src.Trim().TrimEnd(<span class="charliteral">&#39;?&#39;</span>).Contains(<span class="stringliteral">&quot;?&quot;</span>) ? <span class="stringliteral">&quot;&amp;&quot;</span> : <span class="stringliteral">&quot;?&quot;</span>, this.Version);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">return</span> string.Format(fmt, this.Src + ver, this.Attr);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html">XCLNetTools.Entity.StaticResourceConfig</a></div><div class="ttdoc">静态文件配置 </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00035">StaticResource.cs:35</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_html_a25e28841491afc79dc1f60fb6b42b60c"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a25e28841491afc79dc1f60fb6b42b60c">XCLNetTools.Entity.StaticResource.ToString</a></div><div class="ttdeci">override string ToString()</div><div class="ttdoc">转字符串 </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00090">StaticResource.cs:90</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config_html_a488ef1a24b5a4be8cdfc93610cc8bb31"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config.html#a488ef1a24b5a4be8cdfc93610cc8bb31">XCLNetTools.Entity.StaticResourceConfig.DeepClone</a></div><div class="ttdeci">StaticResourceConfig DeepClone()</div><div class="ttdoc">深度克隆 </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00045">StaticResource.cs:45</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_enum_1_1_common_enum_html_abe6c6928080288df4a77ec8a59c537d1"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#abe6c6928080288df4a77ec8a59c537d1">XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum</a></div><div class="ttdeci">StaticResourceTypeEnum</div><div class="ttdoc">静态资源类型 </div><div class="ttdef"><b>Definition:</b> <a href="_common_enum_8cs_source.html#l00174">CommonEnum.cs:174</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_static_resource_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html">XCLNetTools.Entity.StaticResource</a></div><div class="ttdoc">静态资源model </div><div class="ttdef"><b>Definition:</b> <a href="_static_resource_8cs_source.html#l00055">StaticResource.cs:55</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 一月 2日 星期六 12:11:23 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 二月 15日 星期一 21:59:07 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

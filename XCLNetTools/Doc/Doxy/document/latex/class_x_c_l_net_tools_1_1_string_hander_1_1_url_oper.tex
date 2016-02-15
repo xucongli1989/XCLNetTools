@@ -20,7 +20,9 @@ static string \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_ae
 static void \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_a8786e6cf26b3496627bbcc037ca72ca7}{Parse\-Url} (string url, out string base\-Url, out Name\-Value\-Collection nvc)
 \begin{DoxyCompactList}\small\item\em 分析 url 字符串中的参数信息 \end{DoxyCompactList}\item 
 static int \hyperlink{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_ac5c640bfc662741345164efa1efbc525}{Get\-Url\-Error} (string curl)
-\begin{DoxyCompactList}\small\item\em 获取指定\-U\-R\-L的请求状态： 200 -\/ 确定。客户端请求已成功。 201 -\/ 已创建。 202 -\/ 已接受。 400 -\/ 错误的请求 401 -\/ 访问被拒绝 403 -\/ 禁止访问 404 -\/ 未找到 405 -\/ 用来访问本页面的 H\-T\-T\-P 谓词不被允许（方法不被允许） 406 -\/ 客户端浏览器不接受所请求页面的 M\-I\-M\-E 类型。 407 -\/ 要求进行代理身份验证。 412 -\/ 前提条件失败。 413 – 请求实体太大。 414 -\/ 请求 U\-R\-I 太长。 415 – 不支持的媒体类型。 416 – 所请求的范围无法满足。 417 – 执行失败。 423 – 锁定的错误 500 -\/ 内部服务器错误。 501 -\/ 页眉值指定了未实现的配置。 502 -\/ Web 服务器用作网关或代理服务器时收到了无效响应。 503 -\/ 服务不可用。这个错误代码为 I\-I\-S 6.\-0 所专用。 504 -\/ 网关超时。 505 -\/ H\-T\-T\-P 版本不受支持。 /summary$>$ param name=\char`\"{}curl\char`\"{}$>$要请求的\-U\-R\-L\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 获取指定\-U\-R\-L的请求状态： 200 -\/ 确定。客户端请求已成功。 201 -\/ 已创建。 202 -\/ 已接受。 400 -\/ 错误的请求 401 -\/ 访问被拒绝 403 -\/ 禁止访问 404 -\/ 未找到 405 -\/ 用来访问本页面的 H\-T\-T\-P 谓词不被允许（方法不被允许） 406 -\/ 客户端浏览器不接受所请求页面的 M\-I\-M\-E 类型。 407 -\/ 要求进行代理身份验证。 412 -\/ 前提条件失败。 413 – 请求实体太大。 414 -\/ 请求 U\-R\-I 太长。 415 – 不支持的媒体类型。 416 – 所请求的范围无法满足。 417 – 执行失败。 423 – 锁定的错误 500 -\/ 内部服务器错误。 501 -\/ 页眉值指定了未实现的配置。 502 -\/ Web 服务器用作网关或代理服务器时收到了无效响应。 503 -\/ 服务不可用。这个错误代码为 I\-I\-S 6.\-0 所专用。 504 -\/ 网关超时。 505 -\/ H\-T\-T\-P 版本不受支持。 /summary$>$ param name=\char`\"{}curl\char`\"{}$>$要请求的\-U\-R\-L
+
+returns$>$状态码\end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{详细描述}
@@ -28,7 +30,7 @@ U\-R\-L的操作类
 
 
 
-在文件 Url\-Oper.\-cs 第 34 行定义.
+在文件 Url\-Oper.\-cs 第 37 行定义.
 
 
 
@@ -47,8 +49,20 @@ U\-R\-L的操作类
 添加\-U\-R\-L参数 
 
 
+\begin{DoxyParams}{参数}
+{\em url} & url\\
+\hline
+{\em name} & 参数名\\
+\hline
+{\em value} & 参数值\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+新的url
+\end{DoxyReturn}
 
-在文件 Url\-Oper.\-cs 第 41 行定义.
+
+在文件 Url\-Oper.\-cs 第 48 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_ae4e0043d5ebfc5401f90242992071fdc}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}!Add\-Param@{Add\-Param}}
 \index{Add\-Param@{Add\-Param}!XCLNetTools::StringHander::UrlOper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}}
@@ -63,8 +77,18 @@ U\-R\-L的操作类
 添加\-U\-R\-L参数 
 
 
+\begin{DoxyParams}{参数}
+{\em url} & url\\
+\hline
+{\em param} & 参数集合\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+新的url
+\end{DoxyReturn}
 
-在文件 Url\-Oper.\-cs 第 51 行定义.
+
+在文件 Url\-Oper.\-cs 第 61 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_ac5c640bfc662741345164efa1efbc525}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}!Get\-Url\-Error@{Get\-Url\-Error}}
 \index{Get\-Url\-Error@{Get\-Url\-Error}!XCLNetTools::StringHander::UrlOper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}}
@@ -77,9 +101,11 @@ U\-R\-L的操作类
 
 获取指定\-U\-R\-L的请求状态： 200 -\/ 确定。客户端请求已成功。 201 -\/ 已创建。 202 -\/ 已接受。 400 -\/ 错误的请求 401 -\/ 访问被拒绝 403 -\/ 禁止访问 404 -\/ 未找到 405 -\/ 用来访问本页面的 H\-T\-T\-P 谓词不被允许（方法不被允许） 406 -\/ 客户端浏览器不接受所请求页面的 M\-I\-M\-E 类型。 407 -\/ 要求进行代理身份验证。 412 -\/ 前提条件失败。 413 – 请求实体太大。 414 -\/ 请求 U\-R\-I 太长。 415 – 不支持的媒体类型。 416 – 所请求的范围无法满足。 417 – 执行失败。 423 – 锁定的错误 500 -\/ 内部服务器错误。 501 -\/ 页眉值指定了未实现的配置。 502 -\/ Web 服务器用作网关或代理服务器时收到了无效响应。 503 -\/ 服务不可用。这个错误代码为 I\-I\-S 6.\-0 所专用。 504 -\/ 网关超时。 505 -\/ H\-T\-T\-P 版本不受支持。 /summary$>$ param name=\char`\"{}curl\char`\"{}$>$要请求的\-U\-R\-L
 
+returns$>$状态码
 
 
-在文件 Url\-Oper.\-cs 第 220 行定义.
+
+在文件 Url\-Oper.\-cs 第 238 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_a8786e6cf26b3496627bbcc037ca72ca7}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}!Parse\-Url@{Parse\-Url}}
 \index{Parse\-Url@{Parse\-Url}!XCLNetTools::StringHander::UrlOper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}}
@@ -105,7 +131,7 @@ U\-R\-L的操作类
 \end{DoxyParams}
 
 
-在文件 Url\-Oper.\-cs 第 158 行定义.
+在文件 Url\-Oper.\-cs 第 175 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_aee0fcf87276a12d12e71d2d905e286e0}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}!Remove\-Param@{Remove\-Param}}
 \index{Remove\-Param@{Remove\-Param}!XCLNetTools::StringHander::UrlOper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}}
@@ -120,8 +146,18 @@ U\-R\-L的操作类
 删除url参数 
 
 
+\begin{DoxyParams}{参数}
+{\em url} & url\\
+\hline
+{\em param\-Name} & 参数名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+新的url
+\end{DoxyReturn}
 
-在文件 Url\-Oper.\-cs 第 109 行定义.
+
+在文件 Url\-Oper.\-cs 第 126 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_string_hander_1_1_url_oper_adda296014d4edff564f69975de4d3171}{\index{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}!Update\-Param@{Update\-Param}}
 \index{Update\-Param@{Update\-Param}!XCLNetTools::StringHander::UrlOper@{X\-C\-L\-Net\-Tools\-::\-String\-Hander\-::\-Url\-Oper}}
@@ -137,8 +173,20 @@ U\-R\-L的操作类
 更新\-U\-R\-L参数 
 
 
+\begin{DoxyParams}{参数}
+{\em url} & url\\
+\hline
+{\em param\-Name} & 参数名\\
+\hline
+{\em value} & 参数值\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+新的url
+\end{DoxyReturn}
 
-在文件 Url\-Oper.\-cs 第 90 行定义.
+
+在文件 Url\-Oper.\-cs 第 104 行定义.
 
 
 

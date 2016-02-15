@@ -9,11 +9,18 @@ Create By: XCL @ 2012
 
 三：更新：
 当前版本：v2.2
-更新时间：2016-01
+更新时间：2016-02
 
 四：更新内容：
-1：
+1：更新表单获取的参数类型
+2：更改Message/JsonMsg类的目录
+3：删除多余的方法
+4：修复一处未dispose问题
+5：整理部分代码
+6：添加 MethodResult.cs
+7：获取枚举list时可以使用byte/short等
  */
+
 
 using System;
 

@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=9" />
-<meta name="generator" content="Doxygen 1.8.5" />
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
 <title>XCLNetTools: D:/MyData/MyGit/GitHub/XCLNetTools/XCLNetTools/Language/CN.cs 源文件</title>
-<link href="tabs.css" rel="stylesheet" type="text/css" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css" />
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.2</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -48,13 +48,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
-               alt="" />
+               alt=""/>
           <input type="text" id="MSearchField" value="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
-               onkeyup="searchBox.OnSearchFieldChange(event)" />
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt="" /></a>
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
       </li>
@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -99,204 +99,152 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1：xucongli1989（https://github.com/xucongli1989）电子邮件：80213876@qq.com</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">三：更新：</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.1</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-01-01</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.2</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-02</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">四：更新内容：</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：将原先基础数据转换方法转移到Common/DataTypeConvert下面</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：其它逻辑优化，如表单参数获取等</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：首次开放所有源代码</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> System.Text;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> System.Text.RegularExpressions;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：更新表单获取的参数类型</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：更改Message/JsonMsg类的目录</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：删除多余的方法</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">4：修复一处未dispose问题</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">5：整理部分代码</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">6：添加 MethodResult.cs</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">7：获取枚举list时可以使用byte/short等</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespace_x_c_l_net_tools_1_1_language.html">   25</a></span>&#160;<span class="keyword">namespace </span>XCLNetTools.Language</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html">   30</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html">CN</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> Regex MyRegex = <span class="keyword">new</span> Regex(<span class="stringliteral">&quot;^[一-龥]$&quot;</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">int</span>[] pyvalue = <span class="keyword">new</span> <span class="keywordtype">int</span>[]{-20319,-20317,-20304,-20295,-20292,-20283,-20265,-20257,-20242,-20230,-20051,-20036,-20032,-20026,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                                    -20002,-19990,-19986,-19982,-19976,-19805,-19784,-19775,-19774,-19763,-19756,-19751,-19746,-19741,-19739,-19728,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                    -19725,-19715,-19540,-19531,-19525,-19515,-19500,-19484,-19479,-19467,-19289,-19288,-19281,-19275,-19270,-19263,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                                    -19261,-19249,-19243,-19242,-19238,-19235,-19227,-19224,-19218,-19212,-19038,-19023,-19018,-19006,-19003,-18996,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                                    -18977,-18961,-18952,-18783,-18774,-18773,-18763,-18756,-18741,-18735,-18731,-18722,-18710,-18697,-18696,-18526,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                                    -18518,-18501,-18490,-18478,-18463,-18448,-18447,-18446,-18239,-18237,-18231,-18220,-18211,-18201,-18184,-18183,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                                    -18181,-18012,-17997,-17988,-17970,-17964,-17961,-17950,-17947,-17931,-17928,-17922,-17759,-17752,-17733,-17730,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                                    -17721,-17703,-17701,-17697,-17692,-17683,-17676,-17496,-17487,-17482,-17468,-17454,-17433,-17427,-17417,-17202,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                                    -17185,-16983,-16970,-16942,-16915,-16733,-16708,-16706,-16689,-16664,-16657,-16647,-16474,-16470,-16465,-16459,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                                    -16452,-16448,-16433,-16429,-16427,-16423,-16419,-16412,-16407,-16403,-16401,-16393,-16220,-16216,-16212,-16205,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                                    -16202,-16187,-16180,-16171,-16169,-16158,-16155,-15959,-15958,-15944,-15933,-15920,-15915,-15903,-15889,-15878,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                    -15707,-15701,-15681,-15667,-15661,-15659,-15652,-15640,-15631,-15625,-15454,-15448,-15436,-15435,-15419,-15416,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                                    -15408,-15394,-15385,-15377,-15375,-15369,-15363,-15362,-15183,-15180,-15165,-15158,-15153,-15150,-15149,-15144,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                    -15143,-15141,-15140,-15139,-15128,-15121,-15119,-15117,-15110,-15109,-14941,-14937,-14933,-14930,-14929,-14928,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                                    -14926,-14922,-14921,-14914,-14908,-14902,-14894,-14889,-14882,-14873,-14871,-14857,-14678,-14674,-14670,-14668,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                                    -14663,-14654,-14645,-14630,-14594,-14429,-14407,-14399,-14384,-14379,-14368,-14355,-14353,-14345,-14170,-14159,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                                    -14151,-14149,-14145,-14140,-14137,-14135,-14125,-14123,-14122,-14112,-14109,-14099,-14097,-14094,-14092,-14090,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                                    -14087,-14083,-13917,-13914,-13910,-13907,-13906,-13905,-13896,-13894,-13878,-13870,-13859,-13847,-13831,-13658,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                    -13611,-13601,-13406,-13404,-13400,-13398,-13395,-13391,-13387,-13383,-13367,-13359,-13356,-13343,-13340,-13329,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                                    -13326,-13318,-13147,-13138,-13120,-13107,-13096,-13095,-13091,-13076,-13068,-13063,-13060,-12888,-12875,-12871,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                                    -12860,-12858,-12852,-12849,-12838,-12831,-12829,-12812,-12802,-12607,-12597,-12594,-12585,-12556,-12359,-12346,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                                    -12320,-12300,-12120,-12099,-12089,-12074,-12067,-12058,-12039,-11867,-11861,-11847,-11831,-11798,-11781,-11604,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                                    -11589,-11536,-11358,-11340,-11339,-11324,-11303,-11097,-11077,-11067,-11055,-11052,-11045,-11041,-11038,-11024,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                                    -11020,-11019,-11018,-11014,-10838,-10832,-10815,-10800,-10790,-10780,-10764,-10587,-10544,-10533,-10519,-10331,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                                    -10329,-10328,-10322,-10315,-10309,-10307,-10296,-10281,-10274,-10270,-10262,-10260,-10256,-10254};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span>[] pystr = <span class="keyword">new</span> <span class="keywordtype">string</span>[]{<span class="stringliteral">&quot;a&quot;</span>,<span class="stringliteral">&quot;ai&quot;</span>,<span class="stringliteral">&quot;an&quot;</span>,<span class="stringliteral">&quot;ang&quot;</span>,<span class="stringliteral">&quot;ao&quot;</span>,<span class="stringliteral">&quot;ba&quot;</span>,<span class="stringliteral">&quot;bai&quot;</span>,<span class="stringliteral">&quot;ban&quot;</span>,<span class="stringliteral">&quot;bang&quot;</span>,<span class="stringliteral">&quot;bao&quot;</span>,<span class="stringliteral">&quot;bei&quot;</span>,<span class="stringliteral">&quot;ben&quot;</span>,<span class="stringliteral">&quot;beng&quot;</span>,<span class="stringliteral">&quot;bi&quot;</span>,<span class="stringliteral">&quot;bian&quot;</span>,<span class="stringliteral">&quot;biao&quot;</span>,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                                        <span class="stringliteral">&quot;bie&quot;</span>,<span class="stringliteral">&quot;bin&quot;</span>,<span class="stringliteral">&quot;bing&quot;</span>,<span class="stringliteral">&quot;bo&quot;</span>,<span class="stringliteral">&quot;bu&quot;</span>,<span class="stringliteral">&quot;ca&quot;</span>,<span class="stringliteral">&quot;cai&quot;</span>,<span class="stringliteral">&quot;can&quot;</span>,<span class="stringliteral">&quot;cang&quot;</span>,<span class="stringliteral">&quot;cao&quot;</span>,<span class="stringliteral">&quot;ce&quot;</span>,<span class="stringliteral">&quot;ceng&quot;</span>,<span class="stringliteral">&quot;cha&quot;</span>,<span class="stringliteral">&quot;chai&quot;</span>,<span class="stringliteral">&quot;chan&quot;</span>,<span class="stringliteral">&quot;chang&quot;</span>,<span class="stringliteral">&quot;chao&quot;</span>,<span class="stringliteral">&quot;che&quot;</span>,<span class="stringliteral">&quot;chen&quot;</span>,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                                        <span class="stringliteral">&quot;cheng&quot;</span>,<span class="stringliteral">&quot;chi&quot;</span>,<span class="stringliteral">&quot;chong&quot;</span>,<span class="stringliteral">&quot;chou&quot;</span>,<span class="stringliteral">&quot;chu&quot;</span>,<span class="stringliteral">&quot;chuai&quot;</span>,<span class="stringliteral">&quot;chuan&quot;</span>,<span class="stringliteral">&quot;chuang&quot;</span>,<span class="stringliteral">&quot;chui&quot;</span>,<span class="stringliteral">&quot;chun&quot;</span>,<span class="stringliteral">&quot;chuo&quot;</span>,<span class="stringliteral">&quot;ci&quot;</span>,<span class="stringliteral">&quot;cong&quot;</span>,<span class="stringliteral">&quot;cou&quot;</span>,<span class="stringliteral">&quot;cu&quot;</span>,<span class="stringliteral">&quot;cuan&quot;</span>,<span class="stringliteral">&quot;cui&quot;</span>,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                                        <span class="stringliteral">&quot;cun&quot;</span>,<span class="stringliteral">&quot;cuo&quot;</span>,<span class="stringliteral">&quot;da&quot;</span>,<span class="stringliteral">&quot;dai&quot;</span>,<span class="stringliteral">&quot;dan&quot;</span>,<span class="stringliteral">&quot;dang&quot;</span>,<span class="stringliteral">&quot;dao&quot;</span>,<span class="stringliteral">&quot;de&quot;</span>,<span class="stringliteral">&quot;deng&quot;</span>,<span class="stringliteral">&quot;di&quot;</span>,<span class="stringliteral">&quot;dian&quot;</span>,<span class="stringliteral">&quot;diao&quot;</span>,<span class="stringliteral">&quot;die&quot;</span>,<span class="stringliteral">&quot;ding&quot;</span>,<span class="stringliteral">&quot;diu&quot;</span>,<span class="stringliteral">&quot;dong&quot;</span>,<span class="stringliteral">&quot;dou&quot;</span>,<span class="stringliteral">&quot;du&quot;</span>,<span class="stringliteral">&quot;duan&quot;</span>,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                                        <span class="stringliteral">&quot;dui&quot;</span>,<span class="stringliteral">&quot;dun&quot;</span>,<span class="stringliteral">&quot;duo&quot;</span>,<span class="stringliteral">&quot;e&quot;</span>,<span class="stringliteral">&quot;en&quot;</span>,<span class="stringliteral">&quot;er&quot;</span>,<span class="stringliteral">&quot;fa&quot;</span>,<span class="stringliteral">&quot;fan&quot;</span>,<span class="stringliteral">&quot;fang&quot;</span>,<span class="stringliteral">&quot;fei&quot;</span>,<span class="stringliteral">&quot;fen&quot;</span>,<span class="stringliteral">&quot;feng&quot;</span>,<span class="stringliteral">&quot;fo&quot;</span>,<span class="stringliteral">&quot;fou&quot;</span>,<span class="stringliteral">&quot;fu&quot;</span>,<span class="stringliteral">&quot;ga&quot;</span>,<span class="stringliteral">&quot;gai&quot;</span>,<span class="stringliteral">&quot;gan&quot;</span>,<span class="stringliteral">&quot;gang&quot;</span>,<span class="stringliteral">&quot;gao&quot;</span>,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                                        <span class="stringliteral">&quot;ge&quot;</span>,<span class="stringliteral">&quot;gei&quot;</span>,<span class="stringliteral">&quot;gen&quot;</span>,<span class="stringliteral">&quot;geng&quot;</span>,<span class="stringliteral">&quot;gong&quot;</span>,<span class="stringliteral">&quot;gou&quot;</span>,<span class="stringliteral">&quot;gu&quot;</span>,<span class="stringliteral">&quot;gua&quot;</span>,<span class="stringliteral">&quot;guai&quot;</span>,<span class="stringliteral">&quot;guan&quot;</span>,<span class="stringliteral">&quot;guang&quot;</span>,<span class="stringliteral">&quot;gui&quot;</span>,<span class="stringliteral">&quot;gun&quot;</span>,<span class="stringliteral">&quot;guo&quot;</span>,<span class="stringliteral">&quot;ha&quot;</span>,<span class="stringliteral">&quot;hai&quot;</span>,<span class="stringliteral">&quot;han&quot;</span>,<span class="stringliteral">&quot;hang&quot;</span>,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                                        <span class="stringliteral">&quot;hao&quot;</span>,<span class="stringliteral">&quot;he&quot;</span>,<span class="stringliteral">&quot;hei&quot;</span>,<span class="stringliteral">&quot;hen&quot;</span>,<span class="stringliteral">&quot;heng&quot;</span>,<span class="stringliteral">&quot;hong&quot;</span>,<span class="stringliteral">&quot;hou&quot;</span>,<span class="stringliteral">&quot;hu&quot;</span>,<span class="stringliteral">&quot;hua&quot;</span>,<span class="stringliteral">&quot;huai&quot;</span>,<span class="stringliteral">&quot;huan&quot;</span>,<span class="stringliteral">&quot;huang&quot;</span>,<span class="stringliteral">&quot;hui&quot;</span>,<span class="stringliteral">&quot;hun&quot;</span>,<span class="stringliteral">&quot;huo&quot;</span>,<span class="stringliteral">&quot;ji&quot;</span>,<span class="stringliteral">&quot;jia&quot;</span>,<span class="stringliteral">&quot;jian&quot;</span>,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                                        <span class="stringliteral">&quot;jiang&quot;</span>,<span class="stringliteral">&quot;jiao&quot;</span>,<span class="stringliteral">&quot;jie&quot;</span>,<span class="stringliteral">&quot;jin&quot;</span>,<span class="stringliteral">&quot;jing&quot;</span>,<span class="stringliteral">&quot;jiong&quot;</span>,<span class="stringliteral">&quot;jiu&quot;</span>,<span class="stringliteral">&quot;ju&quot;</span>,<span class="stringliteral">&quot;juan&quot;</span>,<span class="stringliteral">&quot;jue&quot;</span>,<span class="stringliteral">&quot;jun&quot;</span>,<span class="stringliteral">&quot;ka&quot;</span>,<span class="stringliteral">&quot;kai&quot;</span>,<span class="stringliteral">&quot;kan&quot;</span>,<span class="stringliteral">&quot;kang&quot;</span>,<span class="stringliteral">&quot;kao&quot;</span>,<span class="stringliteral">&quot;ke&quot;</span>,<span class="stringliteral">&quot;ken&quot;</span>,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                        <span class="stringliteral">&quot;keng&quot;</span>,<span class="stringliteral">&quot;kong&quot;</span>,<span class="stringliteral">&quot;kou&quot;</span>,<span class="stringliteral">&quot;ku&quot;</span>,<span class="stringliteral">&quot;kua&quot;</span>,<span class="stringliteral">&quot;kuai&quot;</span>,<span class="stringliteral">&quot;kuan&quot;</span>,<span class="stringliteral">&quot;kuang&quot;</span>,<span class="stringliteral">&quot;kui&quot;</span>,<span class="stringliteral">&quot;kun&quot;</span>,<span class="stringliteral">&quot;kuo&quot;</span>,<span class="stringliteral">&quot;la&quot;</span>,<span class="stringliteral">&quot;lai&quot;</span>,<span class="stringliteral">&quot;lan&quot;</span>,<span class="stringliteral">&quot;lang&quot;</span>,<span class="stringliteral">&quot;lao&quot;</span>,<span class="stringliteral">&quot;le&quot;</span>,<span class="stringliteral">&quot;lei&quot;</span>,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                                        <span class="stringliteral">&quot;leng&quot;</span>,<span class="stringliteral">&quot;li&quot;</span>,<span class="stringliteral">&quot;lia&quot;</span>,<span class="stringliteral">&quot;lian&quot;</span>,<span class="stringliteral">&quot;liang&quot;</span>,<span class="stringliteral">&quot;liao&quot;</span>,<span class="stringliteral">&quot;lie&quot;</span>,<span class="stringliteral">&quot;lin&quot;</span>,<span class="stringliteral">&quot;ling&quot;</span>,<span class="stringliteral">&quot;liu&quot;</span>,<span class="stringliteral">&quot;long&quot;</span>,<span class="stringliteral">&quot;lou&quot;</span>,<span class="stringliteral">&quot;lu&quot;</span>,<span class="stringliteral">&quot;lv&quot;</span>,<span class="stringliteral">&quot;luan&quot;</span>,<span class="stringliteral">&quot;lue&quot;</span>,<span class="stringliteral">&quot;lun&quot;</span>,<span class="stringliteral">&quot;luo&quot;</span>,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                                        <span class="stringliteral">&quot;ma&quot;</span>,<span class="stringliteral">&quot;mai&quot;</span>,<span class="stringliteral">&quot;man&quot;</span>,<span class="stringliteral">&quot;mang&quot;</span>,<span class="stringliteral">&quot;mao&quot;</span>,<span class="stringliteral">&quot;me&quot;</span>,<span class="stringliteral">&quot;mei&quot;</span>,<span class="stringliteral">&quot;men&quot;</span>,<span class="stringliteral">&quot;meng&quot;</span>,<span class="stringliteral">&quot;mi&quot;</span>,<span class="stringliteral">&quot;mian&quot;</span>,<span class="stringliteral">&quot;miao&quot;</span>,<span class="stringliteral">&quot;mie&quot;</span>,<span class="stringliteral">&quot;min&quot;</span>,<span class="stringliteral">&quot;ming&quot;</span>,<span class="stringliteral">&quot;miu&quot;</span>,<span class="stringliteral">&quot;mo&quot;</span>,<span class="stringliteral">&quot;mou&quot;</span>,<span class="stringliteral">&quot;mu&quot;</span>,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                                        <span class="stringliteral">&quot;na&quot;</span>,<span class="stringliteral">&quot;nai&quot;</span>,<span class="stringliteral">&quot;nan&quot;</span>,<span class="stringliteral">&quot;nang&quot;</span>,<span class="stringliteral">&quot;nao&quot;</span>,<span class="stringliteral">&quot;ne&quot;</span>,<span class="stringliteral">&quot;nei&quot;</span>,<span class="stringliteral">&quot;nen&quot;</span>,<span class="stringliteral">&quot;neng&quot;</span>,<span class="stringliteral">&quot;ni&quot;</span>,<span class="stringliteral">&quot;nian&quot;</span>,<span class="stringliteral">&quot;niang&quot;</span>,<span class="stringliteral">&quot;niao&quot;</span>,<span class="stringliteral">&quot;nie&quot;</span>,<span class="stringliteral">&quot;nin&quot;</span>,<span class="stringliteral">&quot;ning&quot;</span>,<span class="stringliteral">&quot;niu&quot;</span>,<span class="stringliteral">&quot;nong&quot;</span>,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                                        <span class="stringliteral">&quot;nu&quot;</span>,<span class="stringliteral">&quot;nv&quot;</span>,<span class="stringliteral">&quot;nuan&quot;</span>,<span class="stringliteral">&quot;nue&quot;</span>,<span class="stringliteral">&quot;nuo&quot;</span>,<span class="stringliteral">&quot;o&quot;</span>,<span class="stringliteral">&quot;ou&quot;</span>,<span class="stringliteral">&quot;pa&quot;</span>,<span class="stringliteral">&quot;pai&quot;</span>,<span class="stringliteral">&quot;pan&quot;</span>,<span class="stringliteral">&quot;pang&quot;</span>,<span class="stringliteral">&quot;pao&quot;</span>,<span class="stringliteral">&quot;pei&quot;</span>,<span class="stringliteral">&quot;pen&quot;</span>,<span class="stringliteral">&quot;peng&quot;</span>,<span class="stringliteral">&quot;pi&quot;</span>,<span class="stringliteral">&quot;pian&quot;</span>,<span class="stringliteral">&quot;piao&quot;</span>,<span class="stringliteral">&quot;pie&quot;</span>,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                                        <span class="stringliteral">&quot;pin&quot;</span>,<span class="stringliteral">&quot;ping&quot;</span>,<span class="stringliteral">&quot;po&quot;</span>,<span class="stringliteral">&quot;pu&quot;</span>,<span class="stringliteral">&quot;qi&quot;</span>,<span class="stringliteral">&quot;qia&quot;</span>,<span class="stringliteral">&quot;qian&quot;</span>,<span class="stringliteral">&quot;qiang&quot;</span>,<span class="stringliteral">&quot;qiao&quot;</span>,<span class="stringliteral">&quot;qie&quot;</span>,<span class="stringliteral">&quot;qin&quot;</span>,<span class="stringliteral">&quot;qing&quot;</span>,<span class="stringliteral">&quot;qiong&quot;</span>,<span class="stringliteral">&quot;qiu&quot;</span>,<span class="stringliteral">&quot;qu&quot;</span>,<span class="stringliteral">&quot;quan&quot;</span>,<span class="stringliteral">&quot;que&quot;</span>,<span class="stringliteral">&quot;qun&quot;</span>,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                                        <span class="stringliteral">&quot;ran&quot;</span>,<span class="stringliteral">&quot;rang&quot;</span>,<span class="stringliteral">&quot;rao&quot;</span>,<span class="stringliteral">&quot;re&quot;</span>,<span class="stringliteral">&quot;ren&quot;</span>,<span class="stringliteral">&quot;reng&quot;</span>,<span class="stringliteral">&quot;ri&quot;</span>,<span class="stringliteral">&quot;rong&quot;</span>,<span class="stringliteral">&quot;rou&quot;</span>,<span class="stringliteral">&quot;ru&quot;</span>,<span class="stringliteral">&quot;ruan&quot;</span>,<span class="stringliteral">&quot;rui&quot;</span>,<span class="stringliteral">&quot;run&quot;</span>,<span class="stringliteral">&quot;ruo&quot;</span>,<span class="stringliteral">&quot;sa&quot;</span>,<span class="stringliteral">&quot;sai&quot;</span>,<span class="stringliteral">&quot;san&quot;</span>,<span class="stringliteral">&quot;sang&quot;</span>,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                                        <span class="stringliteral">&quot;sao&quot;</span>,<span class="stringliteral">&quot;se&quot;</span>,<span class="stringliteral">&quot;sen&quot;</span>,<span class="stringliteral">&quot;seng&quot;</span>,<span class="stringliteral">&quot;sha&quot;</span>,<span class="stringliteral">&quot;shai&quot;</span>,<span class="stringliteral">&quot;shan&quot;</span>,<span class="stringliteral">&quot;shang&quot;</span>,<span class="stringliteral">&quot;shao&quot;</span>,<span class="stringliteral">&quot;she&quot;</span>,<span class="stringliteral">&quot;shen&quot;</span>,<span class="stringliteral">&quot;sheng&quot;</span>,<span class="stringliteral">&quot;shi&quot;</span>,<span class="stringliteral">&quot;shou&quot;</span>,<span class="stringliteral">&quot;shu&quot;</span>,<span class="stringliteral">&quot;shua&quot;</span>,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                                        <span class="stringliteral">&quot;shuai&quot;</span>,<span class="stringliteral">&quot;shuan&quot;</span>,<span class="stringliteral">&quot;shuang&quot;</span>,<span class="stringliteral">&quot;shui&quot;</span>,<span class="stringliteral">&quot;shun&quot;</span>,<span class="stringliteral">&quot;shuo&quot;</span>,<span class="stringliteral">&quot;si&quot;</span>,<span class="stringliteral">&quot;song&quot;</span>,<span class="stringliteral">&quot;sou&quot;</span>,<span class="stringliteral">&quot;su&quot;</span>,<span class="stringliteral">&quot;suan&quot;</span>,<span class="stringliteral">&quot;sui&quot;</span>,<span class="stringliteral">&quot;sun&quot;</span>,<span class="stringliteral">&quot;suo&quot;</span>,<span class="stringliteral">&quot;ta&quot;</span>,<span class="stringliteral">&quot;tai&quot;</span>,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                                        <span class="stringliteral">&quot;tan&quot;</span>,<span class="stringliteral">&quot;tang&quot;</span>,<span class="stringliteral">&quot;tao&quot;</span>,<span class="stringliteral">&quot;te&quot;</span>,<span class="stringliteral">&quot;teng&quot;</span>,<span class="stringliteral">&quot;ti&quot;</span>,<span class="stringliteral">&quot;tian&quot;</span>,<span class="stringliteral">&quot;tiao&quot;</span>,<span class="stringliteral">&quot;tie&quot;</span>,<span class="stringliteral">&quot;ting&quot;</span>,<span class="stringliteral">&quot;tong&quot;</span>,<span class="stringliteral">&quot;tou&quot;</span>,<span class="stringliteral">&quot;tu&quot;</span>,<span class="stringliteral">&quot;tuan&quot;</span>,<span class="stringliteral">&quot;tui&quot;</span>,<span class="stringliteral">&quot;tun&quot;</span>,<span class="stringliteral">&quot;tuo&quot;</span>,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                                        <span class="stringliteral">&quot;wa&quot;</span>,<span class="stringliteral">&quot;wai&quot;</span>,<span class="stringliteral">&quot;wan&quot;</span>,<span class="stringliteral">&quot;wang&quot;</span>,<span class="stringliteral">&quot;wei&quot;</span>,<span class="stringliteral">&quot;wen&quot;</span>,<span class="stringliteral">&quot;weng&quot;</span>,<span class="stringliteral">&quot;wo&quot;</span>,<span class="stringliteral">&quot;wu&quot;</span>,<span class="stringliteral">&quot;xi&quot;</span>,<span class="stringliteral">&quot;xia&quot;</span>,<span class="stringliteral">&quot;xian&quot;</span>,<span class="stringliteral">&quot;xiang&quot;</span>,<span class="stringliteral">&quot;xiao&quot;</span>,<span class="stringliteral">&quot;xie&quot;</span>,<span class="stringliteral">&quot;xin&quot;</span>,<span class="stringliteral">&quot;xing&quot;</span>,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                                        <span class="stringliteral">&quot;xiong&quot;</span>,<span class="stringliteral">&quot;xiu&quot;</span>,<span class="stringliteral">&quot;xu&quot;</span>,<span class="stringliteral">&quot;xuan&quot;</span>,<span class="stringliteral">&quot;xue&quot;</span>,<span class="stringliteral">&quot;xun&quot;</span>,<span class="stringliteral">&quot;ya&quot;</span>,<span class="stringliteral">&quot;yan&quot;</span>,<span class="stringliteral">&quot;yang&quot;</span>,<span class="stringliteral">&quot;yao&quot;</span>,<span class="stringliteral">&quot;ye&quot;</span>,<span class="stringliteral">&quot;yi&quot;</span>,<span class="stringliteral">&quot;yin&quot;</span>,<span class="stringliteral">&quot;ying&quot;</span>,<span class="stringliteral">&quot;yo&quot;</span>,<span class="stringliteral">&quot;yong&quot;</span>,<span class="stringliteral">&quot;you&quot;</span>,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                                                        <span class="stringliteral">&quot;yu&quot;</span>,<span class="stringliteral">&quot;yuan&quot;</span>,<span class="stringliteral">&quot;yue&quot;</span>,<span class="stringliteral">&quot;yun&quot;</span>,<span class="stringliteral">&quot;za&quot;</span>,<span class="stringliteral">&quot;zai&quot;</span>,<span class="stringliteral">&quot;zan&quot;</span>,<span class="stringliteral">&quot;zang&quot;</span>,<span class="stringliteral">&quot;zao&quot;</span>,<span class="stringliteral">&quot;ze&quot;</span>,<span class="stringliteral">&quot;zei&quot;</span>,<span class="stringliteral">&quot;zen&quot;</span>,<span class="stringliteral">&quot;zeng&quot;</span>,<span class="stringliteral">&quot;zha&quot;</span>,<span class="stringliteral">&quot;zhai&quot;</span>,<span class="stringliteral">&quot;zhan&quot;</span>,<span class="stringliteral">&quot;zhang&quot;</span>,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                                        <span class="stringliteral">&quot;zhao&quot;</span>,<span class="stringliteral">&quot;zhe&quot;</span>,<span class="stringliteral">&quot;zhen&quot;</span>,<span class="stringliteral">&quot;zheng&quot;</span>,<span class="stringliteral">&quot;zhi&quot;</span>,<span class="stringliteral">&quot;zhong&quot;</span>,<span class="stringliteral">&quot;zhou&quot;</span>,<span class="stringliteral">&quot;zhu&quot;</span>,<span class="stringliteral">&quot;zhua&quot;</span>,<span class="stringliteral">&quot;zhuai&quot;</span>,<span class="stringliteral">&quot;zhuan&quot;</span>,<span class="stringliteral">&quot;zhuang&quot;</span>,<span class="stringliteral">&quot;zhui&quot;</span>,<span class="stringliteral">&quot;zhun&quot;</span>,<span class="stringliteral">&quot;zhuo&quot;</span>,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                                        <span class="stringliteral">&quot;zi&quot;</span>,<span class="stringliteral">&quot;zong&quot;</span>,<span class="stringliteral">&quot;zou&quot;</span>,<span class="stringliteral">&quot;zu&quot;</span>,<span class="stringliteral">&quot;zuan&quot;</span>,<span class="stringliteral">&quot;zui&quot;</span>,<span class="stringliteral">&quot;zun&quot;</span>,<span class="stringliteral">&quot;zuo&quot;</span>};</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#a298b6a886b268ba4f667304e25cf5c93">   96</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#a298b6a886b268ba4f667304e25cf5c93">ConvertToAllSpell</a>(<span class="keywordtype">string</span> strChinese)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            Regex MyRegex = <span class="keyword">new</span> Regex(<span class="stringliteral">&quot;^[一-龥]$&quot;</span>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            byte[] array = <span class="keyword">new</span> byte[2];</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordtype">string</span> returnstr = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">int</span> chrasc = 0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordtype">int</span> i1 = 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">int</span> i2 = 0;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordtype">char</span>[] nowchar = strChinese.ToCharArray();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; nowchar.Length; j++)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">if</span> (MyRegex.IsMatch(nowchar[j].ToString()))</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    array = System.Text.Encoding.Default.GetBytes(nowchar[j].ToString());</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    i1 = (short)(array[0]);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    i2 = (short)(array[1]);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    chrasc = i1 * 256 + i2 - 65536;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">if</span> (chrasc &gt; 0 &amp;&amp; chrasc &lt; 160)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> System.Text;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespace_x_c_l_net_tools_1_1_language.html">   27</a></span>&#160;<span class="keyword">namespace </span>XCLNetTools.Language</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html">   32</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html">CN</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#a298b6a886b268ba4f667304e25cf5c93">   39</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#a298b6a886b268ba4f667304e25cf5c93">ConvertToAllSpell</a>(<span class="keywordtype">string</span> strChinese)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            byte[] array = <span class="keyword">new</span> byte[2];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">string</span> returnstr = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordtype">int</span> chrasc = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordtype">int</span> i1 = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordtype">int</span> i2 = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">char</span>[] nowchar = strChinese.ToCharArray();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; nowchar.Length; j++)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span> (XCLNetTools.Common.Consts.ChineseRegex.IsMatch(nowchar[j].ToString()))</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    array = System.Text.Encoding.Default.GetBytes(nowchar[j].ToString());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    i1 = (short)(array[0]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    i2 = (short)(array[1]);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    chrasc = i1 * 256 + i2 - 65536;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="keywordflow">if</span> (chrasc &gt; 0 &amp;&amp; chrasc &lt; 160)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        returnstr += nowchar[j];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = (XCLNetTools.Common.Consts.PinyinValue.Length - 1); i &gt;= 0; i--)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            <span class="keywordflow">if</span> (XCLNetTools.Common.Consts.PinyinValue[i] &lt;= chrasc)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                returnstr += XCLNetTools.Common.Consts.Pinyin[i];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    returnstr += nowchar[j].ToString();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> returnstr;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#adad5709d68f61a8cb7002ce6abf72c54">   84</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#adad5709d68f61a8cb7002ce6abf72c54">ConvertToFirstSpell</a>(<span class="keywordtype">string</span> strChinese)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">int</span> len = strChinese.Length;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordtype">string</span> myStr = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                myStr += GetFirstSpell(strChinese.Substring(i, 1));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> myStr;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ae8a020bfe3d0b396edb88d8529decb29">  100</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ae8a020bfe3d0b396edb88d8529decb29">GetFirstSpell</a>(<span class="keywordtype">string</span> charChinese)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            byte[] arrCN = Encoding.Default.GetBytes(charChinese);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (arrCN.Length &gt; 1)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordtype">int</span> area = (short)arrCN[0];</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordtype">int</span> pos = (short)arrCN[1];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordtype">int</span> code = (area &lt;&lt; 8) + pos;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordtype">int</span>[] areacode = { 45217, 45253, 45761, 46318, 46826, 47010, 47297, 47614, 48119, 48119, 49062, 49324, 49896, 50371, 50614, 50622, 50906, 51387, 51446, 52218, 52698, 52698, 52698, 52980, 53689, 54481 };</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 26; i++)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <span class="keywordtype">int</span> max = 55290;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordflow">if</span> (i != 25) max = areacode[i + 1];</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">if</span> (areacode[i] &lt;= code &amp;&amp; code &lt; max)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        returnstr += nowchar[j];</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = (pyvalue.Length - 1); i &gt;= 0; i--)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                        {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                            <span class="keywordflow">if</span> (pyvalue[i] &lt;= chrasc)</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                            {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                returnstr += pystr[i];</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                            }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    returnstr += nowchar[j].ToString();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">return</span> returnstr;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#adad5709d68f61a8cb7002ce6abf72c54">  140</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#adad5709d68f61a8cb7002ce6abf72c54">ConvertToFirstSpell</a>(<span class="keywordtype">string</span> strChinese)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordtype">int</span> len = strChinese.Length;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordtype">string</span> myStr = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++)</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                myStr += GetFirstSpell(strChinese.Substring(i, 1));</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">return</span> myStr;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ae8a020bfe3d0b396edb88d8529decb29">  154</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ae8a020bfe3d0b396edb88d8529decb29">GetFirstSpell</a>(<span class="keywordtype">string</span> charChinese)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            byte[] arrCN = Encoding.Default.GetBytes(charChinese);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> (arrCN.Length &gt; 1)</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordtype">int</span> area = (short)arrCN[0];</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="keywordtype">int</span> pos = (short)arrCN[1];</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordtype">int</span> code = (area &lt;&lt; 8) + pos;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordtype">int</span>[] areacode = { 45217, 45253, 45761, 46318, 46826, 47010, 47297, 47614, 48119, 48119, 49062, 49324, 49896, 50371, 50614, 50622, 50906, 51387, 51446, 52218, 52698, 52698, 52698, 52980, 53689, 54481 };</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 26; i++)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="keywordtype">int</span> max = 55290;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    <span class="keywordflow">if</span> (i != 25) max = areacode[i + 1];</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    <span class="keywordflow">if</span> (areacode[i] &lt;= code &amp;&amp; code &lt; max)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        byte[] bytes = <span class="keyword">new</span> byte[] { (byte)(65 + i) };</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                        <span class="keywordflow">return</span> Encoding.Default.GetString(bytes, 0, bytes.Length);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;*&quot;</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">return</span> charChinese;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ac25cb893e8f56ae3ce28a04f4665c51d">  181</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ac25cb893e8f56ae3ce28a04f4665c51d">ConvertFirstSpell</a>(<span class="keywordtype">string</span> charChinese)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            Regex MyRegex = <span class="keyword">new</span> Regex(<span class="stringliteral">&quot;^[一-龥]$&quot;</span>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            byte[] array = <span class="keyword">new</span> byte[2];</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordtype">string</span> returnstr = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordtype">int</span> chrasc = 0;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordtype">int</span> i1 = 0;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordtype">int</span> i2 = 0;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordtype">char</span>[] nowchar = charChinese.ToCharArray();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 1; j++)</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">if</span> (MyRegex.IsMatch(nowchar[j].ToString()))</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    array = System.Text.Encoding.Default.GetBytes(nowchar[j].ToString());</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    i1 = (short)(array[0]);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    i2 = (short)(array[1]);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    chrasc = i1 * 256 + i2 - 65536;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <span class="keywordflow">if</span> (chrasc &gt; 0 &amp;&amp; chrasc &lt; 160)</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                        returnstr += nowchar[j];</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = (pyvalue.Length - 1); i &gt;= 0; i--)</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                            <span class="keywordflow">if</span> (pyvalue[i] &lt;= chrasc)</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                            {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                                returnstr += pystr[i];</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                            }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    returnstr += nowchar[j].ToString();</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                }</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">return</span> returnstr;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html">XCLNetTools.Language.CN</a></div><div class="ttdoc">中文处理 </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00030">CN.cs:30</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_adad5709d68f61a8cb7002ce6abf72c54"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#adad5709d68f61a8cb7002ce6abf72c54">XCLNetTools.Language.CN.ConvertToFirstSpell</a></div><div class="ttdeci">static string ConvertToFirstSpell(string strChinese)</div><div class="ttdoc">将汉字转化为拼音首字母（大写） </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00140">CN.cs:140</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_ae8a020bfe3d0b396edb88d8529decb29"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ae8a020bfe3d0b396edb88d8529decb29">XCLNetTools.Language.CN.GetFirstSpell</a></div><div class="ttdeci">static string GetFirstSpell(string charChinese)</div><div class="ttdoc">获取第一个汉字的首字母（大写）； </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00154">CN.cs:154</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_a298b6a886b268ba4f667304e25cf5c93"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#a298b6a886b268ba4f667304e25cf5c93">XCLNetTools.Language.CN.ConvertToAllSpell</a></div><div class="ttdeci">static string ConvertToAllSpell(string strChinese)</div><div class="ttdoc">将汉字转化为全拼 </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00096">CN.cs:96</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_ac25cb893e8f56ae3ce28a04f4665c51d"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ac25cb893e8f56ae3ce28a04f4665c51d">XCLNetTools.Language.CN.ConvertFirstSpell</a></div><div class="ttdeci">static string ConvertFirstSpell(string charChinese)</div><div class="ttdoc">获取第一个汉字的拼音 </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00181">CN.cs:181</a></div></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        byte[] bytes = <span class="keyword">new</span> byte[] { (byte)(65 + i) };</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        <span class="keywordflow">return</span> Encoding.Default.GetString(bytes, 0, bytes.Length);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;*&quot;</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">return</span> charChinese;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ac25cb893e8f56ae3ce28a04f4665c51d">  129</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ac25cb893e8f56ae3ce28a04f4665c51d">ConvertFirstSpell</a>(<span class="keywordtype">string</span> charChinese)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            byte[] array = <span class="keyword">new</span> byte[2];</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordtype">string</span> returnstr = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordtype">int</span> chrasc = 0;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordtype">int</span> i1 = 0;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordtype">int</span> i2 = 0;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordtype">char</span>[] nowchar = charChinese.ToCharArray();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 1; j++)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <span class="keywordflow">if</span> (XCLNetTools.Common.Consts.ChineseRegex.IsMatch(nowchar[j].ToString()))</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    array = System.Text.Encoding.Default.GetBytes(nowchar[j].ToString());</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    i1 = (short)(array[0]);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    i2 = (short)(array[1]);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    chrasc = i1 * 256 + i2 - 65536;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    <span class="keywordflow">if</span> (chrasc &gt; 0 &amp;&amp; chrasc &lt; 160)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        returnstr += nowchar[j];</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = (XCLNetTools.Common.Consts.PinyinValue.Length - 1); i &gt;= 0; i--)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                        {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                            <span class="keywordflow">if</span> (XCLNetTools.Common.Consts.PinyinValue[i] &lt;= chrasc)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                            {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                returnstr += XCLNetTools.Common.Consts.Pinyin[i];</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                            }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    returnstr += nowchar[j].ToString();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">return</span> returnstr;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html">XCLNetTools.Language.CN</a></div><div class="ttdoc">中文处理 </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00032">CN.cs:32</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_adad5709d68f61a8cb7002ce6abf72c54"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#adad5709d68f61a8cb7002ce6abf72c54">XCLNetTools.Language.CN.ConvertToFirstSpell</a></div><div class="ttdeci">static string ConvertToFirstSpell(string strChinese)</div><div class="ttdoc">将汉字转化为拼音首字母（大写） </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00084">CN.cs:84</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_ae8a020bfe3d0b396edb88d8529decb29"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ae8a020bfe3d0b396edb88d8529decb29">XCLNetTools.Language.CN.GetFirstSpell</a></div><div class="ttdeci">static string GetFirstSpell(string charChinese)</div><div class="ttdoc">获取第一个汉字的首字母（大写）； </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00100">CN.cs:100</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_a298b6a886b268ba4f667304e25cf5c93"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#a298b6a886b268ba4f667304e25cf5c93">XCLNetTools.Language.CN.ConvertToAllSpell</a></div><div class="ttdeci">static string ConvertToAllSpell(string strChinese)</div><div class="ttdoc">将汉字转化为全拼 </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00039">CN.cs:39</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_language_1_1_c_n_html_ac25cb893e8f56ae3ce28a04f4665c51d"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_language_1_1_c_n.html#ac25cb893e8f56ae3ce28a04f4665c51d">XCLNetTools.Language.CN.ConvertFirstSpell</a></div><div class="ttdeci">static string ConvertFirstSpell(string charChinese)</div><div class="ttdoc">获取第一个汉字的拼音 </div><div class="ttdef"><b>Definition:</b> <a href="_c_n_8cs_source.html#l00129">CN.cs:129</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
-<hr class="footer" /><address class="footer"><small>
-生成于 2016年 一月 2日 星期六 12:11:23 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen" />
+<hr class="footer"/><address class="footer"><small>
+生成于 2016年 二月 15日 星期一 21:59:07 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
 </body>

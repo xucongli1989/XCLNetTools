@@ -16,7 +16,7 @@ static string \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_a60f888006a88a
 static bool \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_aac3a2883c1182b43cdc0ebd7a5554895}{Need\-To\-Encode} (char chr)
 \begin{DoxyCompactList}\small\item\em 指定 一个字符是否应该被编码 \end{DoxyCompactList}\item 
 static string \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_a58fb0c39fe4db08762c074d9d774729d}{To\-Hex\-String} (char chr)
-\begin{DoxyCompactList}\small\item\em 为非英文字符串编码 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 为非英文字符编码 \end{DoxyCompactList}\item 
 static int \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_abe9191a3f762b84c077bba6ef4f6dc30}{Get\-Or\-Set\-Block\-From\-Hex} (int block\-Index, int source, int?new\-Block\-Value=null)
 \begin{DoxyCompactList}\small\item\em 获取或更新16进制中的第几块区域中的值。比如：0x\-A\-B\-C中，第一块为\-C，第二块为\-B，... \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -26,7 +26,7 @@ static int \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_abe9191a3f762b84c
 
 
 
-在文件 Hex.\-cs 第 31 行定义.
+在文件 Hex.\-cs 第 34 行定义.
 
 
 
@@ -58,7 +58,7 @@ static int \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_abe9191a3f762b84c
 \end{DoxyReturn}
 
 
-在文件 Hex.\-cs 第 107 行定义.
+在文件 Hex.\-cs 第 113 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_aac3a2883c1182b43cdc0ebd7a5554895}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!Need\-To\-Encode@{Need\-To\-Encode}}
 \index{Need\-To\-Encode@{Need\-To\-Encode}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
@@ -71,9 +71,12 @@ static int \hyperlink{class_x_c_l_net_tools_1_1_encode_1_1_hex_abe9191a3f762b84c
 
 指定 一个字符是否应该被编码 
 
+\begin{DoxyReturn}{返回}
+true\-:可以被编码，false\-:无需编码
+\end{DoxyReturn}
 
 
-在文件 Hex.\-cs 第 73 行定义.
+在文件 Hex.\-cs 第 78 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_a0fb06fdeea06d52883d1f1a93bfcf4e8}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!String\-To\-Byte\-Array@{String\-To\-Byte\-Array}}
 \index{String\-To\-Byte\-Array@{String\-To\-Byte\-Array}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
@@ -96,7 +99,7 @@ byte\mbox{[}\mbox{]}
 \end{DoxyReturn}
 
 
-在文件 Hex.\-cs 第 38 行定义.
+在文件 Hex.\-cs 第 41 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_a60f888006a88a296a97f8212abd0ddba}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!To\-Hex\-String@{To\-Hex\-String}}
 \index{To\-Hex\-String@{To\-Hex\-String}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
@@ -109,9 +112,12 @@ byte\mbox{[}\mbox{]}
 
 为字符串中的非英文字符编码 
 
+\begin{DoxyReturn}{返回}
+处理后的值
+\end{DoxyReturn}
 
 
-在文件 Hex.\-cs 第 49 行定义.
+在文件 Hex.\-cs 第 53 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_encode_1_1_hex_a58fb0c39fe4db08762c074d9d774729d}{\index{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}!To\-Hex\-String@{To\-Hex\-String}}
 \index{To\-Hex\-String@{To\-Hex\-String}!XCLNetTools::Encode::Hex@{X\-C\-L\-Net\-Tools\-::\-Encode\-::\-Hex}}
@@ -122,11 +128,14 @@ byte\mbox{[}\mbox{]}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_encode_1_1_hex_a58fb0c39fe4db08762c074d9d774729d}
 
 
-为非英文字符串编码 
+为非英文字符编码 
+
+\begin{DoxyReturn}{返回}
+编码后的值
+\end{DoxyReturn}
 
 
-
-在文件 Hex.\-cs 第 88 行定义.
+在文件 Hex.\-cs 第 94 行定义.
 
 
 

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.2</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -104,6 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <tr class="memitem:a38adb871b8752fb797795645625b7b4f"><td class="memItemLeft" align="right" valign="top">static List&lt; List&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_generic_1_1_list_helper.html#a38adb871b8752fb797795645625b7b4f">SplitListByStep&lt; T &gt;</a> (int step, List&lt; T &gt; lst)</td></tr>
 <tr class="memdesc:a38adb871b8752fb797795645625b7b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据步长，将一个总List拆分为多个子List  <a href="#a38adb871b8752fb797795645625b7b4f">更多...</a><br/></td></tr>
 <tr class="separator:a38adb871b8752fb797795645625b7b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3225ddcbde7d47ccef1ab295ebbd2f1d"><td class="memItemLeft" align="right" valign="top">static List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_generic_1_1_list_helper.html#a3225ddcbde7d47ccef1ab295ebbd2f1d">GetStrSplitList</a> (string str, char speater)</td></tr>
+<tr class="memdesc:a3225ddcbde7d47ccef1ab295ebbd2f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将指定字符串用指定分隔符分开存到list中  <a href="#a3225ddcbde7d47ccef1ab295ebbd2f1d">更多...</a><br/></td></tr>
+<tr class="separator:a3225ddcbde7d47ccef1ab295ebbd2f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02b07a0f7a7d4506c358650ba010f7d9"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_generic_1_1_list_helper.html#a02b07a0f7a7d4506c358650ba010f7d9">GetStringByList&lt; T &gt;</a> (List&lt; T &gt; lst, string splitChar)</td></tr>
 <tr class="memdesc:a02b07a0f7a7d4506c358650ba010f7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">将list中的项拼接字符串  <a href="#a02b07a0f7a7d4506c358650ba010f7d9">更多...</a><br/></td></tr>
 <tr class="separator:a02b07a0f7a7d4506c358650ba010f7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>List操作类 </p>
 
-<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00032">32</a> 行定义.</p>
+<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00036">36</a> 行定义.</p>
 </div><h2 class="groupheader">成员函数说明</h2>
 <a class="anchor" id="aa1d5d2843b5a105edf4eb8c160fcd016"></a>
 <div class="memitem">
@@ -144,11 +147,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <p>将dataTable转为list </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dt</td><td></td></tr>
+    <tr><td class="paramname">dt</td><td>要转换的数据</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<dl class="section return"><dt>返回</dt><dd>list</dd></dl>
 <div class="typeconstraint">
 <dl><dt><b>类型限制</b><dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -157,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </dl>
 </div>
 
-<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00104">104</a> 行定义.</p>
+<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00128">128</a> 行定义.</p>
 
 </div>
 </div>
@@ -201,8 +204,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>字符串结果值</dd></dl>
 
-<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00065">65</a> 行定义.</p>
+<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3225ddcbde7d47ccef1ab295ebbd2f1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static List&lt;string&gt; XCLNetTools.Generic.ListHelper.GetStrSplitList </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>speater</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将指定字符串用指定分隔符分开存到list中 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>源字符串</td></tr>
+    <tr><td class="paramname">speater</td><td>分隔字符</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>list</dd></dl>
+
+<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00071">71</a> 行定义.</p>
 
 </div>
 </div>
@@ -246,8 +296,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>分拆后的结果list</dd></dl>
 
-<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00039">39</a> 行定义.</p>
+<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00044">44</a> 行定义.</p>
 
 </div>
 </div>
@@ -274,8 +325,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>将List转换成DataTable </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>要转换的数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>datatable</dd></dl>
 
-<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00078">78</a> 行定义.</p>
+<p>在文件 <a class="el" href="_list_helper_8cs_source.html">ListHelper.cs</a> 第 <a class="el" href="_list_helper_8cs_source.html#l00102">102</a> 行定义.</p>
 
 </div>
 </div>
@@ -285,7 +343,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 一月 2日 星期六 12:11:25 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 二月 15日 星期一 21:59:09 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
