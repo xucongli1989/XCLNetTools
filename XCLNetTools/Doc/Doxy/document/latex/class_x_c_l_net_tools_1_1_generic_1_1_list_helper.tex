@@ -11,6 +11,8 @@ List操作类
 \item 
 static List$<$ List$<$ T $>$ $>$ \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a38adb871b8752fb797795645625b7b4f}{Split\-List\-By\-Step$<$ T $>$} (int step, List$<$ T $>$ lst)
 \begin{DoxyCompactList}\small\item\em 根据步长，将一个总\-List拆分为多个子\-List \end{DoxyCompactList}\item 
+static List$<$ string $>$ \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a3225ddcbde7d47ccef1ab295ebbd2f1d}{Get\-Str\-Split\-List} (string str, char speater)
+\begin{DoxyCompactList}\small\item\em 将指定字符串用指定分隔符分开存到list中 \end{DoxyCompactList}\item 
 static string \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a02b07a0f7a7d4506c358650ba010f7d9}{Get\-String\-By\-List$<$ T $>$} (List$<$ T $>$ lst, string split\-Char)
 \begin{DoxyCompactList}\small\item\em 将list中的项拼接字符串 \end{DoxyCompactList}\item 
 static Data\-Table \hyperlink{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aabb9427ae92df2eb55b7ea300be149a9}{To\-Data\-Table$<$ T $>$} (I\-List$<$ T $>$ data)
@@ -24,7 +26,7 @@ List操作类
 
 
 
-在文件 List\-Helper.\-cs 第 32 行定义.
+在文件 List\-Helper.\-cs 第 36 行定义.
 
 
 
@@ -42,11 +44,11 @@ List操作类
 
 
 \begin{DoxyParams}{参数}
-{\em dt} & \\
+{\em dt} & 要转换的数据\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-
+list
 \end{DoxyReturn}
 \begin{Desc}
 \item[类型限制]\begin{description}
@@ -54,7 +56,7 @@ List操作类
 \end{Desc}
 
 
-在文件 List\-Helper.\-cs 第 104 行定义.
+在文件 List\-Helper.\-cs 第 128 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a02b07a0f7a7d4506c358650ba010f7d9}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!Get\-String\-By\-List$<$ T $>$@{Get\-String\-By\-List$<$ T $>$}}
 \index{Get\-String\-By\-List$<$ T $>$@{Get\-String\-By\-List$<$ T $>$}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
@@ -75,9 +77,38 @@ List操作类
 {\em split\-Char} & 分隔符\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+字符串结果值
+\end{DoxyReturn}
 
 
-在文件 List\-Helper.\-cs 第 65 行定义.
+在文件 List\-Helper.\-cs 第 87 行定义.
+
+\hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a3225ddcbde7d47ccef1ab295ebbd2f1d}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!Get\-Str\-Split\-List@{Get\-Str\-Split\-List}}
+\index{Get\-Str\-Split\-List@{Get\-Str\-Split\-List}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
+\subsubsection[{Get\-Str\-Split\-List}]{\setlength{\rightskip}{0pt plus 5cm}static List$<$string$>$ X\-C\-L\-Net\-Tools.\-Generic.\-List\-Helper.\-Get\-Str\-Split\-List (
+\begin{DoxyParamCaption}
+\item[{string}]{str, }
+\item[{char}]{speater}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a3225ddcbde7d47ccef1ab295ebbd2f1d}
+
+
+将指定字符串用指定分隔符分开存到list中 
+
+
+\begin{DoxyParams}{参数}
+{\em str} & 源字符串\\
+\hline
+{\em speater} & 分隔字符\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+list
+\end{DoxyReturn}
+
+
+在文件 List\-Helper.\-cs 第 71 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_a38adb871b8752fb797795645625b7b4f}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!Split\-List\-By\-Step$<$ T $>$@{Split\-List\-By\-Step$<$ T $>$}}
 \index{Split\-List\-By\-Step$<$ T $>$@{Split\-List\-By\-Step$<$ T $>$}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
@@ -98,9 +129,12 @@ List操作类
 {\em lst} & 主list\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+分拆后的结果list
+\end{DoxyReturn}
 
 
-在文件 List\-Helper.\-cs 第 39 行定义.
+在文件 List\-Helper.\-cs 第 44 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_generic_1_1_list_helper_aabb9427ae92df2eb55b7ea300be149a9}{\index{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}!To\-Data\-Table$<$ T $>$@{To\-Data\-Table$<$ T $>$}}
 \index{To\-Data\-Table$<$ T $>$@{To\-Data\-Table$<$ T $>$}!XCLNetTools::Generic::ListHelper@{X\-C\-L\-Net\-Tools\-::\-Generic\-::\-List\-Helper}}
@@ -114,8 +148,16 @@ List操作类
 将\-List转换成\-Data\-Table 
 
 
+\begin{DoxyParams}{参数}
+{\em data} & 要转换的数据\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+datatable
+\end{DoxyReturn}
 
-在文件 List\-Helper.\-cs 第 78 行定义.
+
+在文件 List\-Helper.\-cs 第 102 行定义.
 
 
 

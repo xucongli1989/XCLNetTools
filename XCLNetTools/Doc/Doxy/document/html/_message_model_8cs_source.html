@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.2</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -99,76 +99,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1：xucongli1989（https://github.com/xucongli1989）电子邮件：80213876@qq.com</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">三：更新：</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.1</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-01-01</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.2</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-02</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">四：更新内容：</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：将原先基础数据转换方法转移到Common/DataTypeConvert下面</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：其它逻辑优化，如表单参数获取等</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：首次开放所有源代码</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：更新表单获取的参数类型</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：更改Message/JsonMsg类的目录</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：删除多余的方法</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">4：修复一处未dispose问题</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">5：整理部分代码</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">6：添加 MethodResult.cs</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">7：获取枚举list时可以使用byte/short等</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>XCLNetTools.Message</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    [Serializable]</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html">   30</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html">MessageModel</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a580b7fe7f6918b6803a7e7b8e656905b">   35</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Title { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a29a69610fff39e33d85105a5ca50dd20">   40</a></span>&#160;        <span class="keyword">public</span> DateTime? Date { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a2c6df6335e3adab4b188833ce8fec192">   45</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Message { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a75446ff337c7baa946a5367d085f8279">   50</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> MessageMore { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a50c6a9523a8b8dc168360318f7be8574">   55</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Url { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#afa48da00ef35d78d182c025a1f0dcbc0">   60</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> FromUrl { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a05485b542b8ef7f795ed5618fb80da03">   65</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsSuccess { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a9bdd2a6fd62936962fe1a06233809f02">   70</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsRefresh { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a9cbdcd7db26f62ea746c835e82e3dcf0">   75</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Remark { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a167c5dfe1818b0685dc7ceca3c1ed5ba">   80</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsRedirect { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a7e4817a1c4bdb50744e091c0d70d30f3">   85</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> RedirectURL { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a80664c824fe9da1cda8acc70e14ab619">   90</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">RedirectTargetEnum</a> RedirectTarget { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsAjax</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#ad0286a8e34c0cd7495034ac04c4d0ada">   96</a></span>&#160;        {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keyword">get</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">return</span> XCLNetTools.StringHander.Common.IsAjax();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a5c8290fdf8dd088943d6468819bc4d7c">  106</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> ErrorCode { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a1f5c9fd605c8bfeb76563ccc8272510c">  111</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">object</span> CustomObject { <span class="keyword">get</span>; set; }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">  117</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">RedirectTargetEnum</a></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095a6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095aa9453646c9602d8a4f00d42b7c9844ab">NewBlank</a> = 1</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>XCLNetTools.Message</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    [Serializable]</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html">   33</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html">MessageModel</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a580b7fe7f6918b6803a7e7b8e656905b">   38</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Title { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a29a69610fff39e33d85105a5ca50dd20">   43</a></span>&#160;        <span class="keyword">public</span> DateTime? Date { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a2c6df6335e3adab4b188833ce8fec192">   48</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Message { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a75446ff337c7baa946a5367d085f8279">   53</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> MessageMore { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a50c6a9523a8b8dc168360318f7be8574">   58</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Url { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#afa48da00ef35d78d182c025a1f0dcbc0">   63</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> FromUrl { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a05485b542b8ef7f795ed5618fb80da03">   68</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsSuccess { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a9bdd2a6fd62936962fe1a06233809f02">   73</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsRefresh { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a9cbdcd7db26f62ea746c835e82e3dcf0">   78</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> Remark { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a167c5dfe1818b0685dc7ceca3c1ed5ba">   83</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsRedirect { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a7e4817a1c4bdb50744e091c0d70d30f3">   88</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> RedirectURL { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a80664c824fe9da1cda8acc70e14ab619">   93</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">RedirectTargetEnum</a> RedirectTarget { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsAjax</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#ad0286a8e34c0cd7495034ac04c4d0ada">   99</a></span>&#160;        {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keyword">get</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">return</span> XCLNetTools.StringHander.Common.IsAjax();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a5c8290fdf8dd088943d6468819bc4d7c">  109</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> ErrorCode { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a1f5c9fd605c8bfeb76563ccc8272510c">  114</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">object</span> CustomObject { <span class="keyword">get</span>; set; }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">  120</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">RedirectTargetEnum</a></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095a6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095aa9453646c9602d8a4f00d42b7c9844ab">NewBlank</a> = 1</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 <div class="ttc" id="namespace_x_c_l_net_tools_1_1_message_html_a7f19b509275317a7b01e7dc5cb615095aa9453646c9602d8a4f00d42b7c9844ab"><div class="ttname"><a href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095aa9453646c9602d8a4f00d42b7c9844ab">XCLNetTools.Message.NewBlank</a></div><div class="ttdoc">新窗口打开 </div></div>
 <div class="ttc" id="namespace_x_c_l_net_tools_1_1_message_html_a7f19b509275317a7b01e7dc5cb615095a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095a6adf97f83acf6453d4a6a4b1070f3754">XCLNetTools.Message.None</a></div><div class="ttdoc">在当前页打开 </div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_message_1_1_message_model_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html">XCLNetTools.Message.MessageModel</a></div><div class="ttdoc">消息提示实体类(用于json属性) </div><div class="ttdef"><b>Definition:</b> <a href="_message_model_8cs_source.html#l00030">MessageModel.cs:30</a></div></div>
-<div class="ttc" id="namespace_x_c_l_net_tools_1_1_message_html_a7f19b509275317a7b01e7dc5cb615095"><div class="ttname"><a href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">XCLNetTools.Message.RedirectTargetEnum</a></div><div class="ttdeci">RedirectTargetEnum</div><div class="ttdoc">跳转方式 </div><div class="ttdef"><b>Definition:</b> <a href="_message_model_8cs_source.html#l00117">MessageModel.cs:117</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_message_1_1_message_model_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_message_1_1_message_model.html">XCLNetTools.Message.MessageModel</a></div><div class="ttdoc">消息提示实体类(用于json属性) </div><div class="ttdef"><b>Definition:</b> <a href="_message_model_8cs_source.html#l00033">MessageModel.cs:33</a></div></div>
+<div class="ttc" id="namespace_x_c_l_net_tools_1_1_message_html_a7f19b509275317a7b01e7dc5cb615095"><div class="ttname"><a href="namespace_x_c_l_net_tools_1_1_message.html#a7f19b509275317a7b01e7dc5cb615095">XCLNetTools.Message.RedirectTargetEnum</a></div><div class="ttdeci">RedirectTargetEnum</div><div class="ttdoc">跳转方式 </div><div class="ttdef"><b>Definition:</b> <a href="_message_model_8cs_source.html#l00120">MessageModel.cs:120</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 一月 2日 星期六 12:11:23 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 二月 15日 星期一 21:59:07 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

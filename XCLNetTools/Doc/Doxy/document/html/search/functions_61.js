@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['accesshelper',['AccessHelper',['../class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#ab5ab0cd6ee3cd8c950c3289e62a22238',1,'XCLNetTools::DataBase::Access::AccessHelper']]],
   ['addbodyend',['AddBodyEnd',['../class_x_c_l_net_tools_1_1_javascript_1_1_jscript.html#a3dcdf2894a7187508492083b6743abe1',1,'XCLNetTools::Javascript::Jscript']]],
   ['addbodystart',['AddBodyStart',['../class_x_c_l_net_tools_1_1_javascript_1_1_jscript.html#ab8e14181b9b1e9f12462ef20f49d69ee',1,'XCLNetTools::Javascript::Jscript']]],
   ['addflie',['AddFlie',['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html#af2601517bb4cafc5c9648945ed3e5572',1,'XCLNetTools.FileHandler.MultipartForm.AddFlie(string name, string filename)'],['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html#a5b531d40e9baf9f5ca51260bd4403b00',1,'XCLNetTools.FileHandler.MultipartForm.AddFlie(string name, string filename, byte[] fileData, int dataLength)']]],

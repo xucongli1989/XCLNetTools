@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.2</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -99,204 +99,207 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1：xucongli1989（https://github.com/xucongli1989）电子邮件：80213876@qq.com</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">三：更新：</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.1</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-01-01</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">当前版本：v2.2</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">更新时间：2016-02</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">四：更新内容：</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：将原先基础数据转换方法转移到Common/DataTypeConvert下面</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：其它逻辑优化，如表单参数获取等</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：首次开放所有源代码</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> Aspose.Cells;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> System;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> System.Data;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> System.Linq;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> System.Text;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using</span> System.Web;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespace_x_c_l_net_tools_1_1_data_handler.html">   30</a></span>&#160;<span class="keyword">namespace </span>XCLNetTools.DataHandler</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html">   35</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html">DataToExcel</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ab2355fae5c2f8c39b72472b59dee898b">   46</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ab2355fae5c2f8c39b72472b59dee898b">OutPutExcel</a>(<span class="keywordtype">string</span>[] tableName, List&lt;OutPutClass&gt; outPutClass, DataSet ds, <span class="keywordtype">string</span> fileTitle, <span class="keywordtype">string</span>[] conTitle)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html">OutPutParamClass</a> paramClass = <span class="keyword">new</span> <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html">OutPutParamClass</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            paramClass.tableName = tableName;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            paramClass.outPutClass = outPutClass;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            paramClass.ds = ds;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            paramClass.fileTitle = fileTitle;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            paramClass.conTitle = conTitle;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            OutPutExcel(paramClass);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ae9071c256d304ff488e4f603aac980ad">   61</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ae9071c256d304ff488e4f603aac980ad">OutPutExcel</a>(<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html">OutPutParamClass</a> paramClass)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            StringBuilder str = <span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">            #region 合法性检测</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (null == paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#afc1f9f832db877b449642cdc1c2f3633">ds</a> || paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#afc1f9f832db877b449642cdc1c2f3633">ds</a>.Tables.Count == 0)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                str.Append(<span class="stringliteral">&quot;要导出的数据不能为空，导出失败！；&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a748b563923eab10a0c8f5434fb5a3b16">conTitle</a> &amp;&amp; null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#afc1f9f832db877b449642cdc1c2f3633">ds</a>)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a748b563923eab10a0c8f5434fb5a3b16">conTitle</a>.Length != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#afc1f9f832db877b449642cdc1c2f3633">ds</a>.Tables.Count)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    str.Append(<span class="stringliteral">&quot;自定义的标题与要导出的数据源的数量不匹配，导出失败！；&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a748b563923eab10a0c8f5434fb5a3b16">conTitle</a>.ToList().Distinct().Count() != paramClass.conTitle.Length)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    str.Append(<span class="stringliteral">&quot;自定义的标题项不能重复，因为此项要作为Sheet的名称，导出失败！；&quot;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a4288510d1df7a0d061c8cc846c3db900">outPutClass</a> &amp;&amp; paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a4288510d1df7a0d061c8cc846c3db900">outPutClass</a>.Count &gt; 0)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a7da1f957b459cb7fa6e6adcdbdaec714">tableName</a>.Length != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#afc1f9f832db877b449642cdc1c2f3633">ds</a>.Tables.Count)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    str.Append(<span class="stringliteral">&quot;表名与dataSet的table数量不一致，导出失败！；&quot;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (str.Length &gt; 0)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(str.ToString());</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">            #endregion 合法性检测</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">            #region 是否指定被操作的工作薄</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            Workbook workbook = null;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#ac24509285a5c4a9bec38099e2070aeba">WorkBookFilePath</a>))</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                workbook = <span class="keyword">new</span> Workbook(paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#ac24509285a5c4a9bec38099e2070aeba">WorkBookFilePath</a>);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                workbook = <span class="keyword">new</span> Workbook();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">            #endregion 是否指定被操作的工作薄</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; paramClass.ds.Tables.Count; i++)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                Worksheet sheet = workbook.Worksheets[i];</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a748b563923eab10a0c8f5434fb5a3b16">conTitle</a> &amp;&amp; paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a748b563923eab10a0c8f5434fb5a3b16">conTitle</a>.Length &gt; 0)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    sheet.Name = paramClass.conTitle[i];</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">if</span> (i != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#afc1f9f832db877b449642cdc1c2f3633">ds</a>.Tables.Count - 1)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    workbook.Worksheets.Add();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                DataTable dt = paramClass.ds.Tables[i];</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                List&lt;string&gt; dtColNameLst = <span class="keyword">new</span> List&lt;string&gt;();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; dt.Columns.Count; k++)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    dtColNameLst.Add(dt.Columns[k].ColumnName);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">                #region 写入列名</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                List&lt;string&gt; newNamesLst = <span class="keyword">new</span> List&lt;string&gt;();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a4288510d1df7a0d061c8cc846c3db900">outPutClass</a> &amp;&amp; paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a4288510d1df7a0d061c8cc846c3db900">outPutClass</a>.Count &gt; 0)</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_class.html">OutPutClass</a> outPutModel = paramClass.outPutClass.First(k =&gt; k.tableName == paramClass.tableName[i].Trim());</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <span class="keywordflow">foreach</span> (var m <span class="keywordflow">in</span> outPutModel.fields)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        newNamesLst.Add(m.newName);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        <span class="keywordflow">if</span> (dtColNameLst.Contains(m.oldName))</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                            dt.Columns[m.oldName].ColumnName = m.newName;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    newNamesLst = dtColNameLst;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">                #endregion 写入列名</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">                #region 向sheet中写入数据</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                dt.AcceptChanges();</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                sheet.Cells.ImportDataTable(dt.DefaultView.ToTable(<span class="stringliteral">&quot;dtNew&quot;</span>, <span class="keyword">true</span>, newNamesLst.ToArray()), paramClass.IsShowFieldLine, paramClass.FirstRowIndex, paramClass.FirstColumnIndex, dt.Rows.Count + 1, dt.Columns.Count, <span class="keyword">true</span>, <span class="stringliteral">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                sheet.AutoFitColumns();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">                #endregion 向sheet中写入数据</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">                #region 添加样式</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                Cells cells = sheet.Cells;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a516e2da305a873914ecfc1c1ac2f47f2">IsShowCustomLine</a>)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    cells[0, 0].Value = string.Format(<span class="stringliteral">&quot;数据导出：{0}；导出时间：{1}；记录总数：{2}&quot;</span>, paramClass.conTitle[i], DateTime.Now, dt.Rows.Count);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    Aspose.Cells.Style styleCell0 = cells[0, 0].GetStyle();</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    styleCell0.Font.Color = System.Drawing.Color.Red;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    cells[0, 0].SetStyle(styleCell0);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a6ac5480b872823a988c8f046bcdb7f41">IsShowFieldLine</a>)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    Range range = sheet.Cells.CreateRange(1, 0, 1, newNamesLst.Count);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    range.Name = <span class="stringliteral">&quot;Range1&quot;</span>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                    Aspose.Cells.Style style = workbook.Styles[workbook.Styles.Add()];</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    style.HorizontalAlignment = TextAlignmentType.Center;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    style.Font.Color = System.Drawing.Color.Blue;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    style.Font.IsBold = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    StyleFlag styleFlag = <span class="keyword">new</span> StyleFlag();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    styleFlag.All = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    range.ApplyStyle(style, styleFlag);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">                #endregion 添加样式</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor"></span>            }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            paramClass.GetWorkBook = workbook;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">            #region 保存</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a1080824136a31b39d2cc48459f8d1271">CustomFileName</a>))</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                workbook.Save(paramClass.CustomFileName, paramClass.SaveFormat);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a1e1c3490df66e969da5c506f62e39c40">AutoDownLoad</a>)</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keywordtype">string</span> fileName = string.Format(<span class="stringliteral">&quot;{0}_数据导出.xlsx&quot;</span>, paramClass.fileTitle);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordtype">bool</span> isFirefox = HttpContext.Current.Request.Browser.Type.ToLower().Contains(<span class="stringliteral">&quot;firefox&quot;</span>);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                fileName = isFirefox ? fileName : HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                workbook.Save(HttpContext.Current.Response, fileName, ContentDisposition.Attachment, <span class="keyword">new</span> OoxmlSaveOptions(SaveFormat.Xlsx));</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">            #endregion 保存</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor"></span>        }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_a4288510d1df7a0d061c8cc846c3db900"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a4288510d1df7a0d061c8cc846c3db900">XCLNetTools.DataHandler.OutPutParamClass.outPutClass</a></div><div class="ttdeci">List&lt; OutPutClass &gt; outPutClass</div><div class="ttdoc">导出类，包含新旧字段名（为null时，则保持ds中的相应的列名） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00041">OutPutParamClass.cs:41</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_a6ac5480b872823a988c8f046bcdb7f41"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a6ac5480b872823a988c8f046bcdb7f41">XCLNetTools.DataHandler.OutPutParamClass.IsShowFieldLine</a></div><div class="ttdeci">bool IsShowFieldLine</div><div class="ttdoc">是否显示字段行 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00126">OutPutParamClass.cs:126</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_a748b563923eab10a0c8f5434fb5a3b16"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a748b563923eab10a0c8f5434fb5a3b16">XCLNetTools.DataHandler.OutPutParamClass.conTitle</a></div><div class="ttdeci">string[] conTitle</div><div class="ttdoc">excel中第一行的标题 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00056">OutPutParamClass.cs:56</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html">XCLNetTools.DataHandler.OutPutParamClass</a></div><div class="ttdoc">导出参数类 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00031">OutPutParamClass.cs:31</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_class_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_class.html">XCLNetTools.DataHandler.OutPutClass</a></div><div class="ttdoc">导出字段实体类 （主要是便于在所有导出信息字段类中查询到要导出的记录的字段对应信息） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_class_8cs_source.html#l00030">OutPutClass.cs:30</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel_html_ab2355fae5c2f8c39b72472b59dee898b"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ab2355fae5c2f8c39b72472b59dee898b">XCLNetTools.DataHandler.DataToExcel.OutPutExcel</a></div><div class="ttdeci">static void OutPutExcel(string[] tableName, List&lt; OutPutClass &gt; outPutClass, DataSet ds, string fileTitle, string[] conTitle)</div><div class="ttdoc">数据导出excel </div><div class="ttdef"><b>Definition:</b> <a href="_data_to_excel_8cs_source.html#l00046">DataToExcel.cs:46</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_a1080824136a31b39d2cc48459f8d1271"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a1080824136a31b39d2cc48459f8d1271">XCLNetTools.DataHandler.OutPutParamClass.CustomFileName</a></div><div class="ttdeci">string CustomFileName</div><div class="ttdoc">自定义文件名（保存后的完整路径名） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00073">OutPutParamClass.cs:73</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_afc1f9f832db877b449642cdc1c2f3633"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#afc1f9f832db877b449642cdc1c2f3633">XCLNetTools.DataHandler.OutPutParamClass.ds</a></div><div class="ttdeci">DataSet ds</div><div class="ttdoc">要导出的DataSet </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00046">OutPutParamClass.cs:46</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_a1e1c3490df66e969da5c506f62e39c40"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a1e1c3490df66e969da5c506f62e39c40">XCLNetTools.DataHandler.OutPutParamClass.AutoDownLoad</a></div><div class="ttdeci">bool AutoDownLoad</div><div class="ttdoc">是否自动下载 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00064">OutPutParamClass.cs:64</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html">XCLNetTools.DataHandler.DataToExcel</a></div><div class="ttdoc">操作EXCEL导出数据报表的类 </div><div class="ttdef"><b>Definition:</b> <a href="_data_to_excel_8cs_source.html#l00035">DataToExcel.cs:35</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel_html_ae9071c256d304ff488e4f603aac980ad"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ae9071c256d304ff488e4f603aac980ad">XCLNetTools.DataHandler.DataToExcel.OutPutExcel</a></div><div class="ttdeci">static void OutPutExcel(OutPutParamClass paramClass)</div><div class="ttdoc">数据导出excel 导出参数</div><div class="ttdef"><b>Definition:</b> <a href="_data_to_excel_8cs_source.html#l00061">DataToExcel.cs:61</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_a516e2da305a873914ecfc1c1ac2f47f2"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a516e2da305a873914ecfc1c1ac2f47f2">XCLNetTools.DataHandler.OutPutParamClass.IsShowCustomLine</a></div><div class="ttdeci">bool IsShowCustomLine</div><div class="ttdoc">是否显示自定义文字行（就是第一行的导出信息） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00115">OutPutParamClass.cs:115</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_ac24509285a5c4a9bec38099e2070aeba"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#ac24509285a5c4a9bec38099e2070aeba">XCLNetTools.DataHandler.OutPutParamClass.WorkBookFilePath</a></div><div class="ttdeci">string WorkBookFilePath</div><div class="ttdoc">指定被操作的工作薄文件 （用于向已有文件中写入数据并导出的情况） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00136">OutPutParamClass.cs:136</a></div></div>
-<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class_html_a7da1f957b459cb7fa6e6adcdbdaec714"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_out_put_param_class.html#a7da1f957b459cb7fa6e6adcdbdaec714">XCLNetTools.DataHandler.OutPutParamClass.tableName</a></div><div class="ttdeci">string[] tableName</div><div class="ttdoc">表名（主要是便于在xml字段名list中找到该节点信息）,对应dataSet中的table </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00036">OutPutParamClass.cs:36</a></div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">1：更新表单获取的参数类型</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">2：更改Message/JsonMsg类的目录</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">3：删除多余的方法</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">4：修复一处未dispose问题</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">5：整理部分代码</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">6：添加 MethodResult.cs</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">7：获取枚举list时可以使用byte/short等</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> Aspose.Cells;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using</span> System.Data;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using</span> System.Linq;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using</span> System.Text;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using</span> System.Web;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using</span> XCLNetTools.Entity.DataHandler;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespace_x_c_l_net_tools_1_1_data_handler.html">   34</a></span>&#160;<span class="keyword">namespace </span>XCLNetTools.DataHandler</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html">   39</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html">DataToExcel</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ab2355fae5c2f8c39b72472b59dee898b">   49</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ab2355fae5c2f8c39b72472b59dee898b">OutPutExcel</a>(<span class="keywordtype">string</span>[] tableName, List&lt;OutPutClass&gt; outPutClass, DataSet ds, <span class="keywordtype">string</span> fileTitle, <span class="keywordtype">string</span>[] conTitle)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html">OutPutParamClass</a> paramClass = <span class="keyword">new</span> <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html">OutPutParamClass</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            paramClass.TableName = tableName;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            paramClass.OutPutClass = outPutClass;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            paramClass.Ds = ds;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            paramClass.FileTitle = fileTitle;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            paramClass.ConTitle = conTitle;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            OutPutExcel(paramClass);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ae9071c256d304ff488e4f603aac980ad">   64</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ae9071c256d304ff488e4f603aac980ad">OutPutExcel</a>(<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html">OutPutParamClass</a> paramClass)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            StringBuilder str = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">            #region 合法性检测</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> (null == paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7cf4ee80913a37cdbfa871bc47069114">Ds</a> || paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7cf4ee80913a37cdbfa871bc47069114">Ds</a>.Tables.Count == 0)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                str.Append(<span class="stringliteral">&quot;要导出的数据不能为空，导出失败！；&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a941dbef632dfa1bd15bb948bd9c62b52">ConTitle</a> &amp;&amp; null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7cf4ee80913a37cdbfa871bc47069114">Ds</a>)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a941dbef632dfa1bd15bb948bd9c62b52">ConTitle</a>.Length != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7cf4ee80913a37cdbfa871bc47069114">Ds</a>.Tables.Count)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    str.Append(<span class="stringliteral">&quot;自定义的标题与要导出的数据源的数量不匹配，导出失败！；&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a941dbef632dfa1bd15bb948bd9c62b52">ConTitle</a>.ToList().Distinct().Count() != paramClass.ConTitle.Length)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    str.Append(<span class="stringliteral">&quot;自定义的标题项不能重复，因为此项要作为Sheet的名称，导出失败！；&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a798a566c1bbaab605cdb0c2c815e48d9">OutPutClass</a> &amp;&amp; paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a798a566c1bbaab605cdb0c2c815e48d9">OutPutClass</a>.Count &gt; 0)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a26c55a710bc326b9b4a40b0e868af278">TableName</a>.Length != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7cf4ee80913a37cdbfa871bc47069114">Ds</a>.Tables.Count)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    str.Append(<span class="stringliteral">&quot;表名与dataSet的table数量不一致，导出失败！；&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (str.Length &gt; 0)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(str.ToString());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">            #endregion 合法性检测</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">            #region 是否指定被操作的工作薄</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            Workbook workbook = null;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7f0453621ff08ae63105219ae9108d8a">WorkBookFilePath</a>))</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                workbook = <span class="keyword">new</span> Workbook(paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7f0453621ff08ae63105219ae9108d8a">WorkBookFilePath</a>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                workbook = <span class="keyword">new</span> Workbook();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">            #endregion 是否指定被操作的工作薄</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; paramClass.Ds.Tables.Count; i++)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                Worksheet sheet = workbook.Worksheets[i];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a941dbef632dfa1bd15bb948bd9c62b52">ConTitle</a> &amp;&amp; paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a941dbef632dfa1bd15bb948bd9c62b52">ConTitle</a>.Length &gt; 0)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    sheet.Name = paramClass.ConTitle[i];</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordflow">if</span> (i != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7cf4ee80913a37cdbfa871bc47069114">Ds</a>.Tables.Count - 1)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    workbook.Worksheets.Add();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                DataTable dt = paramClass.Ds.Tables[i];</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                List&lt;string&gt; dtColNameLst = <span class="keyword">new</span> List&lt;string&gt;();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; dt.Columns.Count; k++)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    dtColNameLst.Add(dt.Columns[k].ColumnName);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">                #region 写入列名</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                List&lt;string&gt; newNamesLst = <span class="keyword">new</span> List&lt;string&gt;();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">if</span> (null != paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a798a566c1bbaab605cdb0c2c815e48d9">OutPutClass</a> &amp;&amp; paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a798a566c1bbaab605cdb0c2c815e48d9">OutPutClass</a>.Count &gt; 0)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    <a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_class.html">OutPutClass</a> outPutModel = paramClass.OutPutClass.First(k =&gt; k.TableName == paramClass.TableName[i].Trim());</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    <span class="keywordflow">foreach</span> (var m <span class="keywordflow">in</span> outPutModel.Fields)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        newNamesLst.Add(m.newName);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        <span class="keywordflow">if</span> (dtColNameLst.Contains(m.oldName))</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                            dt.Columns[m.oldName].ColumnName = m.newName;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                        }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    newNamesLst = dtColNameLst;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">                #endregion 写入列名</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">                #region 向sheet中写入数据</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                dt.AcceptChanges();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                sheet.Cells.ImportDataTable(dt.DefaultView.ToTable(<span class="stringliteral">&quot;dtNew&quot;</span>, <span class="keyword">true</span>, newNamesLst.ToArray()), paramClass.IsShowFieldLine, paramClass.FirstRowIndex, paramClass.FirstColumnIndex, dt.Rows.Count + 1, dt.Columns.Count, <span class="keyword">true</span>, <span class="stringliteral">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                sheet.AutoFitColumns();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">                #endregion 向sheet中写入数据</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">                #region 添加样式</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                Cells cells = sheet.Cells;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#ab80767ed7cf9542d0f8829a9a7c950ba">IsShowCustomLine</a>)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    cells[0, 0].Value = string.Format(<span class="stringliteral">&quot;数据导出：{0}；导出时间：{1}；记录总数：{2}&quot;</span>, paramClass.ConTitle[i], DateTime.Now, dt.Rows.Count);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    Aspose.Cells.Style styleCell0 = cells[0, 0].GetStyle();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    styleCell0.Font.Color = System.Drawing.Color.Red;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    cells[0, 0].SetStyle(styleCell0);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a954b333bc639dba102793fd8eb83cc1d">IsShowFieldLine</a>)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    Range range = sheet.Cells.CreateRange(1, 0, 1, newNamesLst.Count);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    range.Name = <span class="stringliteral">&quot;Range1&quot;</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    Aspose.Cells.Style style = workbook.Styles[workbook.Styles.Add()];</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    style.HorizontalAlignment = TextAlignmentType.Center;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    style.Font.Color = System.Drawing.Color.Blue;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    style.Font.IsBold = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    StyleFlag styleFlag = <span class="keyword">new</span> StyleFlag();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    styleFlag.All = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    range.ApplyStyle(style, styleFlag);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">                #endregion 添加样式</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor"></span>            }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            paramClass.GetWorkBook = workbook;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">            #region 保存</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a44cec19f205a53ac8bd2889bc5393cf3">CustomFileName</a>))</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                workbook.Save(paramClass.CustomFileName, paramClass.SaveFormat);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">if</span> (paramClass.<a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a791b5ebecdc31e065744a277e3fbc721">AutoDownLoad</a>)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordtype">string</span> fileName = string.Format(<span class="stringliteral">&quot;{0}_数据导出.xlsx&quot;</span>, paramClass.FileTitle);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="keywordtype">bool</span> isFirefox = HttpContext.Current.Request.Browser.Type.ToLower().Contains(<span class="stringliteral">&quot;firefox&quot;</span>);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                fileName = isFirefox ? fileName : HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                workbook.Save(HttpContext.Current.Response, fileName, ContentDisposition.Attachment, <span class="keyword">new</span> OoxmlSaveOptions(SaveFormat.Xlsx));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">            #endregion 保存</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor"></span>        }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a7cf4ee80913a37cdbfa871bc47069114"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7cf4ee80913a37cdbfa871bc47069114">XCLNetTools.Entity.DataHandler.OutPutParamClass.Ds</a></div><div class="ttdeci">DataSet Ds</div><div class="ttdoc">要导出的DataSet </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00049">OutPutParamClass.cs:49</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html">XCLNetTools.Entity.DataHandler.OutPutParamClass</a></div><div class="ttdoc">导出参数类 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00034">OutPutParamClass.cs:34</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a26c55a710bc326b9b4a40b0e868af278"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a26c55a710bc326b9b4a40b0e868af278">XCLNetTools.Entity.DataHandler.OutPutParamClass.TableName</a></div><div class="ttdeci">string[] TableName</div><div class="ttdoc">表名（主要是便于在xml字段名list中找到该节点信息）,对应dataSet中的table </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00039">OutPutParamClass.cs:39</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a44cec19f205a53ac8bd2889bc5393cf3"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a44cec19f205a53ac8bd2889bc5393cf3">XCLNetTools.Entity.DataHandler.OutPutParamClass.CustomFileName</a></div><div class="ttdeci">string CustomFileName</div><div class="ttdoc">自定义文件名（保存后的完整路径名） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00076">OutPutParamClass.cs:76</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel_html_ab2355fae5c2f8c39b72472b59dee898b"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ab2355fae5c2f8c39b72472b59dee898b">XCLNetTools.DataHandler.DataToExcel.OutPutExcel</a></div><div class="ttdeci">static void OutPutExcel(string[] tableName, List&lt; OutPutClass &gt; outPutClass, DataSet ds, string fileTitle, string[] conTitle)</div><div class="ttdoc">数据导出excel </div><div class="ttdef"><b>Definition:</b> <a href="_data_to_excel_8cs_source.html#l00049">DataToExcel.cs:49</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a941dbef632dfa1bd15bb948bd9c62b52"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a941dbef632dfa1bd15bb948bd9c62b52">XCLNetTools.Entity.DataHandler.OutPutParamClass.ConTitle</a></div><div class="ttdeci">string[] ConTitle</div><div class="ttdoc">excel中第一行的标题 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00059">OutPutParamClass.cs:59</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a798a566c1bbaab605cdb0c2c815e48d9"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a798a566c1bbaab605cdb0c2c815e48d9">XCLNetTools.Entity.DataHandler.OutPutParamClass.OutPutClass</a></div><div class="ttdeci">List&lt; OutPutClass &gt; OutPutClass</div><div class="ttdoc">导出类，包含新旧字段名（为null时，则保持ds中的相应的列名） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00044">OutPutParamClass.cs:44</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html">XCLNetTools.DataHandler.DataToExcel</a></div><div class="ttdoc">操作EXCEL导出数据报表的类 </div><div class="ttdef"><b>Definition:</b> <a href="_data_to_excel_8cs_source.html#l00039">DataToExcel.cs:39</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel_html_ae9071c256d304ff488e4f603aac980ad"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_data_handler_1_1_data_to_excel.html#ae9071c256d304ff488e4f603aac980ad">XCLNetTools.DataHandler.DataToExcel.OutPutExcel</a></div><div class="ttdeci">static void OutPutExcel(OutPutParamClass paramClass)</div><div class="ttdoc">数据导出excel </div><div class="ttdef"><b>Definition:</b> <a href="_data_to_excel_8cs_source.html#l00064">DataToExcel.cs:64</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a7f0453621ff08ae63105219ae9108d8a"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a7f0453621ff08ae63105219ae9108d8a">XCLNetTools.Entity.DataHandler.OutPutParamClass.WorkBookFilePath</a></div><div class="ttdeci">string WorkBookFilePath</div><div class="ttdoc">指定被操作的工作薄文件 （用于向已有文件中写入数据并导出的情况） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00139">OutPutParamClass.cs:139</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a791b5ebecdc31e065744a277e3fbc721"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a791b5ebecdc31e065744a277e3fbc721">XCLNetTools.Entity.DataHandler.OutPutParamClass.AutoDownLoad</a></div><div class="ttdeci">bool AutoDownLoad</div><div class="ttdoc">是否自动下载 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00067">OutPutParamClass.cs:67</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_ab80767ed7cf9542d0f8829a9a7c950ba"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#ab80767ed7cf9542d0f8829a9a7c950ba">XCLNetTools.Entity.DataHandler.OutPutParamClass.IsShowCustomLine</a></div><div class="ttdeci">bool IsShowCustomLine</div><div class="ttdoc">是否显示自定义文字行（就是第一行的导出信息） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00118">OutPutParamClass.cs:118</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_class_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_class.html">XCLNetTools.Entity.DataHandler.OutPutClass</a></div><div class="ttdoc">导出字段实体类 （主要是便于在所有导出信息字段类中查询到要导出的记录的字段对应信息） </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_class_8cs_source.html#l00033">OutPutClass.cs:33</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class_html_a954b333bc639dba102793fd8eb83cc1d"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_data_handler_1_1_out_put_param_class.html#a954b333bc639dba102793fd8eb83cc1d">XCLNetTools.Entity.DataHandler.OutPutParamClass.IsShowFieldLine</a></div><div class="ttdeci">bool IsShowFieldLine</div><div class="ttdoc">是否显示字段行 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_param_class_8cs_source.html#l00129">OutPutParamClass.cs:129</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 一月 2日 星期六 12:11:22 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 二月 15日 星期一 21:59:06 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

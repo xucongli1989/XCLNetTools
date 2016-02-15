@@ -27,8 +27,6 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ab16b9ee
 \begin{DoxyCompactList}\small\item\em 打开指定大小的新窗体 \end{DoxyCompactList}\item 
 static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_aba38ab9b4225ae46f2a2b043ae90cbfd}{Open\-Web\-Form\-Size} (string url)
 \begin{DoxyCompactList}\small\item\em 打开指定url \end{DoxyCompactList}\item 
-static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a2e3575f945821f03bbbfeaf97503eab7}{Javascript\-Location\-Href} (string url)
-\begin{DoxyCompactList}\small\item\em 转向\-Url制定的页面 \end{DoxyCompactList}\item 
 static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a2a6b3bcc01894290fbbf4835a328d396}{Show\-Modal\-Dialog\-Window} (string web\-Form\-Url, int width, int height, int top, int left)
 \begin{DoxyCompactList}\small\item\em 打开指定大小位置的模式对话框 \end{DoxyCompactList}\item 
 static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a793a61a17a63b03dca9adb8f0523f5bf}{Show\-Modal\-Dialog\-Window} (string web\-Form\-Url, string features)
@@ -50,7 +48,7 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 
 
 
-在文件 Jscript.\-cs 第 31 行定义.
+在文件 Jscript.\-cs 第 34 行定义.
 
 
 
@@ -68,8 +66,15 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 在body结尾输出js(嵌入到\-A\-S\-P.\-N\-E\-T页面的底部,恰好位于关闭元素 /form的前面) 
 
 
+\begin{DoxyParams}{参数}
+{\em page} & page对象\\
+\hline
+{\em js} & js代码\\
+\hline
+\end{DoxyParams}
 
-在文件 Jscript.\-cs 第 244 行定义.
+
+在文件 Jscript.\-cs 第 240 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ab8e14181b9b1e9f12462ef20f49d69ee}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Add\-Body\-Start@{Add\-Body\-Start}}
 \index{Add\-Body\-Start@{Add\-Body\-Start}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -84,8 +89,15 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 在body开始处输出js(将 Java\-Script 嵌入到页面中开始元素 form 的紧后面) 
 
 
+\begin{DoxyParams}{参数}
+{\em page} & page对象\\
+\hline
+{\em js} & js代码\\
+\hline
+\end{DoxyParams}
 
-在文件 Jscript.\-cs 第 256 行定义.
+
+在文件 Jscript.\-cs 第 254 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a8bb91a5a3ddf09a39443e7983f2e8ee2}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Alert@{Alert}}
 \index{Alert@{Alert}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -99,8 +111,13 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 弹出\-Javascript小窗口 
 
 
+\begin{DoxyParams}{参数}
+{\em message} & alter中的消息\\
+\hline
+\end{DoxyParams}
 
-在文件 Jscript.\-cs 第 51 行定义.
+
+在文件 Jscript.\-cs 第 56 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a31b283197fe1f60b11830bea87352b95}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Alert\-And\-Redirect@{Alert\-And\-Redirect}}
 \index{Alert\-And\-Redirect@{Alert\-And\-Redirect}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -118,12 +135,12 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 \begin{DoxyParams}{参数}
 {\em message} & 消息内容\\
 \hline
-{\em to\-U\-R\-L} & 连接地址\\
+{\em to\-U\-R\-L} & 要跳转的地址\\
 \hline
 \end{DoxyParams}
 
 
-在文件 Jscript.\-cs 第 66 行定义.
+在文件 Jscript.\-cs 第 71 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a3d75ebf33916a6e962f2964e03432fd5}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Close\-Window@{Close\-Window}}
 \index{Close\-Window@{Close\-Window}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -138,7 +155,7 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 
 
 
-在文件 Jscript.\-cs 第 92 行定义.
+在文件 Jscript.\-cs 第 98 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a794143737133270bc7c4860789a39713}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Go\-History@{Go\-History}}
 \index{Go\-History@{Go\-History}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -152,23 +169,13 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 回到历史页面 
 
 
-
-在文件 Jscript.\-cs 第 79 行定义.
-
-\hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a2e3575f945821f03bbbfeaf97503eab7}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Javascript\-Location\-Href@{Javascript\-Location\-Href}}
-\index{Javascript\-Location\-Href@{Javascript\-Location\-Href}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
-\subsubsection[{Javascript\-Location\-Href}]{\setlength{\rightskip}{0pt plus 5cm}static void X\-C\-L\-Net\-Tools.\-Javascript.\-Jscript.\-Javascript\-Location\-Href (
-\begin{DoxyParamCaption}
-\item[{string}]{url}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a2e3575f945821f03bbbfeaf97503eab7}
+\begin{DoxyParams}{参数}
+{\em value} & 回到历史第几个页面\\
+\hline
+\end{DoxyParams}
 
 
-转向\-Url制定的页面 
-
-
-
-在文件 Jscript.\-cs 第 163 行定义.
+在文件 Jscript.\-cs 第 85 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ab16b9ee41a91197d9517ecfb6920c2a5}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Open\-Web\-Form\-Size@{Open\-Web\-Form\-Size}}
 \index{Open\-Web\-Form\-Size@{Open\-Web\-Form\-Size}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -200,7 +207,7 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 \end{DoxyParams}
 
 
-在文件 Jscript.\-cs 第 137 行定义.
+在文件 Jscript.\-cs 第 144 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_aba38ab9b4225ae46f2a2b043ae90cbfd}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Open\-Web\-Form\-Size@{Open\-Web\-Form\-Size}}
 \index{Open\-Web\-Form\-Size@{Open\-Web\-Form\-Size}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -214,8 +221,13 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 打开指定url 
 
 
+\begin{DoxyParams}{参数}
+{\em url} & url地址\\
+\hline
+\end{DoxyParams}
 
-在文件 Jscript.\-cs 第 150 行定义.
+
+在文件 Jscript.\-cs 第 158 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ad0de2aa10ba5437ea797513703b50e64}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Refresh\-Opener@{Refresh\-Opener}}
 \index{Refresh\-Opener@{Refresh\-Opener}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -230,7 +242,7 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 
 
 
-在文件 Jscript.\-cs 第 119 行定义.
+在文件 Jscript.\-cs 第 126 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a6f2c5e702c2381bd77f86463693340cb}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Refresh\-Parent@{Refresh\-Parent}}
 \index{Refresh\-Parent@{Refresh\-Parent}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -244,8 +256,13 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 刷新父窗口 
 
 
+\begin{DoxyParams}{参数}
+{\em url} & 指定的url\\
+\hline
+\end{DoxyParams}
 
-在文件 Jscript.\-cs 第 106 行定义.
+
+在文件 Jscript.\-cs 第 113 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd49c7e14dae3652e014a6255d9}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Show\-And\-Redirect@{Show\-And\-Redirect}}
 \index{Show\-And\-Redirect@{Show\-And\-Redirect}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -286,6 +303,13 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 控件点击 消息确认提示框 
 
 
+\begin{DoxyParams}{参数}
+{\em control} & webform服务器控件\\
+\hline
+{\em msg} & js confirm 提示语\\
+\hline
+\end{DoxyParams}
+
 
 在文件 Jscript.\-cs 第 268 行定义.
 
@@ -303,7 +327,7 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 
 
 \begin{DoxyParams}{参数}
-{\em web\-Form\-Url} & 连接地址\\
+{\em web\-Form\-Url} & url地址\\
 \hline
 {\em features} & 用来描述对话框的外观等信息，可以使用以下的一个或几个，用分号“;”隔开
 \begin{DoxyEnumerate}
@@ -323,11 +347,11 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-
+js代码
 \end{DoxyReturn}
 
 
-在文件 Jscript.\-cs 第 231 行定义.
+在文件 Jscript.\-cs 第 225 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a2a6b3bcc01894290fbbf4835a328d396}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Show\-Modal\-Dialog\-Window@{Show\-Modal\-Dialog\-Window}}
 \index{Show\-Modal\-Dialog\-Window@{Show\-Modal\-Dialog\-Window}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -346,7 +370,7 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 
 
 \begin{DoxyParams}{参数}
-{\em web\-Form\-Url} & 连接地址\\
+{\em web\-Form\-Url} & url地址\\
 \hline
 {\em width} & 宽\\
 \hline
@@ -359,7 +383,7 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 \end{DoxyParams}
 
 
-在文件 Jscript.\-cs 第 182 行定义.
+在文件 Jscript.\-cs 第 176 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a793a61a17a63b03dca9adb8f0523f5bf}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Show\-Modal\-Dialog\-Window@{Show\-Modal\-Dialog\-Window}}
 \index{Show\-Modal\-Dialog\-Window@{Show\-Modal\-Dialog\-Window}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -375,14 +399,14 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 
 
 \begin{DoxyParams}{参数}
-{\em web\-Form\-Url} & \\
+{\em web\-Form\-Url} & url地址\\
 \hline
-{\em features} & \\
+{\em features} & 参数\\
 \hline
 \end{DoxyParams}
 
 
-在文件 Jscript.\-cs 第 201 行定义.
+在文件 Jscript.\-cs 第 195 行定义.
 
 \hypertarget{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_a7df1e096fb81b6148d1e89aa56cddc26}{\index{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}!Write\-J\-S@{Write\-J\-S}}
 \index{Write\-J\-S@{Write\-J\-S}!XCLNetTools::Javascript::Jscript@{X\-C\-L\-Net\-Tools\-::\-Javascript\-::\-Jscript}}
@@ -396,8 +420,13 @@ static void \hyperlink{class_x_c_l_net_tools_1_1_javascript_1_1_jscript_ade747fd
 输出\-J\-S代码 
 
 
+\begin{DoxyParams}{参数}
+{\em code} & js代码\\
+\hline
+\end{DoxyParams}
 
-在文件 Jscript.\-cs 第 38 行定义.
+
+在文件 Jscript.\-cs 第 42 行定义.
 
 
 

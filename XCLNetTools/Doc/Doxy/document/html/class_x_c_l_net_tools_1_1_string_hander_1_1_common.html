@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.1</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.2</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -163,12 +163,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <tr class="memitem:a7ac48e68f1f3943c8e8425df41aa52ca"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a7ac48e68f1f3943c8e8425df41aa52ca">RemoveQuote</a> (string str)</td></tr>
 <tr class="memdesc:a7ac48e68f1f3943c8e8425df41aa52ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">移除指定字符串中的英文引号  <a href="#a7ac48e68f1f3943c8e8425df41aa52ca">更多...</a><br/></td></tr>
 <tr class="separator:a7ac48e68f1f3943c8e8425df41aa52ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07285808438cbc513c6f511bfad2dc53"><td class="memItemLeft" align="right" valign="top">static List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a07285808438cbc513c6f511bfad2dc53">GetStrSplitList</a> (string str, char speater)</td></tr>
-<tr class="memdesc:a07285808438cbc513c6f511bfad2dc53"><td class="mdescLeft">&#160;</td><td class="mdescRight">将指定字符串用指定分隔符分开存到list中  <a href="#a07285808438cbc513c6f511bfad2dc53">更多...</a><br/></td></tr>
-<tr class="separator:a07285808438cbc513c6f511bfad2dc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade13b6d1f3041a6e193a7fb37442af97"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#ade13b6d1f3041a6e193a7fb37442af97">GetStrFromList</a> (List&lt; string &gt; list, string speater)</td></tr>
-<tr class="memdesc:ade13b6d1f3041a6e193a7fb37442af97"><td class="mdescLeft">&#160;</td><td class="mdescRight">将list转为用指定分隔符拼接的字符串  <a href="#ade13b6d1f3041a6e193a7fb37442af97">更多...</a><br/></td></tr>
-<tr class="separator:ade13b6d1f3041a6e193a7fb37442af97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ed633ff7c9b12a2d63ebe9eb8fd7dd2"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a3ed633ff7c9b12a2d63ebe9eb8fd7dd2">TrimEnd</a> (string str, string cutStr)</td></tr>
 <tr class="memdesc:a3ed633ff7c9b12a2d63ebe9eb8fd7dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除结尾的字符串  <a href="#a3ed633ff7c9b12a2d63ebe9eb8fd7dd2">更多...</a><br/></td></tr>
 <tr class="separator:a3ed633ff7c9b12a2d63ebe9eb8fd7dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>公用类 </p>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00037">37</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00040">40</a> 行定义.</p>
 </div><h2 class="groupheader">成员函数说明</h2>
 <a class="anchor" id="af6ad14eae24704cda11cc498849d9737"></a>
 <div class="memitem">
@@ -222,8 +216,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>防止HTML代码注入 替换尖括号为html实体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>待处理的数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的数据</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00116">116</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00123">123</a> 行定义.</p>
 
 </div>
 </div>
@@ -250,8 +251,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>全角转半角 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QJstr</td><td>全角</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>半角</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00503">503</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00530">530</a> 行定义.</p>
 
 </div>
 </div>
@@ -277,8 +285,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>取得用户客户端IP(穿过代理服务器取远程用户真实IP地址) </p>
+<dl class="section return"><dt>返回</dt><dd>ip地址</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00044">44</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00048">48</a> 行定义.</p>
 
 </div>
 </div>
@@ -321,8 +330,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>根据dt和指定行号和列名，返回该列的列号.若找不到该列，则返回-1 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>dataTable</td></tr>
+    <tr><td class="paramname">rowIndex</td><td>行号</td></tr>
+    <tr><td class="paramname">colName</td><td>列名</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>列号</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00682">682</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00693">693</a> 行定义.</p>
 
 </div>
 </div>
@@ -350,7 +368,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <p>返回指定颜色中的随机颜色(按顺序循环出现) </p>
 <dl class="section return"><dt>返回</dt><dd>颜色编码，如：1941A5</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00230">230</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00241">241</a> 行定义.</p>
 
 </div>
 </div>
@@ -376,8 +394,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>根据ip138网站反馈结果获取服务端外网ip地址 </p>
+<dl class="section return"><dt>返回</dt><dd>ip地址</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00082">82</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00087">87</a> 行定义.</p>
 
 </div>
 </div>
@@ -423,7 +442,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </dl>
 <dl class="section return"><dt>返回</dt><dd>百分值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00215">215</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00226">226</a> 行定义.</p>
 
 </div>
 </div>
@@ -450,8 +469,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>半角转全角 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">BJstr</td><td>半角</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>全角</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00476">476</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00501">501</a> 行定义.</p>
 
 </div>
 </div>
@@ -497,7 +523,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </dl>
 <dl class="section return"><dt>返回</dt><dd>如：5.5GB</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00267">267</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00278">278</a> 行定义.</p>
 
 </div>
 </div>
@@ -550,7 +576,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </dl>
 <dl class="section return"><dt>返回</dt><dd>如：(0,5,1),则返回0,1,2,3,4,5的list</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00706">706</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00717">717</a> 行定义.</p>
 
 </div>
 </div>
@@ -577,8 +603,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>从xml中加载静态资源配置信息 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xmlPath</td><td>xml路径</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>配置对象</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00323">323</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00337">337</a> 行定义.</p>
 
 </div>
 </div>
@@ -622,91 +655,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>引用的地址</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00338">338</a> 行定义.</p>
-
-</div>
-</div>
-<a class="anchor" id="ade13b6d1f3041a6e193a7fb37442af97"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static string XCLNetTools.StringHander.Common.GetStrFromList </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>list</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>speater</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>将list转为用指定分隔符拼接的字符串 </p>
-
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00587">587</a> 行定义.</p>
-
-</div>
-</div>
-<a class="anchor" id="a07285808438cbc513c6f511bfad2dc53"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static List&lt;string&gt; XCLNetTools.StringHander.Common.GetStrSplitList </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>speater</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>将指定字符串用指定分隔符分开存到list中 </p>
-<dl class="params"><dt>参数</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>源字符串</td></tr>
-    <tr><td class="paramname">speater</td><td>分隔字符</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00574">574</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00353">353</a> 行定义.</p>
 
 </div>
 </div>
@@ -757,9 +708,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<dl class="section return"><dt>返回</dt><dd>字符串</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00437">437</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00460">460</a> 行定义.</p>
 
 </div>
 </div>
@@ -786,8 +737,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>gzip压缩字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>待压缩的字符串</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>压缩后的值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00381">381</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00398">398</a> 行定义.</p>
 
 </div>
 </div>
@@ -814,8 +772,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>解压缩字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">compressedText</td><td>待解压的字符串</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>解压后的值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00405">405</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00428">428</a> 行定义.</p>
 
 </div>
 </div>
@@ -841,8 +806,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>判断当前请求是否为ajax请求 </p>
+<dl class="section return"><dt>返回</dt><dd>是否为ajax请求</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00736">736</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00748">748</a> 行定义.</p>
 
 </div>
 </div>
@@ -877,7 +843,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </dl>
 <dl class="section return"><dt>返回</dt><dd>过滤后的语句</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00126">126</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00133">133</a> 行定义.</p>
 
 </div>
 </div>
@@ -904,8 +870,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>删除所有HTML标记 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">html</td><td>待处理的数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的数据</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00176">176</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00187">187</a> 行定义.</p>
 
 </div>
 </div>
@@ -932,8 +905,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>过滤HTML 和SQL </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>待处理的数据</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的数据</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00163">163</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00172">172</a> 行定义.</p>
 
 </div>
 </div>
@@ -960,8 +940,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>移除指定字符串中的英文引号 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>待处理字符串</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00556">556</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00589">589</a> 行定义.</p>
 
 </div>
 </div>
@@ -988,8 +975,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>将指定字符串中的英文引号替换为中文引号（中文引号没有考虑正反） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>待处理字符串</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00532">532</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00561">561</a> 行定义.</p>
 
 </div>
 </div>
@@ -1016,8 +1010,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>将指定字符串中的英文引号替换为html引号实体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>待处理字符串</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00544">544</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00575">575</a> 行定义.</p>
 
 </div>
 </div>
@@ -1044,8 +1045,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><div class="memdoc">
 
 <p>输出 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>待输出的内容</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00306">306</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00318">318</a> 行定义.</p>
 
 </div>
 </div>
@@ -1089,8 +1096,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00602">602</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00608">608</a> 行定义.</p>
 
 </div>
 </div>
@@ -1134,8 +1142,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>处理后的值</dd></dl>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00612">612</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00619">619</a> 行定义.</p>
 
 </div>
 </div>
@@ -1160,7 +1169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <p>网站根Uri，如:"//www.xcl.com:2156/ or //www.xcl.com:2156/VirtualWeb/" 注：末尾带'/' </p>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00648">648</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00655">655</a> 行定义.</p>
 
 </div>
 </div>
@@ -1184,7 +1193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 <p>网站根路径，如:"/" 注：末尾带'/' </p>
 
-<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00626">626</a> 行定义.</p>
+<p>在文件 <a class="el" href="_common_8cs_source.html">Common.cs</a> 第 <a class="el" href="_common_8cs_source.html#l00633">633</a> 行定义.</p>
 
 </div>
 </div>
@@ -1194,7 +1203,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 一月 2日 星期六 12:11:25 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 二月 15日 星期一 21:59:09 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -2,6 +2,7 @@ var searchData=
 [
   ['cacheparameterset',['CacheParameterSet',['../class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache.html#a4c9d3ea3efdc1a0c29c522ad7fde1900',1,'XCLNetTools::DataBase::MSSQL::SqlHelperParameterCache']]],
   ['changecurrentworksheet',['ChangeCurrentWorkSheet',['../class_x_c_l_net_tools_1_1_data_handler_1_1_excel_helper.html#a5685e97d3cfd67203faeee2bcdd6c788',1,'XCLNetTools::DataHandler::ExcelHelper']]],
+  ['chdir',['ChDir',['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#a6345c0af7cd414503395170157d0db3b',1,'XCLNetTools::FTP::FTPClient']]],
   ['checkvalidationresult',['CheckValidationResult',['../class_x_c_l_net_tools_1_1_http_1_1_http_helper.html#aed104c08e4f4e44e2f3b7529e85c2848',1,'XCLNetTools::Http::HttpHelper']]],
   ['clear',['Clear',['../class_x_c_l_net_tools_1_1_cache_1_1_cache_class.html#afeab3c01d1a7b41007235b97f3fbaa35',1,'XCLNetTools::Cache::CacheClass']]],
   ['clearallsection',['ClearAllSection',['../class_x_c_l_net_tools_1_1_file_handler_1_1_i_n_i_file.html#abbd02c3619b105f9cf2746110300c48d',1,'XCLNetTools::FileHandler::INIFile']]],
@@ -9,6 +10,7 @@ var searchData=
   ['clearsection',['ClearSection',['../class_x_c_l_net_tools_1_1_file_handler_1_1_i_n_i_file.html#a2fbd0075aa561f98ff86705d168839bc',1,'XCLNetTools::FileHandler::INIFile']]],
   ['closewindow',['CloseWindow',['../class_x_c_l_net_tools_1_1_javascript_1_1_jscript.html#a3d75ebf33916a6e962f2964e03432fd5',1,'XCLNetTools::Javascript::Jscript']]],
   ['compressfile',['CompressFile',['../class_x_c_l_net_tools_1_1_file_handler_1_1_zip_helper.html#abd0e8402a3d1ea9ca9f6c97cb46d5b89',1,'XCLNetTools::FileHandler::ZipHelper']]],
+  ['connect',['Connect',['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#a80b5588cccdbc0fc599da3b065c17824',1,'XCLNetTools::FTP::FTPClient']]],
   ['convertdatasettoarray',['ConvertDataSetToArray',['../class_x_c_l_net_tools_1_1_serialize_1_1_lit_json.html#a62018ecad0868724f8c525f6633c2db1',1,'XCLNetTools::Serialize::LitJson']]],
   ['convertdatasettojson',['ConvertDataSetToJson',['../class_x_c_l_net_tools_1_1_serialize_1_1_lit_json.html#afe0e32c9376fb1c7f2c222eb8cfdcc18',1,'XCLNetTools::Serialize::LitJson']]],
   ['convertdatatabletoarray',['ConvertDataTableToArray',['../class_x_c_l_net_tools_1_1_serialize_1_1_lit_json.html#a8bd51fdf8d1e56bee3e72c165f4d34ae',1,'XCLNetTools::Serialize::LitJson']]],
