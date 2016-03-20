@@ -4,23 +4,7 @@
 项目地址：https://github.com/xucongli1989/XCLNetTools
 Create By: XCL @ 2012
 
-二：贡献者：
-1：xucongli1989（https://github.com/xucongli1989）电子邮件：80213876@qq.com
-
-三：更新：
-当前版本：v2.2
-更新时间：2016-02
-
-四：更新内容：
-1：更新表单获取的参数类型
-2：更改Message/JsonMsg类的目录
-3：删除多余的方法
-4：修复一处未dispose问题
-5：整理部分代码
-6：添加 MethodResult.cs
-7：获取枚举list时可以使用byte/short等
  */
-
 
 using System.Collections.Generic;
 using System.IO;
@@ -153,8 +137,9 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         /// <param name="dirPath">要获取信息的目录路径</param>
         /// <param name="rootPath">根路径（设置该值后，返回的信息实体中将包含相对于该根路径的相对路径信息）</param>
+        /// <param name="webRootPath">web根路径（用于生成该文件或文件夹的web路径），如：http://www.a.com/web/</param>
         /// <returns>文件信息list</returns>
-        public static List<XCLNetTools.Entity.FileInfoEntity> GetFileList(string dirPath, string rootPath = "")
+        public static List<XCLNetTools.Entity.FileInfoEntity> GetFileList(string dirPath, string rootPath = "", string webRootPath = "")
         {
             if (!string.IsNullOrEmpty(dirPath))
             {
@@ -172,7 +157,7 @@ namespace XCLNetTools.FileHandler
             int idx = 1;
 
             List<XCLNetTools.Entity.FileInfoEntity> result = new List<Entity.FileInfoEntity>();
-
+            XCLNetTools.Entity.FileInfoEntity tempFileInfoEntity = null;
             //文件夹
             var directories = System.IO.Directory.EnumerateDirectories(dirPath);
             if (null != directories && directories.Count() > 0)
@@ -182,17 +167,17 @@ namespace XCLNetTools.FileHandler
                     var dir = new System.IO.DirectoryInfo(k);
                     if (null != dir)
                     {
-                        result.Add(new XCLNetTools.Entity.FileInfoEntity()
-                        {
-                            ID = idx++,
-                            Name = dir.Name,
-                            IsFolder = true,
-                            Path = k,
-                            RootPath = rootPath,
-                            RelativePath = ComFile.GetUrlRelativePath(rootPath, k),
-                            ModifyTime = dir.LastWriteTime,
-                            CreateTime = dir.CreationTime
-                        });
+                        tempFileInfoEntity = new Entity.FileInfoEntity();
+                        tempFileInfoEntity.ID = idx++;
+                        tempFileInfoEntity.Name = dir.Name;
+                        tempFileInfoEntity.IsFolder = true;
+                        tempFileInfoEntity.Path = k;
+                        tempFileInfoEntity.RootPath = rootPath;
+                        tempFileInfoEntity.RelativePath = ComFile.GetUrlRelativePath(rootPath, k);
+                        tempFileInfoEntity.WebPath = webRootPath.TrimEnd('/') + "/" + tempFileInfoEntity.RelativePath;
+                        tempFileInfoEntity.ModifyTime = dir.LastWriteTime;
+                        tempFileInfoEntity.CreateTime = dir.CreationTime;
+                        result.Add(tempFileInfoEntity);
                     }
                 });
             }
@@ -206,19 +191,19 @@ namespace XCLNetTools.FileHandler
                     var file = new System.IO.FileInfo(k);
                     if (null != file)
                     {
-                        result.Add(new XCLNetTools.Entity.FileInfoEntity()
-                        {
-                            ID = idx++,
-                            Name = file.Name,
-                            IsFolder = false,
-                            Path = k,
-                            RootPath = rootPath,
-                            RelativePath = ComFile.GetUrlRelativePath(rootPath, k),
-                            ModifyTime = file.LastWriteTime,
-                            CreateTime = file.CreationTime,
-                            Size = file.Length,
-                            ExtName = (file.Extension ?? "").Trim('.')
-                        });
+                        tempFileInfoEntity = new Entity.FileInfoEntity();
+                        tempFileInfoEntity.ID = idx++;
+                        tempFileInfoEntity.Name = file.Name;
+                        tempFileInfoEntity.IsFolder = false;
+                        tempFileInfoEntity.Path = k;
+                        tempFileInfoEntity.RootPath = rootPath;
+                        tempFileInfoEntity.RelativePath = ComFile.GetUrlRelativePath(rootPath, k);
+                        tempFileInfoEntity.WebPath = webRootPath.TrimEnd('/') + "/" + tempFileInfoEntity.RelativePath;
+                        tempFileInfoEntity.ModifyTime = file.LastWriteTime;
+                        tempFileInfoEntity.CreateTime = file.CreationTime;
+                        tempFileInfoEntity.Size = file.Length;
+                        tempFileInfoEntity.ExtName = (file.Extension ?? "").Trim('.');
+                        result.Add(tempFileInfoEntity);
                     }
                 });
             }

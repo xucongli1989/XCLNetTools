@@ -103,3 +103,4 @@ E:\GitHub\XCLNetTools\XCLNetTools\bin\Debug\zh-CHT\AspNetPager.resources.dll
 E:\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.csprojResolveAssemblyReference.cache
 E:\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.dll
 E:\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.pdb
+D:\MyData\MyGit\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.csprojResolveAssemblyReference.cache
