@@ -1918,6 +1918,11 @@
             该文件或文件夹的物理路径
             </summary>
         </member>
+        <member name="P:XCLNetTools.Entity.FileInfoEntity.WebPath">
+            <summary>
+            该文件或文件夹的web路径
+            </summary>
+        </member>
         <member name="P:XCLNetTools.Entity.FileInfoEntity.RelativePath">
             <summary>
             该文件或文件夹相对于RootPath的相对路径
@@ -3859,12 +3864,13 @@
             <param name="rootPath">要清空的目录</param>
             <returns>是否操作成功</returns>
         </member>
-        <member name="M:XCLNetTools.FileHandler.FileDirectory.GetFileList(System.String,System.String)">
+        <member name="M:XCLNetTools.FileHandler.FileDirectory.GetFileList(System.String,System.String,System.String)">
             <summary>
             获取指定目录下的所有文件及文件夹信息
             </summary>
             <param name="dirPath">要获取信息的目录路径</param>
             <param name="rootPath">根路径（设置该值后，返回的信息实体中将包含相对于该根路径的相对路径信息）</param>
+            <param name="webRootPath">web根路径（用于生成该文件或文件夹的web路径），如：http://www.a.com/web/</param>
             <returns>文件信息list</returns>
         </member>
         <member name="M:XCLNetTools.FileHandler.FileDirectory.CreateTextFile(System.String)">
