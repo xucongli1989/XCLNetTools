@@ -2426,19 +2426,27 @@
             分页信息 构造函数
             </summary>
         </member>
+        <member name="M:XCLNetTools.Entity.PagerInfo.Refresh">
+            <summary>
+            刷新其它参数的值
+            </summary>
+        </member>
         <member name="P:XCLNetTools.Entity.PagerInfo.PageIndex">
             <summary>
             当前页码（第一页为1），默认为1
+            注：若重新设置此值，则将一同更新其它相关联的属性值
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.PagerInfo.PageSize">
             <summary>
             每页最多显示的记录数，默认为10
+            注：若重新设置此值，则将一同更新其它相关联的属性值
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.PagerInfo.RecordCount">
             <summary>
             当前记录总数
+            注：若重新设置此值，则将一同更新其它相关联的属性值
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.PagerInfo.PageCount">
