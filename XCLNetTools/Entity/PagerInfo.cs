@@ -15,6 +15,10 @@ namespace XCLNetTools.Entity
     /// </summary>
     public class PagerInfo
     {
+        private int _pageIndex = 0;
+        private int _pageSize = 0;
+        private int _recordCount = 0;
+
         private PagerInfo()
         {
         }
@@ -24,34 +28,75 @@ namespace XCLNetTools.Entity
         /// </summary>
         public PagerInfo(int pageIndex, int pageSize, int recordCount)
         {
-            this.PageIndex = pageIndex <= 0 ? 1 : pageIndex;
-            this.PageSize = pageSize <= 0 ? 10 : pageSize;
-            this.RecordCount = recordCount <= 0 ? 0 : recordCount;
+            this._pageIndex = pageIndex <= 0 ? 1 : pageIndex;
+            this._pageSize = pageSize <= 0 ? 10 : pageSize;
+            this._recordCount = recordCount <= 0 ? 0 : recordCount;
+            this.Refresh();
+        }
 
+        /// <summary>
+        /// 刷新其它参数的值
+        /// </summary>
+        private void Refresh()
+        {
             if (this.RecordCount > 0)
             {
                 this.PageCount = (int)Math.Ceiling((1.0 * this.RecordCount) / this.PageSize);
-                this.PageIndex = this.PageIndex > this.PageCount ? this.PageCount : this.PageIndex;
+                this._pageIndex = this.PageIndex > this.PageCount ? this.PageCount : this.PageIndex;
                 this.CurrentPageRecordCount = this.PageIndex == this.PageCount && this.RecordCount % this.PageSize > 0 ? this.RecordCount % this.PageSize : this.PageSize;
                 this.StartIndex = (this.PageIndex - 1) * this.PageSize + 1;
                 this.EndIndex = this.StartIndex + this.CurrentPageRecordCount - 1;
+            }
+            else
+            {
+                this.PageCount = 0;
+                this.CurrentPageRecordCount = 0;
+                this.StartIndex = 0;
+                this.EndIndex = 0;
             }
         }
 
         /// <summary>
         /// 当前页码（第一页为1），默认为1
+        /// 注：若重新设置此值，则将一同更新其它相关联的属性值
         /// </summary>
-        public int PageIndex { get; set; }
+        public int PageIndex
+        {
+            get { return this._pageIndex; }
+            set
+            {
+                this._pageIndex = value;
+                this.Refresh();
+            }
+        }
 
         /// <summary>
         /// 每页最多显示的记录数，默认为10
+        /// 注：若重新设置此值，则将一同更新其它相关联的属性值
         /// </summary>
-        public int PageSize { get; set; }
+        public int PageSize
+        {
+            get { return this._pageSize; }
+            set
+            {
+                this._pageSize = value;
+                this.Refresh();
+            }
+        }
 
         /// <summary>
         /// 当前记录总数
+        /// 注：若重新设置此值，则将一同更新其它相关联的属性值
         /// </summary>
-        public int RecordCount { get; set; }
+        public int RecordCount
+        {
+            get { return this._recordCount; }
+            set
+            {
+                this._recordCount = value;
+                this.Refresh();
+            }
+        }
 
         /// <summary>
         /// 当前总页数

@@ -2426,6 +2426,11 @@
             分页信息 构造函数
             </summary>
         </member>
+        <member name="M:XCLNetTools.Entity.PagerInfo.Refresh">
+            <summary>
+            刷新其它参数的值
+            </summary>
+        </member>
         <member name="P:XCLNetTools.Entity.PagerInfo.PageIndex">
             <summary>
             当前页码（第一页为1），默认为1
