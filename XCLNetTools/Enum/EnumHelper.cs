@@ -120,11 +120,19 @@ namespace XCLNetTools.Enum
         /// <returns>枚举的描述</returns>
         public static string GetEnumDescriptionByText(Type T, string text)
         {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return null;
+            }
             string str = string.Empty;
             var lst = EnumHelper.GetEnumFieldModelList(T);
             if (null != lst && lst.Count > 0)
             {
-                str = lst.Where(k => string.Equals(k.Text, text, StringComparison.OrdinalIgnoreCase)).First().Description;
+                var m = lst.Where(k => string.Equals(k.Text, text, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                if (null != m)
+                {
+                    str = m.Description;
+                }
             }
             return str;
         }
