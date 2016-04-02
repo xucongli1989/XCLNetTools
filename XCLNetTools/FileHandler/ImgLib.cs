@@ -9,6 +9,7 @@ Create By: XCL @ 2012
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using static XCLNetTools.Enum.CommonEnum;
 
 namespace XCLNetTools.FileHandler
 {
@@ -57,13 +58,18 @@ namespace XCLNetTools.FileHandler
         ///<param name="width">缩略图宽度</param>
         ///<param name="height">缩略图高度</param>
         ///<param name="mode">生成缩略图的方式</param>
-        public static void MakeThumbnail(string originalImagePath, string thumbnailPath, int width, int height, string mode)
+        public static void MakeThumbnail(string originalImagePath, string thumbnailPath, int width, int height, ThumbImageModeEnum mode = ThumbImageModeEnum.EqualRatioWH)
         {
             System.Drawing.Image originalImage = System.Drawing.Image.FromFile(originalImagePath);
             if (null == originalImage)
             {
                 return;
             }
+            if (width <= 0 || height <= 0)
+            {
+                throw new System.Exception("width or height is invalid!");
+            }
+
             int towidth = width;
             int toheight = height;
 
@@ -74,18 +80,15 @@ namespace XCLNetTools.FileHandler
 
             switch (mode)
             {
-                case "HW"://指定高宽缩放（可能变形）
-                    break;
-
-                case "W"://指定宽，高按比例
+                case ThumbImageModeEnum.W:
                     toheight = originalImage.Height * width / originalImage.Width;
                     break;
 
-                case "H"://指定高，宽按比例
+                case ThumbImageModeEnum.H:
                     towidth = originalImage.Width * height / originalImage.Height;
                     break;
 
-                case "Cut"://指定高宽裁减（不变形）
+                case ThumbImageModeEnum.EqualRatioWH:
                     if ((double)originalImage.Width / (double)originalImage.Height > (double)towidth / (double)toheight)
                     {
                         oh = originalImage.Height;
@@ -102,6 +105,7 @@ namespace XCLNetTools.FileHandler
                     }
                     break;
 
+                case ThumbImageModeEnum.WH:
                 default:
                     break;
             }

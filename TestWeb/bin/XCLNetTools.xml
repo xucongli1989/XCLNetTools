@@ -3552,6 +3552,31 @@
             天数
             </summary>
         </member>
+        <member name="T:XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum">
+            <summary>
+            图片指定宽高生成缩略图的模式 枚举
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.WH">
+            <summary>
+            指定宽高缩放（可能变形）
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.W">
+            <summary>
+            指定宽，高按比例
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.H">
+            <summary>
+            指定高，宽按比例
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.EqualRatioWH">
+            <summary>
+            指定宽高裁减（不变形）
+            </summary>
+        </member>
         <member name="T:XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum">
             <summary>
             静态资源类型
@@ -3669,7 +3694,7 @@
             <param name="y">Y坐标</param>
             <returns>System.Drawing.Image,再调用save就行了,注意：调用完后需要Dispose</returns>
         </member>
-        <member name="M:XCLNetTools.FileHandler.ImgLib.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,System.String)">
+        <member name="M:XCLNetTools.FileHandler.ImgLib.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum)">
             <summary>
             生成缩略图
             </summary>
