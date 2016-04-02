@@ -150,6 +150,36 @@ namespace XCLNetTools.Enum
 
         #endregion 日期时间相关
 
+        #region 图片操作相关
+
+        /// <summary>
+        /// 图片指定宽高生成缩略图的模式 枚举
+        /// </summary>
+        public enum ThumbImageModeEnum
+        {
+            /// <summary>
+            /// 指定宽高缩放（可能变形）
+            /// </summary>
+            WH,
+
+            /// <summary>
+            /// 指定宽，高按比例
+            /// </summary>
+            W,
+
+            /// <summary>
+            /// 指定高，宽按比例
+            /// </summary>
+            H,
+
+            /// <summary>
+            /// 指定宽高裁减（不变形）
+            /// </summary>
+            EqualRatioWH
+        }
+
+        #endregion 图片操作相关
+
         #region 其它
 
         /// <summary>
