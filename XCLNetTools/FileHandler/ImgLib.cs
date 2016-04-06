@@ -9,7 +9,6 @@ Create By: XCL @ 2012
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using static XCLNetTools.Enum.CommonEnum;
 
 namespace XCLNetTools.FileHandler
 {
@@ -58,7 +57,7 @@ namespace XCLNetTools.FileHandler
         ///<param name="width">缩略图宽度</param>
         ///<param name="height">缩略图高度</param>
         ///<param name="mode">生成缩略图的方式</param>
-        public static void MakeThumbnail(string originalImagePath, string thumbnailPath, int width, int height, ThumbImageModeEnum mode = ThumbImageModeEnum.EqualRatioWH)
+        public static void MakeThumbnail(string originalImagePath, string thumbnailPath, int width, int height, XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum mode = XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.EqualRatioWH)
         {
             System.Drawing.Image originalImage = System.Drawing.Image.FromFile(originalImagePath);
             if (null == originalImage)
@@ -80,15 +79,15 @@ namespace XCLNetTools.FileHandler
 
             switch (mode)
             {
-                case ThumbImageModeEnum.W:
+                case XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.W:
                     toheight = originalImage.Height * width / originalImage.Width;
                     break;
 
-                case ThumbImageModeEnum.H:
+                case XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.H:
                     towidth = originalImage.Width * height / originalImage.Height;
                     break;
 
-                case ThumbImageModeEnum.EqualRatioWH:
+                case XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.EqualRatioWH:
                     if ((double)originalImage.Width / (double)originalImage.Height > (double)towidth / (double)toheight)
                     {
                         oh = originalImage.Height;
@@ -105,7 +104,7 @@ namespace XCLNetTools.FileHandler
                     }
                     break;
 
-                case ThumbImageModeEnum.WH:
+                case XCLNetTools.Enum.CommonEnum.ThumbImageModeEnum.WH:
                 default:
                     break;
             }
