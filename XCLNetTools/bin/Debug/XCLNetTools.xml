@@ -2254,12 +2254,12 @@
             Redis帮助类
             </summary>
         </member>
-        <member name="T:XCLNetTools.DataHandler.DataToExcel">
+        <member name="T:XCLNetTools.Office.ExcelHandler.DataToExcel">
             <summary>
             操作EXCEL导出数据报表的类
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.DataToExcel.OutPutExcel(System.String[],System.Collections.Generic.List{XCLNetTools.Entity.DataHandler.OutPutClass},System.Data.DataSet,System.String,System.String[])">
+        <member name="M:XCLNetTools.Office.ExcelHandler.DataToExcel.OutPutExcel(System.String[],System.Collections.Generic.List{XCLNetTools.Entity.Office.ExcelHandler.OutPutClass},System.Data.DataSet,System.String,System.String[])">
             <summary>
             数据导出excel
             </summary>
@@ -2269,36 +2269,36 @@
             <param name="fileTitle">文件名</param>
             <param name="conTitle">文件内容第一行的名称</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.DataToExcel.OutPutExcel(XCLNetTools.Entity.DataHandler.OutPutParamClass)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.DataToExcel.OutPutExcel(XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass)">
             <summary>
             数据导出excel
             </summary>
             <param name="paramClass">导出参数</param>
         </member>
-        <member name="T:XCLNetTools.DataHandler.ExcelHelper">
+        <member name="T:XCLNetTools.Office.ExcelHandler.ExcelHelper">
             <summary>
             旧版的excel操作（基于excel.dll），建议不要使用此类（用aspose.cells）
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.#ctor(System.String,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.#ctor(System.String,System.String)">
             <summary>
             构造函数，将一个已有Excel工作簿作为模板，并指定输出路径
             </summary>
             <param name="templetFilePath">Excel模板文件路径</param>
             <param name="outputFilePath">输出Excel文件路径</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.#ctor(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.#ctor(System.String)">
             <summary>
             构造函数，打开一个已有的工作簿
             </summary>
             <param name="fileName">Excel文件名</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.#ctor">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.#ctor">
             <summary>
             构造函数，新建一个工作簿
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DataTableToExcel(System.Data.DataTable,System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DataTableToExcel(System.Data.DataTable,System.Int32,System.Int32,System.Int32)">
             <summary>
             将DataTable数据写入Excel文件（自动分页）
             </summary>
@@ -2307,7 +2307,7 @@
             <param name="top">表格数据起始行索引</param>
             <param name="left">表格数据起始列索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DataTableToExcel(System.Data.DataTable,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DataTableToExcel(System.Data.DataTable,System.Int32,System.Int32)">
             <summary>
             将DataTable数据写入Excel文件（不分页）
             </summary>
@@ -2315,7 +2315,7 @@
             <param name="top">表格数据起始行索引</param>
             <param name="left">表格数据起始列索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DataTableToExcel(System.Data.DataTable,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DataTableToExcel(System.Data.DataTable,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             将DataTable数据写入Excel文件（自动分页，并指定要合并的列索引）
             </summary>
@@ -2325,7 +2325,7 @@
             <param name="left">表格数据起始列索引</param>
             <param name="mergeColumnIndex">DataTable中要合并相同行的列索引，从0开始</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Int32)">
             <summary>
             将二维数组数据写入Excel文件（自动分页）
             </summary>
@@ -2334,7 +2334,7 @@
             <param name="top">行索引</param>
             <param name="left">列索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32)">
             <summary>
             将二维数组数据写入Excel文件（不分页）
             </summary>
@@ -2342,7 +2342,7 @@
             <param name="top">行索引</param>
             <param name="left">列索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Boolean)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Boolean)">
             <summary>
             将二维数组数据写入Excel文件（不分页）
             </summary>
@@ -2351,7 +2351,7 @@
             <param name="left">列索引</param>
             <param name="isFormula">填充的数据是否需要计算</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Boolean,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Boolean,System.Int32)">
             <summary>
             将二维数组数据写入Excel文件（不分页），合并指定列的相同行
             </summary>
@@ -2361,7 +2361,7 @@
             <param name="isFormula">填充的数据是否需要计算</param>
             <param name="mergeColumnIndex">需要合并行的列索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ArrayToExcel(System.Int32,System.String[0:,0:],System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ArrayToExcel(System.Int32,System.String[0:,0:],System.Int32,System.Int32)">
             <summary>
             将二维数组数据写入Excel文件（不分页）
             </summary>
@@ -2370,7 +2370,7 @@
             <param name="top">行索引</param>
             <param name="left">列索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ArrayToExcel(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             将二维数组数据写入Excel文件（自动分页，并指定要合并的列索引）
             </summary>
@@ -2380,32 +2380,32 @@
             <param name="left">列索引</param>
             <param name="mergeColumnIndex">数组的二维索引，相当于DataTable的列索引，索引从0开始</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ChangeCurrentWorkSheet(System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ChangeCurrentWorkSheet(System.Int32)">
             <summary>
             改变当前工作表
             </summary>
             <param name="sheetIndex">工作表索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.HiddenWorkSheet(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.HiddenWorkSheet(System.String)">
             <summary>
             隐藏指定名称的工作表
             </summary>
             <param name="sheetName">工作表名称</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.HiddenWorkSheet(System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.HiddenWorkSheet(System.Int32)">
             <summary>
             隐藏指定索引的工作表
             </summary>
             <param name="sheetIndex"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.CopyWorkSheets(System.String,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.CopyWorkSheets(System.String,System.Int32)">
             <summary>
             在指定名称的工作表后面拷贝指定个数的该工作表的副本，并重命名
             </summary>
             <param name="sheetName">工作表名称</param>
             <param name="sheetCount">工作表个数</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.CopyWorkSheet(System.Int32,System.Int32,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.CopyWorkSheet(System.Int32,System.Int32,System.String)">
             <summary>
             将一个工作表拷贝到另一个工作表后面，并重命名
             </summary>
@@ -2413,26 +2413,26 @@
             <param name="aimSheetIndex">参照位置工作表索引，新工作表拷贝在该工作表后面</param>
             <param name="newSheetName"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DeleteWorkSheet(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DeleteWorkSheet(System.String)">
             <summary>
             根据名称删除工作表
             </summary>
             <param name="sheetName"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DeleteWorkSheet(System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DeleteWorkSheet(System.Int32)">
             <summary>
             根据索引删除工作表
             </summary>
             <param name="sheetIndex"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetTextBox(System.String,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetTextBox(System.String,System.String)">
             <summary>
             向指定文本框写入数据，对每个WorkSheet操作
             </summary>
             <param name="textboxName">文本框名称</param>
             <param name="text">要写入的文本</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetTextBox(System.Int32,System.String,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetTextBox(System.Int32,System.String,System.String)">
             <summary>
             向指定文本框写入数据，对指定WorkSheet操作
             </summary>
@@ -2440,19 +2440,19 @@
             <param name="textboxName">文本框名称</param>
             <param name="text">要写入的文本</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetTextBoxes(System.Collections.Hashtable)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetTextBoxes(System.Collections.Hashtable)">
             <summary>
             向文本框写入数据，对每个WorkSheet操作
             </summary>
             <param name="ht">Hashtable的键值对保存文本框的ID和数据</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetTextBoxes(System.Int32,System.Collections.Hashtable)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetTextBoxes(System.Int32,System.Collections.Hashtable)">
             <summary>
             向文本框写入数据，对指定WorkSheet操作
             </summary>
             <param name="ht">Hashtable的键值对保存文本框的ID和数据</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetCells(System.Int32,System.Int32,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetCells(System.Int32,System.Int32,System.String)">
             <summary>
             向单元格写入数据，对当前WorkSheet操作
             </summary>
@@ -2460,7 +2460,7 @@
             <param name="columnIndex">列索引</param>
             <param name="text">要写入的文本值</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetCells(System.Int32,System.Int32,System.Int32,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetCells(System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             向单元格写入数据，对指定WorkSheet操作
             </summary>
@@ -2469,19 +2469,19 @@
             <param name="columnIndex">列索引</param>
             <param name="text">要写入的文本值</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetCells(System.Collections.Hashtable)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetCells(System.Collections.Hashtable)">
             <summary>
             向单元格写入数据，对每个WorkSheet操作
             </summary>
             <param name="ht">Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetCells(System.Int32,System.Collections.Hashtable)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetCells(System.Int32,System.Collections.Hashtable)">
             <summary>
             向单元格写入数据，对指定WorkSheet操作
             </summary>
             <param name="ht">Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetCells(System.Int32,System.String[])">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetCells(System.Int32,System.String[])">
             <summary>
             设置单元格为可计算的
             </summary>
@@ -2491,13 +2491,13 @@
             </remarks>
             <param name="arr">保存单元格的位置索引（行索引和列索引用“,”隔开）和数据</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SetCells(System.String,System.Collections.Hashtable)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SetCells(System.String,System.Collections.Hashtable)">
             <summary>
             向单元格写入数据，对指定WorkSheet操作
             </summary>
             <param name="ht">Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.MergeCells(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeCells(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             合并单元格，并赋值，对每个WorkSheet操作
             </summary>
@@ -2507,7 +2507,7 @@
             <param name="endColumnIndex">结束列索引</param>
             <param name="text">合并后Range的值</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.MergeCells(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeCells(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             合并单元格，并赋值，对指定WorkSheet操作
             </summary>
@@ -2518,7 +2518,7 @@
             <param name="endColumnIndex">结束列索引</param>
             <param name="text">合并后Range的值</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.MergeRows(System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeRows(System.Int32,System.Int32,System.Int32)">
             <summary>
             将指定索引列的数据相同的行合并，对每个WorkSheet操作
             </summary>
@@ -2526,7 +2526,7 @@
             <param name="beginRowIndex">开始行索引</param>
             <param name="endRowIndex">结束行索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.MergeRows(System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeRows(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             将指定索引列的数据相同的行合并，对指定WorkSheet操作
             </summary>
@@ -2535,14 +2535,14 @@
             <param name="beginRowIndex">开始行索引</param>
             <param name="endRowIndex">结束行索引</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.InsertRows(System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertRows(System.Int32,System.Int32)">
             <summary>
             插行（在指定行上面插入指定数量行）
             </summary>
             <param name="rowIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.InsertRows(System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertRows(System.Int32,System.Int32,System.Int32)">
             <summary>
             插行（在指定WorkSheet指定行上面插入指定数量行）
             </summary>
@@ -2550,14 +2550,14 @@
             <param name="rowIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.CopyRows(System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.CopyRows(System.Int32,System.Int32)">
             <summary>
             复制行（在指定行下面复制指定数量行）
             </summary>
             <param name="rowIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.CopyRows(System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.CopyRows(System.Int32,System.Int32,System.Int32)">
             <summary>
             复制行（在指定WorkSheet指定行下面复制指定数量行）
             </summary>
@@ -2565,14 +2565,14 @@
             <param name="rowIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DeleteRows(System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DeleteRows(System.Int32,System.Int32)">
             <summary>
             删除行
             </summary>
             <param name="rowIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DeleteRows(System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DeleteRows(System.Int32,System.Int32,System.Int32)">
             <summary>
             删除行
             </summary>
@@ -2580,14 +2580,14 @@
             <param name="rowIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.InsertColumns(System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertColumns(System.Int32,System.Int32)">
             <summary>
             插列（在指定列右边插入指定数量列）
             </summary>
             <param name="columnIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.InsertColumns(System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertColumns(System.Int32,System.Int32,System.Int32)">
             <summary>
             插列（在指定WorkSheet指定列右边插入指定数量列）
             </summary>
@@ -2595,14 +2595,14 @@
             <param name="columnIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.CopyColumns(System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.CopyColumns(System.Int32,System.Int32)">
             <summary>
             复制列（在指定列右边复制指定数量列）
             </summary>
             <param name="columnIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.CopyColumns(System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.CopyColumns(System.Int32,System.Int32,System.Int32)">
             <summary>
             复制列（在指定WorkSheet指定列右边复制指定数量列）
             </summary>
@@ -2610,14 +2610,14 @@
             <param name="columnIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DeleteColumns(System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DeleteColumns(System.Int32,System.Int32)">
             <summary>
             删除列
             </summary>
             <param name="columnIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.DeleteColumns(System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.DeleteColumns(System.Int32,System.Int32,System.Int32)">
             <summary>
             删除列
             </summary>
@@ -2625,7 +2625,7 @@
             <param name="columnIndex"></param>
             <param name="count"></param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.RangeCopy(System.Int32,System.String,System.String,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.RangeCopy(System.Int32,System.String,System.String,System.String)">
             <summary>
             将指定范围区域拷贝到目标区域
             </summary>
@@ -2634,7 +2634,7 @@
             <param name="endCell">要拷贝区域的结束Cell位置（比如：F20）</param>
             <param name="targetCell">目标区域的开始Cell位置（比如：H10）</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.RangeCopy(System.String,System.String,System.String,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.RangeCopy(System.String,System.String,System.String,System.String)">
             <summary>
             将指定范围区域拷贝到目标区域
             </summary>
@@ -2643,71 +2643,71 @@
             <param name="endCell">要拷贝区域的结束Cell位置（比如：F20）</param>
             <param name="targetCell">目标区域的开始Cell位置（比如：H10）</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.RangAutoFill">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.RangAutoFill">
             <summary>
             自动填充
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.ApplyStyle">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.ApplyStyle">
             <summary>
             应用样式
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.LetterToInt(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.LetterToInt(System.String)">
             <summary>
             将Excel列的字母索引值转换成整数索引值
             </summary>
             <param name="letter"></param>
             <returns></returns>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.IntToLetter(System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.IntToLetter(System.Int32)">
             <summary>
             将Excel列的整数索引值转换为字符索引值
             </summary>
             <param name="n"></param>
             <returns></returns>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.OutputExcelFile">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.OutputExcelFile">
             <summary>
             输出Excel文件并退出
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.OutputFile(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.OutputFile(System.String)">
             <summary>
             输出指定格式的文件（支持格式：HTML，CSV，TEXT，EXCEL）
             </summary>
             <param name="format">HTML，CSV，TEXT，EXCEL，XML</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SaveFile">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SaveFile">
             <summary>
             保存文件
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SaveAsFile">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SaveAsFile">
             <summary>
             另存文件
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SaveAsFile(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SaveAsFile(System.String)">
             <summary>
             将Excel文件另存为指定格式
             </summary>
             <param name="format">HTML，CSV，TEXT，EXCEL，XML</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SaveFile(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SaveFile(System.String)">
             <summary>
             另存文件
             </summary>
             <param name="fileName">文件名</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.SaveAsFile(System.String,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.SaveAsFile(System.String,System.String)">
             <summary>
             将Excel文件另存为指定格式
             </summary>
             <param name="fileName">文件名</param>
             <param name="format">HTML，CSV，TEXT，EXCEL，XML</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.MergeCells(Excel.Worksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeCells(Excel.Worksheet,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             合并单元格，并赋值，对指定WorkSheet操作
             </summary>
@@ -2717,7 +2717,7 @@
             <param name="endColumnIndex">结束列索引</param>
             <param name="text">合并后Range的值</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.MergeRows(Excel.Worksheet,System.Int32,System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeRows(Excel.Worksheet,System.Int32,System.Int32,System.Int32)">
             <summary>
             将指定索引列的数据相同的行合并，对指定WorkSheet操作
             </summary>
@@ -2725,160 +2725,160 @@
             <param name="beginRowIndex">合并开始行索引</param>
             <param name="rows">要合并的行数</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.GetSheetCount(System.Int32,System.Int32)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.GetSheetCount(System.Int32,System.Int32)">
             <summary>
             计算WorkSheet数量
             </summary>
             <param name="rowCount">记录总行数</param>
             <param name="rows">每WorkSheet行数</param>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelHelper.KillExcelProcess">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelHelper.KillExcelProcess">
             <summary>
             结束Excel进程
             </summary>
         </member>
-        <member name="P:XCLNetTools.DataHandler.ExcelHelper.SheetPrefixName">
+        <member name="P:XCLNetTools.Office.ExcelHandler.ExcelHelper.SheetPrefixName">
             <summary>
             WorkSheet前缀名，比如：前缀名为“页”，那么WorkSheet名称依次为“页-1，页-2...”
             </summary>
         </member>
-        <member name="P:XCLNetTools.DataHandler.ExcelHelper.WorkSheetCount">
+        <member name="P:XCLNetTools.Office.ExcelHandler.ExcelHelper.WorkSheetCount">
             <summary>
             WorkSheet数量
             </summary>
         </member>
-        <member name="P:XCLNetTools.DataHandler.ExcelHelper.TempletFilePath">
+        <member name="P:XCLNetTools.Office.ExcelHandler.ExcelHelper.TempletFilePath">
             <summary>
             Excel模板文件路径
             </summary>
         </member>
-        <member name="P:XCLNetTools.DataHandler.ExcelHelper.OutputFilePath">
+        <member name="P:XCLNetTools.Office.ExcelHandler.ExcelHelper.OutputFilePath">
             <summary>
             输出Excel文件路径
             </summary>
         </member>
-        <member name="T:XCLNetTools.DataHandler.ExcelToData">
+        <member name="T:XCLNetTools.Office.ExcelHandler.ExcelToData">
             <summary>
             excel读取类
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelToData.ReadExcelToTable(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelToData.ReadExcelToTable(System.String)">
             <summary>
             单个工作薄读入（第一个可见的sheet）
             <param name="excelfilePath">文件路径</param>
             <returns>DataTable</returns>
             </summary>
         </member>
-        <member name="M:XCLNetTools.DataHandler.ExcelToData.ReadExcelToDataSet(System.String)">
+        <member name="M:XCLNetTools.Office.ExcelHandler.ExcelToData.ReadExcelToDataSet(System.String)">
             <summary>
             将多个工作薄导入到DS中（所有可见的sheet）
             <param name="excelfilePath">文件路径</param>
             <returns>DataSet</returns>
             </summary>
         </member>
-        <member name="T:XCLNetTools.Entity.DataHandler.OutPutClass">
+        <member name="T:XCLNetTools.Entity.Office.ExcelHandler.OutPutClass">
             <summary>
             导出字段实体类
             （主要是便于在所有导出信息字段类中查询到要导出的记录的字段对应信息）
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutClass.TableName">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutClass.TableName">
             <summary>
             表名
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutClass.Fields">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutClass.Fields">
             <summary>
             字段列表
             </summary>
         </member>
-        <member name="T:XCLNetTools.Entity.DataHandler.OutPutField">
+        <member name="T:XCLNetTools.Entity.Office.ExcelHandler.OutPutField">
             <summary>
             要导出的字段类
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutField.oldName">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutField.oldName">
             <summary>
             该字段的原始名
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutField.newName">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutField.newName">
             <summary>
             导出后，该字段在EXCEL中的显示名
             </summary>
         </member>
-        <member name="T:XCLNetTools.Entity.DataHandler.OutPutParamClass">
+        <member name="T:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass">
             <summary>
             导出参数类
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.TableName">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.TableName">
             <summary>
             表名（主要是便于在xml字段名list中找到该节点信息）,对应dataSet中的table
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.OutPutClass">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.OutPutClass">
             <summary>
             导出类，包含新旧字段名（为null时，则保持ds中的相应的列名）
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.Ds">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.Ds">
             <summary>
             要导出的DataSet
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.FileTitle">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.FileTitle">
             <summary>
             导出的EXCEL文件的名字
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.ConTitle">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.ConTitle">
             <summary>
             excel中第一行的标题
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.AutoDownLoad">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.AutoDownLoad">
             <summary>
             是否自动下载
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.CustomFileName">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.CustomFileName">
             <summary>
             自定义文件名（保存后的完整路径名）
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.SaveFormat">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.SaveFormat">
             <summary>
             自定义保存时，文件保存的格式
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.FirstRowIndex">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.FirstRowIndex">
             <summary>
             填充的数据起始行索引号（0为第一行）
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.FirstColumnIndex">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.FirstColumnIndex">
             <summary>
             填充的数据起始列索引号（0为第一行）
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.IsShowCustomLine">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.IsShowCustomLine">
             <summary>
             是否显示自定义文字行（就是第一行的导出信息）
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.IsShowFieldLine">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.IsShowFieldLine">
             <summary>
             是否显示字段行
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.WorkBookFilePath">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.WorkBookFilePath">
             <summary>
             指定被操作的工作薄文件
             （用于向已有文件中写入数据并导出的情况）
             </summary>
         </member>
-        <member name="P:XCLNetTools.Entity.DataHandler.OutPutParamClass.GetWorkBook">
+        <member name="P:XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass.GetWorkBook">
             <summary>
             获取当前正在操作的WorkBook
             </summary>

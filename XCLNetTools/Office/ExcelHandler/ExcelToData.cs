@@ -9,7 +9,7 @@ Create By: XCL @ 2012
 using Aspose.Cells;
 using System.Data;
 
-namespace XCLNetTools.DataHandler
+namespace XCLNetTools.Office.ExcelHandler
 {
     /// <summary>
     /// excel读取类

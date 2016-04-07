@@ -50,6 +50,7 @@ D:\MyData\MyGit\GitHub\XCLNetTools\XCLNetTools\bin\Debug\en\AspNetPager.resource
 D:\MyData\MyGit\GitHub\XCLNetTools\XCLNetTools\bin\Debug\zh-CHT\AspNetPager.resources.dll
 D:\MyData\MyGit\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.dll
 D:\MyData\MyGit\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.pdb
+D:\MyData\MyGit\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.csprojResolveAssemblyReference.cache
 E:\GitHub\XCLNetTools\XCLNetTools\bin\Debug\XCLNetTools.dll.config
 E:\GitHub\XCLNetTools\XCLNetTools\bin\Debug\XCLNetTools.xml
 E:\GitHub\XCLNetTools\XCLNetTools\bin\Debug\XCLNetTools.dll
@@ -102,4 +103,3 @@ E:\GitHub\XCLNetTools\XCLNetTools\bin\Debug\en\AspNetPager.resources.dll
 E:\GitHub\XCLNetTools\XCLNetTools\bin\Debug\zh-CHT\AspNetPager.resources.dll
 E:\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.dll
 E:\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.pdb
-D:\MyData\MyGit\GitHub\XCLNetTools\XCLNetTools\obj\Debug\XCLNetTools.csprojResolveAssemblyReference.cache

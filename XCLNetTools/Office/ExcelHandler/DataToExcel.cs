@@ -13,9 +13,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
-using XCLNetTools.Entity.DataHandler;
+using XCLNetTools.Entity.Office.ExcelHandler;
 
-namespace XCLNetTools.DataHandler
+namespace XCLNetTools.Office.ExcelHandler
 {
     /// <summary>
     /// 操作EXCEL导出数据报表的类
