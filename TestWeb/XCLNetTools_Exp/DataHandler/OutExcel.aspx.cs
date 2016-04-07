@@ -32,7 +32,7 @@ namespace TestWeb.XCLNetTools_Exp.DataHandler
             ds.Tables.Add(dt);
             ds.Tables.Add(dt2);
 
-            XCLNetTools.DataHandler.DataToExcel.OutPutExcel(new XCLNetTools.Entity.DataHandler.OutPutParamClass()
+            XCLNetTools.Office.ExcelHandler.DataToExcel.OutPutExcel(new XCLNetTools.Entity.Office.ExcelHandler.OutPutParamClass()
             {
                 TableName = null,
                 OutPutClass = null,

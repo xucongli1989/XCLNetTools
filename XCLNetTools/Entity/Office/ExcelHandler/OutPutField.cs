@@ -6,7 +6,7 @@ Create By: XCL @ 2012
 
  */
 
-namespace XCLNetTools.Entity.DataHandler
+namespace XCLNetTools.Entity.Office.ExcelHandler
 {
     /// <summary>
     /// 要导出的字段类

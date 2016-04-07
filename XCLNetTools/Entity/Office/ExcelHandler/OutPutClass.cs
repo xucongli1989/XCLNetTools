@@ -8,7 +8,7 @@ Create By: XCL @ 2012
 
 using System.Collections.Generic;
 
-namespace XCLNetTools.Entity.DataHandler
+namespace XCLNetTools.Entity.Office.ExcelHandler
 {
     /// <summary>
     /// 导出字段实体类

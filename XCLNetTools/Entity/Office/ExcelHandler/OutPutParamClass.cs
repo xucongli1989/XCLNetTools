@@ -10,7 +10,7 @@ using Aspose.Cells;
 using System.Collections.Generic;
 using System.Data;
 
-namespace XCLNetTools.Entity.DataHandler
+namespace XCLNetTools.Entity.Office.ExcelHandler
 {
     /// <summary>
     /// 导出参数类

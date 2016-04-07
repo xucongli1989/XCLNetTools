@@ -13,7 +13,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
-namespace XCLNetTools.DataHandler
+namespace XCLNetTools.Office.ExcelHandler
 {
     /// <summary>
     /// 旧版的excel操作（基于excel.dll），建议不要使用此类（用aspose.cells）
