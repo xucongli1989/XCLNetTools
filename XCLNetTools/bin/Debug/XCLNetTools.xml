@@ -60,9 +60,59 @@
             中文数字
             </summary>
         </member>
-        <member name="F:XCLNetTools.Common.Consts.HttpSchemeMatch">
+        <member name="F:XCLNetTools.Common.Consts.RMB0To9">
+            <summary>
+            0-9所对应的汉字
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RMBUnitName">
+            <summary>
+            单位数字位所对应的汉字
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegHttpScheme">
             <summary>
             http Scheme
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegPhone">
+            <summary>
+            电话号码正则
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegNumber">
+            <summary>
+            无符号数字正则
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegNumberSign">
+            <summary>
+            有符号数字正则
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegDecimal">
+            <summary>
+            无符号小数正则
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegDecimalSign">
+            <summary>
+            有符号小数正则
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegEmail">
+            <summary>
+            email地址正则
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegCHZN">
+            <summary>
+            中文正则
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.RegURL">
+            <summary>
+            http(s)地址正则
             </summary>
         </member>
         <member name="F:XCLNetTools.Common.Consts.WeekName">
@@ -5971,11 +6021,6 @@
         <member name="T:XCLNetTools.StringHander.PageValid">
             <summary>
             页面数据校验类
-            </summary>
-        </member>
-        <member name="M:XCLNetTools.StringHander.PageValid.#ctor">
-            <summary>
-            构造函数
             </summary>
         </member>
         <member name="M:XCLNetTools.StringHander.PageValid.IsPhone(System.String)">
