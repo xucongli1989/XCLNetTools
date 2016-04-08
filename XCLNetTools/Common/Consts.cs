@@ -22,7 +22,47 @@ namespace XCLNetTools.Common
         /// <summary>
         /// http Scheme
         /// </summary>
-        public static readonly Regex HttpSchemeMatch = new Regex("^http[s]?://");
+        public static readonly Regex RegHttpScheme = new Regex("^http[s]?://");
+
+        /// <summary>
+        /// 电话号码正则
+        /// </summary>
+        public static Regex RegPhone = new Regex("^[0-9]+[-]?[0-9]+[-]?[0-9]$");
+
+        /// <summary>
+        /// 无符号数字正则
+        /// </summary>
+        public static Regex RegNumber = new Regex("^[0-9]+$");
+
+        /// <summary>
+        /// 有符号数字正则
+        /// </summary>
+        public static Regex RegNumberSign = new Regex("^[+-]?[0-9]+$");
+
+        /// <summary>
+        /// 无符号小数正则
+        /// </summary>
+        public static Regex RegDecimal = new Regex("^[0-9]+[.]?[0-9]+$");
+
+        /// <summary>
+        /// 有符号小数正则
+        /// </summary>
+        public static Regex RegDecimalSign = new Regex("^[+-]?[0-9]+[.]?[0-9]+$"); //等价于^[+-]?\d+[.]?\d+$
+
+        /// <summary>
+        /// email地址正则
+        /// </summary>
+        public static Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");//w 英文字母或数字的字符串，和 [a-zA-Z0-9] 语法一样
+
+        /// <summary>
+        /// 中文正则
+        /// </summary>
+        public static Regex RegCHZN = new Regex("[\u4e00-\u9fa5]");
+
+        /// <summary>
+        /// http(s)地址正则
+        /// </summary>
+        public static Regex RegURL = new Regex(@"^http[s]?:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\""\""])*$");
 
         #endregion 正则
 
@@ -116,5 +156,19 @@ namespace XCLNetTools.Common
                                                                         "zi","zong","zou","zu","zuan","zui","zun","zuo"};
 
         #endregion 中文
+
+        #region 人民币相关
+
+        /// <summary>
+        /// 0-9所对应的汉字
+        /// </summary>
+        public const string RMB0To9 = "零壹贰叁肆伍陆柒捌玖";
+
+        /// <summary>
+        /// 单位数字位所对应的汉字
+        /// </summary>
+        public const string RMBUnitName = "万仟佰拾亿仟佰拾万仟佰拾元角分";
+
+        #endregion 人民币相关
     }
 }

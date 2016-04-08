@@ -22,8 +22,8 @@ namespace XCLNetTools.StringHander
         /// <returns>返回大写形式</returns>
         public static string ConvertToUpper(decimal num)
         {
-            string str1 = "零壹贰叁肆伍陆柒捌玖";            //0-9所对应的汉字
-            string str2 = "万仟佰拾亿仟佰拾万仟佰拾元角分"; //数字位所对应的汉字
+            string str1 = XCLNetTools.Common.Consts.RMB0To9;
+            string str2 = XCLNetTools.Common.Consts.RMBUnitName;
             string str3 = "";    //从原num值中取出的值
             string str4 = "";    //数字的字符串形式
             string str5 = "";  //人民币大写金额形式

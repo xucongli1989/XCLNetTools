@@ -15,22 +15,6 @@ namespace XCLNetTools.StringHander
     /// </summary>
     public class PageValid
     {
-        private static Regex RegPhone = new Regex("^[0-9]+[-]?[0-9]+[-]?[0-9]$");
-        private static Regex RegNumber = new Regex("^[0-9]+$");
-        private static Regex RegNumberSign = new Regex("^[+-]?[0-9]+$");
-        private static Regex RegDecimal = new Regex("^[0-9]+[.]?[0-9]+$");
-        private static Regex RegDecimalSign = new Regex("^[+-]?[0-9]+[.]?[0-9]+$"); //等价于^[+-]?\d+[.]?\d+$
-        private static Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");//w 英文字母或数字的字符串，和 [a-zA-Z0-9] 语法一样
-        private static Regex RegCHZN = new Regex("[\u4e00-\u9fa5]");
-        private static Regex RegURL = new Regex(@"^http[s]?:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\""\""])*$");
-
-        /// <summary>
-        /// 构造函数
-        /// </summary>
-        public PageValid()
-        {
-        }
-
         #region 数字字符串检查
 
         /// <summary>
@@ -44,7 +28,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegPhone.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegPhone.Match(inputData);
             return m.Success;
         }
 
@@ -59,7 +43,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegNumber.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegNumber.Match(inputData);
             return m.Success;
         }
 
@@ -74,7 +58,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegNumberSign.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegNumberSign.Match(inputData);
             return m.Success;
         }
 
@@ -89,7 +73,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegDecimal.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegDecimal.Match(inputData);
             return m.Success;
         }
 
@@ -104,7 +88,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegDecimalSign.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegDecimalSign.Match(inputData);
             return m.Success;
         }
 
@@ -123,7 +107,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegCHZN.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegCHZN.Match(inputData);
             return m.Success;
         }
 
@@ -142,7 +126,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegEmail.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegEmail.Match(inputData);
             return m.Success;
         }
 
@@ -175,7 +159,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            Match m = RegURL.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegURL.Match(inputData);
             return m.Success;
         }
 

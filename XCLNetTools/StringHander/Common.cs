@@ -489,7 +489,7 @@ namespace XCLNetTools.StringHander
                 if (!string.IsNullOrEmpty(url))
                 {
                     url = url.TrimEnd('/') + "/";
-                    url = XCLNetTools.Common.Consts.HttpSchemeMatch.Replace(url, "//");//替换http(s):// 为"//" 以适应http(s)环境
+                    url = XCLNetTools.Common.Consts.RegHttpScheme.Replace(url, "//");//替换http(s):// 为"//" 以适应http(s)环境
                 }
                 return url;
             }
