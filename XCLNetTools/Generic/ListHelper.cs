@@ -79,32 +79,6 @@ namespace XCLNetTools.Generic
         }
 
         /// <summary>
-        /// 将List转换成DataTable
-        /// </summary>
-        /// <param name="data">要转换的数据</param>
-        /// <returns>datatable</returns>
-        public static DataTable ToDataTable<T>(IList<T> data)
-        {
-            System.ComponentModel.PropertyDescriptorCollection properties = System.ComponentModel.TypeDescriptor.GetProperties(typeof(T));
-            DataTable dt = new DataTable();
-            for (int i = 0; i < properties.Count; i++)
-            {
-                System.ComponentModel.PropertyDescriptor property = properties[i];
-                dt.Columns.Add(property.Name, property.PropertyType);
-            }
-            object[] values = new object[properties.Count];
-            foreach (T item in data)
-            {
-                for (int i = 0; i < values.Length; i++)
-                {
-                    values[i] = properties[i].GetValue(item);
-                }
-                dt.Rows.Add(values);
-            }
-            return dt;
-        }
-
-        /// <summary>
         /// 将dataTable转为list
         /// </summary>
         /// <param name="dt">要转换的数据</param>
@@ -151,31 +125,6 @@ namespace XCLNetTools.Generic
             }
 
             return ts;
-        }
-
-        /// <summary>
-        /// 将lst转为单列的datatable，如果lst没有数据，则返回一个空的datatable
-        /// </summary>
-        /// <typeparam name="source">要转换的列类型</typeparam>
-        /// <typeparam name="target">转换后的列类型</typeparam>
-        /// <param name="lst">要转换的数据源</param>
-        /// <param name="columnName">datatable列名，默认为“ID”</param>
-        /// <returns>转换后的datatable</returns>
-        public static DataTable ToSingleColumnDataTable<source, target>(List<source> lst, string columnName = "ID")
-        {
-            DataTable tb = new DataTable();
-            tb.Columns.Add(columnName, typeof(target));
-            if (null == lst || lst.Count == 0)
-            {
-                return tb;
-            }
-            lst.ForEach(k =>
-            {
-                var row = tb.NewRow();
-                row[columnName] = k;
-                tb.Rows.Add(row);
-            });
-            return tb;
         }
     }
 }

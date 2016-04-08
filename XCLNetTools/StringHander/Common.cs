@@ -8,8 +8,6 @@ Create By: XCL @ 2012
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,79 +21,6 @@ namespace XCLNetTools.StringHander
     /// </summary>
     public class Common
     {
-        #region IP地址处理相关
-
-        /// <summary>
-        /// 取得用户客户端IP(穿过代理服务器取远程用户真实IP地址)
-        /// </summary>
-        /// <returns>ip地址</returns>
-        public static string GetClientIP()
-        {
-            var context = HttpContext.Current;
-            if (null == context)
-            {
-                return string.Empty;
-            }
-            string result = string.Empty;
-            try
-            {
-                string ipAddress = string.Empty;
-                if (context.Request.ServerVariables.HasKeys() && context.Request.ServerVariables.AllKeys.ToList().Exists(k => string.Equals(k, "HTTP_X_FORWARDED_FOR", StringComparison.OrdinalIgnoreCase)))
-                {
-                    ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-                    if (!string.IsNullOrEmpty(ipAddress))
-                    {
-                        string[] addresses = ipAddress.Split(',');
-                        if (addresses.Length != 0)
-                        {
-                            result = addresses[0];
-                        }
-                    }
-                }
-
-                if (string.IsNullOrEmpty(result))
-                {
-                    result = context.Request.ServerVariables["REMOTE_ADDR"];
-                }
-            }
-            catch
-            {
-            }
-            return string.Equals("::1", result) ? "127.0.0.1" : result;
-        }
-
-        /// <summary>
-        /// 根据ip138网站反馈结果获取服务端外网ip地址
-        /// </summary>
-        /// <returns>ip地址</returns>
-        public static string GetIpByIP138()
-        {
-            string url = "http://1212.ip138.com/ic.asp";
-            string ip = string.Empty;
-            XCLNetTools.Http.HttpHelper http = new Http.HttpHelper();
-            try
-            {
-                var result = http.GetHtml(new XCLNetTools.Entity.Http.HttpItem()
-                {
-                    URL = url,
-                    Method = "get"
-                });
-                string html = result.Html;//如：您的IP是：[112.13.32.16] 来自：浙江省绍兴市 移动
-                if (!string.IsNullOrEmpty(html))
-                {
-                    Regex reg = new Regex(@"您的IP是：\[(.*)\]");
-                    if (reg.IsMatch(html))
-                    {
-                        ip = reg.Match(html).Groups[1].Value.ToUpper().Trim();//如：112.13.32.16
-                    }
-                }
-            }
-            catch { }
-            return ip;
-        }
-
-        #endregion IP地址处理相关
-
         #region 防止代码注入
 
         /// <summary>
@@ -213,43 +138,6 @@ namespace XCLNetTools.StringHander
         }
 
         #endregion 百分比相关
-
-        #region 随机颜色
-
-        private static int colorCount = 0;
-
-        /// <summary>
-        /// 返回指定颜色中的随机颜色(按顺序循环出现)
-        /// </summary>
-        /// <returns>颜色编码，如：1941A5</returns>
-        public static string GetColors()
-        {
-            colorCount++;
-            string[] arr_FCColors = new string[20];
-            arr_FCColors[0] = "1941A5"; //Dark Blue
-            arr_FCColors[1] = "AFD8F8";
-            arr_FCColors[2] = "F6BD0F";
-            arr_FCColors[3] = "8BBA00";
-            arr_FCColors[4] = "A66EDD";
-            arr_FCColors[5] = "F984A1";
-            arr_FCColors[6] = "CCCC00"; //Chrome Yellow+Green
-            arr_FCColors[7] = "999999"; //Grey
-            arr_FCColors[8] = "0099CC"; //Blue Shade
-            arr_FCColors[9] = "FF0000"; //Bright Red
-            arr_FCColors[10] = "006F00"; //Dark Green
-            arr_FCColors[11] = "0099FF"; //Blue (Light)
-            arr_FCColors[12] = "FF66CC"; //Dark Pink
-            arr_FCColors[13] = "669966"; //Dirty green
-            arr_FCColors[14] = "7C7CB4"; //Violet shade of blue
-            arr_FCColors[15] = "FF9933"; //Orange
-            arr_FCColors[16] = "9900FF"; //Violet
-            arr_FCColors[17] = "99FFCC"; //Blue+Green Light
-            arr_FCColors[18] = "CCCCFF"; //Light violet
-            arr_FCColors[19] = "669900"; //Shade of green
-            return arr_FCColors[colorCount % (arr_FCColors.Length)];
-        }
-
-        #endregion 随机颜色
 
         #region KB,MB,GB,TB相关
 
@@ -371,66 +259,6 @@ namespace XCLNetTools.StringHander
         }
 
         #endregion 静态资源相关
-
-        #region 字符串压缩
-
-        /// <summary>
-        /// gzip压缩字符串
-        /// </summary>
-        /// <param name="text">待压缩的字符串</param>
-        /// <returns>压缩后的值</returns>
-        public static string GZipCompressString(string text)
-        {
-            if (string.IsNullOrEmpty(text))
-            {
-                return string.Empty;
-            }
-            byte[] buffer = Encoding.UTF8.GetBytes(text);
-
-            using (var memoryStream = new MemoryStream())
-            {
-                using (var gZipStream = new GZipStream(memoryStream, CompressionMode.Compress, true))
-                {
-                    gZipStream.Write(buffer, 0, buffer.Length);
-                }
-                memoryStream.Position = 0;
-                var compressedData = new byte[memoryStream.Length];
-                memoryStream.Read(compressedData, 0, compressedData.Length);
-
-                var gZipBuffer = new byte[compressedData.Length + 4];
-                Buffer.BlockCopy(compressedData, 0, gZipBuffer, 4, compressedData.Length);
-                Buffer.BlockCopy(BitConverter.GetBytes(buffer.Length), 0, gZipBuffer, 0, 4);
-                return Convert.ToBase64String(gZipBuffer);
-            }
-        }
-
-        /// <summary>
-        /// 解压缩字符串
-        /// </summary>
-        /// <param name="compressedText">待解压的字符串</param>
-        /// <returns>解压后的值</returns>
-        public static string GZipDecompressString(string compressedText)
-        {
-            if (string.IsNullOrEmpty(compressedText))
-            {
-                return string.Empty;
-            }
-            byte[] gZipBuffer = Convert.FromBase64String(compressedText);
-            using (var memoryStream = new MemoryStream())
-            {
-                int dataLength = BitConverter.ToInt32(gZipBuffer, 0);
-                memoryStream.Write(gZipBuffer, 4, gZipBuffer.Length - 4);
-                var buffer = new byte[dataLength];
-                memoryStream.Position = 0;
-                using (var gZipStream = new GZipStream(memoryStream, CompressionMode.Decompress))
-                {
-                    gZipStream.Read(buffer, 0, buffer.Length);
-                }
-                return Encoding.UTF8.GetString(buffer);
-            }
-        }
-
-        #endregion 字符串压缩
 
         #region 字符串截取
 
@@ -665,30 +493,6 @@ namespace XCLNetTools.StringHander
                 }
                 return url;
             }
-        }
-
-        /// <summary>
-        /// 根据dt和指定行号和列名，返回该列的列号.若找不到该列，则返回-1
-        /// </summary>
-        /// <param name="dt">dataTable</param>
-        /// <param name="rowIndex">行号</param>
-        /// <param name="colName">列名</param>
-        /// <returns>列号</returns>
-        public static int GetColIndex(System.Data.DataTable dt, int rowIndex, string colName)
-        {
-            int s = -1;
-            if (null != dt && dt.Rows.Count >= rowIndex)
-            {
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    if (string.Equals(dt.Rows[rowIndex][i].ToString(), colName))
-                    {
-                        s = i;
-                        break;
-                    }
-                }
-            }
-            return s;
         }
 
         /// <summary>

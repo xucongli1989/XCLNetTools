@@ -183,8 +183,12 @@
     <Compile Include="Cache\CacheClass.cs" />
     <Compile Include="Common\Consts.cs" />
     <Compile Include="Common\DataTypeConvert.cs" />
+    <Compile Include="Common\GZipHelper.cs" />
+    <Compile Include="Common\IPHelper.cs" />
     <Compile Include="Control\ServerControl\Lib.cs" />
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
+    <Compile Include="DataSource\DataSetHelper.cs" />
+    <Compile Include="DataSource\DataTableHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
     <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
     <Compile Include="Entity\FileInfoEntity.cs" />
