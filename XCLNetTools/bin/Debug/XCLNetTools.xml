@@ -373,6 +373,42 @@
             <param name="defaultValue">默认值，默认为null</param>
             <returns>转换后的值</returns>
         </member>
+        <member name="T:XCLNetTools.Common.GZipHelper">
+            <summary>
+            gzip相关
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.Common.GZipHelper.GZipCompressString(System.String)">
+            <summary>
+            gzip压缩字符串
+            </summary>
+            <param name="text">待压缩的字符串</param>
+            <returns>压缩后的值</returns>
+        </member>
+        <member name="M:XCLNetTools.Common.GZipHelper.GZipDecompressString(System.String)">
+            <summary>
+            解压缩字符串
+            </summary>
+            <param name="compressedText">待解压的字符串</param>
+            <returns>解压后的值</returns>
+        </member>
+        <member name="T:XCLNetTools.Common.IPHelper">
+            <summary>
+            IP处理
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.Common.IPHelper.GetClientIP">
+            <summary>
+            取得用户客户端IP(穿过代理服务器取远程用户真实IP地址)
+            </summary>
+            <returns>ip地址</returns>
+        </member>
+        <member name="M:XCLNetTools.Common.IPHelper.GetIpByIP138">
+            <summary>
+            根据ip138网站反馈结果获取服务端外网ip地址
+            </summary>
+            <returns>ip地址</returns>
+        </member>
         <member name="T:XCLNetTools.Control.ServerControl.Lib">
             <summary>
             服务器控件操作相关
@@ -574,6 +610,42 @@
             <param name="cmdType">SQL字符串执行类型</param>
             <param name="cmdText">SQL Text</param>
             <param name="cmdParms">SQLiteParameters to use in the command</param>
+        </member>
+        <member name="T:XCLNetTools.DataSource.DataSetHelper">
+            <summary>
+            dataset相关
+            </summary>
+        </member>
+        <member name="T:XCLNetTools.DataSource.DataTableHelper">
+            <summary>
+            datatable相关
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.DataSource.DataTableHelper.GetColIndex(System.Data.DataTable,System.Int32,System.String)">
+            <summary>
+            根据dt和指定行号和列名，返回该列的列号.若找不到该列，则返回-1
+            </summary>
+            <param name="dt">dataTable</param>
+            <param name="rowIndex">行号</param>
+            <param name="colName">列名</param>
+            <returns>列号</returns>
+        </member>
+        <member name="M:XCLNetTools.DataSource.DataTableHelper.ToSingleColumnDataTable``2(System.Collections.Generic.List{``0},System.String)">
+            <summary>
+            将lst转为单列的datatable，如果lst没有数据，则返回一个空的datatable
+            </summary>
+            <typeparam name="source">要转换的列类型</typeparam>
+            <typeparam name="target">转换后的列类型</typeparam>
+            <param name="lst">要转换的数据源</param>
+            <param name="columnName">datatable列名，默认为“ID”</param>
+            <returns>转换后的datatable</returns>
+        </member>
+        <member name="M:XCLNetTools.DataSource.DataTableHelper.ToDataTable``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            将List转换成DataTable
+            </summary>
+            <param name="data">要转换的数据</param>
+            <returns>datatable</returns>
         </member>
         <member name="T:XCLNetTools.Entity.BookmarkEntity">
             <summary>
@@ -3722,29 +3794,12 @@
             <param name="splitChar">分隔符</param>
             <returns>字符串结果值</returns>
         </member>
-        <member name="M:XCLNetTools.Generic.ListHelper.ToDataTable``1(System.Collections.Generic.IList{``0})">
-            <summary>
-            将List转换成DataTable
-            </summary>
-            <param name="data">要转换的数据</param>
-            <returns>datatable</returns>
-        </member>
         <member name="M:XCLNetTools.Generic.ListHelper.DataTableToList``1(System.Data.DataTable)">
             <summary>
             将dataTable转为list
             </summary>
             <param name="dt">要转换的数据</param>
             <returns>list</returns>
-        </member>
-        <member name="M:XCLNetTools.Generic.ListHelper.ToSingleColumnDataTable``2(System.Collections.Generic.List{``0},System.String)">
-            <summary>
-            将lst转为单列的datatable，如果lst没有数据，则返回一个空的datatable
-            </summary>
-            <typeparam name="source">要转换的列类型</typeparam>
-            <typeparam name="target">转换后的列类型</typeparam>
-            <param name="lst">要转换的数据源</param>
-            <param name="columnName">datatable列名，默认为“ID”</param>
-            <returns>转换后的datatable</returns>
         </member>
         <member name="T:XCLNetTools.Http.CookieHelper">
             <summary>
@@ -5115,18 +5170,6 @@
             公用类
              </summary>
         </member>
-        <member name="M:XCLNetTools.StringHander.Common.GetClientIP">
-            <summary>
-            取得用户客户端IP(穿过代理服务器取远程用户真实IP地址)
-            </summary>
-            <returns>ip地址</returns>
-        </member>
-        <member name="M:XCLNetTools.StringHander.Common.GetIpByIP138">
-            <summary>
-            根据ip138网站反馈结果获取服务端外网ip地址
-            </summary>
-            <returns>ip地址</returns>
-        </member>
         <member name="M:XCLNetTools.StringHander.Common.ExchangeNote(System.String)">
             <summary>
             防止HTML代码注入
@@ -5164,12 +5207,6 @@
             <param name="count">保留几位小数</param>
             <returns>百分值</returns>
         </member>
-        <member name="M:XCLNetTools.StringHander.Common.GetColors">
-            <summary>
-            返回指定颜色中的随机颜色(按顺序循环出现)
-            </summary>
-            <returns>颜色编码，如：1941A5</returns>
-        </member>
         <member name="M:XCLNetTools.StringHander.Common.GetSizeStringByKB(System.Decimal,System.Int32)">
             <summary>
             返回文件大小KB,MB,GB,TB,PB形式的表示
@@ -5198,20 +5235,6 @@
             <param name="config">配置</param>
             <param name="nameList">指定输出项，若为null，则输出所有</param>
             <returns>引用的地址</returns>
-        </member>
-        <member name="M:XCLNetTools.StringHander.Common.GZipCompressString(System.String)">
-            <summary>
-            gzip压缩字符串
-            </summary>
-            <param name="text">待压缩的字符串</param>
-            <returns>压缩后的值</returns>
-        </member>
-        <member name="M:XCLNetTools.StringHander.Common.GZipDecompressString(System.String)">
-            <summary>
-            解压缩字符串
-            </summary>
-            <param name="compressedText">待解压的字符串</param>
-            <returns>解压后的值</returns>
         </member>
         <member name="M:XCLNetTools.StringHander.Common.GetSubString(System.String,System.Int32,System.String)">
             <summary>
@@ -5272,15 +5295,6 @@
             <param name="str">待处理字符串</param>
             <param name="cutStr">要删除的字符串</param>
             <returns>处理后的值</returns>
-        </member>
-        <member name="M:XCLNetTools.StringHander.Common.GetColIndex(System.Data.DataTable,System.Int32,System.String)">
-            <summary>
-            根据dt和指定行号和列名，返回该列的列号.若找不到该列，则返回-1
-            </summary>
-            <param name="dt">dataTable</param>
-            <param name="rowIndex">行号</param>
-            <param name="colName">列名</param>
-            <returns>列号</returns>
         </member>
         <member name="M:XCLNetTools.StringHander.Common.GetStartEndNum(System.Int32,System.Int32,System.Int32[])">
             <summary>

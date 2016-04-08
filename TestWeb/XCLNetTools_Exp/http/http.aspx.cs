@@ -6,7 +6,7 @@ namespace TestWeb.XCLNetTools_Exp.http
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string s = XCLNetTools.StringHander.Common.GetIpByIP138();
+            string s = XCLNetTools.Common.IPHelper.GetIpByIP138();
             this.ltMsg.Text = s;
         }
     }
