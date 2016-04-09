@@ -23,11 +23,12 @@ namespace XCLNetTools.StringHander
         #region 主方法
 
         /// <summary>
-        /// 获取request参数，先取querystring,若没有，再取formstring，若没有，则为string.Empty
+        /// 获取request参数，先取querystring,若没有，再取formstring，若没有，则返回defaultValue参数值（该参数值默认为""）
         /// </summary>
         /// <param name="name">参数名</param>
+        /// <param name="defaultValue">当获取不到参数值时，该方法返回的值，默认为空字符串""</param>
         /// <returns>参数值</returns>
-        private static string GetQueryOrFormString(string name)
+        private static string GetQueryOrFormString(string name, string defaultValue = "")
         {
             string str = null;
             HttpRequest request = HttpContext.Current.Request;
@@ -41,7 +42,7 @@ namespace XCLNetTools.StringHander
             {
                 return str;
             }
-            return string.Empty;
+            return defaultValue;
         }
 
         /// <summary>
@@ -71,13 +72,24 @@ namespace XCLNetTools.StringHander
         #region get string
 
         /// <summary>
-        /// 获取string参数
+        /// 获取string参数，如果没有此参数，则返回""
         /// </summary>
         /// <param name="name">参数名</param>
         /// <returns>参数值</returns>
         public static string GetString(string name)
         {
             return FormHelper.GetQueryOrFormString(name);
+        }
+
+        /// <summary>
+        /// 获取string参数，如果没有此参数，则返回defaultValue(默认为null)
+        /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns>参数值</returns>
+        public static string GetStringNull(string name, string defaultValue = null)
+        {
+            return FormHelper.GetQueryOrFormString(name, null) ?? defaultValue;
         }
 
         /// <summary>
