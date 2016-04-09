@@ -79,6 +79,20 @@ namespace XCLNetTools.Generic
         }
 
         /// <summary>
+        /// 将dataset的第一个datatable转为list
+        /// </summary>
+        /// <param name="ds">要转换的数据</param>
+        /// <returns>list</returns>
+        public static IList<T> DataSetToList<T>(DataSet ds) where T : new()
+        {
+            if (null == ds || null == ds.Tables || ds.Tables.Count == 0)
+            {
+                return null;
+            }
+            return XCLNetTools.Generic.ListHelper.DataTableToList<T>(ds.Tables[0]);
+        }
+
+        /// <summary>
         /// 将dataTable转为list
         /// </summary>
         /// <param name="dt">要转换的数据</param>
