@@ -5707,11 +5707,12 @@
             form表单相关
             </summary>
         </member>
-        <member name="M:XCLNetTools.StringHander.FormHelper.GetQueryOrFormString(System.String)">
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetQueryOrFormString(System.String,System.String)">
             <summary>
-            获取request参数，先取querystring,若没有，再取formstring，若没有，则为string.Empty
+            获取request参数，先取querystring,若没有，再取formstring，若没有，则返回defaultValue参数值（该参数值默认为""）
             </summary>
             <param name="name">参数名</param>
+            <param name="defaultValue">当获取不到参数值时，该方法返回的值，默认为空字符串""</param>
             <returns>参数值</returns>
         </member>
         <member name="M:XCLNetTools.StringHander.FormHelper.GetQueryOrFormStringArray(System.String)">
@@ -5723,9 +5724,17 @@
         </member>
         <member name="M:XCLNetTools.StringHander.FormHelper.GetString(System.String)">
             <summary>
-            获取string参数
+            获取string参数，如果没有此参数，则返回""
             </summary>
             <param name="name">参数名</param>
+            <returns>参数值</returns>
+        </member>
+        <member name="M:XCLNetTools.StringHander.FormHelper.GetStringNull(System.String,System.String)">
+            <summary>
+            获取string参数，如果没有此参数，则返回defaultValue(默认为null)
+            </summary>
+            <param name="name">参数名</param>
+            <param name="defaultValue">默认值</param>
             <returns>参数值</returns>
         </member>
         <member name="M:XCLNetTools.StringHander.FormHelper.GetStringArray(System.String)">
