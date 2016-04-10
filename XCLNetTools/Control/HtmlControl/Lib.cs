@@ -78,5 +78,25 @@ namespace XCLNetTools.Control.HtmlControl
             }
             return str.ToString();
         }
+
+        /// <summary>
+        /// 将Dictionary转为select 的options
+        /// </summary>
+        /// <param name="dataSource">数据源</param>
+        /// <param name="options">选项</param>
+        /// <returns>option字符串</returns>
+        public static string GetOptions<TKey, TValue>(Dictionary<TKey, TValue> dataSource, SetOptionEntity options = null)
+        {
+            Dictionary<string, string> dic = null;
+            if (null != dataSource)
+            {
+                dic = new Dictionary<string, string>();
+                foreach (var m in dataSource)
+                {
+                    dic.Add(Convert.ToString(m.Key), Convert.ToString(m.Value));
+                }
+            }
+            return XCLNetTools.Control.HtmlControl.Lib.GetOptions(dic, options);
+        }
     }
 }
