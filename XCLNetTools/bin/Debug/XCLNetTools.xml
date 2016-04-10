@@ -135,6 +135,36 @@
             单位数字位所对应的汉字
             </summary>
         </member>
+        <member name="F:XCLNetTools.Common.Consts.NumberChar">
+            <summary>
+            阿拉伯数字字符 0~9
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.EngLowercaseLetterChar">
+            <summary>
+            英文小写字母 a~z
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.EngUppercaseLetterChar">
+            <summary>
+            英文大写字母 A~Z
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.EngLetterAndNumberChar">
+            <summary>
+            英文字母大写+英文字母小写+数字
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.EngLetterChar">
+            <summary>
+            英文字母小写+英文字母大写
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Common.Consts.EngLowercaseAndNumberChar">
+            <summary>
+            小写字母+数字
+            </summary>
+        </member>
         <member name="T:XCLNetTools.Common.DataTypeConvert">
             <summary>
             C#数据类型转换
@@ -6198,21 +6228,6 @@
             随机数操作类
             </summary>
         </member>
-        <member name="F:XCLNetTools.StringHander.RandomHelper.constant">
-            <summary>
-            英文字母+数字
-            </summary>
-        </member>
-        <member name="F:XCLNetTools.StringHander.RandomHelper.constantChar">
-            <summary>
-            英文字母
-            </summary>
-        </member>
-        <member name="F:XCLNetTools.StringHander.RandomHelper.arrString">
-            <summary>
-            小写字母+数字
-            </summary>
-        </member>
         <member name="M:XCLNetTools.StringHander.RandomHelper.GetRandomValue(System.Int32,System.Int32)">
             <summary>
             生成指定范围内的随机数（不重复）
@@ -6242,32 +6257,27 @@
             </summary>
             <returns>结果值</returns>
         </member>
-        <member name="M:XCLNetTools.StringHander.RandomHelper.GenerateRandom(System.Int32)">
+        <member name="M:XCLNetTools.StringHander.RandomHelper.GenerateRandom(System.Int32,System.Boolean)">
             <summary>
-            随机器生成数字和字母组合,区分大小写
+            随机生成数字和字母组合
             </summary>
             <param name="len">长度</param>
+            <param name="isIgnoreCase">是否区分大小写，默认为:false</param>
             <returns>结果值</returns>
         </member>
-        <member name="M:XCLNetTools.StringHander.RandomHelper.GenerateRandomToChars(System.Int32)">
+        <member name="M:XCLNetTools.StringHander.RandomHelper.GenerateRandomToChars(System.Int32,System.Boolean)">
             <summary>
-            随机生成只有字符的组合，区分大小写
+            随机生成只有字母的组合
             </summary>
             <param name="len">长度</param>
-            <returns>结果值</returns>
-        </member>
-        <member name="M:XCLNetTools.StringHander.RandomHelper.GetRand(System.Int32)">
-            <summary>
-            随机生成只有字符的组合，不区分大小写
-            </summary>
-            <param name="len">长度</param>
+            <param name="isIgnoreCase">是否区分大小写，默认为:false</param>
             <returns>结果值</returns>
         </member>
         <member name="M:XCLNetTools.StringHander.RandomHelper.GetGuidString(System.Int32)">
             <summary>
-            根据GUID生成唯一字符标示
+            截取GUID的前几个字符
             </summary>
-            <param name="len">长度</param>
+            <param name="len">指定的长度</param>
             <returns>结果值</returns>
         </member>
         <member name="T:XCLNetTools.StringHander.Rmb">

@@ -15,34 +15,6 @@ namespace XCLNetTools.StringHander
     /// </summary>
     public class RandomHelper
     {
-        #region 私有变量
-
-        /// <summary>
-        /// 英文字母+数字
-        /// </summary>
-        private static readonly char[] constant =
-          {
-            '0','1','2','3','4','5','6','7','8','9',
-            'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
-            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
-          };
-
-        /// <summary>
-        /// 英文字母
-        /// </summary>
-        private static readonly char[] constantChar =
-          {
-            'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
-            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
-          };
-
-        /// <summary>
-        /// 小写字母+数字
-        /// </summary>
-        private static readonly string[] arrString = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
-        #endregion 私有变量
-
         /// <summary>
         /// 生成指定范围内的随机数（不重复）
         /// </summary>
@@ -93,64 +65,67 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
-        /// 随机器生成数字和字母组合,区分大小写
+        /// 随机生成数字和字母组合
         /// </summary>
         /// <param name="len">长度</param>
+        /// <param name="isIgnoreCase">是否区分大小写，默认为:false</param>
         /// <returns>结果值</returns>
-        public static string GenerateRandom(int len)
+        public static string GenerateRandom(int len, bool isIgnoreCase = false)
         {
-            System.Text.StringBuilder newRandom = new System.Text.StringBuilder(62);
-            Random rd = new Random();
+            if (len <= 0)
+            {
+                return null;
+            }
+
+            char[] dataSource = isIgnoreCase ? XCLNetTools.Common.Consts.EngLowercaseAndNumberChar : XCLNetTools.Common.Consts.EngLetterAndNumberChar;
+
+            System.Text.StringBuilder newRandom = new System.Text.StringBuilder();
             for (int i = 0; i < len; i++)
             {
-                newRandom.Append(constant[rd.Next(62)]);
+                var temp = Guid.NewGuid().GetHashCode() % dataSource.Length;
+                temp = temp > 0 ? temp - 1 : dataSource.Length - 1;
+                newRandom.Append(dataSource[temp]);
             }
             return newRandom.ToString();
         }
 
         /// <summary>
-        /// 随机生成只有字符的组合，区分大小写
+        /// 随机生成只有字母的组合
         /// </summary>
         /// <param name="len">长度</param>
+        /// <param name="isIgnoreCase">是否区分大小写，默认为:false</param>
         /// <returns>结果值</returns>
-        public static string GenerateRandomToChars(int len)
+        public static string GenerateRandomToChars(int len, bool isIgnoreCase = false)
         {
-            System.Text.StringBuilder newRandom = new System.Text.StringBuilder(52);
-            Random rd = new Random();
+            if (len <= 0)
+            {
+                return null;
+            }
+            char[] dataSource = isIgnoreCase ? XCLNetTools.Common.Consts.EngLowercaseLetterChar : XCLNetTools.Common.Consts.EngLetterChar;
+
+            System.Text.StringBuilder newRandom = new System.Text.StringBuilder();
             for (int i = 0; i < len; i++)
             {
-                newRandom.Append(constantChar[rd.Next(52)]);
+                var temp = Guid.NewGuid().GetHashCode() % dataSource.Length;
+                temp = temp > 0 ? temp - 1 : dataSource.Length - 1;
+                newRandom.Append(dataSource[temp]);
             }
             return newRandom.ToString();
         }
 
         /// <summary>
-        /// 随机生成只有字符的组合，不区分大小写
+        /// 截取GUID的前几个字符
         /// </summary>
-        /// <param name="len">长度</param>
-        /// <returns>结果值</returns>
-        public static string GetRand(int len)
-        {
-            Random rnd = new Random();
-            string strTemp = "";
-            int rndNum;
-            for (int i = 0; i < len; i++)
-            {
-                rndNum = rnd.Next(35);
-                //得0~9的随机数
-                strTemp += arrString[rndNum];
-            }
-            return strTemp;
-        }
-
-        /// <summary>
-        /// 根据GUID生成唯一字符标示
-        /// </summary>
-        /// <param name="len">长度</param>
+        /// <param name="len">指定的长度</param>
         /// <returns>结果值</returns>
         public static string GetGuidString(int len)
         {
-            return System.Guid.NewGuid().ToString().Substring(0, len);
+            string g = System.Guid.NewGuid().ToString("N");
+            if (len > 0 && len <= g.Length)
+            {
+                g = g.Substring(0, len);
+            }
+            return g;
         }
     }
 }

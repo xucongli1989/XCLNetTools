@@ -8,6 +8,7 @@ Create By: XCL @ 2012
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace XCLNetTools.Common
@@ -170,5 +171,39 @@ namespace XCLNetTools.Common
         public const string RMBUnitName = "万仟佰拾亿仟佰拾万仟佰拾元角分";
 
         #endregion 人民币相关
+
+        #region 字母数字
+
+        /// <summary>
+        /// 阿拉伯数字字符 0~9
+        /// </summary>
+        public static readonly char[] NumberChar = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+        /// <summary>
+        /// 英文小写字母 a~z
+        /// </summary>
+        public static readonly char[] EngLowercaseLetterChar = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+
+        /// <summary>
+        /// 英文大写字母 A~Z
+        /// </summary>
+        public static readonly char[] EngUppercaseLetterChar = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
+        /// <summary>
+        /// 英文字母大写+英文字母小写+数字
+        /// </summary>
+        public static readonly char[] EngLetterAndNumberChar = EngUppercaseLetterChar.Concat(EngLowercaseLetterChar).Concat(NumberChar).ToArray();
+
+        /// <summary>
+        /// 英文字母小写+英文字母大写
+        /// </summary>
+        public static readonly char[] EngLetterChar = EngLowercaseLetterChar.Concat(EngUppercaseLetterChar).ToArray();
+
+        /// <summary>
+        /// 小写字母+数字
+        /// </summary>
+        public static readonly char[] EngLowercaseAndNumberChar = EngLowercaseLetterChar.Concat(NumberChar).ToArray();
+
+        #endregion 字母数字
     }
 }
