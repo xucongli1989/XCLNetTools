@@ -74,7 +74,7 @@ namespace XCLNetTools.Message
         /// <summary>
         /// 跳转方式
         /// </summary>
-        public RedirectTargetEnum RedirectTarget { get; set; }
+        public XCLNetTools.Enum.CommonEnum.RedirectTargetEnum RedirectTarget { get; set; }
 
         /// <summary>
         /// 当前请求是否为ajax请求
@@ -96,21 +96,5 @@ namespace XCLNetTools.Message
         /// 自定义输出对象
         /// </summary>
         public object CustomObject { get; set; }
-    }
-
-    /// <summary>
-    /// 跳转方式
-    /// </summary>
-    public enum RedirectTargetEnum
-    {
-        /// <summary>
-        /// 在当前页打开
-        /// </summary>
-        None = 0,
-
-        /// <summary>
-        /// 新窗口打开
-        /// </summary>
-        NewBlank = 1
     }
 }

@@ -203,6 +203,22 @@ namespace XCLNetTools.Enum
             ICON
         }
 
+        /// <summary>
+        /// XCLNetTools.Message.MessageModel 跳转方式
+        /// </summary>
+        public enum RedirectTargetEnum
+        {
+            /// <summary>
+            /// 在当前页打开
+            /// </summary>
+            None = 0,
+
+            /// <summary>
+            /// 新窗口打开
+            /// </summary>
+            NewBlank = 1
+        }
+
         #endregion 其它
     }
 }
