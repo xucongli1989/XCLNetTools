@@ -43,7 +43,7 @@ namespace XCLNetTools.Entity
             {
                 if (this._result is bool)
                 {
-                    throw new Exception("当Result为bool类型时，请读取IsSuccess属性即可！");
+                    return (TResult)(object)this.IsSuccess;
                 }
                 return this._result;
             }
@@ -97,7 +97,7 @@ namespace XCLNetTools.Entity
             {
                 if (this._result is bool)
                 {
-                    throw new Exception("当Result为bool类型时，请读取IsSuccess属性即可！");
+                    return (TResult)(object)this.IsSuccess;
                 }
                 return this._result;
             }
