@@ -22,11 +22,19 @@ namespace XCLNetTools.Entity
 
         /// <summary>
         /// 该方法执行的逻辑是否成功（默认为true）
+        /// （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
         /// </summary>
         public bool IsSuccess
         {
             get { return this._isSuccess; }
-            set { this._isSuccess = value; }
+            set
+            {
+                this._isSuccess = value;
+                if (this._result is bool)
+                {
+                    this._result = (TResult)(object)value;
+                }
+            }
         }
 
         /// <summary>
@@ -36,24 +44,21 @@ namespace XCLNetTools.Entity
 
         /// <summary>
         /// 该方法返回的结果
+        /// （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
         /// </summary>
         public TResult Result
         {
             get
             {
-                if (this._result is bool)
-                {
-                    return (TResult)(object)this.IsSuccess;
-                }
                 return this._result;
             }
             set
             {
+                this._result = value;
                 if (this._result is bool)
                 {
-                    throw new Exception("当Result为bool类型时，请设置IsSuccess属性即可！");
+                    this._isSuccess = (bool)(object)value;
                 }
-                this._result = value;
             }
         }
 
@@ -76,11 +81,19 @@ namespace XCLNetTools.Entity
 
         /// <summary>
         /// 该方法执行的逻辑是否成功（默认为true）
+        /// （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
         /// </summary>
         public bool IsSuccess
         {
             get { return this._isSuccess; }
-            set { this._isSuccess = value; }
+            set
+            {
+                this._isSuccess = value;
+                if (this._result is bool)
+                {
+                    this._result = (TResult)(object)value;
+                }
+            }
         }
 
         /// <summary>
@@ -90,24 +103,21 @@ namespace XCLNetTools.Entity
 
         /// <summary>
         /// 该方法返回的结果
+        /// （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
         /// </summary>
         public TResult Result
         {
             get
             {
-                if (this._result is bool)
-                {
-                    return (TResult)(object)this.IsSuccess;
-                }
                 return this._result;
             }
             set
             {
+                this._result = value;
                 if (this._result is bool)
                 {
-                    throw new Exception("当Result为bool类型时，请设置IsSuccess属性即可！");
+                    this._isSuccess = (bool)(object)value;
                 }
-                this._result = value;
             }
         }
 
