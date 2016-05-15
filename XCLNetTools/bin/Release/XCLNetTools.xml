@@ -2396,8 +2396,8 @@
         <member name="T:XCLNetTools.Entity.MethodResult`1">
             <summary>
             方法返回值实体，主要是方便一个方法输出多个信息时使用，同时也减少使用out返回结果信息
-            <typeparam name="T">方法返回的结果类型</typeparam>
             </summary>
+            <typeparam name="TResult">方法返回的结果类型</typeparam>
         </member>
         <member name="P:XCLNetTools.Entity.MethodResult`1.IsSuccess">
             <summary>
@@ -2415,6 +2415,33 @@
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.MethodResult`1.Data">
+            <summary>
+            其它数据（比如用dictionary存放不同的数据结果）
+            </summary>
+        </member>
+        <member name="T:XCLNetTools.Entity.MethodResult`2">
+            <summary>
+            方法返回值实体，主要是方便一个方法输出多个信息时使用，同时也减少使用out返回结果信息
+            </summary>
+            <typeparam name="TResult">方法返回的结果类型</typeparam>
+            <typeparam name="TData">Data属性的类型</typeparam>
+        </member>
+        <member name="P:XCLNetTools.Entity.MethodResult`2.IsSuccess">
+            <summary>
+            该方法执行的逻辑是否成功（默认为true）
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.MethodResult`2.Message">
+            <summary>
+            该方法返回的消息提示
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.MethodResult`2.Result">
+            <summary>
+            该方法返回的结果
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.MethodResult`2.Data">
             <summary>
             其它数据（比如用dictionary存放不同的数据结果）
             </summary>
@@ -3755,6 +3782,21 @@
         <member name="F:XCLNetTools.Enum.CommonEnum.StaticResourceTypeEnum.ICON">
             <summary>
             icon
+            </summary>
+        </member>
+        <member name="T:XCLNetTools.Enum.CommonEnum.RedirectTargetEnum">
+            <summary>
+            XCLNetTools.Message.MessageModel 跳转方式
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.RedirectTargetEnum.None">
+            <summary>
+            在当前页打开
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.RedirectTargetEnum.NewBlank">
+            <summary>
+            新窗口打开
             </summary>
         </member>
         <member name="T:XCLNetTools.Enum.EnumHelper">
@@ -5201,21 +5243,6 @@
         <member name="P:XCLNetTools.Message.MessageModel.CustomObject">
             <summary>
             自定义输出对象
-            </summary>
-        </member>
-        <member name="T:XCLNetTools.Message.RedirectTargetEnum">
-            <summary>
-            跳转方式
-            </summary>
-        </member>
-        <member name="F:XCLNetTools.Message.RedirectTargetEnum.None">
-            <summary>
-            在当前页打开
-            </summary>
-        </member>
-        <member name="F:XCLNetTools.Message.RedirectTargetEnum.NewBlank">
-            <summary>
-            新窗口打开
             </summary>
         </member>
         <member name="T:XCLNetTools.Message.Log">
