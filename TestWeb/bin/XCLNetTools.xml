@@ -2402,6 +2402,7 @@
         <member name="P:XCLNetTools.Entity.MethodResult`1.IsSuccess">
             <summary>
             该方法执行的逻辑是否成功（默认为true）
+            （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.MethodResult`1.Message">
@@ -2412,6 +2413,7 @@
         <member name="P:XCLNetTools.Entity.MethodResult`1.Result">
             <summary>
             该方法返回的结果
+            （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.MethodResult`1.Data">
@@ -2429,6 +2431,7 @@
         <member name="P:XCLNetTools.Entity.MethodResult`2.IsSuccess">
             <summary>
             该方法执行的逻辑是否成功（默认为true）
+            （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.MethodResult`2.Message">
@@ -2439,6 +2442,7 @@
         <member name="P:XCLNetTools.Entity.MethodResult`2.Result">
             <summary>
             该方法返回的结果
+            （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
             </summary>
         </member>
         <member name="P:XCLNetTools.Entity.MethodResult`2.Data">
