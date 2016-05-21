@@ -2670,6 +2670,51 @@
             action
             </summary>
         </member>
+        <member name="M:XCLNetTools.Entity.PagerInfo.ToPagerInfoSimple">
+            <summary>
+            转为PagerInfoSimple对象
+            </summary>
+            <returns>PagerInfoSimple对象</returns>
+        </member>
+        <member name="T:XCLNetTools.Entity.PagerInfoSimple">
+            <summary>
+            分页信息简易model
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.Entity.PagerInfoSimple.#ctor">
+            <summary>
+            默认构造
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.Entity.PagerInfoSimple.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="pageIndex">当前为第几页</param>
+            <param name="pageSize">每页最多显示多少条记录</param>
+            <param name="recordCount">记录总数</param>
+        </member>
+        <member name="P:XCLNetTools.Entity.PagerInfoSimple.PageIndex">
+            <summary>
+            当前为第几页
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.PagerInfoSimple.PageSize">
+            <summary>
+            每页最多显示多少条记录
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.PagerInfoSimple.RecordCount">
+            <summary>
+            记录总数
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.Entity.PagerInfoSimple.ToPagerInfo">
+            <summary>
+            转为PagerInfo对象
+            </summary>
+            <returns>PagerInfo对象</returns>
+        </member>
         <member name="T:XCLNetTools.Entity.KeyValue">
             <summary>
             键值类
@@ -5089,6 +5134,27 @@
             </summary>
             <param name="source">要克隆的对象</param>
             <returns>克隆后的新对象</returns>
+        </member>
+        <member name="M:XCLNetTools.Serialize.Lib.JObjectFillDictionary(System.Collections.Generic.Dictionary{System.String,System.String},Newtonsoft.Json.Linq.JProperty)">
+            <summary>
+            将JObject的属性填充至指定的dictionary
+            </summary>
+            <param name="result">结果</param>
+            <param name="p">JObject的属性</param>
+        </member>
+        <member name="M:XCLNetTools.Serialize.Lib.ConvertJObjectToDictionary(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            将JObject类型的属性转换为dictionary
+            </summary>
+            <returns>dictionary结果</returns>
+        </member>
+        <member name="M:XCLNetTools.Serialize.Lib.ConvertJObjectToUrlParameters(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            将JObject的属性转换为url参数形式
+            如：{"a":"1","b":"2","c":{"d":"100"}} -> a=1&amp;b=2&amp;c[d]=100
+            </summary>
+            <param name="obj">需要转换的对象</param>
+            <returns>url参数字符串</returns>
         </member>
         <member name="T:XCLNetTools.Serialize.XML">
             <summary>
