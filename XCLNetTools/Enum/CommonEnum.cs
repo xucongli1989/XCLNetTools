@@ -219,6 +219,32 @@ namespace XCLNetTools.Enum
             NewBlank = 1
         }
 
+        /// <summary>
+        /// select options 字段类型枚举
+        /// </summary>
+        public enum SelectOptionFieldEnum
+        {
+            /// <summary>
+            /// 未指定
+            /// </summary>
+            None,
+
+            /// <summary>
+            /// 文本
+            /// </summary>
+            Text,
+
+            /// <summary>
+            /// value值
+            /// </summary>
+            Value,
+
+            /// <summary>
+            /// 描述
+            /// </summary>
+            Description
+        }
+
         #endregion 其它
     }
 }

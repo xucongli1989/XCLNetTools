@@ -568,6 +568,7 @@
         <member name="M:XCLNetTools.Control.HtmlControl.Lib.GetOptions(System.Collections.Generic.Dictionary{System.String,System.String},XCLNetTools.Entity.SetOptionEntity)">
             <summary>
             将Dictionary转为select 的options
+            注：option的text为字典的key,value为字典的value
             </summary>
             <param name="dataSource">数据源</param>
             <param name="options">选项</param>
@@ -576,6 +577,7 @@
         <member name="M:XCLNetTools.Control.HtmlControl.Lib.GetOptions``2(System.Collections.Generic.Dictionary{``0,``1},XCLNetTools.Entity.SetOptionEntity)">
             <summary>
             将Dictionary转为select 的options
+            注：option的text为字典的key,value为字典的value
             </summary>
             <param name="dataSource">数据源</param>
             <param name="options">选项</param>
@@ -2465,6 +2467,16 @@
             默认选中的项
             </summary>
         </member>
+        <member name="P:XCLNetTools.Entity.SetOptionEntity.TextFieldEnum">
+            <summary>
+            Text字段类型，默认为：None
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SetOptionEntity.ValueFieldEnum">
+            <summary>
+            Value字段类型，默认为：None
+            </summary>
+        </member>
         <member name="T:XCLNetTools.Entity.Office.ExcelHandler.OutPutClass">
             <summary>
             导出字段实体类
@@ -3846,6 +3858,31 @@
         <member name="F:XCLNetTools.Enum.CommonEnum.RedirectTargetEnum.NewBlank">
             <summary>
             新窗口打开
+            </summary>
+        </member>
+        <member name="T:XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum">
+            <summary>
+            select options 字段类型枚举
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum.None">
+            <summary>
+            未指定
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum.Value">
+            <summary>
+            value值
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum.Description">
+            <summary>
+            描述
             </summary>
         </member>
         <member name="T:XCLNetTools.Enum.EnumHelper">
