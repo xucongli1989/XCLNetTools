@@ -7,7 +7,7 @@ Create By: XCL @ 2012
  */
 
 using System;
-using static XCLNetTools.Enum.CommonEnum;
+using XCLNetTools.Enum;
 
 namespace XCLNetTools.Entity
 {
@@ -18,8 +18,8 @@ namespace XCLNetTools.Entity
     public class SetOptionEntity
     {
         private bool _isNeedPleaseSelect = true;
-        private SelectOptionFieldEnum _textFieldEnum = SelectOptionFieldEnum.None;
-        private SelectOptionFieldEnum _valueFieldEnum = SelectOptionFieldEnum.None;
+        private XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum _textFieldEnum = XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum.None;
+        private XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum _valueFieldEnum = XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum.None;
 
         /// <summary>
         /// 是否需要生成"请选择"的option
@@ -44,7 +44,7 @@ namespace XCLNetTools.Entity
         /// <summary>
         /// Text字段类型，默认为：None
         /// </summary>
-        public SelectOptionFieldEnum TextFieldEnum
+        public XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum TextFieldEnum
         {
             get { return this._textFieldEnum; }
             set { this._textFieldEnum = value; }
@@ -53,7 +53,7 @@ namespace XCLNetTools.Entity
         /// <summary>
         /// Value字段类型，默认为：None
         /// </summary>
-        public SelectOptionFieldEnum ValueFieldEnum
+        public XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum ValueFieldEnum
         {
             get { return this._valueFieldEnum; }
             set { this._valueFieldEnum = value; }

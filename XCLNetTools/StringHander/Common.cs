@@ -8,6 +8,7 @@ Create By: XCL @ 2012
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -545,6 +546,18 @@ namespace XCLNetTools.StringHander
                 }
             }
             return flag;
+        }
+
+        /// <summary>
+        /// 判断指定值是否为指定的类型
+        /// </summary>
+        /// <typeparam name="T">是否为此类型</typeparam>
+        /// <param name="val">需要判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool Is<T>(string val)
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(T));
+            return converter.IsValid(val);
         }
 
         #endregion 其它
