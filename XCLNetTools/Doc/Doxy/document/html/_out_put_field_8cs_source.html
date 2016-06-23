@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XCLNetTools: E:/GitHub/XCLNetTools/XCLNetTools/Entity/Office/ExcelHandler/OutPutField.cs 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XCLNetTools
+   &#160;<span id="projectnumber">XCLNetTools 2.4</span>
+   </div>
+   <div id="projectbrief">.Net公共类库dll</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>包</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a625c670f828dfaff80322b07e1365a6.html">Entity</a></li><li class="navelem"><a class="el" href="dir_a54cefdf7579a40295a9934d8d55b6c1.html">Office</a></li><li class="navelem"><a class="el" href="dir_dbbc43fa095a2c29e1fdc815f4860fa7.html">ExcelHandler</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">OutPutField.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_out_put_field_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">一：基本信息：</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">开源协议：https://github.com/xucongli1989/XCLNetTools/blob/master/LICENSE</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">项目地址：https://github.com/xucongli1989/XCLNetTools</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">Create By: XCL @ 2012</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_x_c_l_net_tools.html">XCLNetTools</a>.Entity.Office.ExcelHandler</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_field.html">   14</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_field.html">OutPutField</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_field.html#a6f62cc17246410ac6f6a352cd04bc1a2">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> oldName { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_field.html#a5889d2738a4a65d809b67457e37429fd">   24</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> newName { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div><div class="ttc" id="namespace_x_c_l_net_tools_html"><div class="ttname"><a href="namespace_x_c_l_net_tools.html">XCLNetTools</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_field_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_field.html">XCLNetTools.Entity.Office.ExcelHandler.OutPutField</a></div><div class="ttdoc">要导出的字段类 </div><div class="ttdef"><b>Definition:</b> <a href="_out_put_field_8cs_source.html#l00014">OutPutField.cs:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2016年 六月 23日 星期四 17:11:49 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

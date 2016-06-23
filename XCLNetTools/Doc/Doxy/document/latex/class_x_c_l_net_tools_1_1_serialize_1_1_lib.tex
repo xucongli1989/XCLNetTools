@@ -1,0 +1,133 @@
+\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib}{}\section{X\+C\+L\+Net\+Tools.\+Serialize.\+Lib类 参考}
+\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib}\index{X\+C\+L\+Net\+Tools.\+Serialize.\+Lib@{X\+C\+L\+Net\+Tools.\+Serialize.\+Lib}}
+
+
+其它对象序列化相关  
+
+
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ae2d400cea76a1f11f5141deab7c6d2b1}{Deserialize\+Object$<$ T $>$} (byte\mbox{[}$\,$\mbox{]} p\+Bytes)
+\begin{DoxyCompactList}\small\item\em 把字节反序列化成相应的对象 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static T \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ad38f60aaa57643027af6ebc86ef7fe18}{Deep\+Clone$<$ T $>$} (T source)
+\begin{DoxyCompactList}\small\item\em 对象深度clone（被clone对象必须可以序列化） \end{DoxyCompactList}\item 
+static Dictionary$<$ string, string $>$ \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a78ec8810cf5fd723c9efb1b77c725016}{Convert\+J\+Object\+To\+Dictionary} (J\+Object obj)
+\begin{DoxyCompactList}\small\item\em 将\+J\+Object类型的属性转换为dictionary \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a1abb5037041804cc79336bd031c3f4df}{Convert\+J\+Object\+To\+Url\+Parameters} (J\+Object obj)
+\begin{DoxyCompactList}\small\item\em 将\+J\+Object的属性转换为url参数形式 如：\{\char`\"{}a\char`\"{}\+:\char`\"{}1\char`\"{},\char`\"{}b\char`\"{}\+:\char`\"{}2\char`\"{},\char`\"{}c\char`\"{}\+:\{\char`\"{}d\char`\"{}\+:\char`\"{}100\char`\"{}\}\} -\/$>$ a=1\&b=2\&c\mbox{[}d\mbox{]}=100 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+其它对象序列化相关 
+
+
+
+在文件 Lib.\+cs 第 22 行定义.
+
+
+
+\subsection{成员函数说明}
+\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Convert\+J\+Object\+To\+Dictionary@{Convert\+J\+Object\+To\+Dictionary}}
+\index{Convert\+J\+Object\+To\+Dictionary@{Convert\+J\+Object\+To\+Dictionary}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
+\subsubsection[{\texorpdfstring{Convert\+J\+Object\+To\+Dictionary(\+J\+Object obj)}{ConvertJObjectToDictionary(JObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}static Dictionary$<$string, string$>$ X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Convert\+J\+Object\+To\+Dictionary (
+\begin{DoxyParamCaption}
+\item[{J\+Object}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a78ec8810cf5fd723c9efb1b77c725016}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a78ec8810cf5fd723c9efb1b77c725016}
+
+
+将\+J\+Object类型的属性转换为dictionary 
+
+\begin{DoxyReturn}{返回}
+dictionary结果
+\end{DoxyReturn}
+
+
+在文件 Lib.\+cs 第 115 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Convert\+J\+Object\+To\+Url\+Parameters@{Convert\+J\+Object\+To\+Url\+Parameters}}
+\index{Convert\+J\+Object\+To\+Url\+Parameters@{Convert\+J\+Object\+To\+Url\+Parameters}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
+\subsubsection[{\texorpdfstring{Convert\+J\+Object\+To\+Url\+Parameters(\+J\+Object obj)}{ConvertJObjectToUrlParameters(JObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}static string X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Convert\+J\+Object\+To\+Url\+Parameters (
+\begin{DoxyParamCaption}
+\item[{J\+Object}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a1abb5037041804cc79336bd031c3f4df}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a1abb5037041804cc79336bd031c3f4df}
+
+
+将\+J\+Object的属性转换为url参数形式 如：\{\char`\"{}a\char`\"{}\+:\char`\"{}1\char`\"{},\char`\"{}b\char`\"{}\+:\char`\"{}2\char`\"{},\char`\"{}c\char`\"{}\+:\{\char`\"{}d\char`\"{}\+:\char`\"{}100\char`\"{}\}\} -\/$>$ a=1\&b=2\&c\mbox{[}d\mbox{]}=100 
+
+
+\begin{DoxyParams}{参数}
+{\em obj} & 需要转换的对象\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+url参数字符串
+\end{DoxyReturn}
+
+
+在文件 Lib.\+cs 第 136 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Deep\+Clone$<$ T $>$@{Deep\+Clone$<$ T $>$}}
+\index{Deep\+Clone$<$ T $>$@{Deep\+Clone$<$ T $>$}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
+\subsubsection[{\texorpdfstring{Deep\+Clone$<$ T $>$(\+T source)}{DeepClone< T >(T source)}}]{\setlength{\rightskip}{0pt plus 5cm}static T X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Deep\+Clone$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{T}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ad38f60aaa57643027af6ebc86ef7fe18}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ad38f60aaa57643027af6ebc86ef7fe18}
+
+
+对象深度clone（被clone对象必须可以序列化） 
+
+
+\begin{DoxyParams}{参数}
+{\em source} & 要克隆的对象\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+克隆后的新对象
+\end{DoxyReturn}
+\begin{Desc}
+\item[类型限制]\begin{description}
+\item[{\em T} : {\em class}]\end{description}
+\end{Desc}
+
+
+在文件 Lib.\+cs 第 56 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Deserialize\+Object$<$ T $>$@{Deserialize\+Object$<$ T $>$}}
+\index{Deserialize\+Object$<$ T $>$@{Deserialize\+Object$<$ T $>$}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
+\subsubsection[{\texorpdfstring{Deserialize\+Object$<$ T $>$(byte[] p\+Bytes)}{DeserializeObject< T >(byte[] pBytes)}}]{\setlength{\rightskip}{0pt plus 5cm}T X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Deserialize\+Object$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{byte\mbox{[}$\,$\mbox{]}}]{p\+Bytes}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ae2d400cea76a1f11f5141deab7c6d2b1}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ae2d400cea76a1f11f5141deab7c6d2b1}
+
+
+把字节反序列化成相应的对象 
+
+
+\begin{DoxyParams}{参数}
+{\em p\+Bytes} & 字节流\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+T
+\end{DoxyReturn}
+\begin{Desc}
+\item[类型限制]\begin{description}
+\item[{\em T} : {\em class}]\end{description}
+\end{Desc}
+
+
+在文件 Lib.\+cs 第 31 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Git\+Hub/\+X\+C\+L\+Net\+Tools/\+X\+C\+L\+Net\+Tools/\+Serialize/\hyperlink{_serialize_2_lib_8cs}{Lib.\+cs}\end{DoxyCompactItemize}

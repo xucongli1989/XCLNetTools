@@ -1,0 +1,640 @@
+\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client}{}\section{X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client类 参考}
+\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client}\index{X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client}}
+
+
+F\+T\+P操作客户端类 \begin{DoxySeeAlso}{参见}
+http\+://www.\+cnblogs.\+com/sufei/archive/2012/12/09/2810197.\+html
+
+
+\end{DoxySeeAlso}
+ 
+
+
+\subsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707}{Transfer\+Type} \{ \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707a6ce976e8f061b2b5cfe4d0c50c3405dd}{Transfer\+Type.\+Binary}, 
+\hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707ad2cd8253361a9c732d21ca1d336599cc}{Transfer\+Type.\+A\+S\+C\+II}
+ \}\begin{DoxyCompactList}\small\item\em 传输模式\+:二进制类型、\+A\+S\+C\+I\+I类型 \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a676653f395ab68c5da43f284bf06a18e}{F\+T\+P\+Client} ()
+\begin{DoxyCompactList}\small\item\em 缺省构造函数 \end{DoxyCompactList}\item 
+\hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a8ce62cd58f4f1825fcb38503fffd664c}{F\+T\+P\+Client} (string remote\+Host, string remote\+Path, string remote\+User, string remote\+Pass, int remote\+Port)
+\begin{DoxyCompactList}\small\item\em 构造函数 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a80b5588cccdbc0fc599da3b065c17824}{Connect} ()
+\begin{DoxyCompactList}\small\item\em 建立连接 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a68ed147abe1a9c0425e7168b37519979}{Dis\+Connect} ()
+\begin{DoxyCompactList}\small\item\em 关闭连接 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a34ec9858385eb10edb576ee871a0e02f}{Set\+Transfer\+Type} (\hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707}{Transfer\+Type} tt\+Type)
+\begin{DoxyCompactList}\small\item\em 设置传输模式 \end{DoxyCompactList}\item 
+\hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707}{Transfer\+Type} \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_abc5c0e7353bbbf20f1dcc1ee2f5d5c3f}{Get\+Transfer\+Type} ()
+\begin{DoxyCompactList}\small\item\em 获得传输模式 \end{DoxyCompactList}\item 
+string\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a9563c1fa35e755073b9b279caaf7e354}{Dir} (string str\+Mask)
+\begin{DoxyCompactList}\small\item\em 获得文件列表 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a502eb52b0575947170695c4fcbccc10a}{new\+Put\+By\+Guid} (string str\+File\+Name, string str\+Guid)
+\item 
+long \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a39be7d18214835a62484226fc12e2061}{Get\+File\+Size} (string str\+File\+Name)
+\begin{DoxyCompactList}\small\item\em 获取文件大小 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_abcdeced5a90923ad5788251d4012694f}{Get\+File\+Info} (string str\+File\+Name)
+\begin{DoxyCompactList}\small\item\em 获取文件信息 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a1be296574d7342283c236d8b51ca2b04}{Delete} (string str\+File\+Name)
+\begin{DoxyCompactList}\small\item\em 删除 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aaadb1ae86c64e8ec958e8333fc6b9bce}{Rename} (string str\+Old\+File\+Name, string str\+New\+File\+Name)
+\begin{DoxyCompactList}\small\item\em 重命名(如果新文件名与已有文件重名,将覆盖已有文件) \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a67852a51f561336c777b896af2e95990}{Get} (string str\+File\+Name\+Mask, string str\+Folder)
+\begin{DoxyCompactList}\small\item\em 下载一批文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a87ce6305af9ccb5e04b0669bd0eac812}{Get} (string str\+Remote\+File\+Name, string str\+Folder, string str\+Local\+File\+Name)
+\begin{DoxyCompactList}\small\item\em 下载一个文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a7648a7d3ce55e3332618aca711c3d6ea}{Get\+No\+Binary} (string str\+Remote\+File\+Name, string str\+Folder, string str\+Local\+File\+Name)
+\begin{DoxyCompactList}\small\item\em 下载一个文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aa610dab6dd9699203f7d4da488b3ca20}{Put} (string str\+Folder, string str\+File\+Name\+Mask)
+\begin{DoxyCompactList}\small\item\em 上传一批文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a0ce0fbef1a6c4a2c872315c104f8fd62}{Put} (string str\+File\+Name)
+\begin{DoxyCompactList}\small\item\em 上传一个文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a9f333aedd5467c2fdc46d33298dc9dbb}{Put\+By\+Guid} (string str\+File\+Name, string str\+Guid)
+\begin{DoxyCompactList}\small\item\em 上传一个文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aaf6ecfb2034736ffe5f88945ec873efe}{Mk\+Dir} (string str\+Dir\+Name)
+\begin{DoxyCompactList}\small\item\em 创建目录 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a4c4167a6afd00ed6e1f5303e59555037}{Rm\+Dir} (string str\+Dir\+Name)
+\begin{DoxyCompactList}\small\item\em 删除目录 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a6345c0af7cd414503395170157d0db3b}{Ch\+Dir} (string str\+Dir\+Name)
+\begin{DoxyCompactList}\small\item\em 改变目录 \end{DoxyCompactList}\item 
+void \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af99f1f4bd038882ec30bdf4e89d73d4a}{Send\+Command} (String str\+Command)
+\begin{DoxyCompactList}\small\item\em 发送命令并获取应答码和最后一行应答字符串 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{属性}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a020891b3ab32deba2b8e2b2204349f1d}{Remote\+Host}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em F\+T\+P服务器\+I\+P地址 \end{DoxyCompactList}\item 
+int \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af47bf07406237f3bd179472debf9c84d}{Remote\+Port}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em F\+T\+P服务器端口 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a6dd534c17624097f4c29442ce3e5a176}{Remote\+Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 当前服务器目录 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_ab97c698dca9a54f44b1e69cb15c1126d}{Remote\+User}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 登录用户账号 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a89a0c18691dfde35bdb46696a0344bff}{Remote\+Pass}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 用户登录密码 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af3e0775ddf1dc1530b82b5b0a6aa4d25}{Connected}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 是否登录 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+F\+T\+P操作客户端类 \begin{DoxySeeAlso}{参见}
+http\+://www.\+cnblogs.\+com/sufei/archive/2012/12/09/2810197.\+html
+
+
+\end{DoxySeeAlso}
+
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 22 行定义.
+
+
+
+\subsection{成员枚举类型说明}
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Transfer\+Type@{Transfer\+Type}}
+\index{Transfer\+Type@{Transfer\+Type}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Transfer\+Type}{TransferType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Transfer\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707}
+
+
+传输模式\+:二进制类型、\+A\+S\+C\+I\+I类型 
+
+\begin{Desc}
+\item[枚举值]\par
+\begin{description}
+\index{Binary@{Binary}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Binary@{Binary}}\item[{\em 
+Binary\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707a6ce976e8f061b2b5cfe4d0c50c3405dd}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707a6ce976e8f061b2b5cfe4d0c50c3405dd}
+}]二进制类型 \index{A\+S\+C\+II@{A\+S\+C\+II}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!A\+S\+C\+II@{A\+S\+C\+II}}\item[{\em 
+A\+S\+C\+II\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707ad2cd8253361a9c732d21ca1d336599cc}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_adef28404af1c916d9bd2bfbfa924b707ad2cd8253361a9c732d21ca1d336599cc}
+}]A\+S\+C\+I\+I类型 \end{description}
+\end{Desc}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 253 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!F\+T\+P\+Client@{F\+T\+P\+Client}}
+\index{F\+T\+P\+Client@{F\+T\+P\+Client}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{F\+T\+P\+Client()}{FTPClient()}}]{\setlength{\rightskip}{0pt plus 5cm}X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+F\+T\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a676653f395ab68c5da43f284bf06a18e}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a676653f395ab68c5da43f284bf06a18e}
+
+
+缺省构造函数 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 31 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!F\+T\+P\+Client@{F\+T\+P\+Client}}
+\index{F\+T\+P\+Client@{F\+T\+P\+Client}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{F\+T\+P\+Client(string remote\+Host, string remote\+Path, string remote\+User, string remote\+Pass, int remote\+Port)}{FTPClient(string remoteHost, string remotePath, string remoteUser, string remotePass, int remotePort)}}]{\setlength{\rightskip}{0pt plus 5cm}X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+F\+T\+P\+Client (
+\begin{DoxyParamCaption}
+\item[{string}]{remote\+Host, }
+\item[{string}]{remote\+Path, }
+\item[{string}]{remote\+User, }
+\item[{string}]{remote\+Pass, }
+\item[{int}]{remote\+Port}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a8ce62cd58f4f1825fcb38503fffd664c}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a8ce62cd58f4f1825fcb38503fffd664c}
+
+
+构造函数 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 44 行定义.
+
+
+
+\subsection{成员函数说明}
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Ch\+Dir@{Ch\+Dir}}
+\index{Ch\+Dir@{Ch\+Dir}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Ch\+Dir(string str\+Dir\+Name)}{ChDir(string strDirName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Ch\+Dir (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Dir\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a6345c0af7cd414503395170157d0db3b}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a6345c0af7cd414503395170157d0db3b}
+
+
+改变目录 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Dir\+Name} & 新的工作目录名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 756 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Connect@{Connect}}
+\index{Connect@{Connect}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Connect()}{Connect()}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a80b5588cccdbc0fc599da3b065c17824}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a80b5588cccdbc0fc599da3b065c17824}
+
+
+建立连接 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 194 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Delete@{Delete}}
+\index{Delete@{Delete}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Delete(string str\+File\+Name)}{Delete(string strFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Delete (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a1be296574d7342283c236d8b51ca2b04}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a1be296574d7342283c236d8b51ca2b04}
+
+
+删除 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+File\+Name} & 待删除文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 446 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Dir@{Dir}}
+\index{Dir@{Dir}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Dir(string str\+Mask)}{Dir(string strMask)}}]{\setlength{\rightskip}{0pt plus 5cm}string \mbox{[}$\,$\mbox{]} X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Dir (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Mask}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a9563c1fa35e755073b9b279caaf7e354}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a9563c1fa35e755073b9b279caaf7e354}
+
+
+获得文件列表 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Mask} & 文件名的匹配字符串\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 307 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Dis\+Connect@{Dis\+Connect}}
+\index{Dis\+Connect@{Dis\+Connect}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Dis\+Connect()}{DisConnect()}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Dis\+Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a68ed147abe1a9c0425e7168b37519979}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a68ed147abe1a9c0425e7168b37519979}
+
+
+关闭连接 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 237 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Get@{Get}}
+\index{Get@{Get}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Get(string str\+File\+Name\+Mask, string str\+Folder)}{Get(string strFileNameMask, string strFolder)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Get (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+File\+Name\+Mask, }
+\item[{string}]{str\+Folder}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a67852a51f561336c777b896af2e95990}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a67852a51f561336c777b896af2e95990}
+
+
+下载一批文件 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+File\+Name\+Mask} & 文件名的匹配字符串\\
+\hline
+{\em str\+Folder} & 本地目录(不得以\textbackslash{}结束)\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 492 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Get@{Get}}
+\index{Get@{Get}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Get(string str\+Remote\+File\+Name, string str\+Folder, string str\+Local\+File\+Name)}{Get(string strRemoteFileName, string strFolder, string strLocalFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Get (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Remote\+File\+Name, }
+\item[{string}]{str\+Folder, }
+\item[{string}]{str\+Local\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a87ce6305af9ccb5e04b0669bd0eac812}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a87ce6305af9ccb5e04b0669bd0eac812}
+
+
+下载一个文件 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Remote\+File\+Name} & 要下载的文件名\\
+\hline
+{\em str\+Folder} & 本地目录(不得以\textbackslash{}结束)\\
+\hline
+{\em str\+Local\+File\+Name} & 保存在本地时的文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 514 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Get\+File\+Info@{Get\+File\+Info}}
+\index{Get\+File\+Info@{Get\+File\+Info}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Get\+File\+Info(string str\+File\+Name)}{GetFileInfo(string strFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}string X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Get\+File\+Info (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_abcdeced5a90923ad5788251d4012694f}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_abcdeced5a90923ad5788251d4012694f}
+
+
+获取文件信息 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+File\+Name} & 文件名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+文件大小
+\end{DoxyReturn}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 410 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Get\+File\+Size@{Get\+File\+Size}}
+\index{Get\+File\+Size@{Get\+File\+Size}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Get\+File\+Size(string str\+File\+Name)}{GetFileSize(string strFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}long X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Get\+File\+Size (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a39be7d18214835a62484226fc12e2061}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a39be7d18214835a62484226fc12e2061}
+
+
+获取文件大小 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+File\+Name} & 文件名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+文件大小
+\end{DoxyReturn}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 386 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Get\+No\+Binary@{Get\+No\+Binary}}
+\index{Get\+No\+Binary@{Get\+No\+Binary}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Get\+No\+Binary(string str\+Remote\+File\+Name, string str\+Folder, string str\+Local\+File\+Name)}{GetNoBinary(string strRemoteFileName, string strFolder, string strLocalFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Get\+No\+Binary (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Remote\+File\+Name, }
+\item[{string}]{str\+Folder, }
+\item[{string}]{str\+Local\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a7648a7d3ce55e3332618aca711c3d6ea}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a7648a7d3ce55e3332618aca711c3d6ea}
+
+
+下载一个文件 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Remote\+File\+Name} & 要下载的文件名\\
+\hline
+{\em str\+Folder} & 本地目录(不得以\textbackslash{}结束)\\
+\hline
+{\em str\+Local\+File\+Name} & 保存在本地时的文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 573 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Get\+Transfer\+Type@{Get\+Transfer\+Type}}
+\index{Get\+Transfer\+Type@{Get\+Transfer\+Type}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Get\+Transfer\+Type()}{GetTransferType()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transfer\+Type} X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Get\+Transfer\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_abc5c0e7353bbbf20f1dcc1ee2f5d5c3f}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_abc5c0e7353bbbf20f1dcc1ee2f5d5c3f}
+
+
+获得传输模式 
+
+\begin{DoxyReturn}{返回}
+传输模式
+\end{DoxyReturn}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 294 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Mk\+Dir@{Mk\+Dir}}
+\index{Mk\+Dir@{Mk\+Dir}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Mk\+Dir(string str\+Dir\+Name)}{MkDir(string strDirName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Mk\+Dir (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Dir\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aaf6ecfb2034736ffe5f88945ec873efe}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aaf6ecfb2034736ffe5f88945ec873efe}
+
+
+创建目录 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Dir\+Name} & 目录名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 722 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!new\+Put\+By\+Guid@{new\+Put\+By\+Guid}}
+\index{new\+Put\+By\+Guid@{new\+Put\+By\+Guid}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{new\+Put\+By\+Guid(string str\+File\+Name, string str\+Guid)}{newPutByGuid(string strFileName, string strGuid)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+new\+Put\+By\+Guid (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+File\+Name, }
+\item[{string}]{str\+Guid}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a502eb52b0575947170695c4fcbccc10a}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a502eb52b0575947170695c4fcbccc10a}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 344 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Put@{Put}}
+\index{Put@{Put}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Put(string str\+Folder, string str\+File\+Name\+Mask)}{Put(string strFolder, string strFileNameMask)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Put (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Folder, }
+\item[{string}]{str\+File\+Name\+Mask}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aa610dab6dd9699203f7d4da488b3ca20}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aa610dab6dd9699203f7d4da488b3ca20}
+
+
+上传一批文件 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Folder} & 本地目录(不得以\textbackslash{}结束)\\
+\hline
+{\em str\+File\+Name\+Mask} & 文件名匹配字符(可以包含$\ast$和?)\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 620 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Put@{Put}}
+\index{Put@{Put}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Put(string str\+File\+Name)}{Put(string strFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Put (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a0ce0fbef1a6c4a2c872315c104f8fd62}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a0ce0fbef1a6c4a2c872315c104f8fd62}
+
+
+上传一个文件 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+File\+Name} & 本地文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 633 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Put\+By\+Guid@{Put\+By\+Guid}}
+\index{Put\+By\+Guid@{Put\+By\+Guid}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Put\+By\+Guid(string str\+File\+Name, string str\+Guid)}{PutByGuid(string strFileName, string strGuid)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Put\+By\+Guid (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+File\+Name, }
+\item[{string}]{str\+Guid}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a9f333aedd5467c2fdc46d33298dc9dbb}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a9f333aedd5467c2fdc46d33298dc9dbb}
+
+
+上传一个文件 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+File\+Name} & 本地文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 675 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Rename@{Rename}}
+\index{Rename@{Rename}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Rename(string str\+Old\+File\+Name, string str\+New\+File\+Name)}{Rename(string strOldFileName, string strNewFileName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Rename (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Old\+File\+Name, }
+\item[{string}]{str\+New\+File\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aaadb1ae86c64e8ec958e8333fc6b9bce}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_aaadb1ae86c64e8ec958e8333fc6b9bce}
+
+
+重命名(如果新文件名与已有文件重名,将覆盖已有文件) 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Old\+File\+Name} & 旧文件名\\
+\hline
+{\em str\+New\+File\+Name} & 新文件名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 464 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Rm\+Dir@{Rm\+Dir}}
+\index{Rm\+Dir@{Rm\+Dir}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Rm\+Dir(string str\+Dir\+Name)}{RmDir(string strDirName)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Rm\+Dir (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Dir\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a4c4167a6afd00ed6e1f5303e59555037}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a4c4167a6afd00ed6e1f5303e59555037}
+
+
+删除目录 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Dir\+Name} & 目录名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 739 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Send\+Command@{Send\+Command}}
+\index{Send\+Command@{Send\+Command}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Send\+Command(\+String str\+Command)}{SendCommand(String strCommand)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Send\+Command (
+\begin{DoxyParamCaption}
+\item[{String}]{str\+Command}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af99f1f4bd038882ec30bdf4e89d73d4a}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af99f1f4bd038882ec30bdf4e89d73d4a}
+
+
+发送命令并获取应答码和最后一行应答字符串 
+
+
+\begin{DoxyParams}{参数}
+{\em str\+Command} & 命令\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 898 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Set\+Transfer\+Type@{Set\+Transfer\+Type}}
+\index{Set\+Transfer\+Type@{Set\+Transfer\+Type}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Set\+Transfer\+Type(\+Transfer\+Type tt\+Type)}{SetTransferType(TransferType ttType)}}]{\setlength{\rightskip}{0pt plus 5cm}void X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Set\+Transfer\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Transfer\+Type}}]{tt\+Type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a34ec9858385eb10edb576ee871a0e02f}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a34ec9858385eb10edb576ee871a0e02f}
+
+
+设置传输模式 
+
+
+\begin{DoxyParams}{参数}
+{\em tt\+Type} & 传输模式\\
+\hline
+\end{DoxyParams}
+
+
+在文件 F\+T\+P\+Client.\+cs 第 270 行定义.
+
+
+
+\subsection{属性说明}
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Connected@{Connected}}
+\index{Connected@{Connected}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Connected}{Connected}}]{\setlength{\rightskip}{0pt plus 5cm}bool X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Connected\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af3e0775ddf1dc1530b82b5b0a6aa4d25}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af3e0775ddf1dc1530b82b5b0a6aa4d25}
+
+
+是否登录 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 180 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Remote\+Host@{Remote\+Host}}
+\index{Remote\+Host@{Remote\+Host}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Remote\+Host}{RemoteHost}}]{\setlength{\rightskip}{0pt plus 5cm}string X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Remote\+Host\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a020891b3ab32deba2b8e2b2204349f1d}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a020891b3ab32deba2b8e2b2204349f1d}
+
+
+F\+T\+P服务器\+I\+P地址 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 113 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Remote\+Pass@{Remote\+Pass}}
+\index{Remote\+Pass@{Remote\+Pass}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Remote\+Pass}{RemotePass}}]{\setlength{\rightskip}{0pt plus 5cm}string X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Remote\+Pass\hspace{0.3cm}{\ttfamily [set]}}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a89a0c18691dfde35bdb46696a0344bff}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a89a0c18691dfde35bdb46696a0344bff}
+
+
+用户登录密码 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 169 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Remote\+Path@{Remote\+Path}}
+\index{Remote\+Path@{Remote\+Path}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Remote\+Path}{RemotePath}}]{\setlength{\rightskip}{0pt plus 5cm}string X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Remote\+Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a6dd534c17624097f4c29442ce3e5a176}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_a6dd534c17624097f4c29442ce3e5a176}
+
+
+当前服务器目录 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 143 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Remote\+Port@{Remote\+Port}}
+\index{Remote\+Port@{Remote\+Port}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Remote\+Port}{RemotePort}}]{\setlength{\rightskip}{0pt plus 5cm}int X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Remote\+Port\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af47bf07406237f3bd179472debf9c84d}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_af47bf07406237f3bd179472debf9c84d}
+
+
+F\+T\+P服务器端口 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 128 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}!Remote\+User@{Remote\+User}}
+\index{Remote\+User@{Remote\+User}!X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client@{X\+C\+L\+Net\+Tools\+::\+F\+T\+P\+::\+F\+T\+P\+Client}}
+\subsubsection[{\texorpdfstring{Remote\+User}{RemoteUser}}]{\setlength{\rightskip}{0pt plus 5cm}string X\+C\+L\+Net\+Tools.\+F\+T\+P.\+F\+T\+P\+Client.\+Remote\+User\hspace{0.3cm}{\ttfamily [set]}}\hypertarget{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_ab97c698dca9a54f44b1e69cb15c1126d}{}\label{class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client_ab97c698dca9a54f44b1e69cb15c1126d}
+
+
+登录用户账号 
+
+
+
+在文件 F\+T\+P\+Client.\+cs 第 158 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Git\+Hub/\+X\+C\+L\+Net\+Tools/\+X\+C\+L\+Net\+Tools/\+F\+T\+P/\hyperlink{_f_t_p_client_8cs}{F\+T\+P\+Client.\+cs}\end{DoxyCompactItemize}

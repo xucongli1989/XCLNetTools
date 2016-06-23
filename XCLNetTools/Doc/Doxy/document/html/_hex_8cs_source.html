@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>XCLNetTools: E:/GitHub/XCLNetTools/XCLNetTools/Encode/Hex.cs 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">XCLNetTools
+   &#160;<span id="projectnumber">XCLNetTools 2.4</span>
+   </div>
+   <div id="projectbrief">.Net公共类库dll</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>包</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_27b6216f7fc412d343957d7bb27736f9.html">Encode</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Hex.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_hex_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">一：基本信息：</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">开源协议：https://github.com/xucongli1989/XCLNetTools/blob/master/LICENSE</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">项目地址：https://github.com/xucongli1989/XCLNetTools</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">Create By: XCL @ 2012</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Linq;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Text;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_x_c_l_net_tools.html">XCLNetTools</a>.Encode</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html">   18</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html">Hex</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a0fb06fdeea06d52883d1f1a93bfcf4e8">   25</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> byte[] <a class="code" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a0fb06fdeea06d52883d1f1a93bfcf4e8">StringToByteArray</a>(<span class="keywordtype">string</span> hex)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> Enumerable.Range(0, hex.Length)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                             .Where(x =&gt; x % 2 == 0)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                             .Select(x =&gt; Convert.ToByte(hex.Substring(x, 2), 16))</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                             .ToArray();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a60f888006a88a296a97f8212abd0ddba">   37</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a60f888006a88a296a97f8212abd0ddba">ToHexString</a>(<span class="keywordtype">string</span> s)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">char</span>[] chars = s.ToCharArray();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            StringBuilder builder = <span class="keyword">new</span> StringBuilder();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt; chars.Length; index++)</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">bool</span> needToEncode = NeedToEncode(chars[index]);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">if</span> (needToEncode)</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordtype">string</span> encodedString = ToHexString(chars[index]);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    builder.Append(encodedString);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                }</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">else</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    builder.Append(chars[index]);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> builder.ToString();</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#aac3a2883c1182b43cdc0ebd7a5554895">   62</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#aac3a2883c1182b43cdc0ebd7a5554895">NeedToEncode</a>(<span class="keywordtype">char</span> chr)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">string</span> reservedChars = <span class="stringliteral">&quot;$-_.+!*&#39;(),@=&amp;&quot;</span>;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (chr &gt; 127)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span> (<span class="keywordtype">char</span>.IsLetterOrDigit(chr) || reservedChars.IndexOf(chr) &gt;= 0)</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a58fb0c39fe4db08762c074d9d774729d">   78</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a58fb0c39fe4db08762c074d9d774729d">ToHexString</a>(<span class="keywordtype">char</span> chr)</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            UTF8Encoding utf8 = <span class="keyword">new</span> UTF8Encoding();</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            byte[] encodedBytes = utf8.GetBytes(chr.ToString());</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            StringBuilder builder = <span class="keyword">new</span> StringBuilder();</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt; encodedBytes.Length; index++)</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            {</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                builder.AppendFormat(<span class="stringliteral">&quot;%{0}&quot;</span>, Convert.ToString(encodedBytes[index], 16));</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> builder.ToString();</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#abe9191a3f762b84c077bba6ef4f6dc30">   97</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#abe9191a3f762b84c077bba6ef4f6dc30">GetOrSetBlockFromHex</a>(<span class="keywordtype">int</span> blockIndex, <span class="keywordtype">int</span> source, <span class="keywordtype">int</span>? newBlockValue = null)</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (blockIndex &lt;= 0)</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;blockIndex必须大于0&quot;</span>);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            }</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (newBlockValue.HasValue &amp;&amp; (newBlockValue &lt; 0 || newBlockValue &gt; 15))</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;blockValue必须&gt;=0并且&lt;=15&quot;</span>);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">int</span> moveBits = (blockIndex - 1) * 4;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">int</span> blockValue = (source &amp; (0xF &lt;&lt; moveBits)) &gt;&gt; moveBits;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">if</span> (newBlockValue.HasValue)</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">return</span> source - (blockValue &lt;&lt; moveBits) + (newBlockValue.Value &lt;&lt; moveBits);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">else</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">return</span> blockValue;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div><div class="ttc" id="class_x_c_l_net_tools_1_1_encode_1_1_hex_html_a60f888006a88a296a97f8212abd0ddba"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a60f888006a88a296a97f8212abd0ddba">XCLNetTools.Encode.Hex.ToHexString</a></div><div class="ttdeci">static string ToHexString(string s)</div><div class="ttdoc">为字符串中的非英文字符编码 </div><div class="ttdef"><b>Definition:</b> <a href="_hex_8cs_source.html#l00037">Hex.cs:37</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encode_1_1_hex_html_abe9191a3f762b84c077bba6ef4f6dc30"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#abe9191a3f762b84c077bba6ef4f6dc30">XCLNetTools.Encode.Hex.GetOrSetBlockFromHex</a></div><div class="ttdeci">static int GetOrSetBlockFromHex(int blockIndex, int source, int?newBlockValue=null)</div><div class="ttdoc">获取或更新16进制中的第几块区域中的值。比如：0xABC中，第一块为C，第二块为B，... </div><div class="ttdef"><b>Definition:</b> <a href="_hex_8cs_source.html#l00097">Hex.cs:97</a></div></div>
+<div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="namespace_x_c_l_net_tools_html"><div class="ttname"><a href="namespace_x_c_l_net_tools.html">XCLNetTools</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encode_1_1_hex_html_aac3a2883c1182b43cdc0ebd7a5554895"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#aac3a2883c1182b43cdc0ebd7a5554895">XCLNetTools.Encode.Hex.NeedToEncode</a></div><div class="ttdeci">static bool NeedToEncode(char chr)</div><div class="ttdoc">指定 一个字符是否应该被编码 </div><div class="ttdef"><b>Definition:</b> <a href="_hex_8cs_source.html#l00062">Hex.cs:62</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encode_1_1_hex_html"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html">XCLNetTools.Encode.Hex</a></div><div class="ttdoc">十六进制处理 </div><div class="ttdef"><b>Definition:</b> <a href="_hex_8cs_source.html#l00018">Hex.cs:18</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encode_1_1_hex_html_a0fb06fdeea06d52883d1f1a93bfcf4e8"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a0fb06fdeea06d52883d1f1a93bfcf4e8">XCLNetTools.Encode.Hex.StringToByteArray</a></div><div class="ttdeci">static byte[] StringToByteArray(string hex)</div><div class="ttdoc">16进制字符串转为byte[] </div><div class="ttdef"><b>Definition:</b> <a href="_hex_8cs_source.html#l00025">Hex.cs:25</a></div></div>
+<div class="ttc" id="class_x_c_l_net_tools_1_1_encode_1_1_hex_html_a58fb0c39fe4db08762c074d9d774729d"><div class="ttname"><a href="class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a58fb0c39fe4db08762c074d9d774729d">XCLNetTools.Encode.Hex.ToHexString</a></div><div class="ttdeci">static string ToHexString(char chr)</div><div class="ttdoc">为非英文字符编码 </div><div class="ttdef"><b>Definition:</b> <a href="_hex_8cs_source.html#l00078">Hex.cs:78</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2016年 六月 23日 星期四 17:11:49 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
