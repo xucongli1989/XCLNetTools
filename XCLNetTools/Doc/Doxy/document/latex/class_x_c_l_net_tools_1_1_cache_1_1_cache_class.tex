@@ -1,0 +1,172 @@
+\hypertarget{class_x_c_l_net_tools_1_1_cache_1_1_cache_class}{}\section{X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class类 参考}
+\label{class_x_c_l_net_tools_1_1_cache_1_1_cache_class}\index{X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class@{X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class}}
+
+
+缓存相关的操作类  
+
+
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static object \hyperlink{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_aa4eb429181d14c79040ea957bb4b8308}{Get\+Cache} (string Cache\+Key)
+\begin{DoxyCompactList}\small\item\em 获取当前应用程序指定\+Cache\+Key的\+Cache值 \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a1f815a266c55067bab54e36c276ea82b}{Set\+Cache} (string Cache\+Key, object obj\+Object)
+\begin{DoxyCompactList}\small\item\em 设置当前应用程序指定\+Cache\+Key的\+Cache值 \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a12454bcf0c4d79e76937bbd927df631e}{Set\+Cache} (string Cache\+Key, object obj\+Object, Date\+Time absolute\+Expiration, Time\+Span sliding\+Expiration)
+\begin{DoxyCompactList}\small\item\em 设置当前应用程序指定\+Cache\+Key的\+Cache值 \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_afeab3c01d1a7b41007235b97f3fbaa35}{Clear} (string key)
+\begin{DoxyCompactList}\small\item\em 删除指定缓存 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_aa7640102a9327d10ff130c69b724e27b}{Exists} (string key)
+\begin{DoxyCompactList}\small\item\em 指定缓存是否存在 \end{DoxyCompactList}\item 
+static void \hyperlink{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a36ade93bd935dbad5740285d48e2c5e6}{Remove\+All\+Cache} ()
+\begin{DoxyCompactList}\small\item\em 移除全部缓存 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+缓存相关的操作类 
+
+
+
+在文件 Cache\+Class.\+cs 第 18 行定义.
+
+
+
+\subsection{成员函数说明}
+\index{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}!Clear@{Clear}}
+\index{Clear@{Clear}!X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}}
+\subsubsection[{\texorpdfstring{Clear(string key)}{Clear(string key)}}]{\setlength{\rightskip}{0pt plus 5cm}static void X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class.\+Clear (
+\begin{DoxyParamCaption}
+\item[{string}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_afeab3c01d1a7b41007235b97f3fbaa35}{}\label{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_afeab3c01d1a7b41007235b97f3fbaa35}
+
+
+删除指定缓存 
+
+
+\begin{DoxyParams}{参数}
+{\em key} & 缓存key名\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Cache\+Class.\+cs 第 56 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}!Exists@{Exists}}
+\index{Exists@{Exists}!X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}}
+\subsubsection[{\texorpdfstring{Exists(string key)}{Exists(string key)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class.\+Exists (
+\begin{DoxyParamCaption}
+\item[{string}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_aa7640102a9327d10ff130c69b724e27b}{}\label{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_aa7640102a9327d10ff130c69b724e27b}
+
+
+指定缓存是否存在 
+
+
+\begin{DoxyParams}{参数}
+{\em key} & 缓存名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true\+:存在
+\end{DoxyReturn}
+
+
+在文件 Cache\+Class.\+cs 第 66 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}!Get\+Cache@{Get\+Cache}}
+\index{Get\+Cache@{Get\+Cache}!X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}}
+\subsubsection[{\texorpdfstring{Get\+Cache(string Cache\+Key)}{GetCache(string CacheKey)}}]{\setlength{\rightskip}{0pt plus 5cm}static object X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class.\+Get\+Cache (
+\begin{DoxyParamCaption}
+\item[{string}]{Cache\+Key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_aa4eb429181d14c79040ea957bb4b8308}{}\label{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_aa4eb429181d14c79040ea957bb4b8308}
+
+
+获取当前应用程序指定\+Cache\+Key的\+Cache值 
+
+
+\begin{DoxyParams}{参数}
+{\em Cache\+Key} & 缓存key名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+该缓存的值
+\end{DoxyReturn}
+
+
+在文件 Cache\+Class.\+cs 第 25 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}!Remove\+All\+Cache@{Remove\+All\+Cache}}
+\index{Remove\+All\+Cache@{Remove\+All\+Cache}!X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}}
+\subsubsection[{\texorpdfstring{Remove\+All\+Cache()}{RemoveAllCache()}}]{\setlength{\rightskip}{0pt plus 5cm}static void X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class.\+Remove\+All\+Cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a36ade93bd935dbad5740285d48e2c5e6}{}\label{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a36ade93bd935dbad5740285d48e2c5e6}
+
+
+移除全部缓存 
+
+
+
+在文件 Cache\+Class.\+cs 第 74 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}!Set\+Cache@{Set\+Cache}}
+\index{Set\+Cache@{Set\+Cache}!X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}}
+\subsubsection[{\texorpdfstring{Set\+Cache(string Cache\+Key, object obj\+Object)}{SetCache(string CacheKey, object objObject)}}]{\setlength{\rightskip}{0pt plus 5cm}static void X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class.\+Set\+Cache (
+\begin{DoxyParamCaption}
+\item[{string}]{Cache\+Key, }
+\item[{object}]{obj\+Object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a1f815a266c55067bab54e36c276ea82b}{}\label{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a1f815a266c55067bab54e36c276ea82b}
+
+
+设置当前应用程序指定\+Cache\+Key的\+Cache值 
+
+
+\begin{DoxyParams}{参数}
+{\em Cache\+Key} & 缓存key名\\
+\hline
+{\em obj\+Object} & 缓存key值\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Cache\+Class.\+cs 第 35 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}!Set\+Cache@{Set\+Cache}}
+\index{Set\+Cache@{Set\+Cache}!X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class@{X\+C\+L\+Net\+Tools\+::\+Cache\+::\+Cache\+Class}}
+\subsubsection[{\texorpdfstring{Set\+Cache(string Cache\+Key, object obj\+Object, Date\+Time absolute\+Expiration, Time\+Span sliding\+Expiration)}{SetCache(string CacheKey, object objObject, DateTime absoluteExpiration, TimeSpan slidingExpiration)}}]{\setlength{\rightskip}{0pt plus 5cm}static void X\+C\+L\+Net\+Tools.\+Cache.\+Cache\+Class.\+Set\+Cache (
+\begin{DoxyParamCaption}
+\item[{string}]{Cache\+Key, }
+\item[{object}]{obj\+Object, }
+\item[{Date\+Time}]{absolute\+Expiration, }
+\item[{Time\+Span}]{sliding\+Expiration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a12454bcf0c4d79e76937bbd927df631e}{}\label{class_x_c_l_net_tools_1_1_cache_1_1_cache_class_a12454bcf0c4d79e76937bbd927df631e}
+
+
+设置当前应用程序指定\+Cache\+Key的\+Cache值 
+
+
+\begin{DoxyParams}{参数}
+{\em Cache\+Key} & 缓存key名\\
+\hline
+{\em obj\+Object} & 缓存key值\\
+\hline
+{\em absolute\+Expiration} & 所插入对象将到期并被从缓存中移除的时间\\
+\hline
+{\em sliding\+Expiration} & 最后一次访问所插入对象时与该对象到期时之间的时间间隔\\
+\hline
+\end{DoxyParams}
+
+
+在文件 Cache\+Class.\+cs 第 47 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Git\+Hub/\+X\+C\+L\+Net\+Tools/\+X\+C\+L\+Net\+Tools/\+Cache/\hyperlink{_cache_class_8cs}{Cache\+Class.\+cs}\end{DoxyCompactItemize}

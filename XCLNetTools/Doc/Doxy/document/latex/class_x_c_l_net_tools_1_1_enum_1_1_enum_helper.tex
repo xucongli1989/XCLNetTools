@@ -1,0 +1,244 @@
+\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper}{}\section{X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper类 参考}
+\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper}\index{X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper@{X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper}}
+
+
+枚举帮助类  
+
+
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_enum_1_1_enum_field_model}{X\+C\+L\+Net\+Tools.\+Entity.\+Enum.\+Enum\+Field\+Model} $>$ \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_acdcc3f9200705cc0831c1395f5d2c51e}{Get\+Enum\+Field\+Model\+List} (Type em\+Type)
+\begin{DoxyCompactList}\small\item\em 将枚举转为\+List(包含自定义属性description)（value为int型的string） 已按枚举的value升序排列 \end{DoxyCompactList}\item 
+static List$<$ \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_enum_1_1_enum_field_t_model}{X\+C\+L\+Net\+Tools.\+Entity.\+Enum.\+Enum\+Field\+T\+Model}$<$ T $>$ $>$ \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a919aa80b589b8038b8db6f731b50556d}{Get\+Enum\+Field\+T\+Model\+List$<$ T $>$} (Type em\+Type)
+\begin{DoxyCompactList}\small\item\em 将枚举转为\+List(包含自定义属性description) 已按枚举的value升序排列 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a3445493f9dd4798778af8ecfb2062b1b}{Get\+Enum\+Desc$<$ T $>$} (T enumtype)
+\begin{DoxyCompactList}\small\item\em 获取枚举的description注解 \end{DoxyCompactList}\item 
+static string \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_ac1c67f6247644347ed4673965832feaf}{Get\+Enum\+Description\+By\+Text} (Type T, string text)
+\begin{DoxyCompactList}\small\item\em 根据枚举text,获取枚举description \end{DoxyCompactList}\item 
+static List$<$ \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_text_value}{X\+C\+L\+Net\+Tools.\+Entity.\+Text\+Value} $>$ \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a0f98e6348aacd00a6254794e6565c173}{Get\+List} (Type type)
+\begin{DoxyCompactList}\small\item\em 将枚举转为list的形式 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a364b52512aee90c0f2530745f4127047}{Is\+Exist\+Enum\+Value} (int v, Type type)
+\begin{DoxyCompactList}\small\item\em 判断数字是否属于该枚举 \end{DoxyCompactList}\item 
+static int \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_ab5d340064717d8cf3c9c6036d3770b1f}{Get\+Value\+By\+Text} (List$<$ \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_text_value}{X\+C\+L\+Net\+Tools.\+Entity.\+Text\+Value} $>$ lst, string text)
+\begin{DoxyCompactList}\small\item\em 根据名获取值（若未找到，则返回-\/1） \end{DoxyCompactList}\item 
+static int \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a8ee641787655d2b4f06cb51486ea8be3}{Get\+Bit\+O\+R\+Value$<$ T $>$} (List$<$ T $>$ em)
+\begin{DoxyCompactList}\small\item\em 将多个枚举项进行（按位或）操作，返回int型，若失败，则返回null \end{DoxyCompactList}\item 
+static List$<$ T $>$ \hyperlink{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a7023c3a9e2c46de0cdeed71bce2cfb6a}{Get\+Enum\+List\+By\+Bit\+Value$<$ T $>$} (int val)
+\begin{DoxyCompactList}\small\item\em 根据多个枚举项（按位或）之后的int值，返回枚举list \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+枚举帮助类 
+
+
+
+在文件 Enum\+Helper.\+cs 第 20 行定义.
+
+
+
+\subsection{成员函数说明}
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+Bit\+O\+R\+Value$<$ T $>$@{Get\+Bit\+O\+R\+Value$<$ T $>$}}
+\index{Get\+Bit\+O\+R\+Value$<$ T $>$@{Get\+Bit\+O\+R\+Value$<$ T $>$}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+Bit\+O\+R\+Value$<$ T $>$(\+List$<$ T $>$ em)}{GetBitORValue< T >(List< T > em)}}]{\setlength{\rightskip}{0pt plus 5cm}static int X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+Bit\+O\+R\+Value$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{List$<$ T $>$}]{em}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a8ee641787655d2b4f06cb51486ea8be3}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a8ee641787655d2b4f06cb51486ea8be3}
+
+
+将多个枚举项进行（按位或）操作，返回int型，若失败，则返回null 
+
+\begin{DoxyReturn}{返回}
+结果值
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 211 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+Enum\+Desc$<$ T $>$@{Get\+Enum\+Desc$<$ T $>$}}
+\index{Get\+Enum\+Desc$<$ T $>$@{Get\+Enum\+Desc$<$ T $>$}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+Enum\+Desc$<$ T $>$(\+T enumtype)}{GetEnumDesc< T >(T enumtype)}}]{\setlength{\rightskip}{0pt plus 5cm}static string X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+Enum\+Desc$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{T}]{enumtype}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a3445493f9dd4798778af8ecfb2062b1b}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a3445493f9dd4798778af8ecfb2062b1b}
+
+
+获取枚举的description注解 
+
+\begin{DoxyReturn}{返回}
+枚举的描述
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 94 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+Enum\+Description\+By\+Text@{Get\+Enum\+Description\+By\+Text}}
+\index{Get\+Enum\+Description\+By\+Text@{Get\+Enum\+Description\+By\+Text}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+Enum\+Description\+By\+Text(\+Type T, string text)}{GetEnumDescriptionByText(Type T, string text)}}]{\setlength{\rightskip}{0pt plus 5cm}static string X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+Enum\+Description\+By\+Text (
+\begin{DoxyParamCaption}
+\item[{Type}]{T, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_ac1c67f6247644347ed4673965832feaf}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_ac1c67f6247644347ed4673965832feaf}
+
+
+根据枚举text,获取枚举description 
+
+\begin{DoxyReturn}{返回}
+枚举的描述
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 121 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+Enum\+Field\+Model\+List@{Get\+Enum\+Field\+Model\+List}}
+\index{Get\+Enum\+Field\+Model\+List@{Get\+Enum\+Field\+Model\+List}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+Enum\+Field\+Model\+List(\+Type em\+Type)}{GetEnumFieldModelList(Type emType)}}]{\setlength{\rightskip}{0pt plus 5cm}static List$<${\bf X\+C\+L\+Net\+Tools.\+Entity.\+Enum.\+Enum\+Field\+Model}$>$ X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+Enum\+Field\+Model\+List (
+\begin{DoxyParamCaption}
+\item[{Type}]{em\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_acdcc3f9200705cc0831c1395f5d2c51e}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_acdcc3f9200705cc0831c1395f5d2c51e}
+
+
+将枚举转为\+List(包含自定义属性description)（value为int型的string） 已按枚举的value升序排列 
+
+
+\begin{DoxyParams}{参数}
+{\em em\+Type} & 枚举type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+枚举的\+List
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 28 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+Enum\+Field\+T\+Model\+List$<$ T $>$@{Get\+Enum\+Field\+T\+Model\+List$<$ T $>$}}
+\index{Get\+Enum\+Field\+T\+Model\+List$<$ T $>$@{Get\+Enum\+Field\+T\+Model\+List$<$ T $>$}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+Enum\+Field\+T\+Model\+List$<$ T $>$(\+Type em\+Type)}{GetEnumFieldTModelList< T >(Type emType)}}]{\setlength{\rightskip}{0pt plus 5cm}static List$<${\bf X\+C\+L\+Net\+Tools.\+Entity.\+Enum.\+Enum\+Field\+T\+Model}$<$T$>$ $>$ X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+Enum\+Field\+T\+Model\+List$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{Type}]{em\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a919aa80b589b8038b8db6f731b50556d}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a919aa80b589b8038b8db6f731b50556d}
+
+
+将枚举转为\+List(包含自定义属性description) 已按枚举的value升序排列 
+
+
+\begin{DoxyParams}{参数}
+{\em em\+Type} & 枚举type\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & 枚举value的类型（（可为byte、sbyte、short、ushort、int、uint、long 或 ulong。））\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{返回}
+枚举的\+List
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 55 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+Enum\+List\+By\+Bit\+Value$<$ T $>$@{Get\+Enum\+List\+By\+Bit\+Value$<$ T $>$}}
+\index{Get\+Enum\+List\+By\+Bit\+Value$<$ T $>$@{Get\+Enum\+List\+By\+Bit\+Value$<$ T $>$}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+Enum\+List\+By\+Bit\+Value$<$ T $>$(int val)}{GetEnumListByBitValue< T >(int val)}}]{\setlength{\rightskip}{0pt plus 5cm}static List$<$T$>$ X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+Enum\+List\+By\+Bit\+Value$<$ T $>$ (
+\begin{DoxyParamCaption}
+\item[{int}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a7023c3a9e2c46de0cdeed71bce2cfb6a}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a7023c3a9e2c46de0cdeed71bce2cfb6a}
+
+
+根据多个枚举项（按位或）之后的int值，返回枚举list 
+
+\begin{DoxyReturn}{返回}
+枚举list
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 233 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+List@{Get\+List}}
+\index{Get\+List@{Get\+List}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+List(\+Type type)}{GetList(Type type)}}]{\setlength{\rightskip}{0pt plus 5cm}static List$<${\bf X\+C\+L\+Net\+Tools.\+Entity.\+Text\+Value}$>$ X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+List (
+\begin{DoxyParamCaption}
+\item[{Type}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a0f98e6348aacd00a6254794e6565c173}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a0f98e6348aacd00a6254794e6565c173}
+
+
+将枚举转为list的形式 
+
+
+\begin{DoxyParams}{参数}
+{\em type} & 枚举的typeof\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+枚举的list形式
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 145 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Get\+Value\+By\+Text@{Get\+Value\+By\+Text}}
+\index{Get\+Value\+By\+Text@{Get\+Value\+By\+Text}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Get\+Value\+By\+Text(\+List$<$ X\+C\+L\+Net\+Tools.\+Entity.\+Text\+Value $>$ lst, string text)}{GetValueByText(List< XCLNetTools.Entity.TextValue > lst, string text)}}]{\setlength{\rightskip}{0pt plus 5cm}static int X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Get\+Value\+By\+Text (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf X\+C\+L\+Net\+Tools.\+Entity.\+Text\+Value} $>$}]{lst, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_ab5d340064717d8cf3c9c6036d3770b1f}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_ab5d340064717d8cf3c9c6036d3770b1f}
+
+
+根据名获取值（若未找到，则返回-\/1） 
+
+
+\begin{DoxyParams}{参数}
+{\em lst} & 枚举的list形式\\
+\hline
+{\em text} & 枚举项的名称\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+该枚举的值
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 193 行定义.
+
+\index{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}!Is\+Exist\+Enum\+Value@{Is\+Exist\+Enum\+Value}}
+\index{Is\+Exist\+Enum\+Value@{Is\+Exist\+Enum\+Value}!X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper@{X\+C\+L\+Net\+Tools\+::\+Enum\+::\+Enum\+Helper}}
+\subsubsection[{\texorpdfstring{Is\+Exist\+Enum\+Value(int v, Type type)}{IsExistEnumValue(int v, Type type)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\+C\+L\+Net\+Tools.\+Enum.\+Enum\+Helper.\+Is\+Exist\+Enum\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{v, }
+\item[{Type}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a364b52512aee90c0f2530745f4127047}{}\label{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper_a364b52512aee90c0f2530745f4127047}
+
+
+判断数字是否属于该枚举 
+
+
+\begin{DoxyParams}{参数}
+{\em v} & 枚举的value，就是数字\\
+\hline
+{\em type} & 枚举的typeof\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+true\+:v属于该枚举，反之则不属于
+\end{DoxyReturn}
+
+
+在文件 Enum\+Helper.\+cs 第 172 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Git\+Hub/\+X\+C\+L\+Net\+Tools/\+X\+C\+L\+Net\+Tools/\+Enum/\hyperlink{_enum_helper_8cs}{Enum\+Helper.\+cs}\end{DoxyCompactItemize}
