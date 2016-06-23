@@ -5540,11 +5540,11 @@
             </summary>
             <returns>是否为ajax请求</returns>
         </member>
-        <member name="M:XCLNetTools.StringHander.Common.Is``1(System.String)">
+        <member name="M:XCLNetTools.StringHander.Common.IsCanConvert``1(System.Object)">
             <summary>
-            判断指定值是否为指定的类型
+            判断指定值是否可以转换为指定的类型
             </summary>
-            <typeparam name="T">是否为此类型</typeparam>
+            <typeparam name="T">是否可以转换为此类型</typeparam>
             <param name="val">需要判断的值</param>
             <returns>判断结果</returns>
         </member>

@@ -549,12 +549,12 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
-        /// 判断指定值是否为指定的类型
+        /// 判断指定值是否可以转换为指定的类型
         /// </summary>
-        /// <typeparam name="T">是否为此类型</typeparam>
+        /// <typeparam name="T">是否可以转换为此类型</typeparam>
         /// <param name="val">需要判断的值</param>
         /// <returns>判断结果</returns>
-        public static bool Is<T>(string val)
+        public static bool IsCanConvert<T>(object val)
         {
             var converter = TypeDescriptor.GetConverter(typeof(T));
             return converter.IsValid(val);
