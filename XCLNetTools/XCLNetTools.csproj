@@ -188,6 +188,7 @@
     <Compile Include="Common\IPHelper.cs" />
     <Compile Include="Control\ServerControl\Lib.cs" />
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
+    <Compile Include="DataBase\SQLLibrary.cs" />
     <Compile Include="DataSource\DataSetHelper.cs" />
     <Compile Include="DataSource\DataTableHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
