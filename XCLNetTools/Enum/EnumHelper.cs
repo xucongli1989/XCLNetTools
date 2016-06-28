@@ -251,5 +251,62 @@ namespace XCLNetTools.Enum
             }
             return lst;
         }
+
+        /// <summary>
+        /// 将指定枚举的值求和
+        /// </summary>
+        /// <returns>求和后的结果值</returns>
+        public static long GetEnumSumValue(Type em)
+        {
+            var lst = EnumHelper.GetList(em);
+            if (null == lst || lst.Count == 0)
+            {
+                throw new ArgumentException("该枚举中没有任何项！");
+            }
+            return lst.Sum(k => Convert.ToInt64(k.Value));
+        }
+
+        /// <summary>
+        /// 获取枚举的最小值
+        /// </summary>
+        /// <param name="em">指定枚举</param>
+        /// <returns>枚举项中的最小值</returns>
+        public static long GetMinValue(Type em)
+        {
+            var lst = EnumHelper.GetList(em);
+            if (null == lst || lst.Count == 0)
+            {
+                throw new ArgumentException("该枚举中没有任何项！");
+            }
+            return lst.Min(k => Convert.ToInt64(k.Value));
+        }
+
+        /// <summary>
+        /// 获取枚举的最大值
+        /// </summary>
+        /// <param name="em">指定枚举</param>
+        /// <returns>枚举项中的最大值</returns>
+        public static long GetMaxValue(Type em)
+        {
+            var lst = EnumHelper.GetList(em);
+            if (null == lst || lst.Count == 0)
+            {
+                throw new ArgumentException("该枚举中没有任何项！");
+            }
+            return lst.Max(k => Convert.ToInt64(k.Value));
+        }
+
+        /// <summary>
+        /// 判断指定值是否超出指定枚举的值范围
+        /// </summary>
+        /// <param name="em">枚举</param>
+        /// <param name="val">要判断的值</param>
+        /// <returns>true：在范围内；false：已超出范围</returns>
+        public static bool IsInRange(Type em, long val)
+        {
+            var min = EnumHelper.GetMinValue(em);
+            var max = EnumHelper.GetMaxValue(em);
+            return val >= min && val <= max;
+        }
     }
 }
