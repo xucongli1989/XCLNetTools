@@ -3654,6 +3654,34 @@
             </summary>
             <returns>枚举list</returns>
         </member>
+        <member name="M:XCLNetTools.Enum.EnumHelper.GetEnumSumValue(System.Type)">
+            <summary>
+            将指定枚举的值求和
+            </summary>
+            <returns>求和后的结果值</returns>
+        </member>
+        <member name="M:XCLNetTools.Enum.EnumHelper.GetMinValue(System.Type)">
+            <summary>
+            获取枚举的最小值
+            </summary>
+            <param name="em">指定枚举</param>
+            <returns>枚举项中的最小值</returns>
+        </member>
+        <member name="M:XCLNetTools.Enum.EnumHelper.GetMaxValue(System.Type)">
+            <summary>
+            获取枚举的最大值
+            </summary>
+            <param name="em">指定枚举</param>
+            <returns>枚举项中的最大值</returns>
+        </member>
+        <member name="M:XCLNetTools.Enum.EnumHelper.IsInRange(System.Type,System.Int64)">
+            <summary>
+            判断指定值是否超出指定枚举的值范围
+            </summary>
+            <param name="em">枚举</param>
+            <param name="val">要判断的值</param>
+            <returns>true：在范围内；false：已超出范围</returns>
+        </member>
         <member name="T:XCLNetTools.FileHandler.Bookmark">
             <summary>
             浏览器书签文件操作类
@@ -5366,14 +5394,14 @@
             <param name="result">结果</param>
             <param name="p">JObject的属性</param>
         </member>
-        <member name="M:XCLNetTools.Serialize.Lib.ConvertJObjectToDictionary(System.String)">
+        <member name="M:XCLNetTools.Serialize.Lib.ConvertJsonToDictionary(System.String)">
             <summary>
             将JObject类型的属性转换为dictionary
             </summary>
             <param name="json">要转换的json</param>
             <returns>dictionary结果</returns>
         </member>
-        <member name="M:XCLNetTools.Serialize.Lib.ConvertJObjectToUrlParameters(System.String)">
+        <member name="M:XCLNetTools.Serialize.Lib.ConvertJsonToUrlParameters(System.String)">
             <summary>
             将JObject的属性转换为url参数形式
             如：{"a":"1","b":"2","c":{"d":"100"}} -> a=1&amp;b=2&amp;c[d]=100
