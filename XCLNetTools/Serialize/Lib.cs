@@ -111,15 +111,16 @@ namespace XCLNetTools.Serialize
         /// <summary>
         /// 将JObject类型的属性转换为dictionary
         /// </summary>
+        /// <param name="json">要转换的json</param>
         /// <returns>dictionary结果</returns>
-        public static Dictionary<string, string> ConvertJObjectToDictionary(JObject obj)
+        public static Dictionary<string, string> ConvertJsonToDictionary(string json)
         {
-            if (null == obj)
+            if (string.IsNullOrWhiteSpace(json))
             {
                 return null;
             }
             Dictionary<string, string> dic = new Dictionary<string, string>();
-            var pros = obj.Properties();
+            var pros = JObject.Parse(json).Properties();
             foreach (var m in pros)
             {
                 JObjectFillDictionary(dic, m);
@@ -131,11 +132,11 @@ namespace XCLNetTools.Serialize
         /// 将JObject的属性转换为url参数形式
         /// 如：{"a":"1","b":"2","c":{"d":"100"}} -> a=1&amp;b=2&amp;c[d]=100
         /// </summary>
-        /// <param name="obj">需要转换的对象</param>
+        /// <param name="json">需要转换的json</param>
         /// <returns>url参数字符串</returns>
-        public static string ConvertJObjectToUrlParameters(JObject obj)
+        public static string ConvertJsonToUrlParameters(string json)
         {
-            var dic = ConvertJObjectToDictionary(obj);
+            var dic = ConvertJsonToDictionary(json);
             if (null == dic || dic.Count == 0)
             {
                 return null;
