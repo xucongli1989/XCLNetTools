@@ -99,7 +99,7 @@ namespace XCLNetTools.Generic
         /// <returns>list</returns>
         public static IList<T> DataTableToList<T>(DataTable dt) where T : new()
         {
-            if (null == dt || dt.Rows.Count == 0)
+            if (null == dt || null == dt.Rows || dt.Rows.Count == 0)
             {
                 return null;
             }
