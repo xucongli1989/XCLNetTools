@@ -2636,6 +2636,11 @@
             分页信息model
             </summary>
         </member>
+        <member name="M:XCLNetTools.Entity.PagerInfo.#ctor">
+            <summary>
+            默认构造方法
+            </summary>
+        </member>
         <member name="M:XCLNetTools.Entity.PagerInfo.#ctor(System.Int32,System.Int32,System.Int32)">
             <summary>
             分页信息 构造函数

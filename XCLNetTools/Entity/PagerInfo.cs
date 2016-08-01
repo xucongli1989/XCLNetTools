@@ -22,7 +22,10 @@ namespace XCLNetTools.Entity
         private int _pageSize = 0;
         private int _recordCount = 0;
 
-        private PagerInfo()
+        /// <summary>
+        /// 默认构造方法
+        /// </summary>
+        public PagerInfo()
         {
         }
 
