@@ -90,20 +90,26 @@ namespace XCLNetTools.Serialize
                 return;
             }
             var ps = p.Values();
-            if (null == ps)
+            if (null == ps || ps.Count() == 0)
             {
                 return;
             }
-            var valCount = ps.Count();
-            if (valCount == 1)
+
+            foreach (var item in ps)
             {
-                result.Add(p.Path, p.Value.ToString(Newtonsoft.Json.Formatting.None));
-            }
-            else if (valCount > 1)
-            {
-                foreach (var m in p.Values())
+                switch (item.Type)
                 {
-                    JObjectFillDictionary(result, (JProperty)m);
+                    case JTokenType.Property:
+                        JObjectFillDictionary(result, (JProperty)item);
+                        break;
+
+                    case JTokenType.Array:
+                        result.Add(item.Path, item.ToString(Newtonsoft.Json.Formatting.None));
+                        break;
+
+                    default:
+                        result.Add(item.Path, item.ToObject<string>());
+                        break;
                 }
             }
         }
