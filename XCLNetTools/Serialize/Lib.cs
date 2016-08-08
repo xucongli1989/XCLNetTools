@@ -97,7 +97,7 @@ namespace XCLNetTools.Serialize
             var valCount = ps.Count();
             if (valCount == 1)
             {
-                result.Add(p.Path, p.Value.ToString());
+                result.Add(p.Path, p.Value.ToString(Newtonsoft.Json.Formatting.None));
             }
             else if (valCount > 1)
             {
