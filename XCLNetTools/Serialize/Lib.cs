@@ -94,22 +94,15 @@ namespace XCLNetTools.Serialize
             {
                 return;
             }
-
-            foreach (var item in ps)
+            foreach (var m in ps)
             {
-                switch (item.Type)
+                if (m.Type == JTokenType.Property)
                 {
-                    case JTokenType.Property:
-                        JObjectFillDictionary(result, (JProperty)item);
-                        break;
-
-                    case JTokenType.Array:
-                        result.Add(item.Path, item.ToString(Newtonsoft.Json.Formatting.None));
-                        break;
-
-                    default:
-                        result.Add(item.Path, item.ToObject<string>());
-                        break;
+                    JObjectFillDictionary(result, (JProperty)m);
+                }
+                else
+                {
+                    result.Add(m.Path, m.ToObject<string>());
                 }
             }
         }
@@ -136,7 +129,7 @@ namespace XCLNetTools.Serialize
 
         /// <summary>
         /// 将JObject的属性转换为url参数形式
-        /// 如：{"a":"1","b":"2","c":{"d":"100"}} -> a=1&amp;b=2&amp;c[d]=100
+        /// 如：{"a":"1","b":"2","c":{"d":"100"}} -> a=1&amp;b=2&amp;c.d=100
         /// </summary>
         /// <param name="json">需要转换的json</param>
         /// <returns>url参数字符串</returns>
@@ -152,16 +145,7 @@ namespace XCLNetTools.Serialize
             for (int i = 0; i < dic.Count; i++)
             {
                 var d = dic.ElementAt(i);
-                if (d.Key.IndexOf('.') >= 0)
-                {
-                    tempKey = (d.Key.Replace(".", "][") + "]");
-                    tempKey = tempKey.Remove(tempKey.IndexOf(']'), 1);
-                    str.Add(string.Format("{0}={1}", tempKey, System.Web.HttpUtility.UrlEncode(d.Value)));
-                }
-                else
-                {
-                    str.Add(string.Format("{0}={1}", d.Key, System.Web.HttpUtility.UrlEncode(d.Value)));
-                }
+                str.Add(string.Format("{0}={1}", d.Key, System.Web.HttpUtility.UrlEncode(d.Value)));
             }
 
             return string.Join("&", str);

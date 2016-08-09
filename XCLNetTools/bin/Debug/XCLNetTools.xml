@@ -5234,7 +5234,7 @@
         <member name="M:XCLNetTools.Serialize.Lib.ConvertJsonToUrlParameters(System.String)">
             <summary>
             将JObject的属性转换为url参数形式
-            如：{"a":"1","b":"2","c":{"d":"100"}} -> a=1&amp;b=2&amp;c[d]=100
+            如：{"a":"1","b":"2","c":{"d":"100"}} -> a=1&amp;b=2&amp;c.d=100
             </summary>
             <param name="json">需要转换的json</param>
             <returns>url参数字符串</returns>
