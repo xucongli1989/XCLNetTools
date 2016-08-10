@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.4</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.5</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -112,19 +112,19 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:ad38f60aaa57643027af6ebc86ef7fe18"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_serialize_1_1_lib.html#ad38f60aaa57643027af6ebc86ef7fe18">DeepClone&lt; T &gt;</a> (T source)</td></tr>
 <tr class="memdesc:ad38f60aaa57643027af6ebc86ef7fe18"><td class="mdescLeft">&#160;</td><td class="mdescRight">对象深度clone（被clone对象必须可以序列化）  <a href="#ad38f60aaa57643027af6ebc86ef7fe18">更多...</a><br /></td></tr>
 <tr class="separator:ad38f60aaa57643027af6ebc86ef7fe18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78ec8810cf5fd723c9efb1b77c725016"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_serialize_1_1_lib.html#a78ec8810cf5fd723c9efb1b77c725016">ConvertJObjectToDictionary</a> (JObject obj)</td></tr>
-<tr class="memdesc:a78ec8810cf5fd723c9efb1b77c725016"><td class="mdescLeft">&#160;</td><td class="mdescRight">将JObject类型的属性转换为dictionary  <a href="#a78ec8810cf5fd723c9efb1b77c725016">更多...</a><br /></td></tr>
-<tr class="separator:a78ec8810cf5fd723c9efb1b77c725016"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1abb5037041804cc79336bd031c3f4df"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_serialize_1_1_lib.html#a1abb5037041804cc79336bd031c3f4df">ConvertJObjectToUrlParameters</a> (JObject obj)</td></tr>
-<tr class="memdesc:a1abb5037041804cc79336bd031c3f4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">将JObject的属性转换为url参数形式 如：{"a":"1","b":"2","c":{"d":"100"}} -&gt; a=1&amp;b=2&amp;c[d]=100  <a href="#a1abb5037041804cc79336bd031c3f4df">更多...</a><br /></td></tr>
-<tr class="separator:a1abb5037041804cc79336bd031c3f4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99dccfb2469a4a61f20742a002a3f0ae"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_serialize_1_1_lib.html#a99dccfb2469a4a61f20742a002a3f0ae">ConvertJsonToDictionary</a> (string json)</td></tr>
+<tr class="memdesc:a99dccfb2469a4a61f20742a002a3f0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">将JObject类型的属性转换为dictionary  <a href="#a99dccfb2469a4a61f20742a002a3f0ae">更多...</a><br /></td></tr>
+<tr class="separator:a99dccfb2469a4a61f20742a002a3f0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0034741d0598296a34082889f2a2f83e"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_serialize_1_1_lib.html#a0034741d0598296a34082889f2a2f83e">ConvertJsonToUrlParameters</a> (string json)</td></tr>
+<tr class="memdesc:a0034741d0598296a34082889f2a2f83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">将JObject的属性转换为url参数形式 如：{"a":"1","b":"2","c":{"d":"100"}} -&gt; a=1&amp;b=2&amp;c.d=100  <a href="#a0034741d0598296a34082889f2a2f83e">更多...</a><br /></td></tr>
+<tr class="separator:a0034741d0598296a34082889f2a2f83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>其它对象序列化相关 </p>
 
 <p>在文件 <a class="el" href="_serialize_2_lib_8cs_source.html">Lib.cs</a> 第 <a class="el" href="_serialize_2_lib_8cs_source.html#l00022">22</a> 行定义.</p>
 </div><h2 class="groupheader">成员函数说明</h2>
-<a class="anchor" id="a78ec8810cf5fd723c9efb1b77c725016"></a>
+<a class="anchor" id="a99dccfb2469a4a61f20742a002a3f0ae"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -132,10 +132,10 @@ Public 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Dictionary&lt;string, string&gt; XCLNetTools.Serialize.Lib.ConvertJObjectToDictionary </td>
+          <td class="memname">static Dictionary&lt;string, string&gt; XCLNetTools.Serialize.Lib.ConvertJsonToDictionary </td>
           <td>(</td>
-          <td class="paramtype">JObject&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>json</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -147,13 +147,19 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>将JObject类型的属性转换为dictionary </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">json</td><td>要转换的json</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>返回</dt><dd>dictionary结果</dd></dl>
 
 <p>在文件 <a class="el" href="_serialize_2_lib_8cs_source.html">Lib.cs</a> 第 <a class="el" href="_serialize_2_lib_8cs_source.html#l00115">115</a> 行定义.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1abb5037041804cc79336bd031c3f4df"></a>
+<a class="anchor" id="a0034741d0598296a34082889f2a2f83e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -161,10 +167,10 @@ Public 成员函数</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static string XCLNetTools.Serialize.Lib.ConvertJObjectToUrlParameters </td>
+          <td class="memname">static string XCLNetTools.Serialize.Lib.ConvertJsonToUrlParameters </td>
           <td>(</td>
-          <td class="paramtype">JObject&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>json</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -175,10 +181,10 @@ Public 成员函数</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>将JObject的属性转换为url参数形式 如：{"a":"1","b":"2","c":{"d":"100"}} -&gt; a=1&amp;b=2&amp;c[d]=100 </p>
+<p>将JObject的属性转换为url参数形式 如：{"a":"1","b":"2","c":{"d":"100"}} -&gt; a=1&amp;b=2&amp;c.d=100 </p>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>需要转换的对象</td></tr>
+    <tr><td class="paramname">json</td><td>需要转换的json</td></tr>
   </table>
   </dd>
 </dl>
@@ -272,7 +278,7 @@ Public 成员函数</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 六月 23日 星期四 17:11:50 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 八月 10日 星期三 12:52:56 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

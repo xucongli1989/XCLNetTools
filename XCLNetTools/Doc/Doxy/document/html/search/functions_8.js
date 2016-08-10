@@ -20,6 +20,7 @@ var searchData=
   ['isequalmd5',['IsEqualMD5',['../class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#a47f3bda0226d74bd2c9823a023ed8ed5',1,'XCLNetTools::Encrypt::MD5']]],
   ['isexistenumvalue',['IsExistEnumValue',['../class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a364b52512aee90c0f2530745f4127047',1,'XCLNetTools::Enum::EnumHelper']]],
   ['ishaschzn',['IsHasCHZN',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a13211b08f74ed73f0ea6483eb065aeb3',1,'XCLNetTools::StringHander::PageValid']]],
+  ['isinrange',['IsInRange',['../class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aff77ff22fe3efa1fbac6dd465ea67dc7',1,'XCLNetTools::Enum::EnumHelper']]],
   ['isnumber',['IsNumber',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a5ef94c663cc81c8380957575ef31b11e',1,'XCLNetTools::StringHander::PageValid']]],
   ['isnumbersign',['IsNumberSign',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a91c3575738db7370e02e7698ef909695',1,'XCLNetTools::StringHander::PageValid']]],
   ['isphone',['IsPhone',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#aeb849c3d8a38a3ef6a5eea5097d2abc0',1,'XCLNetTools::StringHander::PageValid']]],

@@ -51,7 +51,7 @@ var searchData=
   ['resulttype',['ResultType',['../class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item.html#a92ebe05dc80b03bfdee04ec390dc4c8e',1,'XCLNetTools.Entity.Http.HttpItem.ResultType()'],['../namespace_x_c_l_net_tools_1_1_http.html#a3216524397972f7d0c5733b123216e9e',1,'XCLNetTools.Http.ResultType()']]],
   ['rmb',['Rmb',['../class_x_c_l_net_tools_1_1_string_hander_1_1_rmb.html',1,'XCLNetTools::StringHander']]],
   ['rmb_2ecs',['RMB.cs',['../_r_m_b_8cs.html',1,'']]],
-  ['rmdir',['RmDir',['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#a4c4167a6afd00ed6e1f5303e59555037',1,'XCLNetTools.FTP.FTPClient.RmDir()'],['../class_x_c_l_net_tools_1_1_file_handler_1_1_file_directory.html#aea79f469e66f1668c6bb4eff61bf9279',1,'XCLNetTools.FileHandler.FileDirectory.RMDIR()']]],
+  ['rmdir',['RMDIR',['../class_x_c_l_net_tools_1_1_file_handler_1_1_file_directory.html#aea79f469e66f1668c6bb4eff61bf9279',1,'XCLNetTools.FileHandler.FileDirectory.RMDIR()'],['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#a4c4167a6afd00ed6e1f5303e59555037',1,'XCLNetTools.FTP.FTPClient.RmDir()']]],
   ['rootpath',['RootPath',['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html#a6ef4c659747c605379a43168ae1d64f6',1,'XCLNetTools::Entity::FileInfoEntity']]],
   ['rooturi',['RootUri',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#ae924e6a3e073efd4a75d53ea7095f976',1,'XCLNetTools::StringHander::Common']]],
   ['rooturl',['RootURL',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a87e9775b7bdaaf9bc205a148b1335ee2',1,'XCLNetTools::StringHander::Common']]],
