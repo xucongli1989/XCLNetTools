@@ -34,6 +34,8 @@ var searchData=
   ['sqlhelperparametercache_2ecs',['SqlHelperParameterCache.cs',['../_sql_helper_parameter_cache_8cs.html',1,'']]],
   ['sqlitehelper',['SQLiteHelper',['../class_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite_1_1_s_q_lite_helper.html',1,'XCLNetTools::DataBase::SQLite']]],
   ['sqlitehelper_2ecs',['SQLiteHelper.cs',['../_s_q_lite_helper_8cs.html',1,'']]],
+  ['sqllibrary',['SQLLibrary',['../class_x_c_l_net_tools_1_1_data_base_1_1_s_q_l_library.html',1,'XCLNetTools::DataBase']]],
+  ['sqllibrary_2ecs',['SQLLibrary.cs',['../_s_q_l_library_8cs.html',1,'']]],
   ['src',['Src',['../class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a956fb610dd51730bbe8aac6a04d72da3',1,'XCLNetTools::Entity::StaticResource']]],
   ['startindex',['StartIndex',['../class_x_c_l_net_tools_1_1_entity_1_1_pager_info.html#a659b36bf635a3fed41ee3b82ec4c2cbe',1,'XCLNetTools::Entity::PagerInfo']]],
   ['starttime',['StartTime',['../class_x_c_l_net_tools_1_1_entity_1_1_sub_time.html#a7813c7a0874535abbe0b5307d7310c27',1,'XCLNetTools::Entity::SubTime']]],

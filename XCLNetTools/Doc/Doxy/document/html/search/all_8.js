@@ -30,6 +30,7 @@ var searchData=
   ['isexistenumvalue',['IsExistEnumValue',['../class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a364b52512aee90c0f2530745f4127047',1,'XCLNetTools::Enum::EnumHelper']]],
   ['isfolder',['IsFolder',['../class_x_c_l_net_tools_1_1_entity_1_1_bookmark_entity.html#a025f1606c5b38103058567b3e08afe03',1,'XCLNetTools.Entity.BookmarkEntity.IsFolder()'],['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html#ad945716535742c01f83dffc2766c0987',1,'XCLNetTools.Entity.FileInfoEntity.IsFolder()']]],
   ['ishaschzn',['IsHasCHZN',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a13211b08f74ed73f0ea6483eb065aeb3',1,'XCLNetTools::StringHander::PageValid']]],
+  ['isinrange',['IsInRange',['../class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aff77ff22fe3efa1fbac6dd465ea67dc7',1,'XCLNetTools::Enum::EnumHelper']]],
   ['isneedpleaseselect',['IsNeedPleaseSelect',['../class_x_c_l_net_tools_1_1_entity_1_1_set_option_entity.html#a22c7d14f09183bb9124fa9219663be6c',1,'XCLNetTools::Entity::SetOptionEntity']]],
   ['isnumber',['IsNumber',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a5ef94c663cc81c8380957575ef31b11e',1,'XCLNetTools::StringHander::PageValid']]],
   ['isnumbersign',['IsNumberSign',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a91c3575738db7370e02e7698ef909695',1,'XCLNetTools::StringHander::PageValid']]],

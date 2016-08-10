@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.4</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.5</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -129,6 +129,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <tr class="memitem:a7023c3a9e2c46de0cdeed71bce2cfb6a"><td class="memItemLeft" align="right" valign="top">static List&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a7023c3a9e2c46de0cdeed71bce2cfb6a">GetEnumListByBitValue&lt; T &gt;</a> (int val)</td></tr>
 <tr class="memdesc:a7023c3a9e2c46de0cdeed71bce2cfb6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据多个枚举项（按位或）之后的int值，返回枚举list  <a href="#a7023c3a9e2c46de0cdeed71bce2cfb6a">更多...</a><br /></td></tr>
 <tr class="separator:a7023c3a9e2c46de0cdeed71bce2cfb6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43bf704153939cd6950d5d88e072c691"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a43bf704153939cd6950d5d88e072c691">GetEnumSumValue</a> (Type em)</td></tr>
+<tr class="memdesc:a43bf704153939cd6950d5d88e072c691"><td class="mdescLeft">&#160;</td><td class="mdescRight">将指定枚举的值求和  <a href="#a43bf704153939cd6950d5d88e072c691">更多...</a><br /></td></tr>
+<tr class="separator:a43bf704153939cd6950d5d88e072c691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8111ec28e6283a2c1964b367b68351c2"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a8111ec28e6283a2c1964b367b68351c2">GetMinValue</a> (Type em)</td></tr>
+<tr class="memdesc:a8111ec28e6283a2c1964b367b68351c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取枚举的最小值  <a href="#a8111ec28e6283a2c1964b367b68351c2">更多...</a><br /></td></tr>
+<tr class="separator:a8111ec28e6283a2c1964b367b68351c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7edc75ec210b0c0740978a392e78b32"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aa7edc75ec210b0c0740978a392e78b32">GetMaxValue</a> (Type em)</td></tr>
+<tr class="memdesc:aa7edc75ec210b0c0740978a392e78b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取枚举的最大值  <a href="#aa7edc75ec210b0c0740978a392e78b32">更多...</a><br /></td></tr>
+<tr class="separator:aa7edc75ec210b0c0740978a392e78b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff77ff22fe3efa1fbac6dd465ea67dc7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aff77ff22fe3efa1fbac6dd465ea67dc7">IsInRange</a> (Type em, long val)</td></tr>
+<tr class="memdesc:aff77ff22fe3efa1fbac6dd465ea67dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断指定值是否超出指定枚举的值范围  <a href="#aff77ff22fe3efa1fbac6dd465ea67dc7">更多...</a><br /></td></tr>
+<tr class="separator:aff77ff22fe3efa1fbac6dd465ea67dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>枚举帮助类 </p>
@@ -337,6 +349,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
+<a class="anchor" id="a43bf704153939cd6950d5d88e072c691"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long XCLNetTools.Enum.EnumHelper.GetEnumSumValue </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>em</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将指定枚举的值求和 </p>
+<dl class="section return"><dt>返回</dt><dd>求和后的结果值</dd></dl>
+
+<p>在文件 <a class="el" href="_enum_helper_8cs_source.html">EnumHelper.cs</a> 第 <a class="el" href="_enum_helper_8cs_source.html#l00259">259</a> 行定义.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0f98e6348aacd00a6254794e6565c173"></a>
 <div class="memitem">
 <div class="memproto">
@@ -369,6 +410,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <dl class="section return"><dt>返回</dt><dd>枚举的list形式</dd></dl>
 
 <p>在文件 <a class="el" href="_enum_helper_8cs_source.html">EnumHelper.cs</a> 第 <a class="el" href="_enum_helper_8cs_source.html#l00145">145</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7edc75ec210b0c0740978a392e78b32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long XCLNetTools.Enum.EnumHelper.GetMaxValue </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>em</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取枚举的最大值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">em</td><td>指定枚举</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>枚举项中的最大值</dd></dl>
+
+<p>在文件 <a class="el" href="_enum_helper_8cs_source.html">EnumHelper.cs</a> 第 <a class="el" href="_enum_helper_8cs_source.html#l00289">289</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8111ec28e6283a2c1964b367b68351c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static long XCLNetTools.Enum.EnumHelper.GetMinValue </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>em</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取枚举的最小值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">em</td><td>指定枚举</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>枚举项中的最小值</dd></dl>
+
+<p>在文件 <a class="el" href="_enum_helper_8cs_source.html">EnumHelper.cs</a> 第 <a class="el" href="_enum_helper_8cs_source.html#l00274">274</a> 行定义.</p>
 
 </div>
 </div>
@@ -464,13 +575,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
+<a class="anchor" id="aff77ff22fe3efa1fbac6dd465ea67dc7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool XCLNetTools.Enum.EnumHelper.IsInRange </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>em</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断指定值是否超出指定枚举的值范围 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">em</td><td>枚举</td></tr>
+    <tr><td class="paramname">val</td><td>要判断的值</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true：在范围内；false：已超出范围</dd></dl>
+
+<p>在文件 <a class="el" href="_enum_helper_8cs_source.html">EnumHelper.cs</a> 第 <a class="el" href="_enum_helper_8cs_source.html#l00305">305</a> 行定义.</p>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>E:/GitHub/XCLNetTools/XCLNetTools/Enum/<a class="el" href="_enum_helper_8cs_source.html">EnumHelper.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 六月 23日 星期四 17:11:50 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 八月 10日 星期三 12:52:56 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

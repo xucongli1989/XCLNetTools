@@ -15,10 +15,10 @@ T \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ae2d400cea76a1f11f5141d
 \item 
 static T \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_ad38f60aaa57643027af6ebc86ef7fe18}{Deep\+Clone$<$ T $>$} (T source)
 \begin{DoxyCompactList}\small\item\em 对象深度clone（被clone对象必须可以序列化） \end{DoxyCompactList}\item 
-static Dictionary$<$ string, string $>$ \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a78ec8810cf5fd723c9efb1b77c725016}{Convert\+J\+Object\+To\+Dictionary} (J\+Object obj)
+static Dictionary$<$ string, string $>$ \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a99dccfb2469a4a61f20742a002a3f0ae}{Convert\+Json\+To\+Dictionary} (string json)
 \begin{DoxyCompactList}\small\item\em 将\+J\+Object类型的属性转换为dictionary \end{DoxyCompactList}\item 
-static string \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a1abb5037041804cc79336bd031c3f4df}{Convert\+J\+Object\+To\+Url\+Parameters} (J\+Object obj)
-\begin{DoxyCompactList}\small\item\em 将\+J\+Object的属性转换为url参数形式 如：\{\char`\"{}a\char`\"{}\+:\char`\"{}1\char`\"{},\char`\"{}b\char`\"{}\+:\char`\"{}2\char`\"{},\char`\"{}c\char`\"{}\+:\{\char`\"{}d\char`\"{}\+:\char`\"{}100\char`\"{}\}\} -\/$>$ a=1\&b=2\&c\mbox{[}d\mbox{]}=100 \end{DoxyCompactList}\end{DoxyCompactItemize}
+static string \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a0034741d0598296a34082889f2a2f83e}{Convert\+Json\+To\+Url\+Parameters} (string json)
+\begin{DoxyCompactList}\small\item\em 将\+J\+Object的属性转换为url参数形式 如：\{\char`\"{}a\char`\"{}\+:\char`\"{}1\char`\"{},\char`\"{}b\char`\"{}\+:\char`\"{}2\char`\"{},\char`\"{}c\char`\"{}\+:\{\char`\"{}d\char`\"{}\+:\char`\"{}100\char`\"{}\}\} -\/$>$ a=1\&b=2\&c.\+d=100 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{详细描述}
@@ -31,17 +31,22 @@ static string \hyperlink{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a1abb503704
 
 
 \subsection{成员函数说明}
-\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Convert\+J\+Object\+To\+Dictionary@{Convert\+J\+Object\+To\+Dictionary}}
-\index{Convert\+J\+Object\+To\+Dictionary@{Convert\+J\+Object\+To\+Dictionary}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
-\subsubsection[{\texorpdfstring{Convert\+J\+Object\+To\+Dictionary(\+J\+Object obj)}{ConvertJObjectToDictionary(JObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}static Dictionary$<$string, string$>$ X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Convert\+J\+Object\+To\+Dictionary (
+\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Convert\+Json\+To\+Dictionary@{Convert\+Json\+To\+Dictionary}}
+\index{Convert\+Json\+To\+Dictionary@{Convert\+Json\+To\+Dictionary}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
+\subsubsection[{\texorpdfstring{Convert\+Json\+To\+Dictionary(string json)}{ConvertJsonToDictionary(string json)}}]{\setlength{\rightskip}{0pt plus 5cm}static Dictionary$<$string, string$>$ X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Convert\+Json\+To\+Dictionary (
 \begin{DoxyParamCaption}
-\item[{J\+Object}]{obj}
+\item[{string}]{json}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a78ec8810cf5fd723c9efb1b77c725016}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a78ec8810cf5fd723c9efb1b77c725016}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a99dccfb2469a4a61f20742a002a3f0ae}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a99dccfb2469a4a61f20742a002a3f0ae}
 
 
 将\+J\+Object类型的属性转换为dictionary 
 
+
+\begin{DoxyParams}{参数}
+{\em json} & 要转换的json\\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{返回}
 dictionary结果
 \end{DoxyReturn}
@@ -49,20 +54,20 @@ dictionary结果
 
 在文件 Lib.\+cs 第 115 行定义.
 
-\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Convert\+J\+Object\+To\+Url\+Parameters@{Convert\+J\+Object\+To\+Url\+Parameters}}
-\index{Convert\+J\+Object\+To\+Url\+Parameters@{Convert\+J\+Object\+To\+Url\+Parameters}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
-\subsubsection[{\texorpdfstring{Convert\+J\+Object\+To\+Url\+Parameters(\+J\+Object obj)}{ConvertJObjectToUrlParameters(JObject obj)}}]{\setlength{\rightskip}{0pt plus 5cm}static string X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Convert\+J\+Object\+To\+Url\+Parameters (
+\index{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}!Convert\+Json\+To\+Url\+Parameters@{Convert\+Json\+To\+Url\+Parameters}}
+\index{Convert\+Json\+To\+Url\+Parameters@{Convert\+Json\+To\+Url\+Parameters}!X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib@{X\+C\+L\+Net\+Tools\+::\+Serialize\+::\+Lib}}
+\subsubsection[{\texorpdfstring{Convert\+Json\+To\+Url\+Parameters(string json)}{ConvertJsonToUrlParameters(string json)}}]{\setlength{\rightskip}{0pt plus 5cm}static string X\+C\+L\+Net\+Tools.\+Serialize.\+Lib.\+Convert\+Json\+To\+Url\+Parameters (
 \begin{DoxyParamCaption}
-\item[{J\+Object}]{obj}
+\item[{string}]{json}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a1abb5037041804cc79336bd031c3f4df}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a1abb5037041804cc79336bd031c3f4df}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a0034741d0598296a34082889f2a2f83e}{}\label{class_x_c_l_net_tools_1_1_serialize_1_1_lib_a0034741d0598296a34082889f2a2f83e}
 
 
-将\+J\+Object的属性转换为url参数形式 如：\{\char`\"{}a\char`\"{}\+:\char`\"{}1\char`\"{},\char`\"{}b\char`\"{}\+:\char`\"{}2\char`\"{},\char`\"{}c\char`\"{}\+:\{\char`\"{}d\char`\"{}\+:\char`\"{}100\char`\"{}\}\} -\/$>$ a=1\&b=2\&c\mbox{[}d\mbox{]}=100 
+将\+J\+Object的属性转换为url参数形式 如：\{\char`\"{}a\char`\"{}\+:\char`\"{}1\char`\"{},\char`\"{}b\char`\"{}\+:\char`\"{}2\char`\"{},\char`\"{}c\char`\"{}\+:\{\char`\"{}d\char`\"{}\+:\char`\"{}100\char`\"{}\}\} -\/$>$ a=1\&b=2\&c.\+d=100 
 
 
 \begin{DoxyParams}{参数}
-{\em obj} & 需要转换的对象\\
+{\em json} & 需要转换的json\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}

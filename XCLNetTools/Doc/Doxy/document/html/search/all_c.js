@@ -12,7 +12,7 @@ var searchData=
   ['messagemodel_2ecs',['MessageModel.cs',['../_message_model_8cs.html',1,'']]],
   ['messagemore',['MessageMore',['../class_x_c_l_net_tools_1_1_entity_1_1_message_1_1_json_msg_head.html#a5f65bd454c47d349a2a0fae291c73590',1,'XCLNetTools.Entity.Message.JsonMsgHead.MessageMore()'],['../class_x_c_l_net_tools_1_1_message_1_1_message_model.html#ae30c575345756a20443bb2f26ecdf1e9',1,'XCLNetTools.Message.MessageModel.MessageMore()']]],
   ['method',['Method',['../class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item.html#a4c675d85e9d3864e5c5ad04c4a4ae3cd',1,'XCLNetTools::Entity::Http::HttpItem']]],
-  ['methodresult',['MethodResult',['../class_x_c_l_net_tools_1_1_entity_1_1_method_result.html',1,'XCLNetTools.Entity.MethodResult&lt; TResult &gt;'],['../class_x_c_l_net_tools_1_1_entity_1_1_method_result.html',1,'XCLNetTools.Entity.MethodResult&lt; TResult, TData &gt;']]],
+  ['methodresult',['MethodResult',['../class_x_c_l_net_tools_1_1_entity_1_1_method_result.html',1,'XCLNetTools.Entity.MethodResult&lt; TResult, TData &gt;'],['../class_x_c_l_net_tools_1_1_entity_1_1_method_result.html',1,'XCLNetTools.Entity.MethodResult&lt; TResult &gt;']]],
   ['methodresult_2ecs',['MethodResult.cs',['../_method_result_8cs.html',1,'']]],
   ['mkdir',['MkDir',['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#aaf6ecfb2034736ffe5f88945ec873efe',1,'XCLNetTools::FTP::FTPClient']]],
   ['mm',['mm',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#aaefa466811a65c8971576fcdb80354a4ab3cd915d758008bd19d0f2428fbb354a',1,'XCLNetTools::Enum::CommonEnum']]],
