@@ -45,7 +45,7 @@
 
 # 在线文档
 
-[http://htmlpreview.github.io/?https://github.com/xucongli1989/XCLNetTools/blob/master/XCLNetTools/Doc/Doxy/document/html/index.html](http://htmlpreview.github.io/?https://github.com/xucongli1989/XCLNetTools/blob/master/XCLNetTools/Doc/Doxy/document/html/index.html)
+[在线查看](http://htmlpreview.github.io/?https://github.com/xucongli1989/XCLNetTools/blob/master/XCLNetTools/Doc/Doxy/document/html/index.html)
 
 # 版权说明
 
