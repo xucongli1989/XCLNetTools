@@ -18,6 +18,11 @@ namespace XCLNetTools.Entity
     public class SqlPagerConditionEntity
     {
         /// <summary>
+        /// 默认构造
+        /// </summary>
+        public SqlPagerConditionEntity() { }
+
+        /// <summary>
         /// 构造
         /// </summary>
         /// <param name="tableName">表名</param>
