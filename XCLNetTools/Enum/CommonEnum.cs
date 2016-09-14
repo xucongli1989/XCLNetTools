@@ -245,6 +245,17 @@ namespace XCLNetTools.Enum
             Description
         }
 
+        /// <summary>
+        /// 数据库类型枚举
+        /// </summary>
+        public enum DatabaseTypeEnum
+        {
+            /// <summary>
+            /// sql server
+            /// </summary>
+            MSSQL
+        }
+
         #endregion 其它
     }
 }

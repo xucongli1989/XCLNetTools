@@ -802,6 +802,14 @@
             <param name="whereList">where的各个条件，如：a='abc',b='xxx'</param>
             <returns>and合并后的新的sql</returns>
         </member>
+        <member name="M:XCLNetTools.DataBase.SQLLibrary.CreatePagerQuerySqlString(XCLNetTools.Entity.SqlPagerConditionEntity)">
+            <summary>
+            生成分页查询的sql语句
+            注：sql中的out参数：TotalCount（总记录数）
+            </summary>
+            <param name="condition">分页参数</param>
+            <returns>分页的sql查询语句</returns>
+        </member>
         <member name="T:XCLNetTools.DataBase.Access.AccessHelper">
             <summary>
             Access数据库操作类
@@ -2489,6 +2497,57 @@
             Value字段类型，默认为：None
             </summary>
         </member>
+        <member name="T:XCLNetTools.Entity.SqlPagerConditionEntity">
+            <summary>
+            sql 分页条件实体
+            </summary>
+        </member>
+        <member name="M:XCLNetTools.Entity.SqlPagerConditionEntity.#ctor(System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="tableName">表名</param>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.DatabaseType">
+            <summary>
+            数据库类型（默认sql server）
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.TableName">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.Where">
+            <summary>
+            where条件（前面无需加"where"）
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.PageIndex">
+            <summary>
+            页码（默认1）
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.PageSize">
+            <summary>
+            每页最多显示的记录数（默认10）
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.IsNeedAllCount">
+            <summary>
+            是否需要查询当前所有页结果的总记录数（默认：true）
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.OrderBy">
+            <summary>
+            排序字段（前面无需添加"ORDER BY"）
+            </summary>
+        </member>
+        <member name="P:XCLNetTools.Entity.SqlPagerConditionEntity.FieldNameList">
+            <summary>
+            要查询的字段（若无值，则默认为所有字段）
+            </summary>
+        </member>
         <member name="T:XCLNetTools.Entity.Office.ExcelHandler.OutPutClass">
             <summary>
             导出字段实体类
@@ -3900,6 +3959,16 @@
         <member name="F:XCLNetTools.Enum.CommonEnum.SelectOptionFieldEnum.Description">
             <summary>
             描述
+            </summary>
+        </member>
+        <member name="T:XCLNetTools.Enum.CommonEnum.DatabaseTypeEnum">
+            <summary>
+            数据库类型枚举
+            </summary>
+        </member>
+        <member name="F:XCLNetTools.Enum.CommonEnum.DatabaseTypeEnum.MSSQL">
+            <summary>
+            sql server
             </summary>
         </member>
         <member name="T:XCLNetTools.Enum.EnumHelper">
