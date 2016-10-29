@@ -272,6 +272,32 @@ namespace XCLNetTools.Enum
             OFF
         }
 
+        /// <summary>
+        /// 系统所属环境枚举
+        /// </summary>
+        public enum SysEnvironmentEnum
+        {
+            /// <summary>
+            /// 开发环境
+            /// </summary>
+            DEV,
+
+            /// <summary>
+            /// 测试环境
+            /// </summary>
+            FAT,
+
+            /// <summary>
+            /// UAT环境
+            /// </summary>
+            UAT,
+
+            /// <summary>
+            /// 生产环境
+            /// </summary>
+            PRD
+        }
+
         #endregion 其它
     }
 }
