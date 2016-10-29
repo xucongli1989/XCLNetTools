@@ -256,6 +256,22 @@ namespace XCLNetTools.Enum
             MSSQL
         }
 
+        /// <summary>
+        /// 登录退出类型枚举
+        /// </summary>
+        public enum LoginTypeEnum
+        {
+            /// <summary>
+            /// 登录
+            /// </summary>
+            ON,
+
+            /// <summary>
+            /// 退出
+            /// </summary>
+            OFF
+        }
+
         #endregion 其它
     }
 }
