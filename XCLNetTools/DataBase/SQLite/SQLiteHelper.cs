@@ -43,7 +43,7 @@ namespace XCLNetTools.DataBase.SQLite
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    throw ex;
+                    throw;
                 }
             }
             return result;
@@ -76,7 +76,7 @@ namespace XCLNetTools.DataBase.SQLite
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    throw ex;
+                    throw;
                 }
             }
             return result;
@@ -111,7 +111,7 @@ namespace XCLNetTools.DataBase.SQLite
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    throw ex;
+                    throw;
                 }
             }
             return result;
@@ -144,7 +144,7 @@ namespace XCLNetTools.DataBase.SQLite
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    throw ex;
+                    throw;
                 }
             }
             return result;
@@ -177,7 +177,7 @@ namespace XCLNetTools.DataBase.SQLite
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    throw ex;
+                    throw;
                 }
             }
             return result;
@@ -212,7 +212,7 @@ namespace XCLNetTools.DataBase.SQLite
                 catch (Exception ex)
                 {
                     trans.Rollback();
-                    throw ex;
+                    throw;
                 }
             }
             return result;
@@ -243,7 +243,7 @@ namespace XCLNetTools.DataBase.SQLite
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             return reader;
         }
@@ -273,7 +273,7 @@ namespace XCLNetTools.DataBase.SQLite
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             return reader;
         }
@@ -304,7 +304,7 @@ namespace XCLNetTools.DataBase.SQLite
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             return reader;
         }
@@ -332,7 +332,7 @@ namespace XCLNetTools.DataBase.SQLite
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             finally
             {
@@ -372,7 +372,7 @@ namespace XCLNetTools.DataBase.SQLite
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             finally
             {
@@ -413,7 +413,7 @@ namespace XCLNetTools.DataBase.SQLite
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             finally
             {
