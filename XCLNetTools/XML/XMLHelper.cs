@@ -96,7 +96,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex; //这里可以定义你自己的异常处理
+                throw; //这里可以定义你自己的异常处理
             }
             return isSuccess;
         }
@@ -140,7 +140,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex; //这里可以定义你自己的异常处理
+                throw; //这里可以定义你自己的异常处理
             }
             return isSuccess;
         }
@@ -188,7 +188,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex; //这里可以定义你自己的异常处理
+                throw; //这里可以定义你自己的异常处理
             }
             return isSuccess;
         }
@@ -236,7 +236,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex; //这里可以定义你自己的异常处理
+                throw; //这里可以定义你自己的异常处理
             }
             return isSuccess;
         }
@@ -269,7 +269,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex; //这里可以定义你自己的异常处理
+                throw; //这里可以定义你自己的异常处理
             }
             return isSuccess;
         }
@@ -315,7 +315,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex; //这里可以定义你自己的异常处理
+                throw; //这里可以定义你自己的异常处理
             }
             return isSuccess;
         }
@@ -344,7 +344,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex; //这里可以定义你自己的异常处理
+                throw; //这里可以定义你自己的异常处理
             }
             return isSuccess;
         }
@@ -373,7 +373,7 @@ namespace XCLNetTools.XML
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             return isSuccess;
         }

@@ -55,7 +55,7 @@ namespace XCLNetTools.FileHandler
                         }
                         catch (System.Exception ex)
                         {
-                            throw ex;
+                            throw;
                         }
                         StreamToZip.Close();
                     }

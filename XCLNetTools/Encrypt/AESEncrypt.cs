@@ -76,7 +76,7 @@ namespace XCLNetTools.Encrypt
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -168,7 +168,7 @@ namespace XCLNetTools.Encrypt
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -193,7 +193,7 @@ namespace XCLNetTools.Encrypt
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
