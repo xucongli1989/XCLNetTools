@@ -275,5 +275,21 @@ namespace XCLNetTools.Javascript
         }
 
         #endregion 显示消息提示对话框，并进行页面跳转
+
+        #region 其它
+
+        /// <summary>
+        /// 将多行模式的字符串字符串转js常量
+        /// </summary>
+        public static string StringToConst(string str)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return str;
+            }
+            return str.Trim().Replace(@"\", @"\\").Replace(@"'", @"\'").Replace(@"""", @"\""").Replace("\r", "\\\r");
+        }
+
+        #endregion 其它
     }
 }
