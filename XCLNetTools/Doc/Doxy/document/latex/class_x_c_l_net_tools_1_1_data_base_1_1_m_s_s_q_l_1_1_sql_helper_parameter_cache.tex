@@ -1,76 +1,77 @@
-\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache}{}\section{X\+C\+L\+Net\+Tools.\+Data\+Base.\+M\+S\+S\+Q\+L.\+Sql\+Helper\+Parameter\+Cache类 参考}
-\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache}\index{X\+C\+L\+Net\+Tools.\+Data\+Base.\+M\+S\+S\+Q\+L.\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools.\+Data\+Base.\+M\+S\+S\+Q\+L.\+Sql\+Helper\+Parameter\+Cache}}
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache}{\section{X\-C\-L\-Net\-Tools.\-Data\-Base.\-M\-S\-S\-Q\-L.\-Sql\-Helper\-Parameter\-Cache类 参考}
+\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache}\index{X\-C\-L\-Net\-Tools.\-Data\-Base.\-M\-S\-S\-Q\-L.\-Sql\-Helper\-Parameter\-Cache@{X\-C\-L\-Net\-Tools.\-Data\-Base.\-M\-S\-S\-Q\-L.\-Sql\-Helper\-Parameter\-Cache}}
+}
 
 
-Sql\+Helper\+Parameter\+Cache提供缓存存储过程参数,并能够在运行时从存储过程中探索参数.  
+Sql\-Helper\-Parameter\-Cache提供缓存存储过程参数,并能够在运行时从存储过程中探索参数.  
 
 
 \subsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a4c9d3ea3efdc1a0c29c522ad7fde1900}{Cache\+Parameter\+Set} (string connection\+String, string command\+Text, params Sql\+Parameter\mbox{[}$\,$\mbox{]} command\+Parameters)
+static void \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a4c9d3ea3efdc1a0c29c522ad7fde1900}{Cache\-Parameter\-Set} (string connection\-String, string command\-Text, params Sql\-Parameter\mbox{[}$\,$\mbox{]} command\-Parameters)
 \begin{DoxyCompactList}\small\item\em 追加参数数组到缓存. \end{DoxyCompactList}\item 
-static Sql\+Parameter\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a6003ff6a4a36764733a6487d083458b7}{Get\+Cached\+Parameter\+Set} (string connection\+String, string command\+Text)
+static Sql\-Parameter\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a6003ff6a4a36764733a6487d083458b7}{Get\-Cached\-Parameter\-Set} (string connection\-String, string command\-Text)
 \begin{DoxyCompactList}\small\item\em 从缓存中获取参数数组. \end{DoxyCompactList}\item 
-static Sql\+Parameter\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a58ac469fef0b1bfbe5d246c29d04a885}{Get\+Sp\+Parameter\+Set} (string connection\+String, string sp\+Name)
+static Sql\-Parameter\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a58ac469fef0b1bfbe5d246c29d04a885}{Get\-Sp\-Parameter\-Set} (string connection\-String, string sp\-Name)
 \begin{DoxyCompactList}\small\item\em 返回指定的存储过程的参数集 \end{DoxyCompactList}\item 
-static Sql\+Parameter\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a7890bc8805a1a41b5934963c58d98771}{Get\+Sp\+Parameter\+Set} (string connection\+String, string sp\+Name, bool include\+Return\+Value\+Parameter)
+static Sql\-Parameter\mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a7890bc8805a1a41b5934963c58d98771}{Get\-Sp\-Parameter\-Set} (string connection\-String, string sp\-Name, bool include\-Return\-Value\-Parameter)
 \begin{DoxyCompactList}\small\item\em 返回指定的存储过程的参数集 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{详细描述}
-Sql\+Helper\+Parameter\+Cache提供缓存存储过程参数,并能够在运行时从存储过程中探索参数. 
+Sql\-Helper\-Parameter\-Cache提供缓存存储过程参数,并能够在运行时从存储过程中探索参数. 
 
 
 
-在文件 Sql\+Helper\+Parameter\+Cache.\+cs 第 19 行定义.
+在文件 Sql\-Helper\-Parameter\-Cache.\-cs 第 19 行定义.
 
 
 
 \subsection{成员函数说明}
-\index{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}!Cache\+Parameter\+Set@{Cache\+Parameter\+Set}}
-\index{Cache\+Parameter\+Set@{Cache\+Parameter\+Set}!X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}}
-\subsubsection[{\texorpdfstring{Cache\+Parameter\+Set(string connection\+String, string command\+Text, params Sql\+Parameter[] command\+Parameters)}{CacheParameterSet(string connectionString, string commandText, params SqlParameter[] commandParameters)}}]{\setlength{\rightskip}{0pt plus 5cm}static void X\+C\+L\+Net\+Tools.\+Data\+Base.\+M\+S\+S\+Q\+L.\+Sql\+Helper\+Parameter\+Cache.\+Cache\+Parameter\+Set (
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a4c9d3ea3efdc1a0c29c522ad7fde1900}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}!Cache\-Parameter\-Set@{Cache\-Parameter\-Set}}
+\index{Cache\-Parameter\-Set@{Cache\-Parameter\-Set}!XCLNetTools::DataBase::MSSQL::SqlHelperParameterCache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}}
+\subsubsection[{Cache\-Parameter\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static void X\-C\-L\-Net\-Tools.\-Data\-Base.\-M\-S\-S\-Q\-L.\-Sql\-Helper\-Parameter\-Cache.\-Cache\-Parameter\-Set (
 \begin{DoxyParamCaption}
-\item[{string}]{connection\+String, }
-\item[{string}]{command\+Text, }
-\item[{params Sql\+Parameter\mbox{[}$\,$\mbox{]}}]{command\+Parameters}
+\item[{string}]{connection\-String, }
+\item[{string}]{command\-Text, }
+\item[{params Sql\-Parameter\mbox{[}$\,$\mbox{]}}]{command\-Parameters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a4c9d3ea3efdc1a0c29c522ad7fde1900}{}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a4c9d3ea3efdc1a0c29c522ad7fde1900}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a4c9d3ea3efdc1a0c29c522ad7fde1900}
 
 
 追加参数数组到缓存. 
 
 
 \begin{DoxyParams}{参数}
-{\em connection\+String} & 一个有效的数据库连接字符串\\
+{\em connection\-String} & 一个有效的数据库连接字符串\\
 \hline
-{\em command\+Text} & 存储过程名或\+S\+Q\+L语句\\
+{\em command\-Text} & 存储过程名或\-S\-Q\-L语句\\
 \hline
-{\em command\+Parameters} & 要缓存的参数数组\\
+{\em command\-Parameters} & 要缓存的参数数组\\
 \hline
 \end{DoxyParams}
 
 
-在文件 Sql\+Helper\+Parameter\+Cache.\+cs 第 97 行定义.
+在文件 Sql\-Helper\-Parameter\-Cache.\-cs 第 97 行定义.
 
-\index{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}!Get\+Cached\+Parameter\+Set@{Get\+Cached\+Parameter\+Set}}
-\index{Get\+Cached\+Parameter\+Set@{Get\+Cached\+Parameter\+Set}!X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}}
-\subsubsection[{\texorpdfstring{Get\+Cached\+Parameter\+Set(string connection\+String, string command\+Text)}{GetCachedParameterSet(string connectionString, string commandText)}}]{\setlength{\rightskip}{0pt plus 5cm}static Sql\+Parameter \mbox{[}$\,$\mbox{]} X\+C\+L\+Net\+Tools.\+Data\+Base.\+M\+S\+S\+Q\+L.\+Sql\+Helper\+Parameter\+Cache.\+Get\+Cached\+Parameter\+Set (
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a6003ff6a4a36764733a6487d083458b7}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}!Get\-Cached\-Parameter\-Set@{Get\-Cached\-Parameter\-Set}}
+\index{Get\-Cached\-Parameter\-Set@{Get\-Cached\-Parameter\-Set}!XCLNetTools::DataBase::MSSQL::SqlHelperParameterCache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}}
+\subsubsection[{Get\-Cached\-Parameter\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static Sql\-Parameter \mbox{[}$\,$\mbox{]} X\-C\-L\-Net\-Tools.\-Data\-Base.\-M\-S\-S\-Q\-L.\-Sql\-Helper\-Parameter\-Cache.\-Get\-Cached\-Parameter\-Set (
 \begin{DoxyParamCaption}
-\item[{string}]{connection\+String, }
-\item[{string}]{command\+Text}
+\item[{string}]{connection\-String, }
+\item[{string}]{command\-Text}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a6003ff6a4a36764733a6487d083458b7}{}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a6003ff6a4a36764733a6487d083458b7}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a6003ff6a4a36764733a6487d083458b7}
 
 
 从缓存中获取参数数组. 
 
 
 \begin{DoxyParams}{参数}
-{\em connection\+String} & 一个有效的数据库连接字符\\
+{\em connection\-String} & 一个有效的数据库连接字符\\
 \hline
-{\em command\+Text} & 存储过程名或\+S\+Q\+L语句\\
+{\em command\-Text} & 存储过程名或\-S\-Q\-L语句\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
@@ -78,16 +79,16 @@ Sql\+Helper\+Parameter\+Cache提供缓存存储过程参数,并能够在运行�
 \end{DoxyReturn}
 
 
-在文件 Sql\+Helper\+Parameter\+Cache.\+cs 第 113 行定义.
+在文件 Sql\-Helper\-Parameter\-Cache.\-cs 第 113 行定义.
 
-\index{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}!Get\+Sp\+Parameter\+Set@{Get\+Sp\+Parameter\+Set}}
-\index{Get\+Sp\+Parameter\+Set@{Get\+Sp\+Parameter\+Set}!X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}}
-\subsubsection[{\texorpdfstring{Get\+Sp\+Parameter\+Set(string connection\+String, string sp\+Name)}{GetSpParameterSet(string connectionString, string spName)}}]{\setlength{\rightskip}{0pt plus 5cm}static Sql\+Parameter \mbox{[}$\,$\mbox{]} X\+C\+L\+Net\+Tools.\+Data\+Base.\+M\+S\+S\+Q\+L.\+Sql\+Helper\+Parameter\+Cache.\+Get\+Sp\+Parameter\+Set (
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a58ac469fef0b1bfbe5d246c29d04a885}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}!Get\-Sp\-Parameter\-Set@{Get\-Sp\-Parameter\-Set}}
+\index{Get\-Sp\-Parameter\-Set@{Get\-Sp\-Parameter\-Set}!XCLNetTools::DataBase::MSSQL::SqlHelperParameterCache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}}
+\subsubsection[{Get\-Sp\-Parameter\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static Sql\-Parameter \mbox{[}$\,$\mbox{]} X\-C\-L\-Net\-Tools.\-Data\-Base.\-M\-S\-S\-Q\-L.\-Sql\-Helper\-Parameter\-Cache.\-Get\-Sp\-Parameter\-Set (
 \begin{DoxyParamCaption}
-\item[{string}]{connection\+String, }
-\item[{string}]{sp\+Name}
+\item[{string}]{connection\-String, }
+\item[{string}]{sp\-Name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a58ac469fef0b1bfbe5d246c29d04a885}{}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a58ac469fef0b1bfbe5d246c29d04a885}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a58ac469fef0b1bfbe5d246c29d04a885}
 
 
 返回指定的存储过程的参数集 
@@ -96,27 +97,27 @@ Sql\+Helper\+Parameter\+Cache提供缓存存储过程参数,并能够在运行�
 
 
 \begin{DoxyParams}{参数}
-{\em connection\+String} & 一个有效的数据库连接字符\\
+{\em connection\-String} & 一个有效的数据库连接字符\\
 \hline
-{\em sp\+Name} & 存储过程名\\
+{\em sp\-Name} & 存储过程名\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回\+Sql\+Parameter参数数组
+返回\-Sql\-Parameter参数数组
 \end{DoxyReturn}
 
 
-在文件 Sql\+Helper\+Parameter\+Cache.\+cs 第 144 行定义.
+在文件 Sql\-Helper\-Parameter\-Cache.\-cs 第 144 行定义.
 
-\index{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}!Get\+Sp\+Parameter\+Set@{Get\+Sp\+Parameter\+Set}}
-\index{Get\+Sp\+Parameter\+Set@{Get\+Sp\+Parameter\+Set}!X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache@{X\+C\+L\+Net\+Tools\+::\+Data\+Base\+::\+M\+S\+S\+Q\+L\+::\+Sql\+Helper\+Parameter\+Cache}}
-\subsubsection[{\texorpdfstring{Get\+Sp\+Parameter\+Set(string connection\+String, string sp\+Name, bool include\+Return\+Value\+Parameter)}{GetSpParameterSet(string connectionString, string spName, bool includeReturnValueParameter)}}]{\setlength{\rightskip}{0pt plus 5cm}static Sql\+Parameter \mbox{[}$\,$\mbox{]} X\+C\+L\+Net\+Tools.\+Data\+Base.\+M\+S\+S\+Q\+L.\+Sql\+Helper\+Parameter\+Cache.\+Get\+Sp\+Parameter\+Set (
+\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a7890bc8805a1a41b5934963c58d98771}{\index{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}!Get\-Sp\-Parameter\-Set@{Get\-Sp\-Parameter\-Set}}
+\index{Get\-Sp\-Parameter\-Set@{Get\-Sp\-Parameter\-Set}!XCLNetTools::DataBase::MSSQL::SqlHelperParameterCache@{X\-C\-L\-Net\-Tools\-::\-Data\-Base\-::\-M\-S\-S\-Q\-L\-::\-Sql\-Helper\-Parameter\-Cache}}
+\subsubsection[{Get\-Sp\-Parameter\-Set}]{\setlength{\rightskip}{0pt plus 5cm}static Sql\-Parameter \mbox{[}$\,$\mbox{]} X\-C\-L\-Net\-Tools.\-Data\-Base.\-M\-S\-S\-Q\-L.\-Sql\-Helper\-Parameter\-Cache.\-Get\-Sp\-Parameter\-Set (
 \begin{DoxyParamCaption}
-\item[{string}]{connection\+String, }
-\item[{string}]{sp\+Name, }
-\item[{bool}]{include\+Return\+Value\+Parameter}
+\item[{string}]{connection\-String, }
+\item[{string}]{sp\-Name, }
+\item[{bool}]{include\-Return\-Value\-Parameter}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a7890bc8805a1a41b5934963c58d98771}{}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a7890bc8805a1a41b5934963c58d98771}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache_a7890bc8805a1a41b5934963c58d98771}
 
 
 返回指定的存储过程的参数集 
@@ -125,22 +126,22 @@ Sql\+Helper\+Parameter\+Cache提供缓存存储过程参数,并能够在运行�
 
 
 \begin{DoxyParams}{参数}
-{\em connection\+String} & 一个有效的数据库连接字符.\\
+{\em connection\-String} & 一个有效的数据库连接字符.\\
 \hline
-{\em sp\+Name} & 存储过程名\\
+{\em sp\-Name} & 存储过程名\\
 \hline
-{\em include\+Return\+Value\+Parameter} & 是否包含返回值参数\\
+{\em include\-Return\-Value\-Parameter} & 是否包含返回值参数\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回\+Sql\+Parameter参数数组
+返回\-Sql\-Parameter参数数组
 \end{DoxyReturn}
 
 
-在文件 Sql\+Helper\+Parameter\+Cache.\+cs 第 159 行定义.
+在文件 Sql\-Helper\-Parameter\-Cache.\-cs 第 159 行定义.
 
 
 
-该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
 \item 
-E\+:/\+Git\+Hub/\+X\+C\+L\+Net\+Tools/\+X\+C\+L\+Net\+Tools/\+Data\+Base/\+M\+S\+S\+Q\+L/\hyperlink{_sql_helper_parameter_cache_8cs}{Sql\+Helper\+Parameter\+Cache.\+cs}\end{DoxyCompactItemize}
+D\-:/\-My\-Data/\-My\-Git/\-Git\-Hub/\-X\-C\-L\-Net\-Tools/\-X\-C\-L\-Net\-Tools/\-Data\-Base/\-M\-S\-S\-Q\-L/\hyperlink{_sql_helper_parameter_cache_8cs}{Sql\-Helper\-Parameter\-Cache.\-cs}\end{DoxyCompactItemize}

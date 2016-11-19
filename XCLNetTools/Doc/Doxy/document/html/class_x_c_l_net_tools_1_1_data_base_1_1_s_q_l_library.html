@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
 <title>XCLNetTools: XCLNetTools.DataBase.SQLLibrary类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,9 +21,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.5</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.6</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -33,7 +32,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.11 -->
+<!-- 制作者 Doxygen 1.8.5 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </script>
@@ -74,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>事件</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,14 +102,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
 <tr class="memitem:acc256989f11747ac9cc52cd138088f81"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_l_library.html#acc256989f11747ac9cc52cd138088f81">JoinWithAnd</a> (List&lt; string &gt; whereList)</td></tr>
-<tr class="memdesc:acc256989f11747ac9cc52cd138088f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用'and'合并sql  <a href="#acc256989f11747ac9cc52cd138088f81">更多...</a><br /></td></tr>
+<tr class="memdesc:acc256989f11747ac9cc52cd138088f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用'and'合并sql  <a href="#acc256989f11747ac9cc52cd138088f81">更多...</a><br/></td></tr>
 <tr class="separator:acc256989f11747ac9cc52cd138088f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe56acf93da2af8c2671f8bfda89253d"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_s_q_l_library.html#afe56acf93da2af8c2671f8bfda89253d">CreatePagerQuerySqlString</a> (<a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_sql_pager_condition_entity.html">XCLNetTools.Entity.SqlPagerConditionEntity</a> condition)</td></tr>
+<tr class="memdesc:afe56acf93da2af8c2671f8bfda89253d"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成分页查询的sql语句 注：sql中的out参数：TotalCount（总记录数）  <a href="#afe56acf93da2af8c2671f8bfda89253d">更多...</a><br/></td></tr>
+<tr class="separator:afe56acf93da2af8c2671f8bfda89253d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>sql处理类 </p>
 
-<p>在文件 <a class="el" href="_s_q_l_library_8cs_source.html">SQLLibrary.cs</a> 第 <a class="el" href="_s_q_l_library_8cs_source.html#l00017">17</a> 行定义.</p>
+<p>在文件 <a class="el" href="_s_q_l_library_8cs_source.html">SQLLibrary.cs</a> 第 <a class="el" href="_s_q_l_library_8cs_source.html#l00018">18</a> 行定义.</p>
 </div><h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="afe56acf93da2af8c2671f8bfda89253d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string XCLNetTools.DataBase.SQLLibrary.CreatePagerQuerySqlString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_sql_pager_condition_entity.html">XCLNetTools.Entity.SqlPagerConditionEntity</a>&#160;</td>
+          <td class="paramname"><em>condition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成分页查询的sql语句 注：sql中的out参数：TotalCount（总记录数） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">condition</td><td>分页参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>分页的sql查询语句</dd></dl>
+
+<p>在文件 <a class="el" href="_s_q_l_library_8cs_source.html">SQLLibrary.cs</a> 第 <a class="el" href="_s_q_l_library_8cs_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
 <a class="anchor" id="acc256989f11747ac9cc52cd138088f81"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,19 +179,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </dl>
 <dl class="section return"><dt>返回</dt><dd>and合并后的新的sql</dd></dl>
 
-<p>在文件 <a class="el" href="_s_q_l_library_8cs_source.html">SQLLibrary.cs</a> 第 <a class="el" href="_s_q_l_library_8cs_source.html#l00024">24</a> 行定义.</p>
+<p>在文件 <a class="el" href="_s_q_l_library_8cs_source.html">SQLLibrary.cs</a> 第 <a class="el" href="_s_q_l_library_8cs_source.html#l00025">25</a> 行定义.</p>
 
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>E:/GitHub/XCLNetTools/XCLNetTools/DataBase/<a class="el" href="_s_q_l_library_8cs_source.html">SQLLibrary.cs</a></li>
+<li>D:/MyData/MyGit/GitHub/XCLNetTools/XCLNetTools/DataBase/<a class="el" href="_s_q_l_library_8cs_source.html">SQLLibrary.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 八月 10日 星期三 12:52:56 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 十一月 19日 星期六 10:05:13 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+</a> 1.8.5
 </small></address>
 </body>
 </html>

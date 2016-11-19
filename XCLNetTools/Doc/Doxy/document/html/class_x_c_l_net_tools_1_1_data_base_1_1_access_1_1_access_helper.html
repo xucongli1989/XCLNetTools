@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
 <title>XCLNetTools: XCLNetTools.DataBase.Access.AccessHelper类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,9 +21,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.5</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.6</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -33,7 +32,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.11 -->
+<!-- 制作者 Doxygen 1.8.5 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </script>
@@ -74,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>事件</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,28 +102,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
 <tr class="memitem:acb4489fbc85621f6b27e51328e60ba40"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#acb4489fbc85621f6b27e51328e60ba40">ExcuteSql</a> (string sqlstr)</td></tr>
-<tr class="memdesc:acb4489fbc85621f6b27e51328e60ba40"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行sql语句  <a href="#acb4489fbc85621f6b27e51328e60ba40">更多...</a><br /></td></tr>
+<tr class="memdesc:acb4489fbc85621f6b27e51328e60ba40"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行sql语句  <a href="#acb4489fbc85621f6b27e51328e60ba40">更多...</a><br/></td></tr>
 <tr class="separator:acb4489fbc85621f6b27e51328e60ba40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0a538c45b918a7f8d2f3e2f5a7eab30"><td class="memItemLeft" align="right" valign="top">static OleDbDataReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#ac0a538c45b918a7f8d2f3e2f5a7eab30">DataReader</a> (string sqlstr)</td></tr>
-<tr class="memdesc:ac0a538c45b918a7f8d2f3e2f5a7eab30"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的OleDbDataReader对象，使用时请注意关闭这个对象。  <a href="#ac0a538c45b918a7f8d2f3e2f5a7eab30">更多...</a><br /></td></tr>
+<tr class="memdesc:ac0a538c45b918a7f8d2f3e2f5a7eab30"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的OleDbDataReader对象，使用时请注意关闭这个对象。  <a href="#ac0a538c45b918a7f8d2f3e2f5a7eab30">更多...</a><br/></td></tr>
 <tr class="separator:ac0a538c45b918a7f8d2f3e2f5a7eab30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eb9b1ca36a5bd3ea1a3b28d3196f826"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#a1eb9b1ca36a5bd3ea1a3b28d3196f826">DataReader</a> (string sqlstr, ref OleDbDataReader dr)</td></tr>
-<tr class="memdesc:a1eb9b1ca36a5bd3ea1a3b28d3196f826"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的OleDbDataReader对象,使用时请注意关闭  <a href="#a1eb9b1ca36a5bd3ea1a3b28d3196f826">更多...</a><br /></td></tr>
+<tr class="memdesc:a1eb9b1ca36a5bd3ea1a3b28d3196f826"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的OleDbDataReader对象,使用时请注意关闭  <a href="#a1eb9b1ca36a5bd3ea1a3b28d3196f826">更多...</a><br/></td></tr>
 <tr class="separator:a1eb9b1ca36a5bd3ea1a3b28d3196f826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dbb31f7f093f7bffa5e3ea1e599941e"><td class="memItemLeft" align="right" valign="top">static DataSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#a0dbb31f7f093f7bffa5e3ea1e599941e">DataSet</a> (string sqlstr)</td></tr>
-<tr class="memdesc:a0dbb31f7f093f7bffa5e3ea1e599941e"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的dataset  <a href="#a0dbb31f7f093f7bffa5e3ea1e599941e">更多...</a><br /></td></tr>
+<tr class="memdesc:a0dbb31f7f093f7bffa5e3ea1e599941e"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的dataset  <a href="#a0dbb31f7f093f7bffa5e3ea1e599941e">更多...</a><br/></td></tr>
 <tr class="separator:a0dbb31f7f093f7bffa5e3ea1e599941e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa66ad22b5bfc24c630e34a62a085995f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#aa66ad22b5bfc24c630e34a62a085995f">DataSet</a> (string sqlstr, ref DataSet ds)</td></tr>
-<tr class="memdesc:aa66ad22b5bfc24c630e34a62a085995f"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的dataset  <a href="#aa66ad22b5bfc24c630e34a62a085995f">更多...</a><br /></td></tr>
+<tr class="memdesc:aa66ad22b5bfc24c630e34a62a085995f"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的dataset  <a href="#aa66ad22b5bfc24c630e34a62a085995f">更多...</a><br/></td></tr>
 <tr class="separator:aa66ad22b5bfc24c630e34a62a085995f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec0d16c3a29668e1298500b0f87d0f6e"><td class="memItemLeft" align="right" valign="top">static DataTable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#aec0d16c3a29668e1298500b0f87d0f6e">DataTable</a> (string sqlstr)</td></tr>
-<tr class="memdesc:aec0d16c3a29668e1298500b0f87d0f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的datatable  <a href="#aec0d16c3a29668e1298500b0f87d0f6e">更多...</a><br /></td></tr>
+<tr class="memdesc:aec0d16c3a29668e1298500b0f87d0f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的datatable  <a href="#aec0d16c3a29668e1298500b0f87d0f6e">更多...</a><br/></td></tr>
 <tr class="separator:aec0d16c3a29668e1298500b0f87d0f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee3cbd4a9212d6df954c2228c2ff2f4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#a4ee3cbd4a9212d6df954c2228c2ff2f4">DataTable</a> (string sqlstr, ref DataTable dt)</td></tr>
-<tr class="memdesc:a4ee3cbd4a9212d6df954c2228c2ff2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的datatable  <a href="#a4ee3cbd4a9212d6df954c2228c2ff2f4">更多...</a><br /></td></tr>
+<tr class="memdesc:a4ee3cbd4a9212d6df954c2228c2ff2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的datatable  <a href="#a4ee3cbd4a9212d6df954c2228c2ff2f4">更多...</a><br/></td></tr>
 <tr class="separator:a4ee3cbd4a9212d6df954c2228c2ff2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3979a6d17790d9ecc1cc9c4bcf56de84"><td class="memItemLeft" align="right" valign="top">static DataView&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_data_base_1_1_access_1_1_access_helper.html#a3979a6d17790d9ecc1cc9c4bcf56de84">DataView</a> (string sqlstr)</td></tr>
-<tr class="memdesc:a3979a6d17790d9ecc1cc9c4bcf56de84"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的dataview  <a href="#a3979a6d17790d9ecc1cc9c4bcf56de84">更多...</a><br /></td></tr>
+<tr class="memdesc:a3979a6d17790d9ecc1cc9c4bcf56de84"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回指定sql语句的dataview  <a href="#a3979a6d17790d9ecc1cc9c4bcf56de84">更多...</a><br/></td></tr>
 <tr class="separator:a3979a6d17790d9ecc1cc9c4bcf56de84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
@@ -442,14 +441,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div>
 </div>
 <hr/>该类的文档由以下文件生成:<ul>
-<li>E:/GitHub/XCLNetTools/XCLNetTools/DataBase/Access/<a class="el" href="_access_helper_8cs_source.html">AccessHelper.cs</a></li>
+<li>D:/MyData/MyGit/GitHub/XCLNetTools/XCLNetTools/DataBase/Access/<a class="el" href="_access_helper_8cs_source.html">AccessHelper.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 八月 10日 星期三 12:52:56 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2016年 十一月 19日 星期六 10:05:13 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+</a> 1.8.5
 </small></address>
 </body>
 </html>
