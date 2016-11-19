@@ -13,11 +13,11 @@ using System.Runtime.InteropServices;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("XCLNetTools")]
-[assembly: AssemblyDescription("DotNet常用处理类")]
+[assembly: AssemblyDescription("DotNet常用处理类（GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("by:xcl Email:80213876@qq.com")]
-[assembly: AssemblyProduct("常用类")]
-[assembly: AssemblyCopyright("Copyright ©  2012-2016 by:xcl Email:80213876@qq.com")]
+[assembly: AssemblyCompany("by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
+[assembly: AssemblyProduct("DotNet常用处理类（GitHub：https://github.com/xucongli1989/XCLNetTools）")]
+[assembly: AssemblyCopyright("Copyright ©  2012-2016 by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
