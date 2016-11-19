@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace XCLNetTools.Enum
 {
@@ -307,6 +308,57 @@ namespace XCLNetTools.Enum
             var min = EnumHelper.GetMinValue(em);
             var max = EnumHelper.GetMaxValue(em);
             return val >= min && val <= max;
+        }
+
+        /// <summary>
+        /// 将指定class中的所有枚举转为json字符串
+        /// 示例：public class Test{public enum EE{a,b,c}}  ====》  {"EE":{"a":"","b":"","c":""}}
+        /// </summary>
+        public static string GetEnumJson(Type t)
+        {
+            StringBuilder str = new StringBuilder();
+            var ms = t.GetNestedTypes();
+            if (null == ms || ms.Count() == 0)
+            {
+                return string.Empty;
+            }
+            var enumlist = ms.Where(k => k.IsEnum).ToList();
+            if (null == enumlist || enumlist.Count == 0)
+            {
+                return string.Empty;
+            }
+            str.Append("{");
+            for (int i = 0; i < enumlist.Count; i++)
+            {
+                var m = enumlist[i];
+                str.AppendFormat(@"""{0}"":{{", m.Name);
+                var fields = m.GetFields().Where(k => k.FieldType.IsEnum).ToList();
+                for (int j = 0; j < fields.Count; j++)
+                {
+                    string val = fields[j].Name;
+                    string des = "";
+
+                    Object[] customObjs = fields[j].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                    if (null != customObjs && customObjs.Length > 0)
+                    {
+                        des = ((DescriptionAttribute)customObjs[0]).Description;
+                    }
+
+                    str.AppendFormat(@"""{0}"":""{1}""", val, des);
+                    if (j != fields.Count - 1)
+                    {
+                        str.Append(",");
+                    }
+                }
+                str.Append("}");
+                if (i != enumlist.Count - 1)
+                {
+                    str.Append(",");
+                }
+            }
+            str.Append("}");
+
+            return str.ToString();
         }
     }
 }
