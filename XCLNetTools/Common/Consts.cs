@@ -28,42 +28,47 @@ namespace XCLNetTools.Common
         /// <summary>
         /// 电话号码正则
         /// </summary>
-        public static Regex RegPhone = new Regex("^[0-9]+[-]?[0-9]+[-]?[0-9]$");
+        public static readonly Regex RegPhone = new Regex("^[0-9]+[-]?[0-9]+[-]?[0-9]$");
 
         /// <summary>
         /// 无符号数字正则
         /// </summary>
-        public static Regex RegNumber = new Regex("^[0-9]+$");
+        public static readonly Regex RegNumber = new Regex("^[0-9]+$");
 
         /// <summary>
         /// 有符号数字正则
         /// </summary>
-        public static Regex RegNumberSign = new Regex("^[+-]?[0-9]+$");
+        public static readonly Regex RegNumberSign = new Regex("^[+-]?[0-9]+$");
 
         /// <summary>
         /// 无符号小数正则
         /// </summary>
-        public static Regex RegDecimal = new Regex("^[0-9]+[.]?[0-9]+$");
+        public static readonly Regex RegDecimal = new Regex("^[0-9]+[.]?[0-9]+$");
 
         /// <summary>
         /// 有符号小数正则
         /// </summary>
-        public static Regex RegDecimalSign = new Regex("^[+-]?[0-9]+[.]?[0-9]+$"); //等价于^[+-]?\d+[.]?\d+$
+        public static readonly Regex RegDecimalSign = new Regex("^[+-]?[0-9]+[.]?[0-9]+$"); //等价于^[+-]?\d+[.]?\d+$
 
         /// <summary>
         /// email地址正则
         /// </summary>
-        public static Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");//w 英文字母或数字的字符串，和 [a-zA-Z0-9] 语法一样
+        public static readonly Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");//w 英文字母或数字的字符串，和 [a-zA-Z0-9] 语法一样
 
         /// <summary>
         /// 中文正则
         /// </summary>
-        public static Regex RegCHZN = new Regex("[\u4e00-\u9fa5]");
+        public static readonly Regex RegCHZN = new Regex("[\u4e00-\u9fa5]");
 
         /// <summary>
         /// http(s)地址正则
         /// </summary>
-        public static Regex RegURL = new Regex(@"^http[s]?:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\""\""])*$");
+        public static readonly Regex RegURL = new Regex(@"^http[s]?:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\""\""])*$");
+
+        /// <summary>
+        /// md5正则（32位大写）
+        /// </summary>
+        public static readonly Regex RegMD5_32Uppercase = new Regex("^[0-9A-F]{32}$");
 
         #endregion 正则
 
