@@ -118,6 +118,6 @@ namespace XCLNetTools.Message
         /// 是否为异常
         /// </summary>
         [DataMember]
-        public bool IsException { get; set; }
+        public virtual bool IsException { get; set; }
     }
 }
