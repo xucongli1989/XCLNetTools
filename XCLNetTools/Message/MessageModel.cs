@@ -113,5 +113,11 @@ namespace XCLNetTools.Message
         /// </summary>
         [DataMember]
         public virtual object CustomObject { get; set; }
+
+        /// <summary>
+        /// 是否为异常
+        /// </summary>
+        [DataMember]
+        public bool IsException { get; set; }
     }
 }
