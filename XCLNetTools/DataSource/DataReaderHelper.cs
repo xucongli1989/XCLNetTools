@@ -23,7 +23,7 @@ namespace XCLNetTools.DataSource
         /// </summary>
         /// <param name="dr">要转换的数据</param>
         /// <returns>list</returns>
-        public static IList<T> DataReaderToList<T>(IDataReader dr) where T : new()
+        public static IList<T> DataReaderToIList<T>(IDataReader dr) where T : new()
         {
             if (null == dr)
             {
@@ -57,6 +57,16 @@ namespace XCLNetTools.DataSource
                 }
             }
             return lst;
+        }
+
+        /// <summary>
+        /// 将DataReader转为list
+        /// </summary>
+        /// <param name="dr">要转换的数据</param>
+        /// <returns>list</returns>
+        public static List<T> DataReaderToList<T>(IDataReader dr) where T : new()
+        {
+            return DataReaderToIList<T>(dr) as List<T>;
         }
 
         /// <summary>
