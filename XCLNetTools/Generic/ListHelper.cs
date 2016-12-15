@@ -124,46 +124,5 @@ namespace XCLNetTools.Generic
             }
             return ts;
         }
-
-        /// <summary>
-        /// 将DataReader转为list
-        /// </summary>
-        /// <param name="dr">要转换的数据</param>
-        /// <returns>list</returns>
-        public static IList<T> DataReaderToList<T>(IDataReader dr) where T : new()
-        {
-            if (null == dr)
-            {
-                return null;
-            }
-            IList<T> lst = new List<T>();
-            var fields = new List<string>();
-            using (dr)
-            {
-                for (var i = 0; i < dr.FieldCount; i++)
-                {
-                    fields.Add(dr.GetName(i));
-                }
-                while (dr.Read())
-                {
-                    var t = new T();
-                    PropertyInfo[] propertys = t.GetType().GetProperties();
-                    foreach (PropertyInfo pi in propertys)
-                    {
-                        if (!fields.Contains(pi.Name) || !pi.CanWrite)
-                        {
-                            continue;
-                        }
-                        var value = dr[pi.Name];
-                        if (value != DBNull.Value)
-                        {
-                            pi.SetValue(t, value, null);
-                        }
-                    }
-                    lst.Add(t);
-                }
-            }
-            return lst;
-        }
     }
 }
