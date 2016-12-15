@@ -103,42 +103,67 @@ namespace XCLNetTools.Generic
             {
                 return null;
             }
-
-            // 定义集合
             IList<T> ts = new List<T>();
-
-            // 获得此模型的类型
-            Type type = typeof(T);
-
-            string tempName = "";
-
             foreach (DataRow dr in dt.Rows)
             {
                 T t = new T();
-
-                // 获得此模型的公共属性
                 PropertyInfo[] propertys = t.GetType().GetProperties();
-
                 foreach (PropertyInfo pi in propertys)
                 {
-                    tempName = pi.Name;
-
-                    // 检查DataTable是否包含此列
-                    if (dt.Columns.Contains(tempName))
+                    if (!dt.Columns.Contains(pi.Name) || !pi.CanWrite)
                     {
-                        // 判断此属性是否有Setter
-                        if (!pi.CanWrite) continue;
-
-                        object value = dr[tempName];
-                        if (value != DBNull.Value)
-                            pi.SetValue(t, value, null);
+                        continue;
+                    }
+                    var value = dr[pi.Name];
+                    if (value != DBNull.Value)
+                    {
+                        pi.SetValue(t, value, null);
                     }
                 }
-
                 ts.Add(t);
             }
-
             return ts;
+        }
+
+        /// <summary>
+        /// 将DataReader转为list
+        /// </summary>
+        /// <param name="dr">要转换的数据</param>
+        /// <returns>list</returns>
+        public static IList<T> DataReaderToList<T>(IDataReader dr) where T : new()
+        {
+            if (null == dr)
+            {
+                return null;
+            }
+            IList<T> lst = new List<T>();
+            var fields = new List<string>();
+            using (dr)
+            {
+                for (var i = 0; i < dr.FieldCount; i++)
+                {
+                    fields.Add(dr.GetName(i));
+                }
+                while (dr.Read())
+                {
+                    var t = new T();
+                    PropertyInfo[] propertys = t.GetType().GetProperties();
+                    foreach (PropertyInfo pi in propertys)
+                    {
+                        if (!fields.Contains(pi.Name) || !pi.CanWrite)
+                        {
+                            continue;
+                        }
+                        var value = dr[pi.Name];
+                        if (value != DBNull.Value)
+                        {
+                            pi.SetValue(t, value, null);
+                        }
+                    }
+                    lst.Add(t);
+                }
+            }
+            return lst;
         }
     }
 }
