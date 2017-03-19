@@ -498,6 +498,17 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 将网站根Uri转为开头带http://或https://的url地址
+        /// 如:"http://www.xcl.com:2156/ or https://www.xcl.com:2156/VirtualWeb/"
+        /// </summary>
+        /// <param name="httpType">http类型，默认为http://</param>
+        /// <returns>处理后的url</returns>
+        public static string GetRootUri(HttpTypeEnum httpType = HttpTypeEnum.Http)
+        {
+            return Common.ToHttpUrl(Common.RootUri, httpType);
+        }
+
+        /// <summary>
         /// 将http开头协议不规则的url字符串转化为指定的http://或https://形式的url
         /// </summary>
         /// <param name="url">要转换的url</param>
