@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using XCLNetTools.Entity;
+using static XCLNetTools.Enum.CommonEnum;
 
 namespace XCLNetTools.StringHander
 {
@@ -494,6 +495,23 @@ namespace XCLNetTools.StringHander
                 }
                 return url;
             }
+        }
+
+        /// <summary>
+        /// 将http开头协议不规则的url字符串转化为指定的http://或https://形式的url
+        /// </summary>
+        /// <param name="url">要转换的url</param>
+        /// <param name="httpType">http类型，默认为http://</param>
+        /// <returns>转换后的url</returns>
+        public static string ToHttpUrl(string url, HttpTypeEnum httpType = HttpTypeEnum.Http)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return null;
+            }
+            url = url.Trim().TrimStart(new char[] { ':', '/' });
+            url = XCLNetTools.Common.Consts.RegHttpScheme.Replace(url, string.Empty);
+            return string.Format("{0}://{1}", httpType.ToString().ToLower(), url);
         }
 
         /// <summary>

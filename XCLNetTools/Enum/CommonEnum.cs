@@ -334,6 +334,22 @@ namespace XCLNetTools.Enum
             OTHER
         }
 
+        /// <summary>
+        /// http类型枚举
+        /// </summary>
+        public enum HttpTypeEnum
+        {
+            /// <summary>
+            /// http
+            /// </summary>
+            Http,
+
+            /// <summary>
+            /// https
+            /// </summary>
+            Https
+        }
+
         #endregion 其它
     }
 }
