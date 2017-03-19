@@ -21,9 +21,9 @@ namespace XCLNetTools.Common
         #region 正则
 
         /// <summary>
-        /// http Scheme
+        /// http Scheme（忽略大小写）
         /// </summary>
-        public static readonly Regex RegHttpScheme = new Regex("^http[s]?://");
+        public static readonly Regex RegHttpScheme = new Regex("^http[s]?://", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// 电话号码正则
@@ -48,12 +48,12 @@ namespace XCLNetTools.Common
         /// <summary>
         /// 有符号小数正则
         /// </summary>
-        public static readonly Regex RegDecimalSign = new Regex("^[+-]?[0-9]+[.]?[0-9]+$"); //等价于^[+-]?\d+[.]?\d+$
+        public static readonly Regex RegDecimalSign = new Regex("^[+-]?[0-9]+[.]?[0-9]+$");
 
         /// <summary>
         /// email地址正则
         /// </summary>
-        public static readonly Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");//w 英文字母或数字的字符串，和 [a-zA-Z0-9] 语法一样
+        public static readonly Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");
 
         /// <summary>
         /// 中文正则
