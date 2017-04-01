@@ -6,6 +6,7 @@ Create By: XCL @ 2012
 
  */
 
+using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 
 namespace XCLNetTools.Serialize
@@ -73,6 +74,25 @@ namespace XCLNetTools.Serialize
                     break;
             }
             return result;
+        }
+
+        /// <summary>
+        /// 判断字符串是否为有效的json字符串
+        /// </summary>
+        /// <param name="json">json字符串</param>
+        /// <returns>是、否</returns>
+        public static bool IsJSON(string json)
+        {
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                return false;
+            }
+            try
+            {
+                return null != JObject.Parse(json.Trim());
+            }
+            catch { }
+            return false;
         }
     }
 }
