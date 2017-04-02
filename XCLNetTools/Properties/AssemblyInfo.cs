@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
 [assembly: AssemblyProduct("DotNet常用处理类（GitHub：https://github.com/xucongli1989/XCLNetTools）")]
-[assembly: AssemblyCopyright("Copyright ©  2012-2016 by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
+[assembly: AssemblyCopyright("Copyright ©  2012-2017 by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -38,8 +38,5 @@ using System.Runtime.InteropServices;
 //
 // 可以指定所有这些值，也可以使用“内部版本号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.6.1.*")]
-[assembly: AssemblyFileVersion("2.6.1")]
-
-//[assembly: AssemblyFileVersion("1.0.*")]
+[assembly: AssemblyVersion("2.6.2.*")]
+[assembly: AssemblyFileVersion("2.6.2")]
