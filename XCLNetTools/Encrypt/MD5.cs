@@ -38,5 +38,13 @@ namespace XCLNetTools.Encrypt
         {
             return string.Equals(md5Str, MD5.EncodeMD5(str, key));
         }
+
+        /// <summary>
+        /// 判断字符串是否为32位md5（不区分大小写）
+        /// </summary>
+        public static bool Is32MD5(string str)
+        {
+            return XCLNetTools.Common.Consts.RegMD5_32Uppercase.IsMatch((str ?? "").ToUpper());
+        }
     }
 }
