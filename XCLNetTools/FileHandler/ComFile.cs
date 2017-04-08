@@ -178,7 +178,22 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static string GetFileFolderPath(string filePath)
         {
-            return filePath.Substring(0, filePath.LastIndexOf('\\') + 1).TrimEnd('\\');
+            return System.IO.Path.GetDirectoryName(filePath);
+        }
+
+        /// <summary>
+        /// 使用新的文件名，更新指定路径path中的文件名。如：（"C:\demo\a.txt","abcd.doc"）=>C:\demo\abcd.doc
+        /// </summary>
+        /// <param name="path">文件物理路径</param>
+        /// <param name="name">新的文件名（如：a.txt）</param>
+        /// <returns>新的文件物理路径</returns>
+        public static string ChangePathByFileName(string path, string name)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
+            return System.IO.Path.GetDirectoryName(path) + '\\' + name;
         }
 
         #endregion 目录相关
@@ -306,52 +321,51 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 获取文件名
         /// </summary>
-        /// <param name="fileName">路径（相对或绝对均可）</param>
+        /// <param name="path">路径（相对或绝对均可）</param>
         /// <param name="isWithExt">是否包含扩展名</param>
         /// <returns>文件名</returns>
-        public static string GetFileName(string fileName, bool isWithExt = true)
+        public static string GetFileName(string path, bool isWithExt = true)
         {
-            var info = new System.IO.FileInfo(fileName);
-            if (isWithExt || string.IsNullOrEmpty(info.Name) || string.IsNullOrEmpty(info.Extension))
+            if (string.IsNullOrWhiteSpace(path))
             {
-                return info.Name;
+                return string.Empty;
             }
-            else
-            {
-                return XCLNetTools.StringHander.Common.TrimEnd(info.Name, info.Extension);
-            }
+            return isWithExt ? System.IO.Path.GetFileName(path) : System.IO.Path.GetFileNameWithoutExtension(path);
         }
 
         /// <summary>
-        ///给上传的文件随机命名
+        ///返回随机的文件命名，如：（"C:\demo\a.exe"）=>"20170408090024LGP9JWOAO2.exe"
         /// </summary>
-        /// <param name="filename">文件名</param>
-        /// <returns>新的文件名</returns>
-        public static string GetRandomFileName(string filename)
+        /// <param name="fileName">文件名或路径</param>
+        /// <returns>新的文件名（不含路径）</returns>
+        public static string GetRandomFileName(string fileName)
         {
-            int i;
-            string[] files = filename.Split('.');
-            string exfilename = '.' + files.GetValue(files.Length - 1).ToString();
-            char[] s = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
-
-            string num = "";
+            string num = string.Empty;
             Random r = new Random();
-            for (i = 0; i <= 9; i++)
-                num = num + s[r.Next(0, s.Length)].ToString();
-
-            DateTime time = DateTime.Now;
-            string name = time.Year.ToString() + time.Month.ToString().PadLeft(2, '0') + time.Day.ToString().PadLeft(2, '0') + time.Hour.ToString().PadLeft(2, '0') + time.Minute.ToString().PadLeft(2, '0') + time.Second.ToString().PadLeft(2, '0') + num + exfilename;
-            return name;
+            for (var i = 0; i <= 9; i++)
+            {
+                num = num + XCLNetTools.Common.Consts.NumberEngLetterChar[r.Next(0, XCLNetTools.Common.Consts.NumberEngLetterChar.Length)].ToString();
+            }
+            return DateTime.Now.ToString("yyyyMMddHHmmss") + num + GetExtName(fileName, true);
         }
 
         /// <summary>
-        /// 取得文件扩展名(不包含小圆点)【小写】
+        /// 取得文件扩展名（默认不包含小圆点）【小写】
         /// </summary>
-        /// <param name="fileName">文件完整路径或文件名</param>
-        /// <returns>文件扩展名(不包含小圆点)</returns>
-        public static string GetExtName(string fileName)
+        /// <param name="fileName">路径或文件名</param>
+        /// <param name="withDot">是否包含小圆点（默认：false）</param>
+        /// <returns>文件扩展名</returns>
+        public static string GetExtName(string fileName, bool withDot = false)
         {
-            return (new FileInfo(fileName).Extension ?? "").Trim('.');
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                return string.Empty;
+            }
+            if (withDot)
+            {
+                return System.IO.Path.GetExtension(fileName);
+            }
+            return System.IO.Path.GetExtension(fileName).TrimStart('.');
         }
 
         #endregion 其它
