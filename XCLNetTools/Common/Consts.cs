@@ -209,6 +209,11 @@ namespace XCLNetTools.Common
         /// </summary>
         public static readonly char[] EngLowercaseAndNumberChar = EngLowercaseLetterChar.Concat(NumberChar).ToArray();
 
+        /// <summary>
+        /// 数字+大写字母
+        /// </summary>
+        public static readonly char[] NumberEngLetterChar = NumberChar.Concat(EngUppercaseLetterChar).ToArray();
+
         #endregion 字母数字
     }
 }
