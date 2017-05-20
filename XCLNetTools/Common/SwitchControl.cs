@@ -118,7 +118,7 @@ namespace XCLNetTools.Common
                                             {100,"^[0123456789ABCDEF][0123456789ABCDEF]$"}
         };
 
-        //理论百分比  实际百分比
+        //配置百分比     实际百分比
         //1=========0.78125
         //2=========1.953125
         //3=========2.734375
@@ -243,19 +243,19 @@ namespace XCLNetTools.Common
 
         /// <summary>
         /// 开关是否打开
-        /// 如：<![CDATA[IsOpen("T=admin;test;&F=user1;user2;&V=20","admin");]]>
+        /// 如：<![CDATA[IsOpen("T=admin,test&F=user1,user2&V=20","admin");]]>
         /// </summary>
         /// <param name="str">
         /// 配置项的值，一般是从数据库的配置表中读取
-        /// 格式：<![CDATA[T=admin;test;&F=user1;user2;&V=20]]>
+        /// 格式：<![CDATA[T=admin,test&F=user1,user2&V=20]]>
         /// 说明：
-        /// 1、T后面的值为白名单，用;隔开，如果flag在此值中存在，则返回true
-        /// 2、F后面的值为黑名单，用;隔开，如果flag在此值中存在，则返回false
+        /// 1、T后面的值为白名单，用英文,隔开，如果flag在此值中存在，则返回true
+        /// 2、F后面的值为黑名单，用英文,隔开，如果flag在此值中存在，则返回false
         /// 3、当均不在黑白名单时，则使用V后面的值 ，该值为字符T或F或0~100之间的数字，当为T时，返回true；当为F时，返回false；当为数字时，即为百分比，由系统根据一定算法计算flag，并返回true或false
         /// 4、TFV之间用<![CDATA[&]]>隔开，类似url查询字符串
         /// 5、当整个配置值为T，则返回true；当整个配置值为空、F或不符合格式要求时，则返回false
         /// </param>
-        /// <param name="flag">百分比控制时的标志字符串，比如用户名："admin"；如果不指定，则只判断str是否为T或F</param>
+        /// <param name="flag">百分比控制时的标志字符串，比如用户名："admin"</param>
         /// <returns>true：开，false：关</returns>
         public static bool IsOpen(string str, string flag = "")
         {
@@ -273,10 +273,6 @@ namespace XCLNetTools.Common
             {
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(flag))
-            {
-                return false;
-            }
 
             var nv = System.Web.HttpUtility.ParseQueryString(str);
             if (null == nv || nv.Count == 0)
@@ -284,64 +280,74 @@ namespace XCLNetTools.Common
                 return false;
             }
 
-            flag = flag.Trim().ToUpper();
-            var val = string.Empty;
-
-            //T
-            val = nv[SwitchKeyTypeEnum.T.ToString()];
-            if (!string.IsNullOrWhiteSpace(val))
+            if (!string.IsNullOrWhiteSpace(flag))
             {
-                if (val.Split(';').Contains(flag))
-                {
-                    return true;
-                }
+                flag = flag.Trim().ToUpper();
             }
 
-            //F
-            val = nv[SwitchKeyTypeEnum.F.ToString()];
-            if (!string.IsNullOrWhiteSpace(val))
+            var val = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(flag))
             {
-                if (val.Split(';').Contains(flag))
+                //F
+                val = (nv[SwitchKeyTypeEnum.F.ToString()] ?? "").Trim();
+                if (!string.IsNullOrWhiteSpace(val))
                 {
-                    return false;
+                    if (val.Split(',').Contains(flag))
+                    {
+                        return false;
+                    }
+                }
+
+                //T
+                val = (nv[SwitchKeyTypeEnum.T.ToString()] ?? "").Trim();
+                if (!string.IsNullOrWhiteSpace(val))
+                {
+                    if (val.Split(',').Contains(flag))
+                    {
+                        return true;
+                    }
                 }
             }
 
             //V
-            val = nv[SwitchKeyTypeEnum.V.ToString()];
-            if (!string.IsNullOrWhiteSpace(val))
+            val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim();
+            if (string.IsNullOrWhiteSpace(val))
             {
-                if (val.Equals("T"))
-                {
-                    return true;
-                }
-                if (val.Equals("F"))
-                {
-                    return false;
-                }
-
-                int pVal = 0;
-                if (!Int32.TryParse(val, out pVal))
-                {
-                    return false;
-                }
-
-                if (pVal <= 0)
-                {
-                    return false;
-                }
-
-                if (pVal >= 100)
-                {
-                    return true;
-                }
-
-                string flagMd5 = XCLNetTools.Encrypt.MD5.EncodeMD5(flag);
-
-                return new Regex(percentDic[pVal]).IsMatch(flagMd5[0].ToString() + flagMd5[1].ToString());
+                return false;
             }
 
-            return false;
+            if (val.Equals(SwitchKeyTypeEnum.T.ToString()))
+            {
+                return true;
+            }
+            if (val.Equals(SwitchKeyTypeEnum.F.ToString()))
+            {
+                return false;
+            }
+
+            int pVal = 0;
+            if (!Int32.TryParse(val, out pVal))
+            {
+                return false;
+            }
+
+            if (pVal <= 0)
+            {
+                return false;
+            }
+
+            if (pVal >= 100)
+            {
+                return true;
+            }
+
+            if (string.IsNullOrWhiteSpace(flag))
+            {
+                return false;
+            }
+            string flagMd5 = XCLNetTools.Encrypt.MD5.EncodeMD5(flag);
+            return new Regex(percentDic[pVal]).IsMatch(flagMd5[0].ToString() + flagMd5[1].ToString());
         }
 
         #endregion 开关配置和开关的百分比控制
