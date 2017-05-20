@@ -255,7 +255,7 @@ namespace XCLNetTools.Common
         /// 4、TFV之间用<![CDATA[&]]>隔开，类似url查询字符串
         /// 5、当整个配置值为T，则返回true；当整个配置值为空、F或不符合格式要求时，则返回false
         /// </param>
-        /// <param name="flag">百分比控制时的标志字符串，比如用户名："admin"</param>
+        /// <param name="flag">百分比控制时的标志字符串，比如用户名："admin"；如果不指定，则只判断str是否为T或F</param>
         /// <returns>true：开，false：关</returns>
         public static bool IsOpen(string str, string flag = "")
         {
@@ -273,6 +273,10 @@ namespace XCLNetTools.Common
             {
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(flag))
+            {
+                return false;
+            }
 
             var nv = System.Web.HttpUtility.ParseQueryString(str);
             if (null == nv || nv.Count == 0)
@@ -280,11 +284,7 @@ namespace XCLNetTools.Common
                 return false;
             }
 
-            if (!string.IsNullOrWhiteSpace(flag))
-            {
-                flag = flag.Trim().ToUpper();
-            }
-
+            flag = flag.Trim().ToUpper();
             var val = string.Empty;
 
             //T
