@@ -244,16 +244,16 @@ namespace XCLNetTools.Common
 
         /// <summary>
         /// 开关是否打开
-        /// 如：<![CDATA[IsOpen("T=admin,test&F=user1,user2&V=20","admin");]]>
+        /// 如：IsOpen("T=admin,test&amp;F=user1,user2&amp;V=20","admin");
         /// </summary>
         /// <param name="str">
         /// 配置项的值，一般是从数据库的配置表中读取
-        /// 格式：<![CDATA[T=admin,test&F=user1,user2&V=20]]>
+        /// 格式："T=admin,test&amp;F=user1,user2&amp;V=20"
         /// 说明：
         /// 1、T后面的值为白名单，用英文,隔开，如果flag在此值中存在，则返回true
         /// 2、F后面的值为黑名单，用英文,隔开，如果flag在此值中存在，则返回false
         /// 3、当均不在黑白名单时，则使用V后面的值 ，该值为字符T或F或0~100之间的数字，当为T时，返回true；当为F时，返回false；当为数字时，即为百分比，由系统根据一定算法计算flag，并返回true或false
-        /// 4、TFV之间用<![CDATA[&]]>隔开，类似url查询字符串
+        /// 4、TFV之间用&amp;隔开，类似url查询字符串
         /// 5、当整个配置值为T，则返回true；当整个配置值为空、F或不符合格式要求时，则返回false
         /// </param>
         /// <param name="flag">百分比控制时的标志字符串，比如用户名："admin"</param>
