@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using XCLNetTools.Entity;
 
 namespace XCLNetTools.Common
 {
@@ -256,36 +257,83 @@ namespace XCLNetTools.Common
         /// 5、当整个配置值为T，则返回true；当整个配置值为空、F或不符合格式要求时，则返回false
         /// </param>
         /// <param name="flag">百分比控制时的标志字符串，比如用户名："admin"</param>
-        /// <returns>true：开，false：关</returns>
-        public static bool IsOpen(string str, string flag = "")
+        /// <returns>.Result=true：开，.Result=false：关</returns>
+        public static MethodResult<bool> IsOpen(string str, string flag = "")
         {
+            int? intVal = null;
+            var val = string.Empty;
+            var result = new MethodResult<bool>();
+            result.Result = false;
+
+            str = (str ?? "").Trim().ToUpper();
+            flag = (flag ?? "").Trim().ToUpper();
+
+            #region 配置格式校验
+
+            //空字符串
             if (string.IsNullOrWhiteSpace(str))
             {
-                return false;
+                result.Result = false;
+                return result;
             }
 
-            str = str.Trim().ToUpper();
+            //T
             if (str.Equals(SwitchKeyTypeEnum.T.ToString()))
             {
-                return true;
-            }
-            if (str.Equals(SwitchKeyTypeEnum.F.ToString()))
-            {
-                return false;
+                result.Result = true;
+                return result;
             }
 
+            //F
+            if (str.Equals(SwitchKeyTypeEnum.F.ToString()))
+            {
+                result.Result = false;
+                return result;
+            }
+
+            //符合基本格式
             var nv = System.Web.HttpUtility.ParseQueryString(str);
             if (null == nv || nv.Count == 0)
             {
-                return false;
+                result.Message = "必须使用有效的格式，如：【T=admin,test&F=user1,user2&V=20】，用&符分开，再用=赋值";
+                result.Result = false;
+                return result;
             }
 
-            if (!string.IsNullOrWhiteSpace(flag))
+            //配置的key必须在枚举SwitchKeyTypeEnum中
+            var enumKeys = XCLNetTools.Enum.EnumHelper.GetList(typeof(SwitchKeyTypeEnum)).Select(k => k.Text).ToList();
+            if (nv.AllKeys.ToList().Exists(k => !enumKeys.Contains(k)))
             {
-                flag = flag.Trim().ToUpper();
+                result.Message = "只允许存在T、F或V的赋值，如：【T=admin,test&F=user1,user2&V=20】！";
+                result.Result = false;
+                return result;
             }
 
-            var val = string.Empty;
+            if (!nv.AllKeys.Contains(SwitchKeyTypeEnum.V.ToString()) && (nv.AllKeys.Contains(SwitchKeyTypeEnum.T.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.F.ToString())))
+            {
+                result.Message = "配置了黑名单或白名单，必须配置V的值！";
+                result.Result = false;
+                return result;
+            }
+
+            val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim();
+            if (string.IsNullOrWhiteSpace(val))
+            {
+                result.Message = "配置V的值不能为空！";
+                result.Result = false;
+                return result;
+            }
+
+            intVal = XCLNetTools.Common.DataTypeConvert.ToIntNull(val);
+
+            if ((!intVal.HasValue && val != SwitchKeyTypeEnum.T.ToString() && val != SwitchKeyTypeEnum.F.ToString()) || (intVal.HasValue && (intVal < 0 || intVal > 100)))
+            {
+                result.Message = "配置V的值只能为：T或F或0~100之间的数字！";
+                result.Result = false;
+                return result;
+            }
+
+            #endregion 配置格式校验
 
             if (!string.IsNullOrWhiteSpace(flag))
             {
@@ -295,7 +343,8 @@ namespace XCLNetTools.Common
                 {
                     if (val.Split(',').Contains(flag))
                     {
-                        return false;
+                        result.Result = false;
+                        return result;
                     }
                 }
 
@@ -305,7 +354,8 @@ namespace XCLNetTools.Common
                 {
                     if (val.Split(',').Contains(flag))
                     {
-                        return true;
+                        result.Result = true;
+                        return result;
                     }
                 }
             }
@@ -314,40 +364,44 @@ namespace XCLNetTools.Common
             val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim();
             if (string.IsNullOrWhiteSpace(val))
             {
-                return false;
+                result.Result = false;
+                return result;
             }
 
             if (val.Equals(SwitchKeyTypeEnum.T.ToString()))
             {
-                return true;
+                result.Result = true;
+                return result;
             }
+
             if (val.Equals(SwitchKeyTypeEnum.F.ToString()))
             {
-                return false;
+                result.Result = false;
+                return result;
             }
 
-            int pVal = 0;
-            if (!Int32.TryParse(val, out pVal))
+            if (intVal == 0)
             {
-                return false;
+                result.Result = false;
+                return result;
             }
 
-            if (pVal <= 0)
+            if (intVal == 100)
             {
-                return false;
-            }
-
-            if (pVal >= 100)
-            {
-                return true;
+                result.Result = true;
+                return result;
             }
 
             if (string.IsNullOrWhiteSpace(flag))
             {
-                return false;
+                result.Result = false;
+                return result;
             }
+
             string flagMd5 = XCLNetTools.Encrypt.MD5.EncodeMD5(flag);
-            return new Regex(percentDic[pVal]).IsMatch(flagMd5[0].ToString() + flagMd5[1].ToString());
+            result.Result = new Regex(percentDic[intVal.Value]).IsMatch(flagMd5[0].ToString() + flagMd5[1].ToString());
+
+            return result;
         }
 
         #endregion 开关配置和开关的百分比控制
