@@ -243,7 +243,7 @@ namespace XCLNetTools.Common
         }
 
         /// <summary>
-        /// 开关是否打开
+        /// 开关是否打开（不区分大小写）
         /// 如：IsOpen("T=admin,test&amp;F=user1,user2&amp;V=20","admin");
         /// </summary>
         /// <param name="str">
