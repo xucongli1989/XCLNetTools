@@ -180,6 +180,58 @@ namespace XCLNetTools.Enum
 
         #endregion 图片操作相关
 
+        #region 文件类型相关
+
+        /// <summary>
+        /// 文件扩展名枚举
+        /// </summary>
+        public enum FileExtInfoEnum
+        {
+            /// <summary>
+            /// 文本文件
+            /// </summary>
+            [Description("txt")]
+            Txt,
+
+            /// <summary>
+            /// office文件
+            /// </summary>
+            [Description("doc,docx,xls,xlsx,ppt,pptx")]
+            Office,
+
+            /// <summary>
+            /// pdf文件
+            /// </summary>
+            [Description("pdf")]
+            Pdf,
+
+            /// <summary>
+            /// 压缩包文件
+            /// </summary>
+            [Description("rar,zip")]
+            Compress,
+
+            /// <summary>
+            /// 图片文件
+            /// </summary>
+            [Description("jpg,jpeg,gif,png,bmp")]
+            Image,
+
+            /// <summary>
+            /// 音乐文件
+            /// </summary>
+            [Description("wav,aif,au,mp3,ram,wma,mmf,amr,aac,flac")]
+            Music,
+
+            /// <summary>
+            /// 视频文件
+            /// </summary>
+            [Description("rmvb,mp4,wmv,mkv,avi")]
+            Video
+        }
+
+        #endregion 文件类型相关
+
         #region 其它
 
         /// <summary>
