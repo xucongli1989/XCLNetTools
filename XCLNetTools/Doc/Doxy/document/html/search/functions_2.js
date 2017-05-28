@@ -2,6 +2,7 @@ var searchData=
 [
   ['cacheparameterset',['CacheParameterSet',['../class_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l_1_1_sql_helper_parameter_cache.html#a4c9d3ea3efdc1a0c29c522ad7fde1900',1,'XCLNetTools::DataBase::MSSQL::SqlHelperParameterCache']]],
   ['changecurrentworksheet',['ChangeCurrentWorkSheet',['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#a626d1643db6d20fb63ba1166043dbc31',1,'XCLNetTools::Office::ExcelHandler::ExcelHelper']]],
+  ['changepathbyfilename',['ChangePathByFileName',['../class_x_c_l_net_tools_1_1_file_handler_1_1_com_file.html#a738457a4d0f779375830827f460da5ce',1,'XCLNetTools::FileHandler::ComFile']]],
   ['chdir',['ChDir',['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#a6345c0af7cd414503395170157d0db3b',1,'XCLNetTools::FTP::FTPClient']]],
   ['checkvalidationresult',['CheckValidationResult',['../class_x_c_l_net_tools_1_1_http_1_1_http_helper.html#aed104c08e4f4e44e2f3b7529e85c2848',1,'XCLNetTools::Http::HttpHelper']]],
   ['clear',['Clear',['../class_x_c_l_net_tools_1_1_cache_1_1_cache_class.html#afeab3c01d1a7b41007235b97f3fbaa35',1,'XCLNetTools::Cache::CacheClass']]],
@@ -34,6 +35,7 @@ var searchData=
   ['createhiddenhtml',['CreateHiddenHtml',['../class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#ae6425dda60cd7288371433985e8edb00',1,'XCLNetTools.StringHander.FormHelper.CreateHiddenHtml(List&lt; XCLNetTools.Entity.TextValue &gt; lst)'],['../class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html#a3df398dd109cfe76da34602149d16410',1,'XCLNetTools.StringHander.FormHelper.CreateHiddenHtml(string name, string value)']]],
   ['createorupdatexmlattributebyxpath',['CreateOrUpdateXmlAttributeByXPath',['../class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper.html#af784efe901d3b7ee6d6ffbcb2711f489',1,'XCLNetTools::XML::XMLHelper']]],
   ['createorupdatexmlnodebyxpath',['CreateOrUpdateXmlNodeByXPath',['../class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper.html#a770d2342df55e3a414830e1d1842dea8',1,'XCLNetTools::XML::XMLHelper']]],
+  ['createpagerquerysqlstring',['CreatePagerQuerySqlString',['../class_x_c_l_net_tools_1_1_data_base_1_1_s_q_l_library.html#afe56acf93da2af8c2671f8bfda89253d',1,'XCLNetTools::DataBase::SQLLibrary']]],
   ['createtextfile',['CreateTextFile',['../class_x_c_l_net_tools_1_1_file_handler_1_1_file_directory.html#a40110c2de9ef47ac099acdbbf0703a0c',1,'XCLNetTools::FileHandler::FileDirectory']]],
   ['createxmldocument',['CreateXmlDocument',['../class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper.html#a41eb1023cd0930834f907aaa7ec3e6c1',1,'XCLNetTools::XML::XMLHelper']]],
   ['createxmlnodebyxpath',['CreateXmlNodeByXPath',['../class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper.html#a64172ca2312a41b7b64a31e3585e8bda',1,'XCLNetTools::XML::XMLHelper']]],

@@ -9,6 +9,7 @@ var searchData=
   ['insertcolumns',['InsertColumns',['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#acaa208b7a203148f775abaf3bf2e4a06',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertColumns(int columnIndex, int count)'],['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#abd72f2dee77fe7ba5e035dac8ef2bc3f',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertColumns(int sheetIndex, int columnIndex, int count)']]],
   ['insertrows',['InsertRows',['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#a2d4906537fdb886329ba5dbdfe82ed18',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertRows(int rowIndex, int count)'],['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#ae52b03c158a2db80aa61b3db05e9298c',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.InsertRows(int sheetIndex, int rowIndex, int count)']]],
   ['inttoletter',['IntToLetter',['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#a836d286d62fb23c00f87b81fd197e006',1,'XCLNetTools::Office::ExcelHandler::ExcelHelper']]],
+  ['is32md5',['Is32MD5',['../class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html#aba314355a053d4f32af7b5c2a9e48773',1,'XCLNetTools::Encrypt::MD5']]],
   ['isajax',['IsAjax',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a2573b0ab4c60ce76ab6713ed40339db4',1,'XCLNetTools::StringHander::Common']]],
   ['isbinaryfile',['IsBinaryFile',['../class_x_c_l_net_tools_1_1_file_handler_1_1_com_file.html#a9e413978309f59720a38228ad9c1aaa2',1,'XCLNetTools::FileHandler::ComFile']]],
   ['iscanconvert_3c_20t_20_3e',['IsCanConvert&lt; T &gt;',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a9e27b7aee03f20572b1d66d1df37dbbc',1,'XCLNetTools::StringHander::Common']]],
@@ -21,8 +22,10 @@ var searchData=
   ['isexistenumvalue',['IsExistEnumValue',['../class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a364b52512aee90c0f2530745f4127047',1,'XCLNetTools::Enum::EnumHelper']]],
   ['ishaschzn',['IsHasCHZN',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a13211b08f74ed73f0ea6483eb065aeb3',1,'XCLNetTools::StringHander::PageValid']]],
   ['isinrange',['IsInRange',['../class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aff77ff22fe3efa1fbac6dd465ea67dc7',1,'XCLNetTools::Enum::EnumHelper']]],
+  ['isjson',['IsJSON',['../class_x_c_l_net_tools_1_1_serialize_1_1_j_s_o_n.html#afa66781755a8dc2088b5f03cfd82d9e9',1,'XCLNetTools::Serialize::JSON']]],
   ['isnumber',['IsNumber',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a5ef94c663cc81c8380957575ef31b11e',1,'XCLNetTools::StringHander::PageValid']]],
   ['isnumbersign',['IsNumberSign',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a91c3575738db7370e02e7698ef909695',1,'XCLNetTools::StringHander::PageValid']]],
+  ['isopen',['IsOpen',['../class_x_c_l_net_tools_1_1_common_1_1_switch_control.html#a810d2339e8bc7bbf4990e1701cfd2513',1,'XCLNetTools::Common::SwitchControl']]],
   ['isphone',['IsPhone',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#aeb849c3d8a38a3ef6a5eea5097d2abc0',1,'XCLNetTools::StringHander::PageValid']]],
   ['istextfile',['IsTextFile',['../class_x_c_l_net_tools_1_1_file_handler_1_1_com_file.html#afddfff3c4a196399bc033df2b017b16c',1,'XCLNetTools::FileHandler::ComFile']]],
   ['isurl',['IsURL',['../class_x_c_l_net_tools_1_1_string_hander_1_1_page_valid.html#a1b7a8a961ee9d599e74d29301475d69e',1,'XCLNetTools::StringHander::PageValid']]]
