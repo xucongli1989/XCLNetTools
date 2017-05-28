@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.5"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>XCLNetTools: 成员列表</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,9 +20,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.6</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.6.2</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -32,48 +31,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.5 -->
+<!-- 制作者 Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>首页</span></a></li>
-      <li><a href="namespaces.html"><span>包</span></a></li>
-      <li class="current"><a href="annotated.html"><span>类</span></a></li>
-      <li><a href="files.html"><span>文件</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="搜索" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>类列表</span></a></li>
-      <li><a href="classes.html"><span>类索引</span></a></li>
-      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
-      <li><a href="functions.html"><span>类成员</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>事件</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,20 +76,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#ac1c67f6247644347ed4673965832feaf">GetEnumDescriptionByText</a>(Type T, string text)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#acdcc3f9200705cc0831c1395f5d2c51e">GetEnumFieldModelList</a>(Type emType)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a919aa80b589b8038b8db6f731b50556d">GetEnumFieldTModelList&lt; T &gt;</a>(Type emType)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a7023c3a9e2c46de0cdeed71bce2cfb6a">GetEnumListByBitValue&lt; T &gt;</a>(int val)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a43bf704153939cd6950d5d88e072c691">GetEnumSumValue</a>(Type em)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a0f98e6348aacd00a6254794e6565c173">GetList</a>(Type type)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aa7edc75ec210b0c0740978a392e78b32">GetMaxValue</a>(Type em)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a8111ec28e6283a2c1964b367b68351c2">GetMinValue</a>(Type em)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#ab5d340064717d8cf3c9c6036d3770b1f">GetValueByText</a>(List&lt; XCLNetTools.Entity.TextValue &gt; lst, string text)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a364b52512aee90c0f2530745f4127047">IsExistEnumValue</a>(int v, Type type)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aff77ff22fe3efa1fbac6dd465ea67dc7">IsInRange</a>(Type em, long val)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aad296fc07d735fa8507ec3d199432bd2">GetEnumJson</a>(Type t)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a7023c3a9e2c46de0cdeed71bce2cfb6a">GetEnumListByBitValue&lt; T &gt;</a>(int val)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a43bf704153939cd6950d5d88e072c691">GetEnumSumValue</a>(Type em)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a0f98e6348aacd00a6254794e6565c173">GetList</a>(Type type)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aa7edc75ec210b0c0740978a392e78b32">GetMaxValue</a>(Type em)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a8111ec28e6283a2c1964b367b68351c2">GetMinValue</a>(Type em)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#ab5d340064717d8cf3c9c6036d3770b1f">GetValueByText</a>(List&lt; XCLNetTools.Entity.TextValue &gt; lst, string text)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#a364b52512aee90c0f2530745f4127047">IsExistEnumValue</a>(int v, Type type)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html#aff77ff22fe3efa1fbac6dd465ea67dc7">IsInRange</a>(Type em, long val)</td><td class="entry"><a class="el" href="class_x_c_l_net_tools_1_1_enum_1_1_enum_helper.html">XCLNetTools.Enum.EnumHelper</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2016年 十一月 19日 星期六 10:05:14 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2017年 五月 28日 星期日 09:25:20 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.5
+</a> 1.8.13
 </small></address>
 </body>
 </html>

@@ -1,334 +1,291 @@
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption}{\section{X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption类 参考}
-\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption}\index{X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption}}
-}
+\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption}{}\section{X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption类 参考}
+\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption}\index{X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption}}
 
 
-R\-S\-A加密解密及\-R\-S\-A签名和验证  
+R\+S\+A加密解密及\+R\+S\+A签名和验证  
 
 
 \subsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ac91142d16f1762747461af4491bbd76d}{R\-S\-A\-Key} (out string xml\-Keys, out string xml\-Public\-Key)
-\begin{DoxyCompactList}\small\item\em R\-S\-A 的密钥产生 产生私钥 和公钥 \end{DoxyCompactList}\item 
-string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a15ae7532ba367753f784e08a153ea79b}{R\-S\-A\-Encrypt} (string xml\-Public\-Key, string m\-\_\-str\-Encrypt\-String)
-\begin{DoxyCompactList}\small\item\em R\-S\-A的加密函数 string \end{DoxyCompactList}\item 
-string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3c6604c439e1ff1aa07d2d5724157b19}{R\-S\-A\-Encrypt} (string xml\-Public\-Key, byte\mbox{[}$\,$\mbox{]} Encrypt\-String)
-\begin{DoxyCompactList}\small\item\em R\-S\-A的加密函数 byte\mbox{[}\mbox{]} \end{DoxyCompactList}\item 
-string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a5daa894b5020479ee2af68fe3fe75a41}{R\-S\-A\-Decrypt} (string xml\-Private\-Key, string m\-\_\-str\-Decrypt\-String)
-\begin{DoxyCompactList}\small\item\em R\-S\-A的解密函数 string \end{DoxyCompactList}\item 
-string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ab7bda8b65def11fd1bb4adf1384179f7}{R\-S\-A\-Decrypt} (string xml\-Private\-Key, byte\mbox{[}$\,$\mbox{]} Decrypt\-String)
-\begin{DoxyCompactList}\small\item\em R\-S\-A的解密函数 byte \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af5565911cb529cf571c4ffa79ee3cd98}{Get\-Hash} (string m\-\_\-str\-Source, ref byte\mbox{[}$\,$\mbox{]} Hash\-Data)
-\begin{DoxyCompactList}\small\item\em 获取\-Hash描述表 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a453b18fdbccb2267733de128b72b2633}{Get\-Hash} (string m\-\_\-str\-Source, ref string str\-Hash\-Data)
-\begin{DoxyCompactList}\small\item\em 获取\-Hash描述表 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aa17ed47b9801531c69d3a3572d78aee7}{Get\-Hash} (System.\-I\-O.\-File\-Stream obj\-File, ref byte\mbox{[}$\,$\mbox{]} Hash\-Data)
-\begin{DoxyCompactList}\small\item\em 获取\-Hash描述表 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aab81fea26f9a3b878a00b42ee35d29fc}{Get\-Hash} (System.\-I\-O.\-File\-Stream obj\-File, ref string str\-Hash\-Data)
-\begin{DoxyCompactList}\small\item\em 获取\-Hash描述表 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aedbefd6ab8da821fa2857aab5a997bd2}{Signature\-Formatter} (string p\-\_\-str\-Key\-Private, byte\mbox{[}$\,$\mbox{]} Hashbyte\-Signature, ref byte\mbox{[}$\,$\mbox{]} Encrypted\-Signature\-Data)
-\begin{DoxyCompactList}\small\item\em R\-S\-A签名 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3a0b1d6ee93b6d95c9e69d67d5c5533e}{Signature\-Formatter} (string p\-\_\-str\-Key\-Private, byte\mbox{[}$\,$\mbox{]} Hashbyte\-Signature, ref string m\-\_\-str\-Encrypted\-Signature\-Data)
-\begin{DoxyCompactList}\small\item\em R\-S\-A签名 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a2f3db195746c791b85d4706c99a17a31}{Signature\-Formatter} (string p\-\_\-str\-Key\-Private, string m\-\_\-str\-Hashbyte\-Signature, ref byte\mbox{[}$\,$\mbox{]} Encrypted\-Signature\-Data)
-\begin{DoxyCompactList}\small\item\em R\-S\-A签名 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a7f010e16f780f80fd0d702c2f6bd7af2}{Signature\-Formatter} (string p\-\_\-str\-Key\-Private, string m\-\_\-str\-Hashbyte\-Signature, ref string m\-\_\-str\-Encrypted\-Signature\-Data)
-\begin{DoxyCompactList}\small\item\em R\-S\-A签名 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a606d12a176fff58b86237d16f211ed85}{Signature\-Deformatter} (string p\-\_\-str\-Key\-Public, byte\mbox{[}$\,$\mbox{]} Hashbyte\-Deformatter, byte\mbox{[}$\,$\mbox{]} Deformatter\-Data)
-\begin{DoxyCompactList}\small\item\em R\-S\-A 签名验证 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af7392c6aa1d24546bae3e564e817c5f5}{Signature\-Deformatter} (string p\-\_\-str\-Key\-Public, string p\-\_\-str\-Hashbyte\-Deformatter, byte\mbox{[}$\,$\mbox{]} Deformatter\-Data)
-\begin{DoxyCompactList}\small\item\em R\-S\-A 签名验证 \end{DoxyCompactList}\item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af6e8cbf3d5f51120ee913bb7fc9c810d}{Signature\-Deformatter} (string p\-\_\-str\-Key\-Public, byte\mbox{[}$\,$\mbox{]} Hashbyte\-Deformatter, string p\-\_\-str\-Deformatter\-Data)
+void \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ac91142d16f1762747461af4491bbd76d}{R\+S\+A\+Key} (out string xml\+Keys, out string xml\+Public\+Key)
+\begin{DoxyCompactList}\small\item\em R\+SA 的密钥产生 产生私钥 和公钥 \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a15ae7532ba367753f784e08a153ea79b}{R\+S\+A\+Encrypt} (string xml\+Public\+Key, string m\+\_\+str\+Encrypt\+String)
+\begin{DoxyCompactList}\small\item\em R\+S\+A的加密函数 string \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3c6604c439e1ff1aa07d2d5724157b19}{R\+S\+A\+Encrypt} (string xml\+Public\+Key, byte\mbox{[}$\,$\mbox{]} Encrypt\+String)
+\begin{DoxyCompactList}\small\item\em R\+S\+A的加密函数 byte\mbox{[}\mbox{]} \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a5daa894b5020479ee2af68fe3fe75a41}{R\+S\+A\+Decrypt} (string xml\+Private\+Key, string m\+\_\+str\+Decrypt\+String)
+\begin{DoxyCompactList}\small\item\em R\+S\+A的解密函数 string \end{DoxyCompactList}\item 
+string \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ab7bda8b65def11fd1bb4adf1384179f7}{R\+S\+A\+Decrypt} (string xml\+Private\+Key, byte\mbox{[}$\,$\mbox{]} Decrypt\+String)
+\begin{DoxyCompactList}\small\item\em R\+S\+A的解密函数 byte \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af5565911cb529cf571c4ffa79ee3cd98}{Get\+Hash} (string m\+\_\+str\+Source, ref byte\mbox{[}$\,$\mbox{]} Hash\+Data)
+\begin{DoxyCompactList}\small\item\em 获取\+Hash描述表 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a453b18fdbccb2267733de128b72b2633}{Get\+Hash} (string m\+\_\+str\+Source, ref string str\+Hash\+Data)
+\begin{DoxyCompactList}\small\item\em 获取\+Hash描述表 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aa17ed47b9801531c69d3a3572d78aee7}{Get\+Hash} (System.\+I\+O.\+File\+Stream obj\+File, ref byte\mbox{[}$\,$\mbox{]} Hash\+Data)
+\begin{DoxyCompactList}\small\item\em 获取\+Hash描述表 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aab81fea26f9a3b878a00b42ee35d29fc}{Get\+Hash} (System.\+I\+O.\+File\+Stream obj\+File, ref string str\+Hash\+Data)
+\begin{DoxyCompactList}\small\item\em 获取\+Hash描述表 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aedbefd6ab8da821fa2857aab5a997bd2}{Signature\+Formatter} (string p\+\_\+str\+Key\+Private, byte\mbox{[}$\,$\mbox{]} Hashbyte\+Signature, ref byte\mbox{[}$\,$\mbox{]} Encrypted\+Signature\+Data)
+\begin{DoxyCompactList}\small\item\em R\+S\+A签名 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3a0b1d6ee93b6d95c9e69d67d5c5533e}{Signature\+Formatter} (string p\+\_\+str\+Key\+Private, byte\mbox{[}$\,$\mbox{]} Hashbyte\+Signature, ref string m\+\_\+str\+Encrypted\+Signature\+Data)
+\begin{DoxyCompactList}\small\item\em R\+S\+A签名 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a2f3db195746c791b85d4706c99a17a31}{Signature\+Formatter} (string p\+\_\+str\+Key\+Private, string m\+\_\+str\+Hashbyte\+Signature, ref byte\mbox{[}$\,$\mbox{]} Encrypted\+Signature\+Data)
+\begin{DoxyCompactList}\small\item\em R\+S\+A签名 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a7f010e16f780f80fd0d702c2f6bd7af2}{Signature\+Formatter} (string p\+\_\+str\+Key\+Private, string m\+\_\+str\+Hashbyte\+Signature, ref string m\+\_\+str\+Encrypted\+Signature\+Data)
+\begin{DoxyCompactList}\small\item\em R\+S\+A签名 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a606d12a176fff58b86237d16f211ed85}{Signature\+Deformatter} (string p\+\_\+str\+Key\+Public, byte\mbox{[}$\,$\mbox{]} Hashbyte\+Deformatter, byte\mbox{[}$\,$\mbox{]} Deformatter\+Data)
+\begin{DoxyCompactList}\small\item\em R\+SA 签名验证 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af7392c6aa1d24546bae3e564e817c5f5}{Signature\+Deformatter} (string p\+\_\+str\+Key\+Public, string p\+\_\+str\+Hashbyte\+Deformatter, byte\mbox{[}$\,$\mbox{]} Deformatter\+Data)
+\begin{DoxyCompactList}\small\item\em R\+SA 签名验证 \end{DoxyCompactList}\item 
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af6e8cbf3d5f51120ee913bb7fc9c810d}{Signature\+Deformatter} (string p\+\_\+str\+Key\+Public, byte\mbox{[}$\,$\mbox{]} Hashbyte\+Deformatter, string p\+\_\+str\+Deformatter\+Data)
 \item 
-bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a063bdecbb1d58871f898f1cc71ad7572}{Signature\-Deformatter} (string p\-\_\-str\-Key\-Public, string p\-\_\-str\-Hashbyte\-Deformatter, string p\-\_\-str\-Deformatter\-Data)
+bool \hyperlink{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a063bdecbb1d58871f898f1cc71ad7572}{Signature\+Deformatter} (string p\+\_\+str\+Key\+Public, string p\+\_\+str\+Hashbyte\+Deformatter, string p\+\_\+str\+Deformatter\+Data)
 \end{DoxyCompactItemize}
 
 
 \subsection{详细描述}
-R\-S\-A加密解密及\-R\-S\-A签名和验证 
+R\+S\+A加密解密及\+R\+S\+A签名和验证 
 
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 18 行定义.
+在文件 R\+S\+A\+Cryption.\+cs 第 18 行定义.
 
 
 
 \subsection{成员函数说明}
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af5565911cb529cf571c4ffa79ee3cd98}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Get\-Hash@{Get\-Hash}}
-\index{Get\-Hash@{Get\-Hash}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Get\-Hash (
-\begin{DoxyParamCaption}
-\item[{string}]{m\-\_\-str\-Source, }
-\item[{ref byte\mbox{[}$\,$\mbox{]}}]{Hash\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af5565911cb529cf571c4ffa79ee3cd98}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af5565911cb529cf571c4ffa79ee3cd98}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af5565911cb529cf571c4ffa79ee3cd98}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Get\+Hash@{Get\+Hash}}
+\index{Get\+Hash@{Get\+Hash}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Get\+Hash()}{GetHash()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Get\+Hash (\begin{DoxyParamCaption}\item[{string}]{m\+\_\+str\+Source,  }\item[{ref byte \mbox{[}$\,$\mbox{]}}]{Hash\+Data }\end{DoxyParamCaption})}
 
 
-获取\-Hash描述表 
 
+获取\+Hash描述表 
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 115 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a453b18fdbccb2267733de128b72b2633}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Get\-Hash@{Get\-Hash}}
-\index{Get\-Hash@{Get\-Hash}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Get\-Hash (
-\begin{DoxyParamCaption}
-\item[{string}]{m\-\_\-str\-Source, }
-\item[{ref string}]{str\-Hash\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a453b18fdbccb2267733de128b72b2633}
+在文件 R\+S\+A\+Cryption.\+cs 第 115 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a453b18fdbccb2267733de128b72b2633}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a453b18fdbccb2267733de128b72b2633}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Get\+Hash@{Get\+Hash}}
+\index{Get\+Hash@{Get\+Hash}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Get\+Hash()}{GetHash()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Get\+Hash (\begin{DoxyParamCaption}\item[{string}]{m\+\_\+str\+Source,  }\item[{ref string}]{str\+Hash\+Data }\end{DoxyParamCaption})}
 
-获取\-Hash描述表 
 
 
+获取\+Hash描述表 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 128 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aa17ed47b9801531c69d3a3572d78aee7}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Get\-Hash@{Get\-Hash}}
-\index{Get\-Hash@{Get\-Hash}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Get\-Hash (
-\begin{DoxyParamCaption}
-\item[{System.\-I\-O.\-File\-Stream}]{obj\-File, }
-\item[{ref byte\mbox{[}$\,$\mbox{]}}]{Hash\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aa17ed47b9801531c69d3a3572d78aee7}
 
+在文件 R\+S\+A\+Cryption.\+cs 第 128 行定义.
 
-获取\-Hash描述表 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aa17ed47b9801531c69d3a3572d78aee7}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aa17ed47b9801531c69d3a3572d78aee7}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Get\+Hash@{Get\+Hash}}
+\index{Get\+Hash@{Get\+Hash}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Get\+Hash()}{GetHash()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Get\+Hash (\begin{DoxyParamCaption}\item[{System.\+I\+O.\+File\+Stream}]{obj\+File,  }\item[{ref byte \mbox{[}$\,$\mbox{]}}]{Hash\+Data }\end{DoxyParamCaption})}
 
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 144 行定义.
+获取\+Hash描述表 
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aab81fea26f9a3b878a00b42ee35d29fc}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Get\-Hash@{Get\-Hash}}
-\index{Get\-Hash@{Get\-Hash}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Get\-Hash}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Get\-Hash (
-\begin{DoxyParamCaption}
-\item[{System.\-I\-O.\-File\-Stream}]{obj\-File, }
-\item[{ref string}]{str\-Hash\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aab81fea26f9a3b878a00b42ee35d29fc}
 
 
-获取\-Hash描述表 
+在文件 R\+S\+A\+Cryption.\+cs 第 144 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aab81fea26f9a3b878a00b42ee35d29fc}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aab81fea26f9a3b878a00b42ee35d29fc}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Get\+Hash@{Get\+Hash}}
+\index{Get\+Hash@{Get\+Hash}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Get\+Hash()}{GetHash()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Get\+Hash (\begin{DoxyParamCaption}\item[{System.\+I\+O.\+File\+Stream}]{obj\+File,  }\item[{ref string}]{str\+Hash\+Data }\end{DoxyParamCaption})}
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 157 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a5daa894b5020479ee2af68fe3fe75a41}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!R\-S\-A\-Decrypt@{R\-S\-A\-Decrypt}}
-\index{R\-S\-A\-Decrypt@{R\-S\-A\-Decrypt}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{R\-S\-A\-Decrypt}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-R\-S\-A\-Decrypt (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-Private\-Key, }
-\item[{string}]{m\-\_\-str\-Decrypt\-String}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a5daa894b5020479ee2af68fe3fe75a41}
+获取\+Hash描述表 
 
 
-R\-S\-A的解密函数 string 
 
+在文件 R\+S\+A\+Cryption.\+cs 第 157 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a5daa894b5020479ee2af68fe3fe75a41}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a5daa894b5020479ee2af68fe3fe75a41}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!R\+S\+A\+Decrypt@{R\+S\+A\+Decrypt}}
+\index{R\+S\+A\+Decrypt@{R\+S\+A\+Decrypt}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{R\+S\+A\+Decrypt()}{RSADecrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+R\+S\+A\+Decrypt (\begin{DoxyParamCaption}\item[{string}]{xml\+Private\+Key,  }\item[{string}]{m\+\_\+str\+Decrypt\+String }\end{DoxyParamCaption})}
 
-在文件 R\-S\-A\-Cryption.\-cs 第 79 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ab7bda8b65def11fd1bb4adf1384179f7}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!R\-S\-A\-Decrypt@{R\-S\-A\-Decrypt}}
-\index{R\-S\-A\-Decrypt@{R\-S\-A\-Decrypt}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{R\-S\-A\-Decrypt}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-R\-S\-A\-Decrypt (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-Private\-Key, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Decrypt\-String}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ab7bda8b65def11fd1bb4adf1384179f7}
 
+R\+S\+A的解密函数 string 
 
-R\-S\-A的解密函数 byte 
 
 
+在文件 R\+S\+A\+Cryption.\+cs 第 79 行定义.
 
-在文件 R\-S\-A\-Cryption.\-cs 第 95 行定义.
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ab7bda8b65def11fd1bb4adf1384179f7}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ab7bda8b65def11fd1bb4adf1384179f7}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!R\+S\+A\+Decrypt@{R\+S\+A\+Decrypt}}
+\index{R\+S\+A\+Decrypt@{R\+S\+A\+Decrypt}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{R\+S\+A\+Decrypt()}{RSADecrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+R\+S\+A\+Decrypt (\begin{DoxyParamCaption}\item[{string}]{xml\+Private\+Key,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Decrypt\+String }\end{DoxyParamCaption})}
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a15ae7532ba367753f784e08a153ea79b}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!R\-S\-A\-Encrypt@{R\-S\-A\-Encrypt}}
-\index{R\-S\-A\-Encrypt@{R\-S\-A\-Encrypt}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{R\-S\-A\-Encrypt}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-R\-S\-A\-Encrypt (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-Public\-Key, }
-\item[{string}]{m\-\_\-str\-Encrypt\-String}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a15ae7532ba367753f784e08a153ea79b}
 
 
-R\-S\-A的加密函数 string 
+R\+S\+A的解密函数 byte 
 
-R\-S\-A 方式加密 说明\-K\-E\-Y必须是\-X\-M\-L的行式,返回的是字符串 在有一点需要说明！！该加密方式有 长度 限制的！！ 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 45 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3c6604c439e1ff1aa07d2d5724157b19}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!R\-S\-A\-Encrypt@{R\-S\-A\-Encrypt}}
-\index{R\-S\-A\-Encrypt@{R\-S\-A\-Encrypt}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{R\-S\-A\-Encrypt}]{\setlength{\rightskip}{0pt plus 5cm}string X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-R\-S\-A\-Encrypt (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-Public\-Key, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Encrypt\-String}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3c6604c439e1ff1aa07d2d5724157b19}
+在文件 R\+S\+A\+Cryption.\+cs 第 95 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a15ae7532ba367753f784e08a153ea79b}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a15ae7532ba367753f784e08a153ea79b}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!R\+S\+A\+Encrypt@{R\+S\+A\+Encrypt}}
+\index{R\+S\+A\+Encrypt@{R\+S\+A\+Encrypt}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{R\+S\+A\+Encrypt()}{RSAEncrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+R\+S\+A\+Encrypt (\begin{DoxyParamCaption}\item[{string}]{xml\+Public\+Key,  }\item[{string}]{m\+\_\+str\+Encrypt\+String }\end{DoxyParamCaption})}
 
-R\-S\-A的加密函数 byte\mbox{[}\mbox{]} 
 
 
+R\+S\+A的加密函数 string 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 61 行定义.
+R\+SA 方式加密 说明\+K\+E\+Y必须是\+X\+M\+L的行式,返回的是字符串 在有一点需要说明！！该加密方式有 长度 限制的！！ 
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ac91142d16f1762747461af4491bbd76d}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!R\-S\-A\-Key@{R\-S\-A\-Key}}
-\index{R\-S\-A\-Key@{R\-S\-A\-Key}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{R\-S\-A\-Key}]{\setlength{\rightskip}{0pt plus 5cm}void X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-R\-S\-A\-Key (
-\begin{DoxyParamCaption}
-\item[{out string}]{xml\-Keys, }
-\item[{out string}]{xml\-Public\-Key}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ac91142d16f1762747461af4491bbd76d}
+在文件 R\+S\+A\+Cryption.\+cs 第 45 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3c6604c439e1ff1aa07d2d5724157b19}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3c6604c439e1ff1aa07d2d5724157b19}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!R\+S\+A\+Encrypt@{R\+S\+A\+Encrypt}}
+\index{R\+S\+A\+Encrypt@{R\+S\+A\+Encrypt}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{R\+S\+A\+Encrypt()}{RSAEncrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+R\+S\+A\+Encrypt (\begin{DoxyParamCaption}\item[{string}]{xml\+Public\+Key,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Encrypt\+String }\end{DoxyParamCaption})}
 
-R\-S\-A 的密钥产生 产生私钥 和公钥 
 
 
+R\+S\+A的加密函数 byte\mbox{[}\mbox{]} 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 25 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a606d12a176fff58b86237d16f211ed85}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Deformatter@{Signature\-Deformatter}}
-\index{Signature\-Deformatter@{Signature\-Deformatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Deformatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Deformatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Public, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Hashbyte\-Deformatter, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Deformatter\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a606d12a176fff58b86237d16f211ed85}
 
+在文件 R\+S\+A\+Cryption.\+cs 第 61 行定义.
 
-R\-S\-A 签名验证 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ac91142d16f1762747461af4491bbd76d}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_ac91142d16f1762747461af4491bbd76d}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!R\+S\+A\+Key@{R\+S\+A\+Key}}
+\index{R\+S\+A\+Key@{R\+S\+A\+Key}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{R\+S\+A\+Key()}{RSAKey()}}
+{\footnotesize\ttfamily void X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+R\+S\+A\+Key (\begin{DoxyParamCaption}\item[{out string}]{xml\+Keys,  }\item[{out string}]{xml\+Public\+Key }\end{DoxyParamCaption})}
 
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 262 行定义.
+R\+SA 的密钥产生 产生私钥 和公钥 
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af7392c6aa1d24546bae3e564e817c5f5}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Deformatter@{Signature\-Deformatter}}
-\index{Signature\-Deformatter@{Signature\-Deformatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Deformatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Deformatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Public, }
-\item[{string}]{p\-\_\-str\-Hashbyte\-Deformatter, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Deformatter\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af7392c6aa1d24546bae3e564e817c5f5}
 
 
-R\-S\-A 签名验证 
+在文件 R\+S\+A\+Cryption.\+cs 第 25 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a606d12a176fff58b86237d16f211ed85}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a606d12a176fff58b86237d16f211ed85}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Deformatter@{Signature\+Deformatter}}
+\index{Signature\+Deformatter@{Signature\+Deformatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Deformatter()}{SignatureDeformatter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Deformatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Public,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Hashbyte\+Deformatter,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Deformatter\+Data }\end{DoxyParamCaption})}
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 284 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af6e8cbf3d5f51120ee913bb7fc9c810d}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Deformatter@{Signature\-Deformatter}}
-\index{Signature\-Deformatter@{Signature\-Deformatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Deformatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Deformatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Public, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Hashbyte\-Deformatter, }
-\item[{string}]{p\-\_\-str\-Deformatter\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af6e8cbf3d5f51120ee913bb7fc9c810d}
+R\+SA 签名验证 
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 307 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a063bdecbb1d58871f898f1cc71ad7572}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Deformatter@{Signature\-Deformatter}}
-\index{Signature\-Deformatter@{Signature\-Deformatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Deformatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Deformatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Public, }
-\item[{string}]{p\-\_\-str\-Hashbyte\-Deformatter, }
-\item[{string}]{p\-\_\-str\-Deformatter\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a063bdecbb1d58871f898f1cc71ad7572}
+在文件 R\+S\+A\+Cryption.\+cs 第 262 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af7392c6aa1d24546bae3e564e817c5f5}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af7392c6aa1d24546bae3e564e817c5f5}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Deformatter@{Signature\+Deformatter}}
+\index{Signature\+Deformatter@{Signature\+Deformatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Deformatter()}{SignatureDeformatter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Deformatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Public,  }\item[{string}]{p\+\_\+str\+Hashbyte\+Deformatter,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Deformatter\+Data }\end{DoxyParamCaption})}
 
-在文件 R\-S\-A\-Cryption.\-cs 第 330 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aedbefd6ab8da821fa2857aab5a997bd2}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Formatter@{Signature\-Formatter}}
-\index{Signature\-Formatter@{Signature\-Formatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Formatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Private, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Hashbyte\-Signature, }
-\item[{ref byte\mbox{[}$\,$\mbox{]}}]{Encrypted\-Signature\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aedbefd6ab8da821fa2857aab5a997bd2}
 
+R\+SA 签名验证 
 
-R\-S\-A签名 
 
 
+在文件 R\+S\+A\+Cryption.\+cs 第 284 行定义.
 
-在文件 R\-S\-A\-Cryption.\-cs 第 177 行定义.
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af6e8cbf3d5f51120ee913bb7fc9c810d}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_af6e8cbf3d5f51120ee913bb7fc9c810d}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Deformatter@{Signature\+Deformatter}}
+\index{Signature\+Deformatter@{Signature\+Deformatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Deformatter()}{SignatureDeformatter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Deformatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Public,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Hashbyte\+Deformatter,  }\item[{string}]{p\+\_\+str\+Deformatter\+Data }\end{DoxyParamCaption})}
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3a0b1d6ee93b6d95c9e69d67d5c5533e}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Formatter@{Signature\-Formatter}}
-\index{Signature\-Formatter@{Signature\-Formatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Formatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Private, }
-\item[{byte\mbox{[}$\,$\mbox{]}}]{Hashbyte\-Signature, }
-\item[{ref string}]{m\-\_\-str\-Encrypted\-Signature\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3a0b1d6ee93b6d95c9e69d67d5c5533e}
 
 
-R\-S\-A签名 
+在文件 R\+S\+A\+Cryption.\+cs 第 307 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a063bdecbb1d58871f898f1cc71ad7572}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a063bdecbb1d58871f898f1cc71ad7572}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Deformatter@{Signature\+Deformatter}}
+\index{Signature\+Deformatter@{Signature\+Deformatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Deformatter()}{SignatureDeformatter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Deformatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Public,  }\item[{string}]{p\+\_\+str\+Hashbyte\+Deformatter,  }\item[{string}]{p\+\_\+str\+Deformatter\+Data }\end{DoxyParamCaption})}
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 194 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a2f3db195746c791b85d4706c99a17a31}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Formatter@{Signature\-Formatter}}
-\index{Signature\-Formatter@{Signature\-Formatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Formatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Private, }
-\item[{string}]{m\-\_\-str\-Hashbyte\-Signature, }
-\item[{ref byte\mbox{[}$\,$\mbox{]}}]{Encrypted\-Signature\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a2f3db195746c791b85d4706c99a17a31}
+在文件 R\+S\+A\+Cryption.\+cs 第 330 行定义.
 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aedbefd6ab8da821fa2857aab5a997bd2}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_aedbefd6ab8da821fa2857aab5a997bd2}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Formatter@{Signature\+Formatter}}
+\index{Signature\+Formatter@{Signature\+Formatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Formatter()}{SignatureFormatter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Formatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Private,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Hashbyte\+Signature,  }\item[{ref byte \mbox{[}$\,$\mbox{]}}]{Encrypted\+Signature\+Data }\end{DoxyParamCaption})}
 
-R\-S\-A签名 
 
 
+R\+S\+A签名 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 215 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a7f010e16f780f80fd0d702c2f6bd7af2}{\index{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}!Signature\-Formatter@{Signature\-Formatter}}
-\index{Signature\-Formatter@{Signature\-Formatter}!XCLNetTools::Encrypt::RSACryption@{X\-C\-L\-Net\-Tools\-::\-Encrypt\-::\-R\-S\-A\-Cryption}}
-\subsubsection[{Signature\-Formatter}]{\setlength{\rightskip}{0pt plus 5cm}bool X\-C\-L\-Net\-Tools.\-Encrypt.\-R\-S\-A\-Cryption.\-Signature\-Formatter (
-\begin{DoxyParamCaption}
-\item[{string}]{p\-\_\-str\-Key\-Private, }
-\item[{string}]{m\-\_\-str\-Hashbyte\-Signature, }
-\item[{ref string}]{m\-\_\-str\-Encrypted\-Signature\-Data}
-\end{DoxyParamCaption}
-)}}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a7f010e16f780f80fd0d702c2f6bd7af2}
 
+在文件 R\+S\+A\+Cryption.\+cs 第 177 行定义.
 
-R\-S\-A签名 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3a0b1d6ee93b6d95c9e69d67d5c5533e}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a3a0b1d6ee93b6d95c9e69d67d5c5533e}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Formatter@{Signature\+Formatter}}
+\index{Signature\+Formatter@{Signature\+Formatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Formatter()}{SignatureFormatter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Formatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Private,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{Hashbyte\+Signature,  }\item[{ref string}]{m\+\_\+str\+Encrypted\+Signature\+Data }\end{DoxyParamCaption})}
 
 
 
-在文件 R\-S\-A\-Cryption.\-cs 第 235 行定义.
+R\+S\+A签名 
 
 
 
-该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+在文件 R\+S\+A\+Cryption.\+cs 第 194 行定义.
+
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a2f3db195746c791b85d4706c99a17a31}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a2f3db195746c791b85d4706c99a17a31}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Formatter@{Signature\+Formatter}}
+\index{Signature\+Formatter@{Signature\+Formatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Formatter()}{SignatureFormatter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Formatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Private,  }\item[{string}]{m\+\_\+str\+Hashbyte\+Signature,  }\item[{ref byte \mbox{[}$\,$\mbox{]}}]{Encrypted\+Signature\+Data }\end{DoxyParamCaption})}
+
+
+
+R\+S\+A签名 
+
+
+
+在文件 R\+S\+A\+Cryption.\+cs 第 215 行定义.
+
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a7f010e16f780f80fd0d702c2f6bd7af2}\label{class_x_c_l_net_tools_1_1_encrypt_1_1_r_s_a_cryption_a7f010e16f780f80fd0d702c2f6bd7af2}} 
+\index{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}!Signature\+Formatter@{Signature\+Formatter}}
+\index{Signature\+Formatter@{Signature\+Formatter}!X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption@{X\+C\+L\+Net\+Tools\+::\+Encrypt\+::\+R\+S\+A\+Cryption}}
+\subsubsection{\texorpdfstring{Signature\+Formatter()}{SignatureFormatter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool X\+C\+L\+Net\+Tools.\+Encrypt.\+R\+S\+A\+Cryption.\+Signature\+Formatter (\begin{DoxyParamCaption}\item[{string}]{p\+\_\+str\+Key\+Private,  }\item[{string}]{m\+\_\+str\+Hashbyte\+Signature,  }\item[{ref string}]{m\+\_\+str\+Encrypted\+Signature\+Data }\end{DoxyParamCaption})}
+
+
+
+R\+S\+A签名 
+
+
+
+在文件 R\+S\+A\+Cryption.\+cs 第 235 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-D\-:/\-My\-Data/\-My\-Git/\-Git\-Hub/\-X\-C\-L\-Net\-Tools/\-X\-C\-L\-Net\-Tools/\-Encrypt/\hyperlink{_r_s_a_cryption_8cs}{R\-S\-A\-Cryption.\-cs}\end{DoxyCompactItemize}
+D\+:/\+My\+Data/\+Git\+Hub/\+X\+C\+L\+Net\+Tools/\+X\+C\+L\+Net\+Tools/\+Encrypt/\hyperlink{_r_s_a_cryption_8cs}{R\+S\+A\+Cryption.\+cs}\end{DoxyCompactItemize}

@@ -36,6 +36,8 @@ var searchData=
   ['sqlitehelper_2ecs',['SQLiteHelper.cs',['../_s_q_lite_helper_8cs.html',1,'']]],
   ['sqllibrary',['SQLLibrary',['../class_x_c_l_net_tools_1_1_data_base_1_1_s_q_l_library.html',1,'XCLNetTools::DataBase']]],
   ['sqllibrary_2ecs',['SQLLibrary.cs',['../_s_q_l_library_8cs.html',1,'']]],
+  ['sqlpagerconditionentity',['SqlPagerConditionEntity',['../class_x_c_l_net_tools_1_1_entity_1_1_sql_pager_condition_entity.html',1,'XCLNetTools.Entity.SqlPagerConditionEntity'],['../class_x_c_l_net_tools_1_1_entity_1_1_sql_pager_condition_entity.html#a8b6d71348a2cbfd9f609215a9d1af699',1,'XCLNetTools.Entity.SqlPagerConditionEntity.SqlPagerConditionEntity()'],['../class_x_c_l_net_tools_1_1_entity_1_1_sql_pager_condition_entity.html#a567e636eb71d4281f260cad017707cc9',1,'XCLNetTools.Entity.SqlPagerConditionEntity.SqlPagerConditionEntity(string tableName)']]],
+  ['sqlpagerconditionentity_2ecs',['SqlPagerConditionEntity.cs',['../_sql_pager_condition_entity_8cs.html',1,'']]],
   ['src',['Src',['../class_x_c_l_net_tools_1_1_entity_1_1_static_resource.html#a956fb610dd51730bbe8aac6a04d72da3',1,'XCLNetTools::Entity::StaticResource']]],
   ['startindex',['StartIndex',['../class_x_c_l_net_tools_1_1_entity_1_1_pager_info.html#a659b36bf635a3fed41ee3b82ec4c2cbe',1,'XCLNetTools::Entity::PagerInfo']]],
   ['starttime',['StartTime',['../class_x_c_l_net_tools_1_1_entity_1_1_sub_time.html#a7813c7a0874535abbe0b5307d7310c27',1,'XCLNetTools::Entity::SubTime']]],
@@ -50,9 +52,13 @@ var searchData=
   ['string',['String',['../namespace_x_c_l_net_tools_1_1_http.html#a3216524397972f7d0c5733b123216e9ea27118326006d3829667a400ad23d5d98',1,'XCLNetTools.Http.String()'],['../namespace_x_c_l_net_tools_1_1_http.html#ad73fffd49af2087d4f5c0a954d15d08ca27118326006d3829667a400ad23d5d98',1,'XCLNetTools.Http.String()']]],
   ['stringencoding',['StringEncoding',['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html#ade83206c0e41ad24ba543ebd89e0281f',1,'XCLNetTools::FileHandler::MultipartForm']]],
   ['stringtobytearray',['StringToByteArray',['../class_x_c_l_net_tools_1_1_encode_1_1_hex.html#a0fb06fdeea06d52883d1f1a93bfcf4e8',1,'XCLNetTools::Encode::Hex']]],
+  ['stringtoconst',['StringToConst',['../class_x_c_l_net_tools_1_1_javascript_1_1_jscript.html#a169e7cb3d0960d4757f4b0f831fa0551',1,'XCLNetTools::Javascript::Jscript']]],
   ['subtime',['SubTime',['../class_x_c_l_net_tools_1_1_entity_1_1_sub_time.html',1,'XCLNetTools::Entity']]],
   ['subtime_2ecs',['SubTime.cs',['../_sub_time_8cs.html',1,'']]],
   ['sumtime',['SumTime',['../class_x_c_l_net_tools_1_1_entity_1_1_sub_time.html#afe5aa74e0038c4b4342be84211c3f607',1,'XCLNetTools::Entity::SubTime']]],
+  ['switchcontrol',['SwitchControl',['../class_x_c_l_net_tools_1_1_common_1_1_switch_control.html',1,'XCLNetTools::Common']]],
+  ['switchcontrol_2ecs',['SwitchControl.cs',['../_switch_control_8cs.html',1,'']]],
+  ['sysenvironmentenum',['SysEnvironmentEnum',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#a2dff7451b041ff407645f3b3d719e3e2',1,'XCLNetTools::Enum::CommonEnum']]],
   ['system',['System',['../namespace_system.html',1,'']]],
   ['systemweb',['SystemWeb',['../class_x_c_l_net_tools_1_1_serialize_1_1_j_s_o_n.html#acb00f7258e4dedfaa0cec15ce9335a31a67a1b1b70420ea0e3be332a9dedcb83e',1,'XCLNetTools::Serialize::JSON']]]
 ];

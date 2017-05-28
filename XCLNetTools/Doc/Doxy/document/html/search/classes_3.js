@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['datareaderhelper',['DataReaderHelper',['../class_x_c_l_net_tools_1_1_data_source_1_1_data_reader_helper.html',1,'XCLNetTools::DataSource']]],
   ['datasethelper',['DataSetHelper',['../class_x_c_l_net_tools_1_1_data_source_1_1_data_set_helper.html',1,'XCLNetTools::DataSource']]],
   ['datatablehelper',['DataTableHelper',['../class_x_c_l_net_tools_1_1_data_source_1_1_data_table_helper.html',1,'XCLNetTools::DataSource']]],
   ['datatoexcel',['DataToExcel',['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_data_to_excel.html',1,'XCLNetTools::Office::ExcelHandler']]],

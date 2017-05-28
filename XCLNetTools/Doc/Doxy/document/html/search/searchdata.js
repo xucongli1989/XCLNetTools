@@ -6,8 +6,8 @@ var indexSectionsWithContent =
   3: "abcdefghijklmoprstuvxz",
   4: "abcdefghijklmnoprstuwz",
   5: "jlr",
-  6: "bdjprstw是",
-  7: "abcdefhijmnostvwy否周是",
+  6: "bdfhjlprstw是",
+  7: "abcdefhijmnopstuvwy否周是",
   8: "abcdefghikmnoprstuvw",
   9: "du"
 };

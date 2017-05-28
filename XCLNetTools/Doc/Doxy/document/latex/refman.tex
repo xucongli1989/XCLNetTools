@@ -1,19 +1,22 @@
 \documentclass[twoside]{book}
 
 % Packages required by doxygen
+\usepackage{fixltx2e}
 \usepackage{calc}
 \usepackage{doxygen}
+\usepackage[export]{adjustbox} % also loads graphicx
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{makeidx}
 \usepackage{multicol}
 \usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
 \usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
 \usepackage[table]{xcolor}
 
 % Font selection
 \usepackage[T1]{fontenc}
-\usepackage{mathptmx}
 \usepackage[scaled=.90]{helvet}
 \usepackage{courier}
 \usepackage{amssymb}
@@ -27,6 +30,7 @@
   \fontseries{bc}\selectfont%
   \color{darkgray}%
 }
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
 
 % Page & text layout
 \usepackage{geometry}
@@ -42,7 +46,7 @@
 \hbadness=750
 \setlength{\emergencystretch}{15pt}
 \setlength{\parindent}{0cm}
-\setlength{\parskip}{0.2cm}
+\setlength{\parskip}{3ex plus 2ex minus 2ex}
 \makeatletter
 \renewcommand{\paragraph}{%
   \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
@@ -67,8 +71,8 @@
 \fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
 \fancyfoot[LE]{\fancyplain{}{}}
 \fancyfoot[CE]{\fancyplain{}{}}
-\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize 生成于 2016年 十一月 19日 星期六 10\-:05\-:16 , 为 X\-C\-L\-Net\-Tools使用  Doxygen }}
-\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize 生成于 2016年 十一月 19日 星期六 10\-:05\-:16 , 为 X\-C\-L\-Net\-Tools使用  Doxygen }}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize 制作者 Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize 制作者 Doxygen }}
 \fancyfoot[CO]{\fancyplain{}{}}
 \fancyfoot[RO]{\fancyplain{}{}}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -105,25 +109,29 @@
   \newpage{\pagestyle{empty}\cleardoublepage}%
 }
 
+\usepackage{caption}
+\captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
 
 %===== C O N T E N T S =====
 
 \begin{document}
 
 % Titlepage & ToC
-\hypersetup{pageanchor=false}
-\pagenumbering{roman}
+\hypersetup{pageanchor=false,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
+\pagenumbering{alph}
 \begin{titlepage}
 \vspace*{7cm}
 \begin{center}%
-{\Large X\-C\-L\-Net\-Tools \\[1ex]\large \hyperlink{namespace_x_c_l_net_tools}{X\-C\-L\-Net\-Tools} 2.\-6 }\\
+{\Large X\+C\+L\+Net\+Tools \\[1ex]\large \hyperlink{namespace_x_c_l_net_tools}{X\+C\+L\+Net\+Tools} 2.\+6.\+2 }\\
 \vspace*{1cm}
-{\large 制作者 Doxygen 1.8.5}\\
-\vspace*{0.5cm}
-{\small 2016年 十一月 19日 星期六 10:05:16}\\
+{\large 制作者 Doxygen 1.8.13}\\
 \end{center}
 \end{titlepage}
 \clearemptydoublepage
+\pagenumbering{roman}
 \tableofcontents
 \clearemptydoublepage
 \pagenumbering{arabic}
@@ -185,7 +193,7 @@
 \input{class_x_c_l_net_tools_1_1_encrypt_1_1_a_e_s_encrypt}
 \input{class_x_c_l_net_tools_1_1_control_1_1_pagination_1_1_asp_net_pager_info}
 \input{class_x_c_l_net_tools_1_1_encode_1_1_base64}
-\input{class_x_c_l_net_tools_1_1_control_1_1_pagination_1_1_base_pagination_3_01_t_01_4}
+\input{class_x_c_l_net_tools_1_1_control_1_1_pagination_1_1_base_pagination}
 \input{class_x_c_l_net_tools_1_1_file_handler_1_1_bookmark}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_bookmark_entity}
 \input{class_x_c_l_net_tools_1_1_cache_1_1_cache_class}
@@ -195,6 +203,7 @@
 \input{class_x_c_l_net_tools_1_1_enum_1_1_common_enum}
 \input{class_x_c_l_net_tools_1_1_x_m_l_1_1_config_class}
 \input{class_x_c_l_net_tools_1_1_common_1_1_consts}
+\input{class_x_c_l_net_tools_1_1_data_source_1_1_data_reader_helper}
 \input{class_x_c_l_net_tools_1_1_data_source_1_1_data_set_helper}
 \input{class_x_c_l_net_tools_1_1_data_source_1_1_data_table_helper}
 \input{class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_data_to_excel}
@@ -202,7 +211,7 @@
 \input{class_x_c_l_net_tools_1_1_encrypt_1_1_d_e_s_encrypt}
 \input{class_x_c_l_net_tools_1_1_file_handler_1_1_download_event_args}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_enum_1_1_enum_field_model}
-\input{class_x_c_l_net_tools_1_1_entity_1_1_enum_1_1_enum_field_t_model_3_01_t_01_4}
+\input{class_x_c_l_net_tools_1_1_entity_1_1_enum_1_1_enum_field_t_model}
 \input{class_x_c_l_net_tools_1_1_enum_1_1_enum_helper}
 \input{class_x_c_l_net_tools_1_1_message_1_1_error_1_1_error_http_module}
 \input{class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper}
@@ -228,18 +237,18 @@
 \input{class_x_c_l_net_tools_1_1_entity_1_1_message_1_1_json_msg_head}
 \input{class_x_c_l_net_tools_1_1_m_v_c_1_1_json_result_format}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_key_value}
+\input{class_x_c_l_net_tools_1_1_control_1_1_mx_graph_1_1_lib}
 \input{class_x_c_l_net_tools_1_1_serialize_1_1_lib}
 \input{class_x_c_l_net_tools_1_1_control_1_1_server_control_1_1_lib}
 \input{class_x_c_l_net_tools_1_1_encode_1_1_lib}
 \input{class_x_c_l_net_tools_1_1_control_1_1_html_control_1_1_lib}
-\input{class_x_c_l_net_tools_1_1_control_1_1_mx_graph_1_1_lib}
 \input{class_x_c_l_net_tools_1_1_generic_1_1_list_helper}
 \input{class_x_c_l_net_tools_1_1_serialize_1_1_lit_json}
 \input{class_x_c_l_net_tools_1_1_message_1_1_log}
 \input{class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5}
 \input{class_x_c_l_net_tools_1_1_message_1_1_message_model}
-\input{class_x_c_l_net_tools_1_1_entity_1_1_method_result_3_01_t_result_01_4}
-\input{class_x_c_l_net_tools_1_1_entity_1_1_method_result_3_01_t_result_00_01_t_data_01_4}
+\input{class_x_c_l_net_tools_1_1_entity_1_1_method_result}
+\input{class_x_c_l_net_tools_1_1_entity_1_1_method_result}
 \input{class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_class}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_field}
@@ -260,6 +269,7 @@
 \input{class_x_c_l_net_tools_1_1_entity_1_1_static_resource}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_static_resource_config}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_sub_time}
+\input{class_x_c_l_net_tools_1_1_common_1_1_switch_control}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_text_value}
 \input{class_x_c_l_net_tools_1_1_entity_1_1_easy_u_i_1_1_tree_item}
 \input{class_x_c_l_net_tools_1_1_encode_1_1_unicode}
@@ -276,6 +286,7 @@
 \input{_data_type_convert_8cs}
 \input{_g_zip_helper_8cs}
 \input{_i_p_helper_8cs}
+\input{_switch_control_8cs}
 \input{_control_2_html_control_2_lib_8cs}
 \input{_control_2_mx_graph_2_lib_8cs}
 \input{_control_2_server_control_2_lib_8cs}
@@ -289,6 +300,7 @@
 \input{_redis_helper_8cs}
 \input{_s_q_lite_helper_8cs}
 \input{_s_q_l_library_8cs}
+\input{_data_reader_helper_8cs}
 \input{_data_set_helper_8cs}
 \input{_data_table_helper_8cs}
 \input{_base64_8cs}
@@ -360,9 +372,11 @@
 %--- End generated contents ---
 
 % Index
+\backmatter
 \newpage
 \phantomsection
-\addcontentsline{toc}{part}{索引}
+\clearemptydoublepage
+\addcontentsline{toc}{chapter}{索引}
 \printindex
 
 \end{document}

@@ -1,68 +1,63 @@
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}{\section{X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper类 参考}
-\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}\index{X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper}}
-}
+\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}{}\section{X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper类 参考}
+\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}\index{X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper}}
 
 
-\hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}{X\-M\-L\-Helper} X\-M\-L文档操作管理器  
+\hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}{X\+M\+L\+Helper} X\+M\+L文档操作管理器  
 
 
 \subsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-static Xml\-Node \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a447b682ec92126215a8fec2000176619}{Get\-Xml\-Node\-By\-Xpath} (string xml\-File\-Name, string xpath)
-\begin{DoxyCompactList}\small\item\em 选择匹配\-X\-Path表达式的第一个节点\-Xml\-Node. \end{DoxyCompactList}\item 
-static Xml\-Node\-List \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a76ff3ba97f764e08467ac33ab90eac14}{Get\-Xml\-Node\-List\-By\-Xpath} (string xml\-File\-Name, string xpath)
-\begin{DoxyCompactList}\small\item\em 选择匹配\-X\-Path表达式的节点列表\-Xml\-Node\-List. \end{DoxyCompactList}\item 
-static Xml\-Attribute \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a9f5d7dcc9d2340c49cc819cbea3c5001}{Get\-Xml\-Attribute} (string xml\-File\-Name, string xpath, string xml\-Attribute\-Name)
-\begin{DoxyCompactList}\small\item\em 选择匹配\-X\-Path表达式的第一个节点的匹配xml\-Attribute\-Name的属性\-Xml\-Attribute. \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a41eb1023cd0930834f907aaa7ec3e6c1}{Create\-Xml\-Document} (string xml\-File\-Name, string root\-Node\-Name, string version, string encoding, string standalone)
-\begin{DoxyCompactList}\small\item\em 创建一个\-X\-M\-L文档 \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a64172ca2312a41b7b64a31e3585e8bda}{Create\-Xml\-Node\-By\-X\-Path} (string xml\-File\-Name, string xpath, string xml\-Node\-Name, string inner\-Text, string xml\-Attribute\-Name, string value)
-\begin{DoxyCompactList}\small\item\em 依据匹配\-X\-Path表达式的第一个节点来创建它的子节点(如果此节点已存在则追加一个新的同名节点 \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a770d2342df55e3a414830e1d1842dea8}{Create\-Or\-Update\-Xml\-Node\-By\-X\-Path} (string xml\-File\-Name, string xpath, string xml\-Node\-Name, string inner\-Text)
-\begin{DoxyCompactList}\small\item\em 依据匹配\-X\-Path表达式的第一个节点来创建或更新它的子节点(如果节点存在则更新,不存在则创建) \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_af784efe901d3b7ee6d6ffbcb2711f489}{Create\-Or\-Update\-Xml\-Attribute\-By\-X\-Path} (string xml\-File\-Name, string xpath, string xml\-Attribute\-Name, string value)
-\begin{DoxyCompactList}\small\item\em 依据匹配\-X\-Path表达式的第一个节点来创建或更新它的属性(如果属性存在则更新,不存在则创建) \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a715f1e4b7ef5d9626ca4e1c7bd3ae460}{Delete\-Xml\-Node\-By\-X\-Path} (string xml\-File\-Name, string xpath)
-\begin{DoxyCompactList}\small\item\em 删除匹配\-X\-Path表达式的第一个节点(节点中的子元素同时会被删除) \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a8907224fc217566b279babdbc2b14716}{Delete\-Xml\-Attribute\-By\-X\-Path} (string xml\-File\-Name, string xpath, string xml\-Attribute\-Name)
-\begin{DoxyCompactList}\small\item\em 删除匹配\-X\-Path表达式的第一个节点中的匹配参数xml\-Attribute\-Name的属性 \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a07059a8c89a84c359cc9893c842a263e}{Delete\-All\-Xml\-Attribute\-By\-X\-Path} (string xml\-File\-Name, string xpath)
-\begin{DoxyCompactList}\small\item\em 删除匹配\-X\-Path表达式的第一个节点中的所有属性 \end{DoxyCompactList}\item 
-static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a680dbf5fec70c3e5e30d0f75fedc2d3c}{Update\-X\-M\-L\-Node\-Inner\-Text} (string xml\-File\-Name, string xpath, string inner\-Text)
-\begin{DoxyCompactList}\small\item\em 更新指定xpath节点的inner\-Text \end{DoxyCompactList}\end{DoxyCompactItemize}
+static Xml\+Node \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a447b682ec92126215a8fec2000176619}{Get\+Xml\+Node\+By\+Xpath} (string xml\+File\+Name, string xpath)
+\begin{DoxyCompactList}\small\item\em 选择匹配\+X\+Path表达式的第一个节点\+Xml\+Node. \end{DoxyCompactList}\item 
+static Xml\+Node\+List \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a76ff3ba97f764e08467ac33ab90eac14}{Get\+Xml\+Node\+List\+By\+Xpath} (string xml\+File\+Name, string xpath)
+\begin{DoxyCompactList}\small\item\em 选择匹配\+X\+Path表达式的节点列表\+Xml\+Node\+List. \end{DoxyCompactList}\item 
+static Xml\+Attribute \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a9f5d7dcc9d2340c49cc819cbea3c5001}{Get\+Xml\+Attribute} (string xml\+File\+Name, string xpath, string xml\+Attribute\+Name)
+\begin{DoxyCompactList}\small\item\em 选择匹配\+X\+Path表达式的第一个节点的匹配xml\+Attribute\+Name的属性\+Xml\+Attribute. \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a41eb1023cd0930834f907aaa7ec3e6c1}{Create\+Xml\+Document} (string xml\+File\+Name, string root\+Node\+Name, string version, string encoding, string standalone)
+\begin{DoxyCompactList}\small\item\em 创建一个\+X\+M\+L文档 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a64172ca2312a41b7b64a31e3585e8bda}{Create\+Xml\+Node\+By\+X\+Path} (string xml\+File\+Name, string xpath, string xml\+Node\+Name, string inner\+Text, string xml\+Attribute\+Name, string value)
+\begin{DoxyCompactList}\small\item\em 依据匹配\+X\+Path表达式的第一个节点来创建它的子节点(如果此节点已存在则追加一个新的同名节点 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a770d2342df55e3a414830e1d1842dea8}{Create\+Or\+Update\+Xml\+Node\+By\+X\+Path} (string xml\+File\+Name, string xpath, string xml\+Node\+Name, string inner\+Text)
+\begin{DoxyCompactList}\small\item\em 依据匹配\+X\+Path表达式的第一个节点来创建或更新它的子节点(如果节点存在则更新,不存在则创建) \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_af784efe901d3b7ee6d6ffbcb2711f489}{Create\+Or\+Update\+Xml\+Attribute\+By\+X\+Path} (string xml\+File\+Name, string xpath, string xml\+Attribute\+Name, string value)
+\begin{DoxyCompactList}\small\item\em 依据匹配\+X\+Path表达式的第一个节点来创建或更新它的属性(如果属性存在则更新,不存在则创建) \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a715f1e4b7ef5d9626ca4e1c7bd3ae460}{Delete\+Xml\+Node\+By\+X\+Path} (string xml\+File\+Name, string xpath)
+\begin{DoxyCompactList}\small\item\em 删除匹配\+X\+Path表达式的第一个节点(节点中的子元素同时会被删除) \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a8907224fc217566b279babdbc2b14716}{Delete\+Xml\+Attribute\+By\+X\+Path} (string xml\+File\+Name, string xpath, string xml\+Attribute\+Name)
+\begin{DoxyCompactList}\small\item\em 删除匹配\+X\+Path表达式的第一个节点中的匹配参数xml\+Attribute\+Name的属性 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a07059a8c89a84c359cc9893c842a263e}{Delete\+All\+Xml\+Attribute\+By\+X\+Path} (string xml\+File\+Name, string xpath)
+\begin{DoxyCompactList}\small\item\em 删除匹配\+X\+Path表达式的第一个节点中的所有属性 \end{DoxyCompactList}\item 
+static bool \hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a680dbf5fec70c3e5e30d0f75fedc2d3c}{Update\+X\+M\+L\+Node\+Inner\+Text} (string xml\+File\+Name, string xpath, string inner\+Text)
+\begin{DoxyCompactList}\small\item\em 更新指定xpath节点的inner\+Text \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{详细描述}
-\hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}{X\-M\-L\-Helper} X\-M\-L文档操作管理器 
+\hyperlink{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper}{X\+M\+L\+Helper} X\+M\+L文档操作管理器 
 
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 17 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 17 行定义.
 
 
 
 \subsection{成员函数说明}
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_af784efe901d3b7ee6d6ffbcb2711f489}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Create\-Or\-Update\-Xml\-Attribute\-By\-X\-Path@{Create\-Or\-Update\-Xml\-Attribute\-By\-X\-Path}}
-\index{Create\-Or\-Update\-Xml\-Attribute\-By\-X\-Path@{Create\-Or\-Update\-Xml\-Attribute\-By\-X\-Path}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Create\-Or\-Update\-Xml\-Attribute\-By\-X\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Create\-Or\-Update\-Xml\-Attribute\-By\-X\-Path (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath, }
-\item[{string}]{xml\-Attribute\-Name, }
-\item[{string}]{value}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_af784efe901d3b7ee6d6ffbcb2711f489}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_af784efe901d3b7ee6d6ffbcb2711f489}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_af784efe901d3b7ee6d6ffbcb2711f489}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Create\+Or\+Update\+Xml\+Attribute\+By\+X\+Path@{Create\+Or\+Update\+Xml\+Attribute\+By\+X\+Path}}
+\index{Create\+Or\+Update\+Xml\+Attribute\+By\+X\+Path@{Create\+Or\+Update\+Xml\+Attribute\+By\+X\+Path}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Create\+Or\+Update\+Xml\+Attribute\+By\+X\+Path()}{CreateOrUpdateXmlAttributeByXPath()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Create\+Or\+Update\+Xml\+Attribute\+By\+X\+Path (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath,  }\item[{string}]{xml\+Attribute\+Name,  }\item[{string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-依据匹配\-X\-Path表达式的第一个节点来创建或更新它的属性(如果属性存在则更新,不存在则创建) 
+
+依据匹配\+X\+Path表达式的第一个节点来创建或更新它的属性(如果属性存在则更新,不存在则创建) 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:\char`\"{}//节点名//子节点名$<$/param$>$
-$<$param name=\char`\"{}xml\-Attribute\-Name\char`\"{}$>$要匹配xml\-Attribute\-Name的属性名称$<$/param$>$
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:\char`\"{}//节点名//子节点名$<$/param$>$
+$<$param name=\char`\"{}xml\+Attribute\+Name\char`\"{}$>$要匹配xml\+Attribute\+Name的属性名称$<$/param$>$
 $<$param name=\char`\"{}value"$>$属性值\\
 \hline
 \end{DoxyParams}
@@ -71,29 +66,25 @@ $<$param name=\char`\"{}value"$>$属性值\\
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 204 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 204 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a770d2342df55e3a414830e1d1842dea8}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Create\-Or\-Update\-Xml\-Node\-By\-X\-Path@{Create\-Or\-Update\-Xml\-Node\-By\-X\-Path}}
-\index{Create\-Or\-Update\-Xml\-Node\-By\-X\-Path@{Create\-Or\-Update\-Xml\-Node\-By\-X\-Path}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Create\-Or\-Update\-Xml\-Node\-By\-X\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Create\-Or\-Update\-Xml\-Node\-By\-X\-Path (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath, }
-\item[{string}]{xml\-Node\-Name, }
-\item[{string}]{inner\-Text}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a770d2342df55e3a414830e1d1842dea8}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a770d2342df55e3a414830e1d1842dea8}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a770d2342df55e3a414830e1d1842dea8}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Create\+Or\+Update\+Xml\+Node\+By\+X\+Path@{Create\+Or\+Update\+Xml\+Node\+By\+X\+Path}}
+\index{Create\+Or\+Update\+Xml\+Node\+By\+X\+Path@{Create\+Or\+Update\+Xml\+Node\+By\+X\+Path}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Create\+Or\+Update\+Xml\+Node\+By\+X\+Path()}{CreateOrUpdateXmlNodeByXPath()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Create\+Or\+Update\+Xml\+Node\+By\+X\+Path (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath,  }\item[{string}]{xml\+Node\+Name,  }\item[{string}]{inner\+Text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-依据匹配\-X\-Path表达式的第一个节点来创建或更新它的子节点(如果节点存在则更新,不存在则创建) 
+
+依据匹配\+X\+Path表达式的第一个节点来创建或更新它的子节点(如果节点存在则更新,不存在则创建) 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:\char`\"{}//节点名//子节点名$<$/param$>$
-$<$param name=\char`\"{}xml\-Node\-Name\char`\"{}$>$要匹配xml\-Node\-Name的节点名称$<$/param$>$
-$<$param name=\char`\"{}inner\-Text"$>$节点文本值\\
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:\char`\"{}//节点名//子节点名$<$/param$>$
+$<$param name=\char`\"{}xml\+Node\+Name\char`\"{}$>$要匹配xml\+Node\+Name的节点名称$<$/param$>$
+$<$param name=\char`\"{}inner\+Text"$>$节点文本值\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
@@ -101,34 +92,29 @@ $<$param name=\char`\"{}inner\-Text"$>$节点文本值\\
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 156 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 156 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a41eb1023cd0930834f907aaa7ec3e6c1}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Create\-Xml\-Document@{Create\-Xml\-Document}}
-\index{Create\-Xml\-Document@{Create\-Xml\-Document}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Create\-Xml\-Document}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Create\-Xml\-Document (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{root\-Node\-Name, }
-\item[{string}]{version, }
-\item[{string}]{encoding, }
-\item[{string}]{standalone}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a41eb1023cd0930834f907aaa7ec3e6c1}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a41eb1023cd0930834f907aaa7ec3e6c1}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a41eb1023cd0930834f907aaa7ec3e6c1}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Create\+Xml\+Document@{Create\+Xml\+Document}}
+\index{Create\+Xml\+Document@{Create\+Xml\+Document}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Create\+Xml\+Document()}{CreateXmlDocument()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Create\+Xml\+Document (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{root\+Node\+Name,  }\item[{string}]{version,  }\item[{string}]{encoding,  }\item[{string}]{standalone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-创建一个\-X\-M\-L文档 
+
+创建一个\+X\+M\+L文档 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em root\-Node\-Name} & X\-M\-L文档根节点名称(须指定一个根节点名称)\\
+{\em root\+Node\+Name} & X\+M\+L文档根节点名称(须指定一个根节点名称)\\
 \hline
-{\em version} & X\-M\-L文档版本号(必须为\-:\char`\"{}1.\-0\char`\"{})\\
+{\em version} & X\+M\+L文档版本号(必须为\+:\char`\"{}1.\+0\char`\"{})\\
 \hline
-{\em encoding} & X\-M\-L文档编码方式\\
+{\em encoding} & X\+M\+L文档编码方式\\
 \hline
-{\em standalone} & 该值必须是\char`\"{}yes\char`\"{}或\char`\"{}no\char`\"{},如果为null,Save方法不在\-X\-M\-L声明上写出独立属性\\
+{\em standalone} & 该值必须是\char`\"{}yes\char`\"{}或\char`\"{}no\char`\"{},如果为null,Save方法不在\+X\+M\+L声明上写出独立属性\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
@@ -136,32 +122,26 @@ $<$param name=\char`\"{}inner\-Text"$>$节点文本值\\
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 84 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 84 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a64172ca2312a41b7b64a31e3585e8bda}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Create\-Xml\-Node\-By\-X\-Path@{Create\-Xml\-Node\-By\-X\-Path}}
-\index{Create\-Xml\-Node\-By\-X\-Path@{Create\-Xml\-Node\-By\-X\-Path}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Create\-Xml\-Node\-By\-X\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Create\-Xml\-Node\-By\-X\-Path (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath, }
-\item[{string}]{xml\-Node\-Name, }
-\item[{string}]{inner\-Text, }
-\item[{string}]{xml\-Attribute\-Name, }
-\item[{string}]{value}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a64172ca2312a41b7b64a31e3585e8bda}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a64172ca2312a41b7b64a31e3585e8bda}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a64172ca2312a41b7b64a31e3585e8bda}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Create\+Xml\+Node\+By\+X\+Path@{Create\+Xml\+Node\+By\+X\+Path}}
+\index{Create\+Xml\+Node\+By\+X\+Path@{Create\+Xml\+Node\+By\+X\+Path}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Create\+Xml\+Node\+By\+X\+Path()}{CreateXmlNodeByXPath()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Create\+Xml\+Node\+By\+X\+Path (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath,  }\item[{string}]{xml\+Node\+Name,  }\item[{string}]{inner\+Text,  }\item[{string}]{xml\+Attribute\+Name,  }\item[{string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-依据匹配\-X\-Path表达式的第一个节点来创建它的子节点(如果此节点已存在则追加一个新的同名节点 
+
+依据匹配\+X\+Path表达式的第一个节点来创建它的子节点(如果此节点已存在则追加一个新的同名节点 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:\char`\"{}//节点名//子节点名$<$/param$>$
-$<$param name=\char`\"{}xml\-Node\-Name\char`\"{}$>$要匹配xml\-Node\-Name的节点名称$<$/param$>$
-$<$param name=\char`\"{}inner\-Text\char`\"{}$>$节点文本值$<$/param$>$
-$<$param name=\char`\"{}xml\-Attribute\-Name\char`\"{}$>$要匹配xml\-Attribute\-Name的属性名称$<$/param$>$
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:\char`\"{}//节点名//子节点名$<$/param$>$
+$<$param name=\char`\"{}xml\+Node\+Name\char`\"{}$>$要匹配xml\+Node\+Name的节点名称$<$/param$>$
+$<$param name=\char`\"{}inner\+Text\char`\"{}$>$节点文本值$<$/param$>$
+$<$param name=\char`\"{}xml\+Attribute\+Name\char`\"{}$>$要匹配xml\+Attribute\+Name的属性名称$<$/param$>$
 $<$param name=\char`\"{}value"$>$属性值\\
 \hline
 \end{DoxyParams}
@@ -170,25 +150,23 @@ $<$param name=\char`\"{}value"$>$属性值\\
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 114 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 114 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a07059a8c89a84c359cc9893c842a263e}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Delete\-All\-Xml\-Attribute\-By\-X\-Path@{Delete\-All\-Xml\-Attribute\-By\-X\-Path}}
-\index{Delete\-All\-Xml\-Attribute\-By\-X\-Path@{Delete\-All\-Xml\-Attribute\-By\-X\-Path}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Delete\-All\-Xml\-Attribute\-By\-X\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Delete\-All\-Xml\-Attribute\-By\-X\-Path (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a07059a8c89a84c359cc9893c842a263e}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a07059a8c89a84c359cc9893c842a263e}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a07059a8c89a84c359cc9893c842a263e}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Delete\+All\+Xml\+Attribute\+By\+X\+Path@{Delete\+All\+Xml\+Attribute\+By\+X\+Path}}
+\index{Delete\+All\+Xml\+Attribute\+By\+X\+Path@{Delete\+All\+Xml\+Attribute\+By\+X\+Path}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Delete\+All\+Xml\+Attribute\+By\+X\+Path()}{DeleteAllXmlAttributeByXPath()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Delete\+All\+Xml\+Attribute\+By\+X\+Path (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-删除匹配\-X\-Path表达式的第一个节点中的所有属性 
+
+删除匹配\+X\+Path表达式的第一个节点中的所有属性 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:"//节点名//子节点名\\
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:"//节点名//子节点名\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
@@ -196,27 +174,24 @@ $<$param name=\char`\"{}value"$>$属性值\\
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 329 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 329 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a8907224fc217566b279babdbc2b14716}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Delete\-Xml\-Attribute\-By\-X\-Path@{Delete\-Xml\-Attribute\-By\-X\-Path}}
-\index{Delete\-Xml\-Attribute\-By\-X\-Path@{Delete\-Xml\-Attribute\-By\-X\-Path}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Delete\-Xml\-Attribute\-By\-X\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Delete\-Xml\-Attribute\-By\-X\-Path (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath, }
-\item[{string}]{xml\-Attribute\-Name}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a8907224fc217566b279babdbc2b14716}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a8907224fc217566b279babdbc2b14716}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a8907224fc217566b279babdbc2b14716}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Delete\+Xml\+Attribute\+By\+X\+Path@{Delete\+Xml\+Attribute\+By\+X\+Path}}
+\index{Delete\+Xml\+Attribute\+By\+X\+Path@{Delete\+Xml\+Attribute\+By\+X\+Path}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Delete\+Xml\+Attribute\+By\+X\+Path()}{DeleteXmlAttributeByXPath()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Delete\+Xml\+Attribute\+By\+X\+Path (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath,  }\item[{string}]{xml\+Attribute\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-删除匹配\-X\-Path表达式的第一个节点中的匹配参数xml\-Attribute\-Name的属性 
+
+删除匹配\+X\+Path表达式的第一个节点中的匹配参数xml\+Attribute\+Name的属性 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:\char`\"{}//节点名//子节点名$<$/param$>$
-$<$param name=\char`\"{}xml\-Attribute\-Name"$>$要删除的xml\-Attribute\-Name的属性名称\\
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:\char`\"{}//节点名//子节点名$<$/param$>$
+$<$param name=\char`\"{}xml\+Attribute\+Name"$>$要删除的xml\+Attribute\+Name的属性名称\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
@@ -224,25 +199,23 @@ $<$param name=\char`\"{}xml\-Attribute\-Name"$>$要删除的xml\-Attribute\-Name
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 284 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 284 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a715f1e4b7ef5d9626ca4e1c7bd3ae460}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Delete\-Xml\-Node\-By\-X\-Path@{Delete\-Xml\-Node\-By\-X\-Path}}
-\index{Delete\-Xml\-Node\-By\-X\-Path@{Delete\-Xml\-Node\-By\-X\-Path}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Delete\-Xml\-Node\-By\-X\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Delete\-Xml\-Node\-By\-X\-Path (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a715f1e4b7ef5d9626ca4e1c7bd3ae460}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a715f1e4b7ef5d9626ca4e1c7bd3ae460}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a715f1e4b7ef5d9626ca4e1c7bd3ae460}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Delete\+Xml\+Node\+By\+X\+Path@{Delete\+Xml\+Node\+By\+X\+Path}}
+\index{Delete\+Xml\+Node\+By\+X\+Path@{Delete\+Xml\+Node\+By\+X\+Path}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Delete\+Xml\+Node\+By\+X\+Path()}{DeleteXmlNodeByXPath()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Delete\+Xml\+Node\+By\+X\+Path (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-删除匹配\-X\-Path表达式的第一个节点(节点中的子元素同时会被删除) 
+
+删除匹配\+X\+Path表达式的第一个节点(节点中的子元素同时会被删除) 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:"//节点名//子节点名\\
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:"//节点名//子节点名\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
@@ -250,107 +223,97 @@ $<$param name=\char`\"{}xml\-Attribute\-Name"$>$要删除的xml\-Attribute\-Name
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 254 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 254 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a9f5d7dcc9d2340c49cc819cbea3c5001}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Get\-Xml\-Attribute@{Get\-Xml\-Attribute}}
-\index{Get\-Xml\-Attribute@{Get\-Xml\-Attribute}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Get\-Xml\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}static Xml\-Attribute X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Get\-Xml\-Attribute (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath, }
-\item[{string}]{xml\-Attribute\-Name}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a9f5d7dcc9d2340c49cc819cbea3c5001}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a9f5d7dcc9d2340c49cc819cbea3c5001}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a9f5d7dcc9d2340c49cc819cbea3c5001}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Get\+Xml\+Attribute@{Get\+Xml\+Attribute}}
+\index{Get\+Xml\+Attribute@{Get\+Xml\+Attribute}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Xml\+Attribute()}{GetXmlAttribute()}}
+{\footnotesize\ttfamily static Xml\+Attribute X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Get\+Xml\+Attribute (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath,  }\item[{string}]{xml\+Attribute\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-选择匹配\-X\-Path表达式的第一个节点的匹配xml\-Attribute\-Name的属性\-Xml\-Attribute. 
+
+选择匹配\+X\+Path表达式的第一个节点的匹配xml\+Attribute\+Name的属性\+Xml\+Attribute. 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:\char`\"{}//节点名//子节点名$<$/param$>$
-$<$param name=\char`\"{}xml\-Attribute\-Name"$>$要匹配xml\-Attribute\-Name的属性名称\\
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:\char`\"{}//节点名//子节点名$<$/param$>$
+$<$param name=\char`\"{}xml\+Attribute\+Name"$>$要匹配xml\+Attribute\+Name的属性名称\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回xml\-Attribute\-Name
+返回xml\+Attribute\+Name
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 54 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 54 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a447b682ec92126215a8fec2000176619}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Get\-Xml\-Node\-By\-Xpath@{Get\-Xml\-Node\-By\-Xpath}}
-\index{Get\-Xml\-Node\-By\-Xpath@{Get\-Xml\-Node\-By\-Xpath}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Get\-Xml\-Node\-By\-Xpath}]{\setlength{\rightskip}{0pt plus 5cm}static Xml\-Node X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Get\-Xml\-Node\-By\-Xpath (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a447b682ec92126215a8fec2000176619}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a447b682ec92126215a8fec2000176619}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a447b682ec92126215a8fec2000176619}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Get\+Xml\+Node\+By\+Xpath@{Get\+Xml\+Node\+By\+Xpath}}
+\index{Get\+Xml\+Node\+By\+Xpath@{Get\+Xml\+Node\+By\+Xpath}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Xml\+Node\+By\+Xpath()}{GetXmlNodeByXpath()}}
+{\footnotesize\ttfamily static Xml\+Node X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Get\+Xml\+Node\+By\+Xpath (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-选择匹配\-X\-Path表达式的第一个节点\-Xml\-Node. 
+
+选择匹配\+X\+Path表达式的第一个节点\+Xml\+Node. 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:\char`\"{}//节点名//子节点名\char`\"{})\\
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:\char`\"{}//节点名//子节点名\char`\"{})\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回\-Xml\-Node
+返回\+Xml\+Node
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 27 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 27 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a76ff3ba97f764e08467ac33ab90eac14}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Get\-Xml\-Node\-List\-By\-Xpath@{Get\-Xml\-Node\-List\-By\-Xpath}}
-\index{Get\-Xml\-Node\-List\-By\-Xpath@{Get\-Xml\-Node\-List\-By\-Xpath}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Get\-Xml\-Node\-List\-By\-Xpath}]{\setlength{\rightskip}{0pt plus 5cm}static Xml\-Node\-List X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Get\-Xml\-Node\-List\-By\-Xpath (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a76ff3ba97f764e08467ac33ab90eac14}
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a76ff3ba97f764e08467ac33ab90eac14}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a76ff3ba97f764e08467ac33ab90eac14}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Get\+Xml\+Node\+List\+By\+Xpath@{Get\+Xml\+Node\+List\+By\+Xpath}}
+\index{Get\+Xml\+Node\+List\+By\+Xpath@{Get\+Xml\+Node\+List\+By\+Xpath}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Get\+Xml\+Node\+List\+By\+Xpath()}{GetXmlNodeListByXpath()}}
+{\footnotesize\ttfamily static Xml\+Node\+List X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Get\+Xml\+Node\+List\+By\+Xpath (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
-选择匹配\-X\-Path表达式的节点列表\-Xml\-Node\-List. 
+
+选择匹配\+X\+Path表达式的节点列表\+Xml\+Node\+List. 
 
 
 \begin{DoxyParams}{参数}
-{\em xml\-File\-Name} & X\-M\-L文档完全文件名(包含物理路径)\\
+{\em xml\+File\+Name} & X\+M\+L文档完全文件名(包含物理路径)\\
 \hline
-{\em xpath} & 要匹配的\-X\-Path表达式(例如\-:\char`\"{}//节点名//子节点名\char`\"{})\\
+{\em xpath} & 要匹配的\+X\+Path表达式(例如\+:\char`\"{}//节点名//子节点名\char`\"{})\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回\-Xml\-Node\-List
+返回\+Xml\+Node\+List
 \end{DoxyReturn}
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 40 行定义.
+在文件 X\+M\+L\+Helper.\+cs 第 40 行定义.
 
-\hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a680dbf5fec70c3e5e30d0f75fedc2d3c}{\index{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}!Update\-X\-M\-L\-Node\-Inner\-Text@{Update\-X\-M\-L\-Node\-Inner\-Text}}
-\index{Update\-X\-M\-L\-Node\-Inner\-Text@{Update\-X\-M\-L\-Node\-Inner\-Text}!XCLNetTools::XML::XMLHelper@{X\-C\-L\-Net\-Tools\-::\-X\-M\-L\-::\-X\-M\-L\-Helper}}
-\subsubsection[{Update\-X\-M\-L\-Node\-Inner\-Text}]{\setlength{\rightskip}{0pt plus 5cm}static bool X\-C\-L\-Net\-Tools.\-X\-M\-L.\-X\-M\-L\-Helper.\-Update\-X\-M\-L\-Node\-Inner\-Text (
-\begin{DoxyParamCaption}
-\item[{string}]{xml\-File\-Name, }
-\item[{string}]{xpath, }
-\item[{string}]{inner\-Text}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a680dbf5fec70c3e5e30d0f75fedc2d3c}
-
-
-更新指定xpath节点的inner\-Text 
+\mbox{\Hypertarget{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a680dbf5fec70c3e5e30d0f75fedc2d3c}\label{class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper_a680dbf5fec70c3e5e30d0f75fedc2d3c}} 
+\index{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}!Update\+X\+M\+L\+Node\+Inner\+Text@{Update\+X\+M\+L\+Node\+Inner\+Text}}
+\index{Update\+X\+M\+L\+Node\+Inner\+Text@{Update\+X\+M\+L\+Node\+Inner\+Text}!X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper@{X\+C\+L\+Net\+Tools\+::\+X\+M\+L\+::\+X\+M\+L\+Helper}}
+\subsubsection{\texorpdfstring{Update\+X\+M\+L\+Node\+Inner\+Text()}{UpdateXMLNodeInnerText()}}
+{\footnotesize\ttfamily static bool X\+C\+L\+Net\+Tools.\+X\+M\+L.\+X\+M\+L\+Helper.\+Update\+X\+M\+L\+Node\+Inner\+Text (\begin{DoxyParamCaption}\item[{string}]{xml\+File\+Name,  }\item[{string}]{xpath,  }\item[{string}]{inner\+Text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-在文件 X\-M\-L\-Helper.\-cs 第 359 行定义.
+更新指定xpath节点的inner\+Text 
 
 
 
-该类的文档由以下文件生成\-:\begin{DoxyCompactItemize}
+在文件 X\+M\+L\+Helper.\+cs 第 359 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-D\-:/\-My\-Data/\-My\-Git/\-Git\-Hub/\-X\-C\-L\-Net\-Tools/\-X\-C\-L\-Net\-Tools/\-X\-M\-L/\hyperlink{_x_m_l_helper_8cs}{X\-M\-L\-Helper.\-cs}\end{DoxyCompactItemize}
+D\+:/\+My\+Data/\+Git\+Hub/\+X\+C\+L\+Net\+Tools/\+X\+C\+L\+Net\+Tools/\+X\+M\+L/\hyperlink{_x_m_l_helper_8cs}{X\+M\+L\+Helper.\+cs}\end{DoxyCompactItemize}
