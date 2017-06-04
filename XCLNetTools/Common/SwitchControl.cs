@@ -237,6 +237,16 @@ namespace XCLNetTools.Common
             F,
 
             /// <summary>
+            /// 白名单正则（true）
+            /// </summary>
+            RT,
+
+            /// <summary>
+            /// 黑名单正则（false）
+            /// </summary>
+            RF,
+
+            /// <summary>
             /// 既不是白名单也不在黑名单，最终的判断类型
             /// </summary>
             V
@@ -244,19 +254,21 @@ namespace XCLNetTools.Common
 
         /// <summary>
         /// 开关是否打开（不区分大小写）
-        /// 如：IsOpen("T=admin,test&amp;F=user1,user2&amp;V=20","admin");
+        /// 如：IsOpen("T=admin,test&amp;RT=^user200.*$&amp;F=user1,user2&amp;RF=^user100.*$&amp;V=20","admin");
         /// </summary>
         /// <param name="str">
         /// 配置项的值，一般是从数据库的配置表中读取
-        /// 格式："T=admin,test&amp;F=user1,user2&amp;V=20"
+        /// 格式："T=admin,test&amp;RT=^user200.*$&amp;F=user1,user2&amp;RF=^user100.*$&amp;V=20"
         /// 说明：
         /// 1、T后面的值为白名单，用英文,隔开，如果flag在此值中存在，则返回true
         /// 2、F后面的值为黑名单，用英文,隔开，如果flag在此值中存在，则返回false
-        /// 3、当均不在黑白名单时，则使用V后面的值 ，该值为字符T或F或0~100之间的数字，当为T时，返回true；当为F时，返回false；当为数字时，即为百分比，由系统根据一定算法计算flag，并返回true或false
-        /// 4、TFV之间用&amp;隔开，类似url查询字符串
-        /// 5、当整个配置值为T，则返回true；当整个配置值为空、F或不符合格式要求时，则返回false
+        /// 3、RT后面的值为白名单正则，如果flag的值能匹配，则返回true
+        /// 4、RF后面的值为黑名单正则，如果flag的值能匹配，则返回false
+        /// 5、当均不在黑白名单时，则使用V后面的值 ，该值为字符T或F或0~100之间的数字，当为T时，返回true；当为F时，返回false；当为数字时，即为百分比，由系统根据一定算法计算flag，并返回true或false
+        /// 6、TFV之间用&amp;隔开，类似url查询字符串
+        /// 7、当整个配置值为T，则返回true；当整个配置值为空、F或不符合格式要求时，则返回false
         /// </param>
-        /// <param name="flag">百分比控制时的标志字符串，比如用户名："admin"</param>
+        /// <param name="flag">百分比控制时的标志字符串，比如用户名：admin，或用户ID：1001</param>
         /// <returns>.Result=true：开，.Result=false：关</returns>
         public static MethodResult<bool> IsOpen(string str, string flag = "")
         {
@@ -295,7 +307,7 @@ namespace XCLNetTools.Common
             var nv = System.Web.HttpUtility.ParseQueryString(str);
             if (null == nv || nv.Count == 0)
             {
-                result.Message = "必须使用有效的格式，如：【T=admin,test&F=user1,user2&V=20】，用&符分开，再用=赋值";
+                result.Message = "必须使用有效的格式，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】，用&符分开，再用=赋值";
                 result.Result = false;
                 return result;
             }
@@ -304,12 +316,12 @@ namespace XCLNetTools.Common
             var enumKeys = XCLNetTools.Enum.EnumHelper.GetList(typeof(SwitchKeyTypeEnum)).Select(k => k.Text).ToList();
             if (nv.AllKeys.ToList().Exists(k => !enumKeys.Contains(k)))
             {
-                result.Message = "只允许存在T、F或V的赋值，如：【T=admin,test&F=user1,user2&V=20】！";
+                result.Message = "只允许存在T、RT、F、RF、V的赋值，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】！";
                 result.Result = false;
                 return result;
             }
 
-            if (!nv.AllKeys.Contains(SwitchKeyTypeEnum.V.ToString()) && (nv.AllKeys.Contains(SwitchKeyTypeEnum.T.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.F.ToString())))
+            if (!nv.AllKeys.Contains(SwitchKeyTypeEnum.V.ToString()) && (nv.AllKeys.Contains(SwitchKeyTypeEnum.T.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.F.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.RT.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.RF.ToString())))
             {
                 result.Message = "配置了黑名单或白名单，必须配置V的值！";
                 result.Result = false;
@@ -348,11 +360,33 @@ namespace XCLNetTools.Common
                     }
                 }
 
+                //RF
+                val = (nv[SwitchKeyTypeEnum.RF.ToString()] ?? "").Trim();
+                if (!string.IsNullOrWhiteSpace(val))
+                {
+                    if (new Regex(val).IsMatch(flag))
+                    {
+                        result.Result = false;
+                        return result;
+                    }
+                }
+
                 //T
                 val = (nv[SwitchKeyTypeEnum.T.ToString()] ?? "").Trim();
                 if (!string.IsNullOrWhiteSpace(val))
                 {
                     if (val.Split(',').Contains(flag))
+                    {
+                        result.Result = true;
+                        return result;
+                    }
+                }
+
+                //RT
+                val = (nv[SwitchKeyTypeEnum.RT.ToString()] ?? "").Trim();
+                if (!string.IsNullOrWhiteSpace(val))
+                {
+                    if (new Regex(val).IsMatch(flag))
                     {
                         result.Result = true;
                         return result;
