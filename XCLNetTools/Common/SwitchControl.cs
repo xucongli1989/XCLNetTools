@@ -253,7 +253,7 @@ namespace XCLNetTools.Common
         }
 
         /// <summary>
-        /// 开关是否打开（不区分大小写）
+        /// 开关是否打开（仅正则表达式区分大小写，其它参数均先转化为大写后再进行匹配）
         /// 如：IsOpen("T=admin,test&amp;RT=^user200.*$&amp;F=user1,user2&amp;RF=^user100.*$&amp;V=20","admin");
         /// </summary>
         /// <param name="str">
@@ -277,7 +277,7 @@ namespace XCLNetTools.Common
             var result = new MethodResult<bool>();
             result.Result = false;
 
-            str = (str ?? "").Trim().ToUpper();
+            str = (str ?? "").Trim().Replace("+", "%2b");
             flag = (flag ?? "").Trim().ToUpper();
 
             #region 配置格式校验
@@ -286,20 +286,23 @@ namespace XCLNetTools.Common
             if (string.IsNullOrWhiteSpace(str))
             {
                 result.Result = false;
+                result.Message = "未指定配置项";
                 return result;
             }
 
             //T
-            if (str.Equals(SwitchKeyTypeEnum.T.ToString()))
+            if (str.Equals(SwitchKeyTypeEnum.T.ToString(), StringComparison.OrdinalIgnoreCase))
             {
                 result.Result = true;
+                result.Message = "配置项为T，全开";
                 return result;
             }
 
             //F
-            if (str.Equals(SwitchKeyTypeEnum.F.ToString()))
+            if (str.Equals(SwitchKeyTypeEnum.F.ToString(), StringComparison.OrdinalIgnoreCase))
             {
                 result.Result = false;
+                result.Message = "配置项为F，全关";
                 return result;
             }
 
@@ -314,21 +317,22 @@ namespace XCLNetTools.Common
 
             //配置的key必须在枚举SwitchKeyTypeEnum中
             var enumKeys = XCLNetTools.Enum.EnumHelper.GetList(typeof(SwitchKeyTypeEnum)).Select(k => k.Text).ToList();
-            if (nv.AllKeys.ToList().Exists(k => !enumKeys.Contains(k)))
+            var allKeys = nv.AllKeys.Select(k => k.ToUpper()).ToList();
+            if (allKeys.Exists(k => !enumKeys.Contains(k)))
             {
                 result.Message = "只允许存在T、RT、F、RF、V的赋值，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】！";
                 result.Result = false;
                 return result;
             }
 
-            if (!nv.AllKeys.Contains(SwitchKeyTypeEnum.V.ToString()) && (nv.AllKeys.Contains(SwitchKeyTypeEnum.T.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.F.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.RT.ToString()) || nv.AllKeys.Contains(SwitchKeyTypeEnum.RF.ToString())))
+            if (!allKeys.Contains(SwitchKeyTypeEnum.V.ToString()) && (allKeys.Contains(SwitchKeyTypeEnum.T.ToString()) || allKeys.Contains(SwitchKeyTypeEnum.F.ToString()) || allKeys.Contains(SwitchKeyTypeEnum.RT.ToString()) || allKeys.Contains(SwitchKeyTypeEnum.RF.ToString())))
             {
                 result.Message = "配置了黑名单或白名单，必须配置V的值！";
                 result.Result = false;
                 return result;
             }
 
-            val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim();
+            val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim().ToUpper();
             if (string.IsNullOrWhiteSpace(val))
             {
                 result.Message = "配置V的值不能为空！";
@@ -349,91 +353,111 @@ namespace XCLNetTools.Common
 
             if (!string.IsNullOrWhiteSpace(flag))
             {
-                //F
-                val = (nv[SwitchKeyTypeEnum.F.ToString()] ?? "").Trim();
-                if (!string.IsNullOrWhiteSpace(val))
+                try
                 {
-                    if (val.Split(',').Contains(flag))
+                    //F
+                    val = (nv[SwitchKeyTypeEnum.F.ToString()] ?? "").Trim().ToUpper();
+                    if (!string.IsNullOrWhiteSpace(val))
                     {
-                        result.Result = false;
-                        return result;
+                        if (val.Split(',').Contains(flag))
+                        {
+                            result.Result = false;
+                            result.Message = "命中黑名单";
+                            return result;
+                        }
+                    }
+
+                    //RF
+                    val = (nv[SwitchKeyTypeEnum.RF.ToString()] ?? "").Trim();
+                    if (!string.IsNullOrWhiteSpace(val))
+                    {
+                        if (new Regex(val).IsMatch(flag))
+                        {
+                            result.Result = false;
+                            result.Message = "命中黑名单正则";
+                            return result;
+                        }
+                    }
+
+                    //T
+                    val = (nv[SwitchKeyTypeEnum.T.ToString()] ?? "").Trim().ToUpper();
+                    if (!string.IsNullOrWhiteSpace(val))
+                    {
+                        if (val.Split(',').Contains(flag))
+                        {
+                            result.Result = true;
+                            result.Message = "命中白名单";
+                            return result;
+                        }
+                    }
+
+                    //RT
+                    val = (nv[SwitchKeyTypeEnum.RT.ToString()] ?? "").Trim();
+                    if (!string.IsNullOrWhiteSpace(val))
+                    {
+                        if (new Regex(val).IsMatch(flag))
+                        {
+                            result.Result = true;
+                            result.Message = "命中白名单正则";
+                            return result;
+                        }
                     }
                 }
-
-                //RF
-                val = (nv[SwitchKeyTypeEnum.RF.ToString()] ?? "").Trim();
-                if (!string.IsNullOrWhiteSpace(val))
+                catch (Exception ex)
                 {
-                    if (new Regex(val).IsMatch(flag))
-                    {
-                        result.Result = false;
-                        return result;
-                    }
-                }
-
-                //T
-                val = (nv[SwitchKeyTypeEnum.T.ToString()] ?? "").Trim();
-                if (!string.IsNullOrWhiteSpace(val))
-                {
-                    if (val.Split(',').Contains(flag))
-                    {
-                        result.Result = true;
-                        return result;
-                    }
-                }
-
-                //RT
-                val = (nv[SwitchKeyTypeEnum.RT.ToString()] ?? "").Trim();
-                if (!string.IsNullOrWhiteSpace(val))
-                {
-                    if (new Regex(val).IsMatch(flag))
-                    {
-                        result.Result = true;
-                        return result;
-                    }
+                    result.Result = false;
+                    result.Message = "发生了异常：" + ex.Message;
+                    return result;
                 }
             }
 
             //V
-            val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim();
+            val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim().ToUpper();
             if (string.IsNullOrWhiteSpace(val))
             {
                 result.Result = false;
+                result.Message = "V为空";
                 return result;
             }
 
             if (val.Equals(SwitchKeyTypeEnum.T.ToString()))
             {
                 result.Result = true;
+                result.Message = "V为T";
                 return result;
             }
 
             if (val.Equals(SwitchKeyTypeEnum.F.ToString()))
             {
                 result.Result = false;
+                result.Message = "V为F";
                 return result;
             }
 
             if (intVal == 0)
             {
                 result.Result = false;
+                result.Message = "V为0";
                 return result;
             }
 
             if (intVal == 100)
             {
                 result.Result = true;
+                result.Message = "V为100";
                 return result;
             }
 
             if (string.IsNullOrWhiteSpace(flag))
             {
                 result.Result = false;
+                result.Message = "标识flag为空";
                 return result;
             }
 
             string flagMd5 = XCLNetTools.Encrypt.MD5.EncodeMD5(flag);
             result.Result = new Regex(percentDic[intVal.Value]).IsMatch(flagMd5[0].ToString() + flagMd5[1].ToString());
+            result.Message = "系统自动计算";
 
             return result;
         }
