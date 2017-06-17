@@ -43,6 +43,11 @@ namespace XCLNetTools.Entity
         public string Message { get; set; }
 
         /// <summary>
+        /// 该方法返回的错误消息提示
+        /// </summary>
+        public string ErrorMessage { get; set; }
+
+        /// <summary>
         /// 该方法返回的结果
         /// （如果TResult与IsSuccess属性均为bool，则Result与IsSuccess一致）
         /// </summary>
@@ -100,6 +105,11 @@ namespace XCLNetTools.Entity
         /// 该方法返回的消息提示
         /// </summary>
         public string Message { get; set; }
+
+        /// <summary>
+        /// 该方法返回的错误消息提示
+        /// </summary>
+        public string ErrorMessage { get; set; }
 
         /// <summary>
         /// 该方法返回的结果
