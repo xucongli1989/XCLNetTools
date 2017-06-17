@@ -86,5 +86,10 @@ namespace XCLNetTools.Entity.Message
         /// 错误码
         /// </summary>
         public string ErrorCode { get; set; }
+
+        /// <summary>
+        /// 是否为异常
+        /// </summary>
+        public bool IsException { get; set; }
     }
 }

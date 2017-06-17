@@ -9,8 +9,9 @@ Create By: XCL @ 2012
 using System;
 using System.Text;
 using System.Web;
+using XCLNetTools.Message;
 
-namespace XCLNetTools.Message.Error
+namespace XCLNetTools.Modules
 {
     /// <summary>
     /// 异常处理
