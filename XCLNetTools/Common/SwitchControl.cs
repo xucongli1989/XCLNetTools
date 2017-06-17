@@ -317,7 +317,7 @@ namespace XCLNetTools.Common
 
             //配置的key必须在枚举SwitchKeyTypeEnum中
             var enumKeys = XCLNetTools.Enum.EnumHelper.GetList(typeof(SwitchKeyTypeEnum)).Select(k => k.Text).ToList();
-            var allKeys = nv.AllKeys.Select(k => k.ToUpper()).ToList();
+            var allKeys = nv.AllKeys.Select(k => (k ?? "").ToUpper()).ToList();
             if (allKeys.Exists(k => !enumKeys.Contains(k)))
             {
                 result.ErrorMessage = result.Message = "只允许存在T、RT、F、RF、V的赋值，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】！";
