@@ -43,6 +43,12 @@ namespace XCLNetTools.Message
         public virtual string MessageMore { get; set; }
 
         /// <summary>
+        /// 错误消息信息
+        /// </summary>
+        [DataMember]
+        public virtual string ErrorMessage { get; set; }
+
+        /// <summary>
         /// 消息发生页地址
         /// </summary>
         [DataMember]

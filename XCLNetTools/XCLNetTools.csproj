@@ -239,7 +239,6 @@
     <Compile Include="MVC\JsonResultFormat.cs" />
     <Compile Include="Serialize\LitJson.cs" />
     <Compile Include="Language\CN.cs" />
-    <Compile Include="Modules\ErrorHttpModule.cs" />
     <Compile Include="Message\MessageModel.cs" />
     <Compile Include="Message\Log.cs" />
     <Compile Include="FileHandler\ComFile.cs" />
