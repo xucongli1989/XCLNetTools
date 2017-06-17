@@ -286,7 +286,7 @@ namespace XCLNetTools.Common
             if (string.IsNullOrWhiteSpace(str))
             {
                 result.Result = false;
-                result.Message = "未指定配置项";
+                result.ErrorMessage = result.Message = "未指定配置项";
                 return result;
             }
 
@@ -310,7 +310,7 @@ namespace XCLNetTools.Common
             var nv = System.Web.HttpUtility.ParseQueryString(str);
             if (null == nv || nv.Count == 0)
             {
-                result.Message = "必须使用有效的格式，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】，用&符分开，再用=赋值";
+                result.ErrorMessage = result.Message = "必须使用有效的格式，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】，用&符分开，再用=赋值";
                 result.Result = false;
                 return result;
             }
@@ -320,14 +320,14 @@ namespace XCLNetTools.Common
             var allKeys = nv.AllKeys.Select(k => k.ToUpper()).ToList();
             if (allKeys.Exists(k => !enumKeys.Contains(k)))
             {
-                result.Message = "只允许存在T、RT、F、RF、V的赋值，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】！";
+                result.ErrorMessage = result.Message = "只允许存在T、RT、F、RF、V的赋值，如：【T=admin,test&RT=^user200.*$&F=user1,user2&RF=^user100.*$&V=20】！";
                 result.Result = false;
                 return result;
             }
 
             if (!allKeys.Contains(SwitchKeyTypeEnum.V.ToString()) && (allKeys.Contains(SwitchKeyTypeEnum.T.ToString()) || allKeys.Contains(SwitchKeyTypeEnum.F.ToString()) || allKeys.Contains(SwitchKeyTypeEnum.RT.ToString()) || allKeys.Contains(SwitchKeyTypeEnum.RF.ToString())))
             {
-                result.Message = "配置了黑名单或白名单，必须配置V的值！";
+                result.ErrorMessage = result.Message = "配置了黑名单或白名单，必须配置V的值！";
                 result.Result = false;
                 return result;
             }
@@ -335,7 +335,7 @@ namespace XCLNetTools.Common
             val = (nv[SwitchKeyTypeEnum.V.ToString()] ?? "").Trim().ToUpper();
             if (string.IsNullOrWhiteSpace(val))
             {
-                result.Message = "配置V的值不能为空！";
+                result.ErrorMessage = result.Message = "配置V的值不能为空！";
                 result.Result = false;
                 return result;
             }
@@ -344,7 +344,7 @@ namespace XCLNetTools.Common
 
             if ((!intVal.HasValue && val != SwitchKeyTypeEnum.T.ToString() && val != SwitchKeyTypeEnum.F.ToString()) || (intVal.HasValue && (intVal < 0 || intVal > 100)))
             {
-                result.Message = "配置V的值只能为：T或F或0~100之间的数字！";
+                result.ErrorMessage = result.Message = "配置V的值只能为：T或F或0~100之间的数字！";
                 result.Result = false;
                 return result;
             }
@@ -406,7 +406,7 @@ namespace XCLNetTools.Common
                 catch (Exception ex)
                 {
                     result.Result = false;
-                    result.Message = "发生了异常：" + ex.Message;
+                    result.ErrorMessage = result.Message = "发生了异常：" + ex.Message;
                     return result;
                 }
             }
