@@ -284,30 +284,12 @@
     <Content Include="DLL\HtmlAgilityPack\Net20\HtmlAgilityPack.dll.VisualState.xml" />
     <Content Include="DLL\HtmlAgilityPack\Net20\HtmlAgilityPack.pdb" />
     <Content Include="DLL\HtmlAgilityPack\Net20\HtmlAgilityPack.xml" />
-    <Content Include="DLL\HtmlAgilityPack\Net40-client\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\Net40-client\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\Net40-client\HtmlAgilityPack.xml" />
     <Content Include="DLL\HtmlAgilityPack\Net40\HtmlAgilityPack.dll" />
     <Content Include="DLL\HtmlAgilityPack\Net40\HtmlAgilityPack.pdb" />
     <Content Include="DLL\HtmlAgilityPack\Net40\HtmlAgilityPack.XML" />
     <Content Include="DLL\HtmlAgilityPack\Net45\HtmlAgilityPack.dll" />
     <Content Include="DLL\HtmlAgilityPack\Net45\HtmlAgilityPack.pdb" />
     <Content Include="DLL\HtmlAgilityPack\Net45\HtmlAgilityPack.XML" />
-    <Content Include="DLL\HtmlAgilityPack\sl3-wp\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\sl3-wp\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\sl3-wp\HtmlAgilityPack.XML" />
-    <Content Include="DLL\HtmlAgilityPack\sl4-windowsphone71\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\sl4-windowsphone71\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\sl4-windowsphone71\HtmlAgilityPack.XML" />
-    <Content Include="DLL\HtmlAgilityPack\sl4\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\sl4\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\sl4\HtmlAgilityPack.XML" />
-    <Content Include="DLL\HtmlAgilityPack\sl5\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\sl5\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\sl5\HtmlAgilityPack.XML" />
-    <Content Include="DLL\HtmlAgilityPack\winrt45\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\winrt45\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\winrt45\HtmlAgilityPack.xml" />
     <Content Include="DLL\IBatisNet.Common.dll" />
     <Content Include="DLL\IBatisNet.DataMapper.dll" />
     <Content Include="DLL\ICSharpCode.SharpZipLib.dll" />
@@ -330,7 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="DLL\HtmlAgilityPack\winrt45\HtmlAgilityPack.pri" />
     <None Include="Doc\Config\StaticResourceConfig.config" />
     <None Include="Doc\Doxy\Doxyfile" />
     <None Include="packages.config" />
