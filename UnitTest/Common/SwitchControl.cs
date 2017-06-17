@@ -72,14 +72,20 @@ namespace UnitTest.Common
             result = XCLNetTools.Common.SwitchControl.IsOpen("t=abc&f=&v=t", "bb");
             Assert.IsTrue(result.Result);
 
-            result = XCLNetTools.Common.SwitchControl.IsOpen(@"t=abc&rt=^\d+&v=0", "1abc");
+            result = XCLNetTools.Common.SwitchControl.IsOpen(@"t=abc&rt=^\d+&v=0", "123abc");
             Assert.IsTrue(result.Result);
 
-            result = XCLNetTools.Common.SwitchControl.IsOpen(@"t=abc&rf=^\d+&v=0", "1abc");
+            result = XCLNetTools.Common.SwitchControl.IsOpen(@"t=abc&rf=^\d+&v=0", "123abc");
             Assert.IsFalse(result.Result);
 
             result = XCLNetTools.Common.SwitchControl.IsOpen(@"t=abc&rt=^\d+&v=100", "aa");
             Assert.IsTrue(result.Result);
+
+            result = XCLNetTools.Common.SwitchControl.IsOpen("v=80", "ADMIN");
+            Assert.IsTrue(result.Result);
+
+            result = XCLNetTools.Common.SwitchControl.IsOpen("v=2", "ADMIN");
+            Assert.IsFalse(result.Result);
         }
     }
 }
