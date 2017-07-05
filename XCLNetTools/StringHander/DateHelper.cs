@@ -667,6 +667,28 @@ namespace XCLNetTools.StringHander
             return ticks / 10000000;
         }
 
+        /// <summary>
+        /// 将日期返回为指定的日期格式
+        /// </summary>
+        /// <param name="dt">日期</param>
+        /// <param name="format">格式枚举</param>
+        /// <returns>转换后的日期字符串</returns>
+        public static string GetDateString(DateTime dt, XCLNetTools.Enum.CommonEnum.DateFormat format = Enum.CommonEnum.DateFormat.NONE)
+        {
+            string str = string.Empty;
+            switch (format)
+            {
+                case Enum.CommonEnum.DateFormat.dd_MMM_yyyy:
+                    str = dt.ToString("dd MMM yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo);
+                    break;
+
+                default:
+                    str = dt.ToString();
+                    break;
+            }
+            return str;
+        }
+
         #endregion 其它
     }
 }

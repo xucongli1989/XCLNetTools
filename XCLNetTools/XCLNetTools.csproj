@@ -212,6 +212,7 @@
     <Compile Include="DataBase\MSSQL\SqlHelperParameterCache.cs" />
     <Compile Include="DataBase\Redis\RedisHelper.cs" />
     <Compile Include="Entity\SqlPagerConditionEntity.cs" />
+    <Compile Include="Modules\ErrorHttpModule.cs" />
     <Compile Include="Office\ExcelHandler\DataToExcel.cs" />
     <Compile Include="Office\ExcelHandler\ExcelHelper.cs" />
     <Compile Include="Office\ExcelHandler\ExcelToData.cs" />
