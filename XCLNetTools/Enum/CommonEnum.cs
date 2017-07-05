@@ -148,6 +148,22 @@ namespace XCLNetTools.Enum
             dd
         }
 
+        /// <summary>
+        /// 日期或时间格式枚举
+        /// </summary>
+        public enum DateFormat
+        {
+            /// <summary>
+            /// 默认
+            /// </summary>
+            NONE,
+
+            /// <summary>
+            /// 如：03 Feb 1988
+            /// </summary>
+            dd_MMM_yyyy
+        }
+
         #endregion 日期时间相关
 
         #region 图片操作相关
