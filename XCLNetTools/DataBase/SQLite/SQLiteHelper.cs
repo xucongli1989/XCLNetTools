@@ -40,7 +40,7 @@ namespace XCLNetTools.DataBase.SQLite
                     result = cmd.ExecuteNonQuery();
                     trans.Commit();
                 }
-                catch (Exception ex)
+                catch
                 {
                     trans.Rollback();
                     throw;
@@ -73,7 +73,7 @@ namespace XCLNetTools.DataBase.SQLite
                     result = cmd.ExecuteNonQuery();
                     trans.Commit();
                 }
-                catch (Exception ex)
+                catch
                 {
                     trans.Rollback();
                     throw;
@@ -108,7 +108,7 @@ namespace XCLNetTools.DataBase.SQLite
                     result = cmd.ExecuteNonQuery();
                     trans.Commit();
                 }
-                catch (Exception ex)
+                catch
                 {
                     trans.Rollback();
                     throw;
@@ -141,7 +141,7 @@ namespace XCLNetTools.DataBase.SQLite
                     result = cmd.ExecuteScalar();
                     trans.Commit();
                 }
-                catch (Exception ex)
+                catch
                 {
                     trans.Rollback();
                     throw;
@@ -174,7 +174,7 @@ namespace XCLNetTools.DataBase.SQLite
                     result = cmd.ExecuteScalar();
                     trans.Commit();
                 }
-                catch (Exception ex)
+                catch
                 {
                     trans.Rollback();
                     throw;
@@ -209,7 +209,7 @@ namespace XCLNetTools.DataBase.SQLite
                     result = cmd.ExecuteScalar();
                     trans.Commit();
                 }
-                catch (Exception ex)
+                catch
                 {
                     trans.Rollback();
                     throw;
@@ -241,7 +241,7 @@ namespace XCLNetTools.DataBase.SQLite
             {
                 reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -271,7 +271,7 @@ namespace XCLNetTools.DataBase.SQLite
             {
                 reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -302,7 +302,7 @@ namespace XCLNetTools.DataBase.SQLite
             {
                 reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -330,7 +330,7 @@ namespace XCLNetTools.DataBase.SQLite
                 SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd);
                 sda.Fill(ds);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -370,7 +370,7 @@ namespace XCLNetTools.DataBase.SQLite
                 SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd);
                 sda.Fill(ds);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -411,7 +411,7 @@ namespace XCLNetTools.DataBase.SQLite
                 SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd);
                 sda.Fill(ds);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }

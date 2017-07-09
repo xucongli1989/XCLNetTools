@@ -17,7 +17,6 @@ namespace XCLNetTools.FTP
 {
     /// <summary>
     /// FTP操作客户端类
-    /// <seealso cref="http://www.cnblogs.com/sufei/archive/2012/12/09/2810197.html"/>
     /// </summary>
     public class FTPClient
     {
@@ -341,7 +340,10 @@ namespace XCLNetTools.FTP
             return strsFileList;
         }
 
-        public void newPutByGuid(string strFileName, string strGuid)
+        /// <summary>
+        /// 上传文件
+        /// </summary>
+        public void NewPutByGuid(string strFileName, string strGuid)
         {
             if (!bConnected)
             {
@@ -672,6 +674,7 @@ namespace XCLNetTools.FTP
         /// 上传一个文件
         /// </summary>
         /// <param name="strFileName">本地文件名</param>
+        /// <param name="strGuid">guid</param>
         public void PutByGuid(string strFileName, string strGuid)
         {
             if (!bConnected)

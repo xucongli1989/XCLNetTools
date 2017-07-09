@@ -861,6 +861,7 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 向文本框写入数据，对指定WorkSheet操作
         /// </summary>
+        /// <param name="sheetIndex">index</param>
         /// <param name="ht">Hashtable的键值对保存文本框的ID和数据</param>
         public void SetTextBoxes(int sheetIndex, Hashtable ht)
         {
@@ -971,6 +972,7 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 向单元格写入数据，对指定WorkSheet操作
         /// </summary>
+        /// <param name="sheetIndex">index</param>
         /// <param name="ht">Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据</param>
         public void SetCells(int sheetIndex, Hashtable ht)
         {
@@ -1013,6 +1015,7 @@ namespace XCLNetTools.Office.ExcelHandler
         /// 如果Excel的单元格格式设置为数字，日期或者其他类型时，需要设置这些单元格的FormulaR1C1属性，
         /// 否则写到这些单元格的数据将不会按照预先设定的格式显示
         /// </remarks>
+        /// <param name="sheetIndex">index</param>
         /// <param name="arr">保存单元格的位置索引（行索引和列索引用“,”隔开）和数据</param>
         public void SetCells(int sheetIndex, string[] arr)
         {
@@ -1052,6 +1055,7 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 向单元格写入数据，对指定WorkSheet操作
         /// </summary>
+        /// <param name="sheetName">sheet name</param>
         /// <param name="ht">Hashtable的键值对保存单元格的位置索引（行索引和列索引用“,”隔开）和数据</param>
         public void SetCells(string sheetName, Hashtable ht)
         {
@@ -2084,6 +2088,7 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 合并单元格，并赋值，对指定WorkSheet操作
         /// </summary>
+        /// <param name="sheet">sheet</param>
         /// <param name="beginRowIndex">开始行索引</param>
         /// <param name="beginColumnIndex">开始列索引</param>
         /// <param name="endRowIndex">结束行索引</param>
@@ -2106,6 +2111,7 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 将指定索引列的数据相同的行合并，对指定WorkSheet操作
         /// </summary>
+        /// <param name="sheet">sheet</param>
         /// <param name="columnIndex">要合并的列索引</param>
         /// <param name="beginRowIndex">合并开始行索引</param>
         /// <param name="rows">要合并的行数</param>

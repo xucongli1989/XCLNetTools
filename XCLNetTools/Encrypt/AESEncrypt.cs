@@ -74,7 +74,7 @@ namespace XCLNetTools.Encrypt
                 iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
                 return Encrypt(s_crypto, key, iv);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -166,7 +166,7 @@ namespace XCLNetTools.Encrypt
                 s_encryped += byte2HexString(encrypted);
                 return s_encryped;
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -191,7 +191,7 @@ namespace XCLNetTools.Encrypt
                 s_decrypted += byte2String(decrypted);
                 return s_decrypted;
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }

@@ -53,7 +53,7 @@ namespace XCLNetTools.FileHandler
                             }
                             while (sizeRead > 0);
                         }
-                        catch (System.Exception ex)
+                        catch
                         {
                             throw;
                         }

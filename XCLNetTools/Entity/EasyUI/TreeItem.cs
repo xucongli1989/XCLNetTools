@@ -15,6 +15,9 @@ using System.Collections.Generic;
 //引用 Newtonsoft.Json 后生成报错问题
 namespace System.Runtime.CompilerServices
 {
+    /// <summary>
+    /// 扩展属性
+    /// </summary>
     public class ExtensionAttribute : Attribute { }
 }
 

@@ -304,6 +304,9 @@ namespace XCLNetTools.Encrypt
             }
         }
 
+        /// <summary>
+        /// RSA签名
+        /// </summary>
         public bool SignatureDeformatter(string p_strKeyPublic, byte[] HashbyteDeformatter, string p_strDeformatterData)
         {
             byte[] DeformatterData;
@@ -327,6 +330,9 @@ namespace XCLNetTools.Encrypt
             }
         }
 
+        /// <summary>
+        /// RSA签名
+        /// </summary>
         public bool SignatureDeformatter(string p_strKeyPublic, string p_strHashbyteDeformatter, string p_strDeformatterData)
         {
             byte[] DeformatterData;
