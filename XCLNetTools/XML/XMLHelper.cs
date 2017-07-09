@@ -94,9 +94,9 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName);
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
-                throw; //这里可以定义你自己的异常处理
+                throw;
             }
             return isSuccess;
         }
@@ -138,9 +138,9 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName); //保存到XML文档
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
-                throw; //这里可以定义你自己的异常处理
+                throw;
             }
             return isSuccess;
         }
@@ -186,9 +186,9 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName); //保存到XML文档
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
-                throw; //这里可以定义你自己的异常处理
+                throw;
             }
             return isSuccess;
         }
@@ -234,9 +234,9 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName); //保存到XML文档
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
-                throw; //这里可以定义你自己的异常处理
+                throw;
             }
             return isSuccess;
         }
@@ -267,9 +267,9 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName); //保存到XML文档
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
-                throw; //这里可以定义你自己的异常处理
+                throw;
             }
             return isSuccess;
         }
@@ -313,9 +313,9 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName); //保存到XML文档
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
-                throw; //这里可以定义你自己的异常处理
+                throw;
             }
             return isSuccess;
         }
@@ -342,9 +342,9 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName); //保存到XML文档
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
-                throw; //这里可以定义你自己的异常处理
+                throw;
             }
             return isSuccess;
         }
@@ -371,7 +371,7 @@ namespace XCLNetTools.XML
                 xmlDoc.Save(xmlFileName);
                 isSuccess = true;
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
