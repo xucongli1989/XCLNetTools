@@ -16,7 +16,7 @@ namespace XCLNetTools.DataSource
     /// <summary>
     /// DataReader帮助类
     /// </summary>
-    public class DataReaderHelper
+    public static class DataReaderHelper
     {
         /// <summary>
         /// 将DataReader转为list

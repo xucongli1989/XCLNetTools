@@ -21,7 +21,7 @@ namespace XCLNetTools.StringHander
     /// <summary>
     ///公用类
     /// </summary>
-    public class Common
+    public static class Common
     {
         #region 防止代码注入
 
@@ -151,7 +151,7 @@ namespace XCLNetTools.StringHander
         /// <returns>如：5.5GB</returns>
         public static string GetSizeStringByKB(decimal size, int count)
         {
-            string flag = "KB";
+            string flag;
             decimal result = 0;
             if (size >= 1024 * 1024 * 1024 * 1024.0m)
             {
@@ -243,7 +243,7 @@ namespace XCLNetTools.StringHander
                 modelList = new List<StaticResource>();
                 for (int i = 0; i < nameList.Count; i++)
                 {
-                    var model = config.StaticResourceList.Where(k => string.Equals(nameList[i].Trim(), k.Name, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                    var model = config.StaticResourceList.FirstOrDefault(k => string.Equals(nameList[i].Trim(), k.Name, StringComparison.OrdinalIgnoreCase));
                     if (null != model)
                     {
                         modelList.Add(model);
@@ -278,10 +278,8 @@ namespace XCLNetTools.StringHander
             {
                 int j = 0;
                 int k = 0;
-                ASCIIEncoding ascii = new ASCIIEncoding();
                 for (int i = 0; i < temp.Length; i++)
                 {
-                    //if (ascii.GetByteCount(temp.Substring(i, 1))==2)
                     if (Regex.IsMatch(temp.Substring(i, 1), @"[^\x00-\xff]+"))
                     {
                         j += 2;
@@ -569,7 +567,7 @@ namespace XCLNetTools.StringHander
             if (null != HttpContext.Current)
             {
                 var heads = HttpContext.Current.Request.Headers;
-                if (null != heads && heads.AllKeys.Contains("X-Requested-With"))
+                if (null != heads && null != heads.AllKeys && heads.AllKeys.Contains("X-Requested-With"))
                 {
                     flag = string.Equals(Convert.ToString(heads["X-Requested-With"]), "XMLHttpRequest", StringComparison.OrdinalIgnoreCase);
                 }

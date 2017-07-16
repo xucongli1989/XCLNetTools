@@ -19,7 +19,7 @@ namespace XCLNetTools.Serialize
     /// <summary>
     /// 其它对象序列化相关
     /// </summary>
-    public class Lib
+    public static class Lib
     {
         #region Byte相关
 
@@ -28,7 +28,7 @@ namespace XCLNetTools.Serialize
         /// </summary>
         /// <param name="pBytes">字节流</param>
         /// <returns>T</returns>
-        public T DeserializeObject<T>(byte[] pBytes) where T : class
+        public static T DeserializeObject<T>(byte[] pBytes) where T : class
         {
             T result = default(T);
             if (pBytes == null || pBytes.Length == 0)
@@ -90,7 +90,7 @@ namespace XCLNetTools.Serialize
                 return;
             }
             var ps = p.Values();
-            if (null == ps || ps.Count() == 0)
+            if (null == ps || !ps.Any())
             {
                 return;
             }
@@ -141,7 +141,6 @@ namespace XCLNetTools.Serialize
                 return null;
             }
             List<string> str = new List<string>(dic.Count);
-            string tempKey = string.Empty;
             for (int i = 0; i < dic.Count; i++)
             {
                 var d = dic.ElementAt(i);

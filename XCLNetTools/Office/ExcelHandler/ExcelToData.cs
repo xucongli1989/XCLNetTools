@@ -14,7 +14,7 @@ namespace XCLNetTools.Office.ExcelHandler
     /// <summary>
     /// excel读取类
     /// </summary>
-    public class ExcelToData
+    public static class ExcelToData
     {
         /// <summary>
         /// 单个工作薄读入（第一个可见的sheet）
@@ -34,7 +34,7 @@ namespace XCLNetTools.Office.ExcelHandler
                 }
             }
             DataTable dataTable = new DataTable();
-            if (worksheet.Cells.MaxRow > -1 && worksheet.Cells.MaxColumn > -1)
+            if (null != worksheet && worksheet.Cells.MaxRow > -1 && worksheet.Cells.MaxColumn > -1)
             {
                 dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1);
             }
@@ -56,8 +56,7 @@ namespace XCLNetTools.Office.ExcelHandler
                 worksheet = workbook.Worksheets[i];
                 if (worksheet.IsVisible && worksheet.Cells.MaxRow > -1 && worksheet.Cells.MaxColumn > -1)
                 {
-                    DataTable dataTable = new DataTable();
-                    dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1);
+                    var dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1);
                     dataTable.TableName = string.Format("dt{0}", i);
                     ds.Tables.Add(dataTable);
                 }

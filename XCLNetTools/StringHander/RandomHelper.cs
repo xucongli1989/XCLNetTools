@@ -13,7 +13,7 @@ namespace XCLNetTools.StringHander
     /// <summary>
     /// 随机数操作类
     /// </summary>
-    public class RandomHelper
+    public static class RandomHelper
     {
         /// <summary>
         /// 生成指定范围内的随机数（不重复）

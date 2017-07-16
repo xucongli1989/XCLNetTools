@@ -15,7 +15,7 @@ namespace XCLNetTools.FileHandler
     /// <summary>
     /// 验证码相关
     /// </summary>
-    public class VerificationCode
+    public static class VerificationCode
     {
         /// <summary>
         /// 生成验证码的随机数

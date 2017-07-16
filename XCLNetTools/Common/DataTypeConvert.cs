@@ -14,7 +14,7 @@ namespace XCLNetTools.Common
     /// <summary>
     /// C#数据类型转换
     /// </summary>
-    public class DataTypeConvert
+    public static class DataTypeConvert
     {
         #region byte
 

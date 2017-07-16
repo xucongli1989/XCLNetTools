@@ -19,7 +19,7 @@ namespace XCLNetTools.Control.MxGraph
     /// <summary>
     /// MxGraph操作类
     /// </summary>
-    public class Lib
+    public static class Lib
     {
         /// <summary>
         /// 根据view形式的xml生成图片
@@ -30,7 +30,7 @@ namespace XCLNetTools.Control.MxGraph
         {
             if (string.IsNullOrEmpty(xml))
             {
-                throw new Exception("要生成图片的xml信息不能为空！");
+                throw new ArgumentException("要生成图片的xml信息不能为空！","xml");
             }
             XmlTextReader xmlReader = new XmlTextReader(new StringReader(xml));
             mxGraphViewImageReader viewReader = new mxGraphViewImageReader(xmlReader, Color.White, 4, true, true);

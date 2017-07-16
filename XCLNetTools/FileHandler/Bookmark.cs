@@ -15,7 +15,7 @@ namespace XCLNetTools.FileHandler
     /// <summary>
     /// 浏览器书签文件操作类
     /// </summary>
-    public class Bookmark
+    public static class Bookmark
     {
         /// <summary>
         /// 根据浏览器书签文件地址，返回list

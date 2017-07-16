@@ -13,7 +13,7 @@ namespace XCLNetTools.StringHander
     /// <summary>
     /// 页面数据校验类
     /// </summary>
-    public class PageValid
+    public static class PageValid
     {
         #region 数字字符串检查
 

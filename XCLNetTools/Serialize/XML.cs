@@ -15,7 +15,7 @@ namespace XCLNetTools.Serialize
     /// <summary>
     /// xml序列化相关
     /// </summary>
-    public class XML
+    public static class XML
     {
         #region 反序列化
 
@@ -26,7 +26,7 @@ namespace XCLNetTools.Serialize
         /// <returns>对象</returns>
         public static T Deserialize<T>(string xml) where T : class
         {
-            T result = default(T);
+            T result;
             using (StringReader sr = new StringReader(xml))
             {
                 XmlSerializer xmldes = new XmlSerializer(typeof(T));
@@ -42,7 +42,7 @@ namespace XCLNetTools.Serialize
         /// <returns>对象</returns>
         public static T DeserializeFromXMLFile<T>(string xmlFilePath) where T : class
         {
-            T result = default(T);
+            T result;
             using (XmlTextReader rd = new XmlTextReader(xmlFilePath))
             {
                 XmlSerializer xmlSer = new XmlSerializer(typeof(T));

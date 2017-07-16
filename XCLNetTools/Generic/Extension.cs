@@ -25,7 +25,7 @@ namespace XCLNetTools.Generic
         /// <returns>是否为null或empty</returns>
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
         {
-            return null == source || source.Count() == 0;
+            return null == source || !source.Any();
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace XCLNetTools.Generic
         /// <returns>是否不为（null或empty）</returns>
         public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> source)
         {
-            return null != source && source.Count() > 0;
+            return null != source && source.Any();
         }
 
         #endregion IEnumerable

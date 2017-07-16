@@ -15,7 +15,7 @@ namespace XCLNetTools.FileHandler
     /// <summary>
     /// 文件目录操作类
     /// </summary>
-    public class FileDirectory
+    public static class FileDirectory
     {
         #region 目录操作
 
@@ -26,13 +26,13 @@ namespace XCLNetTools.FileHandler
         /// <returns>true:空目录，false:非空目录</returns>
         public static bool IsEmpty(string path)
         {
-            if (string.IsNullOrEmpty(path))
+            if (string.IsNullOrWhiteSpace(path))
             {
                 return true;
             }
             var files = Directory.GetFiles(path);
             var dirs = Directory.GetDirectories(path);
-            return null == files && files.Length == 0 && null == dirs && dirs.Length == 0;
+            return (null == files || files.Length == 0) && (null == dirs || dirs.Length == 0);
         }
 
         /// <summary>
@@ -160,12 +160,12 @@ namespace XCLNetTools.FileHandler
             XCLNetTools.Entity.FileInfoEntity tempFileInfoEntity = null;
             //文件夹
             var directories = System.IO.Directory.EnumerateDirectories(dirPath);
-            if (null != directories && directories.Count() > 0)
+            if (null != directories && directories.Any())
             {
                 directories.ToList().ForEach(k =>
                 {
                     var dir = new System.IO.DirectoryInfo(k);
-                    if (null != dir)
+                    if (dir.Exists)
                     {
                         tempFileInfoEntity = new Entity.FileInfoEntity();
                         tempFileInfoEntity.ID = idx++;
@@ -189,7 +189,7 @@ namespace XCLNetTools.FileHandler
                 files.ToList().ForEach(k =>
                 {
                     var file = new System.IO.FileInfo(k);
-                    if (null != file)
+                    if (file.Exists)
                     {
                         tempFileInfoEntity = new Entity.FileInfoEntity();
                         tempFileInfoEntity.ID = idx++;
@@ -251,7 +251,7 @@ namespace XCLNetTools.FileHandler
         /// 在文件里追加内容
         /// </summary>
         /// <param name="filePathName">文件名</param>
-        /// <param name="writeWord">追加内容</param>
+        /// <param name="writeWord">追加的内容</param>
         /// <param name="encode">编码</param>
         public static void AppendText(string filePathName, string writeWord, System.Text.Encoding encode)
         {
@@ -264,7 +264,7 @@ namespace XCLNetTools.FileHandler
             {
                 string oldString = fileReadWord.ReadToEnd().ToString();
                 oldString = oldString + writeWord;
-                fileWrite.Write(writeWord);
+                fileWrite.Write(oldString);
             }
         }
 

@@ -18,7 +18,7 @@ namespace XCLNetTools.StringHander
     /// <summary>
     /// form表单相关
     /// </summary>
-    public class FormHelper
+    public static class FormHelper
     {
         #region 主方法
 
@@ -728,7 +728,7 @@ namespace XCLNetTools.StringHander
                 return string.Empty;
             }
             List<string> lst = new List<string>();
-            string[] vals = new string[] { };
+            string[] vals;
             for (int i = 0; i < req.QueryString.Count; i++)
             {
                 vals = req.QueryString.GetValues(i);
@@ -752,7 +752,7 @@ namespace XCLNetTools.StringHander
                 return string.Empty;
             }
             List<string> lst = new List<string>();
-            string[] vals = new string[] { };
+            string[] vals;
             for (int i = 0; i < req.Form.Count; i++)
             {
                 vals = req.Form.GetValues(i);

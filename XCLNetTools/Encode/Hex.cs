@@ -15,7 +15,7 @@ namespace XCLNetTools.Encode
     /// <summary>
     /// 十六进制处理
     /// </summary>
-    public class Hex
+    public static class Hex
     {
         /// <summary>
         /// 16进制字符串转为byte[]

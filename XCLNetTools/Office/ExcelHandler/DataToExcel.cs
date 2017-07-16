@@ -20,7 +20,7 @@ namespace XCLNetTools.Office.ExcelHandler
     /// <summary>
     /// 操作EXCEL导出数据报表的类
     /// </summary>
-    public class DataToExcel
+    public static class DataToExcel
     {
         /// <summary>
         /// 数据导出excel
@@ -61,7 +61,7 @@ namespace XCLNetTools.Office.ExcelHandler
                 {
                     str.Append("自定义的标题与要导出的数据源的数量不匹配，导出失败！；");
                 }
-                if (paramClass.ConTitle.ToList().Distinct().Count() != paramClass.ConTitle.Length)
+                if (paramClass.ConTitle.Distinct().Count() != paramClass.ConTitle.Length)
                 {
                     str.Append("自定义的标题项不能重复，因为此项要作为Sheet的名称，导出失败！；");
                 }

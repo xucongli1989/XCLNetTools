@@ -6,7 +6,7 @@ namespace XCLNetTools.DataSource
     /// <summary>
     /// dataset相关
     /// </summary>
-    public class DataSetHelper
+    public static class DataSetHelper
     {
         /// <summary>
         /// 将dataset的第一个datatable转为list

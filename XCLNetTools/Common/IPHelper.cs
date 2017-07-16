@@ -8,7 +8,7 @@ namespace XCLNetTools.Common
     /// <summary>
     /// IP处理
     /// </summary>
-    public class IPHelper
+    public static class IPHelper
     {
         /// <summary>
         /// 取得用户客户端IP(穿过代理服务器取远程用户真实IP地址)
@@ -45,6 +45,7 @@ namespace XCLNetTools.Common
             }
             catch
             {
+                //
             }
             return string.Equals("::1", result) ? "127.0.0.1" : result;
         }
@@ -75,7 +76,10 @@ namespace XCLNetTools.Common
                     }
                 }
             }
-            catch { }
+            catch
+            {
+                //
+            }
             return ip;
         }
     }

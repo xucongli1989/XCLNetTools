@@ -11,7 +11,7 @@ namespace XCLNetTools.Encode
     /// <summary>
     /// 其它相关
     /// </summary>
-    public class Lib
+    public static class Lib
     {
         /// <summary>
         /// 对字符串进行js的unescape解码

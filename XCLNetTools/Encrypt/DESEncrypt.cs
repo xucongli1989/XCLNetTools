@@ -15,7 +15,7 @@ namespace XCLNetTools.Encrypt
     /// <summary>
     /// DES加密/解密类。
     /// </summary>
-    public class DESEncrypt
+    public static class DESEncrypt
     {
         /// <summary>
         /// 加密数据

@@ -422,7 +422,10 @@ namespace XCLNetTools.StringHander
             switch (c)
             {
                 case '年':
-                    foreach (char s in digit) val += cnd[int.Parse(s.ToString())];
+                    foreach (char s in digit)
+                    {
+                        val += cnd[int.Parse(s.ToString())];
+                    }
                     break;
 
                 case '月':

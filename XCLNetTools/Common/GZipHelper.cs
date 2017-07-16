@@ -8,7 +8,7 @@ namespace XCLNetTools.Common
     /// <summary>
     /// gzip相关
     /// </summary>
-    public class GZipHelper
+    public static class GZipHelper
     {
         /// <summary>
         /// gzip压缩字符串

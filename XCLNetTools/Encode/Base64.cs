@@ -14,7 +14,7 @@ namespace XCLNetTools.Encode
     /// <summary>
     /// base64相关
     /// </summary>
-    public class Base64
+    public static class Base64
     {
         /// <summary>
         /// Base64加密

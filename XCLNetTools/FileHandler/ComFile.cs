@@ -16,7 +16,7 @@ namespace XCLNetTools.FileHandler
     /// <summary>
     ///文件操作公共类
     /// </summary>
-    public class ComFile
+    public static class ComFile
     {
         #region 删除文件
 
@@ -38,6 +38,7 @@ namespace XCLNetTools.FileHandler
                 }
                 catch
                 {
+                    //
                 }
             }
             else
