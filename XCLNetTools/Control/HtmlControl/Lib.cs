@@ -16,7 +16,7 @@ namespace XCLNetTools.Control.HtmlControl
     /// <summary>
     /// 原生html控件操作类
     /// </summary>
-    public class Lib
+    public static class Lib
     {
         /// <summary>
         /// 将枚举转为select的options

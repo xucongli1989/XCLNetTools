@@ -14,17 +14,17 @@ namespace XCLNetTools.Message
     /// <summary>
     /// 消息日志
     /// </summary>
-    public class Log
+    public static class Log
     {
         /// <summary>
         /// 以json方式提示的属性名,它的下面有多个成员（如：data.JsonMessageName.Message）
         /// </summary>
-        public static string JsonMessageName = string.Format("XCL{0}", XCLNetTools.StringHander.RandomHelper.GenerateIdWithGuid());
+        public static readonly string JsonMessageName = string.Format("XCL{0}", XCLNetTools.StringHander.RandomHelper.GenerateIdWithGuid());
 
         /// <summary>
         /// 记录application error的处理方法,默认直接输出json
         /// </summary>
-        public static Action<MessageModel> LogApplicationErrorAction = new Action<MessageModel>((msgModel) => { XCLNetTools.Message.Log.WriteMessage(msgModel); });
+        public static readonly Action<MessageModel> LogApplicationErrorAction = new Action<MessageModel>((msgModel) => { XCLNetTools.Message.Log.WriteMessage(msgModel); });
 
         /// <summary>
         /// 直接输出obj的json形式

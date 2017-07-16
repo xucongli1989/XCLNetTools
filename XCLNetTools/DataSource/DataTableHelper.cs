@@ -6,7 +6,7 @@ namespace XCLNetTools.DataSource
     /// <summary>
     /// datatable相关
     /// </summary>
-    public class DataTableHelper
+    public static class DataTableHelper
     {
         /// <summary>
         /// 根据dt和指定行号和列名，返回该列的列号.若找不到该列，则返回-1

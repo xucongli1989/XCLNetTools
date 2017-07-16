@@ -15,7 +15,7 @@ namespace XCLNetTools.Encrypt
     /// <summary>
     /// 得到随机安全码（哈希加密）。
     /// </summary>
-    public class HashEncode
+    public static class HashEncode
     {
         /// <summary>
         /// 得到随机哈希加密字符串

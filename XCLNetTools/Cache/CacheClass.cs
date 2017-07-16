@@ -15,7 +15,7 @@ namespace XCLNetTools.Cache
     /// <summary>
     /// 缓存相关的操作类
     /// </summary>
-    public class CacheClass
+    public static class CacheClass
     {
         /// <summary>
         /// 获取当前应用程序指定CacheKey的Cache值

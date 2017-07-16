@@ -39,8 +39,7 @@ namespace XCLNetTools.Modules
             {
                 return;
             }
-
-            string msg = string.Format("错误页：{0}\r\n来源URL：{1}\r\n", context.Request.Url, context.Request.UrlReferrer);
+            
             Exception exp = context.Error.GetBaseException();
 
             MessageModel errModel = new MessageModel();

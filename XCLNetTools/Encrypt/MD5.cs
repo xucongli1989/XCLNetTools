@@ -13,7 +13,7 @@ namespace XCLNetTools.Encrypt
     /// <summary>
     /// md5相关
     /// </summary>
-    public class MD5
+    public static class MD5
     {
         /// <summary>
         /// MD5加密（大写）

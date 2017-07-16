@@ -18,7 +18,7 @@ namespace XCLNetTools.StringHander
     /// <summary>
     /// URL的操作类
     /// </summary>
-    public class UrlOper
+    public static class UrlOper
     {
         #region 操作URL参数
 
@@ -128,7 +128,7 @@ namespace XCLNetTools.StringHander
                         }
                     }
                     lst.Remove(paramName);
-                    if (null != lst && lst.Count > 0)
+                    if (lst.Count > 0)
                     {
                         List<string> urlLst = new List<string>();
                         foreach (KeyValuePair<string, string> entry in lst)
@@ -234,15 +234,15 @@ namespace XCLNetTools.StringHander
                 {
                     return num;
                 }
-                if (exception.Message.IndexOf("500 ") > 0)
+                if (exception.Message.IndexOf("500 ") >= 0)
                 {
                     return 500;
                 }
-                if (exception.Message.IndexOf("401 ") > 0)
+                if (exception.Message.IndexOf("401 ") >= 0)
                 {
                     return 401;
                 }
-                if (exception.Message.IndexOf("404") > 0)
+                if (exception.Message.IndexOf("404") >= 0)
                 {
                     num = 404;
                 }

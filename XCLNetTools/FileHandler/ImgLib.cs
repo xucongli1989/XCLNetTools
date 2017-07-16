@@ -9,13 +9,14 @@ Create By: XCL @ 2012
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System;
 
 namespace XCLNetTools.FileHandler
 {
     /// <summary>
     /// 图片相关
     /// </summary>
-    public class ImgLib
+    public static class ImgLib
     {
         #region 指定坐标和宽高裁剪图片
 
@@ -66,7 +67,7 @@ namespace XCLNetTools.FileHandler
             }
             if (width <= 0 || height <= 0)
             {
-                throw new System.Exception("width or height is invalid!");
+                throw new  ArgumentException("width or height is invalid!");
             }
 
             int towidth = width;
@@ -124,10 +125,6 @@ namespace XCLNetTools.FileHandler
             {
                 //以jpg格式保存缩略图
                 bitmap.Save(thumbnailPath, System.Drawing.Imaging.ImageFormat.Jpeg);
-            }
-            catch (System.Exception e)
-            {
-                throw e;
             }
             finally
             {

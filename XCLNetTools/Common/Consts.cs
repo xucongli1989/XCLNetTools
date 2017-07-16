@@ -16,7 +16,7 @@ namespace XCLNetTools.Common
     /// <summary>
     /// 常量
     /// </summary>
-    public class Consts
+    public static class Consts
     {
         #region 正则
 

@@ -15,7 +15,7 @@ namespace XCLNetTools.Javascript
     ///<summary>
     /// 一些常用的Js调用
     /// </summary>
-    public class Jscript
+    public static class Jscript
     {
         #region 输出JS代码
 

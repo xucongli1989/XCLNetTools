@@ -14,7 +14,7 @@ namespace XCLNetTools.Encode
     /// <summary>
     /// Unicode相关
     /// </summary>
-    public class Unicode
+    public static class Unicode
     {
         private static Regex reUnicode = new Regex(@"\\u([0-9a-fA-F]{4})", RegexOptions.Compiled);
         private static Regex reUnicodeChar = new Regex(@"[^\u0000-\u00ff]", RegexOptions.Compiled);

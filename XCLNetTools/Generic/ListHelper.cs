@@ -17,7 +17,7 @@ namespace XCLNetTools.Generic
     /// <summary>
     /// List操作类
     /// </summary>
-    public class ListHelper
+    public static class ListHelper
     {
         /// <summary>
         /// 根据步长，将一个总List拆分为多个子List

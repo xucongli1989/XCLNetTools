@@ -17,7 +17,7 @@ namespace XCLNetTools.Serialize
     /// <summary>
     /// LitJson帮助类
     /// </summary>
-    public class LitJson
+    public static class LitJson
     {
         /// <summary>
         /// 对象转为json

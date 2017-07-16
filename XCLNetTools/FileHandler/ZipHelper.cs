@@ -16,7 +16,7 @@ namespace XCLNetTools.FileHandler
     /// <summary>
     /// 文件的压缩与解压缩
     /// </summary>
-    public class ZipHelper
+    public static class ZipHelper
     {
         /// <summary>
         /// 压缩单个文件
@@ -167,7 +167,7 @@ namespace XCLNetTools.FileHandler
         /// <param name="strDirectory">The STR directory.</param>
         /// <param name="password">zip 文件的密码。</param>
         /// <param name="overWrite">是否覆盖已存在的文件。</param>
-        public void UnZip(string zipedFile, string strDirectory, string password, bool overWrite)
+        public static void UnZip(string zipedFile, string strDirectory, string password, bool overWrite)
         {
             if (strDirectory == "")
                 strDirectory = Directory.GetCurrentDirectory();
@@ -192,7 +192,7 @@ namespace XCLNetTools.FileHandler
                         {
                             using (FileStream streamWriter = File.Create(strDirectory + directoryName + fileName))
                             {
-                                int size = 2048;
+                                int size;
                                 byte[] data = new byte[2048];
                                 while (true)
                                 {
@@ -224,7 +224,7 @@ namespace XCLNetTools.FileHandler
             {
                 if (files.Length != fileNames.Length)
                 {
-                    throw new Exception("指定了自定义的文件名的数目必须与文件数一致！");
+                    throw new ArgumentException("指定了自定义的文件名的数目必须与文件数一致！");
                 }
                 else
                 {

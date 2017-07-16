@@ -14,7 +14,7 @@ namespace XCLNetTools.XML
     /// <summary>
     /// XMLHelper XML文档操作管理器
     /// </summary>
-    public class XMLHelper
+    public static class XMLHelper
     {
         #region XML文档节点查询和读取
 
@@ -53,7 +53,6 @@ namespace XCLNetTools.XML
         /// <returns>返回xmlAttributeName</returns>
         public static XmlAttribute GetXmlAttribute(string xmlFileName, string xpath, string xmlAttributeName)
         {
-            string content = string.Empty;
             XmlDocument xmlDoc = new XmlDocument();
             XmlAttribute xmlAttribute = null;
             xmlDoc.Load(xmlFileName);

@@ -9,7 +9,7 @@ namespace XCLNetTools.Common
     /// <summary>
     /// 开关控制
     /// </summary>
-    public class SwitchControl
+    public static class SwitchControl
     {
         #region 开关配置和开关的百分比控制
 

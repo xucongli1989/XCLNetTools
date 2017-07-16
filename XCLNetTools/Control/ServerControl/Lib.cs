@@ -16,7 +16,7 @@ namespace XCLNetTools.Control.ServerControl
     /// <summary>
     /// 服务器控件操作相关
     /// </summary>
-    public class Lib
+    public static class Lib
     {
         #region Repeater操作
 

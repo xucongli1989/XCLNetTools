@@ -18,7 +18,7 @@ namespace XCLNetTools.Enum
     /// <summary>
     /// 枚举帮助类
     /// </summary>
-    public class EnumHelper
+    public static class EnumHelper
     {
         /// <summary>
         /// 将枚举转为List(包含自定义属性description)（value为int型的string）
@@ -57,9 +57,8 @@ namespace XCLNetTools.Enum
         {
             if (!emType.IsEnum)
             {
-                throw new Exception("emType必须为枚举类型！");
+                throw new ArgumentException("emType必须为枚举类型！");
             }
-            var tp = typeof(T);
             object objVal = null;
             var list = new List<XCLNetTools.Entity.Enum.EnumFieldTModel<T>>();
             System.Reflection.FieldInfo[] fields = emType.GetFields();
@@ -80,7 +79,7 @@ namespace XCLNetTools.Enum
                 }
             }
 
-            if (null != list && list.Count > 0)
+            if (list.Count > 0)
             {
                 list = list.OrderBy(k => k.Value).ToList();
             }
@@ -95,9 +94,14 @@ namespace XCLNetTools.Enum
         public static string GetEnumDesc<T>(T enumtype)
         {
             string str = string.Empty;
-            if (enumtype == null) throw new ArgumentNullException("Enumtype");
-            if (!enumtype.GetType().IsEnum) throw new Exception("参数类型不正确");
-
+            if (enumtype == null)
+            {
+                throw new ArgumentNullException("enumtype");
+            }
+            if (!enumtype.GetType().IsEnum)
+            {
+                throw new ArgumentException("参数类型应该为枚举类型", "enumtype");
+            }
             FieldInfo[] fieldinfo = enumtype.GetType().GetFields();
             foreach (FieldInfo item in fieldinfo)
             {
@@ -129,7 +133,7 @@ namespace XCLNetTools.Enum
             var lst = EnumHelper.GetEnumFieldModelList(T);
             if (null != lst && lst.Count > 0)
             {
-                var m = lst.Where(k => string.Equals(k.Text, text, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                var m = lst.FirstOrDefault(k => string.Equals(k.Text, text, StringComparison.OrdinalIgnoreCase));
                 if (null != m)
                 {
                     str = m.Description;
@@ -239,7 +243,7 @@ namespace XCLNetTools.Enum
             var values = System.Enum.GetValues(typeof(T));
             if (null != values && values.Length > 0)
             {
-                T temp = default(T);
+                T temp;
                 foreach (var m in values)
                 {
                     temp = (T)System.Enum.Parse(tp, Convert.ToString(m));
@@ -318,7 +322,7 @@ namespace XCLNetTools.Enum
         {
             StringBuilder str = new StringBuilder();
             var ms = t.GetNestedTypes();
-            if (null == ms || ms.Count() == 0)
+            if (null == ms || !ms.Any())
             {
                 return string.Empty;
             }

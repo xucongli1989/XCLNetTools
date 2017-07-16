@@ -13,7 +13,7 @@ namespace XCLNetTools.StringHander
     /// <summary>
     /// Rmb 的摘要说明。
     /// </summary>
-    public class Rmb
+    public static class Rmb
     {
         /// <summary>
         /// 转换人民币大小金额

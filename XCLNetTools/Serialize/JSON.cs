@@ -14,7 +14,7 @@ namespace XCLNetTools.Serialize
     /// <summary>
     /// JSON序列化相关
     /// </summary>
-    public class JSON
+    public static class JSON
     {
         /// <summary>
         /// 提供者枚举
@@ -91,7 +91,10 @@ namespace XCLNetTools.Serialize
             {
                 return null != JObject.Parse(json.Trim());
             }
-            catch { }
+            catch
+            {
+                //
+            }
             return false;
         }
     }

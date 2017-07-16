@@ -47,7 +47,7 @@ namespace XCLNetTools.MVC
             }
             if ((this.JsonRequestBehavior == JsonRequestBehavior.DenyGet) && string.Equals(context.HttpContext.Request.HttpMethod, "GET", StringComparison.OrdinalIgnoreCase))
             {
-                throw new Exception("该请求未被允许！");
+                throw new HttpException(403, "该请求未被允许！");
             }
             HttpResponseBase response = context.HttpContext.Response;
             if (!string.IsNullOrEmpty(this.ContentType))

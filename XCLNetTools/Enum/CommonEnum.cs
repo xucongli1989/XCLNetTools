@@ -15,7 +15,7 @@ namespace XCLNetTools.Enum
     /// 常用枚举常量
     /// </summary>
     [Serializable]
-    public class CommonEnum
+    public static class CommonEnum
     {
         #region 逻辑
 

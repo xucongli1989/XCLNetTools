@@ -13,7 +13,7 @@ namespace XCLNetTools.Language
     /// <summary>
     /// 中文处理
     /// </summary>
-    public class CN
+    public static class CN
     {
         /// <summary>
         /// 将汉字转化为全拼
@@ -22,7 +22,7 @@ namespace XCLNetTools.Language
         /// <returns>全拼</returns>
         public static string ConvertToAllSpell(string strChinese)
         {
-            byte[] array = new byte[2];
+            byte[] array;
             string returnstr = "";
             int chrasc = 0;
             int i1 = 0;
@@ -112,7 +112,7 @@ namespace XCLNetTools.Language
         /// <returns>拼音</returns>
         public static string ConvertFirstSpell(string charChinese)
         {
-            byte[] array = new byte[2];
+            byte[] array;
             string returnstr = "";
             int chrasc = 0;
             int i1 = 0;

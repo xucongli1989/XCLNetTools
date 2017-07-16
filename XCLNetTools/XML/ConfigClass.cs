@@ -13,7 +13,7 @@ namespace XCLNetTools.XML
     /// <summary>
     /// Web.config 操作类
     /// </summary>
-    public class ConfigClass
+    public static class ConfigClass
     {
         /// <summary>
         /// 取得置文件路径和名称
