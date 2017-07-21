@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace XCLNetTools.DataSource
@@ -66,10 +67,12 @@ namespace XCLNetTools.DataSource
         {
             System.ComponentModel.PropertyDescriptorCollection properties = System.ComponentModel.TypeDescriptor.GetProperties(typeof(T));
             DataTable dt = new DataTable();
+            Type nullableType;
             for (int i = 0; i < properties.Count; i++)
             {
-                System.ComponentModel.PropertyDescriptor property = properties[i];
-                dt.Columns.Add(property.Name, property.PropertyType);
+                var property = properties[i];
+                nullableType = Nullable.GetUnderlyingType(property.PropertyType);
+                dt.Columns.Add(property.Name, null == nullableType ? property.PropertyType : nullableType);
             }
             object[] values = new object[properties.Count];
             foreach (T item in data)
