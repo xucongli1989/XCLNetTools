@@ -39,6 +39,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -56,8 +57,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Common\SwitchControl.cs" />
+    <Compile Include="DataSource\DataTableHelper.cs" />
+    <Compile Include="Generic\ListHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringHander\DateHelper.cs" />
+    <Compile Include="TestEntity\UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XCLNetTools\XCLNetTools.csproj">
