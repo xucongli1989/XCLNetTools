@@ -191,7 +191,6 @@
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
     <Compile Include="DataBase\SQLLibrary.cs" />
     <Compile Include="DataSource\DataReaderHelper.cs" />
-    <Compile Include="DataSource\DataSetHelper.cs" />
     <Compile Include="DataSource\DataTableHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
     <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
@@ -276,6 +275,10 @@
     <Content Include="DLL\AspNetPager\en\AspNetPager.resources.dll" />
     <Content Include="DLL\AspNetPager\zh-CHT\AspNetPager.resources.dll" />
     <Content Include="DLL\Aspose\Aspose.Cells.dll" />
+    <Content Include="DLL\Aspose\Aspose.Cells.xml" />
+    <Content Include="DLL\Aspose\Aspose.Pdf.Kit.dll" />
+    <Content Include="DLL\Aspose\Aspose.Slides.dll" />
+    <Content Include="DLL\Aspose\Aspose.Words.dll" />
     <Content Include="DLL\COM.Excel.dll" />
     <Content Include="DLL\DocumentFormat.OpenXml.dll" />
     <Content Include="DLL\DocumentFormat.OpenXml.xml" />
