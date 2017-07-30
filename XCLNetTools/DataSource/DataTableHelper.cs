@@ -59,7 +59,7 @@ namespace XCLNetTools.DataSource
         }
 
         /// <summary>
-        /// 将List转换成DataTable
+        /// 将List转换成DataTable，如果数据为空，则返回一个没有内容的DataTable
         /// </summary>
         /// <param name="data">要转换的数据</param>
         /// <returns>datatable</returns>
@@ -67,6 +67,10 @@ namespace XCLNetTools.DataSource
         {
             System.ComponentModel.PropertyDescriptorCollection properties = System.ComponentModel.TypeDescriptor.GetProperties(typeof(T));
             DataTable dt = new DataTable();
+            if (null == data)
+            {
+                return dt;
+            }
             Type nullableType;
             for (int i = 0; i < properties.Count; i++)
             {
@@ -84,6 +88,19 @@ namespace XCLNetTools.DataSource
                 dt.Rows.Add(values);
             }
             return dt;
+        }
+
+        /// <summary>
+        /// 将List转换成DataSet
+        /// </summary>
+        /// <param name="data">要转换的数据</param>
+        /// <returns>dataset</returns>
+        public static DataSet ToDataSet<T>(IList<T> data)
+        {
+            var dt = DataTableHelper.ToDataTable(data);
+            var ds = new DataSet();
+            ds.Tables.Add(dt);
+            return ds;
         }
     }
 }
