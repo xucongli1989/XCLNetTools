@@ -11,8 +11,7 @@ using System.Collections.Generic;
 namespace XCLNetTools.Entity.Office.ExcelHandler
 {
     /// <summary>
-    /// 导出字段实体类
-    /// （主要是便于在所有导出信息字段类中查询到要导出的记录的字段对应信息）
+    /// 导出字段实体类（数据源中的每个数据表中的字段名与导出后的文件实际显示的字段名的对应关系）
     /// </summary>
     public class OutPutClass
     {
