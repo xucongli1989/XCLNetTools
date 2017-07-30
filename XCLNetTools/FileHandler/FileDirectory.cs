@@ -309,5 +309,17 @@ namespace XCLNetTools.FileHandler
         }
 
         #endregion 文件操作
+
+        #region 其它
+
+        /// <summary>
+        /// 获取当前操作系统桌面的物理路径，如：C:\Users\XCL\Desktop
+        /// </summary>
+        public static string GetDesktopPath()
+        {
+            return System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+        }
+
+        #endregion 其它
     }
 }

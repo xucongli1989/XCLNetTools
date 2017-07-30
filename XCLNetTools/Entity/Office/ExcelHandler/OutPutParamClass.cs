@@ -45,7 +45,7 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
         private bool _autoDownLoad = true;
 
         /// <summary>
-        /// 是否自动下载（仅适用于Http环境）
+        /// 是否自动下载（true：在Http环境自动下载；false：默认行为），默认值为true
         /// </summary>
         public bool AutoDownLoad
         {
@@ -74,7 +74,7 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
         private int _firstRowIndex = 1;
 
         /// <summary>
-        /// 填充的数据起始行索引号（0为第一行）
+        /// 填充的数据起始行索引号（0为第一行），默认为1
         /// </summary>
         public int FirstRowIndex
         {
@@ -90,7 +90,7 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
         private bool _isShowCustomLine = true;
 
         /// <summary>
-        /// 是否显示每个Sheet的第一行的导出状态信息
+        /// 是否显示每个Sheet的第一行的导出状态信息，默认为true
         /// </summary>
         public bool IsShowCustomLine
         {
