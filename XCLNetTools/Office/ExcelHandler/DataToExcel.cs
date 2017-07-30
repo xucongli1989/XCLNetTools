@@ -28,7 +28,7 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <param name="tableName">表名,对应dataSet中的table名（用于在OutPutClass参数中查找字段的对应关系，当没有设置字段对应关系时可以为null）</param>
         /// <param name="outPutClass">DataSet中的字段与Sheet中实际显示的字段对应关系设置（为null时，则使用DataSet中的列名）</param>
         /// <param name="ds">要导出的DataSet</param>
-        /// <param name="fileTitle">导出的Excel文件的名字</param>
+        /// <param name="fileTitle">导出的EXCEL文件的名字（仅适用于Http环境）</param>
         /// <param name="conTitle">Excel中每个Sheet的名称</param>
         public static void OutPutExcel(string[] tableName, List<OutPutClass> outPutClass, DataSet ds, string fileTitle, string[] conTitle)
         {
