@@ -14,7 +14,7 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
     public class OutPutField
     {
         /// <summary>
-        /// 该字段的原始名
+        /// 数据源中的字段名
         /// </summary>
         public string oldName { get; set; }
 

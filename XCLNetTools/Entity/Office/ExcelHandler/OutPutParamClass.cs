@@ -18,12 +18,12 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
     public class OutPutParamClass
     {
         /// <summary>
-        /// 表名（主要是便于在xml字段名list中找到该节点信息）,对应dataSet中的table
+        /// 表名,对应dataSet中的table名（用于在OutPutClass参数中查找字段的对应关系，当没有设置字段对应关系时可以为null）
         /// </summary>
         public string[] TableName { get; set; }
 
         /// <summary>
-        /// 导出类，包含新旧字段名（为null时，则保持ds中的相应的列名）
+        /// DataSet中的字段与Sheet中实际显示的字段对应关系设置（为null时，则使用DataSet中的列名）
         /// </summary>
         public List<OutPutClass> OutPutClass { get; set; }
 
@@ -33,19 +33,19 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
         public DataSet Ds { get; set; }
 
         /// <summary>
-        /// 导出的EXCEL文件的名字
+        /// 导出的EXCEL文件的名字（仅适用于Http环境）
         /// </summary>
         public string FileTitle { get; set; }
 
         /// <summary>
-        /// excel中第一行的标题
+        /// Excel中每个Sheet的名称
         /// </summary>
         public string[] ConTitle { get; set; }
 
         private bool _autoDownLoad = true;
 
         /// <summary>
-        /// 是否自动下载
+        /// 是否自动下载（仅适用于Http环境）
         /// </summary>
         public bool AutoDownLoad
         {
@@ -82,21 +82,15 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
             set { _firstRowIndex = value; }
         }
 
-        private int _firstColumnIndex = 0;
-
         /// <summary>
         /// 填充的数据起始列索引号（0为第一行）
         /// </summary>
-        public int FirstColumnIndex
-        {
-            get { return _firstColumnIndex; }
-            set { _firstColumnIndex = value; }
-        }
+        public int FirstColumnIndex { get; set; }
 
         private bool _isShowCustomLine = true;
 
         /// <summary>
-        /// 是否显示自定义文字行（就是第一行的导出信息）
+        /// 是否显示每个Sheet的第一行的导出状态信息
         /// </summary>
         public bool IsShowCustomLine
         {

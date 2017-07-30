@@ -25,11 +25,11 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 数据导出excel
         /// </summary>
-        /// <param name="tableName">【表名】（主要是便于在字段信息xml的list中查找到当前导出的信息字段对应关系）</param>
-        /// <param name="outPutClass">导出字段对应关系list</param>
-        /// <param name="ds">数据源</param>
-        /// <param name="fileTitle">文件名</param>
-        /// <param name="conTitle">文件内容第一行的名称</param>
+        /// <param name="tableName">表名,对应dataSet中的table名（用于在OutPutClass参数中查找字段的对应关系，当没有设置字段对应关系时可以为null）</param>
+        /// <param name="outPutClass">DataSet中的字段与Sheet中实际显示的字段对应关系设置（为null时，则使用DataSet中的列名）</param>
+        /// <param name="ds">要导出的DataSet</param>
+        /// <param name="fileTitle">导出的Excel文件的名字</param>
+        /// <param name="conTitle">Excel中每个Sheet的名称</param>
         public static void OutPutExcel(string[] tableName, List<OutPutClass> outPutClass, DataSet ds, string fileTitle, string[] conTitle)
         {
             OutPutParamClass paramClass = new OutPutParamClass();
@@ -59,11 +59,11 @@ namespace XCLNetTools.Office.ExcelHandler
             {
                 if (paramClass.ConTitle.Length != paramClass.Ds.Tables.Count)
                 {
-                    str.Append("自定义的标题与要导出的数据源的数量不匹配，导出失败！；");
+                    str.Append("Sheet的名称信息与要导出的数据源的数量不匹配，每一个Sheet必须要有一个名称，导出失败！；");
                 }
                 if (paramClass.ConTitle.Distinct().Count() != paramClass.ConTitle.Length)
                 {
-                    str.Append("自定义的标题项不能重复，因为此项要作为Sheet的名称，导出失败！；");
+                    str.Append("Sheet的名称信息不能重复，导出失败！；");
                 }
             }
             if (null != paramClass.OutPutClass && paramClass.OutPutClass.Count > 0)
@@ -75,7 +75,7 @@ namespace XCLNetTools.Office.ExcelHandler
             }
             if (str.Length > 0)
             {
-                throw new Exception(str.ToString());
+                throw new ArgumentException(str.ToString(), "paramClass");
             }
 
             #endregion 合法性检测
