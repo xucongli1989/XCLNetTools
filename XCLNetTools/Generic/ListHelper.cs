@@ -124,5 +124,27 @@ namespace XCLNetTools.Generic
             }
             return ts;
         }
+
+        /// <summary>
+        /// 将DataRow转为Model
+        /// </summary>
+        /// <typeparam name="T">要转换的类型</typeparam>
+        /// <param name="dr">DataRow对象</param>
+        /// <returns>实体</returns>
+        public static T DataRowToModel<T>(DataRow dr) where T : new()
+        {
+            if (null == dr)
+            {
+                return default(T);
+            }
+            var dt = dr.Table.Clone();
+            dt.Rows.Add(dr.ItemArray);
+            var lst = DataTableToList<T>(dt);
+            if (lst.IsNotNullOrEmpty())
+            {
+                return lst[0];
+            }
+            return default(T);
+        }
     }
 }
