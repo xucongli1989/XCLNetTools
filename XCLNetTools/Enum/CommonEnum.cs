@@ -7,7 +7,9 @@ Create By: XCL @ 2012
  */
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using XCLNetTools.Entity.Enum;
 
 namespace XCLNetTools.Enum
 {
@@ -17,6 +19,31 @@ namespace XCLNetTools.Enum
     [Serializable]
     public static class CommonEnum
     {
+        /// <summary>
+        /// 当前所有枚举字典(Key为枚举名，Value为枚举的实体形式的列表)
+        /// </summary>
+        public static readonly Dictionary<string, List<EnumFieldModel>> EnumDic = null;
+
+        static CommonEnum()
+        {
+            EnumDic = new Dictionary<string, List<EnumFieldModel>>();
+            EnumDic.Add("是否", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(是否)));
+            EnumDic.Add("Weeks", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(Weeks)));
+            EnumDic.Add("BeforeDateTypeEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(BeforeDateTypeEnum)));
+            EnumDic.Add("DiffResultFormat", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(DiffResultFormat)));
+            EnumDic.Add("DateFormat", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(DateFormat)));
+            EnumDic.Add("ThumbImageModeEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(ThumbImageModeEnum)));
+            EnumDic.Add("FileExtInfoEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(FileExtInfoEnum)));
+            EnumDic.Add("StaticResourceTypeEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(StaticResourceTypeEnum)));
+            EnumDic.Add("RedirectTargetEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(RedirectTargetEnum)));
+            EnumDic.Add("SelectOptionFieldEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(SelectOptionFieldEnum)));
+            EnumDic.Add("DatabaseTypeEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(DatabaseTypeEnum)));
+            EnumDic.Add("LoginTypeEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(LoginTypeEnum)));
+            EnumDic.Add("SysEnvironmentEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(SysEnvironmentEnum)));
+            EnumDic.Add("HandleTypeEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(HandleTypeEnum)));
+            EnumDic.Add("HttpTypeEnum", XCLNetTools.Enum.EnumHelper.GetEnumFieldModelList(typeof(HttpTypeEnum)));
+        }
+
         #region 逻辑
 
         /// <summary>

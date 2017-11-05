@@ -9,6 +9,7 @@ Create By: XCL @ 2012
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Web;
 
 namespace XCLNetTools.FileHandler
@@ -270,6 +271,32 @@ namespace XCLNetTools.FileHandler
                 }
                 return true;
             }
+        }
+
+        /// <summary>
+        /// 判断指定的文件扩展名属于哪种文件类型（若返回-1，则表示在本库预设的类型中没有找到）
+        /// </summary>
+        /// <param name="ext">文件扩展名</param>
+        /// <returns>文件类型枚举</returns>
+        public static XCLNetTools.Enum.CommonEnum.FileExtInfoEnum GetFileExtType(string ext)
+        {
+            var result = (XCLNetTools.Enum.CommonEnum.FileExtInfoEnum)(-1);
+            if (string.IsNullOrWhiteSpace(ext))
+            {
+                return result;
+            }
+            ext = ext.Trim().Trim('.').ToLower();
+            var model = XCLNetTools.Enum.CommonEnum.EnumDic["FileExtInfoEnum"]?.FirstOrDefault(k => (k.Description ?? "").Split(',').ToList().Contains(ext));
+            if (null == model)
+            {
+                return result;
+            }
+            XCLNetTools.Enum.CommonEnum.FileExtInfoEnum temp;
+            if (System.Enum.TryParse(model.Text, out temp))
+            {
+                result = temp;
+            }
+            return result;
         }
 
         #endregion 文件类型判断
