@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['beforedatetypeenum',['BeforeDateTypeEnum',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#abac0e863746b7fb8e6364c17f61648ea',1,'XCLNetTools::Enum::CommonEnum']]]
+  ['postdatatype',['PostDataType',['../namespace_x_c_l_net_tools_1_1_http.html#ad73fffd49af2087d4f5c0a954d15d08c',1,'XCLNetTools::Http']]]
 ];

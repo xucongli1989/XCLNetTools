@@ -9,27 +9,27 @@
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a0a911a788ec6d71dd31abd3624400b67}{Table\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em 表名（主要是便于在xml字段名list中找到该节点信息）,对应data\+Set中的table \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 表名,对应data\+Set中的table名（用于在\+Out\+Put\+Class参数中查找字段的对应关系，当没有设置字段对应关系时可以为null） \end{DoxyCompactList}\item 
 List$<$ \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_class}{Out\+Put\+Class} $>$ \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_adc8f68c8e223e5653d29efabacc56b65}{Out\+Put\+Class}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em 导出类，包含新旧字段名（为null时，则保持ds中的相应的列名） \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Data\+Set中的字段与\+Sheet中实际显示的字段对应关系设置（为null时，则使用\+Data\+Set中的列名） \end{DoxyCompactList}\item 
 Data\+Set \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a3f2d60db6c0602122169dd392caed6c0}{Ds}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em 要导出的\+Data\+Set \end{DoxyCompactList}\item 
 string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a9825b6c0aa98a7e758376b5de8af1991}{File\+Title}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em 导出的\+E\+X\+C\+E\+L文件的名字 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 导出的\+E\+X\+C\+E\+L文件的名字（仅适用于\+Http环境） \end{DoxyCompactList}\item 
 string \mbox{[}$\,$\mbox{]} \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a0acbd053010430b65a37f7c0b28e122e}{Con\+Title}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em excel中第一行的标题 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Excel中每个\+Sheet的名称 \end{DoxyCompactList}\item 
 bool \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a31974296d52728900508e02b4ad040b8}{Auto\+Down\+Load}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em 是否自动下载 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 是否自动下载（true：在\+Http环境自动下载；false：默认行为），默认值为true \end{DoxyCompactList}\item 
 string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a764a7f2a435a3b3ab61c02ff7fc0d942}{Custom\+File\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em 自定义文件名（保存后的完整路径名） \end{DoxyCompactList}\item 
 Aspose.\+Cells.\+Save\+Format \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a9ceabce939de783bbe5ee3774183db8e}{Save\+Format}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em 自定义保存时，文件保存的格式 \end{DoxyCompactList}\item 
 int \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_acd2e964c33b831d1cbd69e003ccd0311}{First\+Row\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em 填充的数据起始行索引号（0为第一行） \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 填充的数据起始行索引号（0为第一行），默认为1 \end{DoxyCompactList}\item 
 int \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_aac59845922cfe83121fa7ffb39e8564b}{First\+Column\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em 填充的数据起始列索引号（0为第一行） \end{DoxyCompactList}\item 
 bool \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a6fca02e4b0654506b9bcc19b690a3ed8}{Is\+Show\+Custom\+Line}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em 是否显示自定义文字行（就是第一行的导出信息） \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 是否显示每个\+Sheet的第一行的导出状态信息，默认为true \end{DoxyCompactList}\item 
 bool \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a6003391938fd21744be4f6bb16cf89d9}{Is\+Show\+Field\+Line}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em 是否显示字段行 \end{DoxyCompactList}\item 
 string \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a5b29724ec341728c000b509ec1a5e5bc}{Work\+Book\+File\+Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
@@ -56,7 +56,7 @@ Workbook \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handle
 
 
 
-是否自动下载 
+是否自动下载（true：在\+Http环境自动下载；false：默认行为），默认值为true 
 
 
 
@@ -70,7 +70,7 @@ Workbook \hyperlink{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handle
 
 
 
-excel中第一行的标题 
+Excel中每个\+Sheet的名称 
 
 
 
@@ -112,7 +112,7 @@ excel中第一行的标题
 
 
 
-导出的\+E\+X\+C\+E\+L文件的名字 
+导出的\+E\+X\+C\+E\+L文件的名字（仅适用于\+Http环境） 
 
 
 
@@ -130,7 +130,7 @@ excel中第一行的标题
 
 
 
-在文件 Out\+Put\+Param\+Class.\+cs 第 91 行定义.
+在文件 Out\+Put\+Param\+Class.\+cs 第 88 行定义.
 
 \mbox{\Hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_acd2e964c33b831d1cbd69e003ccd0311}\label{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_acd2e964c33b831d1cbd69e003ccd0311}} 
 \index{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class@{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class}!First\+Row\+Index@{First\+Row\+Index}}
@@ -140,7 +140,7 @@ excel中第一行的标题
 
 
 
-填充的数据起始行索引号（0为第一行） 
+填充的数据起始行索引号（0为第一行），默认为1 
 
 
 
@@ -158,7 +158,7 @@ excel中第一行的标题
 
 
 
-在文件 Out\+Put\+Param\+Class.\+cs 第 132 行定义.
+在文件 Out\+Put\+Param\+Class.\+cs 第 126 行定义.
 
 \mbox{\Hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a6fca02e4b0654506b9bcc19b690a3ed8}\label{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a6fca02e4b0654506b9bcc19b690a3ed8}} 
 \index{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class@{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class}!Is\+Show\+Custom\+Line@{Is\+Show\+Custom\+Line}}
@@ -168,11 +168,11 @@ excel中第一行的标题
 
 
 
-是否显示自定义文字行（就是第一行的导出信息） 
+是否显示每个\+Sheet的第一行的导出状态信息，默认为true 
 
 
 
-在文件 Out\+Put\+Param\+Class.\+cs 第 102 行定义.
+在文件 Out\+Put\+Param\+Class.\+cs 第 96 行定义.
 
 \mbox{\Hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a6003391938fd21744be4f6bb16cf89d9}\label{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_a6003391938fd21744be4f6bb16cf89d9}} 
 \index{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class@{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class}!Is\+Show\+Field\+Line@{Is\+Show\+Field\+Line}}
@@ -186,7 +186,7 @@ excel中第一行的标题
 
 
 
-在文件 Out\+Put\+Param\+Class.\+cs 第 113 行定义.
+在文件 Out\+Put\+Param\+Class.\+cs 第 107 行定义.
 
 \mbox{\Hypertarget{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_adc8f68c8e223e5653d29efabacc56b65}\label{class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class_adc8f68c8e223e5653d29efabacc56b65}} 
 \index{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class@{X\+C\+L\+Net\+Tools\+::\+Entity\+::\+Office\+::\+Excel\+Handler\+::\+Out\+Put\+Param\+Class}!Out\+Put\+Class@{Out\+Put\+Class}}
@@ -196,7 +196,7 @@ excel中第一行的标题
 
 
 
-导出类，包含新旧字段名（为null时，则保持ds中的相应的列名） 
+Data\+Set中的字段与\+Sheet中实际显示的字段对应关系设置（为null时，则使用\+Data\+Set中的列名） 
 
 
 
@@ -224,7 +224,7 @@ excel中第一行的标题
 
 
 
-表名（主要是便于在xml字段名list中找到该节点信息）,对应data\+Set中的table 
+表名,对应data\+Set中的table名（用于在\+Out\+Put\+Class参数中查找字段的对应关系，当没有设置字段对应关系时可以为null） 
 
 
 
@@ -242,7 +242,7 @@ excel中第一行的标题
 
 
 
-在文件 Out\+Put\+Param\+Class.\+cs 第 123 行定义.
+在文件 Out\+Put\+Param\+Class.\+cs 第 117 行定义.
 
 
 

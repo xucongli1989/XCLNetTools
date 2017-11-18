@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['fat',['FAT',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#a2dff7451b041ff407645f3b3d719e3e2a06161379527b8df6b18fca5aa984113a',1,'XCLNetTools::Enum::CommonEnum']]],
   ['fieldnamelist',['FieldNameList',['../class_x_c_l_net_tools_1_1_entity_1_1_sql_pager_condition_entity.html#a18c7b5f8ccc1dd9b47c897ad3ff29899',1,'XCLNetTools::Entity::SqlPagerConditionEntity']]],
   ['fields',['Fields',['../class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_class.html#a3efddb66ca15bab7aa2b15f80d59fa06',1,'XCLNetTools::Entity::Office::ExcelHandler::OutPutClass']]],
-  ['filedelete',['FileDelete',['../class_x_c_l_net_tools_1_1_file_handler_1_1_file_directory.html#a8ce6f5c7bf94c4fe2770993cef7be536',1,'XCLNetTools::FileHandler::FileDirectory']]],
-  ['filedirectory',['FileDirectory',['../class_x_c_l_net_tools_1_1_file_handler_1_1_file_directory.html',1,'XCLNetTools::FileHandler']]],
   ['filedirectory_2ecs',['FileDirectory.cs',['../_file_directory_8cs.html',1,'']]],
-  ['fileextinfoenum',['FileExtInfoEnum',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#a234d78b320f710554fc81b23e91000ec',1,'XCLNetTools::Enum::CommonEnum']]],
   ['fileinfoentity',['FileInfoEntity',['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html',1,'XCLNetTools::Entity']]],
   ['fileinfoentity_2ecs',['FileInfoEntity.cs',['../_file_info_entity_8cs.html',1,'']]],
   ['filepath',['FilePath',['../namespace_x_c_l_net_tools_1_1_http.html#ad73fffd49af2087d4f5c0a954d15d08ca2fb403e71d8ade2ba79af3f6c4695d09',1,'XCLNetTools::Http']]],
@@ -15,7 +11,6 @@ var searchData=
   ['firstcolumnindex',['FirstColumnIndex',['../class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#aac59845922cfe83121fa7ffb39e8564b',1,'XCLNetTools::Entity::Office::ExcelHandler::OutPutParamClass']]],
   ['firstrowindex',['FirstRowIndex',['../class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#acd2e964c33b831d1cbd69e003ccd0311',1,'XCLNetTools::Entity::Office::ExcelHandler::OutPutParamClass']]],
   ['formdata',['FormData',['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html#ad540886372239dbb4fcc975e694be5d9',1,'XCLNetTools::FileHandler::MultipartForm']]],
-  ['formhelper',['FormHelper',['../class_x_c_l_net_tools_1_1_string_hander_1_1_form_helper.html',1,'XCLNetTools::StringHander']]],
   ['formhelper_2ecs',['FormHelper.cs',['../_form_helper_8cs.html',1,'']]],
   ['fromurl',['FromUrl',['../class_x_c_l_net_tools_1_1_entity_1_1_message_1_1_json_msg_head.html#a2dfa17c559a7e222e718fb4f68b6e199',1,'XCLNetTools.Entity.Message.JsonMsgHead.FromUrl()'],['../class_x_c_l_net_tools_1_1_message_1_1_message_model.html#a36e0a2784c189c86b33b76ceca539a28',1,'XCLNetTools.Message.MessageModel.FromUrl()']]],
   ['ftpclient',['FTPClient',['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html',1,'XCLNetTools.FTP.FTPClient'],['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#a676653f395ab68c5da43f284bf06a18e',1,'XCLNetTools.FTP.FTPClient.FTPClient()'],['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#a8ce62cd58f4f1825fcb38503fffd664c',1,'XCLNetTools.FTP.FTPClient.FTPClient(string remoteHost, string remotePath, string remoteUser, string remotePass, int remotePort)']]],

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['databasetypeenum',['DatabaseTypeEnum',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#a4c4edc085935542b75e6386cb261ab4b',1,'XCLNetTools::Enum::CommonEnum']]],
-  ['diffresultformat',['DiffResultFormat',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#aaefa466811a65c8971576fcdb80354a4',1,'XCLNetTools::Enum::CommonEnum']]]
+  ['resulttype',['ResultType',['../namespace_x_c_l_net_tools_1_1_http.html#a3216524397972f7d0c5733b123216e9e',1,'XCLNetTools::Http']]]
 ];

@@ -19,7 +19,5 @@ var searchData=
   ['result',['Result',['../class_x_c_l_net_tools_1_1_entity_1_1_method_result.html#a796d772754aaeb7597474d28a8f2045c',1,'XCLNetTools::Entity::MethodResult']]],
   ['resultbyte',['ResultByte',['../class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_result.html#aced655e4fc880e3123a3eb5c899a0085',1,'XCLNetTools::Entity::Http::HttpResult']]],
   ['resulttype',['ResultType',['../class_x_c_l_net_tools_1_1_entity_1_1_http_1_1_http_item.html#a92ebe05dc80b03bfdee04ec390dc4c8e',1,'XCLNetTools::Entity::Http::HttpItem']]],
-  ['rootpath',['RootPath',['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html#a6ef4c659747c605379a43168ae1d64f6',1,'XCLNetTools::Entity::FileInfoEntity']]],
-  ['rooturi',['RootUri',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#ae924e6a3e073efd4a75d53ea7095f976',1,'XCLNetTools::StringHander::Common']]],
-  ['rooturl',['RootURL',['../class_x_c_l_net_tools_1_1_string_hander_1_1_common.html#a87e9775b7bdaaf9bc205a148b1335ee2',1,'XCLNetTools::StringHander::Common']]]
+  ['rootpath',['RootPath',['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html#a6ef4c659747c605379a43168ae1d64f6',1,'XCLNetTools::Entity::FileInfoEntity']]]
 ];
