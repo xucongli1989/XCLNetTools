@@ -6,7 +6,6 @@ Create By: XCL @ 2012
 
  */
 
-using System;
 using System.Xml;
 
 namespace XCLNetTools.XML
@@ -359,21 +358,16 @@ namespace XCLNetTools.XML
         {
             bool isSuccess = false;
             XmlDocument xmlDoc = new XmlDocument();
-            try
+
+            xmlDoc.Load(xmlFileName);
+            XmlNode xmlNode = xmlDoc.SelectSingleNode(xpath);
+            if (xmlNode != null)
             {
-                xmlDoc.Load(xmlFileName);
-                XmlNode xmlNode = xmlDoc.SelectSingleNode(xpath);
-                if (xmlNode != null)
-                {
-                    xmlNode.InnerText = innerText;
-                }
-                xmlDoc.Save(xmlFileName);
-                isSuccess = true;
+                xmlNode.InnerText = innerText;
             }
-            catch
-            {
-                throw;
-            }
+            xmlDoc.Save(xmlFileName);
+            isSuccess = true;
+
             return isSuccess;
         }
 

@@ -6,7 +6,6 @@ Create By: XCL @ 2012
 
  */
 
-using System;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
@@ -45,12 +44,7 @@ namespace XCLNetTools.DataBase.Access
             {
                 conn.ConnectionString = @"Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + HttpContext.Current.Server.MapPath(ConfigurationManager.AppSettings["AccessConectionString"]);
                 comm.Connection = conn;
-                try
-                {
-                    conn.Open();
-                }
-                catch (Exception e)
-                { throw new Exception(e.Message); }
+                conn.Open();
             }
         }
 
@@ -70,7 +64,6 @@ namespace XCLNetTools.DataBase.Access
         /// <summary>
         /// 执行sql语句
         /// </summary>
-        /// <param name="sqlstr"></param>
         public static void ExcuteSql(string sqlstr)
         {
             try
@@ -80,19 +73,15 @@ namespace XCLNetTools.DataBase.Access
                 comm.CommandText = sqlstr;
                 comm.ExecuteNonQuery();
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
             finally
-            { CloseConnection(); }
+            {
+                CloseConnection();
+            }
         }
 
         /// <summary>
         /// 返回指定sql语句的OleDbDataReader对象，使用时请注意关闭这个对象。
         /// </summary>
-        /// <param name="sqlstr"></param>
-        /// <returns></returns>
         public static OleDbDataReader DataReader(string sqlstr)
         {
             OleDbDataReader dr = null;
@@ -108,10 +97,16 @@ namespace XCLNetTools.DataBase.Access
             {
                 try
                 {
-                    dr.Close();
+                    if (null != dr)
+                    {
+                        dr.Close();
+                    }
                     CloseConnection();
                 }
-                catch { }
+                catch
+                {
+                    //
+                }
             }
             return dr;
         }
@@ -119,8 +114,6 @@ namespace XCLNetTools.DataBase.Access
         /// <summary>
         /// 返回指定sql语句的OleDbDataReader对象,使用时请注意关闭
         /// </summary>
-        /// <param name="sqlstr"></param>
-        /// <param name="dr"></param>
         public static void DataReader(string sqlstr, ref OleDbDataReader dr)
         {
             try
@@ -135,10 +128,13 @@ namespace XCLNetTools.DataBase.Access
                 try
                 {
                     if (dr != null && !dr.IsClosed)
+                    {
                         dr.Close();
+                    }
                 }
                 catch
                 {
+                    //
                 }
                 finally
                 {
@@ -150,8 +146,6 @@ namespace XCLNetTools.DataBase.Access
         /// <summary>
         /// 返回指定sql语句的dataset
         /// </summary>
-        /// <param name="sqlstr"></param>
-        /// <returns></returns>
         public static DataSet DataSet(string sqlstr)
         {
             DataSet ds = new DataSet();
@@ -164,10 +158,6 @@ namespace XCLNetTools.DataBase.Access
                 da.SelectCommand = comm;
                 da.Fill(ds);
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
             finally
             {
                 CloseConnection();
@@ -178,8 +168,6 @@ namespace XCLNetTools.DataBase.Access
         /// <summary>
         /// 返回指定sql语句的dataset
         /// </summary>
-        /// <param name="sqlstr"></param>
-        /// <param name="ds"></param>
         public static void DataSet(string sqlstr, ref DataSet ds)
         {
             OleDbDataAdapter da = new OleDbDataAdapter();
@@ -191,10 +179,6 @@ namespace XCLNetTools.DataBase.Access
                 da.SelectCommand = comm;
                 da.Fill(ds);
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
             finally
             {
                 CloseConnection();
@@ -204,8 +188,6 @@ namespace XCLNetTools.DataBase.Access
         /// <summary>
         /// 返回指定sql语句的datatable
         /// </summary>
-        /// <param name="sqlstr"></param>
-        /// <returns></returns>
         public static DataTable DataTable(string sqlstr)
         {
             DataTable dt = new DataTable();
@@ -218,10 +200,6 @@ namespace XCLNetTools.DataBase.Access
                 da.SelectCommand = comm;
                 da.Fill(dt);
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
             finally
             {
                 CloseConnection();
@@ -232,8 +210,6 @@ namespace XCLNetTools.DataBase.Access
         /// <summary>
         /// 返回指定sql语句的datatable
         /// </summary>
-        /// <param name="sqlstr"></param>
-        /// <param name="dt"></param>
         public static void DataTable(string sqlstr, ref DataTable dt)
         {
             OleDbDataAdapter da = new OleDbDataAdapter();
@@ -245,10 +221,6 @@ namespace XCLNetTools.DataBase.Access
                 da.SelectCommand = comm;
                 da.Fill(dt);
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
             finally
             {
                 CloseConnection();
@@ -258,8 +230,6 @@ namespace XCLNetTools.DataBase.Access
         /// <summary>
         /// 返回指定sql语句的dataview
         /// </summary>
-        /// <param name="sqlstr"></param>
-        /// <returns></returns>
         public static DataView DataView(string sqlstr)
         {
             OleDbDataAdapter da = new OleDbDataAdapter();
@@ -273,10 +243,6 @@ namespace XCLNetTools.DataBase.Access
                 da.SelectCommand = comm;
                 da.Fill(ds);
                 dv = ds.Tables[0].DefaultView;
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
             }
             finally
             {

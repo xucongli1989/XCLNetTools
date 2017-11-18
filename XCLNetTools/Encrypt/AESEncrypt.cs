@@ -18,22 +18,15 @@ namespace XCLNetTools.Encrypt
     public class AESEncrypt
     {
         private const string CRYPTO_IV = "XCLNETTOOLS";
-        private const string CRYPTO_KEY = "XCLNETTOOLS";
         private const int CRYPTO_KEY_LENGTH = 32;
         private const int CRYPTO_IV_LENGTH = 16;
-
-        private AesCryptoServiceProvider m_aesCryptoServiceProvider;
-        private bool m_containKey;
+        private readonly AesCryptoServiceProvider m_aesCryptoServiceProvider;
 
         /// <summary>
         /// True：密文中包含密钥
         /// False：密文中不包含密钥
         /// </summary>
-        public bool ContainKey
-        {
-            get { return m_containKey; }
-            set { m_containKey = value; }
-        }
+        public bool ContainKey { get; set; }
 
         /// <summary>
         /// 构造方法
@@ -41,17 +34,16 @@ namespace XCLNetTools.Encrypt
         public AESEncrypt()
         {
             m_aesCryptoServiceProvider = new AesCryptoServiceProvider();
-            m_containKey = true;
+            this.ContainKey = true;
         }
 
         /// <summary>
         /// 构造方法
         /// </summary>
         /// <param name="containKey">密文中是否包含密钥</param>
-        public AESEncrypt(bool containKey)
-            : this()
+        public AESEncrypt(bool containKey) : this()
         {
-            m_containKey = containKey;
+            this.ContainKey = containKey;
         }
 
         /// <summary>
@@ -62,22 +54,15 @@ namespace XCLNetTools.Encrypt
         /// <returns>密文</returns>
         public string Encrypt(string s_crypto, string s_key)
         {
-            try
+            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
+            byte[] temp = string2Byte(s_key);
+            if (temp.Length > key.Length)
             {
-                byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
-                byte[] temp = string2Byte(s_key);
-                if (temp.Length > key.Length)
-                {
-                    throw new Exception("Key不能超过32字节！");
-                }
-                key = string2Byte(s_key.PadRight(key.Length));
-                iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
-                return Encrypt(s_crypto, key, iv);
+                throw new ArgumentException("Key不能超过32字节！");
             }
-            catch
-            {
-                throw;
-            }
+            key = string2Byte(s_key.PadRight(key.Length));
+            iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
+            return Encrypt(s_crypto, key, iv);
         }
 
         /// <summary>
@@ -87,7 +72,7 @@ namespace XCLNetTools.Encrypt
         /// <returns>密文</returns>
         public string Encrypt(string s_crypto)
         {
-            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
+            byte[] key, iv = new byte[CRYPTO_IV_LENGTH];
             m_aesCryptoServiceProvider.GenerateKey();
             key = m_aesCryptoServiceProvider.Key;
             iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
@@ -102,13 +87,13 @@ namespace XCLNetTools.Encrypt
         public string Decrypt(string s_encrypted)
         {
             string s_key = string.Empty;
-            byte[] key = new byte[CRYPTO_KEY_LENGTH], iv = new byte[CRYPTO_IV_LENGTH];
+            byte[] key, iv = new byte[CRYPTO_IV_LENGTH];
 
             if (s_encrypted.Length <= CRYPTO_KEY_LENGTH * 2)
             {
-                throw new Exception("无效的密文！");
+                throw new ArgumentException("无效的密文！");
             }
-            if (m_containKey)
+            if (this.ContainKey)
             {
                 s_key = s_encrypted.Substring(0, CRYPTO_KEY_LENGTH * 2);
                 s_encrypted = s_encrypted.Substring(CRYPTO_KEY_LENGTH * 2);
@@ -131,11 +116,11 @@ namespace XCLNetTools.Encrypt
             byte[] temp = string2Byte(s_key);
             if (temp.Length > key.Length)
             {
-                throw new Exception("Key不能超过32字节！");
+                throw new ArgumentException("Key不能超过32字节！");
             }
             key = string2Byte(s_key.PadRight(key.Length));
             iv = string2Byte(CRYPTO_IV.PadRight(iv.Length));
-            if (m_containKey)
+            if (this.ContainKey)
             {
                 s_encrypted = s_encrypted.Substring(CRYPTO_KEY_LENGTH * 2);
             }
@@ -152,24 +137,17 @@ namespace XCLNetTools.Encrypt
             string s_encryped = string.Empty;
             byte[] crypto, encrypted;
             ICryptoTransform ct;
-            try
+            crypto = string2Byte(s_crypto);
+            m_aesCryptoServiceProvider.Key = key;
+            m_aesCryptoServiceProvider.IV = iv;
+            ct = m_aesCryptoServiceProvider.CreateEncryptor();
+            encrypted = ct.TransformFinalBlock(crypto, 0, crypto.Length);
+            if (this.ContainKey)
             {
-                crypto = string2Byte(s_crypto);
-                m_aesCryptoServiceProvider.Key = key;
-                m_aesCryptoServiceProvider.IV = iv;
-                ct = m_aesCryptoServiceProvider.CreateEncryptor();
-                encrypted = ct.TransformFinalBlock(crypto, 0, crypto.Length);
-                if (m_containKey)
-                {
-                    s_encryped += byte2HexString(key);
-                }
-                s_encryped += byte2HexString(encrypted);
-                return s_encryped;
+                s_encryped += byte2HexString(key);
             }
-            catch
-            {
-                throw;
-            }
+            s_encryped += byte2HexString(encrypted);
+            return s_encryped;
         }
 
         /// <summary>
@@ -180,21 +158,13 @@ namespace XCLNetTools.Encrypt
             string s_decrypted = string.Empty;
             byte[] encrypted, decrypted;
             ICryptoTransform ct;
-
-            try
-            {
-                encrypted = hexString2Byte(s_encrypted);
-                m_aesCryptoServiceProvider.Key = key;
-                m_aesCryptoServiceProvider.IV = iv;
-                ct = m_aesCryptoServiceProvider.CreateDecryptor();
-                decrypted = ct.TransformFinalBlock(encrypted, 0, encrypted.Length);
-                s_decrypted += byte2String(decrypted);
-                return s_decrypted;
-            }
-            catch
-            {
-                throw;
-            }
+            encrypted = hexString2Byte(s_encrypted);
+            m_aesCryptoServiceProvider.Key = key;
+            m_aesCryptoServiceProvider.IV = iv;
+            ct = m_aesCryptoServiceProvider.CreateDecryptor();
+            decrypted = ct.TransformFinalBlock(encrypted, 0, encrypted.Length);
+            s_decrypted += byte2String(decrypted);
+            return s_decrypted;
         }
 
         /// <summary>

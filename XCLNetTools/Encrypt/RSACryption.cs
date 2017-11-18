@@ -105,8 +105,6 @@ namespace XCLNetTools.Encrypt
 
         #endregion RSA的解密函数
 
-        #region RSA数字签名
-
         #region 获取Hash描述表
 
         /// <summary>
@@ -359,7 +357,5 @@ namespace XCLNetTools.Encrypt
         }
 
         #endregion RSA 签名验证
-
-        #endregion RSA数字签名
     }
 }

@@ -237,14 +237,7 @@ namespace XCLNetTools.DataBase.SQLite
             SQLiteConnection con = new SQLiteConnection(connectionString);
             SQLiteTransaction trans = null;
             PrepareCommand(cmd, con, ref trans, false, cmd.CommandType, cmd.CommandText);
-            try
-            {
-                reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            }
-            catch
-            {
-                throw;
-            }
+            reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             return reader;
         }
 
@@ -267,14 +260,7 @@ namespace XCLNetTools.DataBase.SQLite
             SQLiteCommand cmd = new SQLiteCommand();
             SQLiteTransaction trans = null;
             PrepareCommand(cmd, con, ref trans, false, commandType, commandText);
-            try
-            {
-                reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            }
-            catch
-            {
-                throw;
-            }
+            reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             return reader;
         }
 
@@ -298,14 +284,8 @@ namespace XCLNetTools.DataBase.SQLite
             SQLiteCommand cmd = new SQLiteCommand();
             SQLiteTransaction trans = null;
             PrepareCommand(cmd, con, ref trans, false, commandType, commandText, cmdParms);
-            try
-            {
-                reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            }
-            catch
-            {
-                throw;
-            }
+
+            reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
             return reader;
         }
 
@@ -329,10 +309,6 @@ namespace XCLNetTools.DataBase.SQLite
             {
                 SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd);
                 sda.Fill(ds);
-            }
-            catch
-            {
-                throw;
             }
             finally
             {
@@ -370,10 +346,6 @@ namespace XCLNetTools.DataBase.SQLite
                 SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd);
                 sda.Fill(ds);
             }
-            catch
-            {
-                throw;
-            }
             finally
             {
                 if (con != null)
@@ -410,10 +382,6 @@ namespace XCLNetTools.DataBase.SQLite
             {
                 SQLiteDataAdapter sda = new SQLiteDataAdapter(cmd);
                 sda.Fill(ds);
-            }
-            catch
-            {
-                throw;
             }
             finally
             {
