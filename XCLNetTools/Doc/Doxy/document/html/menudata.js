@@ -32,9 +32,7 @@ var menudata={children:[
 {text:"t",url:"functions_t.html#index_t"},
 {text:"u",url:"functions_u.html#index_u"},
 {text:"v",url:"functions_v.html#index_v"},
-{text:"w",url:"functions_w.html#index_w"},
-{text:"z",url:"functions_z.html#index_z"},
-{text:"是",url:"functions_/.html#index_/"}]},
+{text:"w",url:"functions_w.html#index_w"}]},
 {text:"函数",url:"functions_func.html",children:[
 {text:"a",url:"functions_func.html#index_a"},
 {text:"b",url:"functions_func_b.html#index_b"},
@@ -56,9 +54,7 @@ var menudata={children:[
 {text:"s",url:"functions_func_s.html#index_s"},
 {text:"t",url:"functions_func_t.html#index_t"},
 {text:"u",url:"functions_func_u.html#index_u"},
-{text:"w",url:"functions_func_w.html#index_w"},
-{text:"z",url:"functions_func_z.html#index_z"}]},
-{text:"变量",url:"functions_vars.html"},
+{text:"w",url:"functions_func_w.html#index_w"}]},
 {text:"枚举",url:"functions_enum.html"},
 {text:"属性",url:"functions_prop.html",children:[
 {text:"a",url:"functions_prop.html#index_a"},

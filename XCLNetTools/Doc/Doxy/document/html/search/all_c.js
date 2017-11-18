@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['makedirectory',['MakeDirectory',['../class_x_c_l_net_tools_1_1_file_handler_1_1_file_directory.html#a8f3ce048a9225a0b699d7bbc510bd9e3',1,'XCLNetTools::FileHandler::FileDirectory']]],
-  ['makethumbnail',['MakeThumbnail',['../class_x_c_l_net_tools_1_1_file_handler_1_1_img_lib.html#ab5403c4363f26a72cc0b98a4e86d5fa1',1,'XCLNetTools::FileHandler::ImgLib']]],
-  ['mappath',['MapPath',['../class_x_c_l_net_tools_1_1_file_handler_1_1_com_file.html#a98d090828121f63039a22838b065dfaa',1,'XCLNetTools::FileHandler::ComFile']]],
-  ['md5',['MD5',['../class_x_c_l_net_tools_1_1_encrypt_1_1_m_d5.html',1,'XCLNetTools::Encrypt']]],
   ['md5_2ecs',['MD5.cs',['../_m_d5_8cs.html',1,'']]],
   ['mergecells',['MergeCells',['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#a7602a33dbb3ee6cfbbf4a66e6106bd78',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeCells(int beginRowIndex, int beginColumnIndex, int endRowIndex, int endColumnIndex, string text)'],['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#a6285e410acdeec87d53f8720b1366d2a',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeCells(int sheetIndex, int beginRowIndex, int beginColumnIndex, int endRowIndex, int endColumnIndex, string text)']]],
   ['mergerows',['MergeRows',['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#a6e130b3596ed54ce811fa500ff4df20b',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeRows(int columnIndex, int beginRowIndex, int endRowIndex)'],['../class_x_c_l_net_tools_1_1_office_1_1_excel_handler_1_1_excel_helper.html#acbca99c07c2d2b210e1709660d383b97',1,'XCLNetTools.Office.ExcelHandler.ExcelHelper.MergeRows(int sheetIndex, int columnIndex, int beginRowIndex, int endRowIndex)']]],
@@ -15,9 +11,6 @@ var searchData=
   ['methodresult',['MethodResult',['../class_x_c_l_net_tools_1_1_entity_1_1_method_result.html',1,'XCLNetTools.Entity.MethodResult&lt; TResult &gt;'],['../class_x_c_l_net_tools_1_1_entity_1_1_method_result.html',1,'XCLNetTools.Entity.MethodResult&lt; TResult, TData &gt;']]],
   ['methodresult_2ecs',['MethodResult.cs',['../_method_result_8cs.html',1,'']]],
   ['mkdir',['MkDir',['../class_x_c_l_net_tools_1_1_f_t_p_1_1_f_t_p_client.html#aaf6ecfb2034736ffe5f88945ec873efe',1,'XCLNetTools::FTP::FTPClient']]],
-  ['mm',['mm',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#aaefa466811a65c8971576fcdb80354a4ab3cd915d758008bd19d0f2428fbb354a',1,'XCLNetTools::Enum::CommonEnum']]],
   ['modifytime',['ModifyTime',['../class_x_c_l_net_tools_1_1_entity_1_1_file_info_entity.html#a64c6633bec7e4d547632c122dbaad9f8',1,'XCLNetTools::Entity::FileInfoEntity']]],
-  ['mssql',['MSSQL',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#a4c4edc085935542b75e6386cb261ab4ba1d37e2cfa8532be01d3f89c76ccfe4a9',1,'XCLNetTools::Enum::CommonEnum']]],
-  ['multipartform',['MultipartForm',['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html',1,'XCLNetTools.FileHandler.MultipartForm'],['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html#ab1d1debcf1e0f5dc05e9758f72b4500d',1,'XCLNetTools.FileHandler.MultipartForm.MultipartForm()']]],
-  ['music',['Music',['../class_x_c_l_net_tools_1_1_enum_1_1_common_enum.html#a234d78b320f710554fc81b23e91000eca47dcbd834e669233d7eb8a51456ed217',1,'XCLNetTools::Enum::CommonEnum']]]
+  ['multipartform',['MultipartForm',['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html',1,'XCLNetTools.FileHandler.MultipartForm'],['../class_x_c_l_net_tools_1_1_file_handler_1_1_multipart_form.html#ab1d1debcf1e0f5dc05e9758f72b4500d',1,'XCLNetTools.FileHandler.MultipartForm.MultipartForm()']]]
 ];

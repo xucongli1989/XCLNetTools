@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">XCLNetTools
-   &#160;<span id="projectnumber">XCLNetTools 2.6.2</span>
+   &#160;<span id="projectnumber">XCLNetTools 2.7</span>
    </div>
    <div id="projectbrief">.Net公共类库dll</div>
   </td>
@@ -78,22 +78,22 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 属性</h2></td></tr>
 <tr class="memitem:a0a911a788ec6d71dd31abd3624400b67"><td class="memItemLeft" align="right" valign="top">string []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a0a911a788ec6d71dd31abd3624400b67">TableName</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a0a911a788ec6d71dd31abd3624400b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">表名（主要是便于在xml字段名list中找到该节点信息）,对应dataSet中的table  <a href="#a0a911a788ec6d71dd31abd3624400b67">更多...</a><br /></td></tr>
+<tr class="memdesc:a0a911a788ec6d71dd31abd3624400b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">表名,对应dataSet中的table名（用于在OutPutClass参数中查找字段的对应关系，当没有设置字段对应关系时可以为null）  <a href="#a0a911a788ec6d71dd31abd3624400b67">更多...</a><br /></td></tr>
 <tr class="separator:a0a911a788ec6d71dd31abd3624400b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc8f68c8e223e5653d29efabacc56b65"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_class.html">OutPutClass</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#adc8f68c8e223e5653d29efabacc56b65">OutPutClass</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:adc8f68c8e223e5653d29efabacc56b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">导出类，包含新旧字段名（为null时，则保持ds中的相应的列名）  <a href="#adc8f68c8e223e5653d29efabacc56b65">更多...</a><br /></td></tr>
+<tr class="memdesc:adc8f68c8e223e5653d29efabacc56b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">DataSet中的字段与Sheet中实际显示的字段对应关系设置（为null时，则使用DataSet中的列名）  <a href="#adc8f68c8e223e5653d29efabacc56b65">更多...</a><br /></td></tr>
 <tr class="separator:adc8f68c8e223e5653d29efabacc56b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f2d60db6c0602122169dd392caed6c0"><td class="memItemLeft" align="right" valign="top">DataSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a3f2d60db6c0602122169dd392caed6c0">Ds</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a3f2d60db6c0602122169dd392caed6c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">要导出的DataSet  <a href="#a3f2d60db6c0602122169dd392caed6c0">更多...</a><br /></td></tr>
 <tr class="separator:a3f2d60db6c0602122169dd392caed6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9825b6c0aa98a7e758376b5de8af1991"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a9825b6c0aa98a7e758376b5de8af1991">FileTitle</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9825b6c0aa98a7e758376b5de8af1991"><td class="mdescLeft">&#160;</td><td class="mdescRight">导出的EXCEL文件的名字  <a href="#a9825b6c0aa98a7e758376b5de8af1991">更多...</a><br /></td></tr>
+<tr class="memdesc:a9825b6c0aa98a7e758376b5de8af1991"><td class="mdescLeft">&#160;</td><td class="mdescRight">导出的EXCEL文件的名字（仅适用于Http环境）  <a href="#a9825b6c0aa98a7e758376b5de8af1991">更多...</a><br /></td></tr>
 <tr class="separator:a9825b6c0aa98a7e758376b5de8af1991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0acbd053010430b65a37f7c0b28e122e"><td class="memItemLeft" align="right" valign="top">string []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a0acbd053010430b65a37f7c0b28e122e">ConTitle</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a0acbd053010430b65a37f7c0b28e122e"><td class="mdescLeft">&#160;</td><td class="mdescRight">excel中第一行的标题  <a href="#a0acbd053010430b65a37f7c0b28e122e">更多...</a><br /></td></tr>
+<tr class="memdesc:a0acbd053010430b65a37f7c0b28e122e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Excel中每个Sheet的名称  <a href="#a0acbd053010430b65a37f7c0b28e122e">更多...</a><br /></td></tr>
 <tr class="separator:a0acbd053010430b65a37f7c0b28e122e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31974296d52728900508e02b4ad040b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a31974296d52728900508e02b4ad040b8">AutoDownLoad</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a31974296d52728900508e02b4ad040b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自动下载  <a href="#a31974296d52728900508e02b4ad040b8">更多...</a><br /></td></tr>
+<tr class="memdesc:a31974296d52728900508e02b4ad040b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否自动下载（true：在Http环境自动下载；false：默认行为），默认值为true  <a href="#a31974296d52728900508e02b4ad040b8">更多...</a><br /></td></tr>
 <tr class="separator:a31974296d52728900508e02b4ad040b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a764a7f2a435a3b3ab61c02ff7fc0d942"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a764a7f2a435a3b3ab61c02ff7fc0d942">CustomFileName</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a764a7f2a435a3b3ab61c02ff7fc0d942"><td class="mdescLeft">&#160;</td><td class="mdescRight">自定义文件名（保存后的完整路径名）  <a href="#a764a7f2a435a3b3ab61c02ff7fc0d942">更多...</a><br /></td></tr>
@@ -102,13 +102,13 @@ $(function() {
 <tr class="memdesc:a9ceabce939de783bbe5ee3774183db8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">自定义保存时，文件保存的格式  <a href="#a9ceabce939de783bbe5ee3774183db8e">更多...</a><br /></td></tr>
 <tr class="separator:a9ceabce939de783bbe5ee3774183db8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd2e964c33b831d1cbd69e003ccd0311"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#acd2e964c33b831d1cbd69e003ccd0311">FirstRowIndex</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:acd2e964c33b831d1cbd69e003ccd0311"><td class="mdescLeft">&#160;</td><td class="mdescRight">填充的数据起始行索引号（0为第一行）  <a href="#acd2e964c33b831d1cbd69e003ccd0311">更多...</a><br /></td></tr>
+<tr class="memdesc:acd2e964c33b831d1cbd69e003ccd0311"><td class="mdescLeft">&#160;</td><td class="mdescRight">填充的数据起始行索引号（0为第一行），默认为1  <a href="#acd2e964c33b831d1cbd69e003ccd0311">更多...</a><br /></td></tr>
 <tr class="separator:acd2e964c33b831d1cbd69e003ccd0311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac59845922cfe83121fa7ffb39e8564b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#aac59845922cfe83121fa7ffb39e8564b">FirstColumnIndex</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aac59845922cfe83121fa7ffb39e8564b"><td class="mdescLeft">&#160;</td><td class="mdescRight">填充的数据起始列索引号（0为第一行）  <a href="#aac59845922cfe83121fa7ffb39e8564b">更多...</a><br /></td></tr>
 <tr class="separator:aac59845922cfe83121fa7ffb39e8564b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fca02e4b0654506b9bcc19b690a3ed8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a6fca02e4b0654506b9bcc19b690a3ed8">IsShowCustomLine</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a6fca02e4b0654506b9bcc19b690a3ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示自定义文字行（就是第一行的导出信息）  <a href="#a6fca02e4b0654506b9bcc19b690a3ed8">更多...</a><br /></td></tr>
+<tr class="memdesc:a6fca02e4b0654506b9bcc19b690a3ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示每个Sheet的第一行的导出状态信息，默认为true  <a href="#a6fca02e4b0654506b9bcc19b690a3ed8">更多...</a><br /></td></tr>
 <tr class="separator:a6fca02e4b0654506b9bcc19b690a3ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6003391938fd21744be4f6bb16cf89d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler_1_1_out_put_param_class.html#a6003391938fd21744be4f6bb16cf89d9">IsShowFieldLine</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a6003391938fd21744be4f6bb16cf89d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示字段行  <a href="#a6003391938fd21744be4f6bb16cf89d9">更多...</a><br /></td></tr>
@@ -145,7 +145,7 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>是否自动下载 </p>
+<p>是否自动下载（true：在Http环境自动下载；false：默认行为），默认值为true </p>
 
 <p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00051">51</a> 行定义.</p>
 
@@ -171,7 +171,7 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>excel中第一行的标题 </p>
+<p>Excel中每个Sheet的名称 </p>
 
 <p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00043">43</a> 行定义.</p>
 
@@ -249,7 +249,7 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>导出的EXCEL文件的名字 </p>
+<p>导出的EXCEL文件的名字（仅适用于Http环境） </p>
 
 <p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00038">38</a> 行定义.</p>
 
@@ -277,7 +277,7 @@ $(function() {
 
 <p>填充的数据起始列索引号（0为第一行） </p>
 
-<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00091">91</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00088">88</a> 行定义.</p>
 
 </div>
 </div>
@@ -301,7 +301,7 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>填充的数据起始行索引号（0为第一行） </p>
+<p>填充的数据起始行索引号（0为第一行），默认为1 </p>
 
 <p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00080">80</a> 行定义.</p>
 
@@ -329,7 +329,7 @@ $(function() {
 
 <p>获取当前正在操作的WorkBook </p>
 
-<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00132">132</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00126">126</a> 行定义.</p>
 
 </div>
 </div>
@@ -353,9 +353,9 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>是否显示自定义文字行（就是第一行的导出信息） </p>
+<p>是否显示每个Sheet的第一行的导出状态信息，默认为true </p>
 
-<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00102">102</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00096">96</a> 行定义.</p>
 
 </div>
 </div>
@@ -381,7 +381,7 @@ $(function() {
 
 <p>是否显示字段行 </p>
 
-<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00113">113</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00107">107</a> 行定义.</p>
 
 </div>
 </div>
@@ -405,7 +405,7 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>导出类，包含新旧字段名（为null时，则保持ds中的相应的列名） </p>
+<p>DataSet中的字段与Sheet中实际显示的字段对应关系设置（为null时，则使用DataSet中的列名） </p>
 
 <p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00028">28</a> 行定义.</p>
 
@@ -457,7 +457,7 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>表名（主要是便于在xml字段名list中找到该节点信息）,对应dataSet中的table </p>
+<p>表名,对应dataSet中的table名（用于在OutPutClass参数中查找字段的对应关系，当没有设置字段对应关系时可以为null） </p>
 
 <p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00023">23</a> 行定义.</p>
 
@@ -485,7 +485,7 @@ $(function() {
 
 <p>指定被操作的工作薄文件 （用于向已有文件中写入数据并导出的情况） </p>
 
-<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00123">123</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_out_put_param_class_8cs_source.html">OutPutParamClass.cs</a> 第 <a class="el" href="_out_put_param_class_8cs_source.html#l00117">117</a> 行定义.</p>
 
 </div>
 </div>
@@ -495,7 +495,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-生成于 2017年 五月 28日 星期日 09:25:20 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
+生成于 2017年 十一月 18日 星期六 09:57:55 , 为 XCLNetTools使用  &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

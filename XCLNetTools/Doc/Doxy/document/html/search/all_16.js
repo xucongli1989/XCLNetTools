@@ -11,7 +11,6 @@ var searchData=
   ['encrypt',['Encrypt',['../namespace_x_c_l_net_tools_1_1_encrypt.html',1,'XCLNetTools']]],
   ['entity',['Entity',['../namespace_x_c_l_net_tools_1_1_entity.html',1,'XCLNetTools']]],
   ['enum',['Enum',['../namespace_x_c_l_net_tools_1_1_entity_1_1_enum.html',1,'XCLNetTools.Entity.Enum'],['../namespace_x_c_l_net_tools_1_1_enum.html',1,'XCLNetTools.Enum']]],
-  ['error',['Error',['../namespace_x_c_l_net_tools_1_1_message_1_1_error.html',1,'XCLNetTools::Message']]],
   ['excelhandler',['ExcelHandler',['../namespace_x_c_l_net_tools_1_1_entity_1_1_office_1_1_excel_handler.html',1,'XCLNetTools.Entity.Office.ExcelHandler'],['../namespace_x_c_l_net_tools_1_1_office_1_1_excel_handler.html',1,'XCLNetTools.Office.ExcelHandler']]],
   ['filehandler',['FileHandler',['../namespace_x_c_l_net_tools_1_1_file_handler.html',1,'XCLNetTools']]],
   ['ftp',['FTP',['../namespace_x_c_l_net_tools_1_1_f_t_p.html',1,'XCLNetTools']]],
@@ -21,6 +20,7 @@ var searchData=
   ['javascript',['Javascript',['../namespace_x_c_l_net_tools_1_1_javascript.html',1,'XCLNetTools']]],
   ['language',['Language',['../namespace_x_c_l_net_tools_1_1_language.html',1,'XCLNetTools']]],
   ['message',['Message',['../namespace_x_c_l_net_tools_1_1_entity_1_1_message.html',1,'XCLNetTools.Entity.Message'],['../namespace_x_c_l_net_tools_1_1_message.html',1,'XCLNetTools.Message']]],
+  ['modules',['Modules',['../namespace_x_c_l_net_tools_1_1_modules.html',1,'XCLNetTools']]],
   ['mssql',['MSSQL',['../namespace_x_c_l_net_tools_1_1_data_base_1_1_m_s_s_q_l.html',1,'XCLNetTools::DataBase']]],
   ['mvc',['MVC',['../namespace_x_c_l_net_tools_1_1_m_v_c.html',1,'XCLNetTools']]],
   ['mxgraph',['MxGraph',['../namespace_x_c_l_net_tools_1_1_control_1_1_mx_graph.html',1,'XCLNetTools::Control']]],
@@ -32,8 +32,7 @@ var searchData=
   ['sqlite',['SQLite',['../namespace_x_c_l_net_tools_1_1_data_base_1_1_s_q_lite.html',1,'XCLNetTools::DataBase']]],
   ['stringhander',['StringHander',['../namespace_x_c_l_net_tools_1_1_string_hander.html',1,'XCLNetTools']]],
   ['xclnettools',['XCLNetTools',['../namespace_x_c_l_net_tools.html',1,'']]],
-  ['xml',['XML',['../class_x_c_l_net_tools_1_1_serialize_1_1_x_m_l.html',1,'XCLNetTools.Serialize.XML'],['../namespace_x_c_l_net_tools_1_1_x_m_l.html',1,'XCLNetTools.XML']]],
+  ['xml',['XML',['../namespace_x_c_l_net_tools_1_1_x_m_l.html',1,'XCLNetTools']]],
   ['xml_2ecs',['XML.cs',['../_x_m_l_8cs.html',1,'']]],
-  ['xmlhelper',['XMLHelper',['../class_x_c_l_net_tools_1_1_x_m_l_1_1_x_m_l_helper.html',1,'XCLNetTools::XML']]],
   ['xmlhelper_2ecs',['XMLHelper.cs',['../_x_m_l_helper_8cs.html',1,'']]]
 ];

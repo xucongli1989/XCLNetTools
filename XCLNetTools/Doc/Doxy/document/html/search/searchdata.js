@@ -1,15 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefghijklmnoprstuvwxyz否周是",
-  1: "abcdefghijklmoprstuvwxz",
+  0: "abcdefghijklmnoprstuvwxz",
+  1: "abdefhijkmoprstuw",
   2: "sx",
   3: "abcdefghijklmoprstuvxz",
-  4: "abcdefghijklmnoprstuwz",
-  5: "jlr",
-  6: "bdfhjlprstw是",
-  7: "abcdefhijmnopstuvwy否周是",
-  8: "abcdefghikmnoprstuvw",
-  9: "du"
+  4: "abcdefghijklmnoprstuw",
+  5: "prt",
+  6: "abfs",
+  7: "abcdefghikmnoprstuvw",
+  8: "du"
 };
 
 var indexSectionNames =
@@ -19,11 +18,10 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "variables",
-  6: "enums",
-  7: "enumvalues",
-  8: "properties",
-  9: "events"
+  5: "enums",
+  6: "enumvalues",
+  7: "properties",
+  8: "events"
 };
 
 var indexSectionLabels =
@@ -33,10 +31,9 @@ var indexSectionLabels =
   2: "命名空间",
   3: "文件",
   4: "函数",
-  5: "变量",
-  6: "枚举",
-  7: "枚举值",
-  8: "属性",
-  9: "事件"
+  5: "枚举",
+  6: "枚举值",
+  7: "属性",
+  8: "事件"
 };
 
