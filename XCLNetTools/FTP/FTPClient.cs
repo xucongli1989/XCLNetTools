@@ -94,12 +94,12 @@ namespace XCLNetTools.FTP
         /// <summary>
         /// 编码方式
         /// </summary>
-        private Encoding ASCII = Encoding.ASCII;
+        private readonly Encoding ASCII = Encoding.ASCII;
 
         /// <summary>
         /// 字节数组
         /// </summary>
-        private Byte[] buffer = new Byte[BLOCK_SIZE];
+        private readonly Byte[] buffer = new Byte[BLOCK_SIZE];
 
         #endregion 字段
 
@@ -350,7 +350,6 @@ namespace XCLNetTools.FTP
                 Connect();
             }
             string str = strFileName.Substring(0, strFileName.LastIndexOf("\\"));
-            string strTypeName = strFileName.Substring(strFileName.LastIndexOf("."));
             strGuid = str + "\\" + strGuid;
             Socket socketData = CreateDataSocket();
             SendCommand("STOR " + Path.GetFileName(strGuid));
@@ -682,7 +681,6 @@ namespace XCLNetTools.FTP
                 Connect();
             }
             string str = strFileName.Substring(0, strFileName.LastIndexOf("\\"));
-            string strTypeName = strFileName.Substring(strFileName.LastIndexOf("."));
             strGuid = str + "\\" + strGuid;
             System.IO.File.Copy(strFileName, strGuid);
             System.IO.File.SetAttributes(strGuid, System.IO.FileAttributes.Normal);

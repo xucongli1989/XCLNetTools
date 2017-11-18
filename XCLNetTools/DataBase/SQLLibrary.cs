@@ -52,7 +52,7 @@ namespace XCLNetTools.DataBase
 
             if (string.IsNullOrWhiteSpace(condition.OrderBy))
             {
-                throw new Exception("请指定排序参数！");
+                throw new ArgumentException("请指定排序参数！");
             }
 
             if (condition.DatabaseType == Enum.CommonEnum.DatabaseTypeEnum.MSSQL)

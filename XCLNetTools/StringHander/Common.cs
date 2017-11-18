@@ -524,6 +524,30 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 判断url字符串是否为"http://"开头（不区分大小写）
+        /// </summary>
+        public static bool IsHttp(string url)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return false;
+            }
+            return url.ToUpper().IndexOf("HTTP://") >= 0;
+        }
+
+        /// <summary>
+        /// 判断url字符串是否为"https://"开头（不区分大小写）
+        /// </summary>
+        public static bool IsHttps(string url)
+        {
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return false;
+            }
+            return url.ToUpper().IndexOf("HTTPS://") >= 0;
+        }
+
+        /// <summary>
         /// 指定起始数字，返回这些数据的List
         /// </summary>
         /// <param name="startNum">开始数字</param>

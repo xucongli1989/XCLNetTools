@@ -48,7 +48,7 @@ namespace XCLNetTools.Control.MxGraph
             {
                 if (null == image)
                 {
-                    throw new Exception(string.Format("XML：【{0}】所生成的图片为null，生成失败！", xml));
+                    throw new ArgumentException(string.Format("XML：【{0}】所生成的图片为null，生成失败！", xml));
                 }
                 HttpContext context = HttpContext.Current;
                 context.Response.ContentType = "image/jpeg";

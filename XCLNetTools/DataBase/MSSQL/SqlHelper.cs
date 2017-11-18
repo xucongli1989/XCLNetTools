@@ -70,10 +70,8 @@ namespace XCLNetTools.DataBase.MSSQL
             foreach (SqlParameter commandParameter in commandParameters)
             {
                 // 创建参数名称,如果不存在,只抛出一个异常.
-                if (commandParameter.ParameterName == null ||
-                    commandParameter.ParameterName.Length <= 1)
-                    throw new Exception(
-                        string.Format("请提供参数{0}一个有效的名称{1}.", i, commandParameter.ParameterName));
+                if (commandParameter.ParameterName == null || commandParameter.ParameterName.Length <= 1)
+                    throw new ArgumentException(string.Format("请提供参数{0}一个有效的名称{1}.", i, commandParameter.ParameterName));
                 // 从dataRow的表中获取为参数数组中数组名称的列的索引.
                 // 如果存在和参数名称相同的列,则将列值赋给当前名称的参数.
                 if (dataRow.Table.Columns.IndexOf(commandParameter.ParameterName.Substring(1)) != -1)
@@ -392,7 +390,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static int ExecuteNonQuery(SqlTransaction transaction, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
 
             // 预处理
             SqlCommand cmd = new SqlCommand();
@@ -422,7 +420,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static int ExecuteNonQuery(SqlTransaction transaction, string spName, params object[] parameterValues)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果有参数值
@@ -641,7 +639,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static DataSet ExecuteDataset(SqlTransaction transaction, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
 
             // 预处理
             SqlCommand cmd = new SqlCommand();
@@ -673,7 +671,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static DataSet ExecuteDataset(SqlTransaction transaction, string spName, params object[] parameterValues)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             if ((parameterValues != null) && (parameterValues.Length > 0))
@@ -945,7 +943,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static SqlDataReader ExecuteReader(SqlTransaction transaction, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
 
             return ExecuteReader(transaction.Connection, transaction, commandType, commandText, commandParameters, SqlConnectionOwnership.External);
         }
@@ -966,7 +964,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static SqlDataReader ExecuteReader(SqlTransaction transaction, string spName, params object[] parameterValues)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果有参数值
@@ -1188,7 +1186,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static object ExecuteScalar(SqlTransaction transaction, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
 
             // 创建SqlCommand命令,并进行预处理
             SqlCommand cmd = new SqlCommand();
@@ -1219,7 +1217,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static object ExecuteScalar(SqlTransaction transaction, string spName, params object[] parameterValues)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果有参数值
@@ -1370,7 +1368,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static XmlReader ExecuteXmlReader(SqlTransaction transaction, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
 
             // 创建SqlCommand命令,并进行预处理
             SqlCommand cmd = new SqlCommand();
@@ -1401,7 +1399,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static XmlReader ExecuteXmlReader(SqlTransaction transaction, string spName, params object[] parameterValues)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果有参数值
@@ -1667,7 +1665,7 @@ namespace XCLNetTools.DataBase.MSSQL
             params object[] parameterValues)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (dataSet == null) throw new ArgumentNullException("dataSet");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
@@ -1896,7 +1894,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static int ExecuteNonQueryTypedParams(SqlTransaction transaction, String spName, DataRow dataRow)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // Sf the row has values, the store procedure parameters must be initialized
@@ -1989,7 +1987,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static DataSet ExecuteDatasetTypedParams(SqlTransaction transaction, String spName, DataRow dataRow)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果row有值,存储过程必须初始化.
@@ -2081,7 +2079,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static SqlDataReader ExecuteReaderTypedParams(SqlTransaction transaction, String spName, DataRow dataRow)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果row有值,存储过程必须初始化.
@@ -2173,7 +2171,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static object ExecuteScalarTypedParams(SqlTransaction transaction, String spName, DataRow dataRow)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果row有值,存储过程必须初始化.
@@ -2236,7 +2234,7 @@ namespace XCLNetTools.DataBase.MSSQL
         public static XmlReader ExecuteXmlReaderTypedParams(SqlTransaction transaction, String spName, DataRow dataRow)
         {
             if (transaction == null) throw new ArgumentNullException("transaction");
-            if (transaction != null && transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
             if (spName == null || spName.Length == 0) throw new ArgumentNullException("spName");
 
             // 如果row有值,存储过程必须初始化.

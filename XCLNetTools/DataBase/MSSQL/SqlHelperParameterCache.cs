@@ -120,7 +120,7 @@ namespace XCLNetTools.DataBase.MSSQL
             SqlParameter[] cachedParameters = paramCache[hashKey] as SqlParameter[];
             if (cachedParameters == null)
             {
-                return null;
+                return new SqlParameter[] { };
             }
             else
             {

@@ -27,16 +27,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static byte ToByte<T>(T source, byte defaultValue = default(byte))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            byte result = default(byte);
-            if (byte.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToByteNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -52,7 +43,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            byte result = default(byte);
+            byte result;
             if (byte.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -69,16 +60,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static sbyte ToSbyte<T>(T source, sbyte defaultValue = default(sbyte))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            sbyte result = default(sbyte);
-            if (sbyte.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToSbyteNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -94,7 +76,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            sbyte result = default(sbyte);
+            sbyte result;
             if (sbyte.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -115,16 +97,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static int ToInt<T>(T source, int defaultValue = default(int))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            int result = default(int);
-            if (int.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToIntNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -140,7 +113,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            int result = default(int);
+            int result;
             if (int.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -176,7 +149,7 @@ namespace XCLNetTools.Common
         {
             int[] result = null;
             int?[] intTemp = GetIntNullArrayByStringArray(str);
-            if (null != intTemp & intTemp.Length > 0)
+            if (null != intTemp && intTemp.Length > 0)
             {
                 result = intTemp.ToList().ConvertAll(k => (int)(k == null ? defaultValue : k)).ToArray();
             }
@@ -192,16 +165,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static uint ToUint<T>(T source, uint defaultValue = default(uint))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            uint result = default(uint);
-            if (uint.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToUintNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -217,7 +181,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            uint result = default(uint);
+            uint result;
             if (uint.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -238,16 +202,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static short ToShort<T>(T source, short defaultValue = default(short))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            short result = default(short);
-            if (short.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToShortNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -263,7 +218,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            short result = default(short);
+            short result;
             if (short.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -280,16 +235,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static ushort ToUshort<T>(T source, ushort defaultValue = default(ushort))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            ushort result = default(ushort);
-            if (ushort.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToUshortNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -305,7 +251,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            ushort result = default(ushort);
+            ushort result;
             if (ushort.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -326,16 +272,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static long ToLong<T>(T source, long defaultValue = default(long))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            long result = default(long);
-            if (long.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToLongNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -351,7 +288,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            long result = default(long);
+            long result;
             if (long.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -387,7 +324,7 @@ namespace XCLNetTools.Common
         {
             long[] result = null;
             long?[] longTemp = GetLongNullArrayByStringArray(str);
-            if (null != longTemp & longTemp.Length > 0)
+            if (null != longTemp && longTemp.Length > 0)
             {
                 result = longTemp.ToList().ConvertAll(k => (long)(k == null ? defaultValue : k)).ToArray();
             }
@@ -403,16 +340,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static ulong ToUlong<T>(T source, ulong defaultValue = default(ulong))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            ulong result = default(ulong);
-            if (ulong.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToUlongNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -428,7 +356,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            ulong result = default(ulong);
+            ulong result;
             if (ulong.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -449,16 +377,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static float ToFloat<T>(T source, float defaultValue = default(float))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            float result = default(float);
-            if (float.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToFloatNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -474,7 +393,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            float result = default(float);
+            float result;
             if (float.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -495,16 +414,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static double ToDouble<T>(T source, double defaultValue = default(double))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            double result = default(double);
-            if (double.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToDoubleNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -520,7 +430,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            double result = default(double);
+            double result;
             if (double.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -541,16 +451,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static bool ToBool<T>(T source, bool defaultValue = default(bool))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            bool result = default(bool);
-            if (bool.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToBoolNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -566,7 +467,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            bool result = default(bool);
+            bool result;
             if (bool.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -595,16 +496,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static decimal ToDecimal<T>(T source, decimal defaultValue = default(decimal))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            decimal result = default(decimal);
-            if (decimal.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToDecimalNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -620,7 +512,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            decimal result = default(decimal);
+            decimal result;
             if (decimal.TryParse(source.ToString(), out result))
             {
                 return result;
@@ -655,7 +547,7 @@ namespace XCLNetTools.Common
         {
             if (null == str || str.Length == 0)
             {
-                return null;
+                return new string[] { };
             }
             return str.ToList().ConvertAll(k =>
             {
@@ -676,16 +568,7 @@ namespace XCLNetTools.Common
         /// <returns>转换后的值</returns>
         public static DateTime ToDateTime<T>(T source, DateTime defaultValue = default(DateTime))
         {
-            if (null == source)
-            {
-                return defaultValue;
-            }
-            DateTime result = default(DateTime);
-            if (DateTime.TryParse(source.ToString(), out result))
-            {
-                return result;
-            }
-            return defaultValue;
+            return ToDateTimeNull(source, defaultValue).Value;
         }
 
         /// <summary>
@@ -701,7 +584,7 @@ namespace XCLNetTools.Common
             {
                 return defaultValue;
             }
-            DateTime result = default(DateTime);
+            DateTime result;
             if (DateTime.TryParse(source.ToString(), out result))
             {
                 return result;

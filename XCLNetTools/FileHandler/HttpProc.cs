@@ -22,26 +22,15 @@ namespace XCLNetTools.FileHandler
     /// </summary>
     public class UploadEventArgs : EventArgs
     {
-        private int bytesSent;
-        private int totalBytes;
-
         /// <summary>
         /// 已发送的字节数
         /// </summary>
-        public int BytesSent
-        {
-            get { return bytesSent; }
-            set { bytesSent = value; }
-        }
+        public int BytesSent { get; set; }
 
         /// <summary>
         /// 总字节数
         /// </summary>
-        public int TotalBytes
-        {
-            get { return totalBytes; }
-            set { totalBytes = value; }
-        }
+        public int TotalBytes { get; set; }
     }
 
     /// <summary>
@@ -49,36 +38,20 @@ namespace XCLNetTools.FileHandler
     /// </summary>
     public class DownloadEventArgs : EventArgs
     {
-        private int bytesReceived;
-        private int totalBytes;
-        private byte[] receivedData;
-
         /// <summary>
         /// 已接收的字节数
         /// </summary>
-        public int BytesReceived
-        {
-            get { return bytesReceived; }
-            set { bytesReceived = value; }
-        }
+        public int BytesReceived { get; set; }
 
         /// <summary>
         /// 总字节数
         /// </summary>
-        public int TotalBytes
-        {
-            get { return totalBytes; }
-            set { totalBytes = value; }
-        }
+        public int TotalBytes { get; set; }
 
         /// <summary>
         /// 当前缓冲区接收的数据
         /// </summary>
-        public byte[] ReceivedData
-        {
-            get { return receivedData; }
-            set { receivedData = value; }
-        }
+        public byte[] ReceivedData { get; set; }
     }
 
     /// <summary>
@@ -90,7 +63,7 @@ namespace XCLNetTools.FileHandler
         private string respHtml = "";
         private WebProxy proxy;
         private static CookieContainer cc;
-        private WebHeaderCollection requestHeaders;
+        private readonly WebHeaderCollection requestHeaders;
         private WebHeaderCollection responseHeaders;
         private int bufferSize = 15240;
 
@@ -279,7 +252,6 @@ namespace XCLNetTools.FileHandler
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
             responseHeaders = response.Headers;
-            //SaveCookiesToDisk();
 
             DownloadEventArgs args = new DownloadEventArgs();
             if (responseHeaders[HttpResponseHeader.ContentLength] != null)
@@ -396,25 +368,6 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 将Cookie保存到磁盘
-        /// </summary>
-        private static void SaveCookiesToDisk()
-        {
-            string cookieFile = System.Environment.GetFolderPath(Environment.SpecialFolder.Cookies) + "\\webclient.cookie";
-            FileStream fs = null;
-            try
-            {
-                fs = new FileStream(cookieFile, FileMode.Create);
-                System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formater = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                formater.Serialize(fs, cc);
-            }
-            finally
-            {
-                if (fs != null) fs.Close();
-            }
-        }
-
-        /// <summary>
         /// 从磁盘加载Cookie
         /// </summary>
         private static void LoadCookiesFromDisk()
@@ -501,17 +454,13 @@ namespace XCLNetTools.FileHandler
             if (!File.Exists(filename))
                 throw new FileNotFoundException("尝试添加不存在的文件。", filename);
             FileStream fs = null;
-            byte[] fileData = { };
+            byte[] fileData;
             try
             {
                 fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
                 fileData = new byte[fs.Length];
                 fs.Read(fileData, 0, fileData.Length);
                 this.AddFlie(name, Path.GetFileName(filename), fileData, fileData.Length);
-            }
-            catch (Exception)
-            {
-                throw;
             }
             finally
             {
