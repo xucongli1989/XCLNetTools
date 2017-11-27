@@ -27,7 +27,7 @@ namespace XCLNetTools.DataSource
         {
             if (null == dr)
             {
-                return null;
+                return new List<T>();
             }
             IList<T> lst = new List<T>();
             var fields = new List<string>();

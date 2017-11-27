@@ -127,7 +127,7 @@ namespace XCLNetTools.Http
             {
                 return collection[name].Values;
             }
-            return null;
+            return new NameValueCollection();
         }
 
         /// <summary>

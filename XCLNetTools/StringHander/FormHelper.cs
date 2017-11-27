@@ -64,7 +64,7 @@ namespace XCLNetTools.StringHander
             {
                 return str;
             }
-            return null;
+            return new string[] { };
         }
 
         #endregion 主方法
