@@ -262,7 +262,7 @@ namespace XCLNetTools.StringHander
             DateTime dtEnd = XCLNetTools.Common.DataTypeConvert.ToDateTime(Convert.ToString(end), dtNow);
             if (dtStart > dtEnd)
             {
-                return null;
+                return new List<Entity.SubTime>();
             }
             DateTime oldStartDay = Convert.ToDateTime(dtStart.ToShortDateString());
             DateTime oldEndDay = Convert.ToDateTime(dtEnd.ToShortDateString());

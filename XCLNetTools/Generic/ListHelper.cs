@@ -87,7 +87,7 @@ namespace XCLNetTools.Generic
         {
             if (null == ds || null == ds.Tables || ds.Tables.Count == 0)
             {
-                return null;
+                return new List<T>();
             }
             return XCLNetTools.Generic.ListHelper.DataTableToList<T>(ds.Tables[0]);
         }
@@ -101,7 +101,7 @@ namespace XCLNetTools.Generic
         {
             if (null == dt || null == dt.Rows || dt.Rows.Count == 0)
             {
-                return null;
+                return new List<T>();
             }
             IList<T> ts = new List<T>();
             foreach (DataRow dr in dt.Rows)
