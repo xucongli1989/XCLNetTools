@@ -114,11 +114,11 @@ namespace XCLNetTools.Serialize
         /// <returns>dictionary结果</returns>
         public static Dictionary<string, string> ConvertJsonToDictionary(string json)
         {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
             if (string.IsNullOrWhiteSpace(json))
             {
-                return null;
+                return dic;
             }
-            Dictionary<string, string> dic = new Dictionary<string, string>();
             var pros = JObject.Parse(json).Properties();
             foreach (var m in pros)
             {
