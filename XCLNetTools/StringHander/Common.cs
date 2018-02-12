@@ -516,11 +516,23 @@ namespace XCLNetTools.StringHander
         {
             if (string.IsNullOrWhiteSpace(url))
             {
-                return null;
+                return string.Empty;
             }
             url = url.Trim().TrimStart(new char[] { ':', '/' });
             url = XCLNetTools.Common.Consts.RegHttpScheme.Replace(url, string.Empty);
             return string.Format("{0}://{1}", httpType.ToString().ToLower(), url);
+        }
+
+        /// <summary>
+        /// 重载ToHttpUrl，默认url：Request.Url.AbsoluteUri
+        /// </summary>
+        public static string ToHttpUrl(HttpTypeEnum httpType = HttpTypeEnum.Http)
+        {
+            if (null == HttpContext.Current)
+            {
+                return string.Empty;
+            }
+            return ToHttpUrl(HttpContext.Current.Request.Url.AbsoluteUri, httpType);
         }
 
         /// <summary>
@@ -536,6 +548,18 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 重载IsHttp，默认url：Request.Url.AbsoluteUri
+        /// </summary>
+        public static bool IsHttp()
+        {
+            if (null == HttpContext.Current)
+            {
+                return false;
+            }
+            return IsHttp(HttpContext.Current.Request.Url.AbsoluteUri);
+        }
+
+        /// <summary>
         /// 判断url字符串是否为"https://"开头（不区分大小写）
         /// </summary>
         public static bool IsHttps(string url)
@@ -545,6 +569,18 @@ namespace XCLNetTools.StringHander
                 return false;
             }
             return url.ToUpper().IndexOf("HTTPS://") >= 0;
+        }
+
+        /// <summary>
+        /// 重载IsHttps，默认url：Request.Url.AbsoluteUri
+        /// </summary>
+        public static bool IsHttps()
+        {
+            if (null == HttpContext.Current)
+            {
+                return false;
+            }
+            return IsHttps(HttpContext.Current.Request.Url.AbsoluteUri);
         }
 
         /// <summary>
