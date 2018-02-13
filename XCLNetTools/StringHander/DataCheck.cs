@@ -13,24 +13,9 @@ namespace XCLNetTools.StringHander
     /// <summary>
     /// 页面数据校验类
     /// </summary>
-    public static class PageValid
+    public static class DataCheck
     {
         #region 数字字符串检查
-
-        /// <summary>
-        /// 是否为手机号
-        /// </summary>
-        /// <param name="inputData">待判断的值</param>
-        /// <returns>判断结果</returns>
-        public static bool IsPhone(string inputData)
-        {
-            if (string.IsNullOrEmpty(inputData))
-            {
-                return false;
-            }
-            Match m = XCLNetTools.Common.Consts.RegPhone.Match(inputData);
-            return m.Success;
-        }
 
         /// <summary>
         /// 是否为纯数字（不带正负号）
@@ -111,6 +96,21 @@ namespace XCLNetTools.StringHander
             return m.Success;
         }
 
+        /// <summary>
+        /// 检测是否有全部是中文字符
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsHasCHZNAll(string inputData)
+        {
+            if (string.IsNullOrEmpty(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegCHZNAll.Match(inputData);
+            return m.Success;
+        }
+
         #endregion 中文检测
 
         #region 邮件地址
@@ -164,5 +164,96 @@ namespace XCLNetTools.StringHander
         }
 
         #endregion URL
+
+        #region 身份证
+
+        /// <summary>
+        /// 是否为国内居民身份证号码
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsIDCard(string inputData)
+        {
+            if (string.IsNullOrEmpty(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegIDCard.Match(inputData);
+            return m.Success;
+        }
+
+        #endregion 身份证
+
+        #region 编码格式
+
+        /// <summary>
+        /// 是否为Base64编码
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsBase64(string inputData)
+        {
+            if (string.IsNullOrEmpty(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegBase64.Match(inputData);
+            return m.Success;
+        }
+
+        #endregion 编码格式
+
+        #region 电话号码
+
+        /// <summary>
+        /// 是否为国内座机号码
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsPhone(string inputData)
+        {
+            if (string.IsNullOrEmpty(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegPhone.Match(inputData);
+            return m.Success;
+        }
+
+        /// <summary>
+        /// 是否为国内手机号码
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsMobile(string inputData)
+        {
+            if (string.IsNullOrEmpty(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegMobile.Match(inputData);
+            return m.Success;
+        }
+
+        #endregion 电话号码
+
+        #region 其它
+
+        /// <summary>
+        /// 是否为国内邮政编码
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsPostcode(string inputData)
+        {
+            if (string.IsNullOrEmpty(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegPostcode.Match(inputData);
+            return m.Success;
+        }
+
+        #endregion 其它
     }
 }

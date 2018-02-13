@@ -26,9 +26,14 @@ namespace XCLNetTools.Common
         public static readonly Regex RegHttpScheme = new Regex("^http[s]?://", RegexOptions.IgnoreCase);
 
         /// <summary>
-        /// 电话号码正则
+        /// 电话号码正则（如：010-85849685）
         /// </summary>
-        public static readonly Regex RegPhone = new Regex("^[0-9]+[-]?[0-9]+[-]?[0-9]$");
+        public static readonly Regex RegPhone = new Regex(@"^\d{3,4}-?\d{6,8}$");
+
+        /// <summary>
+        /// 手机号码正则
+        /// </summary>
+        public static readonly Regex RegMobile = new Regex(@"^1\d{10}$");
 
         /// <summary>
         /// 无符号数字正则
@@ -56,9 +61,14 @@ namespace XCLNetTools.Common
         public static readonly Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");
 
         /// <summary>
-        /// 中文正则
+        /// 包含中文的正则
         /// </summary>
-        public static readonly Regex RegCHZN = new Regex("[\u4e00-\u9fa5]");
+        public static readonly Regex RegCHZN = new Regex("[\u4e00-\u9fa5]+");
+
+        /// <summary>
+        /// 全部为中文的正则
+        /// </summary>
+        public static readonly Regex RegCHZNAll = new Regex("^[\u4e00-\u9fa5]+$");
 
         /// <summary>
         /// http(s)地址正则
@@ -69,6 +79,21 @@ namespace XCLNetTools.Common
         /// md5正则（32位大写）
         /// </summary>
         public static readonly Regex RegMD5_32Uppercase = new Regex("^[0-9A-F]{32}$");
+
+        /// <summary>
+        /// 国内居民身份证号码
+        /// </summary>
+        public static readonly Regex RegIDCard = new Regex(@"^([1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3})|([1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx]))$");
+
+        /// <summary>
+        /// 国内邮政编码
+        /// </summary>
+        public static readonly Regex RegPostcode = new Regex(@"^[1-9]\d{5}$");
+
+        /// <summary>
+        /// base64编码
+        /// </summary>
+        public static readonly Regex RegBase64 = new Regex(@"^[A-Za-z0-9\+\/\=]$");
 
         #endregion 正则
 

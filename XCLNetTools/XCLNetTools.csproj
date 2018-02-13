@@ -261,7 +261,7 @@
     <Compile Include="Encrypt\DESEncrypt.cs" />
     <Compile Include="StringHander\FormHelper.cs" />
     <Compile Include="Encrypt\HashEncode.cs" />
-    <Compile Include="StringHander\PageValid.cs" />
+    <Compile Include="StringHander\DataCheck.cs" />
     <Compile Include="StringHander\RandomHelper.cs" />
     <Compile Include="StringHander\RMB.cs" />
     <Compile Include="Encrypt\RSACryption.cs" />
