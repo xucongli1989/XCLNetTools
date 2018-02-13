@@ -719,7 +719,7 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取QueryString的参数序列化字符串（也就是a=b&amp;c=d的形式）
         /// </summary>
-        /// <returns>参数序列化的结值</returns>
+        /// <returns>参数序列化的值</returns>
         public static string GetQuerySerializeString()
         {
             var req = HttpContext.Current.Request;
@@ -743,7 +743,7 @@ namespace XCLNetTools.StringHander
         /// <summary>
         /// 获取Form的参数序列化字符串（也就是a=b&amp;c=d的形式）
         /// </summary>
-        /// <returns>参数序列化的结值</returns>
+        /// <returns>参数序列化的值</returns>
         public static string GetFromSerializeString()
         {
             var req = HttpContext.Current.Request;

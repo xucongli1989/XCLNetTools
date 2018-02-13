@@ -647,6 +647,42 @@ namespace XCLNetTools.StringHander
             return converter.IsValid(val);
         }
 
+        /// <summary>
+        /// 将url的name value参数形式的字符串转换为字典
+        /// </summary>
+        /// <param name="val">要转换的字符串，如：a=b&amp;c=d&amp;c=x</param>
+        /// <returns>处理后的结果</returns>
+        public static Dictionary<string, IList<string>> ConvertUrlNameValueStringToDic(string val)
+        {
+            var dic = new Dictionary<string, IList<string>>();
+            if (string.IsNullOrWhiteSpace(val))
+            {
+                return dic;
+            }
+            string[] tempArr;
+            string k, v;
+            var arr = val.Trim().Split('&');
+            for (var i = 0; i < arr.Length; i++)
+            {
+                tempArr = arr[i].Split('=');
+                k = tempArr[0];
+                v = string.Empty;
+                if (tempArr.Length >= 2)
+                {
+                    v = tempArr[1];
+                }
+                if (dic.ContainsKey(k))
+                {
+                    dic[k].Add(v);
+                }
+                else
+                {
+                    dic.Add(k, new List<string>() { v });
+                }
+            }
+            return dic;
+        }
+
         #endregion 其它
     }
 }
