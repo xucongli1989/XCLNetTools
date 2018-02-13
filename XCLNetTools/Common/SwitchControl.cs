@@ -416,35 +416,35 @@ namespace XCLNetTools.Common
             if (string.IsNullOrWhiteSpace(val))
             {
                 result.Result = false;
-                result.Message = "V为空";
+                result.Message = "V为空，非黑白名单时全关";
                 return result;
             }
 
             if (val.Equals(SwitchKeyTypeEnum.T.ToString()))
             {
                 result.Result = true;
-                result.Message = "V为T";
+                result.Message = "V为T，非黑白名单时全开";
                 return result;
             }
 
             if (val.Equals(SwitchKeyTypeEnum.F.ToString()))
             {
                 result.Result = false;
-                result.Message = "V为F";
+                result.Message = "V为F，非黑白名单时全关";
                 return result;
             }
 
             if (intVal == 0)
             {
                 result.Result = false;
-                result.Message = "V为0";
+                result.Message = "V为0，非黑白名单时全关";
                 return result;
             }
 
             if (intVal == 100)
             {
                 result.Result = true;
-                result.Message = "V为100";
+                result.Message = "V为100，非黑白名单时全开";
                 return result;
             }
 
