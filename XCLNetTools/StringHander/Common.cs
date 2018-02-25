@@ -507,6 +507,23 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 增强GetRootUri方法，从当前url中判断是http还是https
+        /// </summary>
+        /// <returns>处理后的url</returns>
+        public static string GetRootUri2()
+        {
+            if (null == HttpContext.Current || null == HttpContext.Current.Request)
+            {
+                return string.Empty;
+            }
+            if (Common.IsHttps(HttpContext.Current.Request.Url.AbsoluteUri))
+            {
+                return GetRootUri(HttpTypeEnum.Https);
+            }
+            return GetRootUri(HttpTypeEnum.Http);
+        }
+
+        /// <summary>
         /// 将http开头协议不规则的url字符串转化为指定的http://或https://形式的url
         /// </summary>
         /// <param name="url">要转换的url</param>
