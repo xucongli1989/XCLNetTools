@@ -275,7 +275,6 @@
     <Content Include="DLL\AspNetPager\en\AspNetPager.resources.dll" />
     <Content Include="DLL\AspNetPager\zh-CHT\AspNetPager.resources.dll" />
     <Content Include="DLL\Aspose\Aspose.Cells.dll" />
-    <Content Include="DLL\Aspose\Aspose.Cells.xml" />
     <Content Include="DLL\Aspose\Aspose.Pdf.Kit.dll" />
     <Content Include="DLL\Aspose\Aspose.Slides.dll" />
     <Content Include="DLL\Aspose\Aspose.Words.dll" />
