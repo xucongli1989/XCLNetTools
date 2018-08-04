@@ -1,64 +1,67 @@
 
 [![](https://ci.appveyor.com/api/projects/status/mx7ll3yko5lvu8vd?svg=true)](https://ci.appveyor.com/project/xucongli1989/xclnettools)
 
+[English](README)  [中文](README_CN)
 
-# 简介
+### Introduction
 
-.Net（C#）公用类库dll（从2012年至今一直都有维护），现开放源代码。该类库的大部分代码由我个人编写或收集整理，从本人工作时起，就一直希望有一个比较通用的代码库，能够方便我们解决编码过程中的一些高重复性的、无意义的事情，让我们用更多的精力去做其它重要的事情。因此，我在2012年初建立了这个公共库，之前放在本机，直到今天，我将代码公布于GitHub上面，希望能有好的伙伴们可以帮忙倾注自己的一份力量，为普通大众编码者省更多的事情，当然也包括您自己。谢谢！
+.net (C#) common class library DLL (maintained since 2012), now open source.Most of the code for this kind of library is written or collected by me. Ever since I started working, I have been hoping that there would be a common code base, which would be convenient for us to solve some highly repetitive and meaningless things in the coding process, so that we could devote more energy to other important things.So, I set up this public library in early 2012, put it on the native, and today, I'm publishing the code on GitHub, and I hope that good partners can help put their own efforts into saving more things for the average mass coder, including yourself.Thank you very much!
 
-# 适用范围
-.net平台（asp.net / mvc /winform...）
+### Scope
 
-# 功能
-- 缓存操作
-- 公共常量、数据类型转换、GZIP压缩、IP处理
-- HTML标签处理
-- MxGraph控件操作
-- 数据分页
-- WebForm服务器控件操作
-- Access操作
-- MSSQL操作
-- SQLite操作
-- DataSet/DataTable操作
-- 编码解码
-- 加密解密
-- 常用实体类
-- 常用枚举及枚举操作
-- 浏览器书签解析
-- 文件及文件夹操作
-- http请求操作
-- 图片操作
-- 验证码
+.net platform (asp.net/MVC/winform...)
+
+### Functions
+- cache operation
+- public constants, data type conversion, GZIP compression, IP processing
+- HTML tag processing
+- MxGraph control operation
+- data paging
+- WebForm server control operation
+- Access operation
+- MSSQL operation
+- SQLite operation
+- the DataSet/DataTable operation
+- encoding and decoding
+- encryption and decryption
+- common entity classes
+- common enumeration and enumeration operations
+- browser bookmark resolution
+- file and folder operations
+- HTTP request operation
+- image operation
+- captcha
 - ZIP
-- FTP
-- 泛型List操作
-- Cookie
+- the FTP
+- generic List operation
+- cookies
 - JS
-- 汉字处理
-- 异常处理
-- 消息提示
-- Excel处理
-- JSON/XML序列化
-- 日期时间处理
-- form表单参数获取
-- 随机数
-- 人民币
-- XML操作
-- ......
+- Chinese character processing
+- exception handling
+- message prompt
+- Excel processing
+- json/XML serialization
+- date and time processing
+- form parameter acquisition
+- the random number
+- the yuan
+- XML operation
+- ...
 
-# NuGet
+
+### NuGet
 
 https://www.nuget.org/packages/XCLNetTools/
 
-# 在线文档
+### Online documentation
 
-[在线查看](http://htmlpreview.github.io/?https://github.com/xucongli1989/XCLNetTools/blob/master/XCLNetTools/Doc/Doxy/document/html/index.html)
+[View online](http://htmlpreview.github.io/?https://github.com/xucongli1989/XCLNetTools/blob/master/XCLNetTools/Doc/Doxy/document/html/index.html)
 
-# 版权说明
+### Copyright
 
-基于GNU GPL V2 开源协议
+[LICENSE](LICENSE)
 
 
-# 问题反馈
+### Feedback
 
 Email:80213876@qq.com
