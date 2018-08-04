@@ -1,7 +1,7 @@
 
 [![](https://ci.appveyor.com/api/projects/status/mx7ll3yko5lvu8vd?svg=true)](https://ci.appveyor.com/project/xucongli1989/xclnettools)
 
-[English](README)  [中文](README_CN)
+[English](README.md)  [中文](README_CN.md)
 
 ### Introduction
 
