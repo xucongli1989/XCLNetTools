@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace XCLNetTools.FileHandler
@@ -405,29 +406,37 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         /// <param name="filename">文件物理路径</param>
         /// <returns>编码对象</returns>
-        public static System.Text.Encoding GetFileEncoding(string filename)
+        public static Encoding GetFileEncoding(string filename)
         {
-            using (System.IO.FileStream fs = new System.IO.FileStream(filename, System.IO.FileMode.Open, System.IO.FileAccess.Read))
-            using (System.IO.BinaryReader br = new System.IO.BinaryReader(fs))
+            using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
+            using (BinaryReader br = new BinaryReader(fs))
             {
-                var buffer = br.ReadBytes(2);
+                var buffer = br.ReadBytes(4);
+                //基本判断
                 if (buffer[0] >= 0xEF)
                 {
                     if (buffer[0] == 0xEF && buffer[1] == 0xBB)
                     {
-                        return System.Text.Encoding.UTF8;
+                        return Encoding.UTF8;
                     }
                     if (buffer[0] == 0xFE && buffer[1] == 0xFF)
                     {
-                        return System.Text.Encoding.BigEndianUnicode;
+                        return Encoding.BigEndianUnicode;
                     }
                     if (buffer[0] == 0xFF && buffer[1] == 0xFE)
                     {
-                        return System.Text.Encoding.Unicode;
+                        return Encoding.Unicode;
                     }
                 }
+                //加强判断utf8
+                var textDetect = new TextEncodingDetect();
+                var detectEncoding = textDetect.DetectEncoding(buffer, buffer.Length);
+                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Bom || detectEncoding == TextEncodingDetect.Encoding.Utf8Nobom)
+                {
+                    return Encoding.UTF8;
+                }
             }
-            return System.Text.Encoding.Default;
+            return Encoding.Default;
         }
 
         #endregion 其它
