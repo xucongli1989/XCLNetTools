@@ -396,6 +396,40 @@ namespace XCLNetTools.FileHandler
             return System.IO.Path.GetExtension(fileName).TrimStart('.');
         }
 
+        /// <summary>
+        /// 获取文件编码
+        /// 文件的字符集在Windows下有两种，一种是ANSI(GB2312)，一种Unicode。
+        /// 对于Unicode，Windows支持了它的三种编码方式，一种是小尾编码（Unicode)，一种是大尾编码(BigEndianUnicode)，一种是UTF-8编码。
+        /// 我们可以从文件的头部来区分一个文件是属于哪种编码。当头部开始的两个字节为 FF FE时，是Unicode的小尾编码；当头部的两个字节为FE FF时，是Unicode的大尾编码；当头部两个字节为EF BB时，是Unicode的UTF-8编码；当它不为这些时，则是ANSI编码。
+        /// 按照如上所说，我们可以通过读取文件头的两个字节来判断文件的编码格式
+        /// </summary>
+        /// <param name="filename">文件物理路径</param>
+        /// <returns>编码对象</returns>
+        public static System.Text.Encoding GetFileEncoding(string filename)
+        {
+            using (System.IO.FileStream fs = new System.IO.FileStream(filename, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+            using (System.IO.BinaryReader br = new System.IO.BinaryReader(fs))
+            {
+                var buffer = br.ReadBytes(2);
+                if (buffer[0] >= 0xEF)
+                {
+                    if (buffer[0] == 0xEF && buffer[1] == 0xBB)
+                    {
+                        return System.Text.Encoding.UTF8;
+                    }
+                    if (buffer[0] == 0xFE && buffer[1] == 0xFF)
+                    {
+                        return System.Text.Encoding.BigEndianUnicode;
+                    }
+                    if (buffer[0] == 0xFF && buffer[1] == 0xFE)
+                    {
+                        return System.Text.Encoding.Unicode;
+                    }
+                }
+            }
+            return System.Text.Encoding.Default;
+        }
+
         #endregion 其它
     }
 }
