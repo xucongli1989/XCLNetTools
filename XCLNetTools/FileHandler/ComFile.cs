@@ -431,7 +431,11 @@ namespace XCLNetTools.FileHandler
                 //加强判断utf8
                 var textDetect = new TextEncodingDetect();
                 var detectEncoding = textDetect.DetectEncoding(buffer, buffer.Length);
-                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Bom || detectEncoding == TextEncodingDetect.Encoding.Utf8Nobom)
+                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Bom)
+                {
+                    return new UTF8Encoding(true);
+                }
+                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Nobom)
                 {
                     return Encoding.UTF8;
                 }
