@@ -398,6 +398,22 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
+        /// 用新的扩展名更新文件路径
+        /// </summary>
+        /// <param name="path">原文件路径</param>
+        /// <param name="newExt">扩展名</param>
+        /// <returns>新的文件路径</returns>
+        public static string GetFilePathWithNewExt(string path, string newExt)
+        {
+            if (null != newExt)
+            {
+                newExt = newExt.Trim().Trim('.');
+            }
+            var dot = string.IsNullOrWhiteSpace(newExt) ? string.Empty : ".";
+            return ChangePathByFileName(path, string.Format("{0}{1}{2}", GetFileName(path, false), dot, newExt));
+        }
+
+        /// <summary>
         /// 获取文件编码
         /// 文件的字符集在Windows下有两种，一种是ANSI(GB2312)，一种Unicode。
         /// 对于Unicode，Windows支持了它的三种编码方式，一种是小尾编码（Unicode)，一种是大尾编码(BigEndianUnicode)，一种是UTF-8编码。
