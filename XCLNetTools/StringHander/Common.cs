@@ -508,8 +508,8 @@ namespace XCLNetTools.StringHander
 
         /// <summary>
         /// 增强GetRootUri方法，从当前url中判断是http还是https
+        /// 如:"http://www.xcl.com:2156/ or https://www.xcl.com:2156/VirtualWeb/"
         /// </summary>
-        /// <returns>处理后的url</returns>
         public static string GetRootUri2()
         {
             if (null == HttpContext.Current || null == HttpContext.Current.Request)
@@ -521,6 +521,30 @@ namespace XCLNetTools.StringHander
                 return GetRootUri(HttpTypeEnum.Https);
             }
             return GetRootUri(HttpTypeEnum.Http);
+        }
+
+        /// <summary>
+        /// 从指定的header中获取网站根路径，如果没有指定header或内容为空，则返回GetRootUri2()的内容
+        /// 如:"http://www.xcl.com:2156/ or https://www.xcl.com:2156/VirtualWeb/"
+        /// 注：末尾带'/'
+        /// </summary>
+        public static string GetRootUriByHeader(string headerName = "X-ROOT-URL")
+        {
+            var current = HttpContext.Current;
+            if (null == current || null == current.Request)
+            {
+                return string.Empty;
+            }
+            var headerValue = string.Empty;
+            if (null != current.Request.Headers)
+            {
+                headerValue = current.Request.Headers[headerName];
+            }
+            if (!string.IsNullOrWhiteSpace(headerValue))
+            {
+                return headerValue.TrimEnd('/') + "/";
+            }
+            return GetRootUri2();
         }
 
         /// <summary>
