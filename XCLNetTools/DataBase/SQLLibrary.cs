@@ -15,7 +15,7 @@ namespace XCLNetTools.DataBase
     /// <summary>
     /// sql处理类
     /// </summary>
-    public class SQLLibrary
+    public static class SQLLibrary
     {
         /// <summary>
         /// 使用'and'合并sql
