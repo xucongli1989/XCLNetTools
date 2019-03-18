@@ -9,7 +9,7 @@ namespace XCLNetTools.Common
     /// </summary>
     /// <typeparam name="IDType">主键ID的数据类型，一般为int、long</typeparam>
     /// <typeparam name="ModelType">要查询的记录实体类型</typeparam>
-    public class TreeTableLibrary<IDType, ModelType>
+    public class TreeDataHelper<IDType, ModelType>
     {
         /// <summary>
         /// 当节点的parentid为此值时，那么此节点就为根节点，一般情况下为0
