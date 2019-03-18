@@ -186,7 +186,7 @@
     <Compile Include="Control\ServerControl\Lib.cs" />
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
     <Compile Include="DataBase\SQLLibrary.cs" />
-    <Compile Include="DataBase\TreeTableLibrary.cs" />
+    <Compile Include="Common\TreeDataHelper.cs" />
     <Compile Include="DataSource\DataReaderHelper.cs" />
     <Compile Include="DataSource\DataTableHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
@@ -208,7 +208,8 @@
     <Compile Include="DataBase\MSSQL\SqlHelperParameterCache.cs" />
     <Compile Include="DataBase\Redis\RedisHelper.cs" />
     <Compile Include="Entity\SqlPagerConditionEntity.cs" />
-    <Compile Include="Entity\TreeTable\TreeMapEntity.cs" />
+    <Compile Include="Entity\TreeData\ExtendDataEntity.cs" />
+    <Compile Include="Entity\TreeData\TreeMapEntity.cs" />
     <Compile Include="FileHandler\TextEncodingDetect.cs" />
     <Compile Include="Modules\ErrorHttpModule.cs" />
     <Compile Include="Office\ExcelHandler\DataToExcel.cs" />
