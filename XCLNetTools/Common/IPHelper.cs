@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using System.Web;
 
@@ -11,9 +13,8 @@ namespace XCLNetTools.Common
     public static class IPHelper
     {
         /// <summary>
-        /// 取得用户客户端IP(穿过代理服务器取远程用户真实IP地址)
+        /// 取得用户http客户端IP(穿过代理服务器取远程用户真实IP地址)
         /// </summary>
-        /// <returns>ip地址</returns>
         public static string GetClientIP()
         {
             var context = HttpContext.Current;
@@ -51,36 +52,58 @@ namespace XCLNetTools.Common
         }
 
         /// <summary>
-        /// 根据ip138网站反馈结果获取服务端外网ip地址
+        /// 根据第三方ip查询网站反馈结果获取服务端外网ip地址
         /// </summary>
-        /// <returns>ip地址</returns>
-        public static string GetIpByIP138()
+        public static XCLNetTools.Entity.LocationEntity GetIPFromPublicWeb()
         {
-            string url = "http://1212.ip138.com/ic.asp";
-            string ip = string.Empty;
-            XCLNetTools.Http.HttpHelper http = new Http.HttpHelper();
+            var html = "";
+            var model = new XCLNetTools.Entity.LocationEntity();
+            var http = new Http.HttpHelper();
             try
             {
                 var result = http.GetHtml(new XCLNetTools.Entity.Http.HttpItem()
                 {
-                    URL = url,
-                    Method = "get"
+                    URL = "https://www.ip.cn/",
+                    Method = "get",
+                    UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
                 });
-                string html = result.Html;//如：您的IP是：[112.13.32.16] 来自：浙江省绍兴市 移动
-                if (!string.IsNullOrEmpty(html))
-                {
-                    Regex reg = new Regex(@"您的IP是：\[(.*)\]");
-                    if (reg.IsMatch(html))
-                    {
-                        ip = reg.Match(html).Groups[1].Value.ToUpper().Trim();//如：112.13.32.16
-                    }
-                }
+                html = result.Html;//如：<div class="well"><p>您现在的 IP：<code>113.118.186.219</code></p><p>所在地理位置：<code>广东省深圳市 电信</code></p><p>GeoIP: <code>Shenzhen, Guangdong, China</code></p></div>
             }
             catch
             {
                 //
             }
-            return ip;
+            if (string.IsNullOrWhiteSpace(html))
+            {
+                return model;
+            }
+            var reg = new Regex(@"您现在的\s+IP：<code>(.+?)</code>.*所在地理位置：<code>(.+?)</code>");
+            if (!reg.IsMatch(html))
+            {
+                return model;
+            }
+            var groups = reg.Match(html).Groups;
+            if (groups.Count == 3)
+            {
+                model.IP = groups[1].Value.ToUpper().Trim();//如：113.118.186.219
+                model.Address = groups[2].Value.Trim();//如：广东省深圳市 电信
+            }
+            return model;
+        }
+
+        /// <summary>
+        /// 获取本机有效的本地IP地址
+        /// </summary>
+        public static string GetLocalIP()
+        {
+            var localIP = "";
+            using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                var endPoint = socket.LocalEndPoint as IPEndPoint;
+                localIP = endPoint.Address.ToString();
+            }
+            return localIP;
         }
     }
 }

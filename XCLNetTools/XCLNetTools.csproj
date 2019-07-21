@@ -194,6 +194,7 @@
     <Compile Include="Entity\FileInfoEntity.cs" />
     <Compile Include="Entity\Http\HttpItem.cs" />
     <Compile Include="Entity\Http\HttpResult.cs" />
+    <Compile Include="Entity\LocationEntity.cs" />
     <Compile Include="Entity\Message\JsonMsg.cs" />
     <Compile Include="Entity\Message\JsonMsgBody.cs" />
     <Compile Include="Entity\Message\JsonMsgHead.cs" />
