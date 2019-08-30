@@ -24,7 +24,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsNumber(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -39,7 +39,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsNumberSign(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -54,7 +54,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsDecimal(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -69,7 +69,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsDecimalSign(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -88,7 +88,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsHasCHZN(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -103,7 +103,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsHasCHZNAll(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -122,7 +122,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsEmail(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -155,7 +155,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsURL(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -174,7 +174,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsIDCard(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -193,7 +193,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsBase64(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -212,7 +212,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsPhone(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -227,7 +227,7 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsMobile(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
@@ -246,11 +246,26 @@ namespace XCLNetTools.StringHander
         /// <returns>判断结果</returns>
         public static bool IsPostcode(string inputData)
         {
-            if (string.IsNullOrEmpty(inputData))
+            if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
             Match m = XCLNetTools.Common.Consts.RegPostcode.Match(inputData);
+            return m.Success;
+        }
+
+        /// <summary>
+        /// 是否为用户名
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsUserName(string inputData)
+        {
+            if (string.IsNullOrWhiteSpace(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegUserName.Match(inputData);
             return m.Success;
         }
 

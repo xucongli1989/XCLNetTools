@@ -58,7 +58,7 @@ namespace XCLNetTools.Common
         /// <summary>
         /// email地址正则
         /// </summary>
-        public static readonly Regex RegEmail = new Regex("^[\\w-]+@[\\w-]+\\.(com|net|org|edu|mil|tv|biz|info)$");
+        public static readonly Regex RegEmail = new Regex(@"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// 包含中文的正则
@@ -240,5 +240,14 @@ namespace XCLNetTools.Common
         public static readonly char[] NumberEngLetterChar = NumberChar.Concat(EngUppercaseLetterChar).ToArray();
 
         #endregion 字母数字
+
+        #region 用户名
+
+        /// <summary>
+        /// 用户名（3-10位的汉字+字母+数字+下划线）（忽略大小写）
+        /// </summary>
+        public static readonly Regex RegUserName = new Regex("^[\u4e00-\u9fa5_a-zA-Z0-9]{3,10}$", RegexOptions.IgnoreCase);
+
+        #endregion 用户名
     }
 }
