@@ -341,7 +341,7 @@ namespace XCLNetTools.StringHander
         /// <returns>参数值</returns>
         public static List<long> GetLongList(string name)
         {
-            List<long> lst = null;
+            List<long> lst = new List<long>();
             string[] strArr = FormHelper.GetQueryOrFormStringArray(name);
             if (null != strArr && strArr.Length > 0)
             {
