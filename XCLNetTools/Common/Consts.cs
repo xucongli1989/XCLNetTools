@@ -244,9 +244,9 @@ namespace XCLNetTools.Common
         #region 用户名
 
         /// <summary>
-        /// 用户名（3-10位的汉字+字母+数字+下划线）（忽略大小写）
+        /// 用户名（3-10位字母或数字组合）（忽略大小写）
         /// </summary>
-        public static readonly Regex RegUserName = new Regex("^[\u4e00-\u9fa5_a-zA-Z0-9]{3,10}$", RegexOptions.IgnoreCase);
+        public static readonly Regex RegUserName = new Regex("^[a-zA-Z0-9]{3,10}$", RegexOptions.IgnoreCase);
 
         #endregion 用户名
     }
