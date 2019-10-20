@@ -428,6 +428,10 @@ namespace XCLNetTools.FileHandler
             using (BinaryReader br = new BinaryReader(fs))
             {
                 var buffer = br.ReadBytes(4);
+                if (null == buffer || buffer.Length == 0)
+                {
+                    return Encoding.Default;
+                }
                 //基本判断
                 if (buffer[0] >= 0xEF)
                 {
