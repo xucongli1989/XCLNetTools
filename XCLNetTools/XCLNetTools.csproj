@@ -211,6 +211,7 @@
     <Compile Include="Entity\SqlPagerConditionEntity.cs" />
     <Compile Include="Entity\TreeData\ExtendDataEntity.cs" />
     <Compile Include="Entity\TreeData\TreeMapEntity.cs" />
+    <Compile Include="FileHandler\Json.cs" />
     <Compile Include="FileHandler\TextEncodingDetect.cs" />
     <Compile Include="Modules\ErrorHttpModule.cs" />
     <Compile Include="Office\ExcelHandler\DataToExcel.cs" />
