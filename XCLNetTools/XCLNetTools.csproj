@@ -178,11 +178,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\CacheClass.cs" />
+    <Compile Include="Common\ClipboardHelper.cs" />
     <Compile Include="Common\Consts.cs" />
     <Compile Include="Common\DataTypeConvert.cs" />
     <Compile Include="Common\GZipHelper.cs" />
     <Compile Include="Common\IPHelper.cs" />
     <Compile Include="Common\SwitchControl.cs" />
+    <Compile Include="Common\ThreadHelper.cs" />
     <Compile Include="Control\ServerControl\Lib.cs" />
     <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
     <Compile Include="DataBase\SQLLibrary.cs" />

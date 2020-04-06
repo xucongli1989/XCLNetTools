@@ -10,6 +10,8 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System;
+using System.Linq;
+using System.IO;
 
 namespace XCLNetTools.FileHandler
 {
@@ -18,8 +20,6 @@ namespace XCLNetTools.FileHandler
     /// </summary>
     public static class ImgLib
     {
-        #region 指定坐标和宽高裁剪图片
-
         /// <summary>
         /// 指定坐标和宽高裁剪图片
         /// </summary>
@@ -46,10 +46,6 @@ namespace XCLNetTools.FileHandler
             }
         }
 
-        #endregion 指定坐标和宽高裁剪图片
-
-        #region 生成缩略图
-
         ///<summary>
         ///生成缩略图
         ///</summary>
@@ -67,7 +63,7 @@ namespace XCLNetTools.FileHandler
             }
             if (width <= 0 || height <= 0)
             {
-                throw new  ArgumentException("width or height is invalid!");
+                throw new ArgumentException("width or height is invalid!");
             }
 
             int towidth = width;
@@ -134,6 +130,64 @@ namespace XCLNetTools.FileHandler
             }
         }
 
-        #endregion 生成缩略图
+        /// <summary>
+        /// 根据图片exif调整方向
+        /// </summary>
+        public static Image RotateImage(Image img)
+        {
+            var exif = img.PropertyItems;
+            byte orien = 0;
+            var item = exif.Where(m => m.Id == 274).ToArray();
+            if (item.Length > 0)
+            {
+                orien = item[0].Value[0];
+            }
+            switch (orien)
+            {
+                case 2:
+                    img.RotateFlip(RotateFlipType.RotateNoneFlipX);//horizontal flip
+                    break;
+
+                case 3:
+                    img.RotateFlip(RotateFlipType.Rotate180FlipNone);//right-top
+                    break;
+
+                case 4:
+                    img.RotateFlip(RotateFlipType.RotateNoneFlipY);//vertical flip
+                    break;
+
+                case 5:
+                    img.RotateFlip(RotateFlipType.Rotate90FlipX);
+                    break;
+
+                case 6:
+                    img.RotateFlip(RotateFlipType.Rotate90FlipNone);//right-top
+                    break;
+
+                case 7:
+                    img.RotateFlip(RotateFlipType.Rotate270FlipX);
+                    break;
+
+                case 8:
+                    img.RotateFlip(RotateFlipType.Rotate270FlipNone);//left-bottom
+                    break;
+
+                default:
+                    break;
+            }
+            return img;
+        }
+
+        /// <summary>
+        /// 获取本地图片
+        /// </summary>
+        public static Image GetImage(string path)
+        {
+            using (Stream stm = File.Open(path, FileMode.Open))
+            {
+                var img = RotateImage(Image.FromStream(stm));
+                return img;
+            }
+        }
     }
 }

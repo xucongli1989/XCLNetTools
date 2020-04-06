@@ -11,7 +11,8 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net;
 using System.Text.RegularExpressions;
-using System.Web;
+using System.Linq;
+using XCLNetTools.Generic;
 
 namespace XCLNetTools.StringHander
 {
@@ -40,42 +41,38 @@ namespace XCLNetTools.StringHander
         /// 添加URL参数
         /// </summary>
         /// <param name="url">url</param>
-        /// <param name="param">参数集合</param>
+        /// <param name="nv">参数集合</param>
         /// <returns>新的url</returns>
-        public static string AddParam(string url, NameValueCollection param)
+        public static string AddParam(string url, NameValueCollection nv)
         {
-            if (string.IsNullOrEmpty(url) || (null == param || param.Count == 0))
+            if (string.IsNullOrWhiteSpace(url) || null == nv || nv.Count == 0)
+            {
+                return url;
+            }
+            var keys = nv.AllKeys.Where(k => !string.IsNullOrWhiteSpace(k)).ToList();
+            if (keys.IsNullOrEmpty())
             {
                 return url;
             }
 
             url = url.Trim().TrimEnd(new char[] { '?', '&', ' ' }).Trim();
-
-            Uri uri = null;
-            if (!Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out uri))
+            if (url.Contains("?"))
             {
-                return url;
-            }
-
-            string firstStr = string.Empty;
-            if (uri.IsAbsoluteUri)
-            {
-                //绝对
-                firstStr = string.IsNullOrEmpty(uri.Query) ? (url + "?") : (url + "&");
+                url = url + "&";
             }
             else
             {
-                //相对
-                firstStr = url.Contains("?") ? (url + "&") : (url + "?");
+                url = url + "?";
             }
 
             List<string> paramLst = new List<string>();
-            foreach (string m in param)
+            keys.ForEach(name =>
             {
-                paramLst.Add(string.Format("{0}={1}", m, HttpContext.Current.Server.UrlEncode(param[m])));
-            }
+                var value = (nv[name] ?? string.Empty).Trim();
+                paramLst.Add(string.Format("{0}={1}", name, string.IsNullOrEmpty(value) ? string.Empty : Microsoft.JScript.GlobalObject.encodeURIComponent(value)));
+            });
 
-            return firstStr + string.Join("&", paramLst.ToArray());
+            return url + string.Join("&", paramLst.ToArray());
         }
 
         /// <summary>
