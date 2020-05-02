@@ -71,25 +71,6 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 删除指定的目录
-        /// </summary>
-        /// <param name="directoryName">目录名</param>
-        /// <returns>true：删除成功，false：删除失败</returns>
-        public static bool RMDIR(string directoryName)
-        {
-            DirectoryInfo di = new DirectoryInfo(directoryName);
-            if (di.Exists == false)
-            {
-                return false;
-            }
-            else
-            {
-                di.Delete(true);
-                return true;
-            }
-        }
-
-        /// <summary>
         /// 删除目录并删除其下的子目录及其文件
         /// </summary>
         /// <param name="directoryName">目录名</param>
@@ -141,6 +122,7 @@ namespace XCLNetTools.FileHandler
         /// <returns>文件信息list</returns>
         public static List<XCLNetTools.Entity.FileInfoEntity> GetFileList(string dirPath, string rootPath = "", string webRootPath = "")
         {
+            List<XCLNetTools.Entity.FileInfoEntity> result = new List<Entity.FileInfoEntity>();
             if (!string.IsNullOrEmpty(dirPath))
             {
                 dirPath = XCLNetTools.FileHandler.ComFile.MapPath(dirPath);
@@ -152,11 +134,10 @@ namespace XCLNetTools.FileHandler
 
             if (string.IsNullOrEmpty(dirPath) || FileDirectory.IsEmpty(dirPath))
             {
-                return null;
+                return result;
             }
             int idx = 1;
 
-            List<XCLNetTools.Entity.FileInfoEntity> result = new List<Entity.FileInfoEntity>();
             XCLNetTools.Entity.FileInfoEntity tempFileInfoEntity = null;
             //文件夹
             var directories = System.IO.Directory.EnumerateDirectories(dirPath);

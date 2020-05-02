@@ -127,6 +127,51 @@ namespace XCLNetTools.FileHandler
 
         #endregion 取得文件夹中的文件列表
 
+        #region 取得文件夹中的文件夹列表
+
+        /// <summary>
+        /// 取得文件夹中的子文件夹列表
+        /// </summary>
+        /// <param name="path">文件夹路径</param>
+        /// <returns>字符串数组(存储了一个或多个文件夹名)</returns>
+        public static string[] GetFolders(string path)
+        {
+            return System.IO.Directory.GetDirectories(ComFile.MapPath(path));
+        }
+
+        /// <summary>
+        /// 递归获取指定文件夹下的所有子文件夹的路径
+        /// </summary>
+        /// <param name="rootPath">起始文件夹路径</param>
+        /// <returns>所有子文件夹路径数组</returns>
+        public static string[] GetFoldersByRecursion(string rootPath)
+        {
+            List<string> lst = new List<string>();
+            GetFoldersByRecursion(rootPath, lst);
+            return lst.ToArray();
+        }
+
+        /// <summary>
+        /// 递归获取指定文件夹下的所有子文件夹路径
+        /// </summary>
+        /// <param name="rootPath">起始文件夹路径</param>
+        /// <param name="lst">文件夹路径存放的list</param>
+        private static void GetFoldersByRecursion(string rootPath, List<string> lst)
+        {
+            string[] subPaths = System.IO.Directory.GetDirectories(rootPath);
+            foreach (string path in subPaths)
+            {
+                GetFoldersByRecursion(path, lst);
+            }
+            string[] folders = GetFolders(rootPath);
+            if (null != folders && folders.Length > 0)
+            {
+                lst.AddRange(folders);
+            }
+        }
+
+        #endregion 取得文件夹中的文件夹列表
+
         #region 文件下载
 
         /// <summary>
