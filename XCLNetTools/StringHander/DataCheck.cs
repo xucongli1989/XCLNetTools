@@ -255,17 +255,32 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
-        /// 是否为用户名
+        /// 是否为用户名（3-10位字母或数字组合）（忽略大小写）
         /// </summary>
         /// <param name="inputData">待判断的值</param>
         /// <returns>判断结果</returns>
-        public static bool IsUserName(string inputData)
+        public static bool IsShortUserName(string inputData)
         {
             if (string.IsNullOrWhiteSpace(inputData))
             {
                 return false;
             }
-            Match m = XCLNetTools.Common.Consts.RegUserName.Match(inputData);
+            Match m = XCLNetTools.Common.Consts.RegShortUserName.Match(inputData);
+            return m.Success;
+        }
+
+        /// <summary>
+        /// 是否为用户名（3-20位字母或数字组合）（忽略大小写）
+        /// </summary>
+        /// <param name="inputData">待判断的值</param>
+        /// <returns>判断结果</returns>
+        public static bool IsLongUserName(string inputData)
+        {
+            if (string.IsNullOrWhiteSpace(inputData))
+            {
+                return false;
+            }
+            Match m = XCLNetTools.Common.Consts.RegLongUserName.Match(inputData);
             return m.Success;
         }
 

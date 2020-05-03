@@ -80,6 +80,40 @@ namespace XCLNetTools.FileHandler
             return File.Exists(ComFile.MapPath(dstPath));
         }
 
+        /// <summary>
+        /// 复制整个文件夹
+        /// </summary>
+        /// <param name="sourceDirName">原路径</param>
+        /// <param name="destDirName">目标路径</param>
+        /// <param name="copySubDirs">是否复制子目录</param>
+        public static void CopyDir(string sourceDirName, string destDirName, bool copySubDirs)
+        {
+            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+            if (!dir.Exists)
+            {
+                throw new DirectoryNotFoundException("目录不存在：" + sourceDirName);
+            }
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            if (!Directory.Exists(destDirName))
+            {
+                Directory.CreateDirectory(destDirName);
+            }
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                string temppath = Path.Combine(destDirName, file.Name);
+                file.CopyTo(temppath, true);
+            }
+            if (copySubDirs)
+            {
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    string temppath = Path.Combine(destDirName, subdir.Name);
+                    CopyDir(subdir.FullName, temppath, copySubDirs);
+                }
+            }
+        }
+
         #endregion 复制文件
 
         #region 取得文件夹中的文件列表
