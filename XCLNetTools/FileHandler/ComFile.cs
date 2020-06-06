@@ -125,7 +125,14 @@ namespace XCLNetTools.FileHandler
         /// <returns>字符串数组(存储了一个或多个文件名)</returns>
         public static string[] GetFolderFiles(string path)
         {
-            return System.IO.Directory.GetFiles(ComFile.MapPath(path));
+            try
+            {
+                return System.IO.Directory.GetFiles(ComFile.MapPath(path));
+            }
+            catch
+            {
+                return new string[] { };
+            }
         }
 
         /// <summary>
@@ -147,7 +154,7 @@ namespace XCLNetTools.FileHandler
         /// <param name="lst">文件路径存放的list</param>
         private static void GetFolderFilesByRecursion(string rootPath, List<string> lst)
         {
-            string[] subPaths = System.IO.Directory.GetDirectories(rootPath);
+            string[] subPaths = GetFolders(rootPath);
             foreach (string path in subPaths)
             {
                 GetFolderFilesByRecursion(path, lst);
@@ -170,7 +177,14 @@ namespace XCLNetTools.FileHandler
         /// <returns>字符串数组(存储了一个或多个文件夹名)</returns>
         public static string[] GetFolders(string path)
         {
-            return System.IO.Directory.GetDirectories(ComFile.MapPath(path));
+            try
+            {
+                return System.IO.Directory.GetDirectories(ComFile.MapPath(path));
+            }
+            catch
+            {
+                return new string[] { };
+            }
         }
 
         /// <summary>
@@ -192,7 +206,7 @@ namespace XCLNetTools.FileHandler
         /// <param name="lst">文件夹路径存放的list</param>
         private static void GetFoldersByRecursion(string rootPath, List<string> lst)
         {
-            string[] subPaths = System.IO.Directory.GetDirectories(rootPath);
+            string[] subPaths = GetFolders(rootPath);
             foreach (string path in subPaths)
             {
                 GetFoldersByRecursion(path, lst);
