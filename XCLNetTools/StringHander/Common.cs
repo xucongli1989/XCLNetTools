@@ -120,7 +120,7 @@ namespace XCLNetTools.StringHander
             html = Regex.Replace(html, @"&#(\d+);", "", RegexOptions.IgnoreCase);
             html = html.Replace("\r\n", "");
             html = html.Replace("'", "");
-            html = HttpContext.Current.Server.HtmlEncode(html).Trim();
+            html = HttpUtility.HtmlEncode(html).Trim();
             return html;
         }
 
