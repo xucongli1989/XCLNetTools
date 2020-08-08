@@ -507,53 +507,87 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 获取文件编码
-        /// 文件的字符集在Windows下有两种，一种是ANSI(GB2312)，一种Unicode。
-        /// 对于Unicode，Windows支持了它的三种编码方式，一种是小尾编码（Unicode)，一种是大尾编码(BigEndianUnicode)，一种是UTF-8编码。
-        /// 我们可以从文件的头部来区分一个文件是属于哪种编码。当头部开始的两个字节为 FF FE时，是Unicode的小尾编码；当头部的两个字节为FE FF时，是Unicode的大尾编码；当头部两个字节为EF BB时，是Unicode的UTF-8编码；当它不为这些时，则是ANSI编码。
-        /// 按照如上所说，我们可以通过读取文件头的两个字节来判断文件的编码格式
+        /// 给定文件的路径，读取文件的二进制数据，判断文件的编码类型
         /// </summary>
-        /// <param name="filename">文件物理路径</param>
-        /// <returns>编码对象</returns>
-        public static Encoding GetFileEncoding(string filename)
+        public static System.Text.Encoding GetFileEncoding(string filename)
         {
-            using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
-            using (BinaryReader br = new BinaryReader(fs))
+            using (var fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
             {
-                var buffer = br.ReadBytes(4);
-                if (null == buffer || buffer.Length == 0)
+                var result = GetFileEncodingFromStream(fs);
+                fs.Close();
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// 通过给定的文件流，判断文件的编码类型
+        /// </summary>
+        public static System.Text.Encoding GetFileEncodingFromStream(FileStream fs)
+        {
+            Encoding reVal = Encoding.Default;
+            using (BinaryReader r = new BinaryReader(fs, System.Text.Encoding.Default))
+            {
+                int i;
+                int.TryParse(fs.Length.ToString(), out i);
+                byte[] ss = r.ReadBytes(i);
+                if (IsUTF8Bytes(ss) || (ss[0] == 0xEF && ss[1] == 0xBB && ss[2] == 0xBF))
                 {
-                    return Encoding.Default;
+                    reVal = Encoding.UTF8;
                 }
-                //基本判断
-                if (buffer[0] >= 0xEF)
+                else if (ss[0] == 0xFE && ss[1] == 0xFF && ss[2] == 0x00)
                 {
-                    if (buffer[0] == 0xEF && buffer[1] == 0xBB)
+                    reVal = Encoding.BigEndianUnicode;
+                }
+                else if (ss[0] == 0xFF && ss[1] == 0xFE && ss[2] == 0x41)
+                {
+                    reVal = Encoding.Unicode;
+                }
+                r.Close();
+            }
+            return reVal;
+        }
+
+        /// <summary>
+        /// 判断是否是不带 BOM 的 UTF8 格式
+        /// </summary>
+        private static bool IsUTF8Bytes(byte[] data)
+        {
+            int charByteCounter = 1; //计算当前正分析的字符应还有的字节数
+            byte curByte; //当前分析的字节.
+            for (int i = 0; i < data.Length; i++)
+            {
+                curByte = data[i];
+                if (charByteCounter == 1)
+                {
+                    if (curByte >= 0x80)
                     {
-                        return Encoding.UTF8;
-                    }
-                    if (buffer[0] == 0xFE && buffer[1] == 0xFF)
-                    {
-                        return Encoding.BigEndianUnicode;
-                    }
-                    if (buffer[0] == 0xFF && buffer[1] == 0xFE)
-                    {
-                        return Encoding.Unicode;
+                        //判断当前
+                        while (((curByte <<= 1) & 0x80) != 0)
+                        {
+                            charByteCounter++;
+                        }
+                        //标记位首位若为非0 则至少以2个1开始 如:110XXXXX...........1111110X
+                        if (charByteCounter == 1 || charByteCounter > 6)
+                        {
+                            return false;
+                        }
                     }
                 }
-                //加强判断utf8
-                var textDetect = new TextEncodingDetect();
-                var detectEncoding = textDetect.DetectEncoding(buffer, buffer.Length);
-                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Bom)
+                else
                 {
-                    return new UTF8Encoding(true);
-                }
-                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Nobom)
-                {
-                    return Encoding.UTF8;
+                    //若是UTF-8 此时第一位必须为1
+                    if ((curByte & 0xC0) != 0x80)
+                    {
+                        return false;
+                    }
+                    charByteCounter--;
                 }
             }
-            return Encoding.Default;
+            if (charByteCounter > 1)
+            {
+                throw new Exception("非预期的byte格式");
+            }
+            return true;
         }
 
         #endregion 其它
