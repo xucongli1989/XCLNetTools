@@ -507,53 +507,18 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 获取文件编码
-        /// 文件的字符集在Windows下有两种，一种是ANSI(GB2312)，一种Unicode。
-        /// 对于Unicode，Windows支持了它的三种编码方式，一种是小尾编码（Unicode)，一种是大尾编码(BigEndianUnicode)，一种是UTF-8编码。
-        /// 我们可以从文件的头部来区分一个文件是属于哪种编码。当头部开始的两个字节为 FF FE时，是Unicode的小尾编码；当头部的两个字节为FE FF时，是Unicode的大尾编码；当头部两个字节为EF BB时，是Unicode的UTF-8编码；当它不为这些时，则是ANSI编码。
-        /// 按照如上所说，我们可以通过读取文件头的两个字节来判断文件的编码格式
+        /// 根据文件路径，获取文件编码（若获取失败，则返回：Encoding.Default）
+        /// 注意：需要引用 UtfUnknown 包
         /// </summary>
-        /// <param name="filename">文件物理路径</param>
-        /// <returns>编码对象</returns>
         public static Encoding GetFileEncoding(string filename)
         {
-            using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read))
-            using (BinaryReader br = new BinaryReader(fs))
+            var defaultEncoding = System.Text.Encoding.Default;
+            var detectorResult = UtfUnknown.CharsetDetector.DetectFromFile(filename);
+            if (null == detectorResult || null == detectorResult.Detected)
             {
-                var buffer = br.ReadBytes(4);
-                if (null == buffer || buffer.Length == 0)
-                {
-                    return Encoding.Default;
-                }
-                //基本判断
-                if (buffer[0] >= 0xEF)
-                {
-                    if (buffer[0] == 0xEF && buffer[1] == 0xBB)
-                    {
-                        return Encoding.UTF8;
-                    }
-                    if (buffer[0] == 0xFE && buffer[1] == 0xFF)
-                    {
-                        return Encoding.BigEndianUnicode;
-                    }
-                    if (buffer[0] == 0xFF && buffer[1] == 0xFE)
-                    {
-                        return Encoding.Unicode;
-                    }
-                }
-                //加强判断utf8
-                var textDetect = new TextEncodingDetect();
-                var detectEncoding = textDetect.DetectEncoding(buffer, buffer.Length);
-                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Bom)
-                {
-                    return new UTF8Encoding(true);
-                }
-                if (detectEncoding == TextEncodingDetect.Encoding.Utf8Nobom)
-                {
-                    return Encoding.UTF8;
-                }
+                return defaultEncoding;
             }
-            return Encoding.Default;
+            return detectorResult.Detected.Encoding;
         }
 
         #endregion 其它
