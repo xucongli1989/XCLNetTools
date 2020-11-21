@@ -512,13 +512,22 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static Encoding GetFileEncoding(string filename)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             var defaultEncoding = System.Text.Encoding.Default;
             var detectorResult = UtfUnknown.CharsetDetector.DetectFromFile(filename);
             if (null == detectorResult || null == detectorResult.Detected)
             {
                 return defaultEncoding;
             }
-            return detectorResult.Detected.Encoding;
+            if (null != detectorResult.Detected.Encoding)
+            {
+                return detectorResult.Detected.Encoding;
+            }
+            if (!string.IsNullOrWhiteSpace(detectorResult.Detected.EncodingName))
+            {
+                return System.Text.Encoding.GetEncoding(detectorResult.Detected.EncodingName);
+            }
+            return defaultEncoding;
         }
 
         #endregion 其它

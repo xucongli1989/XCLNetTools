@@ -250,19 +250,22 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 读取文件里内容
+        /// 读取文本文件里的内容（自动识别编码，如果原编码是ascii，则默认以utf8读取）
         /// </summary>
-        /// <param name="filePathName">文件名</param>
+        /// <param name="filePathName">路径</param>
         /// <returns>文件内容</returns>
         public static string ReadFileData(string filePathName)
         {
-            string str = "";
-            using (FileStream fileRead = new FileStream(filePathName, FileMode.Open, FileAccess.Read))
-            using (StreamReader fileReadWord = new StreamReader(fileRead, System.Text.Encoding.Default))
+            if (!System.IO.File.Exists(filePathName))
             {
-                str = fileReadWord.ReadToEnd().ToString();
+                return "";
             }
-            return str;
+            var encode = XCLNetTools.FileHandler.ComFile.GetFileEncoding(filePathName);
+            if (encode == System.Text.Encoding.ASCII)
+            {
+                encode = System.Text.Encoding.UTF8;
+            }
+            return System.IO.File.ReadAllText(filePathName, encode) ?? "";
         }
 
         /// <summary>
