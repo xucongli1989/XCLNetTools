@@ -269,6 +269,19 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
+        /// 向文本文件中写入内容（覆盖文件中的所有内容，并自动识别编码，如果原编码是ascii，则默认以utf8写入）
+        /// </summary>
+        public static void WriteFileData(string filePathName, string content)
+        {
+            var encode = XCLNetTools.FileHandler.ComFile.GetFileEncoding(filePathName);
+            if (encode == System.Text.Encoding.ASCII)
+            {
+                encode = System.Text.Encoding.UTF8;
+            }
+            System.IO.File.WriteAllText(filePathName, content, encode);
+        }
+
+        /// <summary>
         /// 删除文件
         /// </summary>
         /// <param name="absoluteFilePath">文件绝对地址</param>
