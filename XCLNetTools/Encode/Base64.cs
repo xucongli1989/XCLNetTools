@@ -17,25 +17,37 @@ namespace XCLNetTools.Encode
     public static class Base64
     {
         /// <summary>
-        /// Base64加密
+        /// Base64 编码
         /// </summary>
-        /// <param name="msg">要加密的内容</param>
-        /// <returns>加密后的值</returns>
-        public static string Base64Code(string msg)
+        public static string Base64Code(string msg, System.Text.Encoding encoding)
         {
-            byte[] bytes = Encoding.Default.GetBytes(msg);
+            byte[] bytes = encoding.GetBytes(msg);
             return Convert.ToBase64String(bytes);
         }
 
         /// <summary>
-        /// Base64解密
+        /// Base64 解码
         /// </summary>
-        /// <param name="msg">要解密的内容</param>
-        /// <returns>解密后的值</returns>
-        public static string Base64Decode(string msg)
+        public static string Base64Decode(string msg, System.Text.Encoding encoding)
         {
             byte[] bytes = Convert.FromBase64String(msg);
-            return Encoding.Default.GetString(bytes);
+            return encoding.GetString(bytes);
+        }
+
+        /// <summary>
+        /// Base64 编码（默认为：Encoding.Default）
+        /// </summary>
+        public static string Base64Code(string msg)
+        {
+            return Base64Code(msg, System.Text.Encoding.Default);
+        }
+
+        /// <summary>
+        /// Base64 解码（默认为：Encoding.Default）
+        /// </summary>
+        public static string Base64Decode(string msg)
+        {
+            return Base64Decode(msg, System.Text.Encoding.Default);
         }
     }
 }
