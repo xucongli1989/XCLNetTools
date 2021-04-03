@@ -25,8 +25,6 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 删除文件
         /// </summary>
-        /// <param name="filePath">文件路径</param>
-        /// <returns>若为true，则删除成功</returns>
         public static bool DeleteFile(string filePath)
         {
             bool isSuccess = false;
@@ -57,9 +55,6 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 复制文件(若已存在目标文件则覆盖)，若目标目录不存在，则自动创建
         /// </summary>
-        /// <param name="srcPath">源文件</param>
-        /// <param name="dstPath">目标文件</param>
-        /// <returns>复制成功返回TRUE,复制失败返回FALSE.</returns>
         public static bool CopyFile(string srcPath, string dstPath)
         {
             XCLNetTools.FileHandler.FileDirectory.MakeDirectory(GetFileFolderPath(dstPath));
@@ -69,10 +64,6 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 复制文件，若目标目录不存在，则自动创建
         /// </summary>
-        /// <param name="srcPath">源文件</param>
-        /// <param name="dstPath">目标文件</param>
-        /// <param name="overwrite">是否覆盖目标文件</param>
-        /// <returns>复制成功返回TRUE,复制失败返回FALSE</returns>
         public static bool CopyFile(string srcPath, string dstPath, bool overwrite)
         {
             XCLNetTools.FileHandler.FileDirectory.MakeDirectory(GetFileFolderPath(dstPath));
@@ -258,8 +249,6 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 返回目录路径，若该目录不存在，则创建该目录
         /// </summary>
-        /// <param name="directoryPath">存放文件的物理路径。</param>
-        /// <returns>返回存放文件的目录。</returns>
         public static string GetSaveDirectory(string directoryPath)
         {
             if (!Directory.Exists(directoryPath))
@@ -270,7 +259,7 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 获取文件所在的文件夹【不带'\'】
+        /// 获取文件所在的文件夹路径【不带'\'】，如："C:\a\b\c\file.txt" --> "C:\a\b\c"
         /// </summary>
         public static string GetFileFolderPath(string filePath)
         {
@@ -441,7 +430,7 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 获取文件名
+        /// 获取文件名，如："C:\a\b\c\file.txt" --> "file.txt"
         /// </summary>
         /// <param name="path">路径（相对或绝对均可）</param>
         /// <param name="isWithExt">是否包含扩展名</param>
@@ -528,6 +517,42 @@ namespace XCLNetTools.FileHandler
                 return System.Text.Encoding.GetEncoding(detectorResult.Detected.EncodingName);
             }
             return defaultEncoding;
+        }
+
+        /// <summary>
+        /// 过滤路径列表，只保留为根目录的路径。
+        /// 比如：c:\a\b\，c:\a\b\1\，c:\a\b\2\。最终只保留：c:\a\b\
+        /// </summary>
+        public static HashSet<string> GetDirRootPathList(List<string> pathList)
+        {
+            var result = new HashSet<string>();
+            if (null == pathList || pathList.Count == 0)
+            {
+                return result;
+            }
+            if (pathList.Count == 1)
+            {
+                result.Add(pathList[0]);
+                return result;
+            }
+            //先进行排序，父目录会在前面
+            var soredPathList = pathList.AsParallel().OrderBy(k => k).ToList();
+            //提取父目录
+            soredPathList.ForEach(path =>
+            {
+                if (string.IsNullOrWhiteSpace(path))
+                {
+                    return;
+                }
+                path = path.Trim();
+                var parentPath = result.FirstOrDefault(k => path.StartsWith(k, StringComparison.OrdinalIgnoreCase));
+                if (!string.IsNullOrWhiteSpace(parentPath))
+                {
+                    return;
+                }
+                result.Add(path);
+            });
+            return result;
         }
 
         #endregion 其它

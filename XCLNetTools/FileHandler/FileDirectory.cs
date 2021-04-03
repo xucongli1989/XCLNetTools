@@ -22,8 +22,6 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 检测目录是否为空目录（既没有文件夹，也没有文件）
         /// </summary>
-        /// <param name="path">目录路径</param>
-        /// <returns>true:空目录，false:非空目录</returns>
         public static bool IsEmpty(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
@@ -38,25 +36,21 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 判断目录是否存在
         /// </summary>
-        /// <param name="directoryName">目录路径</param>
-        /// <returns>true：存在，false：不存在</returns>
-        public static bool DirectoryExists(string directoryName)
+        public static bool DirectoryExists(string path)
         {
-            return Directory.Exists(directoryName);
+            return Directory.Exists(path);
         }
 
         /// <summary>
         /// 建立目录
         /// </summary>
-        /// <param name="directoryName">目录名</param>
-        /// <returns>返回boolean,true:目录建立成功, false:目录建立失败</returns>
-        public static bool MakeDirectory(string directoryName)
+        public static bool MakeDirectory(string path)
         {
             try
             {
-                if (!Directory.Exists(directoryName))
+                if (!Directory.Exists(path))
                 {
-                    Directory.CreateDirectory(directoryName);
+                    Directory.CreateDirectory(path);
                     return true;
                 }
                 else
@@ -73,13 +67,11 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 删除目录并删除其下的子目录及其文件
         /// </summary>
-        /// <param name="directoryName">目录名</param>
-        /// <returns>true:删除成功,false:删除失败</returns>
-        public static bool DelTree(string directoryName)
+        public static bool DelTree(string path)
         {
-            if (DirectoryExists(directoryName))
+            if (DirectoryExists(path))
             {
-                Directory.Delete(directoryName, true);
+                Directory.Delete(path, true);
                 return true;
             }
             else
@@ -91,8 +83,6 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 清空指定目录
         /// </summary>
-        /// <param name="rootPath">要清空的目录</param>
-        /// <returns>是否操作成功</returns>
         public static bool ClearDirectory(string rootPath)
         {
             //删除子目录
@@ -192,6 +182,14 @@ namespace XCLNetTools.FileHandler
             return result;
         }
 
+        /// <summary>
+        /// 返回指定文件夹路径的父文件夹地址，如："C:\a\b\c\d\" ---> "C:\a\b\c"
+        /// </summary>
+        public static string GetDirParentPath(string dirPath)
+        {
+            return Path.GetDirectoryName(Path.GetDirectoryName(dirPath.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar));
+        }
+
         #endregion 目录操作
 
         #region 文件操作
@@ -199,11 +197,9 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 建立一个文件
         /// </summary>
-        /// <param name="filePathName">目录名</param>
-        /// <returns>true:建立成功,false:建立失败</returns>
-        public static bool CreateTextFile(string filePathName)
+        public static bool CreateTextFile(string path)
         {
-            FileInfo info = new FileInfo(filePathName);
+            FileInfo info = new FileInfo(path);
             if (info.Exists)
             {
                 return true;

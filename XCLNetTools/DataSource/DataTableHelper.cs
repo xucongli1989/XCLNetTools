@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using XCLNetTools.Generic;
 
 namespace XCLNetTools.DataSource
 {
@@ -101,6 +103,43 @@ namespace XCLNetTools.DataSource
             var ds = new DataSet();
             ds.Tables.Add(dt);
             return ds;
+        }
+
+        /// <summary>
+        /// 检查指定的列名是否在 DataTable 的 ColumnName 属性中存在
+        /// </summary>
+        public static XCLNetTools.Entity.MethodResult<bool> CheckColumnNames(DataTable dt, List<string> mustFindColumnNames)
+        {
+            var msg = new XCLNetTools.Entity.MethodResult<bool>();
+            msg.IsSuccess = false;
+
+            if (null == dt || null == dt.Rows)
+            {
+                msg.IsSuccess = false;
+                msg.Message = "请指定有效的数据源！";
+                return msg;
+            }
+            if (mustFindColumnNames.IsNullOrEmpty())
+            {
+                msg.IsSuccess = false;
+                msg.Message = "请指定需要检查的列名！";
+                return msg;
+            }
+            var dtColumnNames = new List<string>();
+            for (var i = 0; i < dt.Columns.Count; i++)
+            {
+                dtColumnNames.Add(dt.Columns[i].ColumnName);
+            }
+            var notFoundNames = mustFindColumnNames.Where(k => !dtColumnNames.Contains(k)).ToList();
+            if (notFoundNames.IsNotNullOrEmpty())
+            {
+                msg.IsSuccess = false;
+                msg.Message = "在数据源中未找到这些列名：" + string.Join("、", notFoundNames);
+                return msg;
+            }
+
+            msg.IsSuccess = true;
+            return msg;
         }
     }
 }
