@@ -692,6 +692,14 @@ namespace XCLNetTools.StringHander
             return str;
         }
 
+        /// <summary>
+        /// 将日期对象转换为 yyyy-MM-dd HH:mm:ss.fff
+        /// </summary>
+        public static string ConvertDateTimeToYMDHMS(DateTime dt)
+        {
+            return dt.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
         #endregion 其它
     }
 }

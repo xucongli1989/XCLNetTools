@@ -555,6 +555,22 @@ namespace XCLNetTools.FileHandler
             return result;
         }
 
+        /// <summary>
+        /// 给路径字符串的后面添加扩展名，如（"a/b/c","txt"）=> "a/b/c.txt"
+        /// </summary>
+        /// <param name="path">路径</param>
+        /// <param name="ext">扩展名（会自动忽略其中的点）</param>
+        /// <returns>新路径</returns>
+        public static string AppendExtToPath(string path, string ext)
+        {
+            var extName = (ext ?? "").Trim().TrimStart('.').Trim();
+            if (string.IsNullOrWhiteSpace(extName))
+            {
+                return path;
+            }
+            return (path ?? "") + "." + extName;
+        }
+
         #endregion 其它
     }
 }
