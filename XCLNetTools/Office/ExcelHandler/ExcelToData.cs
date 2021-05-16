@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using XCLNetTools.Entity.Office.ExcelHandler;
 
 namespace XCLNetTools.Office.ExcelHandler
 {
@@ -77,35 +78,42 @@ namespace XCLNetTools.Office.ExcelHandler
         }
 
         /// <summary>
-        /// 读取 Excel 所有可见的 sheet 的所有标题信息（返回结果的字典key为 sheet 名称，value 为列名称）
+        /// 读取 Excel 所有可见的 sheet 的所有标题信息
         /// </summary>
-        public static Dictionary<string, List<string>> GetExcelTitleInfo(string excelfilePath, int titleRowNumber = 1)
+        public static List<ExcelTitleInfo> GetExcelTitleInfoList(string excelfilePath, int titleRowNumber = 1)
         {
-            var dic = new Dictionary<string, List<string>>();
+            var result = new List<ExcelTitleInfo>();
             if (!System.IO.File.Exists(excelfilePath))
             {
-                return dic;
+                return result;
             }
+
             var workbook = new Workbook(excelfilePath);
-            foreach (Worksheet worksheet in workbook.Worksheets)
+            for (var sheetIndex = 0; sheetIndex < workbook.Worksheets.Count; sheetIndex++)
             {
+                var worksheet = workbook.Worksheets[sheetIndex];
                 if (!worksheet.IsVisible)
                 {
                     continue;
                 }
+                var item = new ExcelTitleInfo();
+                item.SheetIndex = sheetIndex;
+                item.SheetName = worksheet.Name;
+                item.TitleNameList = new List<string>();
+                result.Add(item);
+
                 var tb = worksheet.Cells.ExportDataTableAsString(titleRowNumber - 1, 0, 1, worksheet.Cells.MaxColumn + 1);
                 if (null == tb || tb.Rows.Count == 0)
                 {
                     continue;
                 }
-                var nameList = new List<string>();
                 for (var i = 0; i < tb.Columns.Count; i++)
                 {
-                    nameList.Add(Convert.ToString(tb.Rows[0][i]));
+                    item.TitleNameList.Add(Convert.ToString(tb.Rows[0][i]));
                 }
-                dic.Add(worksheet.Name, nameList);
             }
-            return dic;
+
+            return result;
         }
     }
 }

@@ -113,12 +113,18 @@ namespace XCLNetTools.FileHandler
         /// 取得文件夹中的文件列表
         /// </summary>
         /// <param name="path">文件夹路径</param>
+        /// <param name="isContainsHiddenFile">是否包含隐藏文件，默认为：true</param>
         /// <returns>字符串数组(存储了一个或多个文件名)</returns>
-        public static string[] GetFolderFiles(string path)
+        public static string[] GetFolderFiles(string path, bool isContainsHiddenFile = true)
         {
             try
             {
-                return System.IO.Directory.GetFiles(ComFile.MapPath(path));
+                var arr = System.IO.Directory.GetFiles(ComFile.MapPath(path));
+                if (arr.Length > 0 && !isContainsHiddenFile)
+                {
+                    arr = arr.AsParallel().Where(k => !ComFile.IsHiddenFile(k)).ToArray();
+                }
+                return arr;
             }
             catch
             {
@@ -569,6 +575,19 @@ namespace XCLNetTools.FileHandler
                 return path;
             }
             return (path ?? "") + "." + extName;
+        }
+
+        /// <summary>
+        /// 根据文件系统属性来判断该文件是否为隐藏文件
+        /// </summary>
+        public static bool IsHiddenFile(string filePath)
+        {
+            var d = new FileInfo(filePath);
+            if ((d.Attributes & FileAttributes.Hidden) == FileAttributes.Hidden || (d.Attributes & FileAttributes.System) == FileAttributes.System)
+            {
+                return true;
+            }
+            return false;
         }
 
         #endregion 其它

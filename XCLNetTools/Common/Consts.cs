@@ -95,6 +95,11 @@ namespace XCLNetTools.Common
         /// </summary>
         public static readonly Regex RegBase64 = new Regex(@"^[A-Za-z0-9\+\/\=]$");
 
+        /// <summary>
+        /// 物理路径的前面部分，支持：c:\ 或 \\:
+        /// </summary>
+        public static readonly Regex RegPhysicalPathPrefix = new Regex(@"^(?:[a-zA-Z]:(?:\\|/)|\\\\)");
+
         #endregion 正则
 
         #region 日期时间
