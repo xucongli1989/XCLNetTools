@@ -23,17 +23,17 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 单个工作薄读入（第一个可见的sheet）
         /// </summary>
-        /// <param name="excelfilePath">Excel 文件路径</param>
-        /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为列名</param>
-        public static DataTable ReadExcelToTable(string excelfilePath, bool isConvertFirstRowToColumnName = false)
+        /// <param name="path">Excel 文件路径</param>
+        /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为 DataTable 的列名</param>
+        public static DataTable ReadExcelToTable(string path, bool isConvertFirstRowToColumnName = false)
         {
-            DataTable dataTable = new DataTable();
-            if (!System.IO.File.Exists(excelfilePath))
+            var dt = new DataTable();
+            if (!System.IO.File.Exists(path))
             {
-                return dataTable;
+                return dt;
             }
 
-            Workbook workbook = new Workbook(excelfilePath);
+            var workbook = new Workbook(path);
             Worksheet worksheet = null;
             for (int i = 0; i < workbook.Worksheets.Count; i++)
             {
@@ -43,36 +43,48 @@ namespace XCLNetTools.Office.ExcelHandler
                     break;
                 }
             }
-            if (null != worksheet && worksheet.Cells.MaxRow > -1 && worksheet.Cells.MaxColumn > -1)
+            if (null == worksheet)
             {
-                dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, isConvertFirstRowToColumnName);
+                return dt;
             }
-            return dataTable;
+            var displayRange = worksheet.Cells.MaxDisplayRange;
+            if (displayRange.RowCount <= 0)
+            {
+                return dt;
+            }
+            dt = worksheet.Cells.ExportDataTableAsString(0, 0, displayRange.RowCount, displayRange.ColumnCount, isConvertFirstRowToColumnName);
+            return dt;
         }
 
         /// <summary>
-        /// 将多个工作薄导入到DS中（所有可见的sheet）
+        /// 多个工作薄读入（所有可见的sheet）
         /// </summary>
-        /// <param name="excelfilePath">Excel 文件路径</param>
-        /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为列名</param>
-        public static DataSet ReadExcelToDataSet(string excelfilePath, bool isConvertFirstRowToColumnName = false)
+        /// <param name="path">Excel 文件路径</param>
+        /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为 DataTable 的列名</param>
+        public static DataSet ReadExcelToDataSet(string path, bool isConvertFirstRowToColumnName = false)
         {
-            DataSet ds = new DataSet();
-            if (!System.IO.File.Exists(excelfilePath))
+            var ds = new DataSet();
+            if (!System.IO.File.Exists(path))
             {
                 return ds;
             }
-            Workbook workbook = new Workbook(excelfilePath);
+            var workbook = new Workbook(path);
             Worksheet worksheet = null;
             for (int i = 0; i < workbook.Worksheets.Count; i++)
             {
                 worksheet = workbook.Worksheets[i];
-                if (worksheet.IsVisible && worksheet.Cells.MaxRow > -1 && worksheet.Cells.MaxColumn > -1)
+                if (!worksheet.IsVisible)
                 {
-                    var dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, worksheet.Cells.MaxRow + 1, worksheet.Cells.MaxColumn + 1, isConvertFirstRowToColumnName);
-                    dataTable.TableName = worksheet.Name;
-                    ds.Tables.Add(dataTable);
+                    continue;
                 }
+                var displayRange = worksheet.Cells.MaxDisplayRange;
+                if (displayRange.RowCount <= 0)
+                {
+                    continue;
+                }
+                var dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, displayRange.RowCount, displayRange.ColumnCount, isConvertFirstRowToColumnName);
+                dataTable.TableName = worksheet.Name;
+                ds.Tables.Add(dataTable);
             }
             return ds;
         }
