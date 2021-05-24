@@ -21,12 +21,47 @@ namespace XCLNetTools.Office.ExcelHandler
     public static class ExcelToData
     {
         /// <summary>
+        /// 将 WorkSheet 转换为 DataTable
+        /// </summary>
+        public static DataTable WorkSheetToDataTable(Worksheet worksheet, ExcelToTableOptions excelToTableOptions)
+        {
+            var dt = new DataTable();
+            if (null == worksheet)
+            {
+                return dt;
+            }
+            if (null == excelToTableOptions)
+            {
+                excelToTableOptions = new ExcelToTableOptions();
+            }
+            var options = new ExportTableOptions();
+            options.ExportColumnName = excelToTableOptions.IsConvertFirstRowToColumnName;
+            options.ExportAsString = true;
+            options.PlotVisibleRows = excelToTableOptions.IsOnlyVisibleRows;
+            var displayRange = worksheet.Cells.MaxDisplayRange;
+            if (displayRange.RowCount <= 0)
+            {
+                return dt;
+            }
+            dt = worksheet.Cells.ExportDataTable(0, 0, displayRange.RowCount, displayRange.ColumnCount, options);
+            dt.TableName = worksheet.Name;
+            if (excelToTableOptions.IgnoreEmptyDataRows)
+            {
+                for (var i = dt.Rows.Count - 1; i >= 0; i--)
+                {
+                    if (dt.Rows[i].ItemArray.All(k => DBNull.Value == k || string.IsNullOrWhiteSpace(Convert.ToString(k))))
+                    {
+                        dt.Rows.RemoveAt(i);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        /// <summary>
         /// 单个工作薄读入（第一个可见的sheet）
         /// </summary>
-        /// <param name="path">Excel 文件路径</param>
-        /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为 DataTable 的列名</param>
-        /// <param name="isOnlyVisibleRows">是否只加载可见行（注意：如果只加载可见行，最终 dataTable 的行数还是总行数，只是隐藏行的所有单元格的内容是 null）</param>
-        public static DataTable ReadExcelToTable(string path, bool isConvertFirstRowToColumnName = false, bool isOnlyVisibleRows = false)
+        public static DataTable ReadExcelToTable(string path, ExcelToTableOptions excelToTableOptions = null)
         {
             var dt = new DataTable();
             if (!System.IO.File.Exists(path))
@@ -44,30 +79,13 @@ namespace XCLNetTools.Office.ExcelHandler
                     break;
                 }
             }
-            if (null == worksheet)
-            {
-                return dt;
-            }
-            var displayRange = worksheet.Cells.MaxDisplayRange;
-            if (displayRange.RowCount <= 0)
-            {
-                return dt;
-            }
-            var options = new ExportTableOptions();
-            options.ExportColumnName = isConvertFirstRowToColumnName;
-            options.ExportAsString = true;
-            options.PlotVisibleRows = isOnlyVisibleRows;
-            dt = worksheet.Cells.ExportDataTable(0, 0, displayRange.RowCount, displayRange.ColumnCount, options);
-            return dt;
+            return WorkSheetToDataTable(worksheet, excelToTableOptions);
         }
 
         /// <summary>
         /// 多个工作薄读入（所有可见的sheet）
         /// </summary>
-        /// <param name="path">Excel 文件路径</param>
-        /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为 DataTable 的列名</param>
-        /// <param name="isOnlyVisibleRows">是否只加载可见行（注意：如果只加载可见行，最终 dataTable 的行数还是总行数，只是隐藏行的所有单元格的内容是 null）</param>
-        public static DataSet ReadExcelToDataSet(string path, bool isConvertFirstRowToColumnName = false, bool isOnlyVisibleRows = false)
+        public static DataSet ReadExcelToDataSet(string path, ExcelToTableOptions excelToTableOptions = null)
         {
             var ds = new DataSet();
             if (!System.IO.File.Exists(path))
@@ -83,17 +101,11 @@ namespace XCLNetTools.Office.ExcelHandler
                 {
                     continue;
                 }
-                var displayRange = worksheet.Cells.MaxDisplayRange;
-                if (displayRange.RowCount <= 0)
+                var dt = WorkSheetToDataTable(worksheet, excelToTableOptions);
+                if (null == dt || dt.Rows.Count == 0)
                 {
                     continue;
                 }
-                var options = new ExportTableOptions();
-                options.ExportColumnName = isConvertFirstRowToColumnName;
-                options.ExportAsString = true;
-                options.PlotVisibleRows = isOnlyVisibleRows;
-                var dt = worksheet.Cells.ExportDataTable(0, 0, displayRange.RowCount, displayRange.ColumnCount, options);
-                dt.TableName = worksheet.Name;
                 ds.Tables.Add(dt);
             }
             return ds;

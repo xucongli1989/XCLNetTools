@@ -23,7 +23,7 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
         public string SheetName { get; set; }
 
         /// <summary>
-        /// 列标题
+        /// 所有列的标题
         /// </summary>
         public List<string> TitleNameList { get; set; }
     }
