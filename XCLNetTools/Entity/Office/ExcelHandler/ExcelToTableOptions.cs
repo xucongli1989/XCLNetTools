@@ -26,5 +26,10 @@ namespace XCLNetTools.Entity.Office.ExcelHandler
         /// 是否自动忽略 DataTable 为空的行（此选项可以解决 IsOnlyVisibleRows 带来的问题 ）
         /// </summary>
         public bool IgnoreEmptyDataRows { get; set; }
+
+        /// <summary>
+        /// 只读取指定行及指定行以后的所有行，0 为第一行
+        /// </summary>
+        public int StartRowIndex { get; set; }
     }
 }

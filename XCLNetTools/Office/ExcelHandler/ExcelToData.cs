@@ -39,11 +39,12 @@ namespace XCLNetTools.Office.ExcelHandler
             options.ExportAsString = true;
             options.PlotVisibleRows = excelToTableOptions.IsOnlyVisibleRows;
             var displayRange = worksheet.Cells.MaxDisplayRange;
-            if (displayRange.RowCount <= 0)
+            var readTotalCount = displayRange.RowCount - excelToTableOptions.StartRowIndex;
+            if (readTotalCount <= 0)
             {
                 return dt;
             }
-            dt = worksheet.Cells.ExportDataTable(0, 0, displayRange.RowCount, displayRange.ColumnCount, options);
+            dt = worksheet.Cells.ExportDataTable(excelToTableOptions.StartRowIndex, 0, readTotalCount, displayRange.ColumnCount, options);
             dt.TableName = worksheet.Name;
             if (excelToTableOptions.IgnoreEmptyDataRows)
             {
