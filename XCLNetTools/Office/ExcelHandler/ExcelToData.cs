@@ -25,7 +25,8 @@ namespace XCLNetTools.Office.ExcelHandler
         /// </summary>
         /// <param name="path">Excel 文件路径</param>
         /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为 DataTable 的列名</param>
-        public static DataTable ReadExcelToTable(string path, bool isConvertFirstRowToColumnName = false)
+        /// <param name="isOnlyVisibleRows">是否只加载可见行（注意：如果只加载可见行，最终 dataTable 的行数还是总行数，只是隐藏行的所有单元格的内容是 null）</param>
+        public static DataTable ReadExcelToTable(string path, bool isConvertFirstRowToColumnName = false, bool isOnlyVisibleRows = false)
         {
             var dt = new DataTable();
             if (!System.IO.File.Exists(path))
@@ -52,7 +53,11 @@ namespace XCLNetTools.Office.ExcelHandler
             {
                 return dt;
             }
-            dt = worksheet.Cells.ExportDataTableAsString(0, 0, displayRange.RowCount, displayRange.ColumnCount, isConvertFirstRowToColumnName);
+            var options = new ExportTableOptions();
+            options.ExportColumnName = isConvertFirstRowToColumnName;
+            options.ExportAsString = true;
+            options.PlotVisibleRows = isOnlyVisibleRows;
+            dt = worksheet.Cells.ExportDataTable(0, 0, displayRange.RowCount, displayRange.ColumnCount, options);
             return dt;
         }
 
@@ -61,7 +66,8 @@ namespace XCLNetTools.Office.ExcelHandler
         /// </summary>
         /// <param name="path">Excel 文件路径</param>
         /// <param name="isConvertFirstRowToColumnName">是否需要将第一行自动转换为 DataTable 的列名</param>
-        public static DataSet ReadExcelToDataSet(string path, bool isConvertFirstRowToColumnName = false)
+        /// <param name="isOnlyVisibleRows">是否只加载可见行（注意：如果只加载可见行，最终 dataTable 的行数还是总行数，只是隐藏行的所有单元格的内容是 null）</param>
+        public static DataSet ReadExcelToDataSet(string path, bool isConvertFirstRowToColumnName = false, bool isOnlyVisibleRows = false)
         {
             var ds = new DataSet();
             if (!System.IO.File.Exists(path))
@@ -82,9 +88,13 @@ namespace XCLNetTools.Office.ExcelHandler
                 {
                     continue;
                 }
-                var dataTable = worksheet.Cells.ExportDataTableAsString(0, 0, displayRange.RowCount, displayRange.ColumnCount, isConvertFirstRowToColumnName);
-                dataTable.TableName = worksheet.Name;
-                ds.Tables.Add(dataTable);
+                var options = new ExportTableOptions();
+                options.ExportColumnName = isConvertFirstRowToColumnName;
+                options.ExportAsString = true;
+                options.PlotVisibleRows = isOnlyVisibleRows;
+                var dt = worksheet.Cells.ExportDataTable(0, 0, displayRange.RowCount, displayRange.ColumnCount, options);
+                dt.TableName = worksheet.Name;
+                ds.Tables.Add(dt);
             }
             return ds;
         }
