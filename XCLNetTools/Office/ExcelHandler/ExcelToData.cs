@@ -131,23 +131,24 @@ namespace XCLNetTools.Office.ExcelHandler
                 {
                     continue;
                 }
+
                 var item = new ExcelTitleInfo();
                 item.SheetIndex = sheetIndex;
                 item.SheetName = worksheet.Name;
                 item.TitleNameList = new List<string>();
                 result.Add(item);
 
-                var displayRange = worksheet.Cells.MaxDisplayRange;
-                int firstRow = titleRowNumber - 1;
-                int firstColumn = 0;
-                int totalRows = displayRange.RowCount;
-                int totalColumns = displayRange.ColumnCount;
-                if (totalColumns == 0 || totalRows == 0)
+                //没有数据
+                if (worksheet.Cells.MaxDataRow == -1)
                 {
                     continue;
                 }
 
-                var tb = worksheet.Cells.ExportDataTableAsString(firstRow, firstColumn, totalRows, totalColumns);
+                var displayRange = worksheet.Cells.MaxDisplayRange;
+                int firstRow = titleRowNumber - 1;
+                int firstColumn = 0;
+                int totalColumns = displayRange.ColumnCount;
+                var tb = worksheet.Cells.ExportDataTableAsString(firstRow, firstColumn, 1, totalColumns);
                 if (null == tb || tb.Rows.Count == 0)
                 {
                     continue;
