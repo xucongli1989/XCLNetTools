@@ -137,7 +137,17 @@ namespace XCLNetTools.Office.ExcelHandler
                 item.TitleNameList = new List<string>();
                 result.Add(item);
 
-                var tb = worksheet.Cells.ExportDataTableAsString(titleRowNumber - 1, 0, 1, worksheet.Cells.MaxColumn + 1);
+                var displayRange = worksheet.Cells.MaxDisplayRange;
+                int firstRow = titleRowNumber - 1;
+                int firstColumn = 0;
+                int totalRows = displayRange.RowCount;
+                int totalColumns = displayRange.ColumnCount;
+                if (totalColumns == 0 || totalRows == 0)
+                {
+                    continue;
+                }
+
+                var tb = worksheet.Cells.ExportDataTableAsString(firstRow, firstColumn, totalRows, totalColumns);
                 if (null == tb || tb.Rows.Count == 0)
                 {
                     continue;

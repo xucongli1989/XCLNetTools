@@ -724,6 +724,30 @@ namespace XCLNetTools.StringHander
             return dic;
         }
 
+        /// <summary>
+        /// 将文件名中无效的特殊字符替换成指定字符
+        /// </summary>
+        public static string ReplaceInvalidCharsFileName(string fileName, string str = "_")
+        {
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                return fileName;
+            }
+            return XCLNetTools.Common.Consts.RegInvalidFileNameChars.Replace(fileName, str);
+        }
+
+        /// <summary>
+        /// 根据属性名设置对象的属性
+        /// </summary>
+        public static void SetObjectValueByPropertyName(object obj, string propertyName, object value)
+        {
+            if (null == obj || string.IsNullOrWhiteSpace(propertyName))
+            {
+                return;
+            }
+            obj.GetType().GetProperty(propertyName).SetValue(obj, value);
+        }
+
         #endregion 其它
     }
 }

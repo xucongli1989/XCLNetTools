@@ -8,6 +8,7 @@ Create By: XCL @ 2012
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -99,6 +100,11 @@ namespace XCLNetTools.Common
         /// 物理路径的前面部分，支持：c:\ 或 \\:
         /// </summary>
         public static readonly Regex RegPhysicalPathPrefix = new Regex(@"^(?:[a-zA-Z]:(?:\\|/)|\\\\)");
+
+        /// <summary>
+        /// 文件名中的无效字符正则
+        /// </summary>
+        public static readonly Regex RegInvalidFileNameChars = new Regex("[" + Regex.Escape($"{string.Join("", Path.GetInvalidFileNameChars())}") + "]");
 
         #endregion 正则
 
