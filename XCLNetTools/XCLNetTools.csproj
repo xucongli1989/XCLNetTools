@@ -190,6 +190,7 @@
     <Compile Include="Common\ClipboardHelper.cs" />
     <Compile Include="Common\Consts.cs" />
     <Compile Include="Common\DataTypeConvert.cs" />
+    <Compile Include="Common\FontHelper.cs" />
     <Compile Include="Common\GZipHelper.cs" />
     <Compile Include="Common\IPHelper.cs" />
     <Compile Include="Common\SwitchControl.cs" />
@@ -203,6 +204,7 @@
     <Compile Include="Entity\BookmarkEntity.cs" />
     <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
     <Compile Include="Entity\FileInfoEntity.cs" />
+    <Compile Include="Entity\FontInfoEntity.cs" />
     <Compile Include="Entity\Http\HttpItem.cs" />
     <Compile Include="Entity\Http\HttpResult.cs" />
     <Compile Include="Entity\LocationEntity.cs" />
