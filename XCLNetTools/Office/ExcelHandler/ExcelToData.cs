@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using XCLNetTools.Entity.Office.ExcelHandler;
 
 namespace XCLNetTools.Office.ExcelHandler
@@ -20,6 +21,22 @@ namespace XCLNetTools.Office.ExcelHandler
     /// </summary>
     public static class ExcelToData
     {
+        /// <summary>
+        /// 根据路径返回 Workbook 对象（如果是 csv，则自动识别 csv 编码）
+        /// </summary>
+        public static Workbook GetWorkbook(string path)
+        {
+            if (XCLNetTools.FileHandler.ComFile.GetExtName(path) == "csv")
+            {
+                var fileEncode = XCLNetTools.FileHandler.ComFile.GetFileEncoding(path);
+                return new Workbook(path, new Aspose.Cells.TxtLoadOptions()
+                {
+                    Encoding = fileEncode
+                });
+            }
+            return new Workbook(path);
+        }
+
         /// <summary>
         /// 将 WorkSheet 转换为 DataTable
         /// </summary>
@@ -70,7 +87,7 @@ namespace XCLNetTools.Office.ExcelHandler
                 return dt;
             }
 
-            var workbook = new Workbook(path);
+            var workbook = GetWorkbook(path);
             Worksheet worksheet = null;
             for (int i = 0; i < workbook.Worksheets.Count; i++)
             {
@@ -93,7 +110,7 @@ namespace XCLNetTools.Office.ExcelHandler
             {
                 return ds;
             }
-            var workbook = new Workbook(path);
+            var workbook = GetWorkbook(path);
             Worksheet worksheet = null;
             for (int i = 0; i < workbook.Worksheets.Count; i++)
             {
@@ -123,7 +140,7 @@ namespace XCLNetTools.Office.ExcelHandler
                 return result;
             }
 
-            var workbook = new Workbook(excelfilePath);
+            var workbook = GetWorkbook(excelfilePath);
             for (var sheetIndex = 0; sheetIndex < workbook.Worksheets.Count; sheetIndex++)
             {
                 var worksheet = workbook.Worksheets[sheetIndex];
