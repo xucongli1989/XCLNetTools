@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using XCLNetTools.Generic;
 
 namespace XCLNetTools.FileHandler
 {
@@ -480,9 +481,9 @@ namespace XCLNetTools.FileHandler
             }
             if (withDot)
             {
-                return System.IO.Path.GetExtension(fileName);
+                return System.IO.Path.GetExtension(fileName).ToLower();
             }
-            return System.IO.Path.GetExtension(fileName).TrimStart('.');
+            return System.IO.Path.GetExtension(fileName).TrimStart('.').ToLower();
         }
 
         /// <summary>
@@ -605,6 +606,22 @@ namespace XCLNetTools.FileHandler
                 return path.TrimEnd('\\') + '\\';
             }
             return path;
+        }
+
+        /// <summary>
+        /// 过滤现有的路径列表，只保留指定扩展名的路径
+        /// </summary>
+        /// <param name="pathList">路径列表</param>
+        /// <param name="allowExtNameList">可允许的扩展名，不带点</param>
+        public static List<string> FilterPathList(List<string> pathList, List<string> allowExtNameList)
+        {
+            var result = new List<string>();
+            if (pathList.IsNullOrEmpty() || allowExtNameList.IsNullOrEmpty())
+            {
+                return result;
+            }
+            var dic = allowExtNameList.Distinct().ToDictionary(k => k.ToLower());
+            return pathList.Where(k => dic.ContainsKey(GetExtName(k))).ToList();
         }
 
         #endregion 其它
