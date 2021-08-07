@@ -590,6 +590,23 @@ namespace XCLNetTools.FileHandler
             return false;
         }
 
+        /// <summary>
+        /// 将指定路径转换为标准的路径，标准的路径分隔符为 \，如果是文件夹，则最后也带 \
+        /// </summary>
+        public static string GetStandardPath(string path, bool isFolder)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
+            path = path.Replace('/', '\\');
+            if (isFolder)
+            {
+                return path.TrimEnd('\\') + '\\';
+            }
+            return path;
+        }
+
         #endregion 其它
     }
 }
