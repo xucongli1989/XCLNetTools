@@ -265,12 +265,12 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 向文本文件中写入内容（覆盖文件中的所有内容，并自动识别编码，如果原编码是ascii，则默认以utf8写入）
+        /// 向文本文件中写入内容（覆盖文件中的所有内容，并自动识别编码，如果原编码是 ascii 且包含 Unicode 字符，则默认以 utf8 写入）
         /// </summary>
         public static void WriteFileData(string filePathName, string content)
         {
             var encode = XCLNetTools.FileHandler.ComFile.GetFileEncoding(filePathName);
-            if (encode == System.Text.Encoding.ASCII)
+            if (encode == System.Text.Encoding.ASCII && XCLNetTools.Encode.Unicode.HasUnicode(content))
             {
                 encode = System.Text.Encoding.UTF8;
             }

@@ -7,6 +7,7 @@ Create By: XCL @ 2012
  */
 
 using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace XCLNetTools.Encode
@@ -45,6 +46,20 @@ namespace XCLNetTools.Encode
         public static string UnicodeEncode(string s)
         {
             return reUnicodeChar.Replace(s, m => string.Format(@"\u{0:x4}", (short)m.Value[0]));
+        }
+
+        /// <summary>
+        /// 判断字符串是否包含 unicode 字符
+        /// </summary>
+        public static bool HasUnicode(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+            var asciiBytesCount = Encoding.ASCII.GetByteCount(input);
+            var unicodBytesCount = Encoding.UTF8.GetByteCount(input);
+            return asciiBytesCount != unicodBytesCount;
         }
     }
 }
