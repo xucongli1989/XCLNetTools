@@ -407,6 +407,18 @@ namespace XCLNetTools.StringHander
             return str;
         }
 
+        /// <summary>
+        /// 将指定字符串中的常见分隔符统一替换为指定的分隔符，目前只替换这些符号： ,，、/
+        /// </summary>
+        public static string ReplaceSplitChar(string str, string splitChar = ",")
+        {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return str;
+            }
+            return new Regex("[,，、/]").Replace(str, splitChar);
+        }
+
         #endregion
 
         #region 其它字符串处理
