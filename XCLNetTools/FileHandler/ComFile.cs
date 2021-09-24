@@ -276,9 +276,6 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 使用新的文件名，更新指定路径path中的文件名。如：（"C:\demo\a.txt","abcd.doc"）=>C:\demo\abcd.doc
         /// </summary>
-        /// <param name="path">文件物理路径</param>
-        /// <param name="name">新的文件名（如：a.txt）</param>
-        /// <returns>新的文件物理路径</returns>
         public static string ChangePathByFileName(string path, string name)
         {
             if (string.IsNullOrWhiteSpace(path))
@@ -286,6 +283,31 @@ namespace XCLNetTools.FileHandler
                 return string.Empty;
             }
             return System.IO.Path.GetDirectoryName(path) + '\\' + name;
+        }
+
+        /// <summary>
+        /// 获取路径所在的文件夹名称，如：c:\a\b\ --> b;  c:\a\b\c.pdf --> b
+        /// </summary>
+        public static string GetPathFolderName(string path, bool isFolderPath)
+        {
+            if (isFolderPath)
+            {
+                path = GetOptimizedFolderPath(path);
+            }
+            return Path.GetFileName(Path.GetDirectoryName(path));
+        }
+
+        /// <summary>
+        /// 使用新的文件夹名，更新指定路径path中的文件夹名。如：（"C:\demo\a\","b"）=>C:\demo\b\  ;  （"C:\demo\a\b.pdf","c"）=>C:\demo\c\b.pdf
+        /// </summary>
+        public static string ChangePathByFolderName(string path, string name, bool isFolderPath)
+        {
+            if (isFolderPath)
+            {
+                path = GetOptimizedFolderPath(path);
+                return GetOptimizedFolderPath(Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), name));
+            }
+            return Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), name, Path.GetFileName(path));
         }
 
         #endregion 目录相关
@@ -392,6 +414,18 @@ namespace XCLNetTools.FileHandler
         #endregion 文件类型判断
 
         #region 其它
+
+        /// <summary>
+        /// 将文件夹路径转为必须以 \ 结尾的字符串
+        /// </summary>
+        public static string GetOptimizedFolderPath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return path;
+            }
+            return path.TrimEnd('\\') + '\\';
+        }
 
         /// <summary>
         /// 取得文件物理路径
