@@ -21,6 +21,8 @@ namespace XCLNetTools.FileHandler
     /// </summary>
     public static class ComFile
     {
+        private static readonly object copy_lock = new object();
+
         #region 删除文件
 
         /// <summary>
@@ -58,7 +60,6 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static bool CopyFile(string srcPath, string dstPath)
         {
-            XCLNetTools.FileHandler.FileDirectory.MakeDirectory(GetFileFolderPath(dstPath));
             return CopyFile(srcPath, dstPath, true);
         }
 
@@ -67,9 +68,12 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static bool CopyFile(string srcPath, string dstPath, bool overwrite)
         {
-            XCLNetTools.FileHandler.FileDirectory.MakeDirectory(GetFileFolderPath(dstPath));
-            File.Copy(ComFile.MapPath(srcPath), ComFile.MapPath(dstPath), overwrite);
-            return File.Exists(ComFile.MapPath(dstPath));
+            lock (copy_lock)
+            {
+                XCLNetTools.FileHandler.FileDirectory.MakeDirectory(GetFileFolderPath(dstPath));
+                File.Copy(ComFile.MapPath(srcPath), ComFile.MapPath(dstPath), overwrite);
+                return File.Exists(ComFile.MapPath(dstPath));
+            }
         }
 
         /// <summary>
@@ -80,28 +84,31 @@ namespace XCLNetTools.FileHandler
         /// <param name="copySubDirs">是否复制子目录</param>
         public static void CopyDir(string sourceDirName, string destDirName, bool copySubDirs)
         {
-            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
-            if (!dir.Exists)
+            lock (copy_lock)
             {
-                throw new DirectoryNotFoundException("目录不存在：" + sourceDirName);
-            }
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            if (!Directory.Exists(destDirName))
-            {
-                Directory.CreateDirectory(destDirName);
-            }
-            FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files)
-            {
-                string temppath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(temppath, true);
-            }
-            if (copySubDirs)
-            {
-                foreach (DirectoryInfo subdir in dirs)
+                DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+                if (!dir.Exists)
                 {
-                    string temppath = Path.Combine(destDirName, subdir.Name);
-                    CopyDir(subdir.FullName, temppath, copySubDirs);
+                    throw new DirectoryNotFoundException("目录不存在：" + sourceDirName);
+                }
+                DirectoryInfo[] dirs = dir.GetDirectories();
+                if (!Directory.Exists(destDirName))
+                {
+                    Directory.CreateDirectory(destDirName);
+                }
+                FileInfo[] files = dir.GetFiles();
+                foreach (FileInfo file in files)
+                {
+                    string temppath = Path.Combine(destDirName, file.Name);
+                    file.CopyTo(temppath, true);
+                }
+                if (copySubDirs)
+                {
+                    foreach (DirectoryInfo subdir in dirs)
+                    {
+                        string temppath = Path.Combine(destDirName, subdir.Name);
+                        CopyDir(subdir.FullName, temppath, copySubDirs);
+                    }
                 }
             }
         }
@@ -118,9 +125,10 @@ namespace XCLNetTools.FileHandler
         /// <returns>字符串数组(存储了一个或多个文件名)</returns>
         public static string[] GetFolderFiles(string path, bool isContainsHiddenFile = true)
         {
+            path = ComFile.MapPath(path);
             try
             {
-                var arr = System.IO.Directory.GetFiles(ComFile.MapPath(path));
+                var arr = System.IO.Directory.GetFiles(path);
                 if (arr.Length > 0 && !isContainsHiddenFile)
                 {
                     arr = arr.AsParallel().Where(k => !ComFile.IsHiddenFile(k)).ToArray();
@@ -175,9 +183,10 @@ namespace XCLNetTools.FileHandler
         /// <returns>字符串数组(存储了一个或多个文件夹名)</returns>
         public static string[] GetFolders(string path)
         {
+            path = ComFile.MapPath(path);
             try
             {
-                return System.IO.Directory.GetDirectories(ComFile.MapPath(path));
+                return System.IO.Directory.GetDirectories(path);
             }
             catch
             {
