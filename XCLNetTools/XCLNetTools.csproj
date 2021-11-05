@@ -228,6 +228,7 @@
     <Compile Include="Entity\TreeData\ExtendDataEntity.cs" />
     <Compile Include="Entity\TreeData\TreeMapEntity.cs" />
     <Compile Include="FileHandler\Json.cs" />
+    <Compile Include="Generic\DisposableList.cs" />
     <Compile Include="Modules\ErrorHttpModule.cs" />
     <Compile Include="Office\ExcelHandler\DataToExcel.cs" />
     <Compile Include="Office\ExcelHandler\ExcelHelper.cs" />
