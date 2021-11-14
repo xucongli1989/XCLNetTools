@@ -225,6 +225,7 @@
     <Compile Include="DataBase\MSSQL\SqlHelperParameterCache.cs" />
     <Compile Include="DataBase\Redis\RedisHelper.cs" />
     <Compile Include="Entity\SqlPagerConditionEntity.cs" />
+    <Compile Include="Entity\RangeValueEntity.cs" />
     <Compile Include="Entity\TreeData\ExtendDataEntity.cs" />
     <Compile Include="Entity\TreeData\TreeMapEntity.cs" />
     <Compile Include="FileHandler\Json.cs" />

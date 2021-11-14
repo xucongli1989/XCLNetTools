@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using XCLNetTools.Entity;
 
 namespace UnitTest.StringHander
 {
@@ -23,6 +25,78 @@ namespace UnitTest.StringHander
             Assert.IsFalse(XCLNetTools.StringHander.Common.IsHttps(""));
             Assert.IsFalse(XCLNetTools.StringHander.Common.IsHttps("https:www.a.com"));
             Assert.IsFalse(XCLNetTools.StringHander.Common.IsHttps("http://www.a.com"));
+        }
+
+        [TestMethod]
+        public void GetRangeValueEntity()
+        {
+            var model = XCLNetTools.StringHander.Common.GetRangeValueEntity(0, 0, 0, 0);
+            Assert.IsTrue(model.StartValue == 0 && model.EndValue == 0 && model.Count == 1);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(3, 1, 1, 10);
+            Assert.IsTrue(null == model);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(1, 2, 3, 1);
+            Assert.IsTrue(null == model);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(1, 4, 5, 10);
+            Assert.IsTrue(null == model);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(11, 15, 5, 10);
+            Assert.IsTrue(null == model);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(4, 6, 5, 10);
+            Assert.IsTrue(model.StartValue == 5 && model.EndValue == 6 && model.Count == 2);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(4, 5, 5, 10);
+            Assert.IsTrue(model.StartValue == 5 && model.EndValue == 5 && model.Count == 1);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(10, 16, 10, 15);
+            Assert.IsTrue(model.StartValue == 10 && model.EndValue == 15 && model.Count == 6);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(15, 16, 10, 15);
+            Assert.IsTrue(model.StartValue == 15 && model.EndValue == 15 && model.Count == 1);
+        }
+
+        [TestMethod]
+        public void GetRangeValueEntityListFromText()
+        {
+            var lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("", 1, 100);
+            Assert.IsTrue(lst.Count == 0);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("1", 1, 100);
+            Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 1 && lst[0].EndValue == 1);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("-1", 1, 100);
+            Assert.IsTrue(lst.Count == 0);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("10", 1, 9);
+            Assert.IsTrue(lst.Count == 0);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("3,10", 1, 9);
+            Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 3 && lst[0].EndValue == 3);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("1,2", 1, 100);
+            Assert.IsTrue(lst.Count == 2);
+            Assert.IsTrue(lst[0].StartValue == 1 && lst[0].EndValue == 1);
+            Assert.IsTrue(lst[1].StartValue == 2 && lst[1].EndValue == 2);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("3:5", 1, 100);
+            Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 3 && lst[0].EndValue == 5);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("1,3:5,8:9,-10:-1", -100, 100);
+            Assert.IsTrue(lst.Count == 4);
+            Assert.IsTrue(lst[0].StartValue == 1 && lst[0].EndValue == 1);
+            Assert.IsTrue(lst[1].StartValue == 3 && lst[1].EndValue == 5);
+            Assert.IsTrue(lst[2].StartValue == 8 && lst[2].EndValue == 9);
+            Assert.IsTrue(lst[3].StartValue == -10 && lst[3].EndValue == -1);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("  1  ,  3 :  5 , 8 : 9,  -10   :-1,,,,,", -100, 100);
+            Assert.IsTrue(lst.Count == 4);
+            Assert.IsTrue(lst[0].StartValue == 1 && lst[0].EndValue == 1);
+            Assert.IsTrue(lst[1].StartValue == 3 && lst[1].EndValue == 5);
+            Assert.IsTrue(lst[2].StartValue == 8 && lst[2].EndValue == 9);
+            Assert.IsTrue(lst[3].StartValue == -10 && lst[3].EndValue == -1);
         }
     }
 }

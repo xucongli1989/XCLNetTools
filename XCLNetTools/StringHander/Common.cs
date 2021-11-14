@@ -760,6 +760,97 @@ namespace XCLNetTools.StringHander
             obj.GetType().GetProperty(propertyName).SetValue(obj, value);
         }
 
+        /// <summary>
+        /// 指定集合的起始值与结束值，与最大值和最小值进行比较并返回符合限制范围内的实体信息（如果起始值或结束值超出限制范围，则该值自动取最小值或最大值）
+        /// </summary>
+        public static RangeValueEntity GetRangeValueEntity(int startValue, int endValue, int minValue, int maxValue)
+        {
+            //不符合比较条件
+            if (startValue > endValue || minValue > maxValue)
+            {
+                return null;
+            }
+
+            //完全无交集
+            if ((startValue < minValue && endValue < minValue) || (startValue > maxValue && endValue > maxValue))
+            {
+                return null;
+            }
+
+            //纠正临界值
+            if (startValue < minValue)
+            {
+                startValue = minValue;
+            }
+            if (startValue > maxValue)
+            {
+                startValue = maxValue;
+            }
+            if (endValue < minValue)
+            {
+                endValue = minValue;
+            }
+            if (endValue > maxValue)
+            {
+                endValue = maxValue;
+            }
+
+            var result = new RangeValueEntity();
+            result.StartValue = startValue;
+            result.EndValue = endValue;
+            result.Count = endValue - startValue + 1;
+            return result;
+        }
+
+        /// <summary>
+        /// 将范围文本字符串解析为实体列表，文本的格式如下：
+        /// 【1】表示第1项，【2】表示第2项，【2:5】表示第2项到第5项，【-1】表示最后一项，【-2】表示倒数第2项，【-5:-2】表示倒数第5项到倒数第2项，【2,4:7,-5:-2】表示第2项和第4到7项和倒数第5项至倒数第2项
+        /// </summary>
+        public static List<RangeValueEntity> GetRangeValueEntityListFromText(string str, int minValue, int maxValue)
+        {
+            str = str?.Replace('，', ',').Replace('：', ':').Trim().Trim(',');
+
+            var lst = new List<RangeValueEntity>();
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return lst;
+            }
+
+            //开始解析
+            str = new Regex(@"\s+").Replace(str, "");
+            str.Split(',').ToList().ForEach(item =>
+            {
+                var arr = item.Split(':');
+                if (arr.Length > 2)
+                {
+                    return;
+                }
+                var model = new RangeValueEntity();
+                if (arr.Length == 1)
+                {
+                    model.StartValue = XCLNetTools.Common.DataTypeConvert.ToInt(arr[0]);
+                    model.EndValue = model.StartValue;
+                }
+                if (arr.Length == 2)
+                {
+                    model.StartValue = XCLNetTools.Common.DataTypeConvert.ToInt(arr[0]);
+                    model.EndValue = XCLNetTools.Common.DataTypeConvert.ToInt(arr[1]);
+                }
+                if (model.StartValue == 0 || model.EndValue == 0)
+                {
+                    return;
+                }
+                model = Common.GetRangeValueEntity(model.StartValue, model.EndValue, minValue, maxValue);
+                if (null == model)
+                {
+                    return;
+                }
+                lst.Add(model);
+            });
+
+            return lst;
+        }
+
         #endregion 其它
     }
 }
