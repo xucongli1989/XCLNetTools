@@ -68,7 +68,13 @@ namespace UnitTest.StringHander
             Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 1 && lst[0].EndValue == 1);
 
             lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("-1", 1, 100);
-            Assert.IsTrue(lst.Count == 0);
+            Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 100 && lst[0].EndValue == 100);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("-2", 1, 100);
+            Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 99 && lst[0].EndValue == 99);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("100", 1, 100);
+            Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 100 && lst[0].EndValue == 100);
 
             lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("10", 1, 9);
             Assert.IsTrue(lst.Count == 0);
@@ -89,14 +95,14 @@ namespace UnitTest.StringHander
             Assert.IsTrue(lst[0].StartValue == 1 && lst[0].EndValue == 1);
             Assert.IsTrue(lst[1].StartValue == 3 && lst[1].EndValue == 5);
             Assert.IsTrue(lst[2].StartValue == 8 && lst[2].EndValue == 9);
-            Assert.IsTrue(lst[3].StartValue == -10 && lst[3].EndValue == -1);
+            Assert.IsTrue(lst[3].StartValue == 91 && lst[3].EndValue == 100);
 
             lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("  1  ,  3 :  5 , 8 : 9,  -10   :-1,,,,,", -100, 100);
             Assert.IsTrue(lst.Count == 4);
             Assert.IsTrue(lst[0].StartValue == 1 && lst[0].EndValue == 1);
             Assert.IsTrue(lst[1].StartValue == 3 && lst[1].EndValue == 5);
             Assert.IsTrue(lst[2].StartValue == 8 && lst[2].EndValue == 9);
-            Assert.IsTrue(lst[3].StartValue == -10 && lst[3].EndValue == -1);
+            Assert.IsTrue(lst[3].StartValue == 91 && lst[3].EndValue == 100);
         }
     }
 }
