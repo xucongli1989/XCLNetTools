@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using XCLNetTools.Entity;
+using XCLNetTools.Generic;
 using static XCLNetTools.Enum.CommonEnum;
 
 namespace XCLNetTools.StringHander
@@ -798,15 +799,18 @@ namespace XCLNetTools.StringHander
             var result = new RangeValueEntity();
             result.StartValue = startValue;
             result.EndValue = endValue;
-            result.Count = endValue - startValue + 1;
             return result;
         }
 
         /// <summary>
-        /// 将范围文本字符串解析为实体列表，并且自动将倒数页数转为正数页数，文本的格式如下：
+        /// 将范围文本字符串解析为实体列表，并且自动将倒数的数字转为正数的数字，文本的格式如下：
         /// 【1】表示第1项，【2】表示第2项，【2:5】表示第2项到第5项，【-1】表示最后一项，【-2】表示倒数第2项，【-5:-2】表示倒数第5项到倒数第2项，【2,4:7,-5:-2】表示第2项和第4到7项和倒数第5项至倒数第2项
         /// </summary>
-        public static List<RangeValueEntity> GetRangeValueEntityListFromText(string str, int minValue, int maxValue)
+        /// <param name="str">范围字符串</param>
+        /// <param name="minValue">最小值限制</param>
+        /// <param name="maxValue">最大值限制</param>
+        /// <param name="isNeedOptimize">是否需要优化处理后的结果（去重+合并有交叉的范围）</param>
+        public static List<RangeValueEntity> GetRangeValueEntityListFromText(string str, int minValue, int maxValue, bool isNeedOptimize = false)
         {
             str = str?.Replace('，', ',').Replace('：', ':').Trim().Trim(',');
 
@@ -856,6 +860,49 @@ namespace XCLNetTools.StringHander
                 }
                 lst.Add(model);
             });
+
+            if (lst.IsNullOrEmpty())
+            {
+                return lst;
+            }
+
+            //优化集合范围列表，比如范围中有两个值：2到5、3到6，则最终会合并成：2到6
+            if (isNeedOptimize)
+            {
+                var indexLst = new List<int>();
+                lst.ForEach(k =>
+                {
+                    for (var i = k.StartValue; i <= k.EndValue; i++)
+                    {
+                        indexLst.Add(i);
+                    }
+                });
+                indexLst = indexLst.Distinct().OrderBy(k => k).ToList();//此时会得到已去重且按升序排列的纯数字：[1,2,3,6,7,8,9,10,22,100]
+                var result = new List<RangeValueEntity>();
+                result.Add(new RangeValueEntity()
+                {
+                    StartValue = indexLst[0],
+                    EndValue = indexLst[0]
+                });
+                if (indexLst.Count >= 2)
+                {
+                    for (var i = 1; i < indexLst.Count; i++)
+                    {
+                        var currentIndex = indexLst[i];
+                        var lastItem = result.Last();
+                        if (currentIndex == lastItem.EndValue + 1)
+                        {
+                            lastItem.EndValue = currentIndex;
+                            continue;
+                        }
+                        var model = new RangeValueEntity();
+                        model.StartValue = currentIndex;
+                        model.EndValue = currentIndex;
+                        result.Add(model);
+                    }
+                }
+                return result;
+            }
 
             return lst;
         }

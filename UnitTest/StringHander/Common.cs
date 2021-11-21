@@ -103,6 +103,14 @@ namespace UnitTest.StringHander
             Assert.IsTrue(lst[1].StartValue == 3 && lst[1].EndValue == 5);
             Assert.IsTrue(lst[2].StartValue == 8 && lst[2].EndValue == 9);
             Assert.IsTrue(lst[3].StartValue == 91 && lst[3].EndValue == 100);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("1:4,3:5,8:9,10,11,12,13,30,31,33,-10:-1", -100, 100, true);
+            Assert.IsTrue(lst.Count == 5);
+            Assert.IsTrue(lst[0].StartValue == 1 && lst[0].EndValue == 5);
+            Assert.IsTrue(lst[1].StartValue == 8 && lst[1].EndValue == 13);
+            Assert.IsTrue(lst[2].StartValue == 30 && lst[2].EndValue == 31);
+            Assert.IsTrue(lst[3].StartValue == 33 && lst[3].EndValue == 33);
+            Assert.IsTrue(lst[4].StartValue == 91 && lst[4].EndValue == 100);
         }
     }
 }

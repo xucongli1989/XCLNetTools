@@ -25,6 +25,12 @@ namespace XCLNetTools.Entity
         /// <summary>
         /// 匹配到符合范围要求的数量，如果为0，则表示没有在现有范围内匹配到数量
         /// </summary>
-        public int Count { get; set; }
+        public int Count
+        {
+            get
+            {
+                return this.EndValue - this.StartValue + 1;
+            }
+        }
     }
 }
