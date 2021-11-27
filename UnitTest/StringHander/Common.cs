@@ -112,5 +112,16 @@ namespace UnitTest.StringHander
             Assert.IsTrue(lst[3].StartValue == 33 && lst[3].EndValue == 33);
             Assert.IsTrue(lst[4].StartValue == 91 && lst[4].EndValue == 100);
         }
+
+        [TestMethod]
+        public void GetStartEndNumList()
+        {
+            var lst = XCLNetTools.StringHander.Common.GetStartEndNumList(4, 7);
+            Assert.IsTrue(lst.Count == 4);
+            Assert.IsTrue(lst[0] == 4);
+            Assert.IsTrue(lst[1] == 5);
+            Assert.IsTrue(lst[2] == 6);
+            Assert.IsTrue(lst[3] == 7);
+        }
     }
 }

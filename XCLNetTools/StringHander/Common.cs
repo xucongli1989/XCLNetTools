@@ -672,6 +672,19 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 指定起止数字，返回每次加1的数字列表，如：（3,7）=> [3,4,5,6,7]
+        /// </summary>
+        public static List<int> GetStartEndNumList(int startNum, int endNum)
+        {
+            var lst = new List<int>();
+            for (var i = startNum; i <= endNum; i++)
+            {
+                lst.Add(i);
+            }
+            return lst;
+        }
+
+        /// <summary>
         /// 判断当前请求是否为ajax请求
         /// </summary>
         /// <returns>是否为ajax请求</returns>
