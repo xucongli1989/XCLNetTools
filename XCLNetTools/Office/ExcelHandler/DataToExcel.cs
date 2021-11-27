@@ -159,12 +159,13 @@ namespace XCLNetTools.Office.ExcelHandler
                 {
                     Range range = sheet.Cells.CreateRange(1, 0, 1, newNamesLst.Count);
                     range.Name = "Range1";
-                    workbook.DefaultStyle.HorizontalAlignment = TextAlignmentType.Center;
-                    workbook.DefaultStyle.Font.Color = System.Drawing.Color.Blue;
-                    workbook.DefaultStyle.Font.IsBold = true;
+                    Aspose.Cells.Style style = workbook.Styles[workbook.Styles.Add()];
+                    style.HorizontalAlignment = TextAlignmentType.Center;
+                    style.Font.Color = System.Drawing.Color.Blue;
+                    style.Font.IsBold = true;
                     StyleFlag styleFlag = new StyleFlag();
                     styleFlag.All = true;
-                    range.ApplyStyle(workbook.DefaultStyle, styleFlag);
+                    range.ApplyStyle(style, styleFlag);
                 }
 
                 #endregion 添加样式
