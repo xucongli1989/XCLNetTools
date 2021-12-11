@@ -64,6 +64,7 @@
     <Compile Include="FileHandler\ComFile.cs" />
     <Compile Include="Generic\ListHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialize\JSON.cs" />
     <Compile Include="StringHander\Common.cs" />
     <Compile Include="StringHander\DateHelper.cs" />
     <Compile Include="StringHander\UrlOper.cs" />

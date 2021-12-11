@@ -87,9 +87,15 @@ namespace XCLNetTools.Serialize
             {
                 return false;
             }
+
+            json = json.Trim();
+            if (!(json.StartsWith("{") && json.EndsWith("}")) && !(json.StartsWith("[") && json.EndsWith("]")))
+            {
+                return false;
+            }
             try
             {
-                return null != JObject.Parse(json.Trim());
+                return null != JToken.Parse(json);
             }
             catch
             {
