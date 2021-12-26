@@ -41,6 +41,10 @@ namespace XCLNetTools.Serialize
         public static string Serialize(object obj, JsonProviderEnum provider = JsonProviderEnum.SystemWeb)
         {
             string result = string.Empty;
+            if (null == obj)
+            {
+                return result;
+            }
             switch (provider)
             {
                 case JsonProviderEnum.SystemWeb:
@@ -63,6 +67,10 @@ namespace XCLNetTools.Serialize
         public static T DeSerialize<T>(string str, JsonProviderEnum provider = JsonProviderEnum.SystemWeb) where T : class
         {
             T result = default(T);
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                return result;
+            }
             switch (provider)
             {
                 case JsonProviderEnum.SystemWeb:
