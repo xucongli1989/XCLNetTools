@@ -91,7 +91,6 @@ namespace XCLNetTools.Http
                     cookie.Value = mainValue;
                 }
                 cookie.Expires = DateTime.Now.AddDays(days);
-                cookie.Path = "/;SameSite=Lax;";
                 HttpContext.Current.Response.Cookies.Add(cookie);
                 return true;
             }
@@ -146,7 +145,6 @@ namespace XCLNetTools.Http
             try
             {
                 cookie.Expires = DateTime.Now.AddDays(-1);
-                cookie.Path = "/;SameSite=Lax;";
                 HttpContext.Current.Response.Cookies.Add(cookie);
                 return true;
             }
