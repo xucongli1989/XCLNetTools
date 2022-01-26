@@ -65,6 +65,14 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
+        /// 给文件路径创建目录
+        /// </summary>
+        public static void MakeDirectoryForFile(string path)
+        {
+            XCLNetTools.FileHandler.FileDirectory.MakeDirectory(XCLNetTools.FileHandler.ComFile.GetFileFolderPath(path));
+        }
+
+        /// <summary>
         /// 删除目录并删除其下的子目录及其文件
         /// </summary>
         public static bool DelTree(string path)

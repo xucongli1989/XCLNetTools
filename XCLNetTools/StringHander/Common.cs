@@ -920,6 +920,47 @@ namespace XCLNetTools.StringHander
             return lst;
         }
 
+        /// <summary>
+        /// 自动截断过长的日志字符串（取字符串的前面一部分和后面一部分）
+        /// </summary>
+        public static string GetShortLogMessage(string str)
+        {
+            var maxLen = 2000;
+            if (string.IsNullOrEmpty(str) || str.Length <= maxLen)
+            {
+                return str;
+            }
+            return $"{str.Substring(0, maxLen / 2)}...内容过多，已省略部分内容...{str.Substring(str.Length - maxLen / 2)}";
+        }
+
+        /// <summary>
+        /// 将日志列表转换为日志字符串
+        /// </summary>
+        public static string GetLogStringFromList(List<string> lst)
+        {
+            if (lst.IsNullOrEmpty())
+            {
+                return string.Empty;
+            }
+            return GetShortLogMessage(string.Join("；" + Environment.NewLine, lst));
+        }
+
+        /// <summary>
+        /// 将字符串转换为占位符格式的字符串（如：a -> {a}）
+        /// </summary>
+        public static string ConvertStrToPlaceholder(string str)
+        {
+            return $"{{{(str ?? "").Trim()}}}";
+        }
+
+        /// <summary>
+        /// 删除字符串开头的下划线
+        /// </summary>
+        public static string RemoveStartUnderline(string str)
+        {
+            return str?.TrimStart('_');
+        }
+
         #endregion 其它
     }
 }
