@@ -27,12 +27,12 @@ namespace XCLNetTools.Http
         /// <returns>key value实体</returns>
         public static List<XCLNetTools.Entity.KeyValue> GetCookieList(string cookie)
         {
-            List<XCLNetTools.Entity.KeyValue> cookielist = new List<XCLNetTools.Entity.KeyValue>();
-            foreach (string item in cookie.Split(new string[] { ";", "," }, StringSplitOptions.RemoveEmptyEntries))
+            var cookielist = new List<XCLNetTools.Entity.KeyValue>();
+            foreach (var item in cookie.Split(new string[] { ";", "," }, StringSplitOptions.RemoveEmptyEntries))
             {
                 if (Regex.IsMatch(item, @"([\s\S]*?)=([\s\S]*?)$"))
                 {
-                    Match m = Regex.Match(item, @"([\s\S]*?)=([\s\S]*?)$");
+                    var m = Regex.Match(item, @"([\s\S]*?)=([\s\S]*?)$");
                     cookielist.Add(new XCLNetTools.Entity.KeyValue() { Key = m.Groups[1].Value, Value = m.Groups[2].Value });
                 }
             }
@@ -81,7 +81,7 @@ namespace XCLNetTools.Http
         {
             try
             {
-                HttpCookie cookie = null != System.Web.HttpContext.Current.Request.Cookies ? System.Web.HttpContext.Current.Request.Cookies[mainName] : null;
+                var cookie = null != HttpContext.Current.Request.Cookies ? HttpContext.Current.Request.Cookies[mainName] : null;
                 if (cookie == null)
                 {
                     cookie = new HttpCookie(mainName, mainValue);
@@ -91,7 +91,8 @@ namespace XCLNetTools.Http
                     cookie.Value = mainValue;
                 }
                 cookie.Expires = DateTime.Now.AddDays(days);
-                System.Web.HttpContext.Current.Response.Cookies.Add(cookie);
+                cookie.Path = "/;SameSite=Lax;";
+                HttpContext.Current.Response.Cookies.Add(cookie);
                 return true;
             }
             catch
@@ -107,7 +108,7 @@ namespace XCLNetTools.Http
         /// <returns>cookie的值</returns>
         public static string GetCookies(string name)
         {
-            HttpCookieCollection collection = System.Web.HttpContext.Current.Request.Cookies;
+            var collection = HttpContext.Current.Request.Cookies;
             if (null != collection && null != collection[name])
             {
                 return collection[name].Value;
@@ -122,7 +123,7 @@ namespace XCLNetTools.Http
         /// <returns>值的集合</returns>
         public static NameValueCollection GetCookiesCollection(string name)
         {
-            HttpCookieCollection collection = System.Web.HttpContext.Current.Request.Cookies;
+            var collection = HttpContext.Current.Request.Cookies;
             if (null != collection && null != collection[name])
             {
                 return collection[name].Values;
@@ -137,7 +138,7 @@ namespace XCLNetTools.Http
         /// <returns>是否删除成功</returns>
         public static bool DelCookies(string name)
         {
-            HttpCookie cookie = null != System.Web.HttpContext.Current.Request.Cookies ? System.Web.HttpContext.Current.Request.Cookies[name] : null;
+            var cookie = null != HttpContext.Current.Request.Cookies ? HttpContext.Current.Request.Cookies[name] : null;
             if (null == cookie)
             {
                 return true;
@@ -145,7 +146,8 @@ namespace XCLNetTools.Http
             try
             {
                 cookie.Expires = DateTime.Now.AddDays(-1);
-                System.Web.HttpContext.Current.Response.Cookies.Add(cookie);
+                cookie.Path = "/;SameSite=Lax;";
+                HttpContext.Current.Response.Cookies.Add(cookie);
                 return true;
             }
             catch
