@@ -144,8 +144,10 @@ namespace XCLNetTools.Http
             }
             try
             {
-                cookie.Expires = DateTime.Now.AddDays(-1);
-                HttpContext.Current.Response.Cookies.Add(cookie);
+                //直接 new 一个新 cookie 对象，而不是复用已有的对象（因为在 web.config 中设置的 httpCookies 在新对象时有效）
+                var newCookie = new HttpCookie(cookie.Name, cookie.Value);
+                newCookie.Expires = DateTime.Now.AddDays(-1);
+                HttpContext.Current.Response.Cookies.Add(newCookie);
                 return true;
             }
             catch
