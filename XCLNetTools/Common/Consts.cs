@@ -265,5 +265,84 @@ namespace XCLNetTools.Common
         public static readonly Regex RegLongUserName = new Regex("^[a-zA-Z0-9]{3,20}$", RegexOptions.IgnoreCase);
 
         #endregion 用户名
+
+        #region 扩展名
+
+        /// <summary>
+        /// 文本文件扩展名（小写不带点）
+        /// </summary>
+        public static readonly HashSet<string> TextFileExtNameList = new HashSet<string>() {
+                                                                                        "ascx",
+                                                                                        "asm",
+                                                                                        "asmx",
+                                                                                        "asp",
+                                                                                        "aspx",
+                                                                                        "bash",
+                                                                                        "bat",
+                                                                                        "c",
+                                                                                        "cmd",
+                                                                                        "coffee",
+                                                                                        "cp",
+                                                                                        "cpp",
+                                                                                        "cs",
+                                                                                        "csproj",
+                                                                                        "css",
+                                                                                        "csv",
+                                                                                        "dart",
+                                                                                        "go",
+                                                                                        "h",
+                                                                                        "hbs",
+                                                                                        "htm",
+                                                                                        "html",
+                                                                                        "ini",
+                                                                                        "java",
+                                                                                        "jhtm",
+                                                                                        "jhtml",
+                                                                                        "js",
+                                                                                        "json",
+                                                                                        "json5",
+                                                                                        "jsp",
+                                                                                        "jspx",
+                                                                                        "jsx",
+                                                                                        "less",
+                                                                                        "lrc",
+                                                                                        "md",
+                                                                                        "mht",
+                                                                                        "mhtml",
+                                                                                        "php",
+                                                                                        "phpt",
+                                                                                        "phtml",
+                                                                                        "py",
+                                                                                        "sass",
+                                                                                        "scala",
+                                                                                        "scss",
+                                                                                        "sh",
+                                                                                        "shtml",
+                                                                                        "sln",
+                                                                                        "sql",
+                                                                                        "svg",
+                                                                                        "swift",
+                                                                                        "tex",
+                                                                                        "text",
+                                                                                        "tmpl",
+                                                                                        "tpl",
+                                                                                        "ts",
+                                                                                        "tsv",
+                                                                                        "tsx",
+                                                                                        "txt",
+                                                                                        "vb",
+                                                                                        "vbproj",
+                                                                                        "vbs",
+                                                                                        "vue",
+                                                                                        "xaml",
+                                                                                        "xht",
+                                                                                        "xhtml",
+                                                                                        "xml",
+                                                                                        "xsd",
+                                                                                        "yaml",
+                                                                                        "yml"
+        };
+
+        #endregion 扩展名
     }
 }

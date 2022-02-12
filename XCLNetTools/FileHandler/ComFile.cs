@@ -376,48 +376,45 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 判断文件是否是文本文件
+        /// 判断文件是否是文本文件（非严格模式下，优先根据扩展名来判断是否为文本）
         /// </summary>
         /// <param name="filePath">文件路径</param>
-        /// <returns>返回True为文本文件，否则是二进制文件</returns>
-        public static bool IsTextFile(string filePath)
+        /// <param name="isStrict">是否强制根据文件内容来判断是否为文本文件</param>
+        public static bool IsTextFile(string filePath, bool isStrict = false)
         {
-            using (FileStream file = new System.IO.FileStream(filePath, FileMode.Open, FileAccess.Read))
+            //非严格模式下先通过扩展名来判断
+            if (!isStrict && Common.Consts.TextFileExtNameList.Contains(GetExtName(filePath)))
             {
-                byte[] byteData = new byte[1];
-                while (file.Read(byteData, 0, byteData.Length) > 0)
-                {
-                    if (byteData[0] == 0)
-                        return false;
-                }
                 return true;
             }
-        }
 
-        /// <summary>
-        /// 判断指定的文件扩展名属于哪种文件类型（若返回-1，则表示在本库预设的类型中没有找到）
-        /// </summary>
-        /// <param name="ext">文件扩展名</param>
-        /// <returns>文件类型枚举</returns>
-        public static XCLNetTools.Enum.CommonEnum.FileExtInfoEnum GetFileExtType(string ext)
-        {
-            var result = (XCLNetTools.Enum.CommonEnum.FileExtInfoEnum)(-1);
-            if (string.IsNullOrWhiteSpace(ext))
+            //根据文件内容中是否有结束符来判断（因为字符串的结束标记为 \0）
+            var charsToCheck = 8000;
+            var nulChar = '\0';
+            var nulCount = 0;
+            using (var streamReader = new StreamReader(filePath))
             {
-                return result;
+                for (var i = 0; i < charsToCheck; i++)
+                {
+                    if (streamReader.EndOfStream)
+                    {
+                        return false;
+                    }
+                    if ((char)streamReader.Read() == nulChar)
+                    {
+                        nulCount++;
+                        if (nulCount >= 1)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        nulCount = 0;
+                    }
+                }
             }
-            ext = ext.Trim().Trim('.').ToLower();
-            var model = XCLNetTools.Enum.CommonEnum.EnumDic["FileExtInfoEnum"]?.FirstOrDefault(k => (k.Description ?? "").Split(',').ToList().Contains(ext));
-            if (null == model)
-            {
-                return result;
-            }
-            XCLNetTools.Enum.CommonEnum.FileExtInfoEnum temp;
-            if (System.Enum.TryParse(model.Text, out temp))
-            {
-                result = temp;
-            }
-            return result;
+            return false;
         }
 
         #endregion 文件类型判断
