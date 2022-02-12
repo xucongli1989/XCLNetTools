@@ -389,32 +389,16 @@ namespace XCLNetTools.FileHandler
             }
 
             //根据文件内容中是否有结束符来判断（因为字符串的结束标记为 \0）
-            var charsToCheck = 8000;
-            var nulChar = '\0';
-            var nulCount = 0;
-            using (var streamReader = new StreamReader(filePath))
+            using (var file = new System.IO.FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
-                for (var i = 0; i < charsToCheck; i++)
+                var byteData = new byte[1];
+                while (file.Read(byteData, 0, byteData.Length) > 0)
                 {
-                    if (streamReader.EndOfStream)
-                    {
+                    if (byteData[0] == 0)
                         return false;
-                    }
-                    if ((char)streamReader.Read() == nulChar)
-                    {
-                        nulCount++;
-                        if (nulCount >= 1)
-                        {
-                            return true;
-                        }
-                    }
-                    else
-                    {
-                        nulCount = 0;
-                    }
                 }
+                return true;
             }
-            return false;
         }
 
         #endregion 文件类型判断
