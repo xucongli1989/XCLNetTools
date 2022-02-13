@@ -123,5 +123,35 @@ namespace UnitTest.StringHander
             Assert.IsTrue(lst[2] == 6);
             Assert.IsTrue(lst[3] == 7);
         }
+
+        [TestMethod]
+        public void TrimEnd()
+        {
+            var lst = new List<string>();
+            var result = XCLNetTools.StringHander.Common.TrimEnd(lst);
+            Assert.AreSame(lst, result);
+
+            lst = new List<string>() { null, "   ", "1", "", null, "", null };
+            result = XCLNetTools.StringHander.Common.TrimEnd(lst);
+            Assert.IsTrue(result.Count == 3);
+            Assert.AreSame(lst[0], result[0]);
+            Assert.AreSame(lst[1], result[1]);
+            Assert.AreSame(lst[2], result[2]);
+
+            var lst2 = new List<object>() { null, "   ", "1", "", null, "", null };
+            var result2 = XCLNetTools.StringHander.Common.TrimEnd(lst2);
+            Assert.IsTrue(result2.Count == 3);
+            Assert.AreSame(lst2[0], result2[0]);
+            Assert.AreSame(lst2[1], result2[1]);
+            Assert.AreSame(lst2[2], result2[2]);
+
+            var lst3 = new List<object>() { null, "   ", "", "", null, "", null };
+            var result3 = XCLNetTools.StringHander.Common.TrimEnd(lst3);
+            Assert.IsTrue(result3.Count == 0);
+
+            var lst4 = new List<int>() { 1, 2, 3, 0, 0, 0 };
+            var result4 = XCLNetTools.StringHander.Common.TrimEnd(lst4);
+            Assert.AreSame(lst4, result4);
+        }
     }
 }

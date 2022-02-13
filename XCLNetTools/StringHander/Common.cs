@@ -446,6 +446,37 @@ namespace XCLNetTools.StringHander
             return string.IsNullOrEmpty(str) ? string.Empty : str.TrimStart(cutStr.ToCharArray());
         }
 
+        /// <summary>
+        /// 移除 List 末尾的 null 或 空白项
+        /// </summary>
+        public static List<T> TrimEnd<T>(List<T> lst)
+        {
+            if (lst.IsNullOrEmpty())
+            {
+                return lst;
+            }
+            //最后一个有效值的索引
+            var maxIndexWithValidValue = -1;
+            if (typeof(T) == typeof(string) || typeof(T) == typeof(object))
+            {
+                maxIndexWithValidValue = lst.FindLastIndex(k => !string.IsNullOrWhiteSpace(Convert.ToString(k)));
+            }
+            else
+            {
+                maxIndexWithValidValue = lst.FindLastIndex(k => null != k);
+            }
+            if (maxIndexWithValidValue == -1)
+            {
+                return new List<T>();
+            }
+            //移除末尾的无效项
+            if (maxIndexWithValidValue < lst.Count - 1)
+            {
+                lst.RemoveRange(maxIndexWithValidValue + 1, lst.Count - maxIndexWithValidValue - 1);
+            }
+            return lst;
+        }
+
         #endregion
 
         #region 其它

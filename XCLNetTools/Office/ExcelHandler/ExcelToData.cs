@@ -132,7 +132,10 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 读取 Excel 所有可见的 sheet 的所有标题信息
         /// </summary>
-        public static List<ExcelTitleInfo> GetExcelTitleInfoList(string excelfilePath, int titleRowNumber = 1)
+        /// <param name="excelfilePath">文件路径</param>
+        /// <param name="titleRowNumber">标题所在行号</param>
+        /// <param name="isIgnoreTailEmptyTitleColumn">是否忽略尾部没有标题名称的列，因为有些文件在读取时的列数为 excel 的最大列数，而实际上只有前几列有用</param>
+        public static List<ExcelTitleInfo> GetExcelTitleInfoList(string excelfilePath, int titleRowNumber = 1, bool isIgnoreTailEmptyTitleColumn = true)
         {
             var result = new List<ExcelTitleInfo>();
             if (!System.IO.File.Exists(excelfilePath))
@@ -174,6 +177,14 @@ namespace XCLNetTools.Office.ExcelHandler
                 {
                     item.TitleNameList.Add(Convert.ToString(tb.Rows[0][i]));
                 }
+            }
+
+            if (isIgnoreTailEmptyTitleColumn)
+            {
+                result.ForEach(k =>
+                {
+                    k.TitleNameList = XCLNetTools.StringHander.Common.TrimEnd(k.TitleNameList);
+                });
             }
 
             return result;
