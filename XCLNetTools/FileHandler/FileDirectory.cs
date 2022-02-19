@@ -207,11 +207,12 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static bool CreateTextFile(string path)
         {
-            FileInfo info = new FileInfo(path);
+            var info = new FileInfo(path);
             if (info.Exists)
             {
                 return true;
             }
+            MakeDirectoryForFile(path);
             using (var fs = info.Create())
             {
                 if (null != fs)
