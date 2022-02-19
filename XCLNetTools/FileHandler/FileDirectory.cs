@@ -46,22 +46,19 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static bool MakeDirectory(string path)
         {
+            if (Directory.Exists(path))
+            {
+                return true;
+            }
             try
             {
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                Directory.CreateDirectory(path);
             }
             catch
             {
-                return false;
+                //
             }
+            return Directory.Exists(path);
         }
 
         /// <summary>
@@ -215,12 +212,9 @@ namespace XCLNetTools.FileHandler
             MakeDirectoryForFile(path);
             using (var fs = info.Create())
             {
-                if (null != fs)
-                {
-                    return true;
-                }
+                //
             }
-            return false;
+            return System.IO.File.Exists(path);
         }
 
         /// <summary>
