@@ -77,7 +77,7 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 复制整个文件夹
+        /// 复制整个文件夹中的内容到目标文件夹中
         /// </summary>
         /// <param name="sourceDirName">原路径</param>
         /// <param name="destDirName">目标路径</param>
@@ -111,6 +111,18 @@ namespace XCLNetTools.FileHandler
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 复制整个文件夹的内容并将此文件夹作为目标文件夹的一个子文件夹
+        /// </summary>
+        /// <param name="sourceDirName">原路径</param>
+        /// <param name="destDirName">目标路径</param>
+        /// <param name="copySubDirs">是否复制子目录</param>
+        public static void CopyDirAsSub(string sourceDirName, string destDirName, bool copySubDirs)
+        {
+            destDirName = Path.Combine(destDirName, GetPathFolderName(sourceDirName, true));
+            ComFile.CopyDir(sourceDirName, destDirName, copySubDirs);
         }
 
         #endregion 复制文件
