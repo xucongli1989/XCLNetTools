@@ -209,8 +209,16 @@ namespace XCLNetTools.FileHandler
             {
                 return true;
             }
-            MakeDirectoryForFile(path);
-            using (var fs = info.Create())
+            try
+            {
+                MakeDirectoryForFile(path);
+                //如果磁盘不存在，using 语句会异常
+                using (var fs = info.Create())
+                {
+                    //
+                }
+            }
+            catch
             {
                 //
             }
