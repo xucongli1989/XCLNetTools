@@ -146,5 +146,32 @@ namespace XCLNetTools.Generic
             }
             return default(T);
         }
+
+        /// <summary>
+        /// 获取 List 中的某一范围的集合
+        /// </summary>
+        /// <param name="lst">待操作的列表</param>
+        /// <param name="startIndex">从0开始的索引序号</param>
+        /// <param name="count">连续取多少项</param>
+        public static List<T> GetRange<T>(List<T> lst, int startIndex, int count)
+        {
+            var result = new List<T>();
+            if (lst.IsNullOrEmpty())
+            {
+                return result;
+            }
+            var totalCount = lst.Count;
+            if (startIndex < 0 || startIndex > totalCount - 1 || count <= 0)
+            {
+                return result;
+            }
+            var restCount = totalCount - startIndex;
+            if (count > restCount)
+            {
+                count = restCount;
+            }
+            result = lst.GetRange(startIndex, count);
+            return result;
+        }
     }
 }
