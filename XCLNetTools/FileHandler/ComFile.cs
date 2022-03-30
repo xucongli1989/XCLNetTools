@@ -394,23 +394,39 @@ namespace XCLNetTools.FileHandler
         /// <param name="isStrict">是否强制根据文件内容来判断是否为文本文件</param>
         public static bool IsTextFile(string filePath, bool isStrict = false)
         {
+            var result = true;
+
             //非严格模式下先通过扩展名来判断
             if (!isStrict && Common.Consts.TextFileExtNameList.Contains(GetExtName(filePath)))
             {
-                return true;
+                return result;
             }
 
-            //根据文件内容中是否有结束符来判断（因为字符串的结束标记为 \0）
+            //1、根据文件内容中是否有结束符来判断（因为字符串的结束标记为 \0）
             using (var file = new System.IO.FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 var byteData = new byte[1];
                 while (file.Read(byteData, 0, byteData.Length) > 0)
                 {
                     if (byteData[0] == 0)
-                        return false;
+                    {
+                        result = false;
+                        break;
+                    }
                 }
-                return true;
             }
+
+            //2、根据是否能正确获取到文件编码类型判断是否为文本文件
+            if (!result)
+            {
+                var encoding = GetFileEncoding(filePath, false);
+                if (null != encoding)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
         }
 
         #endregion 文件类型判断
@@ -539,13 +555,12 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 根据文件路径，获取文件编码（若获取失败，则返回：Encoding.Default）
-        /// 注意：需要引用 UtfUnknown 包
+        /// 根据文件路径，获取文件编码（注意：需要引用 UtfUnknown 包）
         /// </summary>
-        public static Encoding GetFileEncoding(string filename)
+        public static Encoding GetFileEncoding(string filename, bool useDefaultEncodingWhenFail = true)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            var defaultEncoding = System.Text.Encoding.Default;
+            var defaultEncoding = useDefaultEncodingWhenFail ? System.Text.Encoding.Default : null;
             var detectorResult = UtfUnknown.CharsetDetector.DetectFromFile(filename);
             if (null == detectorResult || null == detectorResult.Detected)
             {
