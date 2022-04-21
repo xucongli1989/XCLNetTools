@@ -1014,6 +1014,39 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 获取两个字符串的所有行，并存放到一个相对应的列表中
+        /// </summary>
+        public static List<LineItem<string>> GetLines(string a, string b)
+        {
+            var result = new List<LineItem<string>>();
+            var aLines = XCLNetTools.StringHander.Common.GetLines(a);
+            var bLines = XCLNetTools.StringHander.Common.GetLines(b);
+
+            var aCount = aLines.Count;
+            var bCount = bLines.Count;
+            var maxCount = Math.Max(aCount, bCount);
+
+            if (aCount < maxCount)
+            {
+                aLines.AddRange(new string[maxCount - aCount]);
+            }
+            if (bCount < maxCount)
+            {
+                bLines.AddRange(new string[maxCount - bCount]);
+            }
+
+            for (var i = 0; i < aLines.Count; i++)
+            {
+                var item = new LineItem<string>();
+                item.LineNumber = i + 1;
+                item.Item1 = aLines[i];
+                item.Item2 = bLines[i];
+                result.Add(item);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 获取原始字符串的字面量形式，比如：null 返回字符串 "null"；换行符直接返回字符串 "\r\n"
         /// </summary>
         public static string GetRaw(string str)

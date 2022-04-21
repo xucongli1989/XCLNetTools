@@ -153,5 +153,29 @@ namespace UnitTest.StringHander
             var result4 = XCLNetTools.StringHander.Common.TrimEnd(lst4);
             Assert.AreSame(lst4, result4);
         }
+
+        [TestMethod]
+        public void GetLines()
+        {
+            List<LineItem<string>> lst = XCLNetTools.StringHander.Common.GetLines("", "");
+            Assert.IsTrue(lst.Count == 1 && lst[0].Item1 == "" && lst[0].Item2 == "");
+
+            lst = XCLNetTools.StringHander.Common.GetLines("123", "");
+            Assert.IsTrue(lst.Count == 1 && lst[0].Item1 == "123" && lst[0].Item2 == "");
+
+            lst = XCLNetTools.StringHander.Common.GetLines("1\n2\r\n3", "6");
+            Assert.IsTrue(lst.Count == 3);
+            Assert.IsTrue(lst[0].Item1 == "1" && lst[0].Item2 == "6");
+            Assert.IsTrue(lst[1].Item1 == "2" && lst[1].Item2 == null);
+            Assert.IsTrue(lst[2].Item1 == "3" && lst[2].Item2 == null);
+
+            lst = XCLNetTools.StringHander.Common.GetLines("1\n2\r\n3", "6\n7\n8\r\n9\n10");
+            Assert.IsTrue(lst.Count == 5);
+            Assert.IsTrue(lst[0].Item1 == "1" && lst[0].Item2 == "6");
+            Assert.IsTrue(lst[1].Item1 == "2" && lst[1].Item2 == "7");
+            Assert.IsTrue(lst[2].Item1 == "3" && lst[2].Item2 == "8");
+            Assert.IsTrue(lst[3].Item1 == null && lst[3].Item2 == "9");
+            Assert.IsTrue(lst[4].Item1 == null && lst[4].Item2 == "10");
+        }
     }
 }
