@@ -7,8 +7,11 @@ Create By: XCL @ 2012
  */
 
 using System;
+using System.CodeDom;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -990,6 +993,39 @@ namespace XCLNetTools.StringHander
         public static string RemoveStartUnderline(string str)
         {
             return str?.TrimStart('_');
+        }
+
+        /// <summary>
+        /// 将普通字符串中的换行符 \n 替换成当前系统的换行符 \r\n
+        /// </summary>
+        public static string ConvertToSystemNewLine(string str)
+        {
+            str = str ?? string.Empty;
+            return str.Replace(Environment.NewLine, "\n").Replace("\n", Environment.NewLine);
+        }
+
+        /// <summary>
+        /// 获取字符串中的每一行（支持 \n 和 \r\n）
+        /// </summary>
+        public static List<string> GetLines(string str)
+        {
+            str = ConvertToSystemNewLine(str ?? string.Empty);
+            return str.Split(new string[] { Environment.NewLine }, StringSplitOptions.None).ToList();
+        }
+
+        /// <summary>
+        /// 获取原始字符串的字面量形式，比如：null 返回字符串 "null"；换行符直接返回字符串 "\r\n"
+        /// </summary>
+        public static string GetRaw(string str)
+        {
+            using (var writer = new StringWriter())
+            {
+                using (var provider = CodeDomProvider.CreateProvider("CSharp"))
+                {
+                    provider.GenerateCodeFromExpression(new CodePrimitiveExpression(str), writer, null);
+                    return writer.ToString();
+                }
+            }
         }
 
         #endregion 其它
