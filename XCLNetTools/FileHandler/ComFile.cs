@@ -560,21 +560,44 @@ namespace XCLNetTools.FileHandler
         public static Encoding GetFileEncoding(string filename, bool useDefaultEncodingWhenFail = true)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            var defaultEncoding = useDefaultEncodingWhenFail ? System.Text.Encoding.Default : null;
-            var detectorResult = UtfUnknown.CharsetDetector.DetectFromFile(filename);
-            if (null == detectorResult || null == detectorResult.Detected)
+            bool? hasBOM = null;
+
+            var func = new Func<Encoding>(() =>
             {
+                var defaultEncoding = useDefaultEncodingWhenFail ? System.Text.Encoding.Default : null;
+                var detectorResult = UtfUnknown.CharsetDetector.DetectFromFile(filename);
+                if (null == detectorResult || null == detectorResult.Detected)
+                {
+                    return defaultEncoding;
+                }
+                hasBOM = detectorResult.Detected.HasBOM;
+                if (null != detectorResult.Detected.Encoding)
+                {
+                    return detectorResult.Detected.Encoding;
+                }
+                if (!string.IsNullOrWhiteSpace(detectorResult.Detected.EncodingName))
+                {
+                    return System.Text.Encoding.GetEncoding(detectorResult.Detected.EncodingName);
+                }
                 return defaultEncoding;
-            }
-            if (null != detectorResult.Detected.Encoding)
+            });
+
+            var resultEncoding = func();
+
+            //如果是 utf8 且包含 BOM，则强制转换为 UTF8Encoding 构造函数的实例（因为上面检测到的 utf8 对象使用默认的 System.Text.Encoding.UTF8，而这个默认的对象是带 BOM 的）
+            if (resultEncoding is System.Text.UTF8Encoding)
             {
-                return detectorResult.Detected.Encoding;
+                if (hasBOM.GetValueOrDefault())
+                {
+                    resultEncoding = System.Text.Encoding.UTF8;
+                }
+                else
+                {
+                    resultEncoding = new System.Text.UTF8Encoding(false);
+                }
             }
-            if (!string.IsNullOrWhiteSpace(detectorResult.Detected.EncodingName))
-            {
-                return System.Text.Encoding.GetEncoding(detectorResult.Detected.EncodingName);
-            }
-            return defaultEncoding;
+
+            return resultEncoding;
         }
 
         /// <summary>
