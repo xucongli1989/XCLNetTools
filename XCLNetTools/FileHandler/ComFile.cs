@@ -56,17 +56,9 @@ namespace XCLNetTools.FileHandler
         #region 复制文件
 
         /// <summary>
-        /// 复制文件(若已存在目标文件则覆盖)，若目标目录不存在，则自动创建
-        /// </summary>
-        public static bool CopyFile(string srcPath, string dstPath)
-        {
-            return CopyFile(srcPath, dstPath, true);
-        }
-
-        /// <summary>
         /// 复制文件，若目标目录不存在，则自动创建
         /// </summary>
-        public static bool CopyFile(string srcPath, string dstPath, bool overwrite)
+        public static bool CopyFile(string srcPath, string dstPath, bool overwrite = true)
         {
             lock (copy_lock)
             {
@@ -427,6 +419,14 @@ namespace XCLNetTools.FileHandler
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// 根据路径末尾是否带有字符（\）来判断是否为文件夹路径
+        /// </summary>
+        public static bool IsFolderPathByCharFlag(string path)
+        {
+            return (path ?? "").TrimEnd().EndsWith(@"\");
         }
 
         #endregion 文件类型判断

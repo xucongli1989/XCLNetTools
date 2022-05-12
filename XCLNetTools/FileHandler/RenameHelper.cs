@@ -120,11 +120,13 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 将所有路径转换成唯一的路径，如果有同名路径，则在后面自动标号（返回的列表与源列表的顺序是一样的）
+        /// 将所有路径转换成唯一的路径，如果有同名路径，则在后面自动标号（如：a.txt => a(1).txt、d:\a\ => d:\a(1)\）
+        /// 1、返回的列表与源列表的顺序是一样的
+        /// 2、传入的路径必须是标准的路径，并且这些路径可能同时包含文件路径与文件夹路径
         /// </summary>
-        public static List<string> ConvertPathToUniqueList(List<string> pathList, bool isFolder)
+        public static List<string> ConvertPathToUniqueList(List<string> standardPathList)
         {
-            if (pathList.IsNullOrEmpty())
+            if (standardPathList.IsNullOrEmpty())
             {
                 return new List<string>();
             }
@@ -132,14 +134,15 @@ namespace XCLNetTools.FileHandler
             var tpLst = new List<Tuple<string, string>>();
             var reg = new Regex(@"\((?<idx>\d+)\)$");
 
-            pathList.ForEach(p =>
+            standardPathList.ForEach(p =>
             {
-                var tempPath = ComFile.GetStandardPath(p, isFolder);
+                var isFolder = ComFile.IsFolderPathByCharFlag(p);
+                var tempPath = p;
 
                 //无限循环计算唯一的路径
                 while (true)
                 {
-                    var key = ComFile.GetStandardPath(tempPath, isFolder).ToUpper();
+                    var key = tempPath.ToUpper().TrimEnd('\\');
 
                     //如果当前路径在当前时刻未重复，则直接返回结果
                     if (!hs.Contains(key))

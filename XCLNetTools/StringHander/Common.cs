@@ -968,7 +968,7 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
-        /// 将日志列表转换为日志字符串
+        /// 将日志列表转换为日志字符串（最多只保留 2000 个字符长度）
         /// </summary>
         public static string GetLogStringFromList(List<string> lst)
         {
