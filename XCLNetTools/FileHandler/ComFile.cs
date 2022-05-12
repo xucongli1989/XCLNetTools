@@ -674,7 +674,7 @@ namespace XCLNetTools.FileHandler
             {
                 return string.Empty;
             }
-            path = path.Replace('/', '\\');
+            path = path.Trim().Replace('/', '\\');
             if (isFolder)
             {
                 return path.TrimEnd('\\') + '\\';

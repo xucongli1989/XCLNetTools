@@ -87,6 +87,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -214,6 +215,7 @@
     <Compile Include="Entity\MethodResult.cs" />
     <Compile Include="Entity\Office\ExcelHandler\ExcelTitleInfo.cs" />
     <Compile Include="Entity\Office\ExcelHandler\ExcelToTableOptions.cs" />
+    <Compile Include="Entity\RenameConflictItem.cs" />
     <Compile Include="Entity\RgbaEntity.cs" />
     <Compile Include="Entity\SetOptionEntity.cs" />
     <Compile Include="Control\HtmlControl\Lib.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="Entity\TreeData\ExtendDataEntity.cs" />
     <Compile Include="Entity\TreeData\TreeMapEntity.cs" />
     <Compile Include="FileHandler\Json.cs" />
+    <Compile Include="FileHandler\RenameHelper.cs" />
     <Compile Include="Generic\DisposableList.cs" />
     <Compile Include="Modules\ErrorHttpModule.cs" />
     <Compile Include="Office\ExcelHandler\DataToExcel.cs" />
