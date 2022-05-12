@@ -136,6 +136,12 @@ namespace XCLNetTools.FileHandler
 
             standardPathList.ForEach(p =>
             {
+                if (string.IsNullOrWhiteSpace(p))
+                {
+                    tpLst.Add(new Tuple<string, string>(p, p));
+                    return;
+                }
+
                 var isFolder = ComFile.IsFolderPathByCharFlag(p);
                 var tempPath = p;
 
