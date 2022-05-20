@@ -303,10 +303,7 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static string GetPathFolderName(string path, bool isFolderPath)
         {
-            if (isFolderPath)
-            {
-                path = GetOptimizedFolderPath(path);
-            }
+            path = ComFile.GetStandardPath(path, isFolderPath);
             return Path.GetFileName(Path.GetDirectoryName(path));
         }
 
@@ -317,8 +314,8 @@ namespace XCLNetTools.FileHandler
         {
             if (isFolderPath)
             {
-                path = GetOptimizedFolderPath(path);
-                return GetOptimizedFolderPath(Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), name));
+                path = ComFile.GetStandardPath(path, true);
+                return ComFile.GetStandardPath(Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), name), true);
             }
             return Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), name, Path.GetFileName(path));
         }
@@ -432,18 +429,6 @@ namespace XCLNetTools.FileHandler
         #endregion 文件类型判断
 
         #region 其它
-
-        /// <summary>
-        /// 将文件夹路径转为必须以 \ 结尾的字符串
-        /// </summary>
-        public static string GetOptimizedFolderPath(string path)
-        {
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                return path;
-            }
-            return path.TrimEnd('\\') + '\\';
-        }
 
         /// <summary>
         /// 取得文件物理路径
@@ -674,10 +659,10 @@ namespace XCLNetTools.FileHandler
             {
                 return string.Empty;
             }
-            path = path.Trim().Replace('/', '\\');
+            path = path.Trim().Replace('/', '\\').TrimEnd('\\');
             if (isFolder)
             {
-                return path.TrimEnd('\\') + '\\';
+                return path + '\\';
             }
             return path;
         }

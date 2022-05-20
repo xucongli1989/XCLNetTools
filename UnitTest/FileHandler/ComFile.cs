@@ -28,10 +28,13 @@ namespace UnitTest.FileHandler
         }
 
         [TestMethod]
-        public void GetOptimizedFolderPath()
+        public void GetStandardPath()
         {
-            Assert.AreEqual(@"c:\a\b\", XCLNetTools.FileHandler.ComFile.GetOptimizedFolderPath(@"c:\a\b"));
-            Assert.AreEqual(@"c:\a\b\", XCLNetTools.FileHandler.ComFile.GetOptimizedFolderPath(@"c:\a\b\"));
+            Assert.AreEqual(@"c:\a\b\", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"c:/a/b", true));
+            Assert.AreEqual(@"c:\a\b\", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"c:/a/b/", true));
+            Assert.AreEqual(@"c:\a\b", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"c:/a/b/", false));
+            Assert.AreEqual(@"c:\a\b.docx", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"c:/a/b.docx/", false));
+            Assert.AreEqual(@"c:\a\b.docx", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"c:/a/b.docx", false));
         }
     }
 }
