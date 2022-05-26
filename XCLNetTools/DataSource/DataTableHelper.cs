@@ -141,5 +141,47 @@ namespace XCLNetTools.DataSource
             msg.IsSuccess = true;
             return msg;
         }
+
+        /// <summary>
+        /// 合并 DataTable 中的标题行（Excel 转为 DataTable 时，如果此列是合并的单元格，则只有最左边的列有值，其它列是空值。这个方法会将最后一行作为唯一的标题行，标题的名称为父标题合并后的值）。
+        /// 示例：前三行为标题行，第一行为 a，第二行为 b，第三行为 c，则在处理后的第三行的内容为 a_b_c
+        /// </summary>
+        /// <param name="dt">DataTable</param>
+        /// <param name="titleRowCount">前几行是标题行</param>
+        public static void MergeTitleRows(DataTable dt, int titleRowCount)
+        {
+            var rowCount = dt.Rows.Count;
+            var columnCount = dt.Columns.Count;
+
+            if (rowCount < titleRowCount)
+            {
+                return;
+            }
+
+            //填充前面合并列的单元格为前一个单元格的内容
+            for (var i = 0; i < titleRowCount - 1; i++)
+            {
+                for (var c = 1; c < columnCount; c++)
+                {
+                    var cellValue = dt.Rows[i][c].ToString();
+                    if (string.IsNullOrWhiteSpace(cellValue))
+                    {
+                        dt.Rows[i][c] = dt.Rows[i][c - 1].ToString();
+                    }
+                }
+            }
+
+            //更新最后一行中的单元格内容
+            var titleRow = dt.Rows[titleRowCount - 1];
+            for (var c = 0; c < columnCount; c++)
+            {
+                var cellValues = new List<string>();
+                for (var i = 0; i < titleRowCount; i++)
+                {
+                    cellValues.Add(dt.Rows[i][c].ToString()?.Trim());
+                }
+                titleRow[c] = string.Join("_", cellValues).Trim('_');
+            }
+        }
     }
 }
