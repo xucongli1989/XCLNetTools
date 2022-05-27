@@ -178,9 +178,34 @@ namespace XCLNetTools.DataSource
                 var cellValues = new List<string>();
                 for (var i = 0; i < titleRowCount; i++)
                 {
-                    cellValues.Add(dt.Rows[i][c].ToString()?.Trim());
+                    var val = dt.Rows[i][c].ToString()?.Trim();
+                    if (!string.IsNullOrWhiteSpace(val))
+                    {
+                        cellValues.Add(val);
+                    }
                 }
                 titleRow[c] = string.Join("_", cellValues).Trim('_');
+            }
+        }
+
+        /// <summary>
+        /// 使用行中的数据作为当前 DataTable 的所有列名
+        /// </summary>
+        public static void UpdateColumnNameFromRow(DataTable dt, int rowIndex)
+        {
+            var rowCount = dt.Rows.Count;
+            if (rowIndex <= -1 || rowIndex >= rowCount)
+            {
+                return;
+            }
+            var row = dt.Rows[rowIndex];
+            for (var i = 0; i < dt.Columns.Count; i++)
+            {
+                var val = row[i].ToString()?.Trim();
+                if (!string.IsNullOrWhiteSpace(val))
+                {
+                    dt.Columns[i].ColumnName = val;
+                }
             }
         }
     }
