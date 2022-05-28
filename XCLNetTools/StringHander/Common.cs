@@ -955,6 +955,23 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 根据单个范围值返回【表示位置】的范围对象
+        /// 0：整个内容最左边的位置；2：第二项右边的位置；-1：最后一项右边的位置
+        /// </summary>
+        public static RangeValueEntity GetPositionRangeValueEntity(int positionRangeValue, int minValue, int maxValue)
+        {
+            if (positionRangeValue == 0)
+            {
+                if (minValue == 0)
+                {
+                    return new RangeValueEntity() { StartValue = 0, EndValue = 0 };
+                }
+                return null;
+            }
+            return GetRangeValueEntityListFromText(positionRangeValue.ToString(), minValue, maxValue).FirstOrDefault();
+        }
+
+        /// <summary>
         /// 自动截断过长的日志字符串（取字符串的前面一部分和后面一部分）
         /// </summary>
         public static string GetShortLogMessage(string str)

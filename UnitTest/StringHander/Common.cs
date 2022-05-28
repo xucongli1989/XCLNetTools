@@ -114,6 +114,22 @@ namespace UnitTest.StringHander
         }
 
         [TestMethod]
+        public void GetPositionRangeValueEntity()
+        {
+            var model = XCLNetTools.StringHander.Common.GetPositionRangeValueEntity(0, 0, 0);
+            Assert.IsTrue(model.StartValue == 0 && model.EndValue == 0);
+
+            model = XCLNetTools.StringHander.Common.GetPositionRangeValueEntity(0, 1, 2);
+            Assert.IsTrue(null == model);
+
+            model = XCLNetTools.StringHander.Common.GetPositionRangeValueEntity(2, 1, 2);
+            Assert.IsTrue(model.StartValue == 2);
+
+            model = XCLNetTools.StringHander.Common.GetPositionRangeValueEntity(-2, 1, 2);
+            Assert.IsTrue(model.StartValue == 1);
+        }
+
+        [TestMethod]
         public void GetStartEndNumList()
         {
             var lst = XCLNetTools.StringHander.Common.GetStartEndNumList(4, 7);
