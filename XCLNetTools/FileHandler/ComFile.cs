@@ -267,22 +267,14 @@ namespace XCLNetTools.FileHandler
         #region 目录相关
 
         /// <summary>
-        /// 返回目录路径，若该目录不存在，则创建该目录
-        /// </summary>
-        public static string GetSaveDirectory(string directoryPath)
-        {
-            if (!Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
-            }
-            return directoryPath;
-        }
-
-        /// <summary>
         /// 获取文件所在的文件夹路径【不带'\'】，如："C:\a\b\c\file.txt" --> "C:\a\b\c"
         /// </summary>
         public static string GetFileFolderPath(string filePath)
         {
+            if (string.IsNullOrWhiteSpace(filePath))
+            {
+                return string.Empty;
+            }
             return System.IO.Path.GetDirectoryName(filePath);
         }
 
@@ -303,6 +295,10 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static string GetPathFolderName(string path, bool isFolderPath)
         {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
             path = ComFile.GetStandardPath(path, isFolderPath);
             return Path.GetFileName(Path.GetDirectoryName(path));
         }
@@ -312,6 +308,10 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static string ChangePathByFolderName(string path, string name, bool isFolderPath)
         {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
             if (isFolderPath)
             {
                 path = ComFile.GetStandardPath(path, true);
@@ -437,7 +437,7 @@ namespace XCLNetTools.FileHandler
         /// <returns>文件物理路径</returns>
         public static string MapPath(string path)
         {
-            if (string.IsNullOrEmpty(path))
+            if (string.IsNullOrWhiteSpace(path))
             {
                 return string.Empty;
             }
@@ -464,7 +464,7 @@ namespace XCLNetTools.FileHandler
         /// <returns>path相对于rootPath的url路径</returns>
         public static string GetUrlRelativePath(string rootPath, string path)
         {
-            if (string.IsNullOrEmpty(rootPath) || string.IsNullOrEmpty(path))
+            if (string.IsNullOrWhiteSpace(rootPath) || string.IsNullOrWhiteSpace(path))
             {
                 return string.Empty;
             }
@@ -531,6 +531,10 @@ namespace XCLNetTools.FileHandler
         /// <returns>新的文件路径</returns>
         public static string GetFilePathWithNewExt(string path, string newExt)
         {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
             if (null != newExt)
             {
                 newExt = newExt.Trim().Trim('.');

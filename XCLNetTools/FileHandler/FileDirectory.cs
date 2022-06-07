@@ -192,6 +192,10 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static string GetDirParentPath(string dirPath)
         {
+            if (string.IsNullOrWhiteSpace(dirPath))
+            {
+                return string.Empty;
+            }
             return Path.GetDirectoryName(Path.GetDirectoryName(dirPath.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar));
         }
 
