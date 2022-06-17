@@ -200,5 +200,46 @@ namespace XCLNetTools.FileHandler
 
             return tpLst.Select(k => k.Item2).ToList();
         }
+
+        /// <summary>
+        /// 重命名文件或文件夹，如果重命名失败，则会报错（注意：当新名称和旧名称不区分大小写相同时，使用临时随机命名过渡处理，从而不会报错。Computer 中的内置重命名在这种情况下会报错。）
+        /// </summary>
+        /// <param name="isFolder">是否为文件夹</param>
+        /// <param name="path">文件或文件夹路径</param>
+        /// <param name="newName">新名称</param>
+        /// <param name="tempFlag">临时随机名称前缀</param>
+        public static void Rename(bool isFolder, string path, string newName, string tempFlag = "")
+        {
+            newName = newName.Trim();
+            var tempName = $"{tempFlag}{System.IO.Path.GetRandomFileName()}";
+            if (isFolder)
+            {
+                var oldName = XCLNetTools.FileHandler.ComFile.GetPathFolderName(path, true);
+                if (string.Equals(oldName, newName, StringComparison.OrdinalIgnoreCase))
+                {
+                    PC.FileSystem.RenameDirectory(path, tempName);
+                    var tempPath = XCLNetTools.FileHandler.ComFile.ChangePathByFolderName(path, tempName, true);
+                    PC.FileSystem.RenameDirectory(tempPath, newName);
+                }
+                else
+                {
+                    PC.FileSystem.RenameDirectory(path, newName);
+                }
+            }
+            else
+            {
+                var oldName = XCLNetTools.FileHandler.ComFile.GetFileName(path);
+                if (string.Equals(oldName, newName, StringComparison.OrdinalIgnoreCase))
+                {
+                    PC.FileSystem.RenameFile(path, tempName);
+                    var tempPath = XCLNetTools.FileHandler.ComFile.ChangePathByFileName(path, tempName);
+                    PC.FileSystem.RenameFile(tempPath, newName);
+                }
+                else
+                {
+                    PC.FileSystem.RenameFile(path, newName);
+                }
+            }
+        }
     }
 }
