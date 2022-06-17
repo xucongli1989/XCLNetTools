@@ -46,10 +46,12 @@ namespace XCLNetTools.FileHandler
                 //正常重命名
                 if (isFolder)
                 {
+                    //注意：即使名称没有变化（不区分大小写） ，也会报错
                     PC.FileSystem.RenameDirectory(path, newName);
                 }
                 else
                 {
+                    //注意：即使名称没有变化（不区分大小写） ，也会报错
                     PC.FileSystem.RenameFile(path, newName);
                 }
             }
@@ -101,11 +103,13 @@ namespace XCLNetTools.FileHandler
             {
                 if (isFolder)
                 {
+                    //注意：即使名称没有变化（不区分大小写） ，也会报错
                     PC.FileSystem.RenameDirectory(path, newName);
                     msg.Result = XCLNetTools.FileHandler.ComFile.ChangePathByFolderName(path, newName, true);
                 }
                 else
                 {
+                    //注意：即使名称没有变化（不区分大小写） ，也会报错
                     PC.FileSystem.RenameFile(path, newName);
                     msg.Result = XCLNetTools.FileHandler.ComFile.ChangePathByFileName(path, newName);
                 }
