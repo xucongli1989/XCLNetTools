@@ -215,6 +215,10 @@ namespace XCLNetTools.FileHandler
             if (isFolder)
             {
                 var oldName = XCLNetTools.FileHandler.ComFile.GetPathFolderName(path, true);
+                if (oldName == newName)
+                {
+                    return;
+                }
                 if (string.Equals(oldName, newName, StringComparison.OrdinalIgnoreCase))
                 {
                     PC.FileSystem.RenameDirectory(path, tempName);
@@ -229,6 +233,10 @@ namespace XCLNetTools.FileHandler
             else
             {
                 var oldName = XCLNetTools.FileHandler.ComFile.GetFileName(path);
+                if (oldName == newName)
+                {
+                    return;
+                }
                 if (string.Equals(oldName, newName, StringComparison.OrdinalIgnoreCase))
                 {
                     PC.FileSystem.RenameFile(path, tempName);
