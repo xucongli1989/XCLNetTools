@@ -6,11 +6,32 @@ namespace UnitTest.FileHandler
     public class ComFile
     {
         [TestMethod]
+        public void IsLocalDiskRootPath()
+        {
+            Assert.AreEqual(false, XCLNetTools.FileHandler.ComFile.IsLocalDiskRootPath(""));
+            Assert.AreEqual(false, XCLNetTools.FileHandler.ComFile.IsLocalDiskRootPath("/a/b/"));
+            Assert.AreEqual(false, XCLNetTools.FileHandler.ComFile.IsLocalDiskRootPath(@"c:\a\"));
+            Assert.AreEqual(true, XCLNetTools.FileHandler.ComFile.IsLocalDiskRootPath(@"c:"));
+            Assert.AreEqual(true, XCLNetTools.FileHandler.ComFile.IsLocalDiskRootPath(@"c:\"));
+        }
+
+        [TestMethod]
+        public void GetLocalPathDiskName()
+        {
+            Assert.AreEqual("", XCLNetTools.FileHandler.ComFile.GetLocalPathDiskName(""));
+            Assert.AreEqual("", XCLNetTools.FileHandler.ComFile.GetLocalPathDiskName("/a/b/"));
+            Assert.AreEqual("c", XCLNetTools.FileHandler.ComFile.GetLocalPathDiskName(@"c:\a\"));
+            Assert.AreEqual("c", XCLNetTools.FileHandler.ComFile.GetLocalPathDiskName(@"c:"));
+            Assert.AreEqual("c", XCLNetTools.FileHandler.ComFile.GetLocalPathDiskName(@"c:\"));
+        }
+
+        [TestMethod]
         public void GetPathFolderName()
         {
             //文件夹
-            Assert.AreEqual("c", XCLNetTools.FileHandler.ComFile.GetPathFolderName(@"c:\a\b\c", true));
-            Assert.AreEqual("c", XCLNetTools.FileHandler.ComFile.GetPathFolderName(@"c:\a\b\c\", true));
+            Assert.AreEqual("c", XCLNetTools.FileHandler.ComFile.GetPathFolderName(@"c:\", true));
+            Assert.AreEqual("d", XCLNetTools.FileHandler.ComFile.GetPathFolderName(@"c:\a\b\c\d", true));
+            Assert.AreEqual("d", XCLNetTools.FileHandler.ComFile.GetPathFolderName(@"c:\a\b\c\d\", true));
             //文件
             Assert.AreEqual("b", XCLNetTools.FileHandler.ComFile.GetPathFolderName(@"c:\a\b\c", false));
             Assert.AreEqual("b", XCLNetTools.FileHandler.ComFile.GetPathFolderName(@"c:\a\b\c.pdf", false));

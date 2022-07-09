@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using XCLNetTools.Generic;
 
@@ -267,6 +268,36 @@ namespace XCLNetTools.FileHandler
         #region 目录相关
 
         /// <summary>
+        /// 判断某个路径是否为本地磁盘根路径，如：c:\
+        /// </summary>
+        public static bool IsLocalDiskRootPath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return false;
+            }
+            path = ComFile.GetStandardPath(path, true);
+            return new Regex(@"^[a-zA-Z]:\\$").IsMatch(path);
+        }
+
+        /// <summary>
+        /// 获取路径中的磁盘名称，如：c:\a\b\c\ -> c
+        /// </summary>
+        public static string GetLocalPathDiskName(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
+            var mt = new Regex("^[a-zA-Z](?=:)").Match(path);
+            if (!mt.Success)
+            {
+                return string.Empty;
+            }
+            return mt.Value;
+        }
+
+        /// <summary>
         /// 获取文件所在的文件夹路径【不带'\'】，如："C:\a\b\c\file.txt" --> "C:\a\b\c"
         /// </summary>
         public static string GetFileFolderPath(string filePath)
@@ -291,7 +322,7 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 获取路径所在的文件夹名称，如：c:\a\b\ --> b;  c:\a\b\c.pdf --> b
+        /// 获取路径所在的文件夹名称，如：c:\  --> c；  c:\a\b\ --> b;  c:\a\b\c.pdf --> b
         /// </summary>
         public static string GetPathFolderName(string path, bool isFolderPath)
         {
@@ -300,7 +331,12 @@ namespace XCLNetTools.FileHandler
                 return string.Empty;
             }
             path = ComFile.GetStandardPath(path, isFolderPath);
-            return Path.GetFileName(Path.GetDirectoryName(path));
+            var result = Path.GetFileName(Path.GetDirectoryName(path));
+            if (string.IsNullOrWhiteSpace(result) && isFolderPath && ComFile.IsLocalDiskRootPath(path))
+            {
+                result = ComFile.GetLocalPathDiskName(path);
+            }
+            return result;
         }
 
         /// <summary>
