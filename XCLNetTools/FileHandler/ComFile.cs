@@ -265,10 +265,10 @@ namespace XCLNetTools.FileHandler
 
         #endregion 文件下载
 
-        #region 目录相关
+        #region 路径相关
 
         /// <summary>
-        /// 判断某个路径是否为本地磁盘根路径，如：c:\
+        /// 判断某个路径是否为本地磁盘根路径，如：c:\  或  \\test-pc\
         /// </summary>
         public static bool IsLocalDiskRootPath(string path)
         {
@@ -277,11 +277,11 @@ namespace XCLNetTools.FileHandler
                 return false;
             }
             path = ComFile.GetStandardPath(path, true);
-            return new Regex(@"^[a-zA-Z]:\\$").IsMatch(path);
+            return new Regex(@"^[^\\]+:\\$").IsMatch(path) || new Regex(@"^\\\\[^\\]+\\$").IsMatch(path);
         }
 
         /// <summary>
-        /// 获取路径中的磁盘名称，如：c:\a\b\c\ -> c
+        /// 获取路径中的磁盘名称，如：c:\a\b\c\ -> c，\\test-pc\a\b\c\ -> test-pc
         /// </summary>
         public static string GetLocalPathDiskName(string path)
         {
@@ -289,24 +289,54 @@ namespace XCLNetTools.FileHandler
             {
                 return string.Empty;
             }
-            var mt = new Regex("^[a-zA-Z](?=:)").Match(path);
-            if (!mt.Success)
+            path = ComFile.GetStandardPath(path, true);//此逻辑不区分文件还是文件夹，只是方便后面读取
+            //普通路径
+            var mt = new Regex(@"^[^\\]+(?=:)").Match(path);
+            if (mt.Success)
             {
-                return string.Empty;
+                return mt.Value;
             }
-            return mt.Value;
+            //网络路径
+            mt = new Regex(@"^\\\\([^\\]+)(?=\\)").Match(path);
+            if (mt.Success)
+            {
+                return mt.Groups[1].Value;
+            }
+            return string.Empty;
         }
 
         /// <summary>
-        /// 获取文件所在的文件夹路径【不带'\'】，如："C:\a\b\c\file.txt" --> "C:\a\b\c"
+        /// 判断一个文件或文件夹的路径是否在根目录中，如：c:\test.docx，\\pc\test.docx
         /// </summary>
-        public static string GetFileFolderPath(string filePath)
+        public static bool IsFileOrFolderInRootPath(string path)
         {
-            if (string.IsNullOrWhiteSpace(filePath))
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return false;
+            }
+            path = ComFile.GetStandardPath(path, true);//此逻辑不区分文件还是文件夹，只是方便后面读取
+            if (ComFile.IsLocalDiskRootPath(path))
+            {
+                return true;
+            }
+            return new Regex(@"^[^\\]+:\\[^\\]+\\$").IsMatch(path) || new Regex(@"^\\\\[^\\]+\\[^\\]+\\$").IsMatch(path);
+        }
+
+        /// <summary>
+        /// 获取文件所在的文件夹路径，如："C:\a\b\c\file.txt" --> "C:\a\b\c\"
+        /// </summary>
+        public static string GetFileFolderPath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
             {
                 return string.Empty;
             }
-            return System.IO.Path.GetDirectoryName(filePath);
+            path = ComFile.GetStandardPath(path, false);
+            if (ComFile.IsFileOrFolderInRootPath(path))
+            {
+                return path.Substring(0, path.LastIndexOf(@"\") + 1);
+            }
+            return ComFile.GetStandardPath(System.IO.Path.GetDirectoryName(path), true);
         }
 
         /// <summary>
@@ -318,7 +348,7 @@ namespace XCLNetTools.FileHandler
             {
                 return string.Empty;
             }
-            return System.IO.Path.GetDirectoryName(path) + '\\' + name;
+            return System.IO.Path.Combine(ComFile.GetFileFolderPath(path), name);
         }
 
         /// <summary>
@@ -331,12 +361,8 @@ namespace XCLNetTools.FileHandler
                 return string.Empty;
             }
             path = ComFile.GetStandardPath(path, isFolderPath);
-            var result = Path.GetFileName(Path.GetDirectoryName(path));
-            if (string.IsNullOrWhiteSpace(result) && isFolderPath && ComFile.IsLocalDiskRootPath(path))
-            {
-                result = ComFile.GetLocalPathDiskName(path);
-            }
-            return result;
+            var arr = path.Split('\\');
+            return arr[arr.Length - 2].Replace(":", "");
         }
 
         /// <summary>
@@ -348,15 +374,17 @@ namespace XCLNetTools.FileHandler
             {
                 return string.Empty;
             }
-            if (isFolderPath)
+            path = ComFile.GetStandardPath(path, isFolderPath);
+            if (ComFile.IsLocalDiskRootPath(path) || (!isFolderPath && ComFile.IsFileOrFolderInRootPath(path)))
             {
-                path = ComFile.GetStandardPath(path, true);
-                return ComFile.GetStandardPath(Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), name), true);
+                throw new ArgumentOutOfRangeException("path", "不允许修改路径中的根名称！");
             }
-            return Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(path)), name, Path.GetFileName(path));
+            var arr = path.Split('\\');
+            arr[arr.Length - 2] = name;
+            return string.Join(@"\", arr);
         }
 
-        #endregion 目录相关
+        #endregion 路径相关
 
         #region 文件属性相关
 
