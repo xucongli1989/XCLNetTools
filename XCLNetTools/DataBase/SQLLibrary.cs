@@ -77,8 +77,8 @@ namespace XCLNetTools.DataBase
                                                         SET @Start=(@_pageIndex-1)*@_pageSize+1
                                                         SET @End=@Start+@_pageSize-1
 
-                                                        IF(@Start>@TotalCount) SET @Start=@TotalCount
-                                                        IF(@End>@TotalCount) SET @End=@TotalCount
+                                                        IF(@Start>@TotalCount) SET @Start=@TotalCount+1
+                                                        IF(@End>@TotalCount) SET @End=@TotalCount+1
 
                                                         --分页
                                                         ;WITH Data AS
