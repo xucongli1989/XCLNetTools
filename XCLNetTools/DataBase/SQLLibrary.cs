@@ -60,25 +60,22 @@ namespace XCLNetTools.DataBase
                 strSql = string.Format(@"
                                                         DECLARE @_pageIndex INT={0}
                                                         DECLARE @_pageSize INT={1}
+                                                        DECLARE @_maxPageIndex INT=0
                                                         DECLARE @Start INT=0
                                                         DECLARE @End INT=0
-                                                        DECLARE @IsNeedAllCount BIT={6}
 
-                                                        IF(@IsNeedAllCount=1)
-                                                        BEGIN
-                                                            --获取总记录数
-                                                            SELECT @TotalCount=COUNT(1) FROM {2} WITH(NOLOCK)
-                                                            {4}
-                                                        END
+                                                        --获取总记录数
+                                                        SELECT @TotalCount=COUNT(1) FROM {2} WITH(NOLOCK)  {4}
 
                                                         IF(@_pageIndex<=0) SET @_pageIndex=1
                                                         IF(@_pageSize<=0) SET @_pageSize=10
 
+                                                        --获取最大页数
+                                                        SET @_maxPageIndex=CEILING((1.0*@TotalCount)/@_pageSize)
+                                                        IF(@_pageIndex>@_maxPageIndex) SET @_pageIndex=@_maxPageIndex
+
                                                         SET @Start=(@_pageIndex-1)*@_pageSize+1
                                                         SET @End=@Start+@_pageSize-1
-
-                                                        IF(@Start>@TotalCount) SET @Start=@TotalCount+1
-                                                        IF(@End>@TotalCount) SET @End=@TotalCount+1
 
                                                         --分页
                                                         ;WITH Data AS
@@ -98,8 +95,7 @@ namespace XCLNetTools.DataBase
                                                         condition.TableName,//{2}
                                                         condition.OrderBy,//{3}
                                                         string.IsNullOrWhiteSpace(condition.Where) ? string.Empty : (" where " + condition.Where),//{4}
-                                                        null == condition.FieldNameList || condition.FieldNameList.Count == 0 ? " * " : string.Join(",", condition.FieldNameList.ToArray()),//{5}
-                                                        condition.IsNeedAllCount ? 1 : 0//{6}
+                                                        null == condition.FieldNameList || condition.FieldNameList.Count == 0 ? " * " : string.Join(",", condition.FieldNameList.ToArray())//{5}
                                     );
             }
 

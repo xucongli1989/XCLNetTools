@@ -57,11 +57,6 @@ namespace XCLNetTools.Entity
         public int PageSize { get; set; } = 10;
 
         /// <summary>
-        /// 是否需要查询当前所有页结果的总记录数（默认：true）
-        /// </summary>
-        public bool IsNeedAllCount { get; set; } = true;
-
-        /// <summary>
         /// 排序字段（前面无需添加"ORDER BY"）
         /// </summary>
         public string OrderBy { get; set; }
