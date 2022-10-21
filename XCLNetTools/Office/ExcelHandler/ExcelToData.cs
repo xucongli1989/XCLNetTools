@@ -56,6 +56,10 @@ namespace XCLNetTools.Office.ExcelHandler
             options.ExportAsString = true;
             options.PlotVisibleRows = excelToTableOptions.IsOnlyVisibleRows;
             var displayRange = worksheet.Cells.MaxDisplayRange;
+            if (null == displayRange)
+            {
+                return dt;
+            }
             var readTotalCount = displayRange.RowCount - excelToTableOptions.StartRowIndex;
             if (readTotalCount <= 0)
             {
@@ -165,6 +169,11 @@ namespace XCLNetTools.Office.ExcelHandler
                 }
 
                 var displayRange = worksheet.Cells.MaxDisplayRange;
+                if (null == displayRange)
+                {
+                    continue;
+                }
+
                 int firstRow = titleRowNumber - 1;
                 int firstColumn = 0;
                 int totalColumns = displayRange.ColumnCount;
