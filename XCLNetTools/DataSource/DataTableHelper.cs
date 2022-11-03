@@ -208,5 +208,39 @@ namespace XCLNetTools.DataSource
                 }
             }
         }
+
+        /// <summary>
+        /// 将字典列表转换为 DataTable（字典中的每一个 Key 是字段名，Value 是该字段的值）
+        /// </summary>
+        public static DataTable ConvertDicListToDataTable(List<IDictionary<string, object>> lst)
+        {
+            var dt = new DataTable();
+            if (lst.IsNullOrEmpty())
+            {
+                return dt;
+            }
+            lst.ForEach(dic =>
+            {
+                var dr = dt.NewRow();
+                if (null == dic)
+                {
+                    return;
+                }
+                dic.Keys.ToList().ForEach(key =>
+                {
+                    if (string.IsNullOrWhiteSpace(key))
+                    {
+                        return;
+                    }
+                    if (!dt.Columns.Contains(key))
+                    {
+                        dt.Columns.Add(key, typeof(string));
+                    }
+                    dr[key] = Convert.ToString(dic[key]);
+                });
+                dt.Rows.Add(dr);
+            });
+            return dt;
+        }
     }
 }

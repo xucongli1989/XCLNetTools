@@ -483,6 +483,22 @@ namespace XCLNetTools.Common
             return string.Equals("T", key, StringComparison.OrdinalIgnoreCase);
         }
 
+        /// <summary>
+        /// 将【是、否】转换为 Bool
+        /// </summary>
+        public static bool ConvertYesOrNoToBool(string str)
+        {
+            return str?.Trim() == "是";
+        }
+
+        /// <summary>
+        /// 将 Bool 转换为【是、否】
+        /// </summary>
+        public static string ConvertBoolToYesOrNo(bool? val)
+        {
+            return val.GetValueOrDefault() ? "是" : "否";
+        }
+
         #endregion bool
 
         #region decimal

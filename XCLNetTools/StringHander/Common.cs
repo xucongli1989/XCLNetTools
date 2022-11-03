@@ -1078,6 +1078,43 @@ namespace XCLNetTools.StringHander
             }
         }
 
+        /// <summary>
+        /// 根据 css 中的 RGBA 颜色获取 Color 对象（因为 css 中的 color 是按 RGBA 排序，而 c# 中的 color 转换方法是按 ARGB 排序）
+        /// </summary>
+        /// <param name="htmlHex">RGBA 颜色，如：#ff663312</param>
+        public static System.Drawing.Color GetColorFromHtmlHexString(string htmlHex)
+        {
+            var hex = htmlHex.Replace("#", "").Trim();
+            if (string.IsNullOrWhiteSpace(hex))
+            {
+                return System.Drawing.Color.FromArgb(0, 0, 0);
+            }
+            var len = hex.Length;
+            if (len != 6 && len != 8)
+            {
+                throw new ArgumentOutOfRangeException("颜色格式不正确！");
+            }
+            if (len == 6)
+            {
+                hex = $"ff{hex}";
+            }
+            else if (len == 8)
+            {
+                var rgb = hex.Substring(0, 6);
+                var a = hex.Substring(6, 2);
+                hex = a + rgb;
+            }
+            return System.Drawing.ColorTranslator.FromHtml($"#{hex}");
+        }
+
+        /// <summary>
+        /// 转义正则中的新内容（将 $ 替换为 $$，从而防止分组替换解析）
+        /// </summary>
+        public static string EscapeRegexNewValue(string newValue)
+        {
+            return newValue?.Replace("$", "$$");
+        }
+
         #endregion 其它
     }
 }

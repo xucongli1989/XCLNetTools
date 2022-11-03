@@ -751,6 +751,38 @@ namespace XCLNetTools.FileHandler
             return pathList.Where(k => dic.ContainsKey(GetExtName(k))).ToList();
         }
 
+        /// <summary>
+        /// 获取最终用于磁盘存储的文件名（包含扩展名）或文件夹名
+        /// 这里会删除非法字符和前后空白，如果最终的名称是空的，则强制返回下划线
+        /// </summary>
+        public static string ConvertToFinalFileOrFolderName(string name)
+        {
+            name = name ?? string.Empty;
+            //去掉非法字符
+            name = XCLNetTools.Common.Consts.RegInvalidFileNameChars.Replace(name, string.Empty);
+            //去掉前后空白（只需要 Trim 就可以了，原因是：文件夹名、有扩展名的文件名、无扩展名的文件名，系统都会自动去掉前后空白。注意：a.txt  当 a 的右侧有空格时，操作系统不会自动去空白，这种情况相当于是正常情况）
+            name = name.Trim();
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return "_";
+            }
+            return name;
+        }
+
+        /// <summary>
+        /// 将文件路径转换为文件夹路径，并且将扩展名的点改为下划线
+        /// </summary>
+        public static string ConvertFilePathToDirPath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
+            var fileName = XCLNetTools.FileHandler.ComFile.GetFileName(path).Replace(".", "_");
+            var newPath = XCLNetTools.FileHandler.ComFile.ChangePathByFileName(path, fileName);
+            return XCLNetTools.FileHandler.ComFile.GetStandardPath(newPath, true);
+        }
+
         #endregion 其它
     }
 }

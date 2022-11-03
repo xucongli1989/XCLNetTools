@@ -224,6 +224,7 @@
     <Compile Include="Generic\DisposableList.cs" />
     <Compile Include="Modules\ErrorHttpModule.cs" />
     <Compile Include="Office\ExcelHandler\DataToExcel.cs" />
+    <Compile Include="Office\ExcelHandler\ExcelCommon.cs" />
     <Compile Include="Office\ExcelHandler\ExcelToData.cs" />
     <Compile Include="Entity\Office\ExcelHandler\OutPutClass.cs" />
     <Compile Include="Entity\Office\ExcelHandler\OutPutField.cs" />
