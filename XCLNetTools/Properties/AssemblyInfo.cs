@@ -13,11 +13,11 @@ using System.Runtime.InteropServices;
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("XCLNetTools")]
-[assembly: AssemblyDescription("DotNet常用处理类（GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
+[assembly: AssemblyDescription("DotNet常用处理类（GitHub：https://github.com/xucongli1989/XCLNetTools）")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
+[assembly: AssemblyCompany("by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools）")]
 [assembly: AssemblyProduct("DotNet常用处理类（GitHub：https://github.com/xucongli1989/XCLNetTools）")]
-[assembly: AssemblyCopyright("Copyright ©  2012-2020 by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools、Email:80213876@qq.com）")]
+[assembly: AssemblyCopyright("Copyright ©  2012-2020 by:xcl （GitHub：https://github.com/xucongli1989/XCLNetTools）")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -38,5 +38,5 @@ using System.Runtime.InteropServices;
 //
 // 可以指定所有这些值，也可以使用“内部版本号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”:
-[assembly: AssemblyVersion("3.10.3")]
-[assembly: AssemblyFileVersion("3.10.3")]
+[assembly: AssemblyVersion("3.11.0")]
+[assembly: AssemblyFileVersion("3.11.0")]
