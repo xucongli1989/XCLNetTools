@@ -13,6 +13,11 @@ namespace XCLNetTools.Entity
     public class FontInfoEntity
     {
         /// <summary>
+        /// 字体文件存放路径
+        /// </summary>
+        public string SourcePath { get; set; }
+
+        /// <summary>
         /// 字体文件路径
         /// </summary>
         public string Path { get; set; }

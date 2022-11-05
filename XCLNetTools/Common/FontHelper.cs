@@ -36,6 +36,7 @@ namespace XCLNetTools.Common
                             return;
                         }
                         var info = new FontInfoEntity();
+                        info.SourcePath = p;
                         info.Path = fontPath;
                         info.FileNameWithoutExt = XCLNetTools.FileHandler.ComFile.GetFileName(fontPath, false);
                         info.CNName = cnFontName;
