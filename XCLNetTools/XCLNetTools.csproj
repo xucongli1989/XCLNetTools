@@ -106,6 +106,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\OWC10Chart.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="ServiceStack.Common, Version=3.9.56.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\redis\ServiceStack.Common.dll</HintPath>
