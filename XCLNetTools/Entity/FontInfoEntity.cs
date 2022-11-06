@@ -23,11 +23,6 @@ namespace XCLNetTools.Entity
         public string Path { get; set; }
 
         /// <summary>
-        /// 字体文件名称（如：abc.ttf 中的 abc）
-        /// </summary>
-        public string FileNameWithoutExt { get; set; }
-
-        /// <summary>
         /// 用于显示的字体中文名称，如：宋体
         /// </summary>
         public string CNName { get; set; }
