@@ -25,6 +25,11 @@ namespace XCLNetTools.FileHandler
         private const string splitChar = "@";
 
         /// <summary>
+        /// 重命名的临时固定前缀名称
+        /// </summary>
+        public static string RenameTempFixedPreName { get; set; }
+
+        /// <summary>
         /// 重命名文件或文件夹（先按正常逻辑重命名，如果失败，则使用随机前缀重命名并返回该随机前缀和路径，方便后续移除此前缀，注意：此方法不包含移除随机前缀的逻辑，由前端逻辑处理）
         /// </summary>
         /// <param name="isFolder">是否为文件夹</param>
@@ -43,17 +48,7 @@ namespace XCLNetTools.FileHandler
 
             try
             {
-                //正常重命名
-                if (isFolder)
-                {
-                    //注意：即使名称没有变化（不区分大小写） ，也会报错
-                    PC.FileSystem.RenameDirectory(path, newName);
-                }
-                else
-                {
-                    //注意：即使名称没有变化（不区分大小写） ，也会报错
-                    PC.FileSystem.RenameFile(path, newName);
-                }
+                RenameHelper.Rename(isFolder, path, newName);
             }
             catch (Exception ex)
             {
@@ -83,42 +78,6 @@ namespace XCLNetTools.FileHandler
                     //抛出最开始的异常信息
                     throw ex;
                 }
-            }
-            return msg;
-        }
-
-        /// <summary>
-        /// 尝试重命名文件或文件夹，如果成功，则返回更新后的路径；如果失败，则返回更新前的路径
-        /// </summary>
-        public static XCLNetTools.Entity.MethodResult<string> TryRename(bool isFolder, string path, string newName)
-        {
-            var msg = new XCLNetTools.Entity.MethodResult<string>();
-            msg.IsSuccess = false;
-            msg.Result = path;
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                return msg;
-            }
-            try
-            {
-                if (isFolder)
-                {
-                    //注意：即使名称没有变化（不区分大小写） ，也会报错
-                    PC.FileSystem.RenameDirectory(path, newName);
-                    msg.Result = XCLNetTools.FileHandler.ComFile.ChangePathByFolderName(path, newName, true);
-                }
-                else
-                {
-                    //注意：即使名称没有变化（不区分大小写） ，也会报错
-                    PC.FileSystem.RenameFile(path, newName);
-                    msg.Result = XCLNetTools.FileHandler.ComFile.ChangePathByFileName(path, newName);
-                }
-                msg.IsSuccess = true;
-            }
-            catch (Exception ex)
-            {
-                msg.Result = path;
-                msg.Message = ex.Message;
             }
             return msg;
         }
@@ -207,11 +166,10 @@ namespace XCLNetTools.FileHandler
         /// <param name="isFolder">是否为文件夹</param>
         /// <param name="path">文件或文件夹路径</param>
         /// <param name="newName">新名称</param>
-        /// <param name="tempFlag">临时随机名称前缀</param>
-        public static void Rename(bool isFolder, string path, string newName, string tempFlag = "")
+        public static void Rename(bool isFolder, string path, string newName)
         {
             newName = newName.Trim();
-            var tempName = $"{tempFlag}{System.IO.Path.GetRandomFileName()}";
+            var tempName = $"{RenameHelper.RenameTempFixedPreName}{System.IO.Path.GetRandomFileName()}";
             if (isFolder)
             {
                 var oldName = XCLNetTools.FileHandler.ComFile.GetPathFolderName(path, true);
