@@ -55,17 +55,13 @@ namespace XCLNetTools.Office.ExcelHandler
             options.ExportColumnName = excelToTableOptions.IsConvertFirstRowToColumnName;
             options.ExportAsString = true;
             options.PlotVisibleRows = excelToTableOptions.IsOnlyVisibleRows;
-            var displayRange = worksheet.Cells.MaxDisplayRange;
-            if (null == displayRange)
-            {
-                return dt;
-            }
-            var readTotalCount = displayRange.RowCount - excelToTableOptions.StartRowIndex;
+            var dataCountInfo = XCLNetTools.Office.ExcelHandler.ExcelCommon.GetDataCountInfo(worksheet, ExcelCommon.ExcelDataCountInfoRangeTypeEnum.only_data_range);
+            var readTotalCount = dataCountInfo.RowCount - excelToTableOptions.StartRowIndex;
             if (readTotalCount <= 0)
             {
                 return dt;
             }
-            dt = worksheet.Cells.ExportDataTable(excelToTableOptions.StartRowIndex, 0, readTotalCount, displayRange.ColumnCount, options);
+            dt = worksheet.Cells.ExportDataTable(excelToTableOptions.StartRowIndex, 0, readTotalCount, dataCountInfo.ColumnCount, options);
             dt.TableName = worksheet.Name;
             if (excelToTableOptions.IgnoreEmptyDataRows)
             {
@@ -168,15 +164,15 @@ namespace XCLNetTools.Office.ExcelHandler
                     continue;
                 }
 
-                var displayRange = worksheet.Cells.MaxDisplayRange;
-                if (null == displayRange)
+                var dataCountInfo = XCLNetTools.Office.ExcelHandler.ExcelCommon.GetDataCountInfo(worksheet, ExcelCommon.ExcelDataCountInfoRangeTypeEnum.only_data_range);
+                if (dataCountInfo.ColumnCount == 0)
                 {
                     continue;
                 }
 
                 int firstRow = titleRowNumber - 1;
                 int firstColumn = 0;
-                int totalColumns = displayRange.ColumnCount;
+                int totalColumns = dataCountInfo.ColumnCount;
                 var tb = worksheet.Cells.ExportDataTableAsString(firstRow, firstColumn, 1, totalColumns);
                 if (null == tb || tb.Rows.Count == 0)
                 {

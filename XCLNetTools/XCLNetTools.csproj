@@ -203,6 +203,7 @@
     <Compile Include="Entity\Message\JsonMsgBody.cs" />
     <Compile Include="Entity\Message\JsonMsgHead.cs" />
     <Compile Include="Entity\MethodResult.cs" />
+    <Compile Include="Entity\Office\ExcelHandler\ExcelDataCountInfoEntity.cs" />
     <Compile Include="Entity\Office\ExcelHandler\ExcelTitleInfo.cs" />
     <Compile Include="Entity\Office\ExcelHandler\ExcelToTableOptions.cs" />
     <Compile Include="Entity\RenameConflictItem.cs" />
