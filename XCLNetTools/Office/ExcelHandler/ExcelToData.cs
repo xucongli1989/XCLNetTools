@@ -11,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 using XCLNetTools.Entity.Office.ExcelHandler;
 
 namespace XCLNetTools.Office.ExcelHandler
@@ -79,6 +78,15 @@ namespace XCLNetTools.Office.ExcelHandler
         /// <summary>
         /// 单个工作薄读入（第一个可见的sheet）
         /// </summary>
+        public static DataTable ReadExcelToTable(Aspose.Cells.Workbook workbook, ExcelToTableOptions excelToTableOptions = null)
+        {
+            var worksheet = workbook.Worksheets.FirstOrDefault(k => k.IsVisible);
+            return WorkSheetToDataTable(worksheet, excelToTableOptions);
+        }
+
+        /// <summary>
+        /// 单个工作薄读入（第一个可见的sheet）
+        /// </summary>
         public static DataTable ReadExcelToTable(string path, ExcelToTableOptions excelToTableOptions = null)
         {
             var dt = new DataTable();
@@ -86,31 +94,16 @@ namespace XCLNetTools.Office.ExcelHandler
             {
                 return dt;
             }
-
             var workbook = GetWorkbook(path);
-            Worksheet worksheet = null;
-            for (int i = 0; i < workbook.Worksheets.Count; i++)
-            {
-                worksheet = workbook.Worksheets[i];
-                if (worksheet.IsVisible)
-                {
-                    break;
-                }
-            }
-            return WorkSheetToDataTable(worksheet, excelToTableOptions);
+            return ReadExcelToTable(workbook, excelToTableOptions);
         }
 
         /// <summary>
         /// 多个工作薄读入（所有可见的sheet）
         /// </summary>
-        public static DataSet ReadExcelToDataSet(string path, ExcelToTableOptions excelToTableOptions = null)
+        public static DataSet ReadExcelToDataSet(Aspose.Cells.Workbook workbook, ExcelToTableOptions excelToTableOptions = null)
         {
             var ds = new DataSet();
-            if (!System.IO.File.Exists(path))
-            {
-                return ds;
-            }
-            var workbook = GetWorkbook(path);
             Worksheet worksheet = null;
             for (int i = 0; i < workbook.Worksheets.Count; i++)
             {
@@ -127,6 +120,20 @@ namespace XCLNetTools.Office.ExcelHandler
                 ds.Tables.Add(dt);
             }
             return ds;
+        }
+
+        /// <summary>
+        /// 多个工作薄读入（所有可见的sheet）
+        /// </summary>
+        public static DataSet ReadExcelToDataSet(string path, ExcelToTableOptions excelToTableOptions = null)
+        {
+            var ds = new DataSet();
+            if (!System.IO.File.Exists(path))
+            {
+                return ds;
+            }
+            var workbook = GetWorkbook(path);
+            return ReadExcelToDataSet(workbook, excelToTableOptions);
         }
 
         /// <summary>
