@@ -185,8 +185,6 @@
     <Compile Include="Common\IPHelper.cs" />
     <Compile Include="Common\SwitchControl.cs" />
     <Compile Include="Common\ThreadHelper.cs" />
-    <Compile Include="Control\ServerControl\Lib.cs" />
-    <Compile Include="DataBase\SQLite\SQLiteHelper.cs" />
     <Compile Include="DataBase\SQLLibrary.cs" />
     <Compile Include="Common\TreeDataHelper.cs" />
     <Compile Include="DataSource\DataReaderHelper.cs" />
@@ -210,13 +208,8 @@
     <Compile Include="Entity\RgbaEntity.cs" />
     <Compile Include="Entity\SetOptionEntity.cs" />
     <Compile Include="Control\HtmlControl\Lib.cs" />
-    <Compile Include="Control\MxGraph\Lib.cs" />
     <Compile Include="Control\Pagination\AspNetPagerInfo.cs" />
     <Compile Include="Control\Pagination\BasePagination.cs" />
-    <Compile Include="DataBase\Access\AccessHelper.cs" />
-    <Compile Include="DataBase\MSSQL\SqlHelper.cs" />
-    <Compile Include="DataBase\MSSQL\SqlHelperParameterCache.cs" />
-    <Compile Include="DataBase\Redis\RedisHelper.cs" />
     <Compile Include="Entity\SqlPagerConditionEntity.cs" />
     <Compile Include="Entity\RangeValueEntity.cs" />
     <Compile Include="Entity\TreeData\ExtendDataEntity.cs" />
@@ -250,7 +243,6 @@
     <Compile Include="Http\CookieHelper.cs" />
     <Compile Include="Http\HttpHelper.cs" />
     <Compile Include="MVC\JsonResultFormat.cs" />
-    <Compile Include="Serialize\LitJson.cs" />
     <Compile Include="Language\CN.cs" />
     <Compile Include="Message\MessageModel.cs" />
     <Compile Include="Message\Log.cs" />
@@ -259,7 +251,6 @@
     <Compile Include="FileHandler\HttpProc.cs" />
     <Compile Include="FileHandler\INIFile.cs" />
     <Compile Include="FileHandler\ZipHelper.cs" />
-    <Compile Include="Javascript\Jscript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\KeyValue.cs" />
     <Compile Include="Entity\StaticResource.cs" />
@@ -283,58 +274,11 @@
     <Compile Include="XML\XMLHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DLL\AntiXSSLibrary.dll" />
-    <Content Include="DLL\AspNetPager\AspNetPager.dll" />
-    <Content Include="DLL\AspNetPager\en\AspNetPager.resources.dll" />
-    <Content Include="DLL\AspNetPager\zh-CHT\AspNetPager.resources.dll" />
-    <Content Include="DLL\Aspose\Aspose.Cells.dll" />
-    <Content Include="DLL\Aspose\Aspose.Pdf.Kit.dll" />
-    <Content Include="DLL\Aspose\Aspose.Slides.dll" />
-    <Content Include="DLL\Aspose\Aspose.Words.dll" />
-    <Content Include="DLL\COM.Excel.dll" />
-    <Content Include="DLL\DocumentFormat.OpenXml.dll" />
-    <Content Include="DLL\DocumentFormat.OpenXml.xml" />
-    <Content Include="DLL\Excel.dll" />
-    <Content Include="DLL\HtmlAgilityPack\Net20\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\Net20\HtmlAgilityPack.dll.VisualState.xml" />
-    <Content Include="DLL\HtmlAgilityPack\Net20\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\Net20\HtmlAgilityPack.xml" />
-    <Content Include="DLL\HtmlAgilityPack\Net40\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\Net40\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\Net40\HtmlAgilityPack.XML" />
-    <Content Include="DLL\HtmlAgilityPack\Net45\HtmlAgilityPack.dll" />
-    <Content Include="DLL\HtmlAgilityPack\Net45\HtmlAgilityPack.pdb" />
-    <Content Include="DLL\HtmlAgilityPack\Net45\HtmlAgilityPack.XML" />
-    <Content Include="DLL\IBatisNet.Common.dll" />
-    <Content Include="DLL\IBatisNet.DataMapper.dll" />
-    <Content Include="DLL\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="DLL\LitJson.dll" />
-    <Content Include="DLL\log4net.dll" />
-    <Content Include="DLL\MxGraph\mxgraph.dll" />
-    <Content Include="DLL\MxGraph\mxgraph.XML" />
-    <Content Include="DLL\MySql.Data.dll" />
-    <Content Include="DLL\Newtonsoft.Json.dll" />
-    <Content Include="DLL\Newtonsoft.Json.xml" />
-    <Content Include="DLL\OpenSmtp.dll" />
-    <Content Include="DLL\OWC10Chart.dll" />
-    <Content Include="DLL\redis\ServiceStack.Common.dll" />
-    <Content Include="DLL\redis\ServiceStack.Interfaces.dll" />
-    <Content Include="DLL\redis\ServiceStack.Redis.dll" />
-    <Content Include="DLL\redis\ServiceStack.Redis.XML" />
-    <Content Include="DLL\redis\ServiceStack.Text.dll" />
-    <Content Include="DLL\redis\ServiceStack.Text.XML" />
-    <Content Include="DLL\System.Data.SQLite.DLL" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
-    <None Include="Doc\Config\StaticResourceConfig.config" />
-    <None Include="Doc\Doxy\Doxyfile" />
     <None Include="packages.config" />
     <None Include="XCLNetTools.licenseheader" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Doc\Doxy\document\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
