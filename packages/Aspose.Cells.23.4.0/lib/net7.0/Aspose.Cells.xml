@@ -1,0 +1,509 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Aspose.Cells</name>
+  </assembly>
+  <members>
+    <member name="T:Aspose.Cells.Rendering.IPageSavingCallback">
+      <summary>
+            Control/Indicate progress of page saving process.
+            </summary>
+    </member>
+    <member name="M:Aspose.Cells.Rendering.IPageSavingCallback.PageStartSaving(Aspose.Cells.Rendering.PageStartSavingArgs)">
+      <summary>
+            Control/Indicate a page starts to be output.
+            </summary>
+      <param name="args">Info for a page starts saving process.</param>
+    </member>
+    <member name="M:Aspose.Cells.Rendering.IPageSavingCallback.PageEndSaving(Aspose.Cells.Rendering.PageEndSavingArgs)">
+      <summary>
+            Control/Indicate a page ends to be output.
+            </summary>
+      <param name="args">Info for a page ends saving process.</param>
+    </member>
+    <member name="T:Aspose.Cells.Rendering.PdfSecurity.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Rendering.PdfSecurity</b> namespace provides classes security options of Rendering pdf.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Rendering.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Rendering</b> namespace provides classes for rendering image and pdf.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Drawing.ActiveXControls.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Drawing.ActiveXControls</b> namespace provides classes that allow to draw and access ActiveXControl.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Drawing.Texts.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Drawing.Texts</b> namespace provides classes that draw and format texts objects such paragraph, bullet and more.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Drawing.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Drawing</b> namespace provides classes that allow to create and modify drawing shapes, form controls, and more advanced drawing objects.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Charts.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Charts</b> namespace provides classes that allow to access and drawing charts and sparkline in Microsoft Excel spreadsheets.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.IFilePathProvider">
+      <summary>
+            Represents the exported file path provider.
+            </summary>
+    </member>
+    <member name="M:Aspose.Cells.IFilePathProvider.GetFullName(System.String)">
+      <summary>
+            Gets the full path of the file by Worksheet name when exporting Worksheet to html separately.
+            So the references among the Worksheets can be exported correctly.
+            </summary>
+      <param name="sheetName">Worksheet name</param>
+      <returns>the full path of the file</returns>
+    </member>
+    <member name="T:Aspose.Cells.IExportObjectListener">
+      <summary>
+             Allows users to manipulate objects while exporting.
+             </summary>
+      <example>
+             The following example creates a Workbook, opens a file named designer.xls in it and makes the horizontal and vertical scroll bars invisible for the Workbook. It then replaces two string values with an Integer value and string value respectively within the spreadsheet and finally sends the updated file to the client browser. 
+             <code>
+             [C#]
+                 //custom implementation of IExportObjectListener
+                 class CustomExportObjectListener : IExportObjectListener
+                 {
+                     private int imgIdx = 0;
+                     public object ExportObject(ExportObjectEvent e)
+                     {
+                         Object source = e.GetSource();
+                         if (source is Shape)
+                         {
+                             Shape shape = (Shape)source;
+                             string url = null;
+                             switch (shape.MsoDrawingType)
+                             {
+                                 case MsoDrawingType.Picture:
+                                 {
+                                     url = SaveImage(((Picture)shape).Data, imgIdx, ((Picture)shape).ImageType);
+                                     break;
+                                  }
+                             }
+                             if (url != null)
+                             {
+                                 imgIdx++;
+                             }
+                             return url;
+                         }
+                         return null;
+                     }
+                     private string SaveImage(byte[] data, int imgIdx, ImageType format)
+                     {
+                         //here save the image to any location, then return the url(relative or absolute) that the generated html can get the image
+                         return "temp1/temp2.png";
+                     }
+                  }
+                  
+                     //Save html file with custom listener
+                     Workbook book = null; //build your workbook here
+                     HtmlSaveOptions saveOptions = new HtmlSaveOptions();
+                     saveOptions.ExportObjectListener = new CustomExportObjectListener();
+                     Stream stream = null; //build your stream here
+                     book.Save("res.html", saveOptions); //or here you can build your out put stream and save the workbook to stream
+            
+             </code></example>
+    </member>
+    <member name="M:Aspose.Cells.IExportObjectListener.ExportObject(Aspose.Cells.ExportObjectEvent)">
+      <summary>
+            Export one object.
+            </summary>
+      <param name="e">The event triggered when one object needs to be exported.</param>
+      <returns>
+            The information about the result of exporting object.
+            <ul><li>For exporting objects when export workbook to HTML format,
+            the result is URL string to access the saved Image from the html file which contains this exported object.
+            </li></ul></returns>
+    </member>
+    <member name="T:Aspose.Cells.Json.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Json</b> namespace contains all classes of JSON.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Ods.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Ods</b> namespace contains all classes of loading and converting OpenDocument Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Properties.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Properties</b> namespace provides classes to work with custom and built-in Spreadsheet properties such as title, keywords, company etc.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.DigitalSignatures.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.DigitalSignatures</b> namespace provides classes to sign documents and verify signatures.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.ExternalConnections.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.ExternalConnections</b> namespace provides classes for external connections to retrieve data from external sources such as Databases and the Web.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.ICellsDataTable">
+      <summary>
+            Represents data table.
+            </summary>
+      <remarks>
+      </remarks>
+    </member>
+    <member name="P:Aspose.Cells.ICellsDataTable.Columns">
+      <summary>
+            Gets the columns' name.
+            </summary>
+    </member>
+    <member name="P:Aspose.Cells.ICellsDataTable.Count">
+      <summary>
+            Gets the count of the records. -1 for unknown records count.
+            </summary>
+    </member>
+    <member name="M:Aspose.Cells.ICellsDataTable.BeforeFirst">
+      <summary>
+            Move the cursor to the front of this object, just before the first row.
+            </summary>
+    </member>
+    <member name="P:Aspose.Cells.ICellsDataTable.Item(System.Int32)">
+      <summary>
+             Gets the data stored in the column specified by index.
+            </summary>
+      <param name="columnIndex">The zero-based index of the column.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:Aspose.Cells.ICellsDataTable.Item(System.String)">
+      <summary>
+            Gets the data stored in the column specified by column name.
+            </summary>
+      <param name="columnName">The column name.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:Aspose.Cells.ICellsDataTable.Next">
+      <summary>
+            Moves the cursor down one row from its current position.
+            </summary>
+      <returns> if the new current row is valid; false if there are no more rows </returns>
+    </member>
+    <member name="T:Aspose.Cells.ICustomParser">
+      <summary>
+            Allows users to add their custom value parser for parsing string values to other proper cell value object. 	
+            </summary>
+    </member>
+    <member name="M:Aspose.Cells.ICustomParser.ParseObject(System.String)">
+      <summary>
+            Parses given string to proper value object.
+            </summary>
+      <param name="value">The string value to be parsed</param>
+      <returns>
+            Parsed value object from given string. If given string cannot be parsed to proper value object, returns null.
+            </returns>
+    </member>
+    <member name="M:Aspose.Cells.ICustomParser.GetFormat">
+      <summary>
+            Gets the formatting pattern corresponding to the parsed value by last invocation of <see cref="M:Aspose.Cells.ICustomParser.ParseObject(System.String)" />.
+            </summary>
+      <remarks>
+            The returned formatting pattern may be used to format corresponding cell(set to Style.Custom for the cell).
+            </remarks>
+    </member>
+    <member name="T:Aspose.Cells.IStreamProvider">
+      <summary>
+            Represents the exported stream provider.
+            </summary>
+    </member>
+    <member name="M:Aspose.Cells.IStreamProvider.InitStream(Aspose.Cells.StreamProviderOptions)">
+      <summary>
+            Gets the stream.
+            </summary>
+      <param name="options">
+      </param>
+    </member>
+    <member name="M:Aspose.Cells.IStreamProvider.CloseStream(Aspose.Cells.StreamProviderOptions)">
+      <summary>
+            Closes the stream.
+            </summary>
+      <param name="options">
+      </param>
+    </member>
+    <member name="T:Aspose.Cells.IWarningCallback">
+      <summary>
+            Callback interface of warning.
+            </summary>
+    </member>
+    <member name="M:Aspose.Cells.IWarningCallback.Warning(Aspose.Cells.WarningInfo)">
+      <summary>
+            Our callback only needs to implement the "Warning" method.
+            </summary>
+      <param name="warningInfo"> warning info</param>
+    </member>
+    <member name="T:Aspose.Cells.LightCellsDataHandler">
+      <summary>
+            Represents cells data handler for reading large spreadsheet files in light weight mode. 	
+            </summary>
+      <remarks>
+            When reading a workbook by this mode, <see cref="M:Aspose.Cells.LightCellsDataHandler.StartSheet(Aspose.Cells.Worksheet)" /> will be checked when reading every worksheet in the workbook.
+            For one sheet, if <see cref="M:Aspose.Cells.LightCellsDataHandler.StartSheet(Aspose.Cells.Worksheet)" /> gives true, then all data and properties of rows/cells of this sheet will be checked
+            and processed by the implementation of this interface. For every row, <see cref="M:Aspose.Cells.LightCellsDataHandler.StartRow(System.Int32)" /> will be called to check whether it need to be processed.
+            If a row needs to be processed, properties of this row will be read firstly and user can access its properties by <see cref="M:Aspose.Cells.LightCellsDataHandler.ProcessRow(Aspose.Cells.Row)" />.
+            if row's cells need to be processed too, then <see cref="M:Aspose.Cells.LightCellsDataHandler.ProcessRow(Aspose.Cells.Row)" /> should returns true and then <see cref="M:Aspose.Cells.LightCellsDataHandler.StartCell(System.Int32)" /> will be
+            called for every existing cell in this row to check whether one cell need to be processed. If one cell needs to be processed,
+            then <see cref="M:Aspose.Cells.LightCellsDataHandler.ProcessCell(Aspose.Cells.Cell)" /> will be called to process the cell by the implementation of this interface.
+            </remarks>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataHandler.StartSheet(Aspose.Cells.Worksheet)">
+      <summary>
+            Starts to process a worksheet.
+            </summary>
+      <remarks>
+            It will be called before reading cells data of a worksheet.
+            </remarks>
+      <param name="sheet">the worksheet to read cells data.</param>
+      <returns>
+            whether this sheet's cells data needs to be processed. false to ignore this sheet.
+            </returns>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataHandler.StartRow(System.Int32)">
+      <summary>
+            Prepares to process a row.
+            </summary>
+      <param name="rowIndex">the index of next row to be processed</param>
+      <returns>whether this row(properties or cells data) needs to be processed. false to ignore this row and its cells and check the next row.</returns>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataHandler.ProcessRow(Aspose.Cells.Row)">
+      <summary>
+            Starts to process one row.
+            </summary>
+      <remarks>
+            It will be called after row's properties such as height, style, ...etc. have been read. However, cells in this row has not been read yet.
+            </remarks>
+      <param name="row">
+            Row object which is being processed currently.
+            </param>
+      <returns>whether this row's cells need to be processed. false to ignore all cells in this row.</returns>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataHandler.StartCell(System.Int32)">
+      <summary>
+            Prepares to process a cell.
+            </summary>
+      <remarks>
+            It will be called when reaching an existing cell in current row. Current row is the row of last call of <see cref="M:Aspose.Cells.LightCellsDataHandler.ProcessRow(Aspose.Cells.Row)" />.
+            </remarks>
+      <param name="columnIndex">column index of the cell to be processed</param>
+      <returns>whether this cell needs to be processed. false to ignore the cell and check the next one until reach the end of cells data of current row</returns>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataHandler.ProcessCell(Aspose.Cells.Cell)">
+      <summary>
+            Starts to process one cell.
+            </summary>
+      <remarks>
+            It will be called after one cell's data has been read.
+            </remarks>
+      <param name="cell">
+            Cell object which is being processed currently
+            </param>
+      <returns>whether this cell needs to be kept in cells model of current sheet.
+            Commonly it should be false so that all cells will not be kept in memory after being processed and then memory be saved.
+            For some special purpose such as user needs to access some cells later after the whole workbook having been processed,
+            user can make this method return true to keep those special cells in Cells model and access them later by APIs such as Cells[row, column].
+            However, keeping cells data in Cells model will requires more memory and if all cells are kept then reading template file
+            in LightCells mode will become same with reading it in normal way.</returns>
+    </member>
+    <member name="T:Aspose.Cells.LightCellsDataProvider">
+      <summary>
+            Represents Data provider for saving large spreadsheet files in light weight mode. 	
+            </summary>
+      <remarks>
+            When saving a workbook by this mode, <see cref="M:Aspose.Cells.LightCellsDataProvider.StartSheet(System.Int32)" /> will be checked when saving every worksheet in the workbook.
+            For one sheet, if <see cref="M:Aspose.Cells.LightCellsDataProvider.StartSheet(System.Int32)" /> gives true, then all data and properties of rows/cells of this sheet to be saved
+            will be provided by the implementation of this interface. In the first place, <see cref="M:Aspose.Cells.LightCellsDataProvider.NextRow" /> will be called to get the next row index to be saved.
+            If a valid row index is returned(the row index must be in ascending order for the rows to be saved),
+            then a Row object representing this row will be provided for implementation to set its properties by <see cref="M:Aspose.Cells.LightCellsDataProvider.StartRow(Aspose.Cells.Row)" />.
+            For one row, <see cref="M:Aspose.Cells.LightCellsDataProvider.NextCell" /> will be checked firstly. If a valid column index be returned(the column index must be in ascending order for all cells of one row to be saved),
+            then a Cell object representing this cell will be provided for implementation to set its data and properties by <see cref="M:Aspose.Cells.LightCellsDataProvider.StartCell(Aspose.Cells.Cell)" />.
+            After data of this cell is set, this cell will be saved directly to the generated spreadsheet file and the next cell will be checked and processed.
+            </remarks>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataProvider.StartSheet(System.Int32)">
+      <summary>
+            Starts to save a worksheet.
+            </summary>
+      <remarks>
+            It will be called at the beginning of saving a worksheet during saving a workbook.
+            If the provider needs to refer to <i><code>sheetIndex</code></i> later
+            in startRow(Row) or startCell(Cell) method,
+            that is, if the process needs to know which worksheet is being processed, 
+            the implementation should retain the <i><code>sheetIndex</code></i> value here.
+            </remarks>
+      <param name="sheetIndex">index of current sheet to be saved.</param>
+      <returns>
+            true if this provider will provide data for the given sheet; false if given sheet should use its normal data model(Cells).
+            </returns>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataProvider.NextRow">
+      <summary>
+            Gets the next row to be saved.
+            </summary>
+      <remarks>
+            It will be called at the beginning of saving a row and its cells data(before <see cref="M:Aspose.Cells.LightCellsDataProvider.StartRow(Aspose.Cells.Row)" />).
+            </remarks>
+      <returns>
+            the next row index to be saved. -1 means the end of current sheet data has been reached and no further row of current sheet to be saved.
+            </returns>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataProvider.StartRow(Aspose.Cells.Row)">
+      <summary>
+            Starts to save data of one row.
+            </summary>
+      <remarks>
+            It will be called at the beginning of saving a row and its cells data.
+            If current row has some custom properties such as height, style, ...etc.,
+            implementation should set those properties to given Row object here.
+            </remarks>
+      <param name="row">
+            Row object for implementation to fill data. Its row index is the returned value of latest call of <see cref="M:Aspose.Cells.LightCellsDataProvider.NextRow" />.
+            If the row has been initialized in the inner cells model, the existing row object will be used.
+            Otherwise a temporary Row object will be used for implementation to fill data.
+            </param>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataProvider.NextCell">
+      <summary>
+            Gets next cell to be saved.
+            </summary>
+      <remarks>
+            It will be called at the beginning of saving one cell.
+            </remarks>
+      <returns>
+            column index of the next cell to be saved. -1 means the end of current row data has been reached and no further cell of current row to be saved.
+            </returns>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataProvider.StartCell(Aspose.Cells.Cell)">
+      <summary>
+            Starts to save data of one cell.
+            </summary>
+      <remarks>
+      </remarks>
+      <param name="cell">
+            Cell object for implementation to fill data. Its column index is the returned value of latest call of <see cref="M:Aspose.Cells.LightCellsDataProvider.NextCell" />.
+            If the cell has been initialized in the inner cells model, the existed cell object will be used.
+            Otherwise a temporary Cell object will be used for implementation to fill data.
+            </param>
+    </member>
+    <member name="M:Aspose.Cells.LightCellsDataProvider.IsGatherString">
+      <summary>
+            Checks whether the current string value of cell needs to be gathered into a global pool.
+            </summary>
+      <remarks>
+            Gathering string values will take advantage only when there are many duplicated string values for the cells provided by this implementation.
+            In this situation gathering string will save much memory and generate smaller resultant file.
+            If there are many string values for the cells provided by LightCellsDataProvider but few of them are same,
+            gathering string will cost more memory and time and has no advantage for the resultant file.
+            </remarks>
+      <returns>
+            true if string value need to be gathered into a global pool for the resultant file.
+            </returns>
+    </member>
+    <member name="T:Aspose.Cells.Markup.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Markup</b> namespace contains classes that represent customer defined semantics in a document: smart tags, custom XML and more markup tags. 
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Metadata.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Metadata</b> namespace contains all classes of loading and saving metadata of Spreadsheets.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells</b> namespace provides fundamental and base classes for generating, converting, modifying, rendering and printing Spreadsheets without utilizing Microsoft Excel.
+            For example, <see cref="T:Aspose.Cells.Workbook" /> class is the main entry to create or load and then manipulate a spreadsheet file,
+            <see cref="T:Aspose.Cells.Cells" /> class is the main class to manipulate all data and properties in a sheet, ...etc.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Numbers.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Numbers</b> namespace contains all classes of loading and converting Apple Numbers files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Pivot.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Pivot</b> namespace contains all classes of rendering and manipulating PivotTable in Excel Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Tables.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Tables</b> namespace contains classes that represent tables, rows, cells and their formatting for Excel Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Vba.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Vba</b> namespace contains classes to access Visual Basic Analysis projects and modules in Excel Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.QueryTables.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.QueryTables</b> namespace provides classes to access and update worksheet table built from data returned from an external data source, such as a SQL server or a Microsoft Access database.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Revisions.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Revisions</b> namespace provides classes to access revisions of Excel Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Saving.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Saving</b> namespace provides options classes of saving files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Slicers.NamespaceDoc">
+      <summary>
+             The <b>Aspose.Cells.Slicers</b> namespace provides all classes for Pivot Table Slicer options for Excel Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Timelines.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Timelines</b> namespace contains classes that allow to access and draw timelines in Excel Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.WebExtensions.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.WebExtensions</b> namespace contains classes to access Office Add-in in Excel Files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Utility.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Utility</b> namespace contains utility classes processing JSON formats for Excel Spreadsheet files.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.Settings.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Cells.Settings</b> namespace contains classes that define settings for different features.
+            </summary>
+    </member>
+    <member name="T:Aspose.Cells.ISmartMarkerCallBack">
+      <summary>
+            Represents callback interface of processing smartmarker.
+            </summary>
+    </member>
+    <member name="M:Aspose.Cells.ISmartMarkerCallBack.Process(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+      <summary>
+            Callback for processing a smart marker.
+            </summary>
+      <param name="sheetIndex">The sheet index.</param>
+      <param name="rowIndex">The row index.</param>
+      <param name="colIndex">The column index.</param>
+      <param name="tableName">The table name of smartmarker.</param>
+      <param name="columnName">The table name of smartmarker.</param>
+    </member>
+  </members>
+</doc>
