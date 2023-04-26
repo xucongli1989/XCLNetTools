@@ -1,0 +1,1131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetPager</name>
+    </assembly>
+    <members>
+        <member name="T:Wuqi.Webdiyer.AspNetPager">
+            <summary>
+      Custom paging control for ASP.NET web form application。
+    </summary><remarks>
+      AspNetPager is a free custom paging control for ASP.NET web form application. It's independent of any underlying data sources and data controls. It's flexible and powerful, has many features, it support both post back and url paging.
+      <p>
+      In order to use AspNetPager control, at least specify the value of <see cref="P:Wuqi.Webdiyer.AspNetPager.RecordCount"/> property and write event handlers for <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanging"/> or <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanged"/> events, you can bind and display data using data controls or write custom data displaying logics in these event handlers.
+    </p>
+    </remarks><example>
+      The following sample shows how AspNetPager can be used to add paging functionality to Repeater control。
+      <code>
+        <![CDATA[
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<%@Import NameSpace="System.Data"%>
+<%@Import NameSpace="System.Data.SqlClient"%>
+<script runat="server" Language="C#">
+void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            int totalOrders = (int)SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "P_GetOrderNumber");
+            AspNetPager1.RecordCount = totalOrders;
+            bindData();
+        }
+    }
+
+ void bindData()
+    {
+        Repeater1.DataSource = SqlHelper.ExecuteReader(CommandType.StoredProcedure,"P_GetPagedOrders2005",
+            new SqlParameter("@startIndex", AspNetPager1.StartRecordIndex),
+            new SqlParameter("@pageSize", AspNetPager1.PageSize));
+        Repeater1.DataBind();
+    }
+
+ void AspNetPager1_PageChanged(object src, EventArgs e)
+    {
+        bindData();
+    }
+</script>
+<HTML><HEAD>
+<TITLE> AspNetPager Samples </TITLE>
+<META NAME="Author" CONTENT="Webdiyer (en.webdiyer.com)">
+</HEAD>
+
+<BODY>
+<form runat="server">
+        <asp:Repeater ID="Repeater1" runat="server">
+        <HeaderTemplate>
+        <table width="100%" border="1" cellspacing="0" cellpadding="4" style="border-collapse:collapse">
+        <tr style="backGround-color:#CCCCFF"><th style="width:15%"><asp:Literal ID="Literal1" runat="server" Text="<%$Resources:LocalizedText,orderid%>" /></th><th style="width:15%"><asp:Literal ID="Literal3" runat="server" Text="<%$Resources:LocalizedText,orderdate%>" /></th><th style="width:30%"><asp:Literal ID="Literal5" runat="server" Text="<%$Resources:LocalizedText,companyname%>" /></th><th style="width:20%"><asp:Literal ID="Literal2" runat="server" Text="<%$Resources:LocalizedText,customerid%>" /></th><th style="width:20%"><asp:Literal ID="Literal4" runat="server" Text="<%$Resources:LocalizedText,employeename%>" /></th></tr>
+        </HeaderTemplate>
+        <ItemTemplate>
+        <tr style="background-color:#FAF3DC">
+        <td><%#DataBinder.Eval(Container.DataItem,"orderid")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"orderdate","{0:d}")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem, "companyname")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"customerid")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"employeename")%></td>
+        </tr>
+        </ItemTemplate>
+		<FooterTemplate>
+        </table>
+        </FooterTemplate>
+        </asp:Repeater>
+  <webdiyer:AspNetPager ID="AspNetPager1" runat="server" Width="100%" HorizontalAlign="right" PageSize="8" OnPageChanged="AspNetPager1_PageChanged">
+        </webdiyer:AspNetPager>
+		</form>
+</BODY>
+</HTML>
+ ]]>
+      </code><p>Stored procedure code:</p><code>
+        <![CDATA[
+CREATE PROCEDURE P_GetPagedOrders2005
+	@startIndex INT, 
+    @pageSize INT 
+AS
+begin
+WITH orderList AS ( 
+SELECT ROW_NUMBER() OVER (ORDER BY O.orderid DESC)AS Row, O.orderid,O.orderdate,O.customerid,C.CompanyName,E.FirstName+' '+E.LastName as EmployeeName 
+from orders O
+left outer join Customers C
+on O.CustomerID=C.CustomerID
+left outer join Employees E
+on O.EmployeeID=E.EmployeeID)
+
+SELECT orderid,orderdate,customerid,companyName,employeeName
+FROM orderlist
+WHERE Row between @startIndex and @startIndex+@pageSize-1
+end
+ ]]>
+      </code>
+    </example>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.OnInit(System.EventArgs)">
+            <summary>
+      Overwrite the  <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)"/> method.
+    </summary><param name="e">
+      An EventArgs object that contains the event data.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.OnLoad(System.EventArgs)">
+            <summary>
+      Overwrite the <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)"/> method.
+    </summary><param name="e">
+      An EventArgs object that contains the event data.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      Overwrite the <see cref="M:System.Web.UI.WebControls.WebControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)"/> method
+    </summary><param name="writer">
+      A HtmlTextWriter that represents the output stream to render HTML content on the client.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      Overwrite the <see cref="M:System.Web.UI.WebControls.WebControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)"/> method.
+    </summary><param name="writer">
+      A HtmlTextWriter that represents the output stream to render HTML content on the client.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      Overwrite the <see cref="M:System.Web.UI.WebControls.WebControl.RenderEndTag(System.Web.UI.HtmlTextWriter)"/> method.
+    </summary><param name="writer">
+      A HtmlTextWriter that represents the output stream to render HTML content on the client.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      Overwrite the <see cref="M:System.Web.UI.WebControls.WebControl.RenderContents(System.Web.UI.HtmlTextWriter)"/> method.
+    </summary><param name="writer">
+      A HtmlTextWriter that represents the output stream to render HTML content on the client.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.GetHrefString(System.Int32)">
+            <summary>
+            Get the navigation url for the paging button.
+            </summary>
+            <param name="pageIndex">the page index correspond to the button.</param>
+            <returns>href string for the paging navigation button.</returns>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.GetCustomInfoHtml(System.String)">
+            <summary>
+            Replace the property placeholders in the CustomInfoHTML with the property values repectively
+            </summary>
+            <param name="origText">original CustomInfoHTML</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.ConvertQueryStringToCollection(System.String)">
+            <summary>
+            Convert raw query string to NameValueCollection
+            </summary>
+            <param name="s">raw query string</param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.BuildUrlString(System.String)">
+            <summary>
+            add paging parameter and value to the current url or change parameter value if it already exists when using url paging mode
+            </summary>
+            <param name="pageIndex">page index parameter to be added</param>
+            <returns>href string for the navigattion button</returns>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.CreateNavigationButton(System.Web.UI.HtmlTextWriter,Wuqi.Webdiyer.AspNetPager.NavigationButton)">
+            <summary>
+            Create first, prev, next or last button.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client.</param>
+            <param name="btn">the navigation button</param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.AddToolTip(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            Add tool tip text to navigation button.
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.AddPagingButtonLayoutTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            add paging button layout tag
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.CreateNumericButton(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            Create numeric paging button.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client.</param>
+            <param name="index">the page index correspond to the paging button</param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.CreateNumericImages(System.Web.UI.HtmlTextWriter,System.Int32,System.Boolean)">
+            <summary>
+            Create numeric image button.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client.</param>
+            <param name="index">the page index correspond to the button.</param>
+            <param name="isCurrent">if the page index correspond to the button is the current page index</param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.CreateMoreButton(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            create more (...) button.
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.writeSpacingStyle(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Add paging button spacing styles to HtmlTextWriter
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.AddHyperlinkTarget(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            add target attribute to paging hyperlink
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.AddClassAndStyle(System.String,System.String,System.Web.UI.HtmlTextWriter)">
+            <summary>
+            add css class and style attribute to HtmlTextWriter
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.OnPageChanging(Wuqi.Webdiyer.PageChangingEventArgs)">
+            <summary>
+      Raises the <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanging"/> event.
+    </summary><param name="e">
+      A <see cref="T:Wuqi.Webdiyer.PageChangingEventArgs"/> that contains event data.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.OnPageChanged(System.EventArgs)">
+            <summary>
+      Raises the <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanged"/> event.
+    </summary><param name="e">
+      A <see cref="T:System.EventArgs"/> that contains event data.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.GoToPage(System.Int32)">
+            <summary>
+      Raises the <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanging"/> and <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanged"/> events, jump to specified page.
+    </summary><param name="pageIndex">
+      New page index navigating to.
+    </param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.RaisePostBackEvent(System.String)">
+            <summary>
+      Implements <see cref="!:IPostBackEventHandler"/> Interface, notifies the <see cref="T:Wuqi.Webdiyer.AspNetPager"/> control that caused the postback that it should handle an incoming postback event.。
+    </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+      Implements <see cref="!:IPostBackDataHandler"/> interface, processes postback data for the <see cref="T:Wuqi.Webdiyer.AspNetPager"/> control.
+    </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPager.RaisePostDataChangedEvent">
+            <summary>
+      Implements <see cref="!:IPostBackDataHandler"/> interface, signals the <see cref="T:Wuqi.Webdiyer.AspNetPager"/> control to notify the ASP.NET application that the state of the control has changed。
+    </summary>
+        </member>
+        <member name="E:Wuqi.Webdiyer.AspNetPager.PageChanging">
+            <summary>
+      Occurs when one of the pager buttons is clicked, but before the <see cref="T:Wuqi.Webdiyer.AspNetPager"/> control handles the paging operation.
+    </summary><example>
+      The following example demonstrates how to cancel paging event where "cancel paging" checkbox is checked:
+      <code>
+        <![CDATA[
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<%@Import NameSpace="System.Data" %>
+<%@Import Namespace="System.Data.SqlClient" %>
+<script runat="server" Language="C#">
+void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            int totalOrders = (int)SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "P_GetOrderNumber");
+            AspNetPager1.RecordCount = totalOrders;
+            bindData();
+        }
+    }
+
+ void bindData()
+    {
+        Repeater1.DataSource = SqlHelper.ExecuteReader(CommandType.StoredProcedure,"P_GetPagedOrders2005",
+            new SqlParameter("@startIndex", AspNetPager1.StartRecordIndex),
+            new SqlParameter("@pageSize", AspNetPager1.PageSize));
+        Repeater1.DataBind();
+    }
+
+void AspNetPager1_PageChanging(object src,PageChangingEventArgs e){
+ Response.Write("PageChanging event fired, new page index is " + e.NewPageIndex);
+if(CheckBox1.Checked){
+	e.Cancel=true;
+    Response.Write("<br/>paging operation is canceled");
+ }
+}
+
+ void AspNetPager1_PageChanged(object src, EventArgs e)
+    {
+        bindData();
+        Response.Write("<br/>PageChanged is fired, the new page index is "+AspNetPager1.CurrentPageIndex);
+    }
+</script>
+<HTML><HEAD>
+<TITLE> AspNetPager Samples </TITLE>
+<META NAME="Author" CONTENT="Webdiyer (www.webdiyer.com)">
+</HEAD>
+
+<BODY>
+<form runat="server">
+    <webdiyer:aspnetpager id="AspNetPager1" runat="server" OnPageChanging="AspNetPager1_PageChanging" onpagechanged="AspNetPager1_PageChanged" 
+    Width="100%" HorizontalAlign="center"></webdiyer:aspnetpager>
+    <asp:CheckBox ID="CheckBox1" runat="server" Text="cancel paging" />
+        <asp:Repeater ID="Repeater1" runat="server">
+        <HeaderTemplate>
+        <table width="100%" border="1" cellspacing="0" cellpadding="4" style="border-collapse:collapse">
+        <tr style="backGround-color:#CCCCFF"><th style="width:15%"><asp:Literal ID="Literal1" runat="server" Text="<%$Resources:LocalizedText,orderid%>" /></th><th style="width:15%"><asp:Literal ID="Literal3" runat="server" Text="<%$Resources:LocalizedText,orderdate%>" /></th><th style="width:30%"><asp:Literal ID="Literal5" runat="server" Text="<%$Resources:LocalizedText,companyname%>" /></th><th style="width:20%"><asp:Literal ID="Literal2" runat="server" Text="<%$Resources:LocalizedText,customerid%>" /></th><th style="width:20%"><asp:Literal ID="Literal4" runat="server" Text="<%$Resources:LocalizedText,employeename%>" /></th></tr>
+        </HeaderTemplate>
+        <ItemTemplate>
+        <tr style="background-color:#FAF3DC">
+        <td><%#DataBinder.Eval(Container.DataItem,"orderid")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"orderdate","{0:d}")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem, "companyname")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"customerid")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"employeename")%></td>
+        </tr>
+        </ItemTemplate>
+		<FooterTemplate>
+        </table>
+        </FooterTemplate>
+        </asp:Repeater>
+        <webdiyer:AspNetPager ID="AspNetPager2" runat="server" CloneFrom="AspNetPager1">
+        </webdiyer:AspNetPager>
+		</form>
+</BODY>
+</HTML>
+
+        ]]>
+      </code>
+    </example>
+        </member>
+        <member name="E:Wuqi.Webdiyer.AspNetPager.PageChanged">
+            <summary>
+      Occurs when one of the pager buttons is clicked, but after the <see cref="T:Wuqi.Webdiyer.AspNetPager"/> control handles the paging operation.
+    </summary><remarks>
+      When is url paging mode, this event will occur everytime page is loaded.
+    </remarks><example>
+      The following example demonstrates how to write an event handler for the PageChanged event and binding data in the event handler:
+      <code>
+        <![CDATA[
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
+<%@Import NameSpace="System.Data"%>
+<%@Import NameSpace="System.Data.SqlClient"%>
+<script runat="server" Language="C#">
+void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            int totalOrders = (int)SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "P_GetOrderNumber");
+            AspNetPager1.RecordCount = totalOrders;
+            bindData();
+        }
+    }
+
+ void bindData()
+    {
+        Repeater1.DataSource = SqlHelper.ExecuteReader(CommandType.StoredProcedure,"P_GetPagedOrders2005",
+            new SqlParameter("@startIndex", AspNetPager1.StartRecordIndex),
+            new SqlParameter("@pageSize", AspNetPager1.PageSize));
+        Repeater1.DataBind();
+    }
+
+ void AspNetPager1_PageChanged(object src, EventArgs e)
+    {
+        bindData();
+    }
+</script>
+<HTML><HEAD>
+<TITLE> AspNetPager Samples </TITLE>
+<META NAME="Author" CONTENT="Webdiyer (www.webdiyer.com)">
+</HEAD>
+
+<BODY>
+<form runat="server">
+  <webdiyer:AspNetPager ID="AspNetPager1" runat="server" Width="100%" HorizontalAlign="right" PageSize="8" OnPageChanged="AspNetPager1_PageChanged">
+        </webdiyer:AspNetPager>
+        <asp:Repeater ID="Repeater1" runat="server">
+        <HeaderTemplate>
+        <table width="100%" border="1" cellspacing="0" cellpadding="4" style="border-collapse:collapse">
+        <tr style="backGround-color:#CCCCFF"><th style="width:15%"><asp:Literal ID="Literal1" runat="server" Text="<%$Resources:LocalizedText,orderid%>" /></th><th style="width:15%"><asp:Literal ID="Literal3" runat="server" Text="<%$Resources:LocalizedText,orderdate%>" /></th><th style="width:30%"><asp:Literal ID="Literal5" runat="server" Text="<%$Resources:LocalizedText,companyname%>" /></th><th style="width:20%"><asp:Literal ID="Literal2" runat="server" Text="<%$Resources:LocalizedText,customerid%>" /></th><th style="width:20%"><asp:Literal ID="Literal4" runat="server" Text="<%$Resources:LocalizedText,employeename%>" /></th></tr>
+        </HeaderTemplate>
+        <ItemTemplate>
+        <tr style="background-color:#FAF3DC">
+        <td><%#DataBinder.Eval(Container.DataItem,"orderid")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"orderdate","{0:d}")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem, "companyname")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"customerid")%></td>
+        <td><%#DataBinder.Eval(Container.DataItem,"employeename")%></td>
+        </tr>
+        </ItemTemplate>
+		<FooterTemplate>
+        </table>
+        </FooterTemplate>
+        </asp:Repeater>
+        <webdiyer:AspNetPager ID="AspNetPager2" runat="server" CloneFrom="AspNetPager1">
+        </webdiyer:AspNetPager>
+		</form>
+</BODY>
+</HTML>
+ ]]>
+      </code><p>Stored procedure used by this example:</p><code>
+        <![CDATA[
+CREATE PROCEDURE P_GetPagedOrders2005
+	@startIndex INT, 
+    @pageSize INT 
+AS
+begin
+WITH orderList AS ( 
+SELECT ROW_NUMBER() OVER (ORDER BY O.orderid DESC)AS Row, O.orderid,O.orderdate,O.customerid,C.CompanyName,E.FirstName+' '+E.LastName as EmployeeName 
+from orders O
+left outer join Customers C
+on O.CustomerID=C.CustomerID
+left outer join Employees E
+on O.EmployeeID=E.EmployeeID)
+
+SELECT orderid,orderdate,customerid,companyName,employeeName
+FROM orderlist
+WHERE Row between @startIndex and @startIndex+@pageSize-1
+end
+ ]]>
+      </code>
+    </example>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowNavigationToolTip">
+            <summary>
+      Gets or sets a value indicating whether tooltips are shown when the mouse moves over paging elements.
+    </summary><value>
+      true if tooltips are shown for the paging elements; otherwise false. The default is false.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.NavigationToolTipTextFormatString">
+            <summary>
+      Gets or sets the formatting to be applied to the navigation tooltip, for example "go to page {0}".
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.NumericButtonTextFormatString">
+            <summary>
+      Gets or sets the text formatting to be applied to the numeric paging buttons, for example "[{0}]" or "-{0}-".
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CurrentPageButtonTextFormatString">
+            <summary>
+      Gets or sets the text formatting to be applied to the current page paging button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PagingButtonType">
+            <summary>
+      Gets or sets the type of numeric paging buttons, can be either text or image, default value is text.
+    </summary><example>
+      The following example shows how to use image buttons:
+      <p>
+        <code>
+          <![CDATA[
+ <Webdiyer:AspNetPager runat="server" 
+		id="pager1" OnPageChanged="ChangePage"  
+		PagingButtonType="image" 	ImagePath="images" 
+		ButtonImageNameExtension="n" 
+		DisabledButtonImageNameExtension="g" 
+		ButtonImageExtension="gif" 
+		CpiButtonImageNameExtension="r" 
+		PagingButtonSpacing="10px"/>
+ ]]>
+        </code>
+      </p>
+    </example>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.NumericButtonType">
+            <summary>
+      Gets or sets the type of the numeric paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PagingButtonLayoutType">
+            <summary>
+      Gets or sets the layout type of all paging buttons.
+    </summary><value>
+      One of the <see cref="P:Wuqi.Webdiyer.AspNetPager.PagingButtonLayoutType"/> values. The default is None.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CurrentPageButtonPosition">
+            <summary>
+      Gets or sets the position of the current page paging button.
+    </summary><value>
+      One of the <see cref="T:Wuqi.Webdiyer.PagingButtonPosition"/> values. The default is Fixed.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.NavigationButtonsPosition">
+            <summary>
+      Gets or sets the position of the First,Prev,Next and Last navigation paging buttons.
+    </summary><value>
+      One of the <see cref="T:Wuqi.Webdiyer.NavigationButtonPosition"/> values. The default is BothSides.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.NavigationButtonType">
+            <summary>
+      Gets or sets the type of navigation buttons(first/last/prev/next).
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.UrlPagingTarget">
+            <summary>
+      Gets or sets the name of the target window or frame that the page should open in.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.MoreButtonType">
+            <summary>
+      Gets or sets the type of the more... paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PagingButtonSpacing">
+            <summary>
+      Gets or sets the amount of horizontal spacing between paging buttons.
+    </summary><value>
+      A Unit that represents the horizontal spacing between paging buttons. Default value is 5px.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowFirstLast">
+            <summary>
+      Gets or sets a value indicating whether the first and last paging buttons are displayed.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowPrevNext">
+            <summary>
+      Gets or sets a value indicating whether the prev and next paging buttons are displayed.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowPageIndex">
+            <summary>
+      Gets or sets a value indicating whether the page index numeric buttons are displayed.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowMoreButtons">
+            <summary>
+      Gets or sets a value indicating whether the more... paging buttons are displayed.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.FirstPageText">
+            <summary>
+      Gets or sets the text to display for the first-page button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PrevPageText">
+            <summary>
+      Gets or sets the text to display for the prev-page button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.NextPageText">
+            <summary>
+      Gets or sets the text to display for the next-page button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.LastPageText">
+            <summary>
+      Gets or sets the text to display for the last-page button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.NumericButtonCount">
+            <summary>
+      Gets or sets the number of numeric page buttons to display in the AspNetPager.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowDisabledButtons">
+            <summary>
+      Gets or sets a value indicating whether disabled buttons are displayed.
+    </summary><remarks>
+      When current page is the first page, the first and prev paging buttons are disabled; when current page is last page, the last and next paging buttons are disabled.
+    </remarks>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ImagePath">
+            <summary>
+      Gets or sets the image path when paging button type is set to image.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ButtonImageExtension">
+            <summary>
+      Gets or sets the image file extension of paging buttons, such as "gif" or "jpg".
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ButtonImageNameExtension">
+            <summary>
+      Gets or sets the image file name extension of paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CpiButtonImageNameExtension">
+            <summary>
+      Gets or sets the image file name extension of the current page paging button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.DisabledButtonImageNameExtension">
+            <summary>
+      Gets or sets the image file name extension of the disabled paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ButtonImageAlign">
+            <summary>
+      Gets or sets the horizontal alignment of the image buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.UrlPaging">
+            <summary>
+      Gets or sets a value indicating whether url paging is enabled.
+    </summary><remarks>
+      When this value of UrlPaging is set to true, page index will be passed through url parameter instead of ViewState.
+    </remarks>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.UrlPageIndexName">
+            <summary>
+      Gets or sets the url parameter name for the page index when in url paging mode. Default value is "page".
+    </summary><remarks>
+      <note>
+        When there are multiple AspNetPager controls on the same page and UrlPaging is set to true, you must specify a different UrlPageIndexName for each AspNetPager control.
+      </note>
+    </remarks>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.UrlPageSizeName">
+            <summary>
+      Gets or sets the page size parameter name in url. If the value of this property is not null and great than 0, then the PageSize property will use this value as the default value.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ReverseUrlPageIndex">
+            <summary>
+      Gets or sets a value indicating whether url page index is reversed when in url paging mode.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CurrentPageIndex">
+            <summary>
+      Gets or sets the current page index.
+    </summary><remarks>
+      <note>Ths value of CurrentPageIndex starts with 1, not 0.</note>
+    </remarks>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.RecordCount">
+            <summary>
+      Gets or sets the total records count to be paged.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PagesRemain">
+            <summary>
+      Gets the remaining page numbers after current page.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PageSize">
+            <summary>
+      Gets or sets the number of records to display on a page.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.RecordsRemain">
+            <summary>
+      Gets or sets the total remaining records after current page.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.StartRecordIndex">
+            <summary>
+      Gets the index of the first record that is displayed on a page of data.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.EndRecordIndex">
+            <summary>
+      Gets the index of the last record that is displayed on a page of data.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PageCount">
+            <summary>
+      Gets the total page count.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowPageIndexBox">
+            <summary>
+      Gets or sets the display mode for the page index box.
+    </summary><value>
+      One of the <see cref="P:Wuqi.Webdiyer.AspNetPager.ShowPageIndexBox"/> values. The default is BothSides.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PageIndexBoxType">
+            <summary>
+      Gets or sets the type of page index box.
+    </summary><value>
+      One of the <see cref="P:Wuqi.Webdiyer.AspNetPager.PageIndexBoxType"/> values. The default is TextBox.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PageIndexBoxClass">
+            <summary>
+      Gets or sets the css class name to be applied to the page index box.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PageIndexBoxStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the page index box.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.TextBeforePageIndexBox">
+            <summary>
+      Gets or sets the text before page index box.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.TextAfterPageIndexBox">
+            <summary>
+      Gets or sets the text after page index box.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.SubmitButtonText">
+            <summary>
+      Gets or sets the text displayed on the submit button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.SubmitButtonClass">
+            <summary>
+      Gets or sets the css class name to be applied to the submit button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.SubmitButtonStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the submit button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.SubmitButtonImageUrl">
+            <summary>
+      Gets or sets the url of the submit button image. The default is null.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowBoxThreshold">
+            <summary>
+      Gets or sets the maxinum page number threashold to display page index box.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.ShowCustomInfoSection">
+            <summary>
+      Gets or sets the display mode of the custom info section.
+    </summary><value>
+      One of the <see cref="P:Wuqi.Webdiyer.AspNetPager.ShowCustomInfoSection"/> values. The default is Never.
+    </value>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CustomInfoTextAlign">
+            <summary>
+      Gets or sets how text is aligned in the custom info region.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CustomInfoSectionWidth">
+            <summary>
+      Gets or sets the width of the custom info region.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CustomInfoClass">
+            <summary>
+      Gets or sets the css class name to be applied to the custom info region.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CustomInfoStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the custom info region.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CustomInfoHTML">
+            <summary>
+      Gets or sets the HTML to be displayed in the custom info region.
+    </summary><example>
+      The following example demonstrates how to set the customized text in the custom info region:<br/>
+      <code>
+        <![CDATA[
+ <webdiyer:aspnetpager id="AspNetPager1" runat="server" horizontalalign="Center" 
+ onpagechanged="AspNetPager1_PageChanged" showcustominfosection="Left" width="100%" 
+ CustomInfoHTML="Page %CurrentPageIndex% of %PageCount%&nbsp; Records %StartRecordIndex% - %EndRecordIndex%">
+ </webdiyer:aspnetpager>
+ ]]>
+      </code>
+    </example>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CurrentPageButtonStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the current page paging button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CurrentPageButtonClass">
+            <summary>
+      Gets or sets the css class name to be applied to the current page paging button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PagingButtonsClass">
+            <summary>
+      Gets or sets the css class name to be applied to the paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PagingButtonsStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.FirstLastButtonsClass">
+            <summary>
+      Gets or sets the css class name to be applied to the first and last paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.FirstLastButtonsStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the first and last paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PrevNextButtonsClass">
+            <summary>
+      Gets or sets the css class name to be applied to the prev and next paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PrevNextButtonsStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the prev and next paging buttons.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.MoreButtonsClass">
+            <summary>
+      Gets or sets the css class name to be applied to the more... paging button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.MoreButtonsStyle">
+            <summary>
+      Gets or sets the css styles to be applied to the more... paging button.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.HorizontalAlign">
+            <summary>
+      Gets or sets the horizontal alignment of the paging buttons within the AspNetPager control.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.BackImageUrl">
+            <summary>
+      Gets or sets the URL of the background image for the AspNetPager control.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.CloneFrom">
+            <summary>
+      Gets or sets the AspNetPager control id that need to be cloned to the current AspNetPager.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.EnableTheming">
+            <summary>
+      Gets or sets a value indicating whether themes apply to the AspNetPager control.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.SkinID">
+            <summary>
+      Gets or sets the skin to apply to the control.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.EnableUrlRewriting">
+            <summary>
+      Gets or sets a value indicating whether url rewriting is enabled.
+    </summary><remarks>
+      When this property value is set to true, the value of UrlPaging property will be set to true automatically.
+    </remarks>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.UrlRewritePattern">
+            <summary>
+      Gets or sets the url rewrite pattern for paging urls generation when in url paging mode.
+    </summary><example>
+      The following example demonstrates how to set UrlRewritePattern property:
+      <code>
+        <![CDATA[
+<webdiyer:aspnetpager id="AspNetPager1" runat="server" horizontalalign="Center" width="100%"
+UrlPaging="true" EnableUrlRewriting="true" UrlRewritePattern="./listpage_{0}.aspx" 
+OnPageChanged="AspNetPager1_PageChanged"></webdiyer:aspnetpager>
+      ]]>
+      </code>
+    </example>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.FirstPageUrlRewritePattern">
+            <summary>
+      Gets or sets the url rewrite pattern for the url of the first page when in url paging mode.
+    </summary> added on 2012-11-11
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.AlwaysShow">
+            <summary>
+      Gets or sets a value indicating whether AspNetPager is always shown even there's only one page of data. The default value is false.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.AlwaysShowFirstLastPageNumber">
+            <summary>
+      Gets or sets a value indicating whether the first and last numeric paging buttons are always shown.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.PageIndexOutOfRangeErrorMessage">
+            <summary>
+      Gets or sets the error message displayed to the client when user entered page index is out of range.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.InvalidPageIndexErrorMessage">
+            <summary>
+      Gets or sets the error message displayed to the client when user entered page index is not valid.
+    </summary>
+        </member>
+        <member name="P:Wuqi.Webdiyer.AspNetPager.LayoutType">
+            <summary>
+      Gets or sets the layout type of the AspNetPager control.
+    </summary><value>
+      One of the <see cref="P:Wuqi.Webdiyer.AspNetPager.LayoutType"/> values. The default is Div.
+    </value>
+        </member>
+        <member name="T:Wuqi.Webdiyer.PageChangingEventHandler">
+            <summary>
+      Represents the method that will handle the <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanging"/> event.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.AboutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AboutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.PageChangingEventArgs">
+            <summary>
+      Provides data for the <see cref="E:Wuqi.Webdiyer.AspNetPager.PageChanging"/> event.
+    </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.PageChangingEventArgs.#ctor(System.Int32)">
+            <summary>
+      Initializes a new instance of the PageChangingEventArgs class using the specified new page index.
+    </summary><param name="newPageIndex">
+      New page index navigating to.
+    </param>
+        </member>
+        <member name="P:Wuqi.Webdiyer.PageChangingEventArgs.NewPageIndex">
+            <summary>
+      Gets the page index user entered or selected from the page index box.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.AspNetPagerIDConverter">
+            <summary>
+            AspNetPager type converter used for the design time support
+            </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.ShowPageIndexBox">
+            <summary>
+      Specifies the display mode for the page index box.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.ShowPageIndexBox.Never">
+            <summary>
+      Do not show page index box.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.ShowPageIndexBox.Auto">
+            <summary>
+      Show page index box automarically when total page count is great than the value of  <see cref="P:Wuqi.Webdiyer.AspNetPager.ShowBoxThreshold"/> property.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.ShowPageIndexBox.Always">
+            <summary>
+      Always show page index box.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.PageIndexBoxType">
+            <summary>
+      Specifies the type of the page index box.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PageIndexBoxType.TextBox">
+            <summary>
+      Page index box is input box.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PageIndexBoxType.DropDownList">
+            <summary>
+      Page index box is dropdownlist.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.ShowCustomInfoSection">
+            <summary>
+      Specifies the display mode of the custom info section.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.ShowCustomInfoSection.Never">
+            <summary>
+      Do not display.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.ShowCustomInfoSection.Left">
+            <summary>
+      Display before paging elements.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.ShowCustomInfoSection.Right">
+            <summary>
+      Display after paging elements.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.PagingButtonType">
+            <summary>
+      Specifies the type of paging buttons.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonType.Text">
+            <summary>
+      Using Text paging buttons
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonType.Image">
+            <summary>
+      Using image as paging buttons.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.LayoutType">
+            <summary>
+      Specifies the layout type of the AspNetPager control.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.LayoutType.Table">
+            <summary>
+      Using table as container tag.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.LayoutType.Div">
+            <summary>
+      Using div as container tag.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.LayoutType.Ul">
+            <summary>
+      Using ul as container tag.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.PagingButtonPosition">
+            <summary>
+      Specifies the position of the current page paging button.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonPosition.Beginning">
+            <summary>
+      Current page paging button is displayed before all numeric paging buttons.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonPosition.End">
+            <summary>
+      Current page paging button is displayed after all numeric paging buttons.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonPosition.Center">
+            <summary>
+      Current page paging button is displayed at the center of all numeric paging buttons.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonPosition.Fixed">
+            <summary>
+      Default value, Current page paging button position is fixed.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.PagingButtonLayoutType">
+            <summary>
+      Specifies the layout type of the paging buttons.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonLayoutType.UnorderedList">
+            <summary>
+      Paging elements are wrapped between &lt;li&gt; and &lt;/li&gt;.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonLayoutType.Span">
+            <summary>
+      Paging elements are wrapped between &lt;span&gt; and &lt;/span&gt;.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.PagingButtonLayoutType.None">
+            <summary>
+      Not set, uses default layout type.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.NavigationButtonPosition">
+            <summary>
+      Specifies the position of the navigation buttons.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.NavigationButtonPosition.Left">
+            <summary>
+      First,Prev,Next and Last navigation buttons are displayed on the left side of the paging elements.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.NavigationButtonPosition.Right">
+            <summary>
+      First,Prev,Next and Last navigation buttons are displayed on the right side of the paging elements.
+    </summary>
+        </member>
+        <member name="F:Wuqi.Webdiyer.NavigationButtonPosition.BothSides">
+            <summary>
+      Default value, First,Prev,Next and Last navigation buttons are displayed on the both side of the paging elements.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.PagerDesigner">
+            <!-- No matching elements were found for the following include tag --><include file="AspNetPagerDocs.xml" path="AspNetPagerDoc/Class[@name=&quot;PagerDesigner&quot;]/*"/>
+        </member>
+        <member name="M:Wuqi.Webdiyer.PagerDesigner.GetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion)">
+            <summary>
+      Returns the content for the editable region of the control at design time.
+    </summary><param name="region">
+    </param><returns>
+    </returns>
+        </member>
+        <member name="M:Wuqi.Webdiyer.PagerDesigner.GetErrorDesignTimeHtml(System.Exception)">
+            <summary>
+      Retrieves the HTML markup that provides information about the specified exception.
+    </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.PagerDesigner.GetDesignTimeHtml">
+            <summary>
+      Retrieves the HTML markup that is used to represent the control at design time.
+    </summary>
+        </member>
+        <member name="T:Wuqi.Webdiyer.AspNetPagerActionList">
+            <summary>
+            Designer Action List
+            </summary>
+        </member>
+        <member name="M:Wuqi.Webdiyer.AspNetPagerActionList.#ctor(System.ComponentModel.IComponent)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="component"></param>
+        </member>
+    </members>
+</doc>
