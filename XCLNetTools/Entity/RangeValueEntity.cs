@@ -23,7 +23,7 @@ namespace XCLNetTools.Entity
         public int EndValue { get; set; }
 
         /// <summary>
-        /// 匹配到符合范围要求的数量，如果为0，则表示没有在现有范围内匹配到数量
+        /// 匹配到符合范围要求的数量
         /// </summary>
         public int Count
         {
