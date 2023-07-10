@@ -1115,6 +1115,35 @@ namespace XCLNetTools.StringHander
             return newValue?.Replace("$", "$$");
         }
 
+        /// <summary>
+        /// 删除字符串中的一部分（与原生方法 str.Remove 的区别是这个方法中的参数有溢出时不会报错）
+        /// </summary>
+        public static string RemoveWithSafe(this string str, int startIndex, int? count = null)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
+            if (startIndex < 0 || startIndex > str.Length - 1)
+            {
+                return str;
+            }
+            if (null == count)
+            {
+                return str.Remove(startIndex);
+            }
+            var c = count.GetValueOrDefault();
+            if (c <= 0)
+            {
+                return str;
+            }
+            if (c > str.Length - (startIndex + 1) + 1)
+            {
+                c = str.Length - (startIndex + 1) + 1;
+            }
+            return str.Remove(startIndex, c);
+        }
+
         #endregion 其它
     }
 }

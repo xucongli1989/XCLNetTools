@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using XCLNetTools.Entity;
+using XCLNetTools.StringHander;
 
 namespace UnitTest.StringHander
 {
@@ -192,6 +193,43 @@ namespace UnitTest.StringHander
             Assert.IsTrue(lst[2].Item1 == "3" && lst[2].Item2 == "8");
             Assert.IsTrue(lst[3].Item1 == null && lst[3].Item2 == "9");
             Assert.IsTrue(lst[4].Item1 == null && lst[4].Item2 == "10");
+        }
+
+        [TestMethod]
+        public void RemoveWithSafe()
+        {
+            var str = "";
+            Assert.IsTrue(str.RemoveWithSafe(0) == string.Empty);
+            str = null;
+            Assert.IsTrue(str.RemoveWithSafe(0) == string.Empty);
+            str = "123456";
+            Assert.AreEqual(str, str.RemoveWithSafe(-1));
+            Assert.AreEqual(str, str.RemoveWithSafe(6));
+            Assert.AreEqual("", str.RemoveWithSafe(0));
+            Assert.AreEqual("1", str.RemoveWithSafe(1));
+            Assert.AreEqual("12", str.RemoveWithSafe(2));
+            Assert.AreEqual("123", str.RemoveWithSafe(3));
+            Assert.AreEqual("1234", str.RemoveWithSafe(4));
+            Assert.AreEqual("12345", str.RemoveWithSafe(5));
+            Assert.AreEqual("123456", str.RemoveWithSafe(6));
+            Assert.AreEqual("123456", str.RemoveWithSafe(7));
+            Assert.AreEqual("123456", str.RemoveWithSafe(8));
+            Assert.AreEqual("123456", str.RemoveWithSafe(1, 0));
+            Assert.AreEqual("13456", str.RemoveWithSafe(1, 1));
+            Assert.AreEqual("1456", str.RemoveWithSafe(1, 2));
+            Assert.AreEqual("156", str.RemoveWithSafe(1, 3));
+            Assert.AreEqual("16", str.RemoveWithSafe(1, 4));
+            Assert.AreEqual("1", str.RemoveWithSafe(1, 5));
+            Assert.AreEqual("1", str.RemoveWithSafe(1, 6));
+            Assert.AreEqual("1", str.RemoveWithSafe(1, 7));
+            Assert.AreEqual("23456", str.RemoveWithSafe(0, 1));
+            Assert.AreEqual("3456", str.RemoveWithSafe(0, 2));
+            Assert.AreEqual("456", str.RemoveWithSafe(0, 3));
+            Assert.AreEqual("56", str.RemoveWithSafe(0, 4));
+            Assert.AreEqual("6", str.RemoveWithSafe(0, 5));
+            Assert.AreEqual("", str.RemoveWithSafe(0, 6));
+            Assert.AreEqual("", str.RemoveWithSafe(0, 7));
+            Assert.AreEqual("", str.RemoveWithSafe(0, 8));
         }
     }
 }
