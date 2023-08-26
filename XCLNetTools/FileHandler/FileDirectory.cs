@@ -247,17 +247,8 @@ namespace XCLNetTools.FileHandler
         /// <param name="encode">编码</param>
         public static void AppendText(string filePathName, string writeWord, System.Text.Encoding encode)
         {
-            //建立文件
             CreateTextFile(filePathName);
-            //得到原来文件的内容
-            using (FileStream fileRead = new FileStream(filePathName, FileMode.Open, FileAccess.ReadWrite))
-            using (StreamReader fileReadWord = new StreamReader(fileRead, encode))
-            using (StreamWriter fileWrite = new StreamWriter(fileRead, encode))
-            {
-                string oldString = fileReadWord.ReadToEnd().ToString();
-                oldString = oldString + writeWord;
-                fileWrite.Write(oldString);
-            }
+            System.IO.File.AppendAllText(filePathName, writeWord, encode);
         }
 
         /// <summary>
