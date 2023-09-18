@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Xml.Linq;
 using XCLNetTools.Generic;
 
 namespace XCLNetTools.DataSource
@@ -241,6 +242,38 @@ namespace XCLNetTools.DataSource
                 dt.Rows.Add(dr);
             });
             return dt;
+        }
+
+        /// <summary>
+        /// 将 DataSet 转换为 XML 对象（XML 的根元素为 table，所有行元素为 record）
+        /// </summary>
+        public static XDocument ConvertDataSetToXML(DataSet ds)
+        {
+            if (null == ds?.Tables)
+            {
+                return null;
+            }
+            var root = new XElement("table");
+            foreach (DataTable dt in ds.Tables)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    var record = new XElement("record");
+                    record.Add(new XAttribute("__table_name", dt.TableName));
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        var columnName = column.ColumnName;
+                        var cellValue = Convert.ToString(row[column]);
+                        if (string.IsNullOrEmpty(cellValue))
+                        {
+                            continue;
+                        }
+                        record.Add(new XAttribute(columnName, cellValue));
+                    }
+                    root.Add(record);
+                }
+            }
+            return new XDocument(root);
         }
     }
 }
