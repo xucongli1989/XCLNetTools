@@ -50,23 +50,30 @@ namespace XCLNetTools.Encrypt
         /// <returns>明文</returns>
         public static string Decrypt(string text, string sKey = "")
         {
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            int len;
-            len = text.Length / 2;
-            byte[] inputByteArray = new byte[len];
-            int x, i;
-            for (x = 0; x < len; x++)
+            try
             {
-                i = Convert.ToInt32(text.Substring(x * 2, 2), 16);
-                inputByteArray[x] = (byte)i;
+                DESCryptoServiceProvider des = new DESCryptoServiceProvider();
+                int len;
+                len = text.Length / 2;
+                byte[] inputByteArray = new byte[len];
+                int x, i;
+                for (x = 0; x < len; x++)
+                {
+                    i = Convert.ToInt32(text.Substring(x * 2, 2), 16);
+                    inputByteArray[x] = (byte)i;
+                }
+                des.Key = ASCIIEncoding.ASCII.GetBytes(System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(sKey, "md5").Substring(0, 8));
+                des.IV = ASCIIEncoding.ASCII.GetBytes(System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(sKey, "md5").Substring(0, 8));
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(), CryptoStreamMode.Write);
+                cs.Write(inputByteArray, 0, inputByteArray.Length);
+                cs.FlushFinalBlock();
+                return Encoding.Default.GetString(ms.ToArray());
             }
-            des.Key = ASCIIEncoding.ASCII.GetBytes(System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(sKey, "md5").Substring(0, 8));
-            des.IV = ASCIIEncoding.ASCII.GetBytes(System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(sKey, "md5").Substring(0, 8));
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(), CryptoStreamMode.Write);
-            cs.Write(inputByteArray, 0, inputByteArray.Length);
-            cs.FlushFinalBlock();
-            return Encoding.Default.GetString(ms.ToArray());
+            catch
+            {
+                return string.Empty;
+            }
         }
     }
 }
