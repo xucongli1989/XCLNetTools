@@ -35,7 +35,7 @@ namespace XCLNetTools.Common
         }
 
         /// <summary>
-        /// 取得用户http客户端IP(穿过代理服务器取远程用户真实IP地址)
+        /// 获取 HTTP 客户端 IP 地址
         /// </summary>
         public static string GetClientIP()
         {
@@ -44,33 +44,12 @@ namespace XCLNetTools.Common
             {
                 return string.Empty;
             }
-            string result = string.Empty;
-            try
+            var ip = (context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? "").Split(',')[0];
+            if (string.IsNullOrWhiteSpace(ip))
             {
-                string ipAddress = string.Empty;
-                if (context.Request.ServerVariables.HasKeys() && context.Request.ServerVariables.AllKeys.ToList().Exists(k => string.Equals(k, "HTTP_X_FORWARDED_FOR", StringComparison.OrdinalIgnoreCase)))
-                {
-                    ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-                    if (!string.IsNullOrEmpty(ipAddress))
-                    {
-                        string[] addresses = ipAddress.Split(',');
-                        if (addresses.Length != 0)
-                        {
-                            result = addresses[0];
-                        }
-                    }
-                }
-
-                if (string.IsNullOrEmpty(result))
-                {
-                    result = context.Request.ServerVariables["REMOTE_ADDR"];
-                }
+                ip = context.Request.ServerVariables["REMOTE_ADDR"] ?? "";
             }
-            catch
-            {
-                //
-            }
-            return string.Equals("::1", result) ? "127.0.0.1" : result;
+            return ip;
         }
 
         /// <summary>
