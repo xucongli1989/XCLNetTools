@@ -42,8 +42,8 @@ namespace XCLNetTools.Cache
         /// </summary>
         /// <param name="CacheKey">缓存key名</param>
         /// <param name="objObject">缓存key值</param>
-        /// <param name="absoluteExpiration">所插入对象将到期并被从缓存中移除的时间</param>
-        /// <param name="slidingExpiration">最后一次访问所插入对象时与该对象到期时之间的时间间隔</param>
+        /// <param name="absoluteExpiration">绝对过期时间，指定缓存项在何时过期。</param>
+        /// <param name="slidingExpiration">滑动过期时间，指定缓存项在多长时间内没有访问后过期。可以将其设置为 TimeSpan.Zero，表示不使用滑动过期。</param>
         public static void SetCache(string CacheKey, object objObject, DateTime absoluteExpiration, TimeSpan slidingExpiration)
         {
             HttpRuntime.Cache.Insert(CacheKey, objObject, null, absoluteExpiration, slidingExpiration);
