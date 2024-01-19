@@ -55,7 +55,9 @@ namespace XCLNetTools.Common
         /// <summary>
         /// 根据第三方ip查询网站 ip138.com 获取当前请求的外网ip地址
         /// </summary>
-        public static XCLNetTools.Entity.LocationEntity GetIPFromPublicWeb(string ip138Token)
+        /// <param name="ip138Token">接口token</param>
+        /// <param name="ip">要查询的IP，如果为空，则查询本地IP</param>
+        public static XCLNetTools.Entity.LocationEntity GetIPFromPublicWeb(string ip138Token, string ip)
         {
             var model = new XCLNetTools.Entity.LocationEntity();
             try
@@ -63,7 +65,7 @@ namespace XCLNetTools.Common
                 using (var client = new HttpClient())
                 {
                     client.Timeout = TimeSpan.FromSeconds(2);
-                    var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.ip138.com/ip?token={ip138Token}");
+                    var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.ip138.com/ip?token={ip138Token}&ip={ip}");
                     var response = client.SendAsync(request).GetAwaiter().GetResult();
                     var json = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                     var ipResult = Newtonsoft.Json.JsonConvert.DeserializeObject(json) as dynamic;
