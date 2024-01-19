@@ -3,7 +3,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
-using System.Text.RegularExpressions;
 using System.Web;
 
 namespace XCLNetTools.Common
@@ -13,6 +12,28 @@ namespace XCLNetTools.Common
     /// </summary>
     public static class IPHelper
     {
+        /// <summary>
+        /// 是否为一个有效的IP地址
+        /// </summary>
+        /// <param name="ip">ip 字符串</param>
+        /// <param name="ignoreLoopback">是否忽略环回地址</param>
+        public static bool IsValidIP(string ip, bool ignoreLoopback = true)
+        {
+            if (string.IsNullOrWhiteSpace(ip))
+            {
+                return false;
+            }
+            if (!IPAddress.TryParse(ip, out IPAddress ipInfo))
+            {
+                return false;
+            }
+            if (ignoreLoopback)
+            {
+                return !IPAddress.IsLoopback(ipInfo);
+            }
+            return true;
+        }
+
         /// <summary>
         /// 取得用户http客户端IP(穿过代理服务器取远程用户真实IP地址)
         /// </summary>
@@ -60,6 +81,10 @@ namespace XCLNetTools.Common
         public static XCLNetTools.Entity.LocationEntity GetIPFromPublicWeb(string ip138Token, string ip)
         {
             var model = new XCLNetTools.Entity.LocationEntity();
+            if (!string.IsNullOrWhiteSpace(ip) && !IPHelper.IsValidIP(ip))
+            {
+                return model;
+            }
             try
             {
                 using (var client = new HttpClient())
