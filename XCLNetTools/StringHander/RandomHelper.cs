@@ -19,12 +19,12 @@ namespace XCLNetTools.StringHander
         /// 生成指定范围内的随机数（不重复）
         /// </summary>
         /// <param name="minValue">最小值（包含）</param>
-        /// <param name="maxValue">最大值（不包含）</param>
+        /// <param name="maxValue">最大值（包含）</param>
         /// <returns>结果值</returns>
         public static int GetRandomValue(int minValue, int maxValue)
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
-            return rand.Next(minValue, maxValue);
+            return rand.Next(minValue, maxValue + 1);
         }
 
         /// <summary>
