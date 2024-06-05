@@ -632,7 +632,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            return url.ToUpper().IndexOf("HTTP://") >= 0;
+            return url.ToUpper().StartsWith("HTTP://");
         }
 
         /// <summary>
@@ -656,7 +656,7 @@ namespace XCLNetTools.StringHander
             {
                 return false;
             }
-            return url.ToUpper().IndexOf("HTTPS://") >= 0;
+            return url.ToUpper().StartsWith("HTTPS://");
         }
 
         /// <summary>
