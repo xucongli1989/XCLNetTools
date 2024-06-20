@@ -6,8 +6,11 @@ Create By: XCL @ 2012
 
  */
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using System.Web.Script.Serialization;
+using System.Collections.Generic;
+using XCLNetTools.Entity.Serialize;
 
 namespace XCLNetTools.Serialize
 {
@@ -17,71 +20,38 @@ namespace XCLNetTools.Serialize
     public static class JSON
     {
         /// <summary>
-        /// 提供者枚举
-        /// </summary>
-        public enum JsonProviderEnum
-        {
-            /// <summary>
-            /// 指定为：System.Web.Script.Serialization
-            /// </summary>
-            SystemWeb,
-
-            /// <summary>
-            /// 指定为：Newtonsoft.Json.JsonConvert
-            /// </summary>
-            Newtonsoft
-        }
-
-        /// <summary>
         /// 将对象序列化为json
         /// </summary>
-        /// <param name="obj">要序列化的对象</param>
-        /// <param name="provider">序列化提供者</param>
-        /// <returns>json</returns>
-        public static string Serialize(object obj, JsonProviderEnum provider = JsonProviderEnum.SystemWeb)
+        public static string Serialize(object obj, JsonConvertOption ops = null)
         {
-            string result = string.Empty;
+            var result = string.Empty;
             if (null == obj)
             {
                 return result;
             }
-            switch (provider)
+            if (null == ops)
             {
-                case JsonProviderEnum.SystemWeb:
-                    result = new JavaScriptSerializer().Serialize(obj);
-                    break;
-
-                case JsonProviderEnum.Newtonsoft:
-                    result = Newtonsoft.Json.JsonConvert.SerializeObject(obj);
-                    break;
+                return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
             }
-            return result;
+            var settings = new Newtonsoft.Json.JsonSerializerSettings();
+            if (ops.IsConvertEnumToString)
+            {
+                settings.Converters = new List<JsonConverter>() { new StringEnumConverter() };
+            }
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj, settings);
         }
 
         /// <summary>
         /// 将json反序列化为一个对象
         /// </summary>
-        /// <param name="str">要反序列化的json</param>
-        /// <param name="provider">提供者</param>
-        /// <returns>对象</returns>
-        public static T DeSerialize<T>(string str, JsonProviderEnum provider = JsonProviderEnum.SystemWeb) where T : class
+        public static T DeSerialize<T>(string str) where T : class
         {
             T result = default(T);
             if (string.IsNullOrWhiteSpace(str))
             {
                 return result;
             }
-            switch (provider)
-            {
-                case JsonProviderEnum.SystemWeb:
-                    result = new JavaScriptSerializer().Deserialize<T>(str);
-                    break;
-
-                case JsonProviderEnum.Newtonsoft:
-                    result = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str);
-                    break;
-            }
-            return result;
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str);
         }
 
         /// <summary>

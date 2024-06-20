@@ -167,6 +167,7 @@
     <Compile Include="Entity\Office\ExcelHandler\ExcelToTableOptions.cs" />
     <Compile Include="Entity\RenameConflictItem.cs" />
     <Compile Include="Entity\RgbaEntity.cs" />
+    <Compile Include="Entity\Serialize\JsonConvertOption.cs" />
     <Compile Include="Entity\SetOptionEntity.cs" />
     <Compile Include="Control\HtmlControl\Lib.cs" />
     <Compile Include="Control\Pagination\AspNetPagerInfo.cs" />

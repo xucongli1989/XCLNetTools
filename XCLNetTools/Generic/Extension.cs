@@ -8,6 +8,7 @@ Create By: XCL @ 2012
 
 using System.Collections.Generic;
 using System.Linq;
+using XCLNetTools.Entity.Serialize;
 
 namespace XCLNetTools.Generic
 {
@@ -45,15 +46,9 @@ namespace XCLNetTools.Generic
         /// <summary>
         /// 将T转为json字符串
         /// </summary>
-        /// <param name="source">要转换的值</param>
-        /// <returns>json字符串</returns>
-        public static string ToJson<T>(this T source)
+        public static string ToJson<T>(this T source, JsonConvertOption ops = null)
         {
-            if (null == source)
-            {
-                return null;
-            }
-            return XCLNetTools.Serialize.JSON.Serialize(source);
+            return XCLNetTools.Serialize.JSON.Serialize(source, ops);
         }
 
         /// <summary>

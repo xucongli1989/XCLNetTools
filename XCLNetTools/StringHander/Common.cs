@@ -11,6 +11,7 @@ using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -1142,6 +1143,22 @@ namespace XCLNetTools.StringHander
                 c = str.Length - (startIndex + 1) + 1;
             }
             return str.Remove(startIndex, c);
+        }
+
+        /// <summary>
+        /// 计算数学表达式
+        /// </summary>
+        public static double? Calculate(string str)
+        {
+            try
+            {
+                var dt = new DataTable();
+                return Convert.ToDouble(dt.Compute(str, ""));
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         #endregion 其它
