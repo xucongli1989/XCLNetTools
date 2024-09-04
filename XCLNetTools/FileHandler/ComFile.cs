@@ -352,6 +352,22 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
+        /// 使用新的不包含扩展名的文件名，更新指定路径path中的文件名。如：（"C:\demo\a.txt","abcd"）=>C:\demo\abcd.txt
+        /// </summary>
+        public static string ChangePathByFileNameWithoutExt(string path, string name)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
+            var dir = ComFile.GetFileFolderPath(path);
+            var ext = ComFile.GetExtName(path, false, false);
+            var newName = ComFile.AppendExtToPath(name, ext);
+            var newPath = Path.Combine(dir, newName);
+            return newPath;
+        }
+
+        /// <summary>
         /// 获取路径所在的文件夹名称，如：c:\  --> c；  c:\a\b\ --> b;  c:\a\b\c.pdf --> b
         /// </summary>
         public static string GetPathFolderName(string path, bool isFolderPath)
@@ -569,22 +585,24 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 取得文件扩展名（默认不包含小圆点）【小写】
+        /// 取得文件扩展名（默认：不包含小圆点 + 小写）
         /// </summary>
-        /// <param name="fileName">路径或文件名</param>
-        /// <param name="withDot">是否包含小圆点（默认：false）</param>
-        /// <returns>文件扩展名</returns>
-        public static string GetExtName(string fileName, bool withDot = false)
+        public static string GetExtName(string fileName, bool withDot = false, bool isConvertToLower = true)
         {
             if (string.IsNullOrWhiteSpace(fileName))
             {
                 return string.Empty;
             }
+            var ext = "";
             if (withDot)
             {
-                return System.IO.Path.GetExtension(fileName).ToLower();
+                ext = System.IO.Path.GetExtension(fileName);
             }
-            return System.IO.Path.GetExtension(fileName).TrimStart('.').ToLower();
+            else
+            {
+                ext = System.IO.Path.GetExtension(fileName).TrimStart('.');
+            }
+            return isConvertToLower ? ext.ToLower() : ext;
         }
 
         /// <summary>
