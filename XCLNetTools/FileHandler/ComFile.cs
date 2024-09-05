@@ -801,6 +801,67 @@ namespace XCLNetTools.FileHandler
             return XCLNetTools.FileHandler.ComFile.GetStandardPath(newPath, true);
         }
 
+        /// <summary>
+        /// 检查已有路径是否已经存在，如果已经存在，则在名称末尾自增加 1，如：test(1).txt, test(2).txt...
+        /// </summary>
+        public static string TryGetUniquePathToSave(string path, bool isFolder)
+        {
+            var newPath = path;
+            while (IsPathExists(newPath, isFolder))
+            {
+                newPath = PathIncrement(newPath, isFolder);
+            }
+            return XCLNetTools.FileHandler.ComFile.GetStandardPath(newPath, isFolder);
+        }
+
+        /// <summary>
+        /// 检查路径是否存在
+        /// </summary>
+        public static bool IsPathExists(string path, bool isFolder)
+        {
+            if (isFolder)
+            {
+                return System.IO.Directory.Exists(path);
+            }
+            return System.IO.File.Exists(path);
+        }
+
+        /// <summary>
+        /// 在路径的文件名上自增加 1，如：c:\a\b\test.txt  -> c:\a\b\test(1).txt
+        /// </summary>
+        public static string PathIncrement(string path, bool isFolder)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return string.Empty;
+            }
+            var indexReg = new Regex(@"\((\d+)\)$");
+            var getCurrentIdx = new Func<string, int>((m) =>
+             {
+                 var mt = indexReg.Match(m);
+                 var idx = mt?.Groups?.Count >= 2 ? Convert.ToInt32(mt.Groups[1].Value) : 0;
+                 return idx;
+             });
+            var newPath = "";
+            if (isFolder)
+            {
+                var name = XCLNetTools.FileHandler.ComFile.GetPathFolderName(path, true);
+                var nameWithoutIndex = indexReg.Replace(name, "");
+                var idx = getCurrentIdx(name) + 1;
+                var newName = $"{nameWithoutIndex}({idx})";
+                newPath = XCLNetTools.FileHandler.ComFile.ChangePathByFolderName(path, newName, true);
+            }
+            else
+            {
+                var name = XCLNetTools.FileHandler.ComFile.GetFileName(path, false);
+                var nameWithoutIndex = indexReg.Replace(name, "");
+                var idx = getCurrentIdx(name) + 1;
+                var newName = $"{nameWithoutIndex}({idx})";
+                newPath = XCLNetTools.FileHandler.ComFile.ChangePathByFileNameWithoutExt(path, newName);
+            }
+            return XCLNetTools.FileHandler.ComFile.GetStandardPath(newPath, isFolder);
+        }
+
         #endregion 其它
     }
 }
