@@ -400,6 +400,15 @@ namespace XCLNetTools.FileHandler
             return string.Join(@"\", arr);
         }
 
+        /// <summary>
+        /// 将文件夹、文件名、扩展名拼接成文件路径
+        /// </summary>
+        public static string CombineFilePath(string folderPath, string nameWithoutExt, string ext)
+        {
+            var p = Path.Combine(folderPath, nameWithoutExt);
+            return AppendExtToPath(p, ext);
+        }
+
         #endregion 路径相关
 
         #region 文件属性相关
@@ -804,7 +813,7 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 检查已有路径是否已经存在，如果已经存在，则在名称末尾自增加 1，如：test(1).txt, test(2).txt...
         /// </summary>
-        public static string TryGetUniquePathToSave(string path, bool isFolder)
+        public static string GetUniquePathToSave(string path, bool isFolder)
         {
             var newPath = path;
             while (IsPathExists(newPath, isFolder))
