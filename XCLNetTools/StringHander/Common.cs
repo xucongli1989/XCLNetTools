@@ -429,25 +429,35 @@ namespace XCLNetTools.StringHander
         #region 其它字符串处理
 
         /// <summary>
-        /// 删除结尾的字符串
+        /// 删除开头的字符串
         /// </summary>
-        /// <param name="str">待处理字符串</param>
-        /// <param name="cutStr">要删除的字符串</param>
-        /// <returns>处理后的值</returns>
-        public static string TrimEnd(string str, string cutStr)
+        public static string RemoveStart(string str, string cutStr, bool isIgnoreCase = false)
         {
-            return string.IsNullOrEmpty(str) ? string.Empty : str.TrimEnd(cutStr.ToCharArray());
+            if (string.IsNullOrEmpty(str) || string.IsNullOrEmpty(cutStr))
+            {
+                return str;
+            }
+            if (str.StartsWith(cutStr, isIgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal))
+            {
+                return str.Substring(cutStr.Length);
+            }
+            return str;
         }
 
         /// <summary>
-        /// 删除开头的字符串
+        /// 删除结尾的字符串
         /// </summary>
-        /// <param name="str">待处理字符串</param>
-        /// <param name="cutStr">要删除的字符串</param>
-        /// <returns>处理后的值</returns>
-        public static string TrimStart(string str, string cutStr)
+        public static string RemoveEnd(string str, string cutStr, bool isIgnoreCase = false)
         {
-            return string.IsNullOrEmpty(str) ? string.Empty : str.TrimStart(cutStr.ToCharArray());
+            if (string.IsNullOrEmpty(str) || string.IsNullOrEmpty(cutStr))
+            {
+                return str;
+            }
+            if (str.EndsWith(cutStr, isIgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal))
+            {
+                return str.Substring(0, str.Length - cutStr.Length);
+            }
+            return str;
         }
 
         /// <summary>

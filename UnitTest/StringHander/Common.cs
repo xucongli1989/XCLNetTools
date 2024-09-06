@@ -142,6 +142,30 @@ namespace UnitTest.StringHander
         }
 
         [TestMethod]
+        public void RemoveStart()
+        {
+            Assert.AreEqual("", XCLNetTools.StringHander.Common.RemoveStart("", ""));
+            Assert.AreEqual("  ", XCLNetTools.StringHander.Common.RemoveStart("  ", ""));
+            Assert.AreEqual(" ", XCLNetTools.StringHander.Common.RemoveStart("  ", " "));
+            Assert.AreEqual("abCXYzMn", XCLNetTools.StringHander.Common.RemoveStart("abCXYzMn", "abc"));
+            Assert.AreEqual("XYzMn", XCLNetTools.StringHander.Common.RemoveStart("abCXYzMn", "abC"));
+            Assert.AreEqual("ABCXYzMn", XCLNetTools.StringHander.Common.RemoveStart("abCABCXYzMn", "abC"));
+            Assert.AreEqual("abcABCXYzMn", XCLNetTools.StringHander.Common.RemoveStart("abCabcABCXYzMn", "ABC", true));
+        }
+
+        [TestMethod]
+        public void RemoveEnd()
+        {
+            Assert.AreEqual("", XCLNetTools.StringHander.Common.RemoveEnd("", ""));
+            Assert.AreEqual("  ", XCLNetTools.StringHander.Common.RemoveEnd("  ", ""));
+            Assert.AreEqual(" ", XCLNetTools.StringHander.Common.RemoveEnd("  ", " "));
+            Assert.AreEqual("xYzabC", XCLNetTools.StringHander.Common.RemoveEnd("xYzabC", "abc"));
+            Assert.AreEqual("xYz", XCLNetTools.StringHander.Common.RemoveEnd("xYzabC", "abC"));
+            Assert.AreEqual("abCABCXYzMn", XCLNetTools.StringHander.Common.RemoveEnd("abCABCXYzMnabC", "abC"));
+            Assert.AreEqual("abCabcABCXYabC", XCLNetTools.StringHander.Common.RemoveEnd("abCabcABCXYabCAbC", "ABC", true));
+        }
+
+        [TestMethod]
         public void TrimEnd()
         {
             var lst = new List<string>();
