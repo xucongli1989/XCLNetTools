@@ -51,7 +51,7 @@ namespace XCLNetTools.Common
 
             transList.ForEach(k =>
             {
-                backend.AddTranslation(k.Item1.ToString(), "translation", k.Item2, k.Item3);
+                backend.AddTranslation(XCLNetTools.Enum.EnumHelper.GetEnumDesc(k.Item1), "translation", k.Item2, k.Item3);
             });
 
             var translator = new DefaultTranslator(backend);
