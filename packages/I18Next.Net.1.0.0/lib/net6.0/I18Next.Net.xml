@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>I18Next.Net</name>
+    </assembly>
+    <members>
+        <member name="T:I18Next.Net.Backends.BackendUtilities">
+            <summary>
+                Provides some utility methods for easier implementation of backends.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.Backends.BackendUtilities.GetLanguagePart(System.String)">
+            <summary>
+                Extracts the language only part of a language string of the form "de-DE". For the provided sample the result would
+                be "de".
+            </summary>
+            <param name="language">The language input string.</param>
+            <returns>The language part of the input string.</returns>
+        </member>
+        <member name="T:I18Next.Net.Formatters.MomentJsFormatter">
+            <summary>
+                Translates MomentJS tokens to .Net format tokens and uses this to format DateTime and DateTimeOffset values.
+            </summary>
+        </member>
+        <member name="T:I18Next.Net.Plugins.TraceLogger">
+            <summary>
+                Logger implementation that forwards the log messages to the diagnostics trace logging system.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogCritical(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogCritical(System.Exception,System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogDebug(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogDebug(System.Exception,System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogError(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogError(System.Exception,System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogInformation(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogInformation(System.Exception,System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogVerbose(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogVerbose(System.Exception,System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogWarning(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:I18Next.Net.Plugins.TraceLogger.LogWarning(System.Exception,System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

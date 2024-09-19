@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>I18Next.Net.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:I18Next.Net.II18Next">
+            <summary>
+                I18Next.Net instance.
+            </summary>
+        </member>
+        <member name="P:I18Next.Net.II18Next.Backend">
+            <summary>
+                The backend used to resolve translations.
+            </summary>
+        </member>
+        <member name="P:I18Next.Net.II18Next.DefaultNamespace">
+            <summary>
+                Default namespace to be used to retrieve translations.
+            </summary>
+        </member>
+        <member name="P:I18Next.Net.II18Next.DetectLanguageOnEachTranslation">
+            <summary>
+                Whether I18Next should re-detect the language for each translation request.
+                Note: Enabling this could have a huge performance impact depending on the number of translations.
+            </summary>
+        </member>
+        <member name="P:I18Next.Net.II18Next.Language">
+            <summary>
+                The language used to retrieve translations from the backend.
+            </summary>
+        </member>
+        <member name="P:I18Next.Net.II18Next.LanguageDetector">
+            <summary>
+                The language detector used to detect the language to be used for retrieving translations.
+            </summary>
+        </member>
+        <member name="P:I18Next.Net.II18Next.Translator">
+            <summary>
+                The translator used to resolve translations from the backend.
+            </summary>
+        </member>
+        <member name="E:I18Next.Net.II18Next.LanguageChanged">
+            <summary>
+                Event fired when the default language has changed.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.II18Next.T(System.String,System.Object)">
+            <summary>
+                Translates the given key into the default language.
+            </summary>
+            <param name="key">Key to be translated.</param>
+            <param name="args">Additional arguments used to translate the key.</param>
+            <returns>Translation value.</returns>
+        </member>
+        <member name="M:I18Next.Net.II18Next.T(System.String,System.String,System.Object)">
+            <summary>
+                Translates the given key into the provided language.
+            </summary>
+            <param name="language">Target language override.</param>
+            <param name="key">Key to be translated.</param>
+            <param name="args">Additional arguments used to translate the key.</param>
+            <returns>Translation value.</returns>
+        </member>
+        <member name="M:I18Next.Net.II18Next.T(System.String,System.String,System.String,System.Object)">
+            <summary>
+                Translates the given key into the provided language using another default namespace.
+            </summary>
+            <param name="language">Target language override.</param>
+            <param name="defaultNamespace">Default namespace override.</param>
+            <param name="key">Key to be translated.</param>
+            <param name="args">Additional arguments used to translate the key.</param>
+            <returns>Translation value.</returns>
+        </member>
+        <member name="M:I18Next.Net.II18Next.Ta(System.String,System.Object)">
+            <summary>
+                Translates the given key into the default language.
+            </summary>
+            <param name="key">Key to be translated.</param>
+            <param name="args">Additional arguments used to translate the key.</param>
+            <returns>Translation value.</returns>
+        </member>
+        <member name="M:I18Next.Net.II18Next.Ta(System.String,System.String,System.Object)">
+            <summary>
+                Translates the given key into the default language.
+            </summary>
+            <param name="language">Target language override.</param>
+            <param name="key">Key to be translated.</param>
+            <param name="args">Additional arguments used to translate the key.</param>
+            <returns>Translation value.</returns>
+        </member>
+        <member name="M:I18Next.Net.II18Next.Ta(System.String,System.String,System.String,System.Object)">
+            <summary>
+                Translates the given key into the provided language using another default namespace.
+            </summary>
+            <param name="language">Target language override.</param>
+            <param name="defaultNamespace">Default namespace override.</param>
+            <param name="key">Key to be translated.</param>
+            <param name="args">Additional arguments used to translate the key.</param>
+            <returns>Translation value.</returns>
+        </member>
+        <member name="M:I18Next.Net.II18Next.UseDetectedLanguage">
+            <summary>
+                Uses the registered language detector to detect the language and set it as the default language.
+            </summary>
+        </member>
+        <member name="T:I18Next.Net.Plugins.IFormatter">
+            <summary>
+                A I18Next formatter plugin used to apply formatting to an interpolation result.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.Plugins.IFormatter.CanFormat(System.Object,System.String,System.String)">
+            <summary>
+                Checks whether the formatter is able to provide formatting for an interpolation.
+            </summary>
+            <param name="value">The resolved value for an interpolation to be formatted.</param>
+            <param name="format">The format string provided for the interpolation.</param>
+            <param name="language">The target language.</param>
+            <returns>Whether the formatter is able to provide formatting.</returns>
+        </member>
+        <member name="M:I18Next.Net.Plugins.IFormatter.Format(System.Object,System.String,System.String)">
+            <summary>
+                Applies formatting to an interpolation.
+            </summary>
+            <param name="value">The resolved value for an interpolation to be formatted.</param>
+            <param name="format">The format string provided for the interpolation.</param>
+            <param name="language">The target language.</param>
+            <returns>Formatted string value for the interpolation.</returns>
+        </member>
+        <member name="T:I18Next.Net.Plugins.ILogger">
+            <summary>
+                ILogger interface for common scenarios.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogCritical(System.String,System.Object[])">
+            <summary>Formats and writes a critical log message.</summary>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogCritical(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogCritical(System.Exception,System.String,System.Object[])">
+            <summary>Formats and writes a critical log message.</summary>
+            <param name="exception">The exception to log.</param>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogCritical(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogDebug(System.String,System.Object[])">
+            <summary>Formats and writes a debug log message.</summary>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogDebug(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogDebug(System.Exception,System.String,System.Object[])">
+            <summary>Formats and writes a debug log message.</summary>
+            <param name="exception">The exception to log.</param>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogDebug(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogError(System.String,System.Object[])">
+            <summary>Formats and writes an error log message.</summary>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogError(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogError(System.Exception,System.String,System.Object[])">
+            <summary>Formats and writes an error log message.</summary>
+            <param name="exception">The exception to log.</param>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogError(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogInformation(System.String,System.Object[])">
+            <summary>Formats and writes an informational log message.</summary>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogInformation(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogInformation(System.Exception,System.String,System.Object[])">
+            <summary>Formats and writes an informational log message.</summary>
+            <param name="exception">The exception to log.</param>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogInformation(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogVerbose(System.String,System.Object[])">
+            <summary>Formats and writes a trace log message.</summary>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogTrace(0, exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogVerbose(System.Exception,System.String,System.Object[])">
+            <summary>Formats and writes a trace log message.</summary>
+            <param name="exception">The exception to log.</param>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogTrace(0, exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogWarning(System.String,System.Object[])">
+            <summary>Formats and writes a warning log message.</summary>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogWarning(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="M:I18Next.Net.Plugins.ILogger.LogWarning(System.Exception,System.String,System.Object[])">
+            <summary>Formats and writes a warning log message.</summary>
+            <param name="exception">The exception to log.</param>
+            <param name="message">
+                Format string of the log message in message template format. Example:
+                <code>"User {User} logged in from {Address}"</code>
+            </param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <example>logger.LogWarning(exception, "Error while processing request from {Address}", address)</example>
+        </member>
+        <member name="T:I18Next.Net.Plugins.IMissingKeyHandler">
+            <summary>
+                Abstraction for a handler which can handle the occurence of a missing key in the used translation backend.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.Plugins.IMissingKeyHandler.HandleMissingKeyAsync(System.Object,I18Next.Net.MissingKeyEventArgs)">
+            <summary>
+                Called by a translator plugin when it was unable to find any value for a given key in the underlying translation
+                backend.
+            </summary>
+            <param name="sender">Reference to the calling translator plugin.</param>
+            <param name="missingKey">Object containing various information about the missing key.</param>
+            <returns>Awaitable Task.</returns>
+        </member>
+        <member name="T:I18Next.Net.Plugins.IPluralResolver">
+            <summary>
+                Abstraction of a plural resolver plugin for I18Next.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.Plugins.IPluralResolver.GetPluralSuffix(System.String,System.Int32)">
+            <summary>
+                Get the suffix which should be appended to a searched key and used to retrieve a translated value.
+            </summary>
+            <param name="language">The target language.</param>
+            <param name="count">Count if items.</param>
+            <returns>Suffix to be used to look for plural handling.</returns>
+        </member>
+        <member name="M:I18Next.Net.Plugins.IPluralResolver.NeedsPlural(System.String)">
+            <summary>
+                Checks whether a given language needs plural handling at all.
+            </summary>
+            <param name="language">The target language.</param>
+            <returns>Whether the target language requires plural handling.</returns>
+        </member>
+        <member name="T:I18Next.Net.Plugins.IPostProcessor">
+            <summary>
+                Abstraction for a post processor plugin for I18Next.
+            </summary>
+        </member>
+        <member name="P:I18Next.Net.Plugins.IPostProcessor.Keyword">
+            <summary>
+                Keyword to identify the post processor.
+            </summary>
+        </member>
+        <member name="M:I18Next.Net.Plugins.IPostProcessor.Process(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+                Apply the post processing onto the given value.
+            </summary>
+            <param name="key">The original translation key.</param>
+            <param name="value">The translated value.</param>
+            <param name="args">Arguments passed into the interpolation.</param>
+            <returns>Post processed value.</returns>
+        </member>
+    </members>
+</doc>

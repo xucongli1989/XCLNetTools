@@ -51,6 +51,12 @@
     <Reference Include="HtmlAgilityPack, Version=1.11.46.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.46\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="I18Next.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\I18Next.Net.1.0.0\lib\netstandard2.0\I18Next.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="I18Next.Net.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\I18Next.Net.Abstractions.1.0.0\lib\netstandard2.0\I18Next.Net.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.JScript" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -143,6 +149,7 @@
     <Compile Include="Common\DataTypeConvert.cs" />
     <Compile Include="Common\FontHelper.cs" />
     <Compile Include="Common\GZipHelper.cs" />
+    <Compile Include="Common\I18nHelper.cs" />
     <Compile Include="Common\IPHelper.cs" />
     <Compile Include="Common\SwitchControl.cs" />
     <Compile Include="Common\ThreadHelper.cs" />
