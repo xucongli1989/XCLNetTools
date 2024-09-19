@@ -154,8 +154,6 @@
     <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
     <Compile Include="Entity\FileInfoEntity.cs" />
     <Compile Include="Entity\FontInfoEntity.cs" />
-    <Compile Include="Entity\Http\HttpItem.cs" />
-    <Compile Include="Entity\Http\HttpResult.cs" />
     <Compile Include="Entity\LineItem.cs" />
     <Compile Include="Entity\LocationEntity.cs" />
     <Compile Include="Entity\Message\JsonMsg.cs" />
@@ -202,15 +200,11 @@
     <Compile Include="Generic\Extension.cs" />
     <Compile Include="Generic\ListHelper.cs" />
     <Compile Include="Http\CookieHelper.cs" />
-    <Compile Include="Http\HttpHelper.cs" />
     <Compile Include="MVC\JsonResultFormat.cs" />
-    <Compile Include="Language\CN.cs" />
     <Compile Include="Message\MessageModel.cs" />
     <Compile Include="Message\Log.cs" />
     <Compile Include="FileHandler\ComFile.cs" />
     <Compile Include="FileHandler\FileDirectory.cs" />
-    <Compile Include="FileHandler\HttpProc.cs" />
-    <Compile Include="FileHandler\INIFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\KeyValue.cs" />
     <Compile Include="Entity\StaticResource.cs" />
