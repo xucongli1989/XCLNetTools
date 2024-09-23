@@ -14,6 +14,7 @@ using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -496,113 +497,44 @@ namespace XCLNetTools.StringHander
         #region 其它
 
         /// <summary>
-        /// 网站根路径，如:"/"
-        /// 注：末尾带'/'
+        /// 获取当前站点的根路径，比如：http://www.xcl.com:2156/ or http://www.xcl.com:2156/VirtualWeb/
+        /// 获取顺序：从 appsettings 中获取配置 RootURL、从当前请求头中获取请求头 X-ROOT-URL、从当前请求 url 中获取
         /// </summary>
-        public static string RootURL
-        {
-            get
-            {
-                var context = HttpContext.Current;
-                if (null == context)
-                {
-                    return string.Empty;
-                }
-                string m_ApplicationPath = context.Request.ApplicationPath;
-                if (String.IsNullOrEmpty(m_ApplicationPath))
-                    m_ApplicationPath = "/";
-                if (!m_ApplicationPath.EndsWith("/"))
-                    m_ApplicationPath += "/";
-                return m_ApplicationPath;
-            }
-        }
-
-        /// <summary>
-        /// 网站根Uri，如:"//www.xcl.com:2156/ or //www.xcl.com:2156/VirtualWeb/"
-        /// 注：末尾带'/'
-        /// </summary>
-        public static string RootUri
-        {
-            get
-            {
-                var context = HttpContext.Current;
-                if (null == context)
-                {
-                    return string.Empty;
-                }
-                string url = string.Empty;
-                HttpRequest Req = context.Request;
-                string urlAuthority = Req.Url.GetLeftPart(UriPartial.Authority);
-
-                if (Req.ApplicationPath == null || Req.ApplicationPath == "/")
-                {
-                    //直接安装在   Web   站点
-                    url = urlAuthority;
-                }
-                else
-                {
-                    //安装在虚拟子目录下
-                    url = urlAuthority + Req.ApplicationPath;
-                }
-                if (!string.IsNullOrEmpty(url))
-                {
-                    url = url.TrimEnd('/') + "/";
-                    url = XCLNetTools.Common.Consts.RegHttpScheme.Replace(url, "//");//替换http(s):// 为"//" 以适应http(s)环境
-                }
-                return url;
-            }
-        }
-
-        /// <summary>
-        /// 将网站根Uri转为开头带http://或https://的url地址
-        /// 如:"http://www.xcl.com:2156/ or https://www.xcl.com:2156/VirtualWeb/"
-        /// </summary>
-        /// <param name="httpType">http类型，默认为http://</param>
-        /// <returns>处理后的url</returns>
-        public static string GetRootUri(HttpTypeEnum httpType = HttpTypeEnum.Http)
-        {
-            return Common.ToHttpUrl(Common.RootUri, httpType);
-        }
-
-        /// <summary>
-        /// 增强GetRootUri方法，从当前url中判断是http还是https
-        /// 如:"http://www.xcl.com:2156/ or https://www.xcl.com:2156/VirtualWeb/"
-        /// </summary>
-        public static string GetRootUri2()
-        {
-            if (null == HttpContext.Current || null == HttpContext.Current.Request)
-            {
-                return string.Empty;
-            }
-            if (Common.IsHttps(HttpContext.Current.Request.Url.AbsoluteUri))
-            {
-                return GetRootUri(HttpTypeEnum.Https);
-            }
-            return GetRootUri(HttpTypeEnum.Http);
-        }
-
-        /// <summary>
-        /// 从指定的header中获取网站根路径，如果没有指定header或内容为空，则返回GetRootUri2()的内容
-        /// 如:"http://www.xcl.com:2156/ or https://www.xcl.com:2156/VirtualWeb/"
-        /// 注：末尾带'/'
-        /// </summary>
-        public static string GetRootUriByHeader(string headerName = "X-ROOT-URL")
+        public static string GetWebRootUrl()
         {
             var current = HttpContext.Current;
             if (null == current || null == current.Request)
             {
                 return string.Empty;
             }
-            var headerValue = string.Empty;
-            if (null != current.Request.Headers)
+
+            //从配置文件中获取
+            var rootUrl = XCLNetTools.XML.ConfigClass.GetConfigString("RootURL");
+
+            //从自定义 header 中获取
+            if (string.IsNullOrWhiteSpace(rootUrl))
             {
-                headerValue = current.Request.Headers[headerName];
+                rootUrl = current.Request.Headers?["X-ROOT-URL"];
             }
-            if (!string.IsNullOrWhiteSpace(headerValue))
+
+            //从 HttpRequest 中获取
+            if (string.IsNullOrWhiteSpace(rootUrl))
             {
-                return headerValue.TrimEnd('/') + "/";
+                var req = current.Request;
+                var urlAuthority = req.Url.GetLeftPart(UriPartial.Authority);
+                if (req.ApplicationPath == null || req.ApplicationPath == "/")
+                {
+                    //Web 站点
+                    rootUrl = urlAuthority;
+                }
+                else
+                {
+                    //虚拟目录
+                    rootUrl = urlAuthority + req.ApplicationPath;
+                }
             }
-            return GetRootUri2();
+
+            return rootUrl?.Trim().TrimEnd('/') + '/';
         }
 
         /// <summary>
