@@ -4,6 +4,8 @@ using I18Next.Net.Plugins;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
+using System.Web;
 
 namespace XCLNetTools.Common
 {
@@ -40,6 +42,55 @@ namespace XCLNetTools.Common
 
             [Description("ko-KR")]
             韩语
+        }
+
+        /// <summary>
+        /// 根据当前环境获取当前语言，如：zh-CN，顺序为：get 或 post 中的 language 参数 -> cookie 中的 language 值
+        /// </summary>
+        public static string GetCurrentLanguage(LanguageEnum? defaultValue = null)
+        {
+            var name = "language";
+
+            if (null != HttpContext.Current)
+            {
+                //从get/post中获取
+                var langFromQuery = GetStandardLanguageCode(XCLNetTools.StringHander.FormHelper.GetString(name));
+                if (!string.IsNullOrWhiteSpace(langFromQuery) && !string.IsNullOrWhiteSpace(XCLNetTools.Enum.EnumHelper.GetEnumDescriptionByText(typeof(LanguageEnum), langFromQuery)))
+                {
+                    return langFromQuery;
+                }
+
+                //从cookie中获取
+                var langFromCookie = GetStandardLanguageCode(XCLNetTools.Http.CookieHelper.GetCookies(name));
+                if (!string.IsNullOrWhiteSpace(langFromCookie) && !string.IsNullOrWhiteSpace(XCLNetTools.Enum.EnumHelper.GetEnumDescriptionByText(typeof(LanguageEnum), langFromCookie)))
+                {
+                    return langFromCookie;
+                }
+            }
+
+            return null == defaultValue ? string.Empty : XCLNetTools.Enum.EnumHelper.GetEnumDesc(defaultValue);
+        }
+
+        /// <summary>
+        /// 将语言代码转换为标准的语言代码，比如：zh-cn -> zh-CN, EN -> en
+        /// </summary>
+        public static string GetStandardLanguageCode(string code)
+        {
+            if (string.IsNullOrWhiteSpace(code))
+            {
+                return string.Empty;
+            }
+            code = code.Trim().ToLower();
+            if (!new Regex("^(([a-z]{2})|([a-z]{2}-[a-z]{2}))$").IsMatch(code))
+            {
+                return string.Empty;
+            }
+            var arr = code.Split('-');
+            if (arr.Length == 2)
+            {
+                return $"{arr[0]}-{arr[1].ToUpper()}";
+            }
+            return arr[0];
         }
 
         /// <summary>
