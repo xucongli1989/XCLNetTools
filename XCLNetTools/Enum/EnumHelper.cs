@@ -12,6 +12,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace XCLNetTools.Enum
 {
@@ -137,6 +138,28 @@ namespace XCLNetTools.Enum
                 if (null != m)
                 {
                     str = m.Description;
+                }
+            }
+            return str;
+        }
+
+        /// <summary>
+        /// 根据枚举description,获取枚举text
+        /// </summary>
+        public static string GetEnumTextByDescription(Type T, string description)
+        {
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                return string.Empty;
+            }
+            var str = string.Empty;
+            var lst = EnumHelper.GetEnumFieldModelList(T);
+            if (null != lst && lst.Count > 0)
+            {
+                var m = lst.Find(k => string.Equals(k.Description, description, StringComparison.OrdinalIgnoreCase));
+                if (null != m)
+                {
+                    str = m.Text;
                 }
             }
             return str;

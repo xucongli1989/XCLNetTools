@@ -55,14 +55,14 @@ namespace XCLNetTools.Common
             {
                 //从get/post中获取
                 var langFromQuery = GetStandardLanguageCode(XCLNetTools.StringHander.FormHelper.GetString(name));
-                if (!string.IsNullOrWhiteSpace(langFromQuery) && !string.IsNullOrWhiteSpace(XCLNetTools.Enum.EnumHelper.GetEnumDescriptionByText(typeof(LanguageEnum), langFromQuery)))
+                if (!string.IsNullOrWhiteSpace(langFromQuery) && !string.IsNullOrWhiteSpace(XCLNetTools.Enum.EnumHelper.GetEnumTextByDescription(typeof(LanguageEnum), langFromQuery)))
                 {
                     return langFromQuery;
                 }
 
                 //从cookie中获取
                 var langFromCookie = GetStandardLanguageCode(XCLNetTools.Http.CookieHelper.GetCookies(name));
-                if (!string.IsNullOrWhiteSpace(langFromCookie) && !string.IsNullOrWhiteSpace(XCLNetTools.Enum.EnumHelper.GetEnumDescriptionByText(typeof(LanguageEnum), langFromCookie)))
+                if (!string.IsNullOrWhiteSpace(langFromCookie) && !string.IsNullOrWhiteSpace(XCLNetTools.Enum.EnumHelper.GetEnumTextByDescription(typeof(LanguageEnum), langFromCookie)))
                 {
                     return langFromCookie;
                 }
