@@ -161,6 +161,7 @@
     <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
     <Compile Include="Entity\FileInfoEntity.cs" />
     <Compile Include="Entity\FontInfoEntity.cs" />
+    <Compile Include="Entity\I18NCustomConfigItem.cs" />
     <Compile Include="Entity\LineItem.cs" />
     <Compile Include="Entity\LocationEntity.cs" />
     <Compile Include="Entity\Message\JsonMsg.cs" />

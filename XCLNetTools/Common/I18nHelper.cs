@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Web;
+using XCLNetTools.Entity;
 
 namespace XCLNetTools.Common
 {
@@ -109,6 +110,32 @@ namespace XCLNetTools.Common
             var i18Next = new I18NextNet(backend, translator);
             i18Next.SetFallbackLanguages("zh-CN");
             return i18Next;
+        }
+
+        /// <summary>
+        /// 根据自定义配置的 json 返回翻译配置列表
+        /// </summary>
+        public static List<I18NCustomConfigItem> GetI18NCustomConfigList(string json)
+        {
+            try
+            {
+                var lst = XCLNetTools.Serialize.JSON.DeSerialize<List<I18NCustomConfigItem>>(json);
+                return lst ?? new List<I18NCustomConfigItem>();
+            }
+            catch
+            {
+                return new List<I18NCustomConfigItem>();
+            }
+        }
+
+        /// <summary>
+        /// 根据指定的语言和key返回自定义翻译配置中的值
+        /// </summary>
+        public static string GetI18NCustomConfigValue(string configJson, string language, string key)
+        {
+            var lst = GetI18NCustomConfigList(configJson);
+            var item = lst.Find(k => string.Equals(k.Language, language, StringComparison.OrdinalIgnoreCase) && string.Equals(k.Key, key, StringComparison.OrdinalIgnoreCase));
+            return item?.Value ?? string.Empty;
         }
     }
 }
