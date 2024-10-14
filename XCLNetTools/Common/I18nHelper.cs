@@ -15,12 +15,14 @@ namespace XCLNetTools.Common
     /// </summary>
     public static class I18nHelper
     {
+        public const string 简体中文语言代码 = "zh-CN";
+
         /// <summary>
         /// 常见语言列表
         /// </summary>
         public enum LanguageEnum
         {
-            [Description("zh-CN")]
+            [Description(简体中文语言代码)]
             简体中文,
 
             [Description("zh-TW")]
@@ -131,11 +133,11 @@ namespace XCLNetTools.Common
         /// <summary>
         /// 根据指定的语言和key返回自定义翻译配置中的值
         /// </summary>
-        public static string GetI18NCustomConfigValue(string configJson, string language, string key)
+        public static string GetI18NCustomConfigValue(string configJson, string language, string key, string defaultValue = null)
         {
             var lst = GetI18NCustomConfigList(configJson);
             var item = lst.Find(k => string.Equals(k.Language, language, StringComparison.OrdinalIgnoreCase) && string.Equals(k.Key, key, StringComparison.OrdinalIgnoreCase));
-            return item?.Value ?? string.Empty;
+            return string.IsNullOrWhiteSpace(item?.Value) ? defaultValue : item.Value;
         }
     }
 }
