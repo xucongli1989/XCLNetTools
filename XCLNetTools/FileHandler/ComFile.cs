@@ -27,7 +27,7 @@ namespace XCLNetTools.FileHandler
         /// <summary>
         /// 删除文件
         /// </summary>
-        public static bool DeleteFile(string filePath)
+        public static bool DeleteFile(string filePath, bool isMoveToRecycle = false)
         {
             bool isSuccess = false;
             filePath = ComFile.MapPath(filePath);
@@ -35,7 +35,14 @@ namespace XCLNetTools.FileHandler
             {
                 try
                 {
-                    System.IO.File.Delete(filePath);
+                    if (isMoveToRecycle)
+                    {
+                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(filePath, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin, Microsoft.VisualBasic.FileIO.UICancelOption.DoNothing);
+                    }
+                    else
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
                     isSuccess = !System.IO.File.Exists(filePath);
                 }
                 catch
