@@ -870,6 +870,51 @@ namespace XCLNetTools.FileHandler
             return XCLNetTools.FileHandler.ComFile.GetStandardPath(newPath, isFolder);
         }
 
+        /// <summary>
+        /// 获取一个路径所在的文件夹路径。如：d:\a\test.doc -> d:\a\ ，d:\a\b\  ->  d:\a\
+        /// </summary>
+        public static string GetParentDirPath(string path, bool isFolder)
+        {
+            var parentPath = string.Empty;
+            if (isFolder)
+            {
+                parentPath = XCLNetTools.FileHandler.FileDirectory.GetDirParentPath(path);
+            }
+            else
+            {
+                parentPath = XCLNetTools.FileHandler.ComFile.GetFileFolderPath(path);
+            }
+            return XCLNetTools.FileHandler.ComFile.GetStandardPath(parentPath, true);
+        }
+
+        /// <summary>
+        /// 获取文件的文件名或文件夹的文件夹名。如：d:\a\test.doc -> test.doc ，d:\a\b\  ->  b
+        /// </summary>
+        public static string GetFileNameOrFolderName(string path, bool isFolder)
+        {
+            return isFolder ? XCLNetTools.FileHandler.ComFile.GetPathFolderName(path, true) : XCLNetTools.FileHandler.ComFile.GetFileName(path);
+        }
+
+        /// <summary>
+        /// 在文件名或文件夹名称的最左边添加前缀
+        /// </summary>
+        public static string AppendPrefixNameToPath(string path, bool isFolder, string prefix)
+        {
+            if (string.IsNullOrWhiteSpace(prefix))
+            {
+                return path;
+            }
+            var newName = $"{prefix}{ComFile.GetFileNameOrFolderName(path, isFolder)}";
+            if (isFolder)
+            {
+                return XCLNetTools.FileHandler.ComFile.ChangePathByFolderName(path, newName, true);
+            }
+            else
+            {
+                return XCLNetTools.FileHandler.ComFile.ChangePathByFileName(path, newName);
+            }
+        }
+
         #endregion 其它
     }
 }
