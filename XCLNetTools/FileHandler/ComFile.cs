@@ -57,6 +57,21 @@ namespace XCLNetTools.FileHandler
             return isSuccess;
         }
 
+        /// <summary>
+        /// 删除文件或文件夹
+        /// </summary>
+        public static bool DeletePath(string path)
+        {
+            if (XCLNetTools.FileHandler.ComFile.IsPathExists(path, true))
+            {
+                return XCLNetTools.FileHandler.FileDirectory.DelTree(path);
+            }
+            else
+            {
+                return XCLNetTools.FileHandler.ComFile.DeleteFile(path);
+            }
+        }
+
         #endregion 删除文件
 
         #region 复制文件
