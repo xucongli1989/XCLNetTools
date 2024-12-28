@@ -423,6 +423,19 @@ namespace XCLNetTools.FileHandler
             return AppendExtToPath(p, ext);
         }
 
+        /// <summary>
+        /// 在一个路径的后面以子目录的方式追加一个完整的路径。与原生 Path.Combine 的区别是如果第二个参数是完整的物理路径，则会自动将盘符转换为子目录的形式，而不是原生中的直接返回第二个参数。
+        /// 如：(c:\a\b\,d:\x\y\) -> c:\a\b\d\x\y\
+        /// </summary>
+        /// <param name="path1">路径1</param>
+        /// <param name="path2">路径2（支持 d:\test\ 或 \\test-pc\test 格式）</param>
+        /// <param name="isFolder">最终返回的路径是否为文件夹</param>
+        public static string AppendPathAsSubPath(string path1, string path2, bool isFolder)
+        {
+            path2 = path2.Trim().Replace("/", @"\").Replace(":", "").TrimStart('\\');
+            return GetStandardPath(Path.Combine(path1, path2), isFolder);
+        }
+
         #endregion 路径相关
 
         #region 文件属性相关

@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace UnitTest.FileHandler
 {
@@ -118,6 +117,18 @@ namespace UnitTest.FileHandler
             Assert.AreEqual(@"\\pc\a\b", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"\\pc/a/b/", false));
             Assert.AreEqual(@"\\pc\a\b.docx", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"\\pc/a/b.docx/", false));
             Assert.AreEqual(@"\\pc\a\b.docx", XCLNetTools.FileHandler.ComFile.GetStandardPath(@"\\pc/a/b.docx", false));
+        }
+
+        [TestMethod]
+        public void AppendPathAsSubPath()
+        {
+            Assert.AreEqual(@"", XCLNetTools.FileHandler.ComFile.AppendPathAsSubPath("", "", true));
+            Assert.AreEqual(@"c:\a\b\c\x\y\", XCLNetTools.FileHandler.ComFile.AppendPathAsSubPath("c:/a/b", "c:/x/y/", true));
+            Assert.AreEqual(@"c:\a\b\x\y\", XCLNetTools.FileHandler.ComFile.AppendPathAsSubPath("c:/a/b", "/x/y/", true));
+            Assert.AreEqual(@"c:\a\b\test-pc\y\a.docx\", XCLNetTools.FileHandler.ComFile.AppendPathAsSubPath("c:/a/b", "//test-pc\\y/a.docx", true));
+            Assert.AreEqual(@"c:\a\b\test-pc\y\a.docx", XCLNetTools.FileHandler.ComFile.AppendPathAsSubPath("c:/a/b", "//test-pc\\y/a.docx", false));
+            Assert.AreEqual(@"c:\a\b\x\y\z\", XCLNetTools.FileHandler.ComFile.AppendPathAsSubPath("c:/a/b", "x/y/z", true));
+            Assert.AreEqual(@"\\test-pc\a\b\c\x\y\", XCLNetTools.FileHandler.ComFile.AppendPathAsSubPath("//test-pc/a/b", "c:/x/y/", true));
         }
     }
 }
