@@ -943,6 +943,24 @@ namespace XCLNetTools.FileHandler
             }
         }
 
+        /// <summary>
+        /// 在文件名的最右侧（不包含扩展名）添加后缀。如：abc.docx -> abcXXX.docx
+        /// </summary>
+        public static string AppendSuffixNameToFileName(string fileName, string suffix)
+        {
+            if (string.IsNullOrWhiteSpace(suffix))
+            {
+                return fileName;
+            }
+            fileName = fileName ?? string.Empty;
+            var dotIndex = fileName.LastIndexOf('.');
+            if (dotIndex < 0)
+            {
+                return $"{fileName}{suffix}";
+            }
+            return fileName.Insert(dotIndex, suffix);
+        }
+
         #endregion 其它
     }
 }
