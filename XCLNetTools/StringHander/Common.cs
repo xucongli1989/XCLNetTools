@@ -14,7 +14,6 @@ using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -269,6 +268,39 @@ namespace XCLNetTools.StringHander
         #endregion 静态资源相关
 
         #region 字符串截取
+
+        /// <summary>
+        /// 截取字符串中的一部分（与原生方法 str.Substring 的区别是这个方法中的参数有溢出时不会报错）
+        /// </summary>
+        public static string SubstringWithSafe(this string str, int startIndex, int? count = null)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return string.Empty;
+            }
+            if (startIndex < 0)
+            {
+                return str;
+            }
+            if (startIndex > str.Length - 1)
+            {
+                return string.Empty;
+            }
+            if (null == count)
+            {
+                return str.Substring(startIndex);
+            }
+            var c = count.GetValueOrDefault();
+            if (c <= 0)
+            {
+                return string.Empty;
+            }
+            if (c > str.Length - (startIndex + 1) + 1)
+            {
+                c = str.Length - (startIndex + 1) + 1;
+            }
+            return str.Substring(startIndex, c);
+        }
 
         /// <summary>
         /// 截取指定长度的字符串，一个汉字算两个字符

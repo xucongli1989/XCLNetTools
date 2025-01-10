@@ -255,5 +255,44 @@ namespace UnitTest.StringHander
             Assert.AreEqual("", str.RemoveWithSafe(0, 7));
             Assert.AreEqual("", str.RemoveWithSafe(0, 8));
         }
+
+        [TestMethod]
+        public void SubstringWithSafe()
+        {
+            var str = "";
+            Assert.IsTrue(str.SubstringWithSafe(0) == string.Empty);
+            str = null;
+            Assert.IsTrue(str.SubstringWithSafe(0) == string.Empty);
+            str = "123456";
+            Assert.AreEqual(str, str.SubstringWithSafe(-1));
+            Assert.AreEqual("", str.SubstringWithSafe(6));
+            Assert.AreEqual("123456", str.SubstringWithSafe(0));
+            Assert.AreEqual("23456", str.SubstringWithSafe(1));
+            Assert.AreEqual("3456", str.SubstringWithSafe(2));
+            Assert.AreEqual("456", str.SubstringWithSafe(3));
+            Assert.AreEqual("56", str.SubstringWithSafe(4));
+            Assert.AreEqual("6", str.SubstringWithSafe(5));
+            Assert.AreEqual("", str.SubstringWithSafe(6));
+            Assert.AreEqual("", str.SubstringWithSafe(7));
+            Assert.AreEqual("", str.SubstringWithSafe(8));
+            Assert.AreEqual("", str.SubstringWithSafe(1, -1));
+            Assert.AreEqual("", str.SubstringWithSafe(1, 0));
+            Assert.AreEqual("1", str.SubstringWithSafe(0, 1));
+            Assert.AreEqual("2", str.SubstringWithSafe(1, 1));
+            Assert.AreEqual("23", str.SubstringWithSafe(1, 2));
+            Assert.AreEqual("234", str.SubstringWithSafe(1, 3));
+            Assert.AreEqual("2345", str.SubstringWithSafe(1, 4));
+            Assert.AreEqual("23456", str.SubstringWithSafe(1, 5));
+            Assert.AreEqual("23456", str.SubstringWithSafe(1, 6));
+            Assert.AreEqual("23456", str.SubstringWithSafe(1, 7));
+            Assert.AreEqual("1", str.SubstringWithSafe(0, 1));
+            Assert.AreEqual("12", str.SubstringWithSafe(0, 2));
+            Assert.AreEqual("123", str.SubstringWithSafe(0, 3));
+            Assert.AreEqual("1234", str.SubstringWithSafe(0, 4));
+            Assert.AreEqual("12345", str.SubstringWithSafe(0, 5));
+            Assert.AreEqual("123456", str.SubstringWithSafe(0, 6));
+            Assert.AreEqual("123456", str.SubstringWithSafe(0, 7));
+            Assert.AreEqual("123456", str.SubstringWithSafe(0, 8));
+        }
     }
 }
