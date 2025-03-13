@@ -924,15 +924,25 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 在文件名或文件夹名称的最左边添加前缀
+        /// 给文件名或文件夹名称添加前缀或后缀
         /// </summary>
-        public static string AppendPrefixNameToPath(string path, bool isFolder, string prefix)
+        public static string AppendPrefixAndSuffixNameToPath(string path, bool isFolder, string prefix, string suffix)
         {
-            if (string.IsNullOrWhiteSpace(prefix))
+            if (string.IsNullOrWhiteSpace(prefix) && string.IsNullOrWhiteSpace(suffix))
             {
                 return path;
             }
+
             var newName = $"{prefix}{ComFile.GetFileNameOrFolderName(path, isFolder)}";
+            if (isFolder)
+            {
+                newName += suffix;
+            }
+            else
+            {
+                newName = AppendSuffixNameToFileName(newName, suffix);
+            }
+
             if (isFolder)
             {
                 return XCLNetTools.FileHandler.ComFile.ChangePathByFolderName(path, newName, true);
