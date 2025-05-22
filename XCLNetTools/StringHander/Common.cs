@@ -825,7 +825,7 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
-        /// 将范围文本字符串解析为实体列表，并且自动将倒数的数字转为正数的数字，文本的格式如下：
+        /// 将范围文本字符串解析为实体列表，并且自动将倒数的数字转为正数的数字，文本的格式示例如下：
         /// 【1】表示第1项，【2】表示第2项，【2:5】表示第2项到第5项，【-1】表示最后一项，【-2】表示倒数第2项，【-5:-2】表示倒数第5项到倒数第2项，【2,4:7,-5:-2】表示第2项和第4到7项和倒数第5项至倒数第2项
         /// </summary>
         /// <param name="str">范围字符串</param>
@@ -861,10 +861,6 @@ namespace XCLNetTools.StringHander
                 {
                     model.StartValue = XCLNetTools.Common.DataTypeConvert.ToInt(arr[0]);
                     model.EndValue = XCLNetTools.Common.DataTypeConvert.ToInt(arr[1]);
-                }
-                if (model.StartValue == 0 || model.EndValue == 0)
-                {
-                    return;
                 }
                 //将负数转成正数
                 if (model.StartValue < 0)

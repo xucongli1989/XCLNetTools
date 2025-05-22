@@ -57,6 +57,9 @@ namespace UnitTest.StringHander
 
             model = XCLNetTools.StringHander.Common.GetRangeValueEntity(15, 16, 10, 15);
             Assert.IsTrue(model.StartValue == 15 && model.EndValue == 15 && model.Count == 1);
+
+            model = XCLNetTools.StringHander.Common.GetRangeValueEntity(0, 2, 0, 9);
+            Assert.IsTrue(model.StartValue == 0 && model.EndValue == 2 && model.Count == 3);
         }
 
         [TestMethod]
@@ -90,6 +93,11 @@ namespace UnitTest.StringHander
 
             lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("3:5", 1, 100);
             Assert.IsTrue(lst.Count == 1 && lst[0].StartValue == 3 && lst[0].EndValue == 5);
+
+            lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("0:2,4", 0, 100);
+            Assert.IsTrue(lst.Count == 2);
+            Assert.IsTrue(lst[0].StartValue == 0 && lst[0].EndValue == 2);
+            Assert.IsTrue(lst[1].StartValue == 4 && lst[1].EndValue == 4);
 
             lst = XCLNetTools.StringHander.Common.GetRangeValueEntityListFromText("1,3:5,8:9,-10:-1", -100, 100);
             Assert.IsTrue(lst.Count == 4);
