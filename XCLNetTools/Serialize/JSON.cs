@@ -51,7 +51,12 @@ namespace XCLNetTools.Serialize
             {
                 return result;
             }
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(str, new JsonSerializerSettings()
+            {
+                //反序列化时不要重用构造函数中已有的初始化列表对象，参考：https://www.cnblogs.com/netlog/p/17592519.html
+                //举例：有一个属性 List<int> Ids，在构造函数中有初始化 Ids=(1,2,3)，当 json 中的 Ids=[9] 时，如果不加下面的选项，则会导致反序列化后的列表为 (1,2,3,9)。如果加了这个选项，当 json 中完全没有指定 Ids 属性时才会使用构造函数，有指定时，以指定的值为准。
+                ObjectCreationHandling = ObjectCreationHandling.Replace
+            });
         }
 
         /// <summary>
