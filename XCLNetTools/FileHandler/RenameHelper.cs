@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using XCLNetTools.Entity;
 using XCLNetTools.Generic;
 
@@ -204,6 +203,39 @@ namespace XCLNetTools.FileHandler
                 else
                 {
                     PC.FileSystem.RenameFile(path, newName);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 将临时路径重命名为磁盘上的正式且唯一的路径，如果成功，则返回处理后的正式路径
+        /// </summary>
+        public static string RenameTempPathToDiskUniqueExpectedPath(string tempPath, string expectedPath, bool isFolder)
+        {
+            tempPath = XCLNetTools.FileHandler.ComFile.GetStandardPath(tempPath, isFolder);
+            expectedPath = XCLNetTools.FileHandler.ComFile.GetStandardPath(expectedPath, isFolder);
+
+            //临时路径和预期路径必须位于【同层级】位置
+            var tempPathDir = XCLNetTools.FileHandler.ComFile.GetParentDirPath(tempPath, isFolder);
+            var expectedPathDir = XCLNetTools.FileHandler.ComFile.GetParentDirPath(expectedPath, isFolder);
+            if (!string.Equals(tempPathDir, expectedPathDir, StringComparison.OrdinalIgnoreCase))
+            {
+                throw new ArgumentException("TempPath and ExpectedPath must be in a same folder!");
+            }
+
+            //重命名
+            while (true)
+            {
+                try
+                {
+                    var logicPath = XCLNetTools.FileHandler.ComFile.GetUniquePathToSave(expectedPath, isFolder);
+                    var diskName = XCLNetTools.FileHandler.ComFile.GetFileNameOrFolderName(logicPath, isFolder);
+                    XCLNetTools.FileHandler.RenameHelper.Rename(isFolder, tempPath, diskName);
+                    return logicPath;
+                }
+                catch (IOException)
+                {
+                    //同名被占用异常
                 }
             }
         }
