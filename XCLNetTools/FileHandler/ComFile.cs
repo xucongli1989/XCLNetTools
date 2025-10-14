@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
+using XCLNetTools.Entity;
 using XCLNetTools.Generic;
 
 namespace XCLNetTools.FileHandler
@@ -434,6 +435,63 @@ namespace XCLNetTools.FileHandler
         {
             path2 = path2.Trim().Replace("/", @"\").Replace(":", "").TrimStart('\\');
             return GetStandardPath(Path.Combine(path1, path2), isFolder);
+        }
+
+        /// <summary>
+        /// 获取某个文件夹路径下的所有【文件+文件夹】的路径列表
+        /// </summary>
+        /// <param name="rootDirPath">根目录</param>
+        /// <param name="isRootDirPathInResult">是否需要将根目录放到返回的结果中</param>
+        public static List<PathInfoEntity> GetPathList(string rootDirPath, bool isRootDirPathInResult = false)
+        {
+            var lst = new List<PathInfoEntity>();
+            if (string.IsNullOrWhiteSpace(rootDirPath) || !System.IO.Directory.Exists(rootDirPath))
+            {
+                return lst;
+            }
+            rootDirPath = XCLNetTools.FileHandler.ComFile.GetStandardPath(rootDirPath, true);
+
+            //将根目录放到结果列表中
+            if (isRootDirPathInResult)
+            {
+                lst.Add(new PathInfoEntity()
+                {
+                    Path = rootDirPath,
+                    IsFolder = true
+                });
+            }
+
+            //递归遍历
+            Action<string> act = null;
+            act = new Action<string>((dir) =>
+            {
+                //文件
+                var files = XCLNetTools.FileHandler.ComFile.GetFolderFiles(dir).ToList();
+                files.ForEach(p =>
+                {
+                    var model = new PathInfoEntity();
+                    model.Path = p;
+                    model.IsFolder = false;
+                    lst.Add(model);
+                });
+
+                //文件夹
+                var folders = XCLNetTools.FileHandler.ComFile.GetFolders(dir).ToList();
+                folders.ForEach(p =>
+                {
+                    var model = new PathInfoEntity();
+                    model.Path = XCLNetTools.FileHandler.ComFile.GetStandardPath(p, true);
+                    model.IsFolder = true;
+                    lst.Add(model);
+
+                    //递归
+                    act(p);
+                });
+            });
+
+            act(rootDirPath);
+
+            return lst;
         }
 
         #endregion 路径相关

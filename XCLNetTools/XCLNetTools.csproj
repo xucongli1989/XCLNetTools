@@ -171,6 +171,7 @@
     <Compile Include="Entity\Office\ExcelHandler\ExcelDataCountInfoEntity.cs" />
     <Compile Include="Entity\Office\ExcelHandler\ExcelTitleInfo.cs" />
     <Compile Include="Entity\Office\ExcelHandler\ExcelToTableOptions.cs" />
+    <Compile Include="Entity\PathInfoEntity.cs" />
     <Compile Include="Entity\RenameConflictItem.cs" />
     <Compile Include="Entity\RgbaEntity.cs" />
     <Compile Include="Entity\Serialize\FirstCharLowercaseNamingStrategy.cs" />
