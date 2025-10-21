@@ -984,21 +984,26 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
-        /// 将普通字符串中的换行符 \n 替换成当前系统的换行符 \r\n
+        /// 将普通字符串中的换行符（\r 、\n 、\r\n）统一替换成新的换行符（默认使用 Environment.NewLine）
         /// </summary>
-        public static string ConvertToSystemNewLine(string str)
+        public static string ConvertToUnifiedNewLine(string str, string lineBreakChar = null)
         {
             str = str ?? string.Empty;
-            return str.Replace(Environment.NewLine, "\n").Replace("\n", Environment.NewLine);
+            if (string.IsNullOrEmpty(lineBreakChar))
+            {
+                lineBreakChar = Environment.NewLine;
+            }
+            return str.Replace("\r\n", "\n").Replace("\r", "\n").Replace("\n", lineBreakChar);
         }
 
         /// <summary>
-        /// 获取字符串中的每一行（支持 \n 和 \r\n）
+        /// 获取字符串中的每一行（兼容 \r 、 \n 和 \r\n）
         /// </summary>
         public static List<string> GetLines(string str)
         {
-            str = ConvertToSystemNewLine(str ?? string.Empty);
-            return str.Split(new string[] { Environment.NewLine }, StringSplitOptions.None).ToList();
+            var lineBreakChar = Environment.NewLine;
+            str = ConvertToUnifiedNewLine(str, lineBreakChar);
+            return str.Split(new string[] { lineBreakChar }, StringSplitOptions.None).ToList();
         }
 
         /// <summary>
