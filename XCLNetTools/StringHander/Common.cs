@@ -984,6 +984,29 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 获取字符串中的换行符，如：\r 、\n、\r\n。默认为：Environment.NewLine
+        /// </summary>
+        public static string GetLineBreakChar(string str)
+        {
+            if (!string.IsNullOrEmpty(str))
+            {
+                if (str.Contains("\r\n"))
+                {
+                    return "\r\n";
+                }
+                if (str.Contains("\n"))
+                {
+                    return "\n";
+                }
+                if (str.Contains("\r"))
+                {
+                    return "\r";
+                }
+            }
+            return Environment.NewLine;
+        }
+
+        /// <summary>
         /// 将普通字符串中的换行符（\r 、\n 、\r\n）统一替换成新的换行符（默认使用 Environment.NewLine）
         /// </summary>
         public static string ConvertToUnifiedNewLine(string str, string lineBreakChar = null)
