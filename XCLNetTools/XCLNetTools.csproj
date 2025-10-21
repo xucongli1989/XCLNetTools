@@ -231,7 +231,6 @@
     <Compile Include="Encrypt\HashEncode.cs" />
     <Compile Include="StringHander\DataCheck.cs" />
     <Compile Include="StringHander\RandomHelper.cs" />
-    <Compile Include="StringHander\RMB.cs" />
     <Compile Include="Encrypt\RSACryption.cs" />
     <Compile Include="StringHander\UrlOper.cs" />
     <Compile Include="XML\ConfigClass.cs" />

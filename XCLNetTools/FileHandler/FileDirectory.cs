@@ -6,9 +6,7 @@ Create By: XCL @ 2012
 
  */
 
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace XCLNetTools.FileHandler
 {
@@ -109,85 +107,6 @@ namespace XCLNetTools.FileHandler
         }
 
         /// <summary>
-        /// 获取指定目录下的所有文件及文件夹信息
-        /// </summary>
-        /// <param name="dirPath">要获取信息的目录路径</param>
-        /// <param name="rootPath">根路径（设置该值后，返回的信息实体中将包含相对于该根路径的相对路径信息）</param>
-        /// <param name="webRootPath">web根路径（用于生成该文件或文件夹的web路径），如：http://www.a.com/web/</param>
-        /// <returns>文件信息list</returns>
-        public static List<XCLNetTools.Entity.FileInfoEntity> GetFileList(string dirPath, string rootPath = "", string webRootPath = "")
-        {
-            List<XCLNetTools.Entity.FileInfoEntity> result = new List<Entity.FileInfoEntity>();
-            if (!string.IsNullOrEmpty(dirPath))
-            {
-                dirPath = XCLNetTools.FileHandler.ComFile.MapPath(dirPath);
-            }
-            if (!string.IsNullOrEmpty(rootPath))
-            {
-                rootPath = XCLNetTools.FileHandler.ComFile.MapPath(rootPath);
-            }
-
-            if (string.IsNullOrEmpty(dirPath) || FileDirectory.IsEmpty(dirPath))
-            {
-                return result;
-            }
-            int idx = 1;
-
-            XCLNetTools.Entity.FileInfoEntity tempFileInfoEntity = null;
-            //文件夹
-            var directories = System.IO.Directory.EnumerateDirectories(dirPath);
-            if (null != directories && directories.Any())
-            {
-                directories.ToList().ForEach(k =>
-                {
-                    var dir = new System.IO.DirectoryInfo(k);
-                    if (dir.Exists)
-                    {
-                        tempFileInfoEntity = new Entity.FileInfoEntity();
-                        tempFileInfoEntity.ID = idx++;
-                        tempFileInfoEntity.Name = dir.Name;
-                        tempFileInfoEntity.IsFolder = true;
-                        tempFileInfoEntity.Path = k;
-                        tempFileInfoEntity.RootPath = rootPath;
-                        tempFileInfoEntity.RelativePath = ComFile.GetUrlRelativePath(rootPath, k);
-                        tempFileInfoEntity.WebPath = webRootPath.TrimEnd('/') + "/" + tempFileInfoEntity.RelativePath;
-                        tempFileInfoEntity.ModifyTime = dir.LastWriteTime;
-                        tempFileInfoEntity.CreateTime = dir.CreationTime;
-                        result.Add(tempFileInfoEntity);
-                    }
-                });
-            }
-
-            //文件
-            string[] files = XCLNetTools.FileHandler.ComFile.GetFolderFiles(dirPath);
-            if (null != files && files.Length > 0)
-            {
-                files.ToList().ForEach(k =>
-                {
-                    var file = new System.IO.FileInfo(k);
-                    if (file.Exists)
-                    {
-                        tempFileInfoEntity = new Entity.FileInfoEntity();
-                        tempFileInfoEntity.ID = idx++;
-                        tempFileInfoEntity.Name = file.Name;
-                        tempFileInfoEntity.IsFolder = false;
-                        tempFileInfoEntity.Path = k;
-                        tempFileInfoEntity.RootPath = rootPath;
-                        tempFileInfoEntity.RelativePath = ComFile.GetUrlRelativePath(rootPath, k);
-                        tempFileInfoEntity.WebPath = webRootPath.TrimEnd('/') + "/" + tempFileInfoEntity.RelativePath;
-                        tempFileInfoEntity.ModifyTime = file.LastWriteTime;
-                        tempFileInfoEntity.CreateTime = file.CreationTime;
-                        tempFileInfoEntity.Size = file.Length;
-                        tempFileInfoEntity.ExtName = (file.Extension ?? "").Trim('.');
-                        result.Add(tempFileInfoEntity);
-                    }
-                });
-            }
-
-            return result;
-        }
-
-        /// <summary>
         /// 返回指定文件夹路径的父文件夹地址，如："C:\a\b\c\d\" ---> "C:\a\b\c"
         /// </summary>
         public static string GetDirParentPath(string dirPath)
@@ -233,16 +152,6 @@ namespace XCLNetTools.FileHandler
         /// 在文件里追加内容
         /// </summary>
         /// <param name="filePathName">文件名</param>
-        /// <param name="writeWord">追加内容</param>
-        public static void AppendText(string filePathName, string writeWord)
-        {
-            AppendText(filePathName, writeWord, System.Text.Encoding.Default);
-        }
-
-        /// <summary>
-        /// 在文件里追加内容
-        /// </summary>
-        /// <param name="filePathName">文件名</param>
         /// <param name="writeWord">追加的内容</param>
         /// <param name="encode">编码</param>
         public static void AppendText(string filePathName, string writeWord, System.Text.Encoding encode)
@@ -280,30 +189,6 @@ namespace XCLNetTools.FileHandler
                 encode = System.Text.Encoding.UTF8;
             }
             System.IO.File.WriteAllText(filePathName, content, encode);
-        }
-
-        /// <summary>
-        /// 删除文件
-        /// </summary>
-        /// <param name="absoluteFilePath">文件绝对地址</param>
-        /// <returns>true:删除文件成功,false:删除文件失败</returns>
-        public static bool FileDelete(string absoluteFilePath)
-        {
-            try
-            {
-                FileInfo objFile = new FileInfo(absoluteFilePath);
-                if (objFile.Exists)//如果存在
-                {
-                    //删除文件.
-                    objFile.Delete();
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-            return false;
         }
 
         #endregion 文件操作
