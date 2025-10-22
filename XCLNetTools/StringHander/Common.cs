@@ -1007,6 +1007,34 @@ namespace XCLNetTools.StringHander
         }
 
         /// <summary>
+        /// 根据文件路径获取换行符，如：\r 、\n、\r\n。默认为：Environment.NewLine
+        /// </summary>
+        public static string GetLineBreakCharByPath(string path)
+        {
+            var encoding = XCLNetTools.FileHandler.ComFile.GetFileEncoding(path);
+            using (var reader = new StreamReader(path, encoding))
+            {
+                var prev = '\0';
+                int ch;
+                while ((ch = reader.Read()) != -1)
+                {
+                    var curr = (char)ch;
+                    if (curr == '\n')
+                    {
+                        return prev == '\r' ? "\r\n" : "\n";
+                    }
+                    else if (curr == '\r')
+                    {
+                        var next = reader.Peek();
+                        return next == '\n' ? "\r\n" : "\r";
+                    }
+                    prev = curr;
+                }
+            }
+            return Environment.NewLine;
+        }
+
+        /// <summary>
         /// 将普通字符串中的换行符（\r 、\n 、\r\n）统一替换成新的换行符（默认使用 Environment.NewLine）
         /// </summary>
         public static string ConvertToUnifiedNewLine(string str, string lineBreakChar = null)
