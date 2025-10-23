@@ -159,7 +159,6 @@
     <Compile Include="DataSource\DataTableHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
     <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
-    <Compile Include="Entity\FileInfoEntity.cs" />
     <Compile Include="Entity\FontInfoEntity.cs" />
     <Compile Include="Entity\I18NCustomConfigItem.cs" />
     <Compile Include="Entity\LineItem.cs" />

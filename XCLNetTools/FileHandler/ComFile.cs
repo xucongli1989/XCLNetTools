@@ -442,7 +442,8 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         /// <param name="rootDirPath">根目录</param>
         /// <param name="isRootDirPathInResult">是否需要将根目录放到返回的结果中</param>
-        public static List<PathInfoEntity> GetPathList(string rootDirPath, bool isRootDirPathInResult = false)
+        /// <param name="isNeedRecursion">是否需要递归子目录</param>
+        public static List<PathInfoEntity> GetPathList(string rootDirPath, bool isRootDirPathInResult = false, bool isNeedRecursion = false)
         {
             var lst = new List<PathInfoEntity>();
             if (string.IsNullOrWhiteSpace(rootDirPath) || !System.IO.Directory.Exists(rootDirPath))
@@ -485,7 +486,10 @@ namespace XCLNetTools.FileHandler
                     lst.Add(model);
 
                     //递归
-                    act(p);
+                    if (isNeedRecursion)
+                    {
+                        act(p);
+                    }
                 });
             });
 
