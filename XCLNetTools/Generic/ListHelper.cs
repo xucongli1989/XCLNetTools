@@ -173,5 +173,28 @@ namespace XCLNetTools.Generic
             result = lst.GetRange(startIndex, count);
             return result;
         }
+
+        /// <summary>
+        /// 将 list 的每一行转换为键值对的列表形式
+        /// </summary>
+        public static List<List<KeyValuePair<string, object>>> ToKeyValueList<T>(List<T> lst)
+        {
+            var result = new List<List<KeyValuePair<string, object>>>();
+            if (null == lst || lst.Count == 0)
+            {
+                return result;
+            }
+            var props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance).ToList();
+            lst.ForEach(item =>
+            {
+                var row = new List<KeyValuePair<string, object>>();
+                props.ForEach(p =>
+                {
+                    row.Add(new KeyValuePair<string, object>(p.Name, p.GetValue(item, null)));
+                });
+                result.Add(row);
+            });
+            return result;
+        }
     }
 }

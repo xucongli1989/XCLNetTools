@@ -180,6 +180,7 @@
     <Compile Include="Control\HtmlControl\Lib.cs" />
     <Compile Include="Control\Pagination\AspNetPagerInfo.cs" />
     <Compile Include="Control\Pagination\BasePagination.cs" />
+    <Compile Include="Entity\SqlkataListDataSourceInfo.cs" />
     <Compile Include="Entity\SqlPagerConditionEntity.cs" />
     <Compile Include="Entity\RangeValueEntity.cs" />
     <Compile Include="Entity\TreeData\ExtendDataEntity.cs" />

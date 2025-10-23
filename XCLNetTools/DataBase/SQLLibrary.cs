@@ -9,6 +9,8 @@ Create By: XCL @ 2012
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using XCLNetTools.Entity;
+using XCLNetTools.Generic;
 
 namespace XCLNetTools.DataBase
 {
@@ -100,6 +102,22 @@ namespace XCLNetTools.DataBase
             }
 
             return strSql;
+        }
+
+        /// <summary>
+        /// 将 list 转换为 sqlkata 批量操作时专用的数据源信息
+        /// </summary>
+        public static SqlkataListDataSourceInfo ToSqlkataListDataSourceInfo<T>(List<T> lst)
+        {
+            var model = new SqlkataListDataSourceInfo();
+            var kvList = XCLNetTools.Generic.ListHelper.ToKeyValueList(lst);
+            if (kvList.IsNullOrEmpty())
+            {
+                return model;
+            }
+            model.ColumnNames = kvList[0].Select(k => k.Key).ToArray();
+            model.RowValues = kvList.Select(k => k.Select(x => x.Value).ToArray()).ToArray();
+            return model;
         }
     }
 }
