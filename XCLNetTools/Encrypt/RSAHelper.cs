@@ -2,6 +2,7 @@
 using Org.BouncyCastle.Crypto.Encodings;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Generators;
+using Org.BouncyCastle.Crypto.Signers;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 using System;
@@ -132,6 +133,48 @@ namespace XCLNetTools.Encrypt
             catch
             {
                 return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// 用私钥PEM对明文签名（SHA256withRSA），返回Base64签名
+        /// </summary>
+        public static string Sign(string plainText, string privateKeyPem)
+        {
+            try
+            {
+                var priKey = LoadPrivateKey(privateKeyPem);
+                var signer = new RsaDigestSigner(new Org.BouncyCastle.Crypto.Digests.Sha256Digest());
+                signer.Init(true, priKey);
+                var plainBytes = Encoding.UTF8.GetBytes(plainText);
+                signer.BlockUpdate(plainBytes, 0, plainBytes.Length);
+                var signature = signer.GenerateSignature();
+                return Convert.ToBase64String(signature);
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// 用公钥PEM验证明文和Base64签名（SHA256withRSA），返回true/false
+        /// </summary>
+        public static bool Verify(string plainText, string base64Signature, string publicKeyPem)
+        {
+            try
+            {
+                var pubKey = LoadPublicKey(publicKeyPem);
+                var signer = new RsaDigestSigner(new Org.BouncyCastle.Crypto.Digests.Sha256Digest());
+                signer.Init(false, pubKey);
+                var plainBytes = Encoding.UTF8.GetBytes(plainText);
+                signer.BlockUpdate(plainBytes, 0, plainBytes.Length);
+                var signature = Convert.FromBase64String(base64Signature);
+                return signer.VerifySignature(signature);
+            }
+            catch
+            {
+                return false;
             }
         }
     }
