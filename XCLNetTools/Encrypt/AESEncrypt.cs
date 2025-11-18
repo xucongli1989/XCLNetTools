@@ -15,6 +15,7 @@ namespace XCLNetTools.Encrypt
     /// <summary>
     /// AES加密解密类
     /// </summary>
+    [Obsolete()]
     public class AESEncrypt
     {
         private const string CRYPTO_IV = "XCLNETTOOLS";

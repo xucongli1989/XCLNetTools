@@ -48,6 +48,9 @@
     <Reference Include="Aspose.Cells, Version=23.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Cells.23.4.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.46.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.46\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -157,6 +160,10 @@
     <Compile Include="Common\TreeDataHelper.cs" />
     <Compile Include="DataSource\DataReaderHelper.cs" />
     <Compile Include="DataSource\DataTableHelper.cs" />
+    <Compile Include="Encrypt\AESEncrypt.cs" />
+    <Compile Include="Encrypt\AESHelper.cs" />
+    <Compile Include="Encrypt\DESEncrypt.cs" />
+    <Compile Include="Encrypt\RSAHelper.cs" />
     <Compile Include="Entity\BookmarkEntity.cs" />
     <Compile Include="Entity\Enum\EnumFieldTModel.cs" />
     <Compile Include="Entity\FontInfoEntity.cs" />
@@ -220,18 +227,14 @@
     <Compile Include="Entity\StaticResource.cs" />
     <Compile Include="Entity\SubTime.cs" />
     <Compile Include="Entity\TextValue.cs" />
-    <Compile Include="Encrypt\AESEncrypt.cs" />
     <Compile Include="Serialize\JSON.cs" />
     <Compile Include="Serialize\Lib.cs" />
     <Compile Include="Serialize\XML.cs" />
     <Compile Include="StringHander\Common.cs" />
     <Compile Include="StringHander\DateHelper.cs" />
-    <Compile Include="Encrypt\DESEncrypt.cs" />
     <Compile Include="StringHander\FormHelper.cs" />
-    <Compile Include="Encrypt\HashEncode.cs" />
     <Compile Include="StringHander\DataCheck.cs" />
     <Compile Include="StringHander\RandomHelper.cs" />
-    <Compile Include="Encrypt\RSACryption.cs" />
     <Compile Include="StringHander\UrlOper.cs" />
     <Compile Include="XML\ConfigClass.cs" />
     <Compile Include="XML\XMLHelper.cs" />
