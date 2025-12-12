@@ -12,7 +12,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace XCLNetTools.Enum
 {
@@ -386,6 +385,39 @@ namespace XCLNetTools.Enum
             str.Append("}");
 
             return str.ToString();
+        }
+
+        /// <summary>
+        /// 将字符串转换为枚举类型
+        /// </summary>
+        public static T? ConvertStringToEnum<T>(string value) where T : struct, System.Enum
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return null;
+            }
+            if (System.Enum.TryParse<T>(value, true, out T result))
+            {
+                return result;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 将字符串列表转换为枚举类型列表
+        /// </summary>
+        public static List<T> ConvertStringToEnum<T>(List<string> lst) where T : struct, System.Enum
+        {
+            var result = new List<T>();
+            lst?.ForEach(k =>
+            {
+                var em = EnumHelper.ConvertStringToEnum<T>(k);
+                if (null != em)
+                {
+                    result.Add(em.Value);
+                }
+            });
+            return result;
         }
     }
 }
