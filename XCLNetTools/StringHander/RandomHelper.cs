@@ -16,7 +16,7 @@ namespace XCLNetTools.StringHander
     public static class RandomHelper
     {
         /// <summary>
-        /// 生成指定范围内的随机数（不重复）
+        /// 生成指定范围内的随机数
         /// </summary>
         /// <param name="minValue">最小值（包含）</param>
         /// <param name="maxValue">最大值（包含）</param>
@@ -25,6 +25,32 @@ namespace XCLNetTools.StringHander
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             return rand.Next(minValue, maxValue + 1);
+        }
+
+        /// <summary>
+        /// 生成指定范围内的随机数
+        /// </summary>
+        /// <param name="minValue">最小值（包含）</param>
+        /// <param name="maxValue">最大值（包含）</param>
+        /// <returns>结果值</returns>
+        public static long GetRandomValue(long minValue, long maxValue)
+        {
+            var rand = new Random(Guid.NewGuid().GetHashCode());
+            var range = (double)(maxValue - minValue + 1);
+            var offset = (long)(rand.NextDouble() * range);
+            return minValue + offset;
+        }
+
+        /// <summary>
+        /// 生成指定范围内的随机时间
+        /// </summary>
+        /// <param name="minValue">最小值（包含）</param>
+        /// <param name="maxValue">最大值（包含）</param>
+        /// <returns>结果值</returns>
+        public static DateTime GetRandomValue(DateTime minValue, DateTime maxValue)
+        {
+            var value = GetRandomValue(minValue.Ticks, maxValue.Ticks);
+            return new DateTime(value, minValue.Kind);
         }
 
         /// <summary>
