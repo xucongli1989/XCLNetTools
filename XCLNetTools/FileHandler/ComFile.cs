@@ -82,9 +82,37 @@ namespace XCLNetTools.FileHandler
         /// </summary>
         public static bool CopyFile(string srcPath, string dstPath, bool overwrite = true)
         {
+            srcPath = ComFile.MapPath(srcPath);
+            dstPath = ComFile.MapPath(dstPath);
+
+            //原文件的时间
+            var createTime = File.GetCreationTime(srcPath);
+            var modifyTime = File.GetLastWriteTime(srcPath);
+            var accessTime = File.GetLastAccessTime(srcPath);
+
             XCLNetTools.FileHandler.FileDirectory.MakeDirectory(GetFileFolderPath(dstPath));
-            File.Copy(ComFile.MapPath(srcPath), ComFile.MapPath(dstPath), overwrite);
-            return File.Exists(ComFile.MapPath(dstPath));
+            File.Copy(srcPath, dstPath, overwrite);
+
+            if (File.Exists(dstPath))
+            {
+                try
+                {
+                    //还原为原文件的时间
+                    File.SetCreationTime(dstPath, createTime);
+                    File.SetLastWriteTime(dstPath, modifyTime);
+                    File.SetLastAccessTime(dstPath, accessTime);
+                }
+                catch
+                {
+                    //
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
