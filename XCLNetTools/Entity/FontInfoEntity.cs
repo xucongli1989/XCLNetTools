@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XCLNetTools.Entity
 {
@@ -12,11 +8,6 @@ namespace XCLNetTools.Entity
     [Serializable]
     public class FontInfoEntity
     {
-        /// <summary>
-        /// 字体文件存放路径
-        /// </summary>
-        public string SourcePath { get; set; }
-
         /// <summary>
         /// 字体文件路径
         /// </summary>

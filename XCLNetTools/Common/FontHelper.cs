@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using XCLNetTools.Entity;
-using System.Linq;
-using System;
-using System.IO;
+﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using XCLNetTools.Entity;
 
 namespace XCLNetTools.Common
 {
@@ -42,7 +42,6 @@ namespace XCLNetTools.Common
                             return;
                         }
                         var info = new FontInfoEntity();
-                        info.SourcePath = p;
                         info.Path = fontPath;
                         info.CNName = cnFontName;
                         info.ENName = enFontName;
@@ -62,7 +61,8 @@ namespace XCLNetTools.Common
         }
 
         /// <summary>
-        /// 根据系统中已安装字体（System.Drawing.Text.InstalledFontCollection）来获取所有字体信息（这里的字体可以直接使用此方法转换为字体对象： new System.Drawing.Font(FontValue,1)）
+        /// 根据系统中已安装字体（System.Drawing.Text.InstalledFontCollection）来获取所有字体信息（这里的字体可以直接使用此方法转换为字体对象： new System.Drawing.Font(FontValue,1)）。
+        /// 注意：这里没有字体文件的路径信息
         /// </summary>
         public static List<FontInfoEntity> GetAllFontInfoListFromInstalled()
         {
